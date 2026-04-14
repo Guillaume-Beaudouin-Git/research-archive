@@ -1,0 +1,27 @@
+# Core ML / data
+torch>=2.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+
+# Data fetching
+yfinance>=0.2.0
+
+# Visualisation / analysis
+matplotlib>=3.7.0
+shap>=0.43.0
+tqdm>=4.65.0
+
+# Live trading — alerts and HTTP
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.0.0
+
+# Live trading — Hyperliquid exchange
+# Install separately (not on PyPI as a simple package):
+#   pip install hyperliquid-python-sdk eth_account
+# hyperliquid-python-sdk
+# eth_account>=0.9.0
