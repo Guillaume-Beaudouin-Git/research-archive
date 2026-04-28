@@ -75,6 +75,11 @@ def get_latest_bars(symbol: str):
     if hasattr(df.columns, "get_level_values"):
         df.columns = df.columns.get_level_values(0)
     df = df[["Open", "High", "Low", "Close", "Volume"]].dropna()
+    # Drop today's partial bar — crypto trades 24/7, so yfinance returns
+    # an incomplete bar for the current UTC date starting at 00:00.
+    from datetime import datetime, timezone
+    today_utc = datetime.now(timezone.utc).date()
+    df = df[df.index.date < today_utc]
     logger.info(f"Fetched {len(df)} bars | latest: {df.index[-1].date()} "
                 f"close={df['Close'].iloc[-1]:.2f}")
     return df
@@ -157,7 +162,7 @@ def check_data_freshness(df: pd.DataFrame, symbol: str) -> None:
     # NOTE: Assumes 24/7 market (crypto). For equities/FX, replace
     # `yesterday_utc` with last_trading_day_before(today_utc, asset_class).
     today_utc     = datetime.now(timezone.utc).date()
-    yesterday_utc = today_utc - timedelta(days=1)
+    max_staleness = 2  # yfinance free crypto data can lag up to ~24h
 
     # yfinance can return a tz-aware or tz-naive DatetimeIndex — normalise both.
     latest_ts = df.index[-1]
@@ -166,28 +171,30 @@ def check_data_freshness(df: pd.DataFrame, symbol: str) -> None:
     else:
         latest_date = latest_ts.date()
 
-    if latest_date == yesterday_utc:
-        logger.info(
-            f"Data freshness OK | {symbol}: latest bar {latest_date} "
-            f"== yesterday {yesterday_utc}"
-        )
-        return
+    lag = (today_utc - latest_date).days
 
-    if latest_date < yesterday_utc:
-        lag = (yesterday_utc - latest_date).days
+    if lag < 1:
+        # latest_date == today — should not happen after partial-bar drop
         msg = (
-            f"STALE DATA | {symbol}: latest bar is {latest_date} "
-            f"({lag} day{'s' if lag != 1 else ''} behind yesterday {yesterday_utc}). "
-            f"yfinance may be serving cached or delayed data. NOT TRADING."
+            f"SUSPICIOUS DATA | {symbol}: latest bar {latest_date} is today "
+            f"{today_utc}. Clock skew or partial bar not dropped. NOT TRADING."
         )
         logger.error(msg)
         _send_telegram_alert(msg)
         sys.exit(1)
 
-    # latest_date > yesterday_utc — future-dated bar, should never happen
+    if lag <= max_staleness:
+        logger.info(
+            f"Data freshness OK | {symbol}: latest bar {latest_date} "
+            f"({lag} day{'s' if lag != 1 else ''} behind today {today_utc})"
+        )
+        return
+
+    # Too stale
     msg = (
-        f"SUSPICIOUS DATA | {symbol}: latest bar {latest_date} is ahead of "
-        f"yesterday {yesterday_utc}. Clock skew or yfinance anomaly. NOT TRADING."
+        f"STALE DATA | {symbol}: latest bar is {latest_date} "
+        f"({lag} days behind today {today_utc}, max allowed {max_staleness}). "
+        f"yfinance may be serving cached or delayed data. NOT TRADING."
     )
     logger.error(msg)
     _send_telegram_alert(msg)
