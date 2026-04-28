@@ -27,8 +27,16 @@ def compute_labels(df: pd.DataFrame, config: Config) -> pd.Series:
     """
     Vectorised labeling.
 
-    Return formula (Parente et al., Definition 2):
-        R(k) = [(1 - f) * Close_{t+k}  -  (1 + f) * Open_t] / Open_t
+    Return formula — corrected for bar-aligned execution:
+        Signal fires at bar t (features use close[t]).
+        Trade executes at open[t+1] (next bar's open).
+        Trade exits at close[t+1+k] (k bars after entry).
+
+        R(k) = [(1 - f) * Close_{t+1+k}  -  (1 + f) * Open_{t+1}] / Open_{t+1}
+
+    This matches the backtester's deferred execution model: the label
+    answers "given what I see at close[t], is entering at open[t+1]
+    profitable after k bars?"
 
     Label rules:
         alpha < |R(k)| < beta  AND  R > 0  →  Buy
@@ -36,8 +44,8 @@ def compute_labels(df: pd.DataFrame, config: Config) -> pd.Series:
         Otherwise                           →  Hold
 
     If config.use_trend_confirm=True, additionally requires:
-        EMA trend at t+k > EMA trend at t  for Buy
-        EMA trend at t+k < EMA trend at t  for Sell
+        EMA trend at t+1+k > EMA trend at t+1  for Buy
+        EMA trend at t+1+k < EMA trend at t+1  for Sell
     """
     close = df["Close"].values.astype(np.float64)
     open_ = df["Open"].values.astype(np.float64)
@@ -47,27 +55,34 @@ def compute_labels(df: pd.DataFrame, config: Config) -> pd.Series:
     alpha = config.alpha
     beta  = config.beta
 
-    # Forward return (vectorised)
-    future_close = np.full(n, np.nan)
-    future_close[: n - k] = close[k:]
+    # Entry price: open[t+1] — the first realistic fill after signal at bar t
+    future_open = np.full(n, np.nan)
+    future_open[: n - 1] = open_[1:]               # open_{t+1}
 
-    ret     = ((1 - f) * future_close - (1 + f) * open_) / (open_ + 1e-9)
+    # Exit price: close[t+1+k] — k bars after entry
+    future_close = np.full(n, np.nan)
+    future_close[: n - k - 1] = close[k + 1:]      # close_{t+1+k}
+
+    ret     = ((1 - f) * future_close - (1 + f) * future_open) / (future_open + 1e-9)
     abs_ret = np.abs(ret)
     in_band = (abs_ret > alpha) & (abs_ret < beta)
 
     labels = np.ones(n, dtype=np.int64)   # Hold by default
 
     if config.use_trend_confirm:
-        # Original Parente et al. — requires EMA trend alignment
+        # Requires EMA trend alignment at exit relative to entry bar
         ema_close = (
             pd.Series(close)
             .ewm(span=config.back_window, adjust=False)
             .mean()
             .values
         )
-        future_ema = np.full(n, np.nan)
-        future_ema[: n - k] = ema_close[k:]
-        trend = future_ema - ema_close
+        # EMA at exit (t+1+k) vs EMA at entry bar (t+1)
+        future_ema      = np.full(n, np.nan)
+        entry_ema       = np.full(n, np.nan)
+        future_ema[: n - k - 1] = ema_close[k + 1:]
+        entry_ema[: n - 1]      = ema_close[1:]
+        trend = future_ema - entry_ema
 
         labels[in_band & (ret > 0) & (trend > 0)] = BUY
         labels[in_band & (ret < 0) & (trend < 0)] = SELL
@@ -76,8 +91,8 @@ def compute_labels(df: pd.DataFrame, config: Config) -> pd.Series:
         labels[in_band & (ret > 0)] = BUY
         labels[in_band & (ret < 0)] = SELL
 
-    # Last k rows have no valid forward return
-    labels[n - k:] = HOLD
+    # Last k+1 rows have no valid forward return (need open[t+1] and close[t+1+k])
+    labels[n - k - 1:] = HOLD
 
     return pd.Series(labels, index=df.index, name="label")
 

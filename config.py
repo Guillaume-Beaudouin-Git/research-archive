@@ -37,8 +37,8 @@ class Config:
                                 # lower win rate, more realistic training
     beta: float = 0.15          # FIX: lowered from 0.264 to 0.15 (15%)
                                 # Still filters black swans but less extreme
-    fee: float = 0.002          # FIX: raised from 0.001 to 0.002 (0.2% per side)
-                                # More realistic for crypto exchanges
+    fee: float = 0.00035        # Hyperliquid taker fee (0.035% per side)
+                                # Previous value 0.002 was 5.7× too high
     use_trend_confirm: bool = False  # FIX: was implicitly True in old labeler
                                      # Removing EMA trend confirmation reduces
                                      # circular labeling bias

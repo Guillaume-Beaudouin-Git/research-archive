@@ -21,6 +21,16 @@ Key fixes vs original:
        Force-exit any position held longer than 30 bars.
        Prevents holding indefinitely through adverse moves.
 
+    5. CORRECT EXECUTION TIMING (deferred by 1 bar)
+       Features at bar i include close[i], which is not available at
+       open[i].  The signal from bar i therefore executes at open[i+1].
+       Previously entering at open[i] created a fatal look-ahead bias:
+       100% of BUY bars had Close > Open, inflating win rate to 91% and
+       Sharpe to 3.5+.  After the fix, Sharpe reflects true OOS skill.
+
+       Mechanical exits (stop-loss at close[i], max-hold at open[i]) are
+       NOT deferred — they are price-triggered, not signal-triggered.
+
 Performance metrics unchanged: Sharpe, Calmar, MDD, Win Rate, Profit Factor.
 
 # TODO (Task 6): add Backtester.apply_hyperliquid_costs(equity_df, trades_df,
@@ -67,6 +77,15 @@ class Backtester:
         Returns:
             equity_df:  DataFrame with columns ['equity', 'returns'].
             trade_log:  DataFrame of individual completed trades.
+
+        Execution model:
+            Signal from predictions[i] is computed from features that
+            include close[i].  Since close[i] is unknown at open[i],
+            the signal is deferred: it executes at open[i+1].
+
+            Mechanical exits are NOT deferred:
+              - Stop-loss: checked at close[i], exits at close[i].
+              - Max-hold:  checked at bar start, exits at open[i].
         """
         cfg         = self.cfg
         n           = len(prices)
@@ -88,13 +107,65 @@ class Backtester:
         trade_log: List[dict] = []
         position_arr = np.zeros(n, dtype=np.int8)   # records position held at end of each bar
 
+        pending_sig: Optional[int] = None   # queued signal to execute at THIS bar's open
+
         for i in range(n):
             sig     = int(predictions[i])
             open_p  = float(prices["Open"].iloc[i])
             close_p = float(prices["Close"].iloc[i])
 
+            # was_in_position: True if we held a position at bar START (before
+            # any execution this bar).  Used to avoid double-counting bars_held
+            # when a pending entry fires on this bar.
+            was_in_position = position != 0
+
+            # ── Execute signal queued from PREVIOUS bar ────────────────
+            # predictions[i-1] was computed from features(close[i-1]).
+            # Earliest realistic fill is open[i] — executed here.
+            if pending_sig is not None:
+                if position == 0:
+                    if pending_sig == BUY:
+                        position    = 1
+                        entry_price = open_p * (1 + fee + slippage)
+                        bars_held   = 0
+                    elif pending_sig == SELL and allow_short:
+                        position    = -1
+                        entry_price = open_p * (1 - fee - slippage)
+                        bars_held   = 0
+                elif position == 1 and pending_sig == SELL:
+                    # Exit long
+                    capital, log = self._exit(
+                        capital, position, entry_price, pos_size,
+                        exit_price=open_p, fee=fee, slippage=slippage,
+                        reason="signal", step=i,
+                    )
+                    trade_log.append(log)
+                    position  = 0
+                    bars_held = 0
+                    if auto_flip and allow_short:
+                        position    = -1
+                        entry_price = open_p * (1 - fee - slippage)
+                        bars_held   = 0
+                elif position == -1 and pending_sig == BUY:
+                    # Cover short
+                    capital, log = self._exit(
+                        capital, position, entry_price, pos_size,
+                        exit_price=open_p, fee=fee, slippage=slippage,
+                        reason="signal", step=i,
+                    )
+                    trade_log.append(log)
+                    position  = 0
+                    bars_held = 0
+                    if auto_flip:
+                        position    = 1
+                        entry_price = open_p * (1 + fee + slippage)
+                        bars_held   = 0
+                pending_sig = None
+
             # ── Max hold bars: force exit ──────────────────────────────
-            if position != 0:
+            # Only runs for positions that were open at bar START (not
+            # for positions just entered via pending_sig above).
+            if was_in_position and position != 0:
                 bars_held += 1
                 if bars_held >= max_hold:
                     capital, log = self._exit(
@@ -119,57 +190,16 @@ class Backtester:
                     position  = 0
                     bars_held = 0
 
-            # ── Signal processing ──────────────────────────────────────
-            if position == 0:
-                # Flat: look for entry signal
-                if sig == BUY:
-                    position    = 1
-                    entry_price = open_p * (1 + fee + slippage)
-                    bars_held   = 0
-                elif sig == SELL and allow_short:
-                    position    = -1
-                    entry_price = open_p * (1 - fee - slippage)
-                    bars_held   = 0
-
-            elif position == 1 and sig == SELL:
-                # Exit long
-                capital, log = self._exit(
-                    capital, position, entry_price, pos_size,
-                    exit_price=open_p, fee=fee, slippage=slippage,
-                    reason="signal", step=i,
-                )
-                trade_log.append(log)
-                position  = 0
-                bars_held = 0
-
-                # FIX: auto_flip=False means we go FLAT after exit
-                # Only re-enter if explicitly enabled
-                if auto_flip and allow_short:
-                    position    = -1
-                    entry_price = open_p * (1 - fee - slippage)
-                    bars_held   = 0
-
-            elif position == -1 and sig == BUY:
-                # Cover short
-                capital, log = self._exit(
-                    capital, position, entry_price, pos_size,
-                    exit_price=open_p, fee=fee, slippage=slippage,
-                    reason="signal", step=i,
-                )
-                trade_log.append(log)
-                position  = 0
-                bars_held = 0
-
-                # FIX: auto_flip=False means we go FLAT after exit
-                if auto_flip:
-                    position    = 1
-                    entry_price = open_p * (1 + fee + slippage)
-                    bars_held   = 0
+            # ── Queue signal for execution at NEXT bar's open ──────────
+            # HOLD signals are not queued — no action needed.
+            if sig != HOLD:
+                pending_sig = sig
 
             equity[i] = capital
             position_arr[i] = position   # record end-of-bar position
 
         # ── Force close at end of period ───────────────────────────────
+        # pending_sig (if any) is silently dropped — no next bar to fill.
         if position != 0:
             final = float(prices["Close"].iloc[-1])
             capital, log = self._exit(
