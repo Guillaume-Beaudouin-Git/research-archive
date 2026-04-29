@@ -2,7 +2,7 @@
 
 ## Overview
 
-Algo_claude is a daily algorithmic trading system that trains a PyTorch MLP classifier on OHLCV price history to generate directional signals (BUY / HOLD / SELL) for crypto perpetuals traded on [Hyperliquid](https://hyperliquid.xyz). It is designed for a solo operator running a daily cron job on a Linux VPS, with a layered safety system that halts trading automatically if any guardrail fails. The project is in testnet validation — no live capital has been deployed.
+Algo_claude is a daily algorithmic trading system that trains a PyTorch MLP classifier on OHLCV price history to generate directional signals (BUY / HOLD / SELL) for crypto perpetuals traded on [Hyperliquid](https://hyperliquid.xyz). It is designed for a solo operator running a daily cron job on a Linux VPS, with a layered safety system that halts trading automatically if any guardrail fails. The project is in testnet validation — no live capital has been deployed. A backtest audit revealed and corrected a one-bar look-ahead bias in the original backtester — see Status for corrected results.
 
 ---
 
@@ -105,6 +105,8 @@ The Deflated Sharpe Ratio (DSR), introduced by Bailey & López de Prado (2014), 
 
 **DSR is used here exclusively as a backtest validation metric.** It tells you whether a historical equity curve is likely to reflect genuine edge rather than overfitting. It has no role in position sizing.
 
+A critical backtest audit uncovered a one-bar execution look-ahead: the original backtester entered trades at open[i] using features computed from close[i], which is future information at execution time. This inflated the reported Sharpe from 0.48 to 3.56. The fix defers execution to open[i+1] and realigns labels accordingly. The corrected walk-forward Sharpe (mean 0.40 across 8 BTC folds) is not statistically distinguishable from zero, confirming the current feature set and model architecture do not produce reliable edge on daily crypto data.
+
 **Position sizing is fixed:** the live trader always deploys 30% of configured capital per trade (`config.py: position_size = 0.30`), regardless of model confidence or DSR score.
 
 > Bailey, D. H., & López de Prado, M. (2014). *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality.* Journal of Portfolio Management, 40(5), 94–107. https://doi.org/10.3905/jpm.2014.40.5.094
@@ -127,6 +129,8 @@ Seven integration tests in `test_live_dryrun.py` exercise every guardrail agains
 
 **A production bug was caught and fixed during integration testing.** The original `get_signal()` set `model.train()` to enable Dropout sampling, which simultaneously put BatchNorm layers into training mode. With `batch_size=1` (single-sample inference in the live loop), PyTorch BatchNorm in training mode raises `ValueError: Expected more than 1 value per channel when training` because batch variance is undefined. The fix routes all inference through `model.predict_proba()`, which selectively sets only Dropout layers to train mode while keeping BatchNorm in eval mode (using frozen running statistics from training). This makes single-sample MC Dropout inference numerically and mechanically stable.
 
+A second critical bug — one-bar execution look-ahead in `backtest.py` — was discovered through systematic backtest auditing: 100% of BUY-signal bars had Close > Open, which is impossible without information leakage. The fix shifts trade execution from open[i] to open[i+1] when the signal is computed at close[i]. This reduced the reported BTC Sharpe from 3.56 to 0.48 and walk-forward mean Sharpe from 3.99 to 0.40.
+
 ---
 
 ## Deployment
@@ -145,7 +149,7 @@ The system is designed to run as a **daily cron job on a Linux VPS** (Hetzner CX
 2. **Paper monitoring** — run dry-run alongside the live market for several weeks; compare logged signals against actual price moves.
 3. **Mainnet** — only after testnet validation is satisfactory and the operator understands the risk.
 
-The system is currently in phase 1 (testnet validation). It has not been deployed to mainnet.
+Phase 1 reached — one testnet trade executed. Trading paused pending strategy redesign after backtest audit revealed look-ahead bias. It has not been deployed to mainnet.
 
 ---
 
@@ -188,7 +192,13 @@ Algo_claude/
 
 ## Status
 
-The codebase is complete and hardened for testnet deployment: the full pipeline from data ingestion through signal generation, guardrail enforcement, order execution, and alerting is implemented and covered by integration tests. All seven tests pass from the current repository location. What is **not** done: the system has not yet been deployed to a VPS, no live or testnet trades have been executed, and no real performance track record exists. This is a **personal learning project** built to understand the engineering of a production-grade algorithmic trading system — it is not an audited fund, not a signal service, and the backtest results (where they exist) should not be interpreted as a reliable forecast of future returns. The backtested Sharpe numbers produced by `oos_eval.py` are gross of Hyperliquid taker fees (0.035%) and funding rate P&L, which are not yet modeled in the backtester — realistic live Sharpe is expected to be materially lower once these costs are applied.
+The codebase is complete and has been deployed to a Hetzner CX22 VPS running daily cron jobs against Hyperliquid testnet. One testnet trade was executed successfully (BTC-USD short, April 28 2026) before trading was paused pending strategy revision.
+
+A backtest audit revealed that the original backtester suffered from a one-bar execution look-ahead bias, inflating reported Sharpe ratios by approximately 8x (3.56 → 0.48 for BTC-USD). The bias was identified through a diagnostic showing 100% of BUY-signal bars had Close > Open — a statistical impossibility without information leakage. The backtester and labeler have been corrected; the walk-forward mean Sharpe after correction is 0.40 (not statistically different from zero).
+
+Current status: infrastructure is production-ready, strategy requires fundamental redesign. The model architecture (MLP on daily OHLCV with standard TA indicators) does not produce reliable edge after proper execution alignment. Next steps involve exploring alternative feature sets (on-chain data, cross-sectional signals, higher-frequency bars) on top of the existing hardened deployment infrastructure.
+
+This is a personal learning project. The corrected backtest results should not be interpreted as evidence of trading edge.
 
 ---
 
