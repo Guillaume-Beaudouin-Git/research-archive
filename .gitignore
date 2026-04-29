@@ -23,6 +23,7 @@ model_store/
 state.json
 state_*.json
 outputs/
+data/
 fills.csv
 funding.csv
 
