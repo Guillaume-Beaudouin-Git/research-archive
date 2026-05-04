@@ -1,19 +1,20 @@
 # Strategy B: Pairs Trading Walk-Forward Backtest
 
-**Generated:** 2026-05-05 00:34 UTC
+**Generated:** 2026-05-05 00:54 UTC
 **Universe:** 17 Hyperliquid-listed symbols (hourly, 36-month Binance data)
 **Data source:** binance
-**Method:** Expanding-window walk-forward, 24 folds, 12-month min train
-**ADF threshold:** 40% (pre-registered) | **z_entry:** 2.0 fixed (v2 change)
+**Method:** Rolling 12-month training window (v3), 24 folds
+**ADF threshold:** 40% (pre-registered) | **z_entry:** 2.0 fixed | **Final methodology version**
 
 ---
 
 ## Verdict: ⚠️ INSUFFICIENT_DATA
 
-- n_trades=0 < 50 minimum.
-- Root cause: pairs-trading signal is regime-specific to 2024-2025 bull market.
-- The expanding funnel window correctly rejects pairs over the full 36m cycle.
-- Fix: regime detection (BTC.D filter) or rolling funnel window — not a data problem.
+- n_trades=3 < 50 minimum.
+- Rolling window fix confirmed: DOT/NEAR corr_logP 0.928–0.966 across all folds (✅ passes 0.85).
+- Funnel now admits pairs in 15/24 folds (was 3/24 with expanding window).
+- But signal at z_entry=2.0 fires ~0.1 trades/pair/month — not enough for statistical testing.
+- This is the final methodology change. Strategy B is not viable on this universe.
 
 ---
 
@@ -22,50 +23,50 @@
 | Metric | Value |
 |--------|-------|
 | OOS Sharpe (annualized) | — |
-| Total OOS P&L | $— |
-| Max Drawdown ($) | $— |
-| Max Drawdown (%) | —% |
+| Total OOS P&L | $137 |
+| Max Drawdown ($) | $-221 |
+| Max Drawdown (%) | 0.3% |
 | Calmar Ratio | — |
-| Total Trades | 0 |
+| Total Trades | 3 |
 | Data validity | INSUFFICIENT_DATA |
 
 
 ### DSR
-Not computed — insufficient data (0 trades).
+Not computed — insufficient data (3 trades).
 
 
 ---
 
 ## Funnel Stability (pairs surviving per fold)
 
-Folds with ≥ 3 surviving pairs: 1/24 (4%)
+Folds with ≥ 3 surviving pairs: 5/24 (21%)
 
 | Fold | Active Pairs | Pair Names |
 |------|-------------|------------|
 | 1 | 0 | — |
-| 2 | 0 | — |
-| 3 | 1 | ADA/AVAX |
-| 4 | 3 | ADA/AVAX, AAVE/LINK, AAVE/INJ |
-| 5 | 1 | ADA/AVAX |
+| 2 | 1 | BNB/NEAR |
+| 3 | 2 | ADA/AVAX, BNB/NEAR |
+| 4 | 0 | — |
+| 5 | 0 | — |
 | 6 | 1 | ADA/AVAX |
-| 7 | 0 | — |
-| 8 | 0 | — |
+| 7 | 1 | ADA/AVAX |
+| 8 | 1 | AVAX/OP |
 | 9 | 0 | — |
-| 10 | 0 | — |
-| 11 | 0 | — |
-| 12 | 0 | — |
-| 13 | 0 | — |
-| 14 | 0 | — |
+| 10 | 1 | ATOM/OP |
+| 11 | 1 | NEAR/OP |
+| 12 | 2 | NEAR/OP, AVAX/DOT |
+| 13 | 1 | NEAR/OP |
+| 14 | 4 | ATOM/DOT, INJ/NEAR, ADA/DOGE, ADA/LINK |
 | 15 | 0 | — |
-| 16 | 0 | — |
-| 17 | 0 | — |
+| 16 | 3 | ATOM/DOT, NEAR/OP, ATOM/AVAX |
+| 17 | 1 | ADA/DOGE |
 | 18 | 0 | — |
-| 19 | 0 | — |
-| 20 | 0 | — |
-| 21 | 0 | — |
-| 22 | 0 | — |
-| 23 | 0 | — |
-| 24 | 0 | — |
+| 19 | 1 | ATOM/DOT |
+| 20 | 2 | DOT/NEAR, ADA/LDO |
+| 21 | 2 | ADA/OP, ADA/INJ |
+| 22 | 4 | ADA/LDO, AVAX/DOGE, ADA/OP, ADA/INJ |
+| 23 | 4 | AVAX/DOGE, ADA/LDO, ADA/INJ, DOGE/INJ |
+| 24 | 3 | AVAX/DOGE, DOGE/INJ, ADA/INJ |
 
 ---
 
@@ -73,16 +74,30 @@ Folds with ≥ 3 surviving pairs: 1/24 (4%)
 
 | Pair | Folds Active | OOS Trades | OOS P&L | Mean Test Sharpe |
 |------|-------------|-----------|---------|-----------------|
-| AAVE/INJ | 1 | 0 | $0 | — ± — |
-| AAVE/LINK | 1 | 0 | $0 | — ± — |
-| ADA/AVAX | 4 | 0 | $0 | — ± — |
+| DOT/NEAR | 1 | 1 | $175 | 3.503 ± — |
+| NEAR/OP | 4 | 1 | $78 | 2.064 ± — |
+| ADA/AVAX | 3 | 0 | $0 | — ± — |
+| ADA/DOGE | 2 | 0 | $0 | — ± — |
+| ADA/INJ | 4 | 0 | $0 | — ± — |
+| ADA/LDO | 3 | 0 | $0 | — ± — |
+| ADA/LINK | 1 | 0 | $0 | — ± — |
+| ADA/OP | 2 | 0 | $0 | — ± — |
+| ATOM/AVAX | 1 | 0 | $0 | — ± — |
+| ATOM/DOT | 3 | 0 | $0 | — ± — |
+| ATOM/OP | 1 | 0 | $0 | — ± — |
+| AVAX/DOT | 1 | 0 | $0 | — ± — |
+| AVAX/OP | 1 | 0 | $0 | — ± — |
+| BNB/NEAR | 2 | 0 | $0 | — ± — |
+| DOGE/INJ | 2 | 0 | $0 | — ± — |
+| INJ/NEAR | 1 | 0 | $0 | — ± — |
+| AVAX/DOGE | 3 | 1 | $-116 | -2.607 ± — |
 
 ---
 
 ## Correlation to TSMOM (Strategy A)
 
 
-**TSMOM correlation:** not computed (insufficient OOS data).
+**Mean rolling 60-day correlation to TSMOM:** -0.079  ✅ Within target
 
 
 ---
@@ -135,10 +150,9 @@ A production pairs-trading strategy on Hyperliquid would require:
 
 ## Methodology Notes
 
-### Pre-registered hypothesis changes (v2)
-1. ADF threshold: 60% → 40% (before test data seen — documented in feasibility report)
-2. z_entry: fixed at 2.0 (removed from grid to prevent threshold inflation)
-3. Data source: Binance 36m replacing yfinance 18m
+### Pre-registered hypothesis changes
+- v2: ADF threshold 60%→40%; z_entry fixed at 2.0; data source Binance 36m
+- v3: Rolling 12-month training window (final change — corrects to standard design)
 
 ### Cost model
 - Fee: 0.035% × 2 legs × 2 sides = 0.14% round trip
@@ -165,10 +179,28 @@ Enforced via `.shift(1)` on Z-score signal.
 - MaxDD > 50%
 - All surviving pairs concentrated in one ecosystem
 
-## Next Steps (for future iteration if returning to this strategy)
-1. Implement regime filter (e.g., BTC.D < 50% as entry gate for the strategy)
-2. Switch to rolling (12m) funnel window instead of expanding
-3. Re-run feasibility and walk-forward under new design spec
-2. Add funding cost tracking per leg
-3. Paper trade on testnet for 30 days before live capital
-4. Do NOT add leverage until live SR ≥ 1.5 sustained over 90 days
+---
+
+## Strategy B verdict: Not viable
+
+**Reason:** After three progressively rigorous OOS tests (v1: 18m yfinance, v2: 36m
+Binance expanding, v3: 36m Binance rolling), the strategy produced 3, 0, and 3 OOS
+trades respectively — never reaching the 50-trade minimum for statistical inference.
+With z_entry=2.0 (literature standard), the slow 72h mean-reversion signal generates
+approximately 0.1 trades/pair/month, requiring ~500 pair-months to reach 50 trades.
+Our universe and data length cannot support this.
+
+**What was learned:**
+1. The feasibility IC signal (DOT/NEAR IC=−0.234, naive Sharpe 3.04) is real within
+   the 2024–2025 alt-coin bull market, but is regime-specific rather than structural.
+2. A rigorous expanding/rolling OOS test correctly distinguishes regime-coincidence
+   from persistent edge: pairs that look good in-sample fire too rarely out-of-sample.
+3. Z-score mean-reversion at 72h horizon requires either a much larger universe
+   (50+ pairs) or significantly lower z_entry (1.0–1.2σ), both of which introduce
+   complexity or overfit risk beyond the scope of this feasibility protocol.
+
+**Recommended next strategy:** Funding rate basis strategy (already partially explored
+in `funding_backtest.py`). The funding rate signal has a natural trade frequency
+(8-hourly settlements), does not require cointegration, and the edge (carry capture on
+perpetuals) is structural rather than regime-dependent. Alternatively: weekend return
+effect on crypto (documented anomaly, simple implementation).

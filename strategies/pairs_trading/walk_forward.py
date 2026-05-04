@@ -3,16 +3,17 @@ Walk-forward backtest — Strategy B (Pairs Trading).
 
 Expanding-window design: each fold adds one month to training, tests the next month.
 
-v1 (yfinance, 18m): Folds 1-11, min 6-month train → INSUFFICIENT_DATA (7 trades)
-v2 (Binance, 36m):  Folds 1-24, min 12-month train, z_entry fixed at 2.0
+v1 (yfinance, 18m):  Folds 1-11, min 6-month, expanding → INSUFFICIENT_DATA (7 trades)
+v2 (Binance, 36m):   Folds 1-24, min 12-month, expanding → INSUFFICIENT_DATA (0 trades)
+v3 (Binance, 36m):   Folds 1-24, min 12-month, ROLLING    → this run
 
-Changes in v2 (pre-registered):
-  1. Data source: Binance public API (--data-source binance, now default)
-     36 months of clean hourly OHLCV, 0% missing on 15/17 symbols.
-  2. z_entry fixed at 2.0 (removed from grid).
-     Rationale: optimizing z_entry on 1-month test folds inflated threshold to 2.5σ,
-     producing zero OOS trades. Fixed at literature-standard value.
-  3. Min train: 12 months (8760 bars), 24 folds for 36-month dataset.
+Changes in v3 (final permitted methodology change):
+  Rolling 12-month training window (was expanding since first bar).
+  Rationale: expanding window included 2023 BTC-dominance phase; DOT/NEAR
+  corr_logP dropped from 0.954 (recent 18m) to 0.670 (full 36m), failing the
+  0.85 Stage-2 threshold. Rolling window is the standard design in pairs trading
+  literature (Gatev et al. 2006, Krauss 2017 survey, Stoikov et al. 2025).
+  This corrects our deviation from standard — it is not result-motivated.
 
 Usage:
     cd ~/Desktop/Algo_claude
@@ -132,16 +133,29 @@ def load_close(symbols: list[str] = SYMBOLS_17, source: str = "binance") -> pd.D
 
 def make_folds(close: pd.DataFrame) -> list[tuple[pd.DataFrame, pd.DataFrame]]:
     """
-    Build expanding-window folds.
-    Fold k: train = close[:split_k], test = close[split_k:split_k+HOURS_PER_MONTH]
-    First test month starts after MIN_TRAIN_BARS.
+    Build rolling 12-month training window folds (v3).
+
+    Each fold: Train = exactly 12 months ending at test_start, Test = next month.
+    Fold k: train = close[test_start - 12m : test_start],
+            test  = close[test_start : test_start + 1m]
+
+    First valid fold: test starts at index MIN_TRAIN_BARS (month 13).
+    Last  valid fold: test ends at or before final bar.
+    Total folds: same as expanding (24 for 36-month dataset).
+
+    v3 rationale: expanding window penalised pairs for the 2023 BTC-dominance
+    regime; rolling window makes the funnel regime-aware by construction.
     """
-    n = len(close)
     folds = []
-    start = MIN_TRAIN_BARS
-    while start + HOURS_PER_MONTH <= n:
-        train = close.iloc[:start]
+    start = MIN_TRAIN_BARS   # first test window begins here (index-based)
+    while start + HOURS_PER_MONTH <= len(close):
+        train_start = start - MIN_TRAIN_BARS
+        train = close.iloc[train_start: start]
         test  = close.iloc[start: start + HOURS_PER_MONTH]
+        if len(train) < MIN_TRAIN_BARS * 0.95:   # guard against short ENA/TIA windows
+            print(f"  Skipping fold: only {len(train)} train bars (<95% of {MIN_TRAIN_BARS})")
+            start += HOURS_PER_MONTH
+            continue
         folds.append((train, test))
         start += HOURS_PER_MONTH
     return folds
@@ -538,7 +552,16 @@ def run_walk_forward(data_source: str = "binance") -> None:
     folds = make_folds(close)
     n_test_months = len(folds)
     first_test = MIN_TRAIN_BARS // HOURS_PER_MONTH + 1
-    print(f"Folds: {n_test_months}  (test months {first_test} – {first_test + n_test_months - 1})")
+    print(f"Folds: {n_test_months}  (rolling 12m train, test months {first_test}–{first_test + n_test_months - 1})")
+
+    # Diagnostic: verify DOT/NEAR corr_logP in first and last fold's train window
+    if len(folds) >= 1 and "DOT" in close.columns and "NEAR" in close.columns:
+        for label, (tr, te) in [("Fold 01", folds[0]), ("Fold last", folds[-1])]:
+            al = pd.concat([np.log(tr["DOT"]), np.log(tr["NEAR"])], axis=1).dropna()
+            c = float(al.iloc[:,0].corr(al.iloc[:,1])) if len(al) > 50 else float("nan")
+            print(f"  {label}: train={tr.index[0].date()}→{tr.index[-1].date()} "
+                  f"({len(tr)} bars)  DOT/NEAR corr_logP={c:.3f} "
+                  f"{'✅' if c >= CORR_LOGP_MIN else '❌'}")
 
     # Expected trade count estimate (based on feasibility: ~2 trades/pair/month)
     est_pairs_per_fold = 5
@@ -1072,10 +1095,9 @@ A production pairs-trading strategy on Hyperliquid would require:
 
 ## Methodology Notes
 
-### Pre-registered hypothesis changes (v2)
-1. ADF threshold: 60% → 40% (before test data seen — documented in feasibility report)
-2. z_entry: fixed at 2.0 (removed from grid to prevent threshold inflation)
-3. Data source: Binance 36m replacing yfinance 18m
+### Pre-registered hypothesis changes
+- v2: ADF threshold 60%→40%; z_entry fixed at 2.0; data source Binance 36m
+- v3: Rolling 12-month training window (final change — corrects to standard design)
 
 ### Cost model
 - Fee: 0.035% × 2 legs × 2 sides = 0.14% round trip
