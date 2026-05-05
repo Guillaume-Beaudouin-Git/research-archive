@@ -146,13 +146,15 @@ def flat_states():
         p.unlink(missing_ok=True)
 
 
-def test_dry_run_state_unchanged(flat_states, monkeypatch):
+@patch("tsmom_live.log_trade_csv")
+def test_dry_run_state_unchanged(mock_log_csv, flat_states, monkeypatch):
     """Dry-run must never open, flip, or close a position."""
     monkeypatch.setattr(tsmom_live, "fetch_ohlcv", lambda sym: FRESH_UP_DF)
     monkeypatch.setattr(tsmom_live.notifier, "send", lambda *a, **kw: None)
 
     tsmom_live.run(dry_run=True)
 
+    assert mock_log_csv.called, "log_trade_csv was not called — logging is broken"
     for sym in tsmom_live.ASSETS:
         state = json.loads(tsmom_live._state_path(sym).read_text())
         assert state["position"] == "flat", (
@@ -164,7 +166,8 @@ def test_dry_run_state_unchanged(flat_states, monkeypatch):
 # Test 4 — Dry-run: HyperliquidClient never instantiated
 # ══════════════════════════════════════════════════════════════════════════
 
-def test_no_exchange_calls_in_dry_run(monkeypatch):
+@patch("tsmom_live.log_trade_csv")
+def test_no_exchange_calls_in_dry_run(mock_log_csv, monkeypatch):
     """
     In dry-run without private_key, the exchange client must never be
     instantiated and no order methods may be called.
@@ -192,7 +195,8 @@ def test_no_exchange_calls_in_dry_run(monkeypatch):
 # Test 5 — Telegram alert covers all 3 assets
 # ══════════════════════════════════════════════════════════════════════════
 
-def test_telegram_alert_covers_all_assets(monkeypatch):
+@patch("tsmom_live.log_trade_csv")
+def test_telegram_alert_covers_all_assets(mock_log_csv, monkeypatch):
     """The summary Telegram message must reference BTC-USD, ETH-USD, SOL-USD."""
     monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "999:FAKETOKEN")
     monkeypatch.setenv("TELEGRAM_CHAT_ID",   "-9999999")

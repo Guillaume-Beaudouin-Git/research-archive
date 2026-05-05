@@ -165,6 +165,8 @@ def compute_live_signal(close: pd.Series) -> tuple[int, float]:
     cum_ret      = log_ret.iloc[-LOOKBACK:].sum()
     signal       = int(np.sign(cum_ret))
 
+    # Vol methodology: log returns, VOL_LOOKBACK(30)-bar window, annualized by
+    # sqrt(365). Matches TSMOMStrategy.compute_vol_scalar() in tsmom_strategy.py.
     realized_vol = log_ret.iloc[-VOL_LOOKBACK:].std() * np.sqrt(TRADING_DAYS)
     if realized_vol <= 0:
         raise ValueError(f"Realized vol is zero or negative: {realized_vol}")
