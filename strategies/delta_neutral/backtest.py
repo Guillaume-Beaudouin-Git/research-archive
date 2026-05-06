@@ -245,7 +245,7 @@ def run_walkforward(
             train_slice = data[
                 (data.index >= fold_start) & (data.index < train_end)
             ]
-            if len(train_slice) < 24 * 30:  # need ≥30 days of training data
+            if len(train_slice) < 3 * 30:  # need ≥30 days of training data (3 × 8h bars/day)
                 continue
             # 30d trailing mean |funding| in training window
             mean_funding = train_slice["funding"].abs().iloc[-24*30:].mean()
@@ -656,8 +656,8 @@ def main() -> None:
         n_dropped = len(funding) - len(aligned)
         print(f"    Aligned: {len(aligned)} bars (dropped {n_dropped} for missing data)")
 
-        if len(aligned) < 24 * 30 * 2:  # need at least 2 months aligned data
-            print(f"    Insufficient aligned data — skipping {asset}")
+        if len(aligned) < 3 * 30 * 2:  # need at least 2 months aligned data (3 bars/day × 30 days × 2)
+            print(f"    Insufficient aligned data ({len(aligned)} bars < 180) — skipping {asset}")
             continue
 
         asset_data[asset] = aligned
