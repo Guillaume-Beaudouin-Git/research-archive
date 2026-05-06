@@ -66,8 +66,11 @@ RECONCILE_TOL     = 0.05                 # 5% spot/perp size mismatch tolerance
 MAX_FUNDING_AGE_H = 2                    # HL data staleness limit
 MIN_VOL_USD       = 10_000_000           # Binance mainnet 24h volume floor ($10M)
 
-# Phase 1 viable universe (MEGA excluded: insufficient Binance spot history)
-VIABLE_ASSETS = ["TST", "WLD", "STX", "BIO", "TRUMP", "HMSTR"]
+# Viable universe from current universe.py run (2026-05-06).
+# Runtime volume check re-validates each asset against MIN_VOL_USD every run,
+# so assets that drop below the floor (e.g. HMSTR $7M, BIO $9.2M) are excluded
+# automatically without changing this list.
+VIABLE_ASSETS = ["TST", "MEGA", "WLD", "STX", "WIF", "BIO", "TRUMP", "HMSTR"]
 
 STOP_PATH = REPO_ROOT / "STOP"
 STATE_DIR = REPO_ROOT / "data" / "delta_neutral" / "live_state"
