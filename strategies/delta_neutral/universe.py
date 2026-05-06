@@ -27,13 +27,17 @@ from pathlib import Path
 
 import pandas as pd
 import requests
+from binance.client import Client as BinanceClient
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR   = REPO_ROOT / "data" / "delta_neutral"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 HL_API      = "https://api.hyperliquid.xyz/info"
-BN_API      = "https://api.binance.com"
+# Volume check always uses the real Binance MAINNET public API (no keys needed).
+# Never use BinanceTestnetClient here — testnet volume is synthetic/fake and
+# would produce inflated or incorrect liquidity readings.
+_BN_MAINNET = BinanceClient()   # no API keys → public endpoints only
 MIN_DAYS    = 180          # minimum HL funding history
 MIN_VOL_USD = 10_000_000   # Binance 24h USDT volume floor
 CARRY_FLOOR = 0.0034       # 0.34% 7-day carry (covers round-trip costs)
@@ -119,20 +123,22 @@ def get_binance_spot_usdt() -> dict[str, float]:
     """
     Return {baseAsset: 24h_USDT_volume} for all actively-trading
     Binance USDT spot pairs above the volume floor.
-    Two separate REST calls (exchangeInfo + ticker/24hr).
+
+    ALWAYS uses _BN_MAINNET (Client() with no keys) so volume figures
+    reflect real market liquidity, not testnet synthetic data.
     """
-    # Active USDT trading pairs
-    info = requests.get(f"{BN_API}/api/v3/exchangeInfo", timeout=30).json()
+    # Active USDT trading pairs (mainnet exchange info)
+    info   = _BN_MAINNET.get_exchange_info()
     active = {
         s["baseAsset"]
         for s in info["symbols"]
         if s["quoteAsset"] == "USDT" and s["status"] == "TRADING"
     }
 
-    # 24-hour USDT volumes (one call returns all tickers)
-    tickers = requests.get(f"{BN_API}/api/v3/ticker/24hr", timeout=30).json()
-    volumes = {}
-    for t in tickers:
+    # All 24h tickers in a single mainnet call (passing no symbol = bulk)
+    all_tickers = _BN_MAINNET.get_ticker()
+    volumes: dict[str, float] = {}
+    for t in all_tickers:
         sym = t["symbol"]
         if sym.endswith("USDT"):
             base = sym[:-4]

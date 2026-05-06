@@ -36,12 +36,19 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
+from binance.client import Client as BinanceClient
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
 import notifier
 from strategies.delta_neutral.binance_testnet import BinanceTestnetClient
+
+# Mainnet client for volume checks (no API keys = public endpoints only).
+# Volume liquidity MUST come from mainnet regardless of whether trading
+# legs use testnet — testnet volume is synthetic and would pass or fail
+# the floor filter incorrectly.
+_BN_MAINNET = BinanceClient()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -57,6 +64,7 @@ MAX_ASSETS        = 5                    # cap simultaneous pairs
 NOTIONAL_USD      = 50.0                 # USD notional per asset
 RECONCILE_TOL     = 0.05                 # 5% spot/perp size mismatch tolerance
 MAX_FUNDING_AGE_H = 2                    # HL data staleness limit
+MIN_VOL_USD       = 10_000_000           # Binance mainnet 24h volume floor ($10M)
 
 # Phase 1 viable universe (MEGA excluded: insufficient Binance spot history)
 VIABLE_ASSETS = ["TST", "WLD", "STX", "BIO", "TRUMP", "HMSTR"]
@@ -66,6 +74,22 @@ STATE_DIR = REPO_ROOT / "data" / "delta_neutral" / "live_state"
 LOG_DIR   = REPO_ROOT / "logs"
 
 HL_API = "https://api.hyperliquid.xyz/info"
+
+
+# ─── BINANCE MAINNET VOLUME CHECK ────────────────────────────────────────────
+
+def get_mainnet_volume(asset: str) -> float | None:
+    """
+    Return Binance MAINNET 24h USDT quoteVolume for `asset`.
+    Uses _BN_MAINNET (Client() with no keys) so volume reflects real liquidity.
+    Returns None on API error.
+    """
+    try:
+        ticker = _BN_MAINNET.get_ticker(symbol=f"{asset}USDT")
+        return float(ticker["quoteVolume"])
+    except Exception as exc:
+        logger.warning(f"[{asset}] Mainnet volume fetch failed: {exc}")
+        return None
 
 
 # ─── HYPERLIQUID CARRY DATA ───────────────────────────────────────────────────
@@ -493,12 +517,30 @@ def run(
         from strategies.delta_neutral.hl_perp_client import HLPerpClient
         hl_client = HLPerpClient(private_key=hl_private_key, testnet=True)
 
+    # ── Volume filter (mainnet) — checked every run ───────────────────────────
+    # Asset mainnet liquidity can change over time. Re-validate each run to
+    # prevent trading illiquid assets even if they were viable at universe-build time.
+    logger.info("Checking Binance mainnet 24h volumes...")
+    volume_ok: set[str] = set()
+    for asset in VIABLE_ASSETS:
+        vol = get_mainnet_volume(asset)
+        if vol is None:
+            logger.warning(f"[{asset}] Could not fetch mainnet volume — excluding")
+            continue
+        if vol >= MIN_VOL_USD:
+            volume_ok.add(asset)
+            logger.info(f"[{asset}] mainnet vol=${vol/1e6:.1f}M PASS")
+        else:
+            logger.info(f"[{asset}] mainnet vol=${vol/1e6:.2f}M FAIL (floor=${MIN_VOL_USD/1e6:.0f}M) — excluding")
+
     # ── Carry filter ──────────────────────────────────────────────────────────
     logger.info("Fetching 30d HL carry data...")
     carry_data:   dict[str, float] = {}
     stale_assets: list[str]        = []
 
     for asset in VIABLE_ASSETS:
+        if asset not in volume_ok:
+            continue  # failed mainnet volume check — skip carry fetch too
         if not check_hl_data_freshness(asset):
             stale_assets.append(asset)
             logger.warning(f"[{asset}] Stale HL funding data (>{MAX_FUNDING_AGE_H}h) — skipping")
@@ -517,7 +559,7 @@ def run(
 
     active_assets = [a for a in VIABLE_ASSETS
                      if carry_data.get(a, 0.0) > CARRY_FLOOR_8H][:MAX_ASSETS]
-    logger.info(f"Active (carry > floor): {active_assets}")
+    logger.info(f"Active (vol + carry filters): {active_assets}")
 
     # ── Per-asset execution ────────────────────────────────────────────────────
     results: list[dict] = []
