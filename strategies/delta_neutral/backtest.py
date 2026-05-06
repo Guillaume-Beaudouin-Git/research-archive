@@ -206,7 +206,7 @@ def run_walkforward(
 ) -> tuple[pd.DataFrame, dict]:
     """
     Run walk-forward backtest. For each OOS month:
-      1. Train: compute 30d trailing mean |funding| per asset
+      1. Train: compute 30d trailing mean funding per asset (raw, not abs)
       2. Select active assets (mean funding > carry floor)
       3. Size: equal weight = TOTAL_CAPITAL / n_active
       4. OOS: compute P&L with entry cost deducted at first bar
@@ -247,8 +247,9 @@ def run_walkforward(
             ]
             if len(train_slice) < 3 * 30:  # need ≥30 days of training data (3 × 8h bars/day)
                 continue
-            # 30d trailing mean |funding| in training window
-            mean_funding = train_slice["funding"].abs().iloc[-24*30:].mean()
+            # 30d trailing mean funding in training window (raw, not abs)
+            # abs() would wrongly include assets with net-negative carry (paying funding)
+            mean_funding = train_slice["funding"].iloc[-3*30:].mean()
             if mean_funding > CARRY_FLOOR_8H:
                 active_assets.append(asset)
 
