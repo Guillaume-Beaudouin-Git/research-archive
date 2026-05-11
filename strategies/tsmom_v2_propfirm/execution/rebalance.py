@@ -173,6 +173,15 @@ def run_weekly_rebalance(
     logger.info("Target positions (%d assets): %s", len(target_notionals),
                 {k: f"${v:.0f}" for k, v in target_notionals.items()})
 
+    # Scale down if total notional exceeds 90% of available capital
+    total_notional = sum(target_notionals.values())
+    available = capital * 0.90
+    if total_notional > available:
+        scale = available / total_notional
+        target_notionals = {k: v * scale for k, v in target_notionals.items()}
+        logger.info("Scaled positions by %.2f%% to fit available balance (total $%.0f → $%.0f)",
+                    scale * 100, total_notional, sum(target_notionals.values()))
+
     # 5 — Current positions from Propr
     if dry_run:
         current_positions: dict[str, dict] = {}
