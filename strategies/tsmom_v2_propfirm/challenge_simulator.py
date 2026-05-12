@@ -541,6 +541,431 @@ def plot_vol_sweep(
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# REGIME FILTER — Steps 1–6
+# ─────────────────────────────────────────────────────────────────────────────
+
+HL_DATA_DIR       = Path(__file__).parent.parent / "cs_carry" / "data"
+REGIME_VOL_TARGET = 0.15
+REGIME_THRESHOLDS = [0.0, 0.20, 0.35, 0.50, 0.60, 0.70, 0.80]
+TODAY_DATE        = "2026-05-11"
+
+
+def _load_btc_funding() -> "pd.Series | None":
+    """Load cached BTC hourly funding from strategies/cs_carry/data/BTC_hl_funding.csv."""
+    cache = HL_DATA_DIR / "BTC_hl_funding.csv"
+    if not cache.exists():
+        return None
+    df = pd.read_csv(cache, index_col=0, parse_dates=True)
+    s  = df.iloc[:, 0]
+    idx = pd.DatetimeIndex(s.index)
+    s.index = idx.tz_localize("UTC") if idx.tz is None else idx.tz_convert("UTC")
+    return s.sort_index()
+
+
+def compute_regime_score(
+    prices_df: pd.DataFrame,
+    date: pd.Timestamp,
+    btc_funding: "pd.Series | None" = None,
+) -> dict[str, Any]:
+    """
+    Compute regime indicators and composite score at `date`.
+    All indicators use data strictly up to and including `date` (no look-ahead).
+
+    Returns dict with individual booleans, floats, and composite regime_score ∈ [0, 1].
+    """
+    btc_col = "BTC-USD" if "BTC-USD" in prices_df.columns else prices_df.columns[0]
+    btc = prices_df.loc[:date, btc_col].dropna()
+
+    _null: dict[str, Any] = {
+        "btc_above_ma50": False, "btc_above_ma20": False,
+        "btc_ma_slope": 0.0, "realized_vol_20d": 0.0,
+        "vol_percentile": 0.5, "avg_funding_7d": None,
+        "regime_score": 0.0,
+        "_ma50_pass": False, "_vol_pass": False, "_fund_pass": False,
+    }
+    if len(btc) < 52:
+        return _null
+
+    close_t = float(btc.iloc[-1])
+    ma_ser  = btc.rolling(20).mean()
+    ma50    = float(btc.rolling(50).mean().iloc[-1])
+    ma20    = float(ma_ser.iloc[-1])
+    ma20_5a = float(ma_ser.iloc[-6]) if len(btc) >= 25 else ma20
+
+    btc_above_ma50 = bool(close_t > ma50)
+    btc_above_ma20 = bool(close_t > ma20)
+    btc_ma_slope   = (ma20 - ma20_5a) / ma20_5a if ma20_5a != 0.0 else 0.0
+
+    # ── Volatility regime ────────────────────────────────────────────────────
+    daily_ret       = btc.pct_change().dropna()
+    roll_vol        = daily_ret.rolling(20).std() * np.sqrt(252)
+    realized_vol_20d = float(roll_vol.iloc[-1]) if not pd.isna(roll_vol.iloc[-1]) else 0.0
+    hist_vols       = roll_vol.iloc[-252:].dropna()
+    vol_percentile  = float((hist_vols < realized_vol_20d).mean()) if len(hist_vols) >= 20 else 0.5
+
+    # ── Funding sentiment (optional) ─────────────────────────────────────────
+    avg_funding_7d: float | None = None
+    if btc_funding is not None:
+        date_utc = date.tz_localize("UTC") if date.tzinfo is None else date.tz_convert("UTC")
+        window   = btc_funding.loc[
+            (btc_funding.index >= date_utc - pd.Timedelta(days=7)) &
+            (btc_funding.index <= date_utc)
+        ]
+        if len(window) >= 24:
+            avg_funding_7d = float(window.mean())
+
+    # ── Composite score ──────────────────────────────────────────────────────
+    score = 0.0
+    if btc_above_ma50:                                       score += 0.35
+    if btc_above_ma20:                                       score += 0.25
+    if btc_ma_slope > 0:                                     score += 0.20
+    if vol_percentile < 0.60:                                score += 0.10
+    if avg_funding_7d is not None and avg_funding_7d > 0.0001:
+        score += 0.10
+    elif avg_funding_7d is None:
+        score += 0.05   # neutral when funding data unavailable
+
+    ma50_pass  = btc_above_ma50
+    vol_pass   = vol_percentile < 0.60
+    fund_pass  = (avg_funding_7d is not None and avg_funding_7d > 0.0001) or (avg_funding_7d is None)
+
+    return {
+        "btc_above_ma50":   btc_above_ma50,
+        "btc_above_ma20":   btc_above_ma20,
+        "btc_ma_slope":     btc_ma_slope,
+        "realized_vol_20d": realized_vol_20d,
+        "vol_percentile":   vol_percentile,
+        "avg_funding_7d":   avg_funding_7d,
+        "regime_score":     score,
+        "_ma50_pass":       ma50_pass,
+        "_vol_pass":        vol_pass,
+        "_fund_pass":       fund_pass,
+    }
+
+
+def run_regime_sweep(
+    prices: pd.DataFrame,
+    thresholds: list[float] = REGIME_THRESHOLDS,
+    vol_target: float = REGIME_VOL_TARGET,
+) -> tuple[list[dict[str, Any]], pd.DataFrame, pd.DataFrame]:
+    """
+    Step 1+2: Compute regime scores for all 44 Monday starts, run one set of
+    44 baseline sims (vol_target=0.15), then filter by each threshold.
+
+    Returns (threshold_results, scores_df, baseline_df_indexed).
+    Reusing baseline results for every threshold avoids redundant simulation.
+    """
+    start_dates = pd.date_range(start=SIM_START, end=SIM_END, freq="W-MON")
+    btc_funding = _load_btc_funding()
+    print(f"  Funding data: {'HL cache' if btc_funding is not None else 'not available (using neutral score)'}")
+
+    # ── Compute regime scores ────────────────────────────────────────────────
+    print(f"Computing regime scores for {len(start_dates)} dates...", flush=True)
+    scores: dict[pd.Timestamp, dict[str, Any]] = {
+        sd: compute_regime_score(prices, sd, btc_funding)
+        for sd in start_dates
+    }
+    scores_df = pd.DataFrame.from_dict(scores, orient="index")
+    scores_df.index.name = "start_date"
+
+    # ── Run baseline 44 sims once ────────────────────────────────────────────
+    print(f"Running baseline 44 sims (vol_target={vol_target})...", flush=True)
+    base_df_raw, _ = run_all_simulations(prices, vol_target=vol_target, verbose=False)
+    base_df = base_df_raw.copy()
+    base_df["start_date"] = pd.to_datetime(base_df["start_date"])
+    base_df = base_df.set_index("start_date")
+
+    # ── Threshold sweep ──────────────────────────────────────────────────────
+    threshold_results: list[dict[str, Any]] = []
+    for thr in thresholds:
+        eligible = [sd for sd, s in scores.items() if s["regime_score"] >= thr]
+        n_elig   = len(eligible)
+
+        if n_elig == 0:
+            threshold_results.append({
+                "threshold": thr, "n_eligible": 0,
+                "pass_rate_cond": 0.0, "pass_rate_uncond": 0.0,
+                "avg_days_pass": None, "exp_fee": float("inf"),
+                "wait_weeks": float("inf"),
+            })
+            continue
+
+        sub       = base_df.loc[base_df.index.isin(eligible)]
+        n_pass    = int((sub["outcome"] == "PASS").sum())
+        pass_cond = n_pass / n_elig
+        pass_unc  = n_pass / 44.0
+
+        pass_sub  = sub[sub["outcome"] == "PASS"]
+        avg_days  = float(pass_sub["days_elapsed"].mean()) if len(pass_sub) > 0 else None
+        exp_fee   = (CHALLENGE_FEE / pass_cond) if pass_cond > 0 else float("inf")
+        wait_wks  = 44.0 / n_elig   # avg Mondays between eligible windows
+
+        threshold_results.append({
+            "threshold":        thr,
+            "n_eligible":       n_elig,
+            "pass_rate_cond":   pass_cond,
+            "pass_rate_uncond": pass_unc,
+            "avg_days_pass":    avg_days,
+            "exp_fee":          exp_fee,
+            "wait_weeks":       wait_wks,
+        })
+
+    return threshold_results, scores_df, base_df
+
+
+def print_regime_sweep_table(
+    threshold_results: list[dict[str, Any]],
+    scores_df: pd.DataFrame,
+    base_df: pd.DataFrame,
+) -> float:
+    """
+    Step 4: Print the regime threshold sweep table and individual indicator analysis.
+    Returns the recommended threshold.
+    """
+    print("\n" + "=" * 95)
+    print("REGIME FILTER SWEEP — Propr Challenge Pass Rate")
+    print("=" * 95)
+    hdr = (
+        f"{'Threshold':>10} | {'Eligible':>9} | {'Pass%(cond)':>12} | "
+        f"{'Pass%(uncond)':>14} | {'AvgDaysPass':>12} | {'ExpFee':>8} | {'Wait(wks)':>10}"
+    )
+    print(hdr)
+    print("-" * 95)
+
+    best_thr   = 0.0
+    best_score = 0.0   # maximize pass_rate_cond / wait_weeks tradeoff
+
+    for r in threshold_results:
+        thr  = r["threshold"]
+        n    = f"{r['n_eligible']}/44"
+        pc   = f"{r['pass_rate_cond']*100:.0f}%" if r["n_eligible"] > 0 else "—"
+        pu   = f"{r['pass_rate_uncond']*100:.0f}%"
+        adp  = f"{r['avg_days_pass']:.0f}d" if r["avg_days_pass"] else "—"
+        ef   = f"${r['exp_fee']:.0f}" if r["exp_fee"] < 1e9 else "∞"
+        ww   = f"{r['wait_weeks']:.1f}" if r["wait_weeks"] < 1e9 else "∞"
+        print(f"{thr:>10.2f} | {n:>9} | {pc:>12} | {pu:>14} | {adp:>12} | {ef:>8} | {ww:>10}")
+
+        # Score: conditional pass rate improvement vs baseline, penalised by wait
+        # want best (pass_rate_cond - baseline) × (1 / wait_weeks)
+        baseline_cond = threshold_results[0]["pass_rate_cond"]
+        improvement   = r["pass_rate_cond"] - baseline_cond
+        s = improvement / r["wait_weeks"] if r["n_eligible"] > 0 and r["wait_weeks"] > 0 else 0.0
+        if s > best_score and r["n_eligible"] >= 5:
+            best_score = s
+            best_thr   = thr
+
+    print("-" * 95)
+
+    # Individual indicator analysis (Step 3)
+    print("\nINDIVIDUAL INDICATORS:")
+
+    def _indicator_stats(mask: pd.Series, label: str) -> None:
+        eligible_dates = scores_df[mask].index
+        n_elig = len(eligible_dates)
+        if n_elig == 0:
+            print(f"  {label:<24}: 0/44 eligible → n/a")
+            return
+        sub    = base_df.loc[base_df.index.isin(eligible_dates)]
+        n_pass = int((sub["outcome"] == "PASS").sum())
+        pct    = n_pass / n_elig * 100
+        print(f"  {label:<24}: {n_elig:>2}/44 eligible → {pct:.0f}% pass rate ({n_pass}/{n_elig} PASS)")
+
+    _indicator_stats(scores_df["_ma50_pass"],               "MA50 only")
+    _indicator_stats(scores_df["_vol_pass"],                "Vol<60th only")
+    _indicator_stats(scores_df["_fund_pass"],               "Funding only")
+    _indicator_stats(scores_df["_ma50_pass"] & scores_df["_vol_pass"],               "MA50 + Vol")
+    _indicator_stats(scores_df["_ma50_pass"] & scores_df["_vol_pass"] & scores_df["_fund_pass"], "All three")
+
+    # Recommendation
+    best_r      = next(r for r in threshold_results if r["threshold"] == best_thr)
+    base_r      = threshold_results[0]
+    lift        = best_r["pass_rate_cond"] - base_r["pass_rate_cond"]
+    ef_str      = f"${best_r['exp_fee']:.0f}" if best_r["exp_fee"] < 1e9 else "∞"
+    adp_str     = f"{best_r['avg_days_pass']:.0f}" if best_r["avg_days_pass"] else "?"
+
+    print(f"\nRECOMMENDATION:")
+    print(f"  Use regime filter threshold = {best_thr:.2f}")
+    print(f"  Expected conditional pass rate : {best_r['pass_rate_cond']*100:.0f}%")
+    print(f"  Expected wait between windows  : ~{best_r['wait_weeks']:.1f} weeks")
+    print(f"  Expected total fee to pass     : {ef_str}")
+    print()
+    if lift > 0.05:
+        weeks_to_break_even = best_r["wait_weeks"]
+        baseline_fee = f"${base_r['exp_fee']:.0f}" if base_r["exp_fee"] < 1e9 else "∞"
+        print(
+            f"  Economic reasoning: The {best_thr:.0%} threshold lifts conditional pass rate "
+            f"by {lift:.0%} (from {base_r['pass_rate_cond']*100:.0f}% → "
+            f"{best_r['pass_rate_cond']*100:.0f}%), reducing expected fee from "
+            f"{baseline_fee} to {ef_str} per PASS. The ~{best_r['wait_weeks']:.1f}-week average "
+            f"wait between eligible starts is worthwhile given the dramatically lower cost per "
+            f"funded account — roughly {(1/best_r['pass_rate_cond']):.1f} attempts vs "
+            f"{(1/base_r['pass_rate_cond']):.1f} at baseline."
+        )
+    else:
+        print(
+            f"  Economic reasoning: The regime filter provides minimal lift at this threshold "
+            f"({lift:+.0%} pass rate improvement). Calendar regime is predictive but the 44-sim "
+            f"sample may be too small for a robust threshold. Monitor live outcomes before relying "
+            f"on this filter operationally."
+        )
+    return best_thr
+
+
+def plot_regime_calendar(
+    prices: pd.DataFrame,
+    scores_df: pd.DataFrame,
+    base_df: pd.DataFrame,
+    best_thr: float,
+    save_path: Path,
+) -> None:
+    """
+    Step 5: BTC price with green/red week backgrounds, PASS/FAIL markers,
+    regime_score for each Monday, and a current-regime vertical line.
+    """
+    btc_col  = "BTC-USD" if "BTC-USD" in prices.columns else prices.columns[0]
+    btc_full = prices[btc_col].dropna()
+
+    # Restrict to plot window
+    plot_start = pd.Timestamp("2025-01-01")
+    plot_end   = pd.Timestamp(TODAY_DATE)
+    btc        = btc_full.loc[plot_start:plot_end]
+
+    fig, (ax_price, ax_score) = plt.subplots(
+        2, 1, figsize=(16, 9), sharex=True,
+        gridspec_kw={"height_ratios": [3, 1], "hspace": 0.06},
+    )
+    fig.suptitle(
+        f"TSMOM v2 — Regime Filter Launch Calendar  (threshold = {best_thr:.2f})",
+        fontsize=13, fontweight="bold",
+    )
+
+    # ── Coloured week backgrounds ────────────────────────────────────────────
+    monday_dates = pd.date_range(start=plot_start, end=plot_end, freq="W-MON")
+    for i, mon in enumerate(monday_dates):
+        week_end = mon + pd.Timedelta(days=6)
+        rs  = scores_df.loc[mon, "regime_score"] if mon in scores_df.index else None
+        col = ("#d5f5e3" if (rs is not None and rs >= best_thr) else "#fadbd8")
+        ax_price.axvspan(mon, min(week_end, plot_end), facecolor=col, alpha=0.35, linewidth=0)
+        ax_score.axvspan(mon, min(week_end, plot_end), facecolor=col, alpha=0.35, linewidth=0)
+
+    # ── BTC price ─────────────────────────────────────────────────────────────
+    ax_price.plot(btc.index, btc.values, color="#2c3e50", lw=1.4, zorder=3)
+    ax_price.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"${x:,.0f}"))
+    ax_price.set_ylabel("BTC Price (USD)", fontsize=10)
+    ax_price.grid(True, alpha=0.2)
+
+    # ── PASS / FAIL markers ───────────────────────────────────────────────────
+    for sd, row in base_df.iterrows():
+        if sd < plot_start or sd > plot_end:
+            continue
+        btc_price_at_sd = btc.loc[sd] if sd in btc.index else None
+        if btc_price_at_sd is None:
+            continue
+        if row["outcome"] == "PASS":
+            ax_price.scatter(sd, btc_price_at_sd, marker="*", s=160,
+                             color="#27ae60", zorder=5, linewidths=0)
+        else:
+            ax_price.scatter(sd, btc_price_at_sd, marker="x", s=60,
+                             color="#c0392b", zorder=5, linewidths=1.5)
+
+    # ── Regime score bar chart ────────────────────────────────────────────────
+    plot_scores = scores_df[scores_df.index.isin(monday_dates)]
+    bar_colors  = ["#27ae60" if s >= best_thr else "#e74c3c"
+                   for s in plot_scores["regime_score"]]
+    ax_score.bar(plot_scores.index, plot_scores["regime_score"],
+                 width=4, color=bar_colors, alpha=0.8, zorder=3)
+    ax_score.axhline(best_thr, color="navy", lw=1.2, linestyle="--",
+                     label=f"Threshold ({best_thr:.2f})")
+    ax_score.set_ylim(0, 1.05)
+    ax_score.set_ylabel("Regime\nScore", fontsize=9)
+    ax_score.legend(fontsize=8, loc="upper right")
+    ax_score.grid(True, alpha=0.2)
+
+    # ── Today vertical line ───────────────────────────────────────────────────
+    today_ts   = pd.Timestamp(TODAY_DATE)
+    today_rs   = compute_regime_score(prices, today_ts, _load_btc_funding())
+    go_label   = "GO" if today_rs["regime_score"] >= best_thr else "WAIT"
+    for ax in (ax_price, ax_score):
+        ax.axvline(today_ts, color="purple", lw=1.5, linestyle="--", zorder=6)
+    ax_price.annotate(
+        f"Today ({TODAY_DATE})\nscore={today_rs['regime_score']:.2f} [{go_label}]",
+        xy=(today_ts, btc.iloc[-1]),
+        xytext=(today_ts - pd.Timedelta(days=50), btc.iloc[-1] * 1.04),
+        fontsize=8, color="purple", fontweight="bold",
+        arrowprops=dict(arrowstyle="->", color="purple", lw=1),
+    )
+
+    # ── Legend ────────────────────────────────────────────────────────────────
+    from matplotlib.lines import Line2D
+    from matplotlib.patches import Patch
+    legend_h = [
+        Patch(facecolor="#d5f5e3", alpha=0.7, label=f"Regime GO (score≥{best_thr:.2f})"),
+        Patch(facecolor="#fadbd8", alpha=0.7, label="Regime WAIT"),
+        Line2D([0],[0], marker="*", color="w", markerfacecolor="#27ae60", markersize=10, label="PASS sim"),
+        Line2D([0],[0], marker="x", color="#c0392b", markersize=7, lw=0, label="FAIL sim", markeredgewidth=1.5),
+    ]
+    ax_price.legend(handles=legend_h, fontsize=8, loc="upper left", framealpha=0.9)
+
+    ax_score.xaxis.set_major_formatter(plt.matplotlib.dates.DateFormatter("%b %Y"))
+    plt.setp(ax_score.xaxis.get_majorticklabels(), rotation=30, ha="right")
+
+    fig.tight_layout()
+    fig.savefig(save_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"\nRegime calendar saved → {save_path}")
+
+
+def print_current_regime(
+    prices: pd.DataFrame,
+    best_thr: float,
+) -> None:
+    """Step 6: Print today's regime check and launch recommendation."""
+    today    = pd.Timestamp(TODAY_DATE)
+    funding  = _load_btc_funding()
+    r        = compute_regime_score(prices, today, funding)
+
+    btc_col  = "BTC-USD" if "BTC-USD" in prices.columns else prices.columns[0]
+    btc_now  = float(prices.loc[:today, btc_col].dropna().iloc[-1])
+    btc_hist = prices.loc[:today, btc_col].dropna()
+    ma50_val = float(btc_hist.rolling(50).mean().iloc[-1])
+    ma20_val = float(btc_hist.rolling(20).mean().iloc[-1])
+
+    go = r["regime_score"] >= best_thr
+
+    print(f"\n{'='*60}")
+    print(f"CURRENT REGIME ({TODAY_DATE}):")
+    print(f"{'='*60}")
+    print(f"  BTC above MA50   : {'YES' if r['btc_above_ma50'] else 'NO'} "
+          f"(BTC=${btc_now:,.0f}, MA50=${ma50_val:,.0f})")
+    print(f"  BTC above MA20   : {'YES' if r['btc_above_ma20'] else 'NO'} "
+          f"(MA20=${ma20_val:,.0f})")
+    slope_pct = r["btc_ma_slope"] * 100
+    print(f"  MA20 slope       : {slope_pct:+.2f}% (last 5 days)")
+    vp = r["vol_percentile"]
+    vv = r["realized_vol_20d"]
+    print(f"  Realized vol 20d : {vv:.0%} ({vp:.0%} percentile vs past year)")
+    if r["avg_funding_7d"] is not None:
+        print(f"  Funding 7d avg   : {r['avg_funding_7d']:+.6f} per hour")
+    else:
+        print(f"  Funding 7d avg   : n/a (cache not found)")
+    print(f"  Regime score     : {r['regime_score']:.2f} / 1.00")
+    print()
+    print(f"  → LAUNCH: {'YES ✓' if go else 'NO ✗'}  (threshold = {best_thr:.2f})")
+    print()
+    if go:
+        print(f"  Implication: Current BTC regime is trending and within normal volatility — "
+              f"favorable conditions for TSMOM v2 momentum to generate returns above the 3% daily limit.")
+    else:
+        missing = []
+        if not r["btc_above_ma50"]:     missing.append("BTC below 50-day MA")
+        if not r["btc_above_ma20"]:     missing.append("BTC below 20-day MA")
+        if r["btc_ma_slope"] <= 0:      missing.append("downward MA slope")
+        if r["vol_percentile"] >= 0.60: missing.append("elevated volatility")
+        print(f"  Implication: Current regime is unfavorable ({', '.join(missing) if missing else 'composite score too low'}) — "
+              f"daily limit breach probability is elevated; recommend waiting for trend confirmation before starting a challenge.")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # STEP 5 — ANALYSIS & OUTPUT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -656,7 +1081,7 @@ def plot_equity_curves(results: list[dict[str, Any]], save_path: Path) -> None:
 def main() -> None:
     prices = download_data(UNIVERSE, DATA_START, DATA_END)
 
-    # ── Vol target sweep (Steps 1–6) ──────────────────────────────────────────
+    # ── Vol target sweep ──────────────────────────────────────────────────────
     print("\n" + "=" * 60)
     print("VOL TARGET SWEEP")
     print("=" * 60)
@@ -668,6 +1093,18 @@ def main() -> None:
 
     sweep_chart = OUT_DIR / "vol_target_sweep.png"
     plot_vol_sweep(sweep, best_vt, sweep_chart)
+
+    # ── Regime filter analysis ────────────────────────────────────────────────
+    print("\n" + "=" * 60)
+    print("REGIME FILTER ANALYSIS")
+    print("=" * 60)
+    thr_results, scores_df, base_df = run_regime_sweep(prices)
+    best_thr = print_regime_sweep_table(thr_results, scores_df, base_df)
+
+    cal_path = OUT_DIR / "regime_calendar.png"
+    plot_regime_calendar(prices, scores_df, base_df, best_thr, cal_path)
+
+    print_current_regime(prices, best_thr)
 
     # ── Original single-run summary (vol_target=0.15) ──────────────────────
     print("\n" + "=" * 60)
