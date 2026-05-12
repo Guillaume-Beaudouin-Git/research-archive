@@ -259,22 +259,285 @@ def simulate_challenge(
 
 def run_all_simulations(
     prices: pd.DataFrame,
+    vol_target: float = 0.15,
+    verbose: bool = True,
 ) -> tuple[pd.DataFrame, list[dict[str, Any]]]:
     """
     Run simulate_challenge for every Monday start date in [SIM_START, SIM_END].
     Returns (summary_df, full_results_list).
     """
     start_dates = pd.date_range(start=SIM_START, end=SIM_END, freq="W-MON")
-    print(f"\nRunning {len(start_dates)} simulations "
-          f"({start_dates[0].date()} → {start_dates[-1].date()})...")
+    if verbose:
+        print(f"\nRunning {len(start_dates)} simulations "
+              f"({start_dates[0].date()} → {start_dates[-1].date()})...")
 
     all_results: list[dict[str, Any]] = []
     for sd in start_dates:
-        print(f"  Simulating start_date {sd.date()}...")
-        all_results.append(simulate_challenge(sd, prices))
+        if verbose:
+            print(f"  Simulating start_date {sd.date()}...")
+        all_results.append(simulate_challenge(sd, prices, vol_target=vol_target))
 
     rows = [{k: v for k, v in r.items() if k != "equity_curve"} for r in all_results]
     return pd.DataFrame(rows), all_results
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# VOL TARGET SWEEP — Steps 1-6
+# ─────────────────────────────────────────────────────────────────────────────
+
+VOL_TARGETS = [0.05, 0.08, 0.10, 0.12, 0.15, 0.20, 0.25]
+CHALLENGE_FEE = 60.0   # $ per attempt
+
+
+def _sweep_metrics(df: pd.DataFrame) -> dict[str, Any]:
+    """Compute all summary metrics for one vol_target's 44-sim DataFrame."""
+    n = len(df)
+    pass_m  = df["outcome"] == "PASS"
+    fail_m  = df["outcome"] == "FAIL"
+
+    pass_count = int(pass_m.sum())
+    fail_count = int(fail_m.sum())
+    pass_rate  = pass_count / n
+    fail_rate  = fail_count / n
+
+    fail_daily = int((df["fail_reason"] == "daily_limit").sum())
+    fail_total = int((df["fail_reason"] == "total_drawdown").sum())
+
+    # avg days (None if no sims of that outcome)
+    avg_pass = float(df.loc[pass_m, "days_elapsed"].mean()) if pass_m.any() else None
+    avg_fail = float(df.loc[fail_m, "days_elapsed"].mean()) if fail_m.any() else None
+
+    median_dd = float(df["max_drawdown_pct"].median())
+
+    exp_fee = (CHALLENGE_FEE / pass_rate) if pass_rate > 0 else float("inf")
+
+    # Daily breach analysis:
+    # Each sim that ends on "daily_limit" had exactly 1 breach.
+    # Sims that fail on total_dd or PASS had 0 daily breaches (the limit wasn't hit).
+    total_breaches      = fail_daily
+    avg_breaches_per    = total_breaches / n
+    pct_zero_breaches   = (n - total_breaches) / n * 100.0
+
+    # Speed-safety score: pass_rate × (1 / avg_days_to_pass)
+    score = (pass_rate / avg_pass) if (pass_rate > 0 and avg_pass and avg_pass > 0) else 0.0
+
+    return {
+        "pass_count":           pass_count,
+        "fail_count":           fail_count,
+        "pass_rate":            pass_rate,
+        "fail_rate":            fail_rate,
+        "fail_daily":           fail_daily,
+        "fail_total_dd":        fail_total,
+        "avg_days_pass":        avg_pass,
+        "avg_days_fail":        avg_fail,
+        "median_max_dd":        median_dd,
+        "exp_fee":              exp_fee,
+        "total_breaches":       total_breaches,
+        "avg_breaches_per_sim": avg_breaches_per,
+        "pct_zero_breaches":    pct_zero_breaches,
+        "score":                score,
+    }
+
+
+def run_vol_sweep(
+    prices: pd.DataFrame,
+    vol_targets: list[float] = VOL_TARGETS,
+) -> dict[float, tuple[pd.DataFrame, list[dict[str, Any]]]]:
+    """
+    Run all 44 simulations for each vol_target.
+    Returns {vol_target: (summary_df, results_list)}.
+    """
+    sweep: dict[float, tuple[pd.DataFrame, list[dict[str, Any]]]] = {}
+    for vt in vol_targets:
+        print(f"vol_target={vt:.2f}: running 44 sims...", flush=True)
+        df, results = run_all_simulations(prices, vol_target=vt, verbose=False)
+        sweep[vt] = (df, results)
+    return sweep
+
+
+def print_sweep_table(
+    sweep: dict[float, tuple[pd.DataFrame, list[dict[str, Any]]]],
+) -> float:
+    """
+    Print the vol_target sweep summary table.
+    Returns the recommended vol_target (highest score).
+    """
+    rows: list[dict[str, Any]] = []
+    for vt, (df, _) in sweep.items():
+        m = _sweep_metrics(df)
+        rows.append({"vol_t": vt, **m})
+
+    print("\n" + "=" * 110)
+    print("VOL TARGET SWEEP — Propr Starter Challenge")
+    print("=" * 110)
+    hdr = (
+        f"{'vol_t':>6} | {'Pass%':>6} | {'Fail%':>6} | "
+        f"{'Daily':>6} | {'TotalDD':>8} | "
+        f"{'AvgDaysPass':>12} | {'AvgDaysFail':>12} | "
+        f"{'MedianDD':>9} | {'ExpFee':>8} | {'Score':>7}"
+    )
+    print(hdr)
+    print("-" * 110)
+
+    best_score = -1.0
+    best_vt    = VOL_TARGETS[0]
+
+    for r in rows:
+        vt      = r["vol_t"]
+        pass_p  = f"{r['pass_rate']*100:.0f}%"
+        fail_p  = f"{r['fail_rate']*100:.0f}%"
+        daily   = str(r["fail_daily"])
+        total_d = str(r["fail_total_dd"])
+        adp     = f"{r['avg_days_pass']:.0f}d" if r["avg_days_pass"] else "—"
+        adf     = f"{r['avg_days_fail']:.0f}d" if r["avg_days_fail"] else "—"
+        mdd     = f"-{r['median_max_dd']*100:.1f}%"
+        ef      = f"${r['exp_fee']:.0f}" if r["exp_fee"] < 1e9 else "∞"
+        score   = f"{r['score']:.4f}"
+        print(
+            f"{vt:>6.2f} | {pass_p:>6} | {fail_p:>6} | "
+            f"{daily:>6} | {total_d:>8} | "
+            f"{adp:>12} | {adf:>12} | "
+            f"{mdd:>9} | {ef:>8} | {score:>7}"
+        )
+        if r["score"] > best_score:
+            best_score = r["score"]
+            best_vt    = vt
+
+    print("-" * 110)
+
+    best_m = _sweep_metrics(sweep[best_vt][0])
+    adp_str = f"{best_m['avg_days_pass']:.0f}" if best_m["avg_days_pass"] else "?"
+
+    print(f"\nRECOMMENDED VOL TARGET: {best_vt:.2f}")
+    print(
+        f"Reason: highest speed-safety score ({best_score:.4f} = "
+        f"{best_m['pass_rate']*100:.0f}% pass rate × "
+        f"1/{adp_str}d avg-to-pass), balancing win probability and time-to-target."
+    )
+    print(f"\n  At this vol_target:")
+    print(f"    Pass rate          : {best_m['pass_rate']*100:.0f}%")
+    adp_weeks = f"{best_m['avg_days_pass']/7:.1f}" if best_m["avg_days_pass"] else "?"
+    print(f"    Avg days to pass   : {adp_str} days (~{adp_weeks} weeks)")
+    ef_str = f"${best_m['exp_fee']:.0f}" if best_m["exp_fee"] < 1e9 else "∞"
+    print(f"    Expected fee cost  : {ef_str} to get one PASS")
+    print(f"    Daily breaches     : {best_m['total_breaches']} total across 44 sims")
+    print(f"    Sims with 0 breach : {best_m['pct_zero_breaches']:.0f}% (cleanest runs)")
+
+    return best_vt
+
+
+def print_regime_analysis(
+    df: pd.DataFrame,
+    vol_target: float,
+) -> None:
+    """
+    Step 5: Per-simulation table for the recommended vol_target,
+    grouped PASS (ascending days) then FAIL (fail_reason, days).
+    Also prints monthly pass rates.
+    """
+    print(f"\n{'='*75}")
+    print(f"REGIME ANALYSIS — vol_target={vol_target:.2f}")
+    print(f"{'='*75}")
+
+    pass_df = df[df["outcome"] == "PASS"].sort_values("days_elapsed")
+    fail_df = df[df["outcome"] == "FAIL"].sort_values(["fail_reason", "days_elapsed"])
+    inc_df  = df[df["outcome"] == "INCOMPLETE"]
+    ordered = pd.concat([pass_df, fail_df, inc_df])
+
+    header = (
+        f"  {'start_date':>12} {'outcome':>10} {'days':>6} "
+        f"{'final_equity':>12} {'max_dd':>8} {'fail_reason':>14}"
+    )
+    print(header)
+    print("-" * 75)
+    for _, row in ordered.iterrows():
+        fr = row["fail_reason"] if pd.notna(row["fail_reason"]) else "-"
+        print(
+            f"  {str(row['start_date'].date()):>10} {row['outcome']:>10} "
+            f"{int(row['days_elapsed']):>6} "
+            f"${row['final_equity']:>10,.2f} "
+            f"{-row['max_drawdown_pct']:>7.1%} "
+            f"{fr:>14}"
+        )
+    print("-" * 75)
+
+    # Monthly pass rate
+    print(f"\n  Monthly pass rates (by challenge start month):")
+    df2 = df.copy()
+    df2["month"] = df2["start_date"].dt.to_period("M")
+    for month, grp in df2.groupby("month"):
+        n_m    = len(grp)
+        n_pass = (grp["outcome"] == "PASS").sum()
+        pct    = n_pass / n_m * 100
+        bar    = "█" * n_pass + "░" * (n_m - n_pass)
+        print(f"    {month}: {n_pass}/{n_m} sims → {pct:.0f}% PASS  [{bar}]")
+
+
+def plot_vol_sweep(
+    sweep: dict[float, tuple[pd.DataFrame, list[dict[str, Any]]]],
+    best_vt: float,
+    save_path: Path,
+) -> None:
+    """
+    Two-subplot chart:
+      Left : pass rate % (bar chart, best highlighted green)
+      Right: expected fee cost to get one PASS (line chart)
+    """
+    vts      = sorted(sweep.keys())
+    metrics  = [_sweep_metrics(sweep[vt][0]) for vt in vts]
+    pass_pct = [m["pass_rate"] * 100 for m in metrics]
+    exp_fees = [min(m["exp_fee"], 1200) for m in metrics]   # cap at $1200 for legibility
+    scores   = [m["score"] for m in metrics]
+
+    colors = ["#2ecc71" if vt == best_vt else "#3498db" for vt in vts]
+    labels = [f"{vt:.2f}" for vt in vts]
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 6))
+    fig.suptitle(
+        "Vol Target Sweep — Propr Starter Challenge ($5K, 3% daily, 6% total DD)",
+        fontsize=13, fontweight="bold",
+    )
+
+    # Left: pass rate bar chart
+    bars = ax1.bar(labels, pass_pct, color=colors, edgecolor="white", linewidth=0.5)
+    ax1.set_xlabel("Vol Target")
+    ax1.set_ylabel("Pass Rate (%)")
+    ax1.set_title("Pass Rate by Vol Target")
+    for bar, pct in zip(bars, pass_pct):
+        ax1.text(
+            bar.get_x() + bar.get_width() / 2,
+            bar.get_height() + 0.5,
+            f"{pct:.0f}%",
+            ha="center", va="bottom", fontsize=9, fontweight="bold",
+        )
+    # Mark best
+    best_idx = vts.index(best_vt)
+    ax1.annotate(
+        "★ best",
+        xy=(best_idx, pass_pct[best_idx]),
+        xytext=(best_idx, pass_pct[best_idx] + 5),
+        ha="center", fontsize=9, color="#27ae60", fontweight="bold",
+    )
+    ax1.set_ylim(0, max(pass_pct) * 1.25)
+
+    # Right: expected fee line chart
+    valid_fees = [(vt, fee) for vt, fee in zip(vts, exp_fees) if fee < 1200]
+    if valid_fees:
+        vts_f, fees_f = zip(*valid_fees)
+        ax2.plot([f"{v:.2f}" for v in vts_f], fees_f,
+                 color="#e74c3c", marker="o", linewidth=2, markersize=6)
+    ax2.axhline(CHALLENGE_FEE, color="gray", linestyle="--", linewidth=1.2,
+                label=f"Single attempt (${CHALLENGE_FEE:.0f})")
+    ax2.set_xlabel("Vol Target")
+    ax2.set_ylabel("Expected Fee Cost ($)")
+    ax2.set_title("Expected Total Fee Cost\nto Get One PASS")
+    ax2.legend(fontsize=8)
+    ax2.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"${x:,.0f}"))
+
+    plt.tight_layout()
+    fig.savefig(save_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"\nVol sweep chart saved → {save_path}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -392,10 +655,28 @@ def plot_equity_curves(results: list[dict[str, Any]], save_path: Path) -> None:
 
 def main() -> None:
     prices = download_data(UNIVERSE, DATA_START, DATA_END)
-    df, results = run_all_simulations(prices)
-    print_summary(df)
+
+    # ── Vol target sweep (Steps 1–6) ──────────────────────────────────────────
+    print("\n" + "=" * 60)
+    print("VOL TARGET SWEEP")
+    print("=" * 60)
+    sweep   = run_vol_sweep(prices, VOL_TARGETS)
+    best_vt = print_sweep_table(sweep)
+
+    best_df, best_results = sweep[best_vt]
+    print_regime_analysis(best_df, best_vt)
+
+    sweep_chart = OUT_DIR / "vol_target_sweep.png"
+    plot_vol_sweep(sweep, best_vt, sweep_chart)
+
+    # ── Original single-run summary (vol_target=0.15) ──────────────────────
+    print("\n" + "=" * 60)
+    print("ORIGINAL SIMULATION (vol_target=0.15)")
+    print("=" * 60)
+    df_orig, results_orig = run_all_simulations(prices, vol_target=0.15, verbose=True)
+    print_summary(df_orig)
     chart_path = OUT_DIR / "challenge_simulation.png"
-    plot_equity_curves(results, chart_path)
+    plot_equity_curves(results_orig, chart_path)
 
 
 if __name__ == "__main__":
