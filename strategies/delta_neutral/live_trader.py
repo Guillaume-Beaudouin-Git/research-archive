@@ -56,6 +56,18 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# File handler — written here so it applies from first import; LOG_DIR is
+# defined below, but we need the handler before any log calls.
+def _add_file_handler() -> None:
+    _log_dir = Path(__file__).resolve().parents[2] / "logs"
+    _log_dir.mkdir(exist_ok=True)
+    _fh = logging.FileHandler(_log_dir / "delta_neutral.log")
+    _fh.setLevel(logging.INFO)
+    _fh.setFormatter(logging.Formatter("%(asctime)s | %(levelname)s | %(message)s"))
+    logging.getLogger().addHandler(_fh)
+
+_add_file_handler()
+
 # ─── STRATEGY PARAMETERS (must match backtest.py) ─────────────────────────────
 
 CARRY_FLOOR_8H    = 0.0034 / (30 * 3)   # per-8h-bar threshold (same as backtest)
@@ -136,6 +148,33 @@ def fetch_hl_carry_30d(asset: str) -> float | None:
 
     # Mean hourly rate × 8 = mean rate per 8h bar
     return (sum(rates) / len(rates)) * 8
+
+
+def fetch_current_hl_funding(assets: list[str]) -> dict[str, float]:
+    """
+    Fetch the current live 8h funding rate for each asset in `assets`.
+    Uses metaAndAssetCtxs endpoint — data[1][i]["funding"] is the
+    current per-8h rate as a decimal string (e.g. "0.0001" = 0.01%).
+    Returns {asset: rate} for assets found; missing assets are omitted.
+    """
+    try:
+        data = _hl_post({"type": "metaAndAssetCtxs"})
+    except Exception as exc:
+        logger.warning(f"fetch_current_hl_funding failed: {exc}")
+        return {}
+
+    meta, asset_ctxs = data[0], data[1]
+    universe = meta.get("universe", [])
+    name_set  = set(assets)
+    result: dict[str, float] = {}
+    for i, asset_meta in enumerate(universe):
+        name = asset_meta.get("name", "")
+        if name in name_set and i < len(asset_ctxs):
+            try:
+                result[name] = float(asset_ctxs[i]["funding"])
+            except (KeyError, ValueError, TypeError):
+                pass
+    return result
 
 
 def check_hl_data_freshness(asset: str) -> bool:
@@ -256,6 +295,56 @@ def reconcile_position(
         logger.error(f"[{asset}] Reconciliation error: {exc}")
         notifier.send(f"[DN RECONCILE ERROR] {asset}: {exc}", level="warning")
         return False
+
+
+# ─── STARTUP STATE RECONCILIATION ────────────────────────────────────────────
+
+def startup_reconcile(hl_client) -> None:
+    """
+    On startup, overwrite all state_*.json files to match actual HL positions.
+
+    Runs BEFORE any signal logic. If state says "open" but HL shows flat,
+    resets state to flat so stale open records never trigger false HOLDs or
+    block new opens.
+
+    Logs "STATE RECONCILED: [asset] set to [flat/open]" for every change.
+    """
+    for asset in VIABLE_ASSETS:
+        state = load_state(asset)
+        try:
+            hl_pos = hl_client.get_position(asset)
+        except Exception as exc:
+            logger.warning(f"[{asset}] startup_reconcile: could not query HL position: {exc}")
+            continue
+
+        exchange_flat = hl_pos.get("side", "flat") == "flat" or hl_pos.get("size", 0.0) == 0.0
+        state_open    = state["position"] == "open"
+
+        if state_open and exchange_flat:
+            new_state = {**_FLAT_STATE, "cumulative_carry": state.get("cumulative_carry", 0.0)}
+            save_state(asset, new_state)
+            msg = f"STATE RECONCILED: {asset} set to flat (state=open, exchange=flat)"
+            logger.info(msg)
+            notifier.send(f"[DN RECONCILE] {msg}", level="warning")
+
+        elif not state_open and not exchange_flat:
+            # Exchange has a position we don't know about — record it best-effort
+            new_state = {
+                **_FLAT_STATE,
+                "position":      "open",
+                "spot_qty":      0.0,   # BN spot unknown; log as 0 to flag for review
+                "perp_notional": hl_pos["size"] * hl_pos.get("entry_price", 0.0),
+                "entry_time":    datetime.now(timezone.utc).isoformat(),
+                "cumulative_carry": state.get("cumulative_carry", 0.0),
+            }
+            save_state(asset, new_state)
+            msg = f"STATE RECONCILED: {asset} set to open (state=flat, exchange={hl_pos['side']})"
+            logger.info(msg)
+            notifier.send(f"[DN RECONCILE] {msg}", level="warning")
+
+        else:
+            logger.info(f"[{asset}] startup_reconcile: no change (state={state['position']}, "
+                        f"exchange={hl_pos.get('side', 'flat')})")
 
 
 # ─── ATOMIC PAIR OPEN ─────────────────────────────────────────────────────────
@@ -519,6 +608,11 @@ def run(
         bn_client = BinanceTestnetClient(bn_api_key, bn_secret_key)
         from strategies.delta_neutral.hl_perp_client import HLPerpClient
         hl_client = HLPerpClient(private_key=hl_private_key, testnet=True)
+
+    # ── Startup state reconciliation (live only) ──────────────────────────────
+    if not dry_run and hl_client is not None:
+        logger.info("Running startup state reconciliation against exchange...")
+        startup_reconcile(hl_client)
 
     # ── Volume filter (mainnet) — checked every run ───────────────────────────
     # Asset mainnet liquidity can change over time. Re-validate each run to

@@ -316,7 +316,7 @@ def _position_line(sym: str, info: dict, fills: dict[str, dict]) -> str:
     if fill and info["direction"] != 0:
         actual_px = float(fill["actual_price"])
         signal_px = info["price"]
-        slip_bps  = float(fill.get("slippage_bps", 0))
+        slip_bps  = (actual_px - signal_px) / signal_px * 10_000 if signal_px else 0.0
         return (f"  {ticker} {direction} ${deploy:.0f} "
                 f"(entry {actual_px:.0f}, signal {signal_px:.0f}, slip {slip_bps:+.0f}bps)")
     if info["direction"] != 0:
