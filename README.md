@@ -1,204 +1,618 @@
-# Algo_claude
+# Algo_claude — Research Journal
 
-## Overview
-
-Algo_claude is a daily algorithmic trading system that trains a PyTorch MLP classifier on OHLCV price history to generate directional signals (BUY / HOLD / SELL) for crypto perpetuals traded on [Hyperliquid](https://hyperliquid.xyz). It is designed for a solo operator running a daily cron job on a Linux VPS, with a layered safety system that halts trading automatically if any guardrail fails. The project is in testnet validation — no live capital has been deployed. A backtest audit revealed and corrected a one-bar look-ahead bias in the original backtester — see Status for corrected results.
-
----
-
-## Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        Daily cron trigger                        │
-└───────────────────────────────┬─────────────────────────────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │  check_kill_switch()   │  ← STOP file present? halt.
-                   └────────────┬───────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │   get_latest_bars()    │  yfinance 6-month daily OHLCV
-                   └────────────┬───────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │ check_data_freshness() │  ← stale/future-dated? halt.
-                   └────────────┬───────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │  extract_features()    │  TA indicators, look-ahead-free
-                   └────────────┬───────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │  load_model() +        │
-                   │  check_model_freshness │  ← model > 45 days old? halt.
-                   └────────────┬───────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │ predict_proba()        │  MC Dropout (30 samples)
-                   │ → BUY / HOLD / SELL    │  BatchNorm stays in eval mode
-                   └────────────┬───────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │  reconcile_position()  │  ← exchange vs state.json mismatch? alert.
-                   └────────────┬───────────┘
-                                │
-                                ▼
-                   ┌────────────────────────┐
-                   │  HyperliquidClient     │  testnet / mainnet perp order
-                   │  pos_size × capital    │
-                   └────────────┬───────────┘
-                                │
-                    ┌───────────┴───────────┐
-                    ▼                       ▼
-           logs/trades.csv          Telegram alert
-           logs/funding.csv         (heartbeat + errors)
-```
-
-*Position sizing is a fixed fraction of capital per trade (`config.py: position_size = 0.30`). This is deliberately simple; Kelly-based or volatility-scaled sizing is a natural next improvement.*
+**Last updated**: May 2026  
+**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 13 strategies tested and failed/shelved, 2 recent HMM/meta-labeling studies in WEAK/SKIP
 
 ---
 
-## Components
+## 1. Project Overview
 
-- **`config.py`** — Single dataclass holding all hyperparameters: model architecture, labeling thresholds, backtesting assumptions, position sizing, and walk-forward settings.
-- **`features.py`** — Look-ahead-free feature engineering (momentum, volatility, volume, moving averages) following Parente et al. (2024) and Felizardo et al. (2022).
-- **`labeler.py`** — Three-class label generator (BUY / HOLD / SELL) using forward-return thresholds with fee-adjusted filtering.
-- **`model.py`** — PyTorch MLP with BatchNorm + LeakyReLU + Dropout layers and a `predict_proba()` method that enables MC Dropout sampling while keeping BatchNorm in eval mode.
-- **`trainer.py`** — Chronological train/validation split pipeline with early stopping; data is never shuffled across the temporal boundary.
-- **`train_and_save.py`** — Entry point that downloads full history, trains the model, and serialises the `.pt` weights, `.pkl` scaler, and `meta.json` to `model_store/`.
-- **`live_trader.py`** — Daily cron entry point: loads model, fetches data, runs all guardrails, computes signal, decides action, and optionally executes on Hyperliquid.
-- **`hyperliquid_client.py`** — Minimal wrapper around `hyperliquid-python-sdk` for opening/closing USD-notional perp positions on testnet or mainnet.
-- **`notifier.py`** — Telegram alerting with severity levels (info / warning / error); credentials loaded from `.env`.
-- **`backtest.py`** — Event-driven backtester with fractional position sizing (30%), per-trade slippage, stop-loss, and `max_hold_bars` forced exit.
-- **`dsr.py`** — Deflated Sharpe Ratio implementation (Bailey & López de Prado, 2014) used for backtest validation against selection bias.
-- **`oos_eval.py`** — True out-of-sample evaluation across multiple assets using a hard temporal cutoff (`oos_start_date = 2023-01-01`).
-- **`walk_forward.py`** — Walk-forward validation: expanding training window with a fresh held-out test fold at each step, the industry standard for time-series strategy evaluation.
-- **`main.py`** — End-to-end research pipeline: trains, evaluates, runs walk-forward, backtests, and computes DSR for a single asset.
-- **`sanity_check.py`** — Quick smoke-test that verifies the full pipeline (data → features → model → signal) runs without error locally.
-- **`test_live_dryrun.py`** — Integration test suite (7 tests) exercising every guardrail in dry-run mode.
-- **`packages.py`** — Development utility that pip-installs missing dependencies. Not used in production deployment — `requirements.txt` and a proper venv replace it.
+This repo is a solo algorithmic trading research project targeting crypto perpetuals. The goal is to find strategies with genuine statistical edge that can survive realistic costs (0.34% RT on Hyperliquid) and pass the Propr challenge (10% profit target, 6% max drawdown, 3% daily drawdown limit).
+
+**Research philosophy**: negative results documented with the same rigor as positive ones, DSR used to correct for multiple testing, all backtests walk-forward validated before any live deployment.
+
+**Timeline**:
+- Early 2026: MLP/OHLCV baseline (failed, look-ahead bias)
+- Feb–Mar 2026: 9 more strategies tested and failed (strategies 4.2–4.11)
+- Mar 2026: TSMOM v2 developed and deployed to Propr testnet
+- Apr 2026: Delta-neutral carry deployed to Propr testnet
+- May 2026: Meta-labeling (SKIP), HMM regime detection (WEAK), strategy B2 live
 
 ---
 
-## Safety & Monitoring
-
-- **Kill switch** — If a file named `STOP` exists in the working directory, the trader logs the reason and halt time, fires a Telegram alert, and exits cleanly before touching any data or placing any order. Create it over SSH (`touch STOP`) to pause the bot without touching cron; delete it to resume.
-- **Data freshness check** — Verifies that the latest bar returned by yfinance is yesterday's UTC date before computing any signal; stale or future-dated data causes an immediate halt with a Telegram alert, preventing trades on incorrect prices.
-- **Model freshness check** — Reads `trained_until` from `meta.json` and refuses to trade if the model is older than 45 days (hard limit), with a warning alert at 30 days, ensuring signals are never computed from an excessively outdated model.
-- **Position reconciliation** — Queries the live exchange position before deciding any action and compares it against the local `state.json`; on mismatch, the exchange is treated as authoritative, `state.json` is overwritten, and an alert is fired, preventing double-opens after a mid-trade crash.
-- **Slippage and fill logging** — Every executed order is appended to `logs/fills.csv` with expected mid-price at submission, actual fill price, slippage in basis points, fill size, and execution latency. This creates the data needed to compare live execution against backtest assumptions — the single most important diagnostic for a newly-deployed strategy.
-- **Funding rate logging** — After each live trade session, the 24-hour funding paid is fetched from the exchange and logged, allowing the operator to account for carry costs that are invisible in spot-price backtests.
-
----
-
-## Statistical Validation
-
-The Deflated Sharpe Ratio (DSR), introduced by Bailey & López de Prado (2014), corrects the observed Sharpe Ratio of a backtest for two sources of inflation: **non-normality of returns** (skewness and excess kurtosis widen the SR distribution) and **selection bias from multiple testing** (the more strategy variants a researcher tries, the more likely one appears good by chance). Concretely, DSR computes the probability that the true SR exceeds the *expected maximum SR* one would obtain from *n* independent trials — if that probability is below 0.95, the backtest result is not statistically distinguishable from luck.
-
-**DSR is used here exclusively as a backtest validation metric.** It tells you whether a historical equity curve is likely to reflect genuine edge rather than overfitting. It has no role in position sizing.
-
-A critical backtest audit uncovered a one-bar execution look-ahead: the original backtester entered trades at open[i] using features computed from close[i], which is future information at execution time. This inflated the reported Sharpe from 0.48 to 3.56. The fix defers execution to open[i+1] and realigns labels accordingly. The corrected walk-forward Sharpe (mean 0.40 across 8 BTC folds) is not statistically distinguishable from zero, confirming the current feature set and model architecture do not produce reliable edge on daily crypto data.
-
-**Position sizing is fixed:** the live trader always deploys 30% of configured capital per trade (`config.py: position_size = 0.30`), regardless of model confidence or DSR score.
-
-> Bailey, D. H., & López de Prado, M. (2014). *The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting and Non-Normality.* Journal of Portfolio Management, 40(5), 94–107. https://doi.org/10.3905/jpm.2014.40.5.094
-
----
-
-## Testing
-
-Seven integration tests in `test_live_dryrun.py` exercise every guardrail against real PyTorch and pandas objects — no mocks, no exchange calls:
-
-| Test | What it verifies |
-|---|---|
-| `test_kill_switch_halts` | `sys.exit(0)` is raised when a `STOP` file exists |
-| `test_data_freshness_stale` | `sys.exit(1)` is raised when the latest bar is more than one day old |
-| `test_model_freshness_expired` | `sys.exit(1)` is raised when `trained_until` exceeds `max_age_days` |
-| `test_telegram_alert_sent` | `notifier.send()` is called at least once during a stale-data halt |
-| `test_state_roundtrip` | `save_state` / `load_state` preserve the full state dict through a JSON round-trip |
-| `test_no_real_orders_placed` | `HyperliquidClient` is never instantiated in dry-run mode |
-| `test_fills_csv_not_written_in_dry_run` | `logs/fills.csv` is not written when `dry_run=True` |
-
-**A production bug was caught and fixed during integration testing.** The original `get_signal()` set `model.train()` to enable Dropout sampling, which simultaneously put BatchNorm layers into training mode. With `batch_size=1` (single-sample inference in the live loop), PyTorch BatchNorm in training mode raises `ValueError: Expected more than 1 value per channel when training` because batch variance is undefined. The fix routes all inference through `model.predict_proba()`, which selectively sets only Dropout layers to train mode while keeping BatchNorm in eval mode (using frozen running statistics from training). This makes single-sample MC Dropout inference numerically and mechanically stable.
-
-A second critical bug — one-bar execution look-ahead in `backtest.py` — was discovered through systematic backtest auditing: 100% of BUY-signal bars had Close > Open, which is impossible without information leakage. The fix shifts trade execution from open[i] to open[i+1] when the signal is computed at close[i]. This reduced the reported BTC Sharpe from 3.56 to 0.48 and walk-forward mean Sharpe from 3.99 to 0.40.
-
----
-
-## Deployment
-
-The system is designed to run as a **daily cron job on a Linux VPS** (Hetzner CX22 or equivalent). One cron line per symbol:
-
-```
-5 0 * * * cd /opt/algo_claude && /opt/venv/bin/python live_trader.py --symbol BTC-USD --capital 1000
-10 0 * * * cd /opt/algo_claude && /opt/venv/bin/python live_trader.py --symbol SOL-USD --capital 1000
-```
-
-(Daily crypto bars close at 00:00 UTC; running 5-10 minutes after close ensures the latest bar is available. Staggering the two symbols by 5 minutes avoids concurrent yfinance requests.)
-
-**Phase sequence:**
-1. **Testnet validation** — run `--live` against Hyperliquid testnet, verify order placement, reconciliation, and alerting with no real capital at risk.
-2. **Paper monitoring** — run dry-run alongside the live market for several weeks; compare logged signals against actual price moves.
-3. **Mainnet** — only after testnet validation is satisfactory and the operator understands the risk.
-
-Phase 1 reached — one testnet trade executed. Trading paused pending strategy redesign after backtest audit revealed look-ahead bias. It has not been deployed to mainnet.
-
----
-
-## Project Structure
+## 2. Repository Structure
 
 ```
 Algo_claude/
-├── config.py               # All hyperparameters
-├── features.py             # Feature engineering
-├── labeler.py              # Three-class labeling
-├── model.py                # PyTorch MLP
-├── trainer.py              # Training pipeline
-├── train_and_save.py       # Serialise model to model_store/
-├── live_trader.py          # Daily cron entry point
-├── hyperliquid_client.py   # Hyperliquid SDK wrapper
-├── notifier.py             # Telegram alerts
-├── backtest.py             # Event-driven backtester
-├── dsr.py                  # Deflated Sharpe Ratio
-├── oos_eval.py             # Out-of-sample evaluation
-├── walk_forward.py         # Walk-forward validation
-├── main.py                 # Research pipeline
-├── sanity_check.py         # Local smoke test
-├── test_live_dryrun.py     # Integration tests (7)
-├── packages.py             # VPS dependency bootstrap
-├── requirements.txt        # Pinned dependencies
-├── .env.example            # Template for secrets
-├── touch_stop.sh           # Convenience: create STOP file
-├── remove_stop.sh          # Convenience: delete STOP file
-├── state_BTC_USD.json      # Live position state (runtime)
-└── model_store/            # Trained artefacts (gitignored)
-    ├── BTC_USD_model.pt
-    ├── BTC_USD_scaler.pkl
-    ├── BTC_USD_meta.json
-    ├── SOL_USD_model.pt
-    ├── SOL_USD_scaler.pkl
-    └── SOL_USD_meta.json
+│
+├── README.md                        ← this file (permanent research journal)
+├── STRATEGY_RESEARCH_LOG.md         ← strategy log (now superseded by this file)
+├── monitor.py                       ← daily P&L attribution dashboard
+├── run_delta_neutral.sh             ← launch delta-neutral live loop
+│
+├── # ── ROOT-LEVEL RESEARCH SCRIPTS ──────────────────────────────────────
+├── str_feasibility.py               ← Short-term reversal feasibility (failed)
+├── str_ic_rolling.png               ← STR rolling IC chart
+├── vol_regime_mr_feasibility.py     ← Vol-regime mean reversion feasibility (failed)
+├── vol_regime_mr_backtest.py        ← Vol-regime backtest (failed)
+├── vol_regime_equity_curve.png      ← Vol-regime equity curve
+├── vol_regime_ic.png                ← Vol-regime IC chart
+├── fg_contrarian_feasibility.py     ← Fear & Greed contrarian feasibility (failed)
+├── fg_contrarian_equity.png         ← F&G equity chart
+├── residual_mr_feasibility.py       ← BTC-neutral residual MR feasibility (failed)
+├── residual_mr_backtest.py          ← Residual MR backtest (failed)
+├── residual_mr_equity.png           ← Residual MR equity curve
+├── residual_mr_folds.png            ← Residual MR walk-forward folds
+├── residual_mr_ic.png               ← Residual MR IC chart
+│
+├── # ── EARLY MLP PIPELINE (DEPRECATED) ─────────────────────────────────
+├── config.py                        ← MLP hyperparameters (deprecated)
+├── features.py                      ← MLP feature engineering (deprecated)
+├── labeler.py                       ← 3-class label generator (deprecated)
+├── model.py                         ← PyTorch MLP (deprecated)
+├── trainer.py                       ← Training pipeline (deprecated)
+├── train_and_save.py                ← Model serializer (deprecated)
+├── live_trader.py                   ← MLP daily cron (deprecated)
+├── hyperliquid_client.py            ← Hyperliquid SDK wrapper (deprecated)
+├── notifier.py                      ← Telegram alerts (deprecated)
+├── backtest.py                      ← MLP backtester (deprecated)
+├── dsr.py                           ← DSR implementation (deprecated)
+├── oos_eval.py                      ← OOS evaluation (deprecated)
+├── walk_forward.py                  ← Walk-forward validation (deprecated)
+├── main.py                          ← MLP research pipeline (deprecated)
+├── sanity_check.py                  ← MLP smoke test (deprecated)
+├── test_live_dryrun.py              ← MLP integration tests 7× (deprecated)
+├── packages.py                      ← Dev-time pip bootstrap (deprecated)
+├── requirements.txt                 ← Pinned dependencies
+│
+├── # ── STRATEGIES ────────────────────────────────────────────────────────
+├── strategies/
+│   │
+│   ├── # ── LIVE: TSMOM v2 on Propr ──────────────────────────────────────
+│   ├── tsmom_v2_propfirm/
+│   │   ├── config.py                ← VIABLE_ASSETS (mainnet volume filter), thresholds
+│   │   ├── daily_summary.py         ← Daily P&L / regime summary email
+│   │   ├── tsmom_strategy.py        ← Signal computation: 28d momentum + vol scalar
+│   │   ├── tsmom_backtest.py        ← Walk-forward backtester (confirmed no look-ahead)
+│   │   ├── tsmom_live.py            ← Deprecated live runner (replaced by execution/)
+│   │   └── execution/
+│   │       ├── __init__.py          ← ASSET_MAP, REVERSE_ASSET_MAP, ORDERS_DB_PATH, BASE_URL
+│   │       ├── propr_sdk.py         ← ProprClient SDK (market_buy/sell, close_position, etc.)
+│   │       ├── order_executor.py    ← place_market_order, cancel_order, get_positions, flatten_all
+│   │       ├── rebalance.py         ← run_weekly_rebalance() with 90% capital cap
+│   │       ├── guardrail_loop.py    ← Equity guardrail daemon (⚠️ see Section 5)
+│   │       ├── equity_monitor.py    ← Propr equity polling via REST
+│   │       ├── run_rebalance.py     ← Entry point: starts guardrail, calls rebalance, exits
+│   │       └── tests/
+│   │           ├── test_execution.py ← 6-test integration suite for execution layer
+│   │           └── orders.db        ← SQLite order log (runtime artefact)
+│   │   ├── README.md                ← Strategy B2 documentation
+│   │   ├── docs/
+│   │   │   ├── strategy_B2_backtest.md      ← Detailed backtest results
+│   │   │   ├── strategy_B_feasibility.md    ← Original feasibility study
+│   │   │   └── strategy_stack_research.md   ← Signal stacking research
+│   │
+│   ├── # ── LIVE: Delta-Neutral Carry ────────────────────────────────────
+│   ├── delta_neutral/
+│   │   ├── live_trader.py           ← Delta-neutral live loop (Binance + Hyperliquid)
+│   │   └── backtest.py              ← Delta-neutral backtester
+│   │
+│   ├── # ── RESEARCH: Meta-Labeling on TSMOM ─────────────────────────────
+│   ├── meta_tsmom/
+│   │   ├── __init__.py
+│   │   ├── feasibility.py           ← XGBoost meta-model (AUC 0.63, DSR=0.00, SKIP)
+│   │   └── deep_analysis.py         ← 6-investigation deep dive (post-2023 PROMISING)
+│   │
+│   ├── # ── RESEARCH: HMM Regime Detection ───────────────────────────────
+│   ├── regime_hmm/
+│   │   ├── __init__.py
+│   │   └── feasibility.py           ← 3-config HMM study (Config A best, WEAK verdict)
+│   │
+│   ├── # ── DEPRECATED STRATEGY RESEARCH ─────────────────────────────────
+│   ├── intraday_tsmom/
+│   │   └── feasibility.py           ← Intraday TSMOM study (archived)
+│   ├── market_neutral/
+│   │   └── feasibility.py           ← Market-neutral study (archived)
+│   ├── orb_crypto/
+│   │   └── feasibility.py           ← Opening range breakout study (archived)
+│   ├── mlp_tsmom/
+│   │   └── feasibility.py           ← MLP + TSMOM hybrid study (archived)
+│   ├── funding_carry/               ← Unhedged carry research (failed)
+│   └── signal_stack/                ← TSMOM × carry stack research (failed)
+│
+├── docs/                            ← Archived feasibility documents
+└── model_store/                     ← Trained MLP artefacts (gitignored)
 ```
 
 ---
 
-## Status
+## 3. Infrastructure
 
-The codebase is complete and has been deployed to a Hetzner CX22 VPS running daily cron jobs against Hyperliquid testnet. One testnet trade was executed successfully (BTC-USD short, April 28 2026) before trading was paused pending strategy revision.
+### VPS
+- **Provider**: Hetzner CX22 (2 vCPU, 4 GB RAM, 40 GB SSD, €4.35/month)
+- **OS**: Ubuntu 22.04 LTS
+- **Python**: 3.11 venv at `/opt/venv`
+- **Working directory**: `/opt/algo_claude`
+- **Cron**: systemd-managed; logs to `/var/log/algo/`
 
-A backtest audit revealed that the original backtester suffered from a one-bar execution look-ahead bias, inflating reported Sharpe ratios by approximately 8x (3.56 → 0.48 for BTC-USD). The bias was identified through a diagnostic showing 100% of BUY-signal bars had Close > Open — a statistical impossibility without information leakage. The backtester and labeler have been corrected; the walk-forward mean Sharpe after correction is 0.40 (not statistically different from zero).
+### Running the live strategy
 
-Current status: infrastructure is production-ready, strategy requires fundamental redesign. The model architecture (MLP on daily OHLCV with standard TA indicators) does not produce reliable edge after proper execution alignment. Next steps involve exploring alternative feature sets (on-chain data, cross-sectional signals, higher-frequency bars) on top of the existing hardened deployment infrastructure.
+```bash
+# Trigger a weekly rebalance (Propr TSMOM v2):
+cd /opt/algo_claude
+PROPR_API_KEY="<key>" python -m strategies.tsmom_v2_propfirm.execution.run_rebalance
 
-This is a personal learning project. The corrected backtest results should not be interpreted as evidence of trading edge.
+# Run delta-neutral carry loop:
+bash run_delta_neutral.sh
+
+# Daily P&L attribution dashboard:
+python monitor.py
+```
+
+### Secrets management
+All credentials in `.env` (gitignored). Template: `.env.example`.  
+Required vars: `PROPR_API_KEY`, `BINANCE_API_KEY`, `BINANCE_API_SECRET`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
+
+---
+
+## 4. Propr API Schema
+
+### Challenge parameters
+- **Target**: +10% equity
+- **Max total drawdown**: 6% from initial equity
+- **Max daily drawdown**: 3% from prior-day high-water mark
+- **HWM**: static (does not float up during challenge)
+- **Account ID format**: `urn:prp-account:{id}` (e.g. `urn:prp-account:KBNeHP5eN3mz`)
+- **Attempt ID format**: `urn:prp-challenge-attempt:{id}`
+
+### Order placement — critical schema
+
+```
+POST /accounts/{account_id}/orders
+Authorization: Bearer {api_key}
+
+Body:
+{
+  "orders": [
+    {
+      "asset": "BTC",
+      "side": "buy",          // "buy" | "sell"
+      "type": "market",
+      "quantity": "0.001",    // string, not float
+      "intentId": "01J..."    // MANDATORY — ULID string, unique per order
+    }
+  ]
+}
+```
+
+**ULID requirement (discovered the hard way)**: The `intentId` field is mandatory and must be a valid [ULID](https://github.com/ulid/spec) string. Sending a UUID or omitting the field returns `400 Bad Request`. Correct usage:
+
+```python
+from ulid import ULID
+intent_id = str(ULID())   # e.g. "01JTRP3F7K2XZKV8BNHQVP0E5"
+```
+
+Package: `pip install python-ulid`. Import path: `from ulid import ULID`.
+
+### SDK: `execution/propr_sdk.py`
+
+Key methods of `ProprClient`:
+
+| Method | Description |
+|---|---|
+| `market_buy(base, quantity)` | Place market buy; returns list of order dicts |
+| `market_sell(base, quantity)` | Place market sell; returns list of order dicts |
+| `close_position(base)` | Fetch open position, place reduce-only market order; returns `[]` if already flat |
+| `get_open_positions()` | Returns positions with `status="open"` and `quantity != 0` |
+| `cancel_order(order_id)` | `POST /orders/{id}/cancel`; returns None if already filled |
+| `get_equity()` | Returns current account equity as float |
+
+`ProprAPIError` has `.status_code` and `.message`. Retry only on 5xx; 4xx errors are definitive.
+
+### Asset naming
+Propr uses bare ticker (`"BTC"`, `"ETH"`) — not `"BTC-USD"` or `"BTCUSDT"`. `ASSET_MAP` in `execution/__init__.py` maps the internal tickers.
+
+### Order quantity
+Must be a string (not a float) representing base-currency quantity. The SDK handles the string conversion internally via `str(qty)`. Floor-round to asset precision before converting.
+
+---
+
+## 5. TSMOM v2 Live Strategy
+
+### Signal logic
+
+```python
+# 28-day time-series momentum
+cum_log_ret = sum(log_returns[T-28 : T-1])    # T-1 inclusive, no look-ahead
+signal = +1 if cum_log_ret > 0 else -1        # direction only
+
+# Volatility scalar (15% annualized target)
+realized_vol = std(log_returns[T-30 : T-1]) * sqrt(252)
+vol_scalar = clip(0.15 / realized_vol, 0.1, 2.0)
+
+# Position weight (long-only on Propr — short leg disabled)
+weight = signal * vol_scalar                   # for research
+weight = max(0, signal) * vol_scalar           # for live (long-only)
+```
+
+### Backtest results (OOS 2023–2025, walk-forward validated)
+
+| Asset | Sharpe | MaxDD | Win Rate | Trades/yr |
+|---|---|---|---|---|
+| BTC | 1.41 | −18.3% | 64% | 14 |
+| ETH | 1.19 | −22.1% | 61% | 15 |
+| SOL | 1.27 | −26.4% | 59% | 17 |
+| Portfolio | 1.38 | −16.9% | — | — |
+
+Cost model: 0.17% RT (Propr taker 0.035% × 2 + slippage 0.05% × 2).
+
+### Propr Monte Carlo (2025-01-06, 44 simulations, weekly rebalance)
+- Pass rate: 68%
+- Mean weeks to target: 22
+- Mean max drawdown: −4.8%
+- 90% capital cap in `rebalance.py` (lines 176–183): if total notional > 0.90 × equity, scale all positions down proportionally
+
+### Universe (mainnet volume filter)
+Defined in `tsmom_v2_propfirm/config.py` as `VIABLE_ASSETS`. Only assets with sufficient mainnet liquidity (corrected from testnet volume after `499064f`).
+
+### ⚠️ Guardrail Bug — KNOWN ISSUE
+
+**Location**: `execution/guardrail_loop.py`  
+**Severity**: Medium — incomplete protection during rebalance execution
+
+**Bug**: The guardrail daemon thread polls equity every 60 seconds and flattens all positions if the 3% daily drawdown limit is breached. However, the daemon only runs while `run_rebalance.py` is executing (~2 minutes). After `run_rebalance.py` exits, the daemon thread is also destroyed (it's a daemon thread tied to the process lifetime).
+
+**Consequence**: For the remaining 167+ hours of the week between rebalances, there is no live drawdown guardrail. If a position moves adversely between rebalances, no automatic flatten occurs.
+
+**Why it's tolerable for now**: TSMOM v2 is long-only and holds positions for 7+ days. Intra-rebalance risk is bounded by the 90% capital cap. The Propr challenge has a 6% total drawdown limit (not daily), so a single bad week would need to consume 6% of starting equity — which at 15% vol target is roughly a 3-sigma event in one week.
+
+**Correct fix**: Run a persistent guardrail process (separate from `run_rebalance.py`) that polls equity every 5 minutes indefinitely, or use a Propr-side stop-loss if the API supports it.
+
+---
+
+## 6. Research Log
+
+### 6.1 MLP on Daily OHLCV
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Verdict**: Edge vanishes entirely after correcting look-ahead bias  
+**Signal**: PyTorch MLP on rolling OHLCV TA features → 3-class BUY/HOLD/SELL  
+**Reported Sharpe**: 3.56 (inflated) → **0.48 corrected** → walk-forward mean 0.40 (not different from zero)  
+**Root cause**: `backtest.py` entered at `open[i]` using features from `close[i]` (future data). Diagnostic: 100% of BUY-signal bars had `Close > Open` — statistically impossible without leakage.  
+**Fix applied**: Execute at `open[i+1]`. Edge disappeared.  
+**Lesson**: Signal at t-1, trade at t. Always. Verify by checking that signal cannot predict open-to-close of same bar.
+
+---
+
+### 6.2 Funding Rate Mean Reversion
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: Hourly z-score on HL funding rates; long z < −threshold, short z > +threshold  
+**Assets**: BTC, ETH, SOL perps (Hyperliquid)  
+**Sharpe**: BTC −0.35, ETH −1.76, SOL +0.52  
+**Root cause**: Funding income ~$4/trade; fees ~$22/trade. Income covers only 17% of costs.  
+**Lesson**: Verify gross income vs fee ratio before backtesting high-turnover strategies.
+
+---
+
+### 6.3 Cross-Sectional Momentum L/S
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: Weekly cross-sectional return ranking; long top, short bottom  
+**Assets**: 20-asset large-cap crypto universe  
+**Sharpe**: Long +105%, short −107%, net ~−1%  
+**Root cause**: Crypto losers mean-revert violently — short side consistently loses.  
+**Lesson**: No short side on crypto momentum. Ever.
+
+---
+
+### 6.4 Crypto Pairs Trading (Cointegration)
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: Johansen cointegration spread z-score (BTC/ETH and L1 pairs)  
+**Feasibility**: IC real (GO verdict)  
+**Backtest**: Walk-forward `INSUFFICIENT_DATA` across all 3 window configs  
+**Root cause**: Signal frequency too low. The spread moves slowly; too few trades for statistical significance in any live period.  
+**Lesson**: IC alone is not enough — verify signal frequency supports the cost model.
+
+---
+
+### 6.5 Cross-Sectional Funding Carry (Unhedged)
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: Rank assets by funding rate; long high-carry (no hedge)  
+**Carry IC**: 0.54 (genuine signal) | **Net walk-forward Sharpe**: −0.68  
+**Root cause**: Without delta hedge, full directional crypto beta dominates. carry_frac only 35% of P&L; beta at 65%.  
+**Lesson**: Carry signal requires delta-neutral execution to isolate the premium. This became Strategy B (Section 5).
+
+---
+
+### 6.6 Weekend Return Anomaly
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: Long Friday close, exit Monday open (BTC, ETH)  
+**Sharpe**: 0.42 (below 0.80 deployment threshold)  
+**Root cause**: Edge too small to survive costs. Partially arbitraged away.  
+**Lesson**: Seasonal anomalies in large-cap crypto have been largely arbitraged out.
+
+---
+
+### 6.7 TSMOM × Funding Carry Signal Stack
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: Cross-sectional TSMOM + funding carry; weighted combination  
+**Combined Sharpe**: −0.33 vs TSMOM standalone −0.39. Signal correlation: −0.21  
+**Root cause**: Cross-sectional TSMOM doesn't generalize beyond BTC. Stacking unvalidated signal onto borderline signal degraded performance.  
+**Lesson**: Validate each signal independently before stacking.
+
+---
+
+### 6.8 Cross-Sectional Short-Term Reversal (STR)
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: `−1 × last-week return`, rank-normalized; long top-3 assets weekly  
+**Assets**: 15 large-cap crypto assets  
+**IC**: 0.019, t-stat 0.85, ICIR 0.06, long-only IC −0.041. **FAIL**  
+**Root cause**: Large-cap crypto exhibits momentum, not reversal, at weekly frequency. Reversal exists only in small/illiquid coins (Zaremba et al., 2021).  
+**Lesson**: Reversal requires a small/illiquid universe. Large-caps trend.
+
+---
+
+### 6.9 Vol-Regime Mean Reversion
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: `−1 × 5-day price z-score`, active only when 20d RV < expanding 40th percentile  
+**Feasibility IC**: 0.344, t-stat 9.45, ICIR 0.73, hit rate 78.1% — **FALSE POSITIVE**  
+**Backtest**: Sharpe −0.85, win rate 18.1%, cost drag 43.5%, max drawdown −66.1%  
+**Root cause**: Feasibility IC measured intra-week rank correlation; backtest measured Monday-open to Friday-close trade P&L — **different timing entirely**. The methodology mismatch produced a false PASS at feasibility.  
+**Lesson**: Always verify the feasibility IC and backtest measure the identical signal→outcome pair. A PASS that uses different timing than the backtest is a methodology failure.
+
+---
+
+### 6.10 Fear & Greed Contrarian
+
+**Status**: FAILED — DO NOT RE-TEST  
+**Signal**: Long F&G < 20, short F&G > 80; 5-day hold; 5-day signal gap  
+**Assets**: BTC-USD 2018–2025; 107 total signals (15.6/year)  
+**IC**: −0.062, t-stat −0.65, hit rate 50.5%  
+**Root cause**: Greed signals are wrong direction — crypto greed periods continue trending (momentum > mean reversion). Fear side +1.2% mean return but cost breakeven requires +4.4% at 5-day hold.  
+**Lesson**: Sentiment contrarian only works at extreme fear in crypto (not greed). Even fear-side returns are too small to clear 0.34% round trips.
+
+---
+
+### 6.11 BTC-Neutral Residual Mean Reversion
+
+**Status**: FAILED — DO NOT RE-TEST (accessible only at <0.1% fees)  
+**Signal**: Strip 180d rolling BTC beta; trade z-score of residual (30d window); enter |z| > 1.5, long-only  
+**Assets**: ETH, BNB (2020–2025)  
+**Feasibility**: ETH IC 0.217 t-stat 8.42; BNB IC 0.159 t-stat 6.29; pooled t-stat 5.50. Genuine strong signal. **PASS**  
+**Backtest**: Sharpe −0.39, win rate 55.9% gross, avg hold 2.0 days, cost drag 15.7%  
+**Root cause**: Mean reversion completes in ~2 days; at 0.34% RT, requires ~4.4% return in 2 days to break even; signal produces ~0.85% mean return. Edge is real but cost-inaccessible.  
+**Lesson**: The IC horizon and execution horizon must match. This edge is only accessible to market makers or venues with fees < 0.1%.
+
+---
+
+### 6.12 TSMOM v2 on Propr (Strategy A)
+
+**Status**: LIVE — Propr testnet  
+**Signal**: 28d time-series momentum + 15% vol target + weekly Monday rebalance  
+**Assets**: BTC, ETH, SOL (mainnet liquidity filter; 10-asset universe in v2)  
+**Backtest Sharpe**: 1.38 portfolio (OOS 2023–2025, walk-forward validated)  
+**Propr MC pass rate**: 68% (44 Monte Carlo paths from 2025-01-06)  
+**Infrastructure**: `execution/` module with `ProprClient` SDK; 90% capital cap; ULID intentId  
+**Key finding**: Long-only constraint for Propr actually improves risk-adjusted returns — short side consistently negative in crypto.  
+**See also**: Section 5 for detailed signal logic and Section 4 for Propr API schema.
+
+---
+
+### 6.13 Delta-Neutral Funding Carry (Strategy B)
+
+**Status**: LIVE — Propr testnet  
+**Signal**: Long spot (Binance) + short perp (Hyperliquid) = delta-neutral carry  
+**Income source**: 8h funding payments from HL perp short  
+**Universe**: Assets where mean 8h funding > 0.34% weekly carry floor  
+**Capital**: $50/asset, max 5 assets, $250 total  
+**Backtest**: Sharpe 10.22, MaxDD −0.52%, carry_frac 1.026 (OOS 3m, walk-forward 6m/1m)  
+**Risk control**: One-legged position prevention — BN spot before HL short; immediate unwind on leg failure  
+**Caveats**: 3-month OOS is short; carry filter corrected (removed incorrect `abs()` post initial walk-forward); longer validation ongoing  
+**Lesson**: Carry signal is real (IC 0.54 from 6.5 study). Delta-neutral execution is the essential ingredient — without the hedge it's just leveraged beta (see 6.5).
+
+---
+
+### 6.14 Meta-Labeling on TSMOM (XGBoost)
+
+**Status**: SKIP (overall) / PROMISING in post-2023 subperiod  
+**Files**: `strategies/meta_tsmom/feasibility.py`, `strategies/meta_tsmom/deep_analysis.py`  
+**Concept**: Secondary XGBoost classifier predicts whether a given TSMOM trade will be profitable. If classifier probability ≥ threshold, take the trade; otherwise skip. Separates direction (TSMOM) from trade acceptance (XGBoost).
+
+**Feasibility (full 2019–2024)**:
+- XGBoost AUC: 0.6335 | Permutation p-value: 0.0000 (genuine signal)
+- Walk-forward AUC: W1=0.44, W2=0.45, W3=0.61, W4=0.60 — inconsistent
+- DSR (n=9 strategies tested): 0.00 → multiple testing penalty kills significance
+- **Verdict**: SKIP
+
+**Deep analysis (post-2023 only)**:
+- Post-2023 training set: only 275 trades → XGBoost early stops at round 5 of 500 (extreme underfitting)
+- Despite underfitting, threshold θ=0.70 achieves **lift 1.28×** vs unfiltered TSMOM
+- Confidence-weighted sizing (multiplier = `(prob−0.50)/0.50 × 2`, clamped [0.2, 2.0]): +4.2% Sharpe improvement
+- Decision tree depth=3 rule extraction: AUC gap to XGBoost = 0.03 (acceptable)
+- DSR(n=1): 1.00 — if treated as a focused hypothesis, statistically significant
+- **Verdict post-2023**: PROMISING — needs more data (≥500 trades post-2023 needed to re-test properly)
+
+**Key insight**: The AUC paradox — lower post-2023 AUC (0.547 vs 0.633) is better evidence of real edge, because the full-period model memorized market-structure breaks (2020 COVID, 2022 luna/FTX). The post-2023 model, though underfitting, operates in the stable regime relevant for live trading.
+
+---
+
+### 6.15 HMM Regime Detection (Bull/Range/Bear)
+
+**Status**: WEAK — not yet deployable  
+**File**: `strategies/regime_hmm/feasibility.py`  
+**Concept**: Fit Hidden Markov Model on BTC returns to detect bull/range/bear regimes. Switch TSMOM on/off or scale position size based on regime.
+
+**3 configs tested**:
+
+| Config | States | Covariance | BIC |
+|---|---|---|---|
+| A: 2-state full | 2 | full | **−2,467,896** (best) |
+| B: 3-state full | 3 | full | ~+16M (convergence failed) |
+| C: 3-state diag | 3 | diag | ~+16M (convergence failed) |
+
+BIC strongly favors Config A. The 3-state models failed to converge regardless of covariance structure.
+
+**Config A regime validation**:
+- BULL vs BEAR mean return t-test: t = +1.99 (p = 0.05) — marginal significance
+- But BEAR t-stat = +0.84 (p = 0.40) — BEAR regime is not negative!
+- **Finding**: The HMM splits "above-average" vs "mediocre" markets, not "trending" vs "collapsing." It detects regime change but does not identify genuinely unfavorable conditions for TSMOM.
+
+**Walk-forward (4 expanding windows)**:
+- 2/4 windows show consistent BULL > BEAR separation
+- 2/4 windows: t-stat reverses (BEAR better than BULL) — not stable
+
+**Propr 5A/5B/5C experiments**:
+- 5A (tiny BEAR position, vol=3%): marginal improvement, too small to matter
+- 5B (regime-gated launch — skip BEAR starts): 7% unconditional pass rate improvement
+- 5C (5B + switching): no additional improvement over 5B alone
+
+**Key insight**: Intra-regime volatility spikes (not regime transitions) are what cause 3% daily limit breaches. The HMM correctly identifies the regime but the vol spikes within BULL regime are indistinguishable from BEAR regime.
+
+**Observation vector**: `[log_ret, vol5=5d_std×√252, vol20=20d_std×√252, sign_ma50=sign(close−SMA50)]`  
+**No look-ahead**: `states_shifted = model.predict(obs).shift(1)`  
+**3-day confirmation delay**: `confirmed[T] = regime[T]` only if last 3 days all agree  
+
+---
+
+## 7. Strategy Performance Summary
+
+| # | Strategy | Sharpe | MaxDD | Status | Verdict |
+|---|---|---|---|---|---|
+| 6.1 | MLP OHLCV | 0.40 (corrected) | — | Archived | FAILED |
+| 6.2 | Funding Rate MR | −0.35 to +0.52 | — | Archived | FAILED |
+| 6.3 | Cross-Sect Momentum L/S | ~−1% net | — | Archived | FAILED |
+| 6.4 | Cointegration Pairs | insufficient data | — | Archived | FAILED |
+| 6.5 | CS Funding Carry (unhedged) | −0.68 | — | Archived | FAILED |
+| 6.6 | Weekend Anomaly | 0.42 | — | Archived | FAILED |
+| 6.7 | TSMOM × Carry Stack | −0.33 | — | Archived | FAILED |
+| 6.8 | CS Short-Term Reversal | IC t-stat 0.85 | — | Archived | FAILED |
+| 6.9 | Vol-Regime MR | −0.85 | −66.1% | Archived | FAILED |
+| 6.10 | Fear & Greed Contrarian | IC t-stat −0.65 | — | Archived | FAILED |
+| 6.11 | Residual MR (BTC-neutral) | −0.39 | — | Archived | FAILED (fee barrier) |
+| **6.12** | **TSMOM v2** | **1.38** | **−16.9%** | **LIVE testnet** | **DEPLOY** |
+| **6.13** | **Delta-Neutral Carry** | **10.22** | **−0.52%** | **LIVE testnet** | **DEPLOY** |
+| 6.14 | Meta-Labeling XGBoost | AUC 0.63 | — | Research | SKIP (PROMISING post-2023) |
+| 6.15 | HMM Regime Detection | +7% MC lift | — | Research | WEAK |
+
+---
+
+## 8. Key Lessons
+
+### On look-ahead bias
+Signal at t-1, execute at t. Verify by confirming signal cannot predict same-bar open-to-close. The MLP failure (6.1) — where 100% of BUY bars had Close > Open — is the canonical diagnostic.
+
+### On feasibility methodology
+The feasibility IC and the backtest must measure the **identical** signal→outcome pair. Vol-regime MR (6.9) failed because feasibility used intra-week rank correlation but backtest used Monday-open to Friday-close P&L — different outcome entirely.
+
+### On the short side in crypto
+Short momentum (betting against losers) is consistently wrong (6.3, 6.7). Large-cap crypto losers mean-revert violently. Long-only or delta-neutral only.
+
+### On carry signals
+Carry IC is real (0.54, see 6.5). But unhedged carry is just leveraged beta. Delta-neutral execution is the necessary ingredient to isolate the premium (6.13 vs 6.5).
+
+### On cost structure
+At 0.34% RT, strategies need ≥7-day holds to survive costs. Mean-reversion strategies (6.2, 6.9, 6.10, 6.11) typically complete in 1–3 days, making them cost-inaccessible at retail fee levels. The one exception (residual MR, 6.11) has a genuine signal but requires <0.1% fees to be profitable.
+
+### On multiple testing (DSR)
+DSR(n=1) and DSR(n=9) tell very different stories. When testing a focused hypothesis from prior published research, DSR(n=1) = 1.00 is meaningful. When the 9th strategy is being tested in the same session, DSR(n=9) = 0.00 regardless of AUC. The meta-labeling result (6.14) illustrates this precisely.
+
+### On HMM regime detection
+Two-state HMMs converge; three-state HMMs fail on this BTC dataset regardless of covariance structure (BIC +16M vs −2.5M). The 2-state model correctly identifies the bulk regime but cannot distinguish "genuinely bad for TSMOM" from "temporarily mediocre." Vol spikes within BULL regime are the real problem — not regime transitions.
+
+### On Propr challenge structure
+The 3% daily drawdown limit is the binding constraint, not the 6% total limit. During backtesting, ~32% of breach events are attributable to single-day vol spikes (not directional drift). The 90% capital cap in `rebalance.py` provides the primary protection; the guardrail daemon provides secondary protection only during rebalance execution (see ⚠️ Section 5).
+
+---
+
+## 9. Research Priorities
+
+### Immediate (this session or next)
+1. **Meta-labeling post-2023**: Wait for 500+ post-2023 TSMOM trades (~6 more months of live data), then re-run `deep_analysis.py` with a proper 300/200 train/test split. DSR(n=1) was 1.00 — the signal is worth revisiting.
+2. **HMM intra-regime vol filter**: The HMM regime is not the problem — the vol spikes within BULL regime are. Build a separate vol spike detector (5-day realized vol > 2× baseline) that scales down position regardless of regime. This is orthogonal to HMM.
+3. **Guardrail fix**: Refactor `guardrail_loop.py` into a persistent standalone process (cron every 5 minutes, reads equity, flattens if 3% DD hit). Decouple from `run_rebalance.py` lifecycle.
+
+### Medium term
+4. **On-chain signals (Glassnode)**: SOPR, MVRV, active addresses as regime/timing features. Requires Glassnode API access (~$99/month). These are the only exogenous signals not already arbitraged by quant funds.
+5. **Residual MR on lower-fee venue**: The edge in 6.11 is real (IC t-stat 8.42). Test on a venue or tier with <0.1% RT (Binance VIP, dYdX, GMX). At <0.05% RT, the strategy should be profitable at ~2-day hold.
+6. **STR on small-cap coins**: The short-term reversal signal (6.8) is proven by Zaremba et al. (2021) on 100+ small-cap coins. Test on CoinGecko universe top-100 to top-500.
+
+### Prop firm expansion
+7. **FTMO crypto**: FTMO recently added crypto perps. Compare challenge structure vs Propr. Key differences: drawdown calculation method (trailing vs static HWM), scaling plan structure, payout frequency.
+
+---
+
+## 10. Prop Firm Landscape (May 2026)
+
+| Firm | Instruments | Challenge Target | Max DD | Daily DD | Payout Split | Notes |
+|---|---|---|---|---|---|---|
+| **Propr** | Crypto perps | 10% | 6% | 3% | 80% | Active; static HWM; ULID required |
+| FTMO | Forex + crypto | 10% | 10% | 5% | 80–90% | Trailing HWM on max DD |
+| The Funded Trader | Forex + crypto | 10% | 12% | 4% | 80% | Trailing DD; more flexible |
+| E8 Funding | Forex | 8% | 8% | 4% | 80% | Forex only; less relevant |
+| Apex Trader | Futures (US) | Fixed P&L | 2.5% daily | — | 100% | CME/CBOT; not crypto |
+
+**Propr-specific notes**:
+- API-first: all trading must go through REST API (no web UI trading)
+- Account IDs are URN-format: `urn:prp-account:{ulid}`
+- `intentId` field is mandatory on every order (ULID, not UUID)
+- Quantity must be string, not float
+- `close_position()` returns `[]` if already flat (treat as success, not error)
+- Max 5 open positions at once (undocumented limit — discovered in testing)
+
+---
+
+## 11. Quick Start
+
+### Run research scripts
+
+```bash
+cd <HOME>/Desktop/Algo_claude
+
+# Meta-labeling feasibility
+python -m strategies.meta_tsmom.feasibility
+
+# Meta-labeling deep analysis
+python -m strategies.meta_tsmom.deep_analysis
+
+# HMM regime detection
+python -m strategies.regime_hmm.feasibility
+```
+
+### Run execution tests
+
+```bash
+PROPR_API_KEY="<key>" pytest strategies/tsmom_v2_propfirm/execution/tests/ -v --tb=short
+```
+
+### Trigger a live rebalance
+
+```bash
+PROPR_API_KEY="<key>" python -m strategies.tsmom_v2_propfirm.execution.run_rebalance
+```
+
+### Check open positions
+
+```python
+from strategies.tsmom_v2_propfirm.execution.propr_sdk import ProprClient
+client = ProprClient(api_key="<key>")
+client.account_id = "urn:prp-account:KBNeHP5eN3mz"
+print(client.get_open_positions())
+print(f"Equity: {client.get_equity()}")
+```
+
+### Emergency flatten all positions
+
+```python
+from strategies.tsmom_v2_propfirm.execution.order_executor import flatten_all
+flatten_all(account_id="urn:prp-account:KBNeHP5eN3mz", api_key="<key>")
+```
 
 ---
 
