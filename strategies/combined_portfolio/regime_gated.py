@@ -159,7 +159,8 @@ def compute_weights(
     lr   = log_ret(prices)
     cum  = lr.rolling(TSMOM_LOOKBACK).sum().shift(1)   # signal: data through T-1
     sig  = np.sign(cum)
-    rv   = (lr.rolling(VOL_WINDOW).std().shift(1) * np.sqrt(252)).clip(lower=1e-6)
+    # FIX B: crypto trades 7 days/week → annualise with sqrt(365), not sqrt(252)
+    rv   = (lr.rolling(VOL_WINDOW).std().shift(1) * np.sqrt(365)).clip(lower=1e-6)
 
     w = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
 
@@ -186,23 +187,37 @@ def compute_weights(
     # Gross exposure cap
     gross = w.abs().sum(axis=1).replace(0, np.nan)
     scale = (GROSS_CAP / gross).clip(upper=1.0).fillna(1.0)
-    return w.mul(scale, axis=0)
+    w_capped = w.mul(scale, axis=0)
+
+    # FIX A: lock to weekly rebalance (Monday only, ffill through week).
+    # Without this, the vol-scalar updates daily, generating ~14% annual
+    # excess cost drag from spurious non-Monday turnover.
+    is_monday = pd.Series(w_capped.index.dayofweek == 0, index=w_capped.index)
+    w_weekly = w_capped.where(is_monday, np.nan).ffill().fillna(0.0)
+    return w_weekly
 
 
 def backtest(prices: pd.DataFrame, weights: pd.DataFrame) -> pd.Series:
     """
     Daily net returns. Convention: weight[T] already uses T-1 data.
     P&L[T] = weight[T] × return[T] — no additional shift.
-    Costs applied on turnover.
+    FIX A: costs charged only on Mondays (actual rebalance days).
+    With weekly-locked weights this is equivalent to charging on every
+    non-zero diff, but guards against any residual daily drift.
     """
     lr    = log_ret(prices)
     pnl   = (weights * lr).sum(axis=1)
-    costs = weights.diff().abs().sum(axis=1) * COST_RT
+    # Only charge costs on Mondays (actual rebalance days)
+    is_rebalance = pd.Series(
+        weights.index.dayofweek == 0, index=weights.index
+    ).astype(float)
+    costs = weights.diff().abs().sum(axis=1) * COST_RT * is_rebalance
     return pnl - costs
 
 
 # ── Metrics ───────────────────────────────────────────────────────────────────
-def sharpe(r: pd.Series, ann: int = 252) -> float:
+# FIX B: crypto is 24/7 — 365 trading days/year, not 252
+def sharpe(r: pd.Series, ann: int = 365) -> float:
     return r.mean() / r.std() * np.sqrt(ann) if r.std() > 0 else 0.0
 
 
@@ -214,7 +229,7 @@ def max_dd(r: pd.Series) -> float:
 def metrics(r: pd.Series) -> dict[str, float]:
     return {
         "sharpe":    sharpe(r),
-        "ann_ret":   r.mean() * 252 * 100,
+        "ann_ret":   r.mean() * 365 * 100,   # FIX B: 365 not 252
         "max_dd":    max_dd(r) * 100,
         "max_daily": r.min() * 100,
         "days_gt3":  int((r < -0.03).sum()),
