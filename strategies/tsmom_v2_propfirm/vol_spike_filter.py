@@ -180,19 +180,52 @@ def build_positions(close: pd.DataFrame,
 def compute_portfolio_pnl(close: pd.DataFrame,
                            positions: pd.DataFrame) -> pd.Series:
     """
-    Daily net portfolio return.
-    Positions held = prior day's positions (shift(1) execution lag).
-    Costs charged only on Monday (turnover × COST_PER_LEG one-way).
+    Daily net portfolio return — MEAN convention (matches backtest_v2 / README).
+
+    Each asset is treated as an independently funded bucket; portfolio return
+    is the equal-weight mean of per-asset returns.  This is consistent with
+    how README §6.12 metrics were produced (Sharpe 1.38, MaxDD -16.9%).
+
+    Bug fix: prior version used SUM without gross cap, inflating notional by
+    ~4× (14 assets × avg 0.28 vol-scalar = 3.9× leverage) → MaxDD -83.1%.
+    MEAN divides each asset's contribution by n_active, giving realistic
+    portfolio-level exposure and MaxDD in the -10 to -25% range.
     """
-    arith   = close.pct_change().fillna(0.0)
-    held    = positions.shift(1).fillna(0.0)
-    gross   = (held * arith).sum(axis=1)
+    arith     = close.pct_change().fillna(0.0)
+    held      = positions.shift(1).fillna(0.0)
+    gross     = (held * arith).mean(axis=1)   # MEAN not SUM
 
-    is_mon  = pd.Series(positions.index.dayofweek == 0,
-                        index=positions.index).astype(float)
-    turnover = positions.diff().abs().sum(axis=1)
+    is_mon    = pd.Series(positions.index.dayofweek == 0,
+                          index=positions.index).astype(float)
+    # Per-asset costs, meaned (consistent with MEAN P&L convention)
+    turn_pa   = positions.diff().abs()
+    is_mon_2d = is_mon.values.reshape(-1, 1)
+    costs     = (turn_pa * COST_PER_LEG * is_mon_2d).mean(axis=1)
+
+    return gross - costs
+
+
+def compute_account_pnl(close: pd.DataFrame,
+                         positions: pd.DataFrame,
+                         gross_cap: float = 0.90) -> pd.Series:
+    """
+    Daily net account return — SUM+cap convention (used for daily breach analysis).
+
+    Applies 90% gross cap to match the challenge simulator's behaviour.
+    Used only for counting days > 3% loss; NOT used for Sharpe/MaxDD reporting.
+    """
+    gross_total = positions.sum(axis=1).replace(0, np.nan)
+    scale       = (gross_cap / gross_total).clip(upper=1.0).fillna(1.0)
+    pos_capped  = positions.mul(scale, axis=0).fillna(0.0)
+
+    arith    = close.pct_change().fillna(0.0)
+    held     = pos_capped.shift(1).fillna(0.0)
+    gross    = (held * arith).sum(axis=1)
+
+    is_mon   = pd.Series(pos_capped.index.dayofweek == 0,
+                         index=pos_capped.index).astype(float)
+    turnover = pos_capped.diff().abs().sum(axis=1)
     costs    = turnover * COST_PER_LEG * is_mon
-
     return gross - costs
 
 
@@ -224,16 +257,18 @@ def run_walk_forward(close: pd.DataFrame,
         # Build positions on full data (signal needs pre-OOS history)
         base_pos = build_positions(close)
         for cfg_name, thresholds in [("base", None)] + list(configs.items()):
-            pos = build_positions(close, thresholds if cfg_name != "base" else None)
-            pnl = compute_portfolio_pnl(close, pos)
-            oos = pnl.loc[oos_s:oos_e]
+            pos      = build_positions(close, thresholds if cfg_name != "base" else None)
+            pnl      = compute_portfolio_pnl(close, pos)       # MEAN — Sharpe/MaxDD
+            acct_pnl = compute_account_pnl(close, pos)         # SUM+cap — breach days
+            oos      = pnl.loc[oos_s:oos_e]
+            oos_acct = acct_pnl.loc[oos_s:oos_e]
             rows.append(dict(
                 fold=fold_i,
                 oos_period=f"{oos_s[:7]}–{oos_e[:7]}",
                 config=cfg_name,
                 sharpe=sharpe(oos),
                 max_dd=max_dd(oos),
-                breach_days=count_breach_days(oos),
+                breach_days=count_breach_days(oos_acct),
                 n_days=len(oos),
             ))
     return pd.DataFrame(rows)
@@ -413,12 +448,14 @@ def spike_bucket_pct(log_ret: pd.DataFrame, thresholds: list) -> dict:
 
 # ── Plotting ──────────────────────────────────────────────────────────────────
 def plot_results(
-    close:      pd.DataFrame,
-    base_pnl:   pd.Series,
-    t1_pnl:     pd.Series,
-    log_ret:    pd.DataFrame,
-    base_sims:  pd.DataFrame,
-    sim_results: dict[str, pd.DataFrame],
+    close:        pd.DataFrame,
+    base_pnl:     pd.Series,   # MEAN convention (Sharpe/MaxDD)
+    t1_pnl:       pd.Series,   # MEAN convention (Sharpe/MaxDD)
+    base_acct:    pd.Series,   # SUM+cap (daily breach distribution)
+    t1_acct:      pd.Series,   # SUM+cap (daily breach distribution)
+    log_ret:      pd.DataFrame,
+    base_sims:    pd.DataFrame,
+    sim_results:  dict[str, pd.DataFrame],
 ) -> None:
     fig = plt.figure(figsize=(16, 12))
     gs  = gridspec.GridSpec(2, 2, figure=fig, hspace=0.42, wspace=0.35)
@@ -463,13 +500,13 @@ def plot_results(
     ax2.legend(fontsize=7)
     ax2.grid(True, alpha=0.3)
 
-    # ── Panel 3: Daily return distribution (left tail zoom) ───────────────
+    # ── Panel 3: Daily return distribution (left tail zoom, account P&L) ────
     lim = 0.08
     bins = np.linspace(-lim, lim, 60)
-    ax3.hist(base_pnl.loc[OOS_START:].clip(-lim, lim), bins=bins,
-             color="darkorange", alpha=0.6, label="Base", density=True)
-    ax3.hist(t1_pnl.loc[OOS_START:].clip(-lim, lim),   bins=bins,
-             color="steelblue",  alpha=0.6, label="T1 filter", density=True)
+    ax3.hist(base_acct.loc[OOS_START:].clip(-lim, lim), bins=bins,
+             color="darkorange", alpha=0.6, label="Base (acct)", density=True)
+    ax3.hist(t1_acct.loc[OOS_START:].clip(-lim, lim),   bins=bins,
+             color="steelblue",  alpha=0.6, label="T1 filter (acct)", density=True)
     ax3.axvline(-DAILY_LIMIT_PCT, color="red", lw=1.5, ls="--",
                 label=f"-{DAILY_LIMIT_PCT:.0%} Propr limit")
     ax3.set_xlim(-lim, lim)
@@ -573,15 +610,20 @@ def main():
 
     # ── Portfolio P&L ──────────────────────────────────────────────────────
     print("Computing P&L...")
+    # MEAN convention: Sharpe / MaxDD (matches README / backtest_v2)
     base_pnl = compute_portfolio_pnl(close, base_pos)
     filt_pnl = {name: compute_portfolio_pnl(close, pos)
                 for name, pos in filt_pos.items()}
+    # SUM+cap convention: breach-day analysis only (matches challenge simulator)
+    base_acct_pnl = compute_account_pnl(close, base_pos)
+    filt_acct_pnl = {name: compute_account_pnl(close, pos)
+                     for name, pos in filt_pos.items()}
 
     oos_base     = base_pnl.loc[OOS_START:]
     y2025_base   = base_pnl.loc["2025-01-01":"2025-12-31"]
     base_oos_sh  = sharpe(oos_base)
-    base_br      = count_breach_days(oos_base)
-    base_2025_br = count_breach_days(y2025_base)
+    base_br      = count_breach_days(base_acct_pnl.loc[OOS_START:])
+    base_2025_br = count_breach_days(base_acct_pnl.loc["2025-01-01":"2025-12-31"])
 
     # ── Spike bucket distribution (T1) ────────────────────────────────────
     buckets = spike_bucket_pct(log_ret, THRESHOLD_CONFIGS["T1"])
@@ -601,10 +643,9 @@ def main():
 
     for name, pnl in filt_pnl.items():
         oos_pnl  = pnl.loc[OOS_START:]
-        y2025    = pnl.loc["2025-01-01":"2025-12-31"]
         sh       = sharpe(oos_pnl)
-        br       = count_breach_days(oos_pnl)
-        br25     = count_breach_days(y2025)
+        br       = count_breach_days(filt_acct_pnl[name].loc[OOS_START:])
+        br25     = count_breach_days(filt_acct_pnl[name].loc["2025-01-01":"2025-12-31"])
         sh_pct   = sh / base_oos_sh if base_oos_sh != 0 else 0.0
         print(f"  {name:<8} {sh:>8.2f} {max_dd(oos_pnl):>8.1%} "
               f"{br:>12d} {br25:>13d} {sh_pct:>7.0%}")
@@ -659,12 +700,13 @@ def main():
     best_m      = all_metrics[best_config]
     t1_pnl      = filt_pnl["T1"]
     t1_oos_sh   = sharpe(t1_pnl.loc[OOS_START:])
-    t1_br       = count_breach_days(t1_pnl.loc[OOS_START:])
-    t1_2025_br  = count_breach_days(t1_pnl.loc["2025-01-01":"2025-12-31"])
+    t1_br       = count_breach_days(filt_acct_pnl["T1"].loc[OOS_START:])
+    t1_2025_br  = count_breach_days(filt_acct_pnl["T1"].loc["2025-01-01":"2025-12-31"])
 
     # ── Figure ──────────────────────────────────────────────────────────
-    plot_results(close, base_pnl, t1_pnl, log_ret,
-                 base_sim_df, sim_dfs)
+    plot_results(close, base_pnl, t1_pnl,
+                 base_acct_pnl, filt_acct_pnl["T1"],
+                 log_ret, base_sim_df, sim_dfs)
 
     # ── Verdict ──────────────────────────────────────────────────────────
     verdict, best_cfg = print_verdict(
