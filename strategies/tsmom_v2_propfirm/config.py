@@ -43,7 +43,7 @@ REBALANCE_WEEKDAY: Final[int] = 0     # 0 = Monday (pandas .dayofweek convention
 # Toggle CHALLENGE_MODE to switch between modes; call get_vol_target() at runtime.
 CHALLENGE_MODE: bool = False
 
-VOL_TARGET_LIVE: Final[float] = 0.15       # 15% ann vol — conservative live deployment
+VOL_TARGET_LIVE: Final[float] = 0.18       # 18% ann vol — optimized for Propr pass rate (challenge_optimizer.py, 2026-05)
 VOL_TARGET_CHALLENGE: Final[float] = 0.35  # 35% ann vol — accelerated challenge mode
 
 VOL_SCALAR_MIN: Final[float] = 0.1   # floor: 10% of nominal position

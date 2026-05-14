@@ -500,6 +500,11 @@ BIC strongly favors Config A. The 3-state models failed to converge regardless o
 | **6.13** | **Delta-Neutral Carry** | **10.22** | **−0.52%** | **LIVE testnet** | **DEPLOY** |
 | 6.14 | Meta-Labeling XGBoost | AUC 0.63 | — | Research | SKIP (PROMISING post-2023) |
 | 6.15 | HMM Regime Detection | +7% MC lift | — | Research | WEAK |
+| 6.16 | Donchian Channel Breakout | ICIR all negative | — | Research | SKIP (r=0.675 with TSMOM) |
+| 6.17 | CS 1-Month Reversal | IC t-stat −1.94 | — | Research | SKIP (backward mechanism in crypto) |
+| 6.18 | Crypto Monthly Seasonality | Sharpe 0.78 (OOS) | −39.1% | Research | WEAK (pattern broke in 2025) |
+| 6.19 | Vol-Spike Filter (TSMOM overlay) | Sharpe 0.97 (T3) | −9.5% | Research | SKIP (pass rate unchanged at 32%) |
+| 6.20 | Challenge Optimizer (vol sweep) | 39% pass @ VT=0.18 | — | Research | CEILING (structural β_crypto floor) |
 
 ---
 
@@ -526,25 +531,28 @@ DSR(n=1) and DSR(n=9) tell very different stories. When testing a focused hypoth
 ### On HMM regime detection
 Two-state HMMs converge; three-state HMMs fail on this BTC dataset regardless of covariance structure (BIC +16M vs −2.5M). The 2-state model correctly identifies the bulk regime but cannot distinguish "genuinely bad for TSMOM" from "temporarily mediocre." Vol spikes within BULL regime are the real problem — not regime transitions.
 
-### On Propr challenge structure
-The 3% daily drawdown limit is the binding constraint, not the 6% total limit. During backtesting, ~32% of breach events are attributable to single-day vol spikes (not directional drift). The 90% capital cap in `rebalance.py` provides the primary protection; the guardrail daemon provides secondary protection only during rebalance execution (see ⚠️ Section 5).
+### On Propr challenge structure (updated May 2026)
+The 3% daily drawdown limit is the binding constraint, not the 6% total limit. The pass rate ceiling is **39%** (structural, not a strategy defect). Root cause: β_crypto ≈ 0.65+ means correlated crash days (e.g. April 2025 tariff shock: 14 assets −8-12% simultaneously) hit the daily −3% limit regardless of vol target. Key findings from `challenge_optimizer.py` (2026-05):
+- Vol target has a non-monotonic relationship with pass rate: 0.05–0.12 → ~20% (too slow), 0.18 → 39% (optimal), 0.20 → 34% (overshoots)
+- Adaptive Kelly sizing (scale up near profit target, scale down near DD limit) provides zero additional lift at the structural ceiling
+- Vol-spike filter (T3: scale down 0.3× when vol5/vol20 > 2.0) improves Sharpe from 0.82 → 0.97 but does not change pass rate (32%) because the binding constraint is correlated crash days, not individual asset vol spikes
+- **Conclusion**: to exceed 39%, need either a different asset universe (non-correlated to BTC), delta-neutral execution, or a prop firm with a less punitive daily limit (FTMO: 5% vs Propr: 3%)
+- `VOL_TARGET_LIVE` updated to 0.18 (from 0.15) based on this analysis
 
 ---
 
 ## 9. Research Priorities
 
-### Immediate (this session or next)
-1. **Meta-labeling post-2023**: Wait for 500+ post-2023 TSMOM trades (~6 more months of live data), then re-run `deep_analysis.py` with a proper 300/200 train/test split. DSR(n=1) was 1.00 — the signal is worth revisiting.
-2. **HMM intra-regime vol filter**: The HMM regime is not the problem — the vol spikes within BULL regime are. Build a separate vol spike detector (5-day realized vol > 2× baseline) that scales down position regardless of regime. This is orthogonal to HMM.
-3. **Guardrail fix**: Refactor `guardrail_loop.py` into a persistent standalone process (cron every 5 minutes, reads equity, flattens if 3% DD hit). Decouple from `run_rebalance.py` lifecycle.
+### Immediate
+1. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. Estimate pass rate improvement: if correlated crash days average −4.5% daily loss, FTMO's 5% limit would survive most of them. Run 44-path simulation with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55-65%.
+2. **Strategy C — delta-neutral direction**: Long-only crypto cannot escape β_crypto floor (6.16-6.20 all confirmed). The only viable Strategy C is delta-neutral. Priority: funding rate carry (6.13 architecture) extended to 14-asset universe, with TSMOM signal as hedge ratio. Target: Sharpe > 2.0, MaxDD < −5%, zero correlation to TSMOM equity.
 
 ### Medium term
-4. **On-chain signals (Glassnode)**: SOPR, MVRV, active addresses as regime/timing features. Requires Glassnode API access (~$99/month). These are the only exogenous signals not already arbitraged by quant funds.
-5. **Residual MR on lower-fee venue**: The edge in 6.11 is real (IC t-stat 8.42). Test on a venue or tier with <0.1% RT (Binance VIP, dYdX, GMX). At <0.05% RT, the strategy should be profitable at ~2-day hold.
-6. **STR on small-cap coins**: The short-term reversal signal (6.8) is proven by Zaremba et al. (2021) on 100+ small-cap coins. Test on CoinGecko universe top-100 to top-500.
+3. **USDT on-chain flows**: Tether mint/burn events as leading indicator for BTC momentum (Glassnode or Arkham Intelligence). Hypothesis: large USDT mints precede BTC rallies by 1-3 days. Test as TSMOM entry filter only (don't replace signal).
+4. **STR on small-cap coins**: Short-term reversal (6.8) has IC t-stat 0.85 on large-caps but Zaremba et al. (2021) shows t-stat > 3.0 on top-100 to top-500. Test on CoinGecko universe — different asset class, not correlated to TSMOM universe.
 
 ### Prop firm expansion
-7. **FTMO crypto**: FTMO recently added crypto perps. Compare challenge structure vs Propr. Key differences: drawdown calculation method (trailing vs static HWM), scaling plan structure, payout frequency.
+5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences from Propr: trailing HWM (harder to recover from DD), 5% daily limit (more survivable on crash days), scaling plan available (can increase allocation after passing). **This is Priority #1** given the 39% Propr ceiling.
 
 ---
 
