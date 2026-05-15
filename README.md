@@ -403,6 +403,19 @@ Defined in `tsmom_v2_propfirm/config.py` as `VIABLE_ASSETS`. Only assets with su
 **Key finding**: Long-only constraint for Propr actually improves risk-adjusted returns — short side consistently negative in crypto.  
 **See also**: Section 5 for detailed signal logic and Section 4 for Propr API schema.
 
+#### TSMOM v3 signal (implemented 2026-05)
+
+**Signal**: `tanh(cumret_28d / (vol_28d × √28))` — continuous t-stat (Zarattini 2025)  
+**vs baseline binary sign()**: Sharpe 1.33 vs 1.22, MaxDD −6.9% vs −12.7%, 3/4 WF windows  
+**Implementation**: `tsmom_v2_propfirm/signal.py` — `compute_signal()`, `signal.clip(lower=0)` for long-only live
+
+**Tested and rejected** (documented in `strategies/tsmom_v3/backtest.py`):
+- B&SC portfolio vol scaling: −0.15 Sharpe lift (double-scaling degrades per-asset vol-scaled signal; C4 WF 2/4)
+- Multi-TF [7/14/28/60d]: 60d lookback contaminated by 2022 bear returns — missed entire 2023 rally (C2: Sharpe 0.72)
+- Multi-TF [14/28/42d]: marginally positive (+0.09) but only 2/4 WF windows, insufficient consistency (C5 WF 2/4)
+
+**Ceiling**: weekly TSMOM Sharpe is bounded at ~1.3–1.4 by the signal frequency and β_crypto floor. Further gains require a genuinely uncorrelated Strategy C.
+
 ---
 
 ### 6.13 Delta-Neutral Funding Carry (Strategy B)
@@ -496,7 +509,7 @@ BIC strongly favors Config A. The 3-state models failed to converge regardless o
 | 6.9 | Vol-Regime MR | −0.85 | −66.1% | Archived | FAILED |
 | 6.10 | Fear & Greed Contrarian | IC t-stat −0.65 | — | Archived | FAILED |
 | 6.11 | Residual MR (BTC-neutral) | −0.39 | — | Archived | FAILED (fee barrier) |
-| **6.12** | **TSMOM v2** | **1.38** | **−16.9%** | **LIVE testnet** | **DEPLOY** |
+| **6.12** | **TSMOM v2 (v3 signal)** | **1.33** | **−6.9%** | **LIVE testnet** | **DEPLOY** |
 | **6.13** | **Delta-Neutral Carry** | **10.22** | **−0.52%** | **LIVE testnet** | **DEPLOY** |
 | 6.14 | Meta-Labeling XGBoost | AUC 0.63 | — | Research | SKIP (PROMISING post-2023) |
 | 6.15 | HMM Regime Detection | +7% MC lift | — | Research | WEAK |
@@ -544,15 +557,18 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 ## 9. Research Priorities
 
 ### Immediate
-1. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. Estimate pass rate improvement: if correlated crash days average −4.5% daily loss, FTMO's 5% limit would survive most of them. Run 44-path simulation with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55-65%.
-2. **Strategy C — delta-neutral direction**: Long-only crypto cannot escape β_crypto floor (6.16-6.20 all confirmed). The only viable Strategy C is delta-neutral. Priority: funding rate carry (6.13 architecture) extended to 14-asset universe, with TSMOM signal as hedge ratio. Target: Sharpe > 2.0, MaxDD < −5%, zero correlation to TSMOM equity.
+1. **TSMOM v3 signal deployed — weekly frequency ceiling confirmed**: Sharpe 1.33 (vs 1.22 baseline). The ceiling at weekly TSMOM is ~1.3–1.4 — confirmed across C1/C4/C5/C6 variants and 4-fold WF. B&SC and multi-TF tested and rejected. To reach Sharpe > 2.0, need a genuinely uncorrelated Strategy C. Only viable candidates remaining:
+   - **(a) On-chain USDT flows (Chi 2025)**: non-price signal, needs CryptoQuant API. Test IC vs BTC 3-day forward return. If IC t-stat > 2.0 and ICIR > 0.3, use as TSMOM entry filter only.
+   - **(b) Different asset class overlay**: gold, oil, or equity index futures (CME). Test daily TSMOM IC on these — if uncorrelated to crypto TSMOM, add as 20-30% portfolio weight.
+   - **(c) Higher frequency on Hyperliquid (4h bars)**: test IC only (not full backtest) — if IC t-stat > 3.0 at 4h, the signal exists at a different frequency and may be genuinely additive.
+2. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. Estimate pass rate improvement: if correlated crash days average −4.5% daily loss, FTMO's 5% limit would survive most of them. Run 44-path simulation with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55-65%.
 
 ### Medium term
 3. **USDT on-chain flows**: Tether mint/burn events as leading indicator for BTC momentum (Glassnode or Arkham Intelligence). Hypothesis: large USDT mints precede BTC rallies by 1-3 days. Test as TSMOM entry filter only (don't replace signal).
 4. **STR on small-cap coins**: Short-term reversal (6.8) has IC t-stat 0.85 on large-caps but Zaremba et al. (2021) shows t-stat > 3.0 on top-100 to top-500. Test on CoinGecko universe — different asset class, not correlated to TSMOM universe.
 
 ### Prop firm expansion
-5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences from Propr: trailing HWM (harder to recover from DD), 5% daily limit (more survivable on crash days), scaling plan available (can increase allocation after passing). **This is Priority #1** given the 39% Propr ceiling.
+5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences from Propr: trailing HWM (harder to recover from DD), 5% daily limit (more survivable on crash days), scaling plan available (can increase allocation after passing). **This is Priority #2** given the 39% Propr ceiling (Priority #1 is Strategy C).
 
 ---
 
