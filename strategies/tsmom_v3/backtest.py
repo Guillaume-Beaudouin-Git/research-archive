@@ -158,6 +158,277 @@ def positions_c3(log_ret: pd.DataFrame) -> pd.DataFrame:
     return apply_bsc_scale(pos, log_ret, BSC_TARGET)
 
 
+def positions_c4(log_ret: pd.DataFrame) -> pd.DataFrame:
+    """C4: B&SC applied directly to C1 (isolated test of B&SC on clean signal)."""
+    pos = positions_c1(log_ret)
+    return apply_bsc_scale(pos, log_ret, BSC_TARGET)
+
+
+def positions_c5(log_ret: pd.DataFrame) -> pd.DataFrame:
+    """C5: multi-TF [14, 28, 42d] equal weights — no 7d noise, no 60d lag."""
+    sig = multi_tf_signal(log_ret, lookbacks=[14, 28, 42], weights=[1/3, 1/3, 1/3])
+    return build_positions(sig, log_ret, VOL_TARGET)
+
+
+def positions_c6(log_ret: pd.DataFrame) -> pd.DataFrame:
+    """C6: C5 + B&SC vol scaling."""
+    pos = positions_c5(log_ret)
+    return apply_bsc_scale(pos, log_ret, BSC_TARGET)
+
+
+def get_bsc_scale_series(
+    positions: pd.DataFrame, log_ret: pd.DataFrame
+) -> pd.Series:
+    """Return the B&SC scale factor time series (diagnostic)."""
+    arith     = np.exp(log_ret) - 1
+    held      = positions.shift(1).fillna(0.0)
+    raw_port  = (held * arith).mean(axis=1)
+    strat_vol = (
+        raw_port.rolling(21).std().shift(1) * np.sqrt(TRADING_DAYS)
+    ).replace(0, np.nan).fillna(BSC_TARGET)
+    return (BSC_TARGET / strat_vol).clip(upper=2.0)
+
+
+# ── Extended figure ───────────────────────────────────────────────────────────
+
+def plot_extended_results(
+    pnls_oos:      dict,
+    best_cfg:      str,
+    log_ret:       pd.DataFrame,
+    wf_sharpes:    list[dict],
+    out_path:      str,
+) -> None:
+    colors_ext = {
+        "C0": "#95a5a6", "C1": "#3498db",
+        "C4": "#9b59b6", "C5": "#e74c3c", "C6": "#2c3e50",
+    }
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 11))
+    fig.suptitle(
+        "TSMOM v3 — Extended: C4 (B&SC on C1), C5 (MTF 14/28/42), C6 (C5+B&SC)",
+        fontsize=12, fontweight="bold",
+    )
+
+    # ── Rolling 6-month Sharpe: C0, C1, best(C4/C5/C6) ──
+    w = 182
+    for cfg in ["C0", "C1", best_cfg]:
+        pnl  = pnls_oos[cfg]
+        roll = pnl.rolling(w).apply(
+            lambda x: x.mean() / x.std() * np.sqrt(TRADING_DAYS) if x.std() > 0 else 0,
+            raw=True,
+        )
+        lw  = 2.2 if cfg == best_cfg else 1.5
+        sh  = _metrics(pnl)["sharpe"]
+        lbl = f"{cfg} Sh={sh:.2f}" + (" ← best" if cfg == best_cfg else "")
+        ax1.plot(roll.index, roll.values, color=colors_ext[cfg], lw=lw, label=lbl)
+
+    ax1.axhline(0,   color="black", lw=0.5, ls="--")
+    ax1.axhline(2.0, color="green", lw=0.8, ls=":", alpha=0.6, label="Sharpe=2 target")
+    ax1.set_ylabel("Rolling 6m Sharpe")
+    ax1.set_title(
+        f"Rolling 6-Month Sharpe: C0 / C1 / {best_cfg} (best of C4/C5/C6)", fontsize=11
+    )
+    ax1.legend(fontsize=9)
+    ax1.grid(alpha=0.3)
+
+    # ── B&SC scale factor over time (C4 = B&SC on C1 positions) ──
+    pos_c1_full = positions_c1(log_ret)
+    scale       = get_bsc_scale_series(pos_c1_full, log_ret)
+    scale_oos   = scale[scale.index >= TEST_START]
+    btc_proxy   = np.exp(log_ret.loc[log_ret.index >= TEST_START, "BTC-USD"].cumsum())
+
+    ax2b = ax2.twinx()
+    ax2b.plot(btc_proxy.index, btc_proxy.values,
+              color="#F7931A", lw=0.8, alpha=0.25)
+    ax2b.set_ylabel("BTC price (indexed)", color="#F7931A")
+
+    ax2.plot(scale_oos.index, scale_oos.values,
+             color="#9b59b6", lw=1.5, label="B&SC scale (C4)")
+    ax2.axhline(1.0, color="black", lw=0.8, ls="--", alpha=0.6, label="scale=1 (neutral)")
+    ax2.axhline(2.0, color="green", lw=0.8, ls=":", alpha=0.5, label="scale=2 (cap)")
+    ax2.fill_between(scale_oos.index, scale_oos.values, 1.0,
+                     where=scale_oos < 1.0,
+                     color="red", alpha=0.2, label="scale-down (high strat-vol)")
+    ax2.fill_between(scale_oos.index, scale_oos.values, 1.0,
+                     where=scale_oos > 1.0,
+                     color="green", alpha=0.10, label="scale-up (low strat-vol)")
+    ax2.set_ylim(0, 2.3)
+    ax2.set_ylabel("B&SC Scale Factor")
+    ax2.set_title(
+        "B&SC Scale Factor Over Time (C4 = C1 positions) — when does it fire?",
+        fontsize=11,
+    )
+    ax2.legend(loc="upper left", fontsize=9)
+    ax2.grid(alpha=0.3)
+
+    plt.tight_layout()
+    fig.savefig(out_path, dpi=130, bbox_inches="tight")
+    plt.close(fig)
+    print(f"Figure saved → {out_path}")
+
+
+# ── Extended comparison (C4/C5/C6) ───────────────────────────────────────────
+
+def run_extended_comparison(
+    close:    pd.DataFrame,
+    log_ret:  pd.DataFrame,
+    pnls_oos: dict,
+) -> None:
+    print("\n" + "═" * 62)
+    print("EXTENDED TEST — C4/C5/C6 (isolating B&SC and MTF hypotheses)")
+    print("═" * 62)
+
+    # Build and compute new configs
+    print("\nBuilding C4/C5/C6 positions...")
+    new_pos = {
+        "C4": positions_c4(log_ret),
+        "C5": positions_c5(log_ret),
+        "C6": positions_c6(log_ret),
+    }
+    new_pnls_oos = {cfg: compute_pnl(close, pos)[TEST_START:]
+                   for cfg, pos in new_pos.items()}
+    all_pnls_oos = {**pnls_oos, **new_pnls_oos}
+    all_metrics  = {cfg: _metrics(pnl) for cfg, pnl in all_pnls_oos.items()}
+
+    # Extended table
+    print("\n" + "─" * 62)
+    print(f"OOS PERFORMANCE ({TEST_START} → {DATA_END}) — all configs")
+    print("─" * 62)
+    LABELS = {
+        "C0": "C0: baseline (binary 28d)",
+        "C1": "C1: tanh 28d [confirmed]",
+        "C4": "C4: C1 + B&SC",
+        "C5": "C5: tanh [14/28/42] equal",
+        "C6": "C6: C5 + B&SC",
+    }
+    hdr = (f"  {'Config':<28} {'Sharpe':>7} {'Sortino':>8} "
+           f"{'MaxDD':>7} {'Calmar':>8} {'WinRate':>8}")
+    print(hdr)
+    print("  " + "─" * (len(hdr) - 2))
+    m0 = all_metrics["C0"]
+    m1 = all_metrics["C1"]
+    for cfg in ["C0", "C1", "C4", "C5", "C6"]:
+        m = all_metrics[cfg]
+        delta = f"  (+{m['sharpe']-m0['sharpe']:.2f})" if cfg not in ("C0",) else ""
+        print(f"  {LABELS[cfg]:<28} {m['sharpe']:>7.2f} {m['sortino']:>8.2f} "
+              f"{m['max_dd']:>7.1%} {m['calmar']:>8.2f} {m['win_rate']:>8.1%}{delta}")
+
+    print(f"\n  Sharpe lift vs C0:")
+    for cfg in ["C1", "C4", "C5", "C6"]:
+        delta = all_metrics[cfg]["sharpe"] - m0["sharpe"]
+        tick  = "✓" if delta > 0 else "✗"
+        print(f"    {cfg}: {delta:+.2f}  {tick}")
+
+    # Walk-forward for all configs
+    print("\n" + "─" * 62)
+    print("EXTENDED WALK-FORWARD (all configs vs C0)")
+    print("─" * 62)
+    all_pnls_full = {
+        "C0": compute_pnl(close, positions_c0(log_ret)),
+        "C1": compute_pnl(close, positions_c1(log_ret)),
+        "C4": compute_pnl(close, new_pos["C4"]),
+        "C5": compute_pnl(close, new_pos["C5"]),
+        "C6": compute_pnl(close, new_pos["C6"]),
+    }
+    wf_counts = {"C1": 0, "C4": 0, "C5": 0, "C6": 0}
+    wf_rows   = []
+
+    print(f"\n  {'Fold':<5} {'Period':<18}   {'C0':>6}  {'C1':>6}  "
+          f"{'C4':>6}  {'C5':>6}  {'C6':>6}")
+    print("  " + "─" * 58)
+    for i, fold in enumerate(WALK_FOLDS, 1):
+        ts, te = fold["test_start"], fold["test_end"]
+        sh = {cfg: _metrics(all_pnls_full[cfg][ts:te])["sharpe"]
+              for cfg in all_pnls_full}
+        period = f"{ts[:7]}–{te[:7]}"
+        row    = f"  {i:<5} {period:<18}  "
+        for cfg in ["C0", "C1", "C4", "C5", "C6"]:
+            marker = "✓" if cfg != "C0" and sh[cfg] > sh["C0"] else " "
+            if cfg != "C0" and sh[cfg] > sh["C0"]:
+                wf_counts[cfg] += 1
+            row += f" {sh[cfg]:>6.2f}{marker}"
+        print(row)
+        wf_rows.append({"fold": i, "period": period, **{f"sh_{c.lower()}": sh[c]
+                                                         for c in sh}})
+
+    print(f"\n  Folds beating C0:")
+    for cfg in ["C1", "C4", "C5", "C6"]:
+        print(f"    {cfg}: {wf_counts[cfg]}/4")
+
+    # Selection rule
+    candidates = {cfg: all_metrics[cfg]["sharpe"] for cfg in ["C4", "C5", "C6"]}
+    best_ext    = max(candidates, key=candidates.get)
+    best_sh_ext = candidates[best_ext]
+    best_wf_ext = wf_counts[best_ext]
+
+    # If best_ext doesn't beat C1 in Sharpe → C1 wins
+    if best_sh_ext <= m1["sharpe"]:
+        winner     = "C1"
+        winner_sh  = m1["sharpe"]
+        winner_wf  = wf_counts["C1"]
+        winner_mdd = all_metrics["C1"]["max_dd"]
+    else:
+        winner     = best_ext
+        winner_sh  = best_sh_ext
+        winner_wf  = best_wf_ext
+        winner_mdd = all_metrics[best_ext]["max_dd"]
+
+    print(f"\n  Selection: winner={winner}  Sharpe={winner_sh:.2f}  "
+          f"MaxDD={winner_mdd:.1%}  WF={winner_wf}/4")
+
+    # Extended figure
+    print("\nGenerating extended figure...")
+    plot_extended_results(
+        all_pnls_oos, best_ext, log_ret, wf_rows,
+        os.path.join(OUT_DIR, "backtest_results_v2.png"),
+    )
+
+    # Final verdict + implementation guidance
+    print("\n" + "═" * 62)
+    print("FINAL VERDICT + IMPLEMENTATION GUIDANCE")
+    print("═" * 62)
+    print(f"  Config ranking (OOS Sharpe):")
+    ranked = sorted(all_metrics.items(), key=lambda x: x[1]["sharpe"], reverse=True)
+    for rank, (cfg, m) in enumerate(ranked, 1):
+        wf_str = f"WF {wf_counts[cfg]}/4" if cfg in wf_counts else "—"
+        print(f"    {rank}. {cfg}: Sharpe={m['sharpe']:.2f}  MaxDD={m['max_dd']:.1%}  {wf_str}")
+    print()
+
+    if winner_sh >= 1.5 and winner_wf >= 3:
+        verdict = f"IMPLEMENT — replace tsmom signal with {winner}"
+    else:
+        winner  = "C1"
+        verdict = "C1 is the ceiling at 28d weekly — implement C1 only"
+
+    print(f"  VERDICT: {verdict}")
+    print()
+    print("  Implementation — strategies/tsmom_v2_propfirm/signal.py")
+    print("  ─────────────────────────────────────────────────────────")
+
+    if winner in ("C1", "C4"):
+        print("  Change compute_signal() around line 63:")
+        print()
+        print("  BEFORE (binary):")
+        print("    signal = (cum_return > 0).astype(float)")
+        print()
+        print("  AFTER (continuous tanh t-stat):")
+        print("    vol_L  = log_returns.rolling(lookback).std().shift(1) \\")
+        print("             * np.sqrt(lookback)")
+        print("    signal = np.tanh(")
+        print("        (cum_return / vol_L.replace(0, np.nan)).fillna(0.0)")
+        print("    ).clip(lower=0.0)")
+        if winner == "C4":
+            print()
+            print("  Additionally: add B&SC scaling pass in backtest_v2.py")
+            print("  after portfolio P&L computation (see tsmom_v3/signal.py)")
+    elif winner in ("C5", "C6"):
+        print("  Add new compute_signal_mtf() to signal.py and call from")
+        print("  backtest_v2.py. Lookbacks: [14, 28, 42], weights: [1/3, 1/3, 1/3].")
+        if winner == "C6":
+            print("  Additionally: add B&SC scaling pass after portfolio returns.")
+
+    print("═" * 62)
+
+
 # ── Walk-forward ──────────────────────────────────────────────────────────────
 
 def run_walk_forward(
@@ -507,6 +778,9 @@ def main() -> None:
     print(f"  VERDICT: {verdict}")
     print(f"  Reason : {reason}")
     print("═" * 62)
+
+    # 11. Extended comparison: C4/C5/C6
+    run_extended_comparison(close, log_ret, pnls_oos)
 
 
 if __name__ == "__main__":
