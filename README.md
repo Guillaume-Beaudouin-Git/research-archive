@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
-**Last updated**: May 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 13 strategies tested and failed/shelved, 2 recent HMM/meta-labeling studies in WEAK/SKIP
+**Last updated**: May 16, 2026  
+**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 15 strategies tested and failed/shelved, 2 recent studies (temporal patterns + LSTM 4h) → SKIP
 
 ---
 
@@ -568,6 +568,69 @@ C adds diversification vs B (corr +0.01) but is moderately correlated with A (+0
 
 ---
 
+### 6.22 Temporal Calendar Patterns (Hour/DOW/WOM/Month)
+
+**Status**: SKIP — DO NOT RE-TEST at 4h frequency  
+**File**: `strategies/temporal_patterns/feasibility.py`  
+**Signal**: Pure calendar rules — long BTC during high-returning temporal buckets (hour of day, day of week, week of month, month of year). Hypothesis: Asia/EU/US session flows and Friday 16:00 UTC funding settlements create exploitable intraweek patterns.  
+**Data**: 4h OHLCV from Hyperliquid (BTC/ETH/SOL, 2022-11-30 → 2026-05-14). Note: HL has no candle data before Nov 2022 via REST API; 2022-12 → 2023-12 gap also returned 0 candles.
+
+**Results**:
+
+| Level | Best bucket | t-stat | n | Sharpe (BTC) | corr(TSMOM) |
+|---|---|---|---|---|---|
+| Hour of day | 20h UTC | +1.89 (2024-26 only) | ~430 | −2.35 | +0.21 |
+| Day of week | Wed | +2.10 | 736 | — | — |
+| DOW combo (Wed+Mon) | — | — | — | +1.11 | **+0.527** |
+| Week of month | W2 (8-14) | +2.38 | 1213 | — | — |
+| Month of year | (none) | max +1.2 | — | +0.84 | +0.17 |
+
+**Key findings**:
+- No bucket clears t > 2.5 (corrected threshold for ~48 tests across 4 levels × 3 assets)
+- Sub-period stability: 2022-23 sub-period invalid (<26 days of HL data → NaN t-stats); 2024-26 has weak patterns only (max t = 2.11 for Wednesday)
+- Best equity curve (DOW Wed+Mon): Sharpe 1.11 **but corr(TSMOM) = +0.527** — empirically correlated despite zero construction correlation; both strategies are long crypto momentum and happen to be active on the same days
+- Best month (May): corr(TSMOM) = +0.17 (good), Sharpe 0.84 (weak), no sub-period stability
+- **Root cause**: Calendar patterns that show t > 2.0 are picking up the same directional crypto momentum as TSMOM. Even patterns with low TSMOM correlation are too weak (t < 2.5) to survive multiple testing correction.
+
+**Lesson**: Intraweek/intraday calendar anomalies in large-cap crypto are partially arbitraged and the remaining signal is strongly correlated with directional momentum. Confirmed 6.6 (weekend) and 6.18 (monthly) findings: calendar effects fail either on statistical robustness or on TSMOM correlation.
+
+---
+
+### 6.23 LSTM on 4h Hyperliquid Data
+
+**Status**: SKIP — cost-inaccessible edge (same structural failure as 6.11)  
+**File**: `strategies/lstm_hl/feasibility.py`  
+**Signal**: Parente & Rizzuti (2026) LSTM methodology on 4h candles. 13 features (Bollinger, RSI, dual EMA crosses, volume z-score, multi-horizon returns, cyclical time encoding, HL funding rate). Predicts BUY/HOLD/SELL 2-candle ahead. Long-only execution.  
+**Architecture**: LSTM(64) → LSTM(32) → Dense(16) → Dense(3, softmax). PyTorch 2.11.0, early stopping.  
+**Data**: BTC + ETH 4h HL candles (train: 2022-11 → 2024-07, val: 2024-07 → 2025-01, test: 2025-01 → 2026-05). Training set: only 886 sequences due to HL data gap (Dec 2022 – Dec 2023 absent from REST API). 
+
+**OOS BTC results (2025-01 → 2026-05)**:
+- BUY-class AUC: **0.6454** — genuine, statistically significant signal
+- ETH generalization AUC: **0.6003** — pattern is generic (not BTC-specific overfit)
+- Confusion matrix: SELL recall 19%, HOLD recall 65%, BUY recall 39%
+- Long-only Sharpe: **+0.022** (essentially zero)
+- Trades/year: **117** → Annual cost drag: **19.95%** at 0.17% RT
+- Corr(LSTM, TSMOM weekly): **+0.052** (near-zero — genuine diversification potential)
+
+**Feature importance (permutation, AUC drop on BUY class)**:
+
+| Feature | AUC drop | Note |
+|---|---|---|
+| dow_cos | +0.065 | Day-of-week cyclic — calendar, not microstructure |
+| hour_sin | +0.018 | Hour cyclic — calendar |
+| hour_cos | +0.017 | Hour cyclic — calendar |
+| ret_5bar | +0.015 | 20h momentum |
+| ret_20bar | +0.012 | 80h momentum |
+| funding_rate | ≈+0.004 | HL-native data adds little marginal value |
+
+**Root cause**: The LSTM learns real patterns (AUC 0.6454), but the dominant features are calendar-based (dow_cos, hour_sin, hour_cos) — the same temporal anomalies as 6.22, which are too weak individually (max t = 2.38). At 4h hold frequency, 117 trades/year × 0.17% = 19.95%/yr cost drag destroys any edge. The funding_rate feature does not add meaningful predictive power above pure TA + calendar effects.
+
+**This edge would be accessible at**: fees < 0.08% per trade (market maker level) or hold period extended to daily/weekly frequency (but then the signal degrades — it is fundamentally 4h-frequency).
+
+**Lesson**: A high AUC does not imply a profitable strategy at high frequency. At 4h, the cost floor is 117 trades × 0.17% = 19.95%/yr — any signal must produce >20%/yr gross to break even. Calendar patterns cannot do this. This is the LSTM equivalent of 6.11 (Residual MR): real edge, wrong cost structure, inaccessible at retail fees.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -593,6 +656,8 @@ C adds diversification vs B (corr +0.01) but is moderately correlated with A (+0
 | 6.19 | Vol-Spike Filter (TSMOM overlay) | Sharpe 0.97 (T3) | −9.5% | Research | SKIP (pass rate unchanged at 32%) |
 | 6.20 | Challenge Optimizer (vol sweep) | 39% pass @ VT=0.18 | — | Research | CEILING (structural β_crypto floor) |
 | **6.21** | **XGBoost CS (long-only)** | **0.734** | **−42.5%** | **Research** | **STRATEGY C** |
+| 6.22 | Temporal Calendar Patterns | +1.11 (DOW, corr 0.53!) | — | Research | SKIP (corr or t<2.5) |
+| 6.23 | LSTM 4h HL Data | +0.022 (cost-killed) | — | Research | SKIP (117 trades/yr) |
 
 ---
 
@@ -611,7 +676,13 @@ Short momentum (betting against losers) is consistently wrong (6.3, 6.7). Large-
 Carry IC is real (0.54, see 6.5). But unhedged carry is just leveraged beta. Delta-neutral execution is the necessary ingredient to isolate the premium (6.13 vs 6.5).
 
 ### On cost structure
-At 0.34% RT, strategies need ≥7-day holds to survive costs. Mean-reversion strategies (6.2, 6.9, 6.10, 6.11) typically complete in 1–3 days, making them cost-inaccessible at retail fee levels. The one exception (residual MR, 6.11) has a genuine signal but requires <0.1% fees to be profitable.
+At 0.34% RT, strategies need ≥7-day holds to survive costs. Mean-reversion strategies (6.2, 6.9, 6.10, 6.11) typically complete in 1–3 days, making them cost-inaccessible at retail fee levels. The one exception (residual MR, 6.11) has a genuine signal but requires <0.1% fees to be profitable. This cost floor applies to ML strategies too (6.23 LSTM): 117 trades/yr × 0.17% = 19.95%/yr drag eliminates a real AUC=0.64 signal entirely.
+
+### On high AUC ≠ profitable strategy
+A high AUC (e.g. 0.64 in 6.23) is necessary but not sufficient. At high trade frequencies, cost drag can consume 100% of the gross edge. Before interpreting AUC as "strategy viability," compute: `annual_cost = n_trades_per_year × cost_rt`. If annual_cost exceeds expected gross Sharpe-equivalent return, the strategy is undeployable regardless of AUC. The 6.23 LSTM had AUC=0.64 AND ETH generalization (AUC=0.60) — a genuinely robust signal — but generated Sharpe=+0.022 due to 19.95%/yr cost drag.
+
+### On calendar patterns as ML features
+Cyclical time encodings (dow_sin/dow_cos, hour_sin/hour_cos) are useful ML features (top importance in 6.23 LSTM), but they capture the same calendar anomalies that fail as standalone rules (6.22, 6.6, 6.18). When time features dominate ML importance, the model is essentially learned calendar pattern trading — which inherits all the same weaknesses: (a) empirical correlation with TSMOM despite zero construction correlation, and (b) patterns too weak to survive costs at high frequency.
 
 ### On multiple testing (DSR)
 DSR(n=1) and DSR(n=9) tell very different stories. When testing a focused hypothesis from prior published research, DSR(n=1) = 1.00 is meaningful. When the 9th strategy is being tested in the same session, DSR(n=9) = 0.00 regardless of AUC. The meta-labeling result (6.14) illustrates this precisely.
@@ -631,16 +702,22 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
+### Strategy C search status (23 signals tested, 2 SKIP today)
+- 6.22 Temporal patterns: SKIP (DOW Wed+Mon Sharpe 1.11 but corr(TSMOM)=0.527; no bucket t>2.5)
+- 6.23 LSTM 4h: SKIP (AUC 0.64 real but 117 trades/yr → 19.95%/yr cost drag → Sharpe 0.022)
+- Both scripts confirm: calendar-based signals (even ML-extracted) are empirically correlated with TSMOM and insufficient to survive costs at high frequency.
+- **Remaining Strategy C candidates**: USDT on-chain flows (priority), STR on small-caps (different asset class).
+
 ### Immediate
-1. **Strategy C identified — XGBoost CS long-only (Sharpe 0.734, Corr TSMOM +0.003)**. Accept as w_C=0.20 in A+B+C portfolio. A+B+C does not beat A+B yet (1.72 vs 2.61) because: (a) carry OOS too short for robust B Sharpe estimate; (b) C is moderately correlated with A (+0.37 — both long crypto). **Next step**: run A+B+C with 12+ months of carry live data when available.
+1. **Strategy C — active search continues**. XGBoost CS (6.21, Sharpe 0.734) accepted as interim Strategy C (w_C=0.20), but A+B+C still doesn't beat A+B (1.72 vs 2.61). Next candidates: USDT on-chain flows, STR small-caps.
 2. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. Estimate pass rate improvement: if correlated crash days average −4.5% daily loss, FTMO's 5% limit would survive most of them. Run 44-path simulation with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55-65%.
 
 ### Medium term
-3. **USDT on-chain flows**: Tether mint/burn events as leading indicator for BTC momentum (Glassnode or Arkham Intelligence). Hypothesis: large USDT mints precede BTC rallies by 1-3 days. Test as TSMOM entry filter only (don't replace signal).
-4. **STR on small-cap coins**: Short-term reversal (6.8) has IC t-stat 0.85 on large-caps but Zaremba et al. (2021) shows t-stat > 3.0 on top-100 to top-500. Test on CoinGecko universe — different asset class, not correlated to TSMOM universe.
+3. **USDT on-chain flows**: Tether mint/burn events as leading indicator for BTC momentum (Glassnode or Arkham Intelligence). Hypothesis: large USDT mints precede BTC rallies by 1-3 days. Test as TSMOM entry filter only (don't replace signal). **Key advantage over calendar signals**: zero empirical correlation with TSMOM expected (driven by stablecoin issuance cycles, not momentum) and weekly frequency → only 52 trades/yr.
+4. **STR on small-cap coins**: Short-term reversal (6.8) has IC t-stat 0.85 on large-caps but Zaremba et al. (2021) shows t-stat > 3.0 on top-100 to top-500. Test on CoinGecko universe — different asset class, not correlated to TSMOM universe. Weekly frequency avoids the cost problem (6.23).
 
 ### Prop firm expansion
-5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences from Propr: trailing HWM (harder to recover from DD), 5% daily limit (more survivable on crash days), scaling plan available (can increase allocation after passing). **This is Priority #2** given the 39% Propr ceiling (Priority #1 is Strategy C).
+5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences from Propr: trailing HWM (harder to recover from DD), 5% daily limit (more survivable on crash days), scaling plan available (can increase allocation after passing). **This is Priority #2** given the 39% Propr ceiling.
 
 ---
 
