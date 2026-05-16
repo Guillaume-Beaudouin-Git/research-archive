@@ -631,6 +631,72 @@ C adds diversification vs B (corr +0.01) but is moderately correlated with A (+0
 
 ---
 
+### 6.24 LSTM 4h → Weekly Score Aggregation
+
+**Status**: SKIP — edge purely intraday; weekly aggregation makes performance worse  
+**File**: `strategies/lstm_hl/weekly_aggregation.py`  
+**Hypothesis**: The 6.23 LSTM (AUC 0.6454, cost-killed at 4h) might retain signal when aggregated to weekly frequency. Three score variants × three quantile thresholds = 9 configs tested.
+
+**Score variants**:
+- `score_mean`: mean P(BUY) across Mon–Fri 4h bars
+- `score_count`: proportion of bars with P(BUY) > 0.35 (top-quartile confidence)
+- `score_last6`: mean P(BUY) of the last 6 bars (end-of-week signal)
+
+**OOS results (2025-01 → 2026-05)**:
+
+| Config | Sharpe | MaxDD | t/yr | corr(TSMOM) |
+|---|---|---|---|---|
+| score_mean q48/50/52 | −1.50 to −1.57 | −23–24% | 12 | +0.476–0.482 |
+| score_count q48/50/52 | **−0.366** | **−9.4%** | 7 | +0.548 |
+| score_last6 q48/50/52 | −0.876 to −0.890 | −21.9% | 18–19 | +0.326 |
+
+Best config: `score_count q48` (Sharpe −0.366). All 9 configs negative.
+
+**IC analysis**:
+- `score_mean` IC: −0.129, t=−1.09 (negative — predicts wrong direction)
+- `score_count` IC: +0.160, t=+1.36 (positive but not significant)
+- `score_last6` IC: **−0.568, t=−5.78** (strongly negative — end-of-week bullishness predicts bearish next week)
+
+**TSMOM context**: TSMOM v3 itself had Sharpe **−0.439** on 2025-01→2026-05 OOS — a particularly bad momentum era (post-ATH retrace). So even the reference strategy underperformed in this window.
+
+**Root cause**: The LSTM learns 4h intraday cyclical patterns (dow_cos, hour_sin dominant features). At 4h resolution these generate real AUC (0.6454). Aggregated to weekly, the calendar information is averaged out within each week, and what remains is a noisy momentum signal that is empirically correlated with TSMOM (+0.47–0.55). The `score_last6` result is particularly informative: end-of-week bullishness negatively predicts the following week (IC t=−5.78). This is consistent with short-term reversal at the weekly scale — i.e., the LSTM is identifying overbought 4h conditions at week-end that revert over the next 5 days.
+
+**Lesson**: Weekly aggregation of intraday models does not recover signal — it destroys the frequency-specific edge while inheriting the cost structure of weekly rebalancing. The LSTM edge is fundamentally 4h and cannot be accessed at retail fees.
+
+---
+
+### 6.25 STR on Small-Cap Coins (Zaremba 2021)
+
+**Status**: SKIP — Zaremba effect not replicated; IC not significant  
+**File**: `strategies/str_smallcap/feasibility.py`  
+**Hypothesis**: Short-term reversal (6.8) fails on large-caps (IC t-stat 0.85) but Zaremba et al. (2021) documents t-stat >3.0 on coins ranked 100–500 by market cap. Tested on CoinGecko rank 51–250, long-only top-10 reversals, weekly rebalance.
+
+**Data**: CoinGecko rankings (current snapshot) + Binance USDT spot klines (free, unlimited history). 60/183 universe coins had ≥52 weeks of Binance history; remainder not listed or too new.
+
+**Results**:
+- IC mean (full period, 174 weeks): **+0.0158** (not significant)
+- IC t-stat: **+0.989** (Zaremba predicts >3.0)
+- IC sub-periods: Train +0.011 (t=0.41), Test +0.020 (t=0.97) — consistent direction but negligible magnitude
+- Portfolio Sharpe: **−0.582** (full), −0.001 (train), −0.797 (test)
+- MaxDD: −221.8%
+- corr(TSMOM): **+0.457** (above 0.40 limit — not diversifying)
+
+**Root cause hypotheses**:
+1. **Survivorship bias** (confirmed): uses current top-250 rankings. Coins that fell out of top-250 (likely the worst performers, i.e., the best reversal targets) are excluded. This would bias IC *upward*, yet IC is still near zero — suggests the reversal effect is genuinely weak in this universe.
+2. **Binance listing filter**: 101/183 coins have no Binance USDT pair or insufficient history. The 60 coins that passed are the most liquid, most established mid-caps — potentially closer to large-caps in behavior than Zaremba's thin-liquidity universe.
+3. **Market structure change post-FTX**: The Zaremba (2021) paper uses 2014–2021 data. Post-FTX (2022+), the crypto mid-cap universe is more institutionally traded and may be more efficient.
+
+**Comparison**:
+- 6.8 (top-20, large-caps): IC t-stat 0.85
+- 6.25 (rank 51-250): IC t-stat 0.99
+- Zaremba prediction: IC t-stat >3.0
+
+No evidence that STR improves at smaller cap sizes in the post-2022 HL-accessible universe.
+
+**Execution constraint**: Cannot run on Hyperliquid (small-caps not listed). Would require Binance Spot, KuCoin, or Gate.io — outside current infrastructure.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -658,6 +724,8 @@ C adds diversification vs B (corr +0.01) but is moderately correlated with A (+0
 | **6.21** | **XGBoost CS (long-only)** | **0.734** | **−42.5%** | **Research** | **STRATEGY C** |
 | 6.22 | Temporal Calendar Patterns | +1.11 (DOW, corr 0.53!) | — | Research | SKIP (corr or t<2.5) |
 | 6.23 | LSTM 4h HL Data | +0.022 (cost-killed) | — | Research | SKIP (117 trades/yr) |
+| 6.24 | LSTM 4h → Weekly Aggregation | −0.366 (best of 9 configs) | −9.4% | Research | SKIP (intraday edge evaporates weekly) |
+| 6.25 | STR Small-Cap (Zaremba 2021) | −0.582 | −221.8% | Research | SKIP (IC t=0.99, not 3.0 as predicted) |
 
 ---
 
@@ -702,19 +770,22 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
-### Strategy C search status (23 signals tested, 2 SKIP today)
+### Strategy C search status (25 signals tested, 4 SKIP in last 2 sessions)
 - 6.22 Temporal patterns: SKIP (DOW Wed+Mon Sharpe 1.11 but corr(TSMOM)=0.527; no bucket t>2.5)
 - 6.23 LSTM 4h: SKIP (AUC 0.64 real but 117 trades/yr → 19.95%/yr cost drag → Sharpe 0.022)
-- Both scripts confirm: calendar-based signals (even ML-extracted) are empirically correlated with TSMOM and insufficient to survive costs at high frequency.
-- **Remaining Strategy C candidates**: USDT on-chain flows (priority), STR on small-caps (different asset class).
+- 6.24 LSTM weekly: SKIP (all 9 configs negative; weekly aggregation destroys the 4h-specific edge; score_last6 IC t=−5.78 reveals short-term reversal at weekly scale)
+- 6.25 STR small-cap: SKIP (IC t=0.99 vs Zaremba's predicted >3.0; survivorship bias + Binance-listing filter leaves only established mid-caps)
+- **Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734) still holds.
+- **Pattern**: Both LSTM-derived signals and STR small-caps show corr(TSMOM) ~0.45–0.55 — harder to diversify away from momentum than expected.
+- **Remaining Strategy C candidate**: USDT on-chain flows (only remaining signal with strong prior for near-zero TSMOM correlation).
 
 ### Immediate
-1. **Strategy C — active search continues**. XGBoost CS (6.21, Sharpe 0.734) accepted as interim Strategy C (w_C=0.20), but A+B+C still doesn't beat A+B (1.72 vs 2.61). Next candidates: USDT on-chain flows, STR small-caps.
-2. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. Estimate pass rate improvement: if correlated crash days average −4.5% daily loss, FTMO's 5% limit would survive most of them. Run 44-path simulation with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55-65%.
+1. **Strategy C — USDT on-chain flows**. Tether mint/burn events as leading indicator for BTC momentum (Glassnode API or Arkham Intelligence). Hypothesis: large USDT mints precede BTC rallies by 1–3 days. Test as TSMOM entry filter (don't replace signal). **Key advantage**: driven by stablecoin issuance cycles independent of price momentum → expected near-zero TSMOM corr. Weekly frequency → 52 trades/yr → 8.84%/yr max cost.
+2. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. If correlated crash days avg −4.5% daily loss, FTMO's limit would survive most of them. Run 44-path sim with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55–65%.
 
 ### Medium term
-3. **USDT on-chain flows**: Tether mint/burn events as leading indicator for BTC momentum (Glassnode or Arkham Intelligence). Hypothesis: large USDT mints precede BTC rallies by 1-3 days. Test as TSMOM entry filter only (don't replace signal). **Key advantage over calendar signals**: zero empirical correlation with TSMOM expected (driven by stablecoin issuance cycles, not momentum) and weekly frequency → only 52 trades/yr.
-4. **STR on small-cap coins**: Short-term reversal (6.8) has IC t-stat 0.85 on large-caps but Zaremba et al. (2021) shows t-stat > 3.0 on top-100 to top-500. Test on CoinGecko universe — different asset class, not correlated to TSMOM universe. Weekly frequency avoids the cost problem (6.23).
+3. **Re-examine A+B portfolio**: Carry (B) OOS is still only 3 months, Sharpe possibly inflated. Re-run A+B+C(XGBoost) comparison once 6 months of B OOS accumulates (around Aug 2026).
+4. **Alternative small-cap venue**: If STR signal is real but Binance-filtered universe is too liquid, test on CoinGecko rank 51–250 using Gate.io or KuCoin data — these exchanges list thinner coins closer to Zaremba's original universe.
 
 ### Prop firm expansion
 5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences from Propr: trailing HWM (harder to recover from DD), 5% daily limit (more survivable on crash days), scaling plan available (can increase allocation after passing). **This is Priority #2** given the 39% Propr ceiling.
