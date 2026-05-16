@@ -697,6 +697,53 @@ No evidence that STR improves at smaller cap sizes in the post-2022 HL-accessibl
 
 ---
 
+### 6.26 USDT Flow Proxy Signal (Chi et al. 2025)
+
+**Status**: SKIP — IC negative and not significant; proxy too correlated with price momentum  
+**File**: `strategies/usdt_flows/feasibility.py`  
+**Hypothesis**: USDT net inflows into exchanges predict BTC/ETH returns (Chi, Chu & Hao 2025). Proxy: total USDT-denominated quote volume on Binance (BTCUSDT + ETHUSDT + SOLUSDT + BNBUSDT + XRPUSDT). Weekly z-score vs 30-day rolling baseline.
+
+**Results**:
+- IC (full period, 226 weeks): **−0.025** — negative and not significant
+- IC t-stat: **−0.380** (target > 1.5)
+- Sub-period IC: 2022–2023: −0.016 (t=−0.16), 2024–2026: −0.038 (t=−0.41) — consistent direction (wrong) both periods
+- Portfolio Sharpe: **+0.220** (but signal is ON 45% of weeks, essentially buying momentum)
+- corr(TSMOM): **+0.616** (far above 0.30 limit)
+
+**Root cause**: Binance USDT quote_volume is a proxy for *trading activity*, not for *stablecoin inflows*. In bull markets, more USDT is traded → volume z-score positive → long signal → the strategy inadvertently buys when crypto is trending up (same as TSMOM). This is why corr(TSMOM)=0.616 despite zero theoretical connection. The true Chi et al. (2025) signal requires actual on-chain USDT flows to exchanges (Glassnode/Nansen), which is a paid data source.
+
+**What would be needed**: Glassnode API stablecoin exchange flows (institutional plan, ~$500/mo) or Nansen Smart Money flows. Not available with free APIs.
+
+---
+
+### 6.27 Volatility Squeeze Breakout
+
+**Status**: SKIP — Sharpe too low; signal fires almost exclusively during momentum periods  
+**File**: `strategies/volatility_breakout/feasibility.py`  
+**Hypothesis**: Bollinger Band squeeze (BB_width < 20th percentile of last 126 days) precedes breakout. Hold 10 days after breakout. Fires ~4 times/year per asset → cost manageable. TSMOM correlation expected to be low (signal is about vol structure, not returns).
+
+**Results (daily, 2020–2026)**:
+
+| Asset | Sharpe | MaxDD | t/yr | Win Rate | corr(TSMOM) | Overlap |
+|---|---|---|---|---|---|---|
+| BTC | −0.233 | −61.0% | 4 | 36.0% | +0.279 | 73.8% |
+| ETH | +0.065 | −75.3% | 4 | 52.0% | +0.300 | 79.3% |
+| SOL | +0.437 | −81.9% | 4 | 64.0% | +0.293 | 81.9% |
+
+Walk-forward OOS Sharpe:
+
+| Asset | WF1 (2023) | WF2 (2024) | WF3 (2025) | Positive/3 |
+|---|---|---|---|---|
+| BTC | +0.689 | +0.087 | −1.090 | 2/3 |
+| ETH | +1.196 | −0.081 | −1.237 | 1/3 |
+| SOL | −0.178 | +1.622 | +0.900 | 2/3 |
+
+**Root cause**: The "overlap" column is the key diagnostic — 73–82% of breakout days TSMOM is also long. Squeezes resolve upward primarily during trending markets; flat/bear markets produce fewer breakouts and those that do occur tend to fail. The signal is a weak, lagged momentum filter, not a distinct vol-regime detector. MaxDD 60–82% confirms the strategy rides out momentum crashes fully (no protective mechanism like TSMOM's vol-targeting). corr(TSMOM) is acceptable at 0.28–0.30, but Sharpe is too low to justify the slot.
+
+**What could salvage it**: Combining with a vol-filter (don't enter when realized vol > 50%/yr), or using a tighter hold period (5d instead of 10d). But these would require further optimization and are speculative.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -726,6 +773,8 @@ No evidence that STR improves at smaller cap sizes in the post-2022 HL-accessibl
 | 6.23 | LSTM 4h HL Data | +0.022 (cost-killed) | — | Research | SKIP (117 trades/yr) |
 | 6.24 | LSTM 4h → Weekly Aggregation | −0.366 (best of 9 configs) | −9.4% | Research | SKIP (intraday edge evaporates weekly) |
 | 6.25 | STR Small-Cap (Zaremba 2021) | −0.582 | −221.8% | Research | SKIP (IC t=0.99, not 3.0 as predicted) |
+| 6.26 | USDT Flow Proxy (Chi 2025) | +0.220 (corr=0.616!) | −17.7% | Research | SKIP (IC t=−0.38; proxy ≠ on-chain inflows) |
+| 6.27 | Vol Squeeze Breakout | +0.437 (SOL best) | −81.9% | Research | SKIP (Sharpe < 0.8; 80% overlap with TSMOM) |
 
 ---
 
@@ -770,25 +819,30 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
-### Strategy C search status (25 signals tested, 4 SKIP in last 2 sessions)
-- 6.22 Temporal patterns: SKIP (DOW Wed+Mon Sharpe 1.11 but corr(TSMOM)=0.527; no bucket t>2.5)
-- 6.23 LSTM 4h: SKIP (AUC 0.64 real but 117 trades/yr → 19.95%/yr cost drag → Sharpe 0.022)
-- 6.24 LSTM weekly: SKIP (all 9 configs negative; weekly aggregation destroys the 4h-specific edge; score_last6 IC t=−5.78 reveals short-term reversal at weekly scale)
-- 6.25 STR small-cap: SKIP (IC t=0.99 vs Zaremba's predicted >3.0; survivorship bias + Binance-listing filter leaves only established mid-caps)
-- **Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734) still holds.
-- **Pattern**: Both LSTM-derived signals and STR small-caps show corr(TSMOM) ~0.45–0.55 — harder to diversify away from momentum than expected.
-- **Remaining Strategy C candidate**: USDT on-chain flows (only remaining signal with strong prior for near-zero TSMOM correlation).
+### Strategy C search status — 27 signals tested, FREE-DATA EXHAUSTED
+
+**All free-data candidates tested. Last 6 signals (6.22–6.27) all SKIP:**
+- 6.22 Temporal patterns: SKIP (corr(TSMOM)=0.527; no bucket t>2.5 after MTC)
+- 6.23 LSTM 4h: SKIP (AUC=0.64 real, but 117 trades/yr × 0.17% cost-killed)
+- 6.24 LSTM weekly: SKIP (intraday edge evaporates at weekly frequency)
+- 6.25 STR small-cap: SKIP (IC t=0.99 vs Zaremba's predicted >3.0)
+- 6.26 USDT flow proxy: SKIP (IC t=−0.38; Binance volume is price momentum, not inflow signal)
+- 6.27 Vol squeeze breakout: SKIP (Sharpe ≤ 0.44; 73–82% overlap with TSMOM)
+
+**Key structural finding**: In crypto, almost every non-price signal is correlated with the trend regime (bull = more volume, more breakouts, more calendar anomalies). Only cross-sectional signals (XGBoost CS, corr=+0.003) reliably diversify TSMOM. This is a structural property of the asset class, not a data limitation.
+
+**Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found.
 
 ### Immediate
-1. **Strategy C — USDT on-chain flows**. Tether mint/burn events as leading indicator for BTC momentum (Glassnode API or Arkham Intelligence). Hypothesis: large USDT mints precede BTC rallies by 1–3 days. Test as TSMOM entry filter (don't replace signal). **Key advantage**: driven by stablecoin issuance cycles independent of price momentum → expected near-zero TSMOM corr. Weekly frequency → 52 trades/yr → 8.84%/yr max cost.
-2. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. If correlated crash days avg −4.5% daily loss, FTMO's limit would survive most of them. Run 44-path sim with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55–65%.
+1. **FTMO compatibility analysis** (now Priority #1). FTMO: 5% daily DD limit vs Propr's 3%. Run 44-path simulation with FTMO rules (trailing HWM, 10% profit target, 10% total DD, 5% daily DD). Expected pass rate: 55–65% vs current 39% Propr ceiling. This is the highest-leverage next step given the structural ceiling found in Strategy C search.
+2. **Glassnode stablecoin inflow data** (paid, ~$500/mo): Only remaining untested hypothesis with theoretical zero TSMOM correlation. True Tether mint/burn on-chain flows to exchanges. Not testable with free APIs.
 
 ### Medium term
-3. **Re-examine A+B portfolio**: Carry (B) OOS is still only 3 months, Sharpe possibly inflated. Re-run A+B+C(XGBoost) comparison once 6 months of B OOS accumulates (around Aug 2026).
-4. **Alternative small-cap venue**: If STR signal is real but Binance-filtered universe is too liquid, test on CoinGecko rank 51–250 using Gate.io or KuCoin data — these exchanges list thinner coins closer to Zaremba's original universe.
+3. **Re-examine A+B portfolio**: Carry (B) OOS still only 3 months, Sharpe possibly inflated. Re-run A+B+C(XGBoost) comparison once 6 months OOS accumulates (around Aug 2026).
+4. **XGBoost CS improvements**: The accepted Strategy C (6.21) had Sharpe 0.734. Consider feature additions (order book imbalance from HL, open interest) before live deployment.
 
 ### Prop firm expansion
-5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences from Propr: trailing HWM (harder to recover from DD), 5% daily limit (more survivable on crash days), scaling plan available (can increase allocation after passing). **This is Priority #2** given the 39% Propr ceiling.
+5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences: trailing HWM (harder to recover), 5% daily limit (more survivable on crash days), scaling plan available. **This is Priority #1** given the 39% Propr ceiling.
 
 ---
 
