@@ -301,8 +301,11 @@ def lookback_sensitivity(btc_ret: pd.Series,
 def make_plots(res: dict,
                sig: pd.Series,
                ic_data: dict,
-               lb_sens: dict[int, float]) -> None:
-    fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+               lb_sens: dict[int, float],
+               res_monthly: dict | None = None) -> None:
+    ncols = 3 if res_monthly else 2
+    fig, axes_raw = plt.subplots(2, ncols, figsize=(7 * ncols, 10))
+    axes = axes_raw  # keep 2-D indexing
     fig.suptitle("BTC Dominance Relative Momentum — Feasibility",
                  fontsize=14, fontweight="bold")
 
@@ -372,6 +375,38 @@ def make_plots(res: dict,
                 f"{v:.2f}", ha="center", va="bottom" if v >= 0 else "top", fontsize=9)
     ax.set_title("Lookback Sensitivity (days)")
     ax.set_ylabel("Sharpe"); ax.legend(fontsize=8); ax.tick_params(labelsize=8)
+
+    # Subplot 5: Monthly vs Weekly equity curve (only when monthly data provided)
+    if res_monthly is not None:
+        ax = axes[0, 2]
+        cum_w = (1 + res["pnl_net"]).cumprod()
+        cum_m = (1 + res_monthly["pnl_net"]).cumprod()
+        ax.plot(cum_w.index, cum_w.values, color="steelblue", linewidth=1.2,
+                linestyle="--", alpha=0.7,
+                label=f"Weekly  (SR={res['sharpe']:+.2f})")
+        ax.plot(cum_m.index, cum_m.values, color="darkorange", linewidth=1.8,
+                label=f"Monthly (SR={res_monthly['sharpe']:+.2f})")
+        ax.axhline(1.0, color="black", linewidth=0.6, linestyle="--")
+        ax.set_title("Monthly vs Weekly Equity Curve")
+        ax.set_ylabel("NAV (start=1)")
+        ax.legend(fontsize=8); ax.tick_params(labelsize=8)
+
+        ax = axes[1, 2]
+        m_lbs = list(res_monthly.get("lb_sens", {}).keys())
+        m_srs = [res_monthly["lb_sens"][k] for k in m_lbs]
+        bar_colors = ["steelblue" if s > 0 else "tomato" for s in m_srs]
+        bars = ax.bar([str(k) + "d" for k in m_lbs], m_srs,
+                      color=bar_colors, alpha=0.8, width=0.5)
+        ax.axhline(0,   color="black",  linewidth=0.8)
+        ax.axhline(1.5, color="green",  linewidth=0.8, linestyle="--", alpha=0.7, label="SR=1.5")
+        ax.axhline(0.8, color="orange", linewidth=0.8, linestyle=":",  alpha=0.7, label="SR=0.8")
+        for bar, v in zip(bars, m_srs):
+            ax.text(bar.get_x() + bar.get_width() / 2,
+                    v + 0.03 * (1 if v >= 0 else -1),
+                    f"{v:.2f}", ha="center",
+                    va="bottom" if v >= 0 else "top", fontsize=9)
+        ax.set_title("Monthly Lookback Sensitivity")
+        ax.set_ylabel("Sharpe"); ax.legend(fontsize=8); ax.tick_params(labelsize=8)
 
     plt.tight_layout()
     plt.savefig(OUT_PNG, dpi=150, bbox_inches="tight")
@@ -496,11 +531,338 @@ def main() -> None:
     else:
         print("    Short leg positive — genuine market-neutral edge.")
 
-    # 8. Plots
-    print("\n[6] Generating plots ...")
-    make_plots(res, base_signal, ic, lb_sens)
+    # 8. Monthly test
+    res_m = run_monthly_section(btc_ret, alts_ret, res)
+
+    # 9. Plots (with subplot 5 = monthly vs weekly equity)
+    print("\n[7] Generating plots ...")
+    make_plots(res, base_signal, ic, lb_sens, res_monthly=res_m)
 
     print("\n" + "=" * 60)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# MONTHLY REBALANCE TEST
+# Same signal, same vol scaling — only frequency and cost model change.
+# Rebalance: first Monday of each month (12×/year).
+# Cost: 0.17% RT × 2 legs, charged on direction-flip months only.
+# ══════════════════════════════════════════════════════════════════════════════
+
+MONTHLY_LB  = 21                   # base lookback for monthly signal (≈1 month)
+MONTHLY_LBS = [14, 21, 28, 42]     # lookback sensitivity sweep
+
+WF_WINDOWS = [
+    ("W1", "2020-01-01", "2021-12-31", "2022-01-01", "2022-12-31"),
+    ("W2", "2020-01-01", "2022-12-31", "2023-01-01", "2023-12-31"),
+    ("W3", "2020-01-01", "2023-12-31", "2024-01-01", "2024-12-31"),
+    ("W4", "2020-01-01", "2024-12-31", "2025-01-01", "2025-12-31"),
+]
+
+
+def _first_mondays(trade_days: pd.DatetimeIndex) -> pd.DatetimeIndex:
+    """First trading Monday of each calendar month."""
+    s = pd.Series(trade_days, index=trade_days)
+    mondays = s[s.index.dayofweek == 0]
+    return mondays.groupby(mondays.index.to_period("M")).first().values
+
+
+def build_monthly_signal(btc_ret: pd.Series,
+                         alts_ret: pd.DataFrame,
+                         lookback: int = MONTHLY_LB) -> pd.Series:
+    """
+    dominance[T] = btc_cum_lb[T-1] − alt_mean_cum_lb[T-1], shift(1).
+    Sampled at first Monday of each month.
+    """
+    btc_cum   = btc_ret.rolling(lookback, min_periods=lookback // 2).sum().shift(1)
+    alt_cum   = alts_ret.rolling(lookback, min_periods=lookback // 2).sum().shift(1)
+    sig_daily = btc_cum - alt_cum.mean(axis=1)
+    rebal     = _first_mondays(btc_ret.index)
+    return sig_daily.reindex(rebal, method="ffill").dropna()
+
+
+def ic_test_monthly(signal: pd.Series,
+                    btc_ret: pd.Series,
+                    alts_ret: pd.DataFrame,
+                    lookback: int = MONTHLY_LB) -> dict:
+    """
+    predicted  = dominance_signal[T]
+    realized   = btc_cum_21d[T+1:T+22] − alt_mean_cum_21d[T+1:T+22]
+               = relative return over the next ~month (21 trading days)
+    """
+    btc_fwd  = btc_ret.rolling(lookback, min_periods=lookback // 2).sum().shift(-lookback)
+    alt_fwd  = alts_ret.rolling(lookback, min_periods=lookback // 2).sum().shift(-lookback)
+    rel_fwd  = (btc_fwd - alt_fwd.mean(axis=1))
+    rebal    = _first_mondays(btc_ret.index)
+    realized = rel_fwd.reindex(rebal, method="ffill").dropna()
+
+    df = pd.DataFrame({"sig": signal, "real": realized}).dropna()
+    n  = len(df)
+    if n < 10:
+        return dict(ic=np.nan, t_stat=np.nan, n=n)
+    ic = df["sig"].rank(pct=True).corr(df["real"].rank(pct=True))
+    t  = ic * np.sqrt(max(n - 2, 0)) / np.sqrt(max(1 - ic**2, 1e-12))
+    return dict(ic=ic, t_stat=t, n=n)
+
+
+def run_monthly_backtest(btc_ret: pd.Series,
+                         alts_ret: pd.DataFrame,
+                         lookback: int = MONTHLY_LB,
+                         start: str = START,
+                         end: str = END) -> dict:
+    """
+    Monthly rebalance backtest.
+    Cost: COST_RT * 2 charged only on months where direction flips.
+    Position held from rebal T to rebal T+1 (daily returns between two Mondays).
+    """
+    signal  = build_monthly_signal(btc_ret, alts_ret, lookback)
+    signal  = signal.loc[start:end]
+    if len(signal) < 6:
+        nan_s = pd.Series(dtype=float)
+        return dict(sharpe=np.nan, sortino=np.nan, maxdd=np.nan,
+                    profit_factor=np.nan, win_rate=np.nan, annual_ret=np.nan,
+                    long_sharpe=np.nan, short_sharpe=np.nan,
+                    btc_season_frac=np.nan, pnl_net=nan_s,
+                    pnl_long=nan_s, pnl_short=nan_s,
+                    sub_sharpes={lbl: np.nan for lbl, *_ in SUBS},
+                    cum=nan_s)
+
+    direction = np.sign(signal)
+
+    # Vol scalars at each monthly rebalance
+    btc_rvol  = (btc_ret.rolling(VOL_WIN, min_periods=10).std() * np.sqrt(365)).shift(1)
+    alt_rvol  = (alts_ret.rolling(VOL_WIN, min_periods=10).std() * np.sqrt(365)
+                 ).mean(axis=1).shift(1)
+
+    btc_rv_m = btc_rvol.reindex(signal.index, method="ffill")
+    alt_rv_m = alt_rvol.reindex(signal.index, method="ffill")
+    btc_sc   = (VOL_TGT / btc_rv_m.replace(0, np.nan)).clip(0.1, 2.0).fillna(1.0)
+    alt_sc   = (VOL_TGT / alt_rv_m.replace(0, np.nan)).clip(0.1, 2.0).fillna(1.0)
+    gross    = btc_sc + alt_sc
+    scale    = (GROSS_CAP / gross.where(gross > GROSS_CAP, GROSS_CAP)).fillna(1.0)
+    btc_sc   = btc_sc * scale
+    alt_sc   = alt_sc * scale
+
+    # Expand monthly positions to daily
+    trade_days = btc_ret.loc[start:end].index
+    all_days   = pd.date_range(trade_days[0], trade_days[-1], freq="D")
+
+    dir_d  = direction.reindex(all_days).ffill()
+    bsc_d  = btc_sc.reindex(all_days).ffill()
+    asc_d  = alt_sc.reindex(all_days).ffill()
+
+    dir_d  = dir_d.reindex(trade_days).ffill().fillna(0)
+    bsc_d  = bsc_d.reindex(trade_days).ffill().fillna(1.0)
+    asc_d  = asc_d.reindex(trade_days).ffill().fillna(1.0)
+    b_ret  = btc_ret.reindex(trade_days).fillna(0.0)
+    a_ret  = alts_ret.reindex(trade_days).fillna(0.0).mean(axis=1)
+
+    # Daily P&L per leg (identical convention to weekly backtest)
+    pnl_long  = (bsc_d * b_ret * (dir_d == +1).astype(float) +
+                 asc_d * a_ret * (dir_d == -1).astype(float))
+    pnl_short = (-asc_d * a_ret * (dir_d == +1).astype(float) +
+                 -bsc_d * b_ret * (dir_d == -1).astype(float))
+    pnl_total = pnl_long + pnl_short
+
+    # Costs: charged only on direction-flip rebalance days
+    cost_s = pd.Series(0.0, index=trade_days)
+    rebal_in_period = signal.index[signal.index.isin(trade_days)]
+    flips = direction.diff().abs().reindex(rebal_in_period).fillna(0)
+    flip_days = flips[flips > 0].index
+    cost_s.loc[cost_s.index.isin(flip_days)] = COST_RT * 2
+
+    pnl_net = pnl_total - cost_s
+
+    def _sr(pnl: pd.Series) -> float:
+        ann = pnl.mean() * 365
+        vol = pnl.std() * np.sqrt(365)
+        return ann / (vol + 1e-12)
+
+    def _metrics(pnl: pd.Series) -> dict:
+        ann  = pnl.mean() * 365
+        vol  = pnl.std() * np.sqrt(365)
+        sr   = ann / (vol + 1e-12)
+        ds   = pnl[pnl < 0].std() * np.sqrt(365)
+        srt  = ann / (ds + 1e-12)
+        cum  = (1 + pnl).cumprod()
+        mdd  = float(((cum - cum.cummax()) / cum.cummax()).min())
+        wins = (pnl > 0).sum()
+        pf   = pnl[pnl > 0].sum() / (abs(pnl[pnl < 0].sum()) + 1e-12)
+        return dict(sharpe=sr, sortino=srt, maxdd=mdd,
+                    profit_factor=pf, win_rate=wins / max(len(pnl), 1),
+                    annual_ret=ann, cum=cum)
+
+    full   = _metrics(pnl_net)
+    long_m = _metrics(pnl_long)
+    short_m= _metrics(pnl_short)
+
+    sub_sharpes = {}
+    for label, s, e in SUBS:
+        sub = pnl_net.loc[s:e]
+        sub_sharpes[label] = _sr(sub) if len(sub) > 20 else np.nan
+
+    btc_frac = float((dir_d == 1).sum() / max(len(dir_d), 1))
+    n_flips  = int(flips.sum() / 2)   # /2 because diff changes by 2 on flip (+1→-1)
+    est_cost = n_flips * COST_RT * 2 / ((len(trade_days) / 365)) * 100
+
+    return dict(
+        sharpe        = full["sharpe"],
+        sortino       = full["sortino"],
+        maxdd         = full["maxdd"],
+        profit_factor = full["profit_factor"],
+        win_rate      = full["win_rate"],
+        annual_ret    = full["annual_ret"],
+        cum           = full["cum"],
+        long_sharpe   = long_m["sharpe"],
+        short_sharpe  = short_m["sharpe"],
+        pnl_net       = pnl_net,
+        pnl_long      = pnl_long,
+        pnl_short     = pnl_short,
+        sub_sharpes   = sub_sharpes,
+        btc_season_frac = btc_frac,
+        n_flips       = n_flips,
+        est_cost_pct  = est_cost,
+    )
+
+
+def monthly_lookback_sensitivity(btc_ret: pd.Series,
+                                 alts_ret: pd.DataFrame) -> dict[int, float]:
+    return {lb: run_monthly_backtest(btc_ret, alts_ret, lb)["sharpe"]
+            for lb in MONTHLY_LBS}
+
+
+def run_walkforward(btc_ret: pd.Series,
+                    alts_ret: pd.DataFrame) -> list[dict]:
+    """
+    4-window expanding-train walk-forward on monthly backtest.
+    Reports Sharpe + short_leg_sharpe per OOS window.
+    """
+    results = []
+    for label, tr_s, tr_e, oos_s, oos_e in WF_WINDOWS:
+        oos = run_monthly_backtest(btc_ret, alts_ret,
+                                   lookback=MONTHLY_LB,
+                                   start=oos_s, end=oos_e)
+        results.append(dict(
+            label        = label,
+            oos_start    = oos_s,
+            oos_end      = oos_e,
+            sharpe       = oos["sharpe"],
+            long_sharpe  = oos["long_sharpe"],
+            short_sharpe = oos["short_sharpe"],
+        ))
+    return results
+
+
+def verdict_monthly(res: dict) -> str:
+    sr   = res["sharpe"]
+    sl   = res["short_sharpe"]
+    wf   = res.get("wf_results", [])
+    n_pos = sum(1 for w in wf if not np.isnan(w["sharpe"]) and w["sharpe"] > 0.5)
+    if np.isnan(sr) or sr < 0.3:
+        return "SKIP"
+    elif sr > 1.5 and sl > 0 and n_pos >= 3:
+        return "STRONG"
+    elif sr >= 0.8:
+        return "PROMISING"
+    else:
+        return "WEAK"
+
+
+def run_monthly_section(btc_ret: pd.Series,
+                        alts_ret: pd.DataFrame,
+                        res_weekly: dict) -> dict:
+    """Run full monthly test and print comparison table + verdict."""
+    print("\n" + "═" * 60)
+    print("MONTHLY REBALANCE TEST (same signal, 12×/year)")
+    print("═" * 60)
+
+    print(f"\n[M1] Monthly IC test (21d lookback) ...")
+    m_sig = build_monthly_signal(btc_ret, alts_ret, MONTHLY_LB)
+    m_ic  = ic_test_monthly(m_sig, btc_ret, alts_ret, MONTHLY_LB)
+    m_ic_s = f"{m_ic['ic']:+.4f}" if not np.isnan(m_ic.get("ic", np.nan) or np.nan) else "N/A"
+    m_ts_s = f"{m_ic['t_stat']:+.3f}" if not np.isnan(m_ic.get("t_stat", np.nan) or np.nan) else "N/A"
+    print(f"    IC={m_ic_s}  t={m_ts_s}  N={m_ic.get('n', 0)}")
+
+    print(f"\n[M2] Monthly backtest (21d lookback) ...")
+    res_m = run_monthly_backtest(btc_ret, alts_ret, MONTHLY_LB)
+
+    print(f"\n[M3] Monthly lookback sensitivity ...")
+    lb_m  = monthly_lookback_sensitivity(btc_ret, alts_ret)
+    res_m["lb_sens"] = lb_m
+
+    # Comparison table
+    def _f2(v, fmt="+.2f") -> str:
+        if v is None or (isinstance(v, float) and np.isnan(v)):
+            return "   N/A"
+        return format(v, fmt)
+
+    def _pct(v) -> str:
+        if v is None or (isinstance(v, float) and np.isnan(v)):
+            return "   N/A"
+        return f"{v*100:+.1f}%"
+
+    w_subs = res_weekly["sub_sharpes"]
+    m_subs = res_m["sub_sharpes"]
+    w_cost = "  17.7%"   # fixed known value from analysis
+    m_cost = f"{res_m['est_cost_pct']:+.1f}%" if not np.isnan(res_m["est_cost_pct"]) else "   N/A"
+
+    print(f"""
+  ┌─────────────────────────────┬──────────┬──────────┐
+  │ Metric                      │  Weekly  │  Monthly │
+  ├─────────────────────────────┼──────────┼──────────┤
+  │ IC t-stat                   │   +3.571 │{m_ts_s:>10}│
+  │ Full-period Sharpe          │{_f2(res_weekly['sharpe']):>10}│{_f2(res_m['sharpe']):>10}│
+  │ Sharpe 2020–2022            │{_f2(w_subs.get('2020–2022')):>10}│{_f2(m_subs.get('2020–2022')):>10}│
+  │ Sharpe 2022–2023            │{_f2(w_subs.get('2022–2023')):>10}│{_f2(m_subs.get('2022–2023')):>10}│
+  │ Sharpe 2024–2026            │{_f2(w_subs.get('2024–2026')):>10}│{_f2(m_subs.get('2024–2026')):>10}│
+  │ Max DD                      │{_pct(res_weekly['maxdd']):>10}│{_pct(res_m['maxdd']):>10}│
+  │ Long leg Sharpe             │{_f2(res_weekly['long_sharpe']):>10}│{_f2(res_m['long_sharpe']):>10}│
+  │ Short leg Sharpe            │{_f2(res_weekly['short_sharpe']):>10}│{_f2(res_m['short_sharpe']):>10}│
+  │ Annual cost drag (est.)     │  {w_cost}│{m_cost:>10}│
+  └─────────────────────────────┴──────────┴──────────┘""")
+
+    print("\n  Monthly lookback sensitivity:")
+    for lb, sr in lb_m.items():
+        marker = "  ← base" if lb == MONTHLY_LB else ""
+        flag   = " **" if sr > 1.5 else (" *" if sr > 0.8 else "")
+        print(f"    {lb:>3}d:  Sharpe {sr:+.2f}{flag}{marker}")
+
+    # Walk-forward (if Sharpe > 0.8)
+    wf_results = []
+    if not np.isnan(res_m["sharpe"]) and res_m["sharpe"] > 0.8:
+        print(f"\n[M4] Walk-forward (Sharpe {res_m['sharpe']:+.2f} > 0.8) ...")
+        wf_results = run_walkforward(btc_ret, alts_ret)
+        print(f"\n  Walk-forward results:")
+        print(f"  {'Window':<6} {'OOS period':<22} {'Sharpe':>8} {'Long SR':>8} {'Short SR':>9}")
+        print(f"  {'─'*6} {'─'*22} {'─'*8} {'─'*8} {'─'*9}")
+        for w in wf_results:
+            pos = "✓" if w["sharpe"] > 0.5 else ("~" if w["sharpe"] > 0 else "✗")
+            print(f"  {w['label']:<6} {w['oos_start']} → {w['oos_end']}  "
+                  f"{_f2(w['sharpe']):>8}  "
+                  f"{_f2(w['long_sharpe']):>8}  "
+                  f"{_f2(w['short_sharpe']):>9}  {pos}")
+        n_pos = sum(1 for w in wf_results if not np.isnan(w["sharpe"]) and w["sharpe"] > 0.5)
+        print(f"\n  WF: {n_pos}/4 windows with Sharpe > 0.5")
+    else:
+        print(f"\n  [M4] WF skipped (Sharpe {res_m['sharpe']:+.2f} ≤ 0.8)")
+
+    res_m["wf_results"] = wf_results
+
+    # Verdict
+    v = verdict_monthly(res_m)
+    print(f"\n  VERDICT (monthly): {v}")
+    if v == "STRONG":
+        print("  → Proceed to live test. Monthly rebalance viable on HL perps.")
+    elif v == "PROMISING":
+        print("  → Signal survives cost reduction. "
+              "Consider long-only variant (short leg drag) before live deployment.")
+    elif v == "WEAK":
+        print("  → Cost drag reduced but signal too weak. "
+              "Monthly Sharpe < 0.8 — not viable.")
+    else:
+        print("  → Monthly Sharpe < 0.3 — cost reduction insufficient. "
+              "Signal does not survive even monthly frequency. Close search.")
+
+    return res_m
 
 
 if __name__ == "__main__":
