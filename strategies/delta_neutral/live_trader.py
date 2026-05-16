@@ -76,7 +76,10 @@ MAX_ASSETS        = 5                    # cap simultaneous pairs
 NOTIONAL_USD      = 50.0                 # USD notional per asset
 RECONCILE_TOL     = 0.05                 # 5% spot/perp size mismatch tolerance
 MAX_FUNDING_AGE_H = 2                    # HL data staleness limit
-MIN_VOL_USD       = 10_000_000           # Binance mainnet 24h volume floor ($10M)
+MIN_VOL_USD       = 1_000_000            # Binance mainnet 24h volume floor ($1M)
+# Lowered from $10M (2026-05): at $50 notional, $1M daily vol = 0.005% market impact.
+# $10M blocked all high-carry assets (TST $1.3M, MEGA $4.1M) while volume-liquid
+# assets (WLD, TRUMP) had negative carry — no asset passed both gates simultaneously.
 
 # Viable universe from current universe.py run (2026-05-06).
 # Runtime volume check re-validates each asset against MIN_VOL_USD every run,

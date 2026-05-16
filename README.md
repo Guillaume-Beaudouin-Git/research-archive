@@ -420,15 +420,51 @@ Defined in `tsmom_v2_propfirm/config.py` as `VIABLE_ASSETS`. Only assets with su
 
 ### 6.13 Delta-Neutral Funding Carry (Strategy B)
 
-**Status**: LIVE — Propr testnet  
+**Status**: LIVE — Propr testnet (cron fix pending — see 2026-05 diagnosis below)  
 **Signal**: Long spot (Binance) + short perp (Hyperliquid) = delta-neutral carry  
 **Income source**: 8h funding payments from HL perp short  
 **Universe**: Assets where mean 8h funding > 0.34% weekly carry floor  
 **Capital**: $50/asset, max 5 assets, $250 total  
 **Backtest**: Sharpe 10.22, MaxDD −0.52%, carry_frac 1.026 (OOS 3m, walk-forward 6m/1m)  
 **Risk control**: One-legged position prevention — BN spot before HL short; immediate unwind on leg failure  
-**Caveats**: 3-month OOS is short; carry filter corrected (removed incorrect `abs()` post initial walk-forward); longer validation ongoing  
+**Caveats**: 3-month OOS is short; carry filter corrected (removed incorrect `abs()`) post initial walk-forward; longer validation ongoing  
 **Lesson**: Carry signal is real (IC 0.54 from 6.5 study). Delta-neutral execution is the essential ingredient — without the hedge it's just leveraged beta (see 6.5).
+
+#### 2026-05 Zero-Trade Diagnosis (1+ week live, $0 earned)
+
+**Root causes (two independent issues found):**
+
+**Issue 1 — Cron never set up (PRIMARY)**  
+`crontab -l` shows no entries. `logs/delta_neutral.log` does not exist.  
+The strategy was built and backtested but the 8-hourly execution cron was never installed.  
+Fix: `crontab -e` → add `10 0,8,16 * * * /usr/bin/python3 -m strategies.delta_neutral.live_trader --live ...`
+
+**Issue 2 — Volume filter blocks all high-carry assets (SECONDARY)**  
+The live_trader applies TWO sequential gates. In the current market (2026-05), **no asset passes both simultaneously**:
+
+| Asset  | Carry filter (4.14%/yr) | Binance vol ($10M floor) | Both pass? |
+|--------|------------------------|--------------------------|------------|
+| TST    | ✓ +137%/yr             | ✗ $1.3M                  | NO         |
+| MEGA   | ✓ +12%/yr              | ✗ $4.1M                  | NO         |
+| HMSTR  | ✓ +12%/yr              | ✗ $0.4M                  | NO         |
+| WLD    | ✗ −41%/yr              | ✓ $12M                   | NO         |
+| TRUMP  | ✗ −31%/yr              | ✓ $11M                   | NO         |
+
+High-carry assets (TST, MEGA, HMSTR) fail the $10M Binance volume floor.  
+Liquid assets (WLD, TRUMP) have negative carry — the market has reversed against longs.  
+Fix: lower `MIN_VOL_USD` from `10_000_000` to `1_000_000` in `live_trader.py`.  
+At $50 notional, $1M daily volume = 0.005% market impact — liquidity is more than adequate.
+
+**Backtest validity check (L1–L5):**  
+- L1 Look-ahead: **PASS** — entry uses 30d historical mean from prior fold  
+- L2 BN spot fees: **PASS** — `BN_FEE_RT = 0.00075 × 2 = 0.15%` in `COST_RT`  
+- L3 Data source: **PASS** — real historical CSV files, not flat assumption  
+- L4 Exit logic: **MINOR FLAG** — backtest holds full fold; live closes on negative carry (conservative, doesn't inflate Sharpe)  
+- L5 Capital sizing: **NOTE** — backtest deploys equal-weight $500; live deploys $50/asset (max $250). Doesn't affect Sharpe ratio but halves return on notional capital.  
+**Verdict: Backtest VALID.** Sharpe 10.22 is real but from only 3 months of OOS data and a high-carry era (TRUMP hype Jan 2025, TST launch).
+
+**VERDICT B+D**: Cron not running AND carry-positive assets fail volume filter.  
+**Actions**: (1) install cron, (2) lower MIN_VOL_USD to $1M in live_trader.py.
 
 ---
 
