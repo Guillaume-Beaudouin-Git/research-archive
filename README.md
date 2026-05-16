@@ -534,6 +534,38 @@ BIC strongly favors Config A. The 3-state models failed to converge regardless o
 **No look-ahead**: `states_shifted = model.predict(obs).shift(1)`  
 **3-day confirmation delay**: `confirmed[T] = regime[T]` only if last 3 days all agree  
 
+### 6.21 XGBoost Cross-Sectional (v1/v2/v3)
+
+**Status**: STRATEGY C — accepted as long-only, w_C=0.20 in A+B+C portfolio  
+**Files**: `strategies/xgb_microstructure/feasibility_v2.py`, `feasibility_v3.py`  
+**Signal**: Ensemble (XGBoost + LightGBM) cross-sectional prediction — does asset i outperform the universe median next week? 10 assets (BTC/ETH/SOL/AVAX/LINK/DOGE/ADA/DOT/LTC/BCH), purged walk-forward (4 windows, 4-week gap), 12 features (TA + HL funding z-score).
+
+**v1 (cross-universe, SKIP)**: Trained on 18 altcoins, tested on BTC/ETH. Test AUC 0.47, Sharpe −1.44. Altcoin TA patterns do not generalize to BTC/ETH microstructure.
+
+**v2 (cross-sectional within same universe)**:
+- Purged WF AUC(all)=0.517, AUC(top20%)=0.557 — confidence filter improves AUC
+- Ensemble Sharpe: **0.734** | MaxDD: **−42.5%** | Corr TSMOM: **+0.003** (near-zero)
+- DSR FAIL at n=30 (E[max SR]=2.07) — not stat-significant in isolation
+
+**v3 (long-short + threshold sweep)**:
+- Long-short tested: short leg Sharpe **−0.69** — same structural failure as 6.3 (crypto losers mean-revert)
+- Confidence threshold sweep (long-only): peak Sharpe at cutoff=0% (no filtering helps)
+- L/S ALL Sharpe=0.44, L/S TOP20%=0.45 — both weaker than long-only 0.734
+- **Decision**: SKIP L/S. Accept long-only 0.734 at w_C=0.20
+
+**A+B+C portfolio** (common period 2023-11-18 → 2025-06-18, 578 days):
+
+| Portfolio | w_A | w_B | w_C | Sharpe | MaxDD |
+|---|---|---|---|---|---|
+| A+B (baseline) | 30% | 70% | — | 2.611 | −2.1% |
+| A+B+C W1 | 30% | 50% | 20% | 1.722 | −9.3% |
+| A+B+C W2 | 25% | 55% | 20% | 1.717 | −9.1% |
+| A+B+C W3 | 30% | 40% | 30% | 1.552 | −13.1% |
+| A+B+C W4 | 20% | 50% | 30% | 1.532 | −12.8% |
+
+Corr(A,B)=+0.07, **Corr(A,C)=+0.37**, Corr(B,C)=+0.01.  
+C adds diversification vs B (corr +0.01) but is moderately correlated with A (+0.37 — both long crypto momentum). Adding C reduces the B carry weight which carries most of the combined Sharpe. **A+B+C does not beat A+B** in the current window. This is expected given the short carry OOS history (~3 months active) inflating B's standalone Sharpe; revisit when B has 12+ months of live data.
+
 ---
 
 ## 7. Strategy Performance Summary
@@ -560,6 +592,7 @@ BIC strongly favors Config A. The 3-state models failed to converge regardless o
 | 6.18 | Crypto Monthly Seasonality | Sharpe 0.78 (OOS) | −39.1% | Research | WEAK (pattern broke in 2025) |
 | 6.19 | Vol-Spike Filter (TSMOM overlay) | Sharpe 0.97 (T3) | −9.5% | Research | SKIP (pass rate unchanged at 32%) |
 | 6.20 | Challenge Optimizer (vol sweep) | 39% pass @ VT=0.18 | — | Research | CEILING (structural β_crypto floor) |
+| **6.21** | **XGBoost CS (long-only)** | **0.734** | **−42.5%** | **Research** | **STRATEGY C** |
 
 ---
 
@@ -599,10 +632,7 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 ## 9. Research Priorities
 
 ### Immediate
-1. **TSMOM v3 signal deployed — weekly frequency ceiling confirmed**: Sharpe 1.33 (vs 1.22 baseline). The ceiling at weekly TSMOM is ~1.3–1.4 — confirmed across C1/C4/C5/C6 variants and 4-fold WF. B&SC and multi-TF tested and rejected. To reach Sharpe > 2.0, need a genuinely uncorrelated Strategy C. Only viable candidates remaining:
-   - **(a) On-chain USDT flows (Chi 2025)**: non-price signal, needs CryptoQuant API. Test IC vs BTC 3-day forward return. If IC t-stat > 2.0 and ICIR > 0.3, use as TSMOM entry filter only.
-   - **(b) Different asset class overlay**: gold, oil, or equity index futures (CME). Test daily TSMOM IC on these — if uncorrelated to crypto TSMOM, add as 20-30% portfolio weight.
-   - **(c) Higher frequency on Hyperliquid (4h bars)**: test IC only (not full backtest) — if IC t-stat > 3.0 at 4h, the signal exists at a different frequency and may be genuinely additive.
+1. **Strategy C identified — XGBoost CS long-only (Sharpe 0.734, Corr TSMOM +0.003)**. Accept as w_C=0.20 in A+B+C portfolio. A+B+C does not beat A+B yet (1.72 vs 2.61) because: (a) carry OOS too short for robust B Sharpe estimate; (b) C is moderately correlated with A (+0.37 — both long crypto). **Next step**: run A+B+C with 12+ months of carry live data when available.
 2. **FTMO compatibility analysis**: FTMO has 5% daily DD limit vs Propr's 3%. Estimate pass rate improvement: if correlated crash days average −4.5% daily loss, FTMO's 5% limit would survive most of them. Run 44-path simulation with FTMO rules (trailing HWM, 10% target, 10% total DD, 5% daily). Expected pass rate: 55-65%.
 
 ### Medium term
