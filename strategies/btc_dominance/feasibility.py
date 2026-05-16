@@ -302,10 +302,10 @@ def make_plots(res: dict,
                sig: pd.Series,
                ic_data: dict,
                lb_sens: dict[int, float],
-               res_monthly: dict | None = None) -> None:
-    ncols = 3 if res_monthly else 2
-    fig, axes_raw = plt.subplots(2, ncols, figsize=(7 * ncols, 10))
-    axes = axes_raw  # keep 2-D indexing
+               res_monthly: dict | None = None,
+               res_lo: dict | None = None) -> None:
+    nrows = 3 if (res_monthly or res_lo) else 2
+    fig, axes = plt.subplots(nrows, 2, figsize=(14, 5 * nrows))
     fig.suptitle("BTC Dominance Relative Momentum — Feasibility",
                  fontsize=14, fontweight="bold")
 
@@ -376,30 +376,60 @@ def make_plots(res: dict,
     ax.set_title("Lookback Sensitivity (days)")
     ax.set_ylabel("Sharpe"); ax.legend(fontsize=8); ax.tick_params(labelsize=8)
 
-    # Subplot 5: Monthly vs Weekly equity curve (only when monthly data provided)
-    if res_monthly is not None:
-        ax = axes[0, 2]
+    # Subplot 5 [2,0]: Monthly vs Weekly equity curve
+    if res_monthly is not None or res_lo is not None:
+        ax = axes[2, 0]
         cum_w = (1 + res["pnl_net"]).cumprod()
-        cum_m = (1 + res_monthly["pnl_net"]).cumprod()
         ax.plot(cum_w.index, cum_w.values, color="steelblue", linewidth=1.2,
-                linestyle="--", alpha=0.7,
-                label=f"Weekly  (SR={res['sharpe']:+.2f})")
-        ax.plot(cum_m.index, cum_m.values, color="darkorange", linewidth=1.8,
-                label=f"Monthly (SR={res_monthly['sharpe']:+.2f})")
+                linestyle="--", alpha=0.7, label=f"MN Weekly (SR={res['sharpe']:+.2f})")
+        if res_monthly is not None:
+            cum_m = (1 + res_monthly["pnl_net"]).cumprod()
+            ax.plot(cum_m.index, cum_m.values, color="darkorange", linewidth=1.4,
+                    alpha=0.8, label=f"MN Monthly (SR={res_monthly['sharpe']:+.2f})")
+        if res_lo is not None and "pnl_net" in res_lo:
+            cum_lo = (1 + res_lo["pnl_net"]).cumprod()
+            ax.plot(cum_lo.index, cum_lo.values, color="green", linewidth=1.8,
+                    label=f"LO Rotation (SR={res_lo['sharpe']:+.2f})")
         ax.axhline(1.0, color="black", linewidth=0.6, linestyle="--")
-        ax.set_title("Monthly vs Weekly Equity Curve")
+        ax.set_title("Subplot 5 — Frequency / Structure Comparison")
         ax.set_ylabel("NAV (start=1)")
         ax.legend(fontsize=8); ax.tick_params(labelsize=8)
 
-        ax = axes[1, 2]
+    # Subplot 6 [2,1]: LO vs TSMOM vs combined (or monthly lb sens as fallback)
+    if res_lo is not None and "tsmom_ret" in res_lo:
+        ax = axes[2, 1]
+        lo_r    = res_lo["pnl_net"]
+        ts_r    = res_lo["tsmom_ret"]
+        idx     = lo_r.index.intersection(ts_r.index)
+        cum_lo  = (1 + lo_r.loc[idx]).cumprod()
+        cum_ts  = (1 + ts_r.loc[idx]).cumprod()
+        comb_r  = 0.5 * lo_r.loc[idx] + 0.5 * ts_r.loc[idx]
+        cum_cb  = (1 + comb_r).cumprod()
+        lo_sr   = res_lo.get("sharpe", np.nan)
+        ts_sr   = res_lo.get("tsmom_sharpe", np.nan)
+        cb_sr   = res_lo.get("combined_sharpe", np.nan)
+        ax.plot(cum_ts.index,  cum_ts.values,  color="steelblue", linewidth=1.2,
+                linestyle="--", alpha=0.7,
+                label=f"TSMOM v3  (SR={ts_sr:+.2f})" if not np.isnan(ts_sr or np.nan) else "TSMOM v3")
+        ax.plot(cum_lo.index,  cum_lo.values,  color="green",     linewidth=1.2,
+                alpha=0.8,
+                label=f"LO Rotate (SR={lo_sr:+.2f})" if not np.isnan(lo_sr or np.nan) else "LO Rotate")
+        ax.plot(cum_cb.index,  cum_cb.values,  color="purple",    linewidth=1.8,
+                label=f"Combined  (SR={cb_sr:+.2f})" if not np.isnan(cb_sr or np.nan) else "Combined")
+        ax.axhline(1.0, color="black", linewidth=0.6, linestyle="--")
+        ax.set_title("Subplot 6 — LO Rotation vs TSMOM v3 vs Combined")
+        ax.set_ylabel("NAV (start=1, common period)")
+        ax.legend(fontsize=8); ax.tick_params(labelsize=8)
+    elif res_monthly is not None:
+        ax = axes[2, 1]
         m_lbs = list(res_monthly.get("lb_sens", {}).keys())
         m_srs = [res_monthly["lb_sens"][k] for k in m_lbs]
         bar_colors = ["steelblue" if s > 0 else "tomato" for s in m_srs]
         bars = ax.bar([str(k) + "d" for k in m_lbs], m_srs,
                       color=bar_colors, alpha=0.8, width=0.5)
-        ax.axhline(0,   color="black",  linewidth=0.8)
-        ax.axhline(1.5, color="green",  linewidth=0.8, linestyle="--", alpha=0.7, label="SR=1.5")
-        ax.axhline(0.8, color="orange", linewidth=0.8, linestyle=":",  alpha=0.7, label="SR=0.8")
+        ax.axhline(0,   color="black", linewidth=0.8)
+        ax.axhline(1.5, color="green", linewidth=0.8, linestyle="--", alpha=0.7, label="SR=1.5")
+        ax.axhline(0.8, color="orange",linewidth=0.8, linestyle=":",  alpha=0.7, label="SR=0.8")
         for bar, v in zip(bars, m_srs):
             ax.text(bar.get_x() + bar.get_width() / 2,
                     v + 0.03 * (1 if v >= 0 else -1),
@@ -534,9 +564,12 @@ def main() -> None:
     # 8. Monthly test
     res_m = run_monthly_section(btc_ret, alts_ret, res)
 
-    # 9. Plots (with subplot 5 = monthly vs weekly equity)
-    print("\n[7] Generating plots ...")
-    make_plots(res, base_signal, ic, lb_sens, res_monthly=res_m)
+    # 9. Long-only rotation test
+    res_lo = run_lo_section(btc_ret, alts_ret, res, res_m)
+
+    # 10. Plots (subplots 5 + 6)
+    print("\n[8] Generating plots ...")
+    make_plots(res, base_signal, ic, lb_sens, res_monthly=res_m, res_lo=res_lo)
 
     print("\n" + "=" * 60)
 
@@ -863,6 +896,291 @@ def run_monthly_section(btc_ret: pd.Series,
               "Signal does not survive even monthly frequency. Close search.")
 
     return res_m
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# LONG-ONLY ROTATION TEST
+# No shorts. Rotate 100% capital into BTC (BTC season) or ALT basket (alt season).
+# Cost: 0.17% RT only on side-switch months (one trade out + one trade in).
+# ══════════════════════════════════════════════════════════════════════════════
+
+def run_lo_rotation_backtest(btc_ret: pd.Series,
+                             alts_ret: pd.DataFrame,
+                             start: str = START,
+                             end: str = END) -> dict:
+    """
+    Long-only rotation with monthly rebalance and 21d signal.
+    BTC season (+1): long BTC at VOL_TGT, flat ALTs.
+    Alt season (−1): long ALT basket (equal-weight 5 alts) at VOL_TGT, flat BTC.
+    Cost: COST_RT (1 round-trip = exit one side + enter other) on direction flip.
+    """
+    signal    = build_monthly_signal(btc_ret, alts_ret, MONTHLY_LB)
+    signal    = signal.loc[start:end]
+    direction = np.sign(signal)
+
+    # Vol scalars (same convention, monthly rebalance dates)
+    btc_rvol = (btc_ret.rolling(VOL_WIN, min_periods=10).std() * np.sqrt(365)).shift(1)
+    alt_rvol = (alts_ret.rolling(VOL_WIN, min_periods=10).std() * np.sqrt(365)
+                ).mean(axis=1).shift(1)
+    btc_rv_m = btc_rvol.reindex(signal.index, method="ffill")
+    alt_rv_m = alt_rvol.reindex(signal.index, method="ffill")
+    btc_sc   = (VOL_TGT / btc_rv_m.replace(0, np.nan)).clip(0.1, 2.0).fillna(1.0)
+    alt_sc   = (VOL_TGT / alt_rv_m.replace(0, np.nan)).clip(0.1, 2.0).fillna(1.0)
+    # Gross cap: only one leg active → no need to halve, just apply cap directly
+    btc_sc   = btc_sc.clip(upper=GROSS_CAP)
+    alt_sc   = alt_sc.clip(upper=GROSS_CAP)
+
+    # Expand to daily
+    trade_days = btc_ret.loc[start:end].index
+    all_days   = pd.date_range(trade_days[0], trade_days[-1], freq="D")
+
+    dir_d  = direction.reindex(all_days).ffill()
+    bsc_d  = btc_sc.reindex(all_days).ffill()
+    asc_d  = alt_sc.reindex(all_days).ffill()
+
+    dir_d  = dir_d.reindex(trade_days).ffill().fillna(0)
+    bsc_d  = bsc_d.reindex(trade_days).ffill().fillna(1.0)
+    asc_d  = asc_d.reindex(trade_days).ffill().fillna(1.0)
+    b_ret  = btc_ret.reindex(trade_days).fillna(0.0)
+    a_ret  = alts_ret.reindex(trade_days).fillna(0.0).mean(axis=1)
+
+    # P&L: only one leg active
+    pnl_total = (bsc_d * b_ret * (dir_d == +1).astype(float) +
+                 asc_d * a_ret * (dir_d == -1).astype(float))
+
+    # Cost: one full RT on side switch (exit + enter = 0.17%)
+    cost_s = pd.Series(0.0, index=trade_days)
+    rebal_in = signal.index[signal.index.isin(trade_days)]
+    flips    = direction.diff().abs().reindex(rebal_in).fillna(0)
+    cost_s.loc[cost_s.index.isin(flips[flips > 0].index)] = COST_RT
+
+    pnl_net = pnl_total - cost_s
+
+    def _sr(pnl: pd.Series) -> float:
+        if len(pnl) < 10 or pnl.std() == 0:
+            return np.nan
+        return pnl.mean() * 365 / (pnl.std() * np.sqrt(365))
+
+    def _mdd(pnl: pd.Series) -> float:
+        cum = (1 + pnl).cumprod()
+        return float(((cum - cum.cummax()) / cum.cummax()).min())
+
+    def _pf(pnl: pd.Series) -> float:
+        pos = pnl[pnl > 0].sum()
+        neg = abs(pnl[pnl < 0].sum())
+        return pos / (neg + 1e-12)
+
+    # Long-leg returns only (BTC season) and alt-season returns only
+    btc_pnl = bsc_d * b_ret * (dir_d == +1).astype(float) - cost_s * (dir_d == +1).astype(float)
+    alt_pnl = asc_d * a_ret * (dir_d == -1).astype(float) - cost_s * (dir_d == -1).astype(float)
+
+    sub_sharpes = {}
+    for label, s, e in SUBS:
+        sub_sharpes[label] = _sr(pnl_net.loc[s:e])
+
+    n_switches     = int(flips.sum() / 2)
+    btc_season_frac= float((dir_d == 1).sum() / max(len(dir_d), 1))
+    switch_per_yr  = n_switches / ((len(trade_days) / 365))
+
+    return dict(
+        sharpe          = _sr(pnl_net),
+        maxdd           = _mdd(pnl_net),
+        profit_factor   = _pf(pnl_net),
+        win_rate        = float((pnl_net > 0).sum() / max(len(pnl_net), 1)),
+        annual_ret      = pnl_net.mean() * 365,
+        cum             = (1 + pnl_net).cumprod(),
+        btc_leg_sharpe  = _sr(btc_pnl),
+        alt_leg_sharpe  = _sr(alt_pnl),
+        pnl_net         = pnl_net,
+        sub_sharpes     = sub_sharpes,
+        btc_season_frac = btc_season_frac,
+        n_switches      = n_switches,
+        switch_per_yr   = switch_per_yr,
+    )
+
+
+def load_tsmom_returns() -> pd.Series:
+    """
+    Compute TSMOM v3 C1 daily returns by calling the existing backtest module.
+    Returns daily percentage P&L series.
+    """
+    from strategies.tsmom_v3.backtest import (
+        download_data, positions_c1, compute_pnl,
+    )
+    print("  [tsmom] Downloading TSMOM v3 universe ...")
+    close, log_ret = download_data()
+    pos = positions_c1(log_ret)
+    pnl = compute_pnl(close, pos)
+    pnl.index = pd.to_datetime(pnl.index).tz_localize(None)
+    return pnl.dropna()
+
+
+def lo_vs_tsmom_comparison(lo_pnl: pd.Series,
+                            tsmom_pnl: pd.Series,
+                            common_start: str = "2021-01-01") -> dict:
+    """
+    Correlation and combined Sharpe over common period.
+    """
+    lo   = lo_pnl.loc[common_start:]
+    ts   = tsmom_pnl.loc[common_start:]
+    idx  = lo.index.intersection(ts.index)
+    lo_c = lo.loc[idx]
+    ts_c = ts.loc[idx]
+
+    def _sr(pnl: pd.Series) -> float:
+        return pnl.mean() * 365 / (pnl.std() * np.sqrt(365) + 1e-12)
+
+    corr     = float(lo_c.corr(ts_c))
+    comb     = 0.5 * lo_c + 0.5 * ts_c
+    lo_sr    = _sr(lo_c)
+    ts_sr    = _sr(ts_c)
+    comb_sr  = _sr(comb)
+    gain     = comb_sr - ts_sr
+
+    return dict(
+        corr           = corr,
+        lo_sharpe      = lo_sr,
+        tsmom_sharpe   = ts_sr,
+        combined_sharpe= comb_sr,
+        sharpe_gain    = gain,
+        common_start   = common_start,
+        n_days         = len(idx),
+        tsmom_ret      = ts_c,
+        lo_ret         = lo_c,
+    )
+
+
+def run_lo_walkforward(btc_ret: pd.Series,
+                       alts_ret: pd.DataFrame) -> list[dict]:
+    """4-window expanding WF for LO rotation."""
+    results = []
+    for label, tr_s, tr_e, oos_s, oos_e in WF_WINDOWS:
+        oos = run_lo_rotation_backtest(btc_ret, alts_ret, start=oos_s, end=oos_e)
+        results.append(dict(
+            label       = label,
+            oos_start   = oos_s,
+            oos_end     = oos_e,
+            sharpe      = oos["sharpe"],
+            btc_leg_sr  = oos["btc_leg_sharpe"],
+            alt_leg_sr  = oos["alt_leg_sharpe"],
+        ))
+    return results
+
+
+def verdict_lo(res: dict, comp: dict, wf: list) -> str:
+    sr   = res["sharpe"]
+    gain = comp.get("sharpe_gain", 0.0) or 0.0
+    corr = comp.get("corr", 1.0) or 1.0
+    n_pos = sum(1 for w in wf if not np.isnan(w["sharpe"] or np.nan) and w["sharpe"] > 0)
+    if np.isnan(sr or np.nan) or sr < 0.5:
+        return "SKIP"
+    elif sr > 0.8 and gain > 0.2 and corr < 0.6:
+        return "DEPLOY"
+    elif sr >= 0.5 and corr < 0.6:
+        return "PROMISING"
+    else:
+        return "SKIP"
+
+
+def run_lo_section(btc_ret: pd.Series,
+                   alts_ret: pd.DataFrame,
+                   res_weekly: dict,
+                   res_monthly: dict) -> dict:
+    """Run the long-only rotation section and print results."""
+    print("\n" + "═" * 60)
+    print("LONG-ONLY ROTATION TEST (monthly, no shorts)")
+    print("═" * 60)
+
+    print("\n[L1] Long-only rotation backtest ...")
+    res_lo = run_lo_rotation_backtest(btc_ret, alts_ret)
+
+    print("[L2] Loading TSMOM v3 C1 returns ...")
+    try:
+        tsmom_pnl = load_tsmom_returns()
+        comp = lo_vs_tsmom_comparison(res_lo["pnl_net"], tsmom_pnl)
+        res_lo["tsmom_ret"]       = comp["tsmom_ret"]
+        res_lo["tsmom_sharpe"]    = comp["tsmom_sharpe"]
+        res_lo["combined_sharpe"] = comp["combined_sharpe"]
+        res_lo["corr"]            = comp["corr"]
+        res_lo["sharpe_gain"]     = comp["sharpe_gain"]
+        tsmom_ok = True
+    except Exception as e:
+        print(f"    [tsmom] failed: {e} — skipping TSMOM comparison")
+        comp = dict(corr=np.nan, tsmom_sharpe=np.nan,
+                    combined_sharpe=np.nan, sharpe_gain=np.nan, n_days=0)
+        tsmom_ok = False
+
+    # Comparison table
+    def _f2(v, fmt="+.2f") -> str:
+        if v is None or (isinstance(v, float) and np.isnan(v)):
+            return "   N/A"
+        return format(v, fmt)
+    def _pct(v) -> str:
+        if v is None or (isinstance(v, float) and np.isnan(v)):
+            return "   N/A"
+        return f"{v*100:+.1f}%"
+
+    w_s = res_weekly["sub_sharpes"]
+    m_s = res_monthly["sub_sharpes"]
+    lo_s= res_lo["sub_sharpes"]
+
+    print(f"""
+  ┌──────────────────────────┬─────────┬──────────┬──────────────┐
+  │ Metric                   │ MN week │ MN month │  LO rotation │
+  ├──────────────────────────┼─────────┼──────────┼──────────────┤
+  │ Full-period Sharpe       │{_f2(res_weekly['sharpe']):>9}│{_f2(res_monthly['sharpe']):>10}│{_f2(res_lo['sharpe']):>14}│
+  │ Sharpe 2020–2022         │{_f2(w_s.get('2020–2022')):>9}│{_f2(m_s.get('2020–2022')):>10}│{_f2(lo_s.get('2020–2022')):>14}│
+  │ Sharpe 2022–2023         │{_f2(w_s.get('2022–2023')):>9}│{_f2(m_s.get('2022–2023')):>10}│{_f2(lo_s.get('2022–2023')):>14}│
+  │ Sharpe 2024–2026         │{_f2(w_s.get('2024–2026')):>9}│{_f2(m_s.get('2024–2026')):>10}│{_f2(lo_s.get('2024–2026')):>14}│
+  │ Max DD                   │{_pct(res_weekly['maxdd']):>9}│{_pct(res_monthly['maxdd']):>10}│{_pct(res_lo['maxdd']):>14}│
+  │ Profit factor            │{_f2(res_weekly['profit_factor'],'.2f'):>9}│{_f2(res_monthly['profit_factor'],'.2f'):>10}│{_f2(res_lo['profit_factor'],'.2f'):>14}│
+  │ % time BTC season        │{_pct(res_weekly['btc_season_frac']):>9}│{_pct(res_monthly['btc_season_frac']):>10}│{_pct(res_lo['btc_season_frac']):>14}│
+  │ Switches / year          │{'  52.0':>9}│{f"{res_monthly.get('n_flips',0)/max(len(res_monthly['pnl_net'])/365,1):.1f}":>10}│{_f2(res_lo['switch_per_yr'],'.1f'):>14}│
+  └──────────────────────────┴─────────┴──────────┴──────────────┘""")
+
+    print(f"\n  TSMOM v3 comparison (common period from 2021-01-01, N={comp.get('n_days',0)} days):")
+    print(f"    corr(LO rotation, TSMOM v3) : {_f2(comp.get('corr'), '+.3f')}")
+    print(f"    Sharpe TSMOM v3 alone        : {_f2(comp.get('tsmom_sharpe'))}")
+    print(f"    Sharpe LO rotation alone     : {_f2(res_lo.get('sharpe'))}")
+    print(f"    Sharpe combined (0.5/0.5)    : {_f2(comp.get('combined_sharpe'))}")
+    gain = comp.get("sharpe_gain", np.nan)
+    gain_s = f"{gain:+.2f}" if not np.isnan(gain or np.nan) else "N/A"
+    adds  = "YES ✓" if not np.isnan(gain or np.nan) and gain > 0.2 else "NO"
+    print(f"    Sharpe gain vs TSMOM alone   : {gain_s}  → adds value: {adds}")
+
+    # Walk-forward
+    wf_results = []
+    lo_sr = res_lo.get("sharpe", 0.0) or 0.0
+    if not np.isnan(lo_sr) and lo_sr > 0.8:
+        print(f"\n[L3] Walk-forward (Sharpe {lo_sr:+.2f} > 0.8) ...")
+        wf_results = run_lo_walkforward(btc_ret, alts_ret)
+        print(f"\n  {'Win':<6} {'OOS period':<22} {'Sharpe':>8} {'BTC-leg':>8} {'ALT-leg':>8}")
+        print(f"  {'─'*6} {'─'*22} {'─'*8} {'─'*8} {'─'*8}")
+        for w in wf_results:
+            ok = "✓" if (w["sharpe"] or -999) > 0 else "✗"
+            print(f"  {w['label']:<6} {w['oos_start']} → {w['oos_end']}  "
+                  f"{_f2(w['sharpe']):>8}  {_f2(w['btc_leg_sr']):>8}  "
+                  f"{_f2(w['alt_leg_sr']):>8}  {ok}")
+        n_pos = sum(1 for w in wf_results if (w["sharpe"] or -999) > 0)
+        print(f"\n  WF: {n_pos}/4 windows positive Sharpe")
+    else:
+        print(f"\n  [L3] WF skipped (Sharpe {lo_sr:+.2f} ≤ 0.8)")
+
+    res_lo["wf_results"] = wf_results
+
+    # Verdict
+    v = verdict_lo(res_lo, comp, wf_results)
+    print(f"\n  VERDICT (LO rotation): {v}")
+    if v == "DEPLOY":
+        print("  → Deploy as Strategy C. Combine 0.5/0.5 with TSMOM v3 for Sharpe lift.")
+    elif v == "PROMISING":
+        print("  → Corr with TSMOM < 0.6 and Sharpe > 0.5. "
+              "Test live before committing capital.")
+    else:
+        print("  → Full-period Sharpe < 0.5 or too correlated with TSMOM. "
+              "No additive value as Strategy C.")
+
+    return res_lo
 
 
 if __name__ == "__main__":
