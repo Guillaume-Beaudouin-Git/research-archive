@@ -466,6 +466,12 @@ At $50 notional, $1M daily volume = 0.005% market impact — liquidity is more t
 **VERDICT B+D**: Cron not running AND carry-positive assets fail volume filter.  
 **Actions**: (1) install cron, (2) lower MIN_VOL_USD to $1M in live_trader.py.
 
+#### LIVE ISSUES FOUND AND FIXED (2026-05)
+
+1. **Cron never installed** — strategy was built and backtested but the 8-hourly execution cron was never added. Fix: add `10 0,8,16 * * * <HOME>/Desktop/Algo_claude/run_delta_neutral.sh` to crontab.
+2. **MIN_VOL_USD lowered $10M → $1M** (`live_trader.py`) — at $50 notional, $1M daily volume = 0.005% market impact. Dry-run confirmed TST (+137%/yr carry) and MEGA (+12%/yr carry) now pass both gates.
+3. **Backtest validity confirmed (L1–L5 PASS)** — look-ahead, spot fees, data source, exit logic all clean. Sharpe 10.22 is real but from a high-carry era (Jan–May 2025). Future carry rates will differ.
+
 ---
 
 ### 6.14 Meta-Labeling on TSMOM (XGBoost)
