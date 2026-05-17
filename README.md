@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
 **Last updated**: May 17, 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 15 strategies tested and failed/shelved, 2 recent studies (temporal patterns + LSTM 4h) → SKIP
+**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 30 signals tested, 9 consecutive SKIPs (6.22–6.30) — free-data exhausted
 
 ---
 
@@ -801,6 +801,40 @@ Walk-forward OOS Sharpe:
 
 ---
 
+### 6.30 ORB Crypto v2 — Asian Session Range Breakout
+
+**Status**: SKIP — Sharpe=+0.058 at best; negative expectancy across all filter configs  
+**File**: `strategies/orb_crypto_v2/feasibility.py`  
+**Source**: Adapted from Fabio Valentini's NQ Opening Range Breakout model  
+**Hypothesis**: The Asian session (00:00–08:00 UTC) establishes an equilibrium range when US/EU institutions are inactive. A clean breakout above range_high at 08:00 UTC close, confirmed by two bullish body-ratio candles, predicts continuation into the EU/US overlap session. Entry at 12:00 UTC open; TP = entry + 1× range_width; SL = range_low; EOD close at 20:00 UTC.
+
+**Data**: HL 4h candleSnapshot for BTC + ETH (2024-02-04 → 2026-05-14). 831 unique days, 4,980 bars per coin. HL data gap Dec 2022–Dec 2023 limits the available window to bull market only.
+
+**Filter configs tested**:
+- No filter (body_ratio > 0.00): 106 trades, 47/yr
+- Mild (body_ratio > 0.20): 65 trades, 30/yr
+- Strict (body_ratio > 0.40): 30 trades, 16/yr
+
+**Results**:
+
+| Config | Trades | Win rate | Sharpe | MaxDD | P(EV≤0) | Profit factor |
+|---|---|---|---|---|---|---|
+| no_filter | 106 | 44.3% | −1.693 | −18.6% | 0.917 | 0.698 |
+| mild | 65 | 44.6% | −1.809 | −16.8% | 0.951 | 0.582 |
+| strict | 30 | 50.0% | +0.058 | −10.5% | 0.576 | 0.908 |
+
+Exit breakdown (no_filter): EOD 48% / TP 32% / SL 20%. The majority of trades close at EOD without hitting either TP or SL — the continuation move simply does not materialize consistently. Avg loss (−1.59%) > avg win (+1.39%) across all configs, producing negative expectancy.
+
+Sub-period Sharpe (strict filter): 2024 +1.953 (n=8), 2025 −0.056 (n=19). No bear-period data available.
+
+**corr(ORB, TSMOM)**: Not computable — insufficient overlap between daily ORB signals (BTC+ETH only, subset of days) and weekly TSMOM universe. Cannot be evaluated as a diversification source.
+
+**Root cause**: The Asian range breakout mechanism was designed for NQ futures, which have a genuine pre-market equilibrium driven by overnight futures positioning and a defined US open catalyst. Crypto trades 24/7 with no session boundaries of comparable institutional significance. The Asian session range is wider than the NQ pre-market range (crypto overnight vol ≈ 1.5–2× intraday vol due to Asian retail), making breakout signals less reliable. The 4h candle resolution adds further noise: a genuine breakout at e.g. 09:00 UTC and a fake breakout at 07:45 UTC produce identical signals at the 4h level.
+
+**Higher-frequency hypothesis**: The mechanism might work at 1h or 30min resolution (authentic ORB timing), but HL candleSnapshot only provides 4h. This is a data limitation of the test, not a definitive proof of mechanism failure. Verdict remains SKIP because positive evidence is absent.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -834,6 +868,7 @@ Walk-forward OOS Sharpe:
 | 6.27 | Vol Squeeze Breakout | +0.437 (SOL best) | −81.9% | Research | SKIP (Sharpe < 0.8; 80% overlap with TSMOM) |
 | 6.28 | MVRV Z-Score Overlay | 0.250 (base 0.349) | −17.8% | Research | SKIP (IC t=+0.32; scaler hurts TSMOM both periods) |
 | 6.29 | Funding Rate Momentum | −0.151 | −32.3% | Research | SKIP (IC t=+0.11; bull sub-period negative) |
+| 6.30 | ORB Crypto v2 (Asian Range) | +0.058 (strict filter) | −10.5% | Research | SKIP (negative expectancy all configs; EOD exits dominate) |
 
 ---
 
@@ -878,9 +913,9 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
-### Strategy C search status — 29 signals tested, FREE-DATA EXHAUSTED
+### Strategy C search status — 30 signals tested, FREE-DATA EXHAUSTED
 
-**All free-data candidates tested. Last 8 signals (6.22–6.29) all SKIP:**
+**All free-data candidates tested. Last 9 signals (6.22–6.30) all SKIP:**
 - 6.22 Temporal patterns: SKIP (corr(TSMOM)=0.527; no bucket t>2.5 after MTC)
 - 6.23 LSTM 4h: SKIP (AUC=0.64 real, but 117 trades/yr × 0.17% cost-killed)
 - 6.24 LSTM weekly: SKIP (intraday edge evaporates at weekly frequency)
@@ -889,6 +924,7 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 - 6.27 Vol squeeze breakout: SKIP (Sharpe ≤ 0.44; 73–82% overlap with TSMOM)
 - 6.28 MVRV Z-score overlay: SKIP (IC t=+0.32; proxy corr(TSMOM)=+0.40; scaler reduces Sharpe both sub-periods)
 - 6.29 Funding rate momentum: SKIP (IC t=+0.11; bull-era IC negative; regime-specific bear-only pattern)
+- 6.30 ORB Crypto v2 (Asian Range): SKIP (Sharpe+0.058 at best; EOD exits dominate; 24/7 market has no session structure; 4h resolution too coarse for genuine ORB timing)
 
 **Key structural finding**: In crypto, almost every non-price signal is correlated with the trend regime (bull = more volume, more breakouts, more calendar anomalies, higher MVRV, higher funding). Only cross-sectional signals (XGBoost CS, corr=+0.003) reliably diversify TSMOM. This is a structural property of the asset class, not a data limitation. Confirmed by MVRV (+0.40 TSMOM corr) and funding trend (+0.27 signal corr): even on-chain/derivatives signals that appear theoretically orthogonal are regime-co-linear in practice.
 
