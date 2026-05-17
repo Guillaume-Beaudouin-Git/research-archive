@@ -87,9 +87,10 @@ MIN_VOL_USD       = 1_000_000            # Binance mainnet 24h volume floor ($1M
 # automatically without changing this list.
 VIABLE_ASSETS = ["TST", "MEGA", "WLD", "STX", "WIF", "BIO", "TRUMP", "HMSTR"]
 
-STOP_PATH = REPO_ROOT / "STOP"
-STATE_DIR = REPO_ROOT / "data" / "delta_neutral" / "live_state"
-LOG_DIR   = REPO_ROOT / "logs"
+STOP_PATH          = REPO_ROOT / "STOP"
+STATE_DIR          = REPO_ROOT / "data" / "delta_neutral" / "live_state"
+LOG_DIR            = REPO_ROOT / "logs"
+SUMMARY_STATE_FILE = REPO_ROOT / "strategies" / "delta_neutral" / "state.json"
 
 HL_API = "https://api.hyperliquid.xyz/info"
 
@@ -584,6 +585,46 @@ def run_asset(
     return summary
 
 
+# ─── SUMMARY STATE ────────────────────────────────────────────────────────────
+
+def write_summary_state(now_utc: datetime) -> None:
+    """
+    Write strategies/delta_neutral/state.json after each run.
+    monitor.py reads this file for Strategy B reporting (active pairs + carry).
+
+    The file reflects ACTUAL open positions (from per-asset state files),
+    not the carry-filter pass list — so HOLDing pairs remain visible even
+    if their carry dipped below the floor temporarily.
+    """
+    active_pairs: list[str] = []
+    positions: dict = {}
+    carry_earned_total = 0.0
+
+    for asset in VIABLE_ASSETS:
+        state = load_state(asset)
+        if state["position"] == "open":
+            active_pairs.append(asset)
+            cum = state.get("cumulative_carry", 0.0)
+            carry_earned_total += cum
+            positions[asset] = {
+                "hl_short":         -state["perp_notional"],
+                "bn_spot":           state["perp_notional"],
+                "entry_time":        state.get("entry_time"),
+                "cumulative_carry":  round(cum, 6),
+            }
+
+    summary = {
+        "active_pairs":       active_pairs,
+        "last_run":           now_utc.isoformat(),
+        "carry_earned_total": round(carry_earned_total, 6),
+        "positions":          positions,
+    }
+    SUMMARY_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(SUMMARY_STATE_FILE, "w") as f:
+        json.dump(summary, f, indent=2)
+    logger.info(f"Summary state written: {len(active_pairs)} open pair(s) → {SUMMARY_STATE_FILE}")
+
+
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 def run(
@@ -704,6 +745,9 @@ def run(
         lines.append(f"ERRORS: {'; '.join(errors)}")
 
     notifier.send("\n".join(lines), level="error" if errors else "info")
+
+    # Write aggregated state for monitor.py
+    write_summary_state(now_utc)
 
     if errors:
         sys.exit(1)

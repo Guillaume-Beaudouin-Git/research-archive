@@ -23,6 +23,7 @@ Cron:
 from __future__ import annotations
 
 import csv
+import json
 import re
 import sys
 from collections import defaultdict
@@ -40,7 +41,8 @@ TSMOM_LOG    = LOG_HOME  / "tsmom.log"
 TSMOM_TRADES = PROJ_LOGS / "tsmom_trades.csv"
 FILLS_CSV    = PROJ_LOGS / "fills.csv"
 DN_CARRY_CSV = PROJ_LOGS / "delta_neutral_carry.csv"
-DN_LOG       = LOG_HOME  / "delta_neutral.log"
+DN_LOG       = PROJ_LOGS / "delta_neutral.log"          # fixed: was LOG_HOME, live_trader writes here
+DN_STATE_JSON = REPO_ROOT / "strategies" / "delta_neutral" / "state.json"
 
 TSMOM_ASSETS = ["BTC-USD", "ETH-USD", "SOL-USD"]
 CORR_MIN_DAYS = 10   # minimum shared daily P&L points before reporting correlation
@@ -271,6 +273,22 @@ def parse_dn_log() -> dict:
     return {"active_assets": active_assets, "mode": mode, "basis": basis}
 
 
+def load_dn_state() -> dict:
+    """
+    Read strategies/delta_neutral/state.json written by live_trader.py after each run.
+    Returns active_pairs (actually-open positions) + carry total + per-asset detail.
+    Falls back to empty defaults if the file doesn't exist yet.
+    """
+    empty = {"active_pairs": [], "last_run": None, "carry_earned_total": 0.0, "positions": {}}
+    if not DN_STATE_JSON.exists():
+        return empty
+    try:
+        with open(DN_STATE_JSON) as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return empty
+
+
 # ─── CORRELATION ──────────────────────────────────────────────────────────────
 
 def rolling_corr(
@@ -346,6 +364,7 @@ def build_message(
     fills:  dict[str, dict],
     dn_carry: dict,
     dn_log:   dict,
+    dn_state: dict,
 ) -> str:
     now_utc = datetime.now(timezone.utc)
     lines: list[str] = []
@@ -380,7 +399,16 @@ def build_message(
     # ── DELTA NEUTRAL ─────────────────────────────────────────────────────────
     lines.append("DELTA NEUTRAL (Strategy B):")
     mode = dn_log.get("mode", "UNKNOWN")
-    active = dn_log.get("active_assets", [])
+    # Prefer state.json (actually-open positions).
+    # Fall back to log active_assets only in live mode — in DRY-RUN the log lists
+    # assets that *would* be opened, which is not a reliable "open position" signal.
+    live_mode = mode in ("LIVE", "LIVE (TESTNET)")
+    if dn_state.get("active_pairs"):
+        active = dn_state["active_pairs"]
+    elif live_mode:
+        active = dn_log.get("active_assets", [])
+    else:
+        active = []
     basis  = dn_log.get("basis", {})
 
     if mode != "LIVE (TESTNET)" and mode != "LIVE":
@@ -394,11 +422,21 @@ def build_message(
 
     if active:
         lines.append(f"  Active pairs: {' | '.join(active)}")
+        # Show per-pair carry total from state.json when available
+        state_positions = dn_state.get("positions", {})
+        for pair in active:
+            pos = state_positions.get(pair, {})
+            cum = pos.get("cumulative_carry", 0.0)
+            entry = pos.get("entry_time", "")[:10] if pos.get("entry_time") else "?"
+            lines.append(f"    {pair}: cumulative carry {_fmt(cum)}, opened {entry}")
         if basis:
             basis_str = " | ".join(f"{a} {v:.2f}%" for a, v in basis.items())
             lines.append(f"  Basis: {basis_str}")
         else:
             lines.append("  Basis: n/a (dry-run)")
+        last_run = dn_state.get("last_run", "")
+        if last_run:
+            lines.append(f"  State as of: {last_run[:19].replace('T', ' ')} UTC")
     else:
         lines.append("  Active pairs: none")
 
@@ -436,8 +474,9 @@ def main() -> None:
     fills    = load_fills()
     dn_carry = load_dn_carry()
     dn_log   = parse_dn_log()
+    dn_state = load_dn_state()
 
-    msg = build_message(report_date, tsmom, fills, dn_carry, dn_log)
+    msg = build_message(report_date, tsmom, fills, dn_carry, dn_log, dn_state)
     print(msg)   # always print to stdout (for log file)
     notifier.send(msg, level="info")
 
