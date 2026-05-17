@@ -1,6 +1,6 @@
 # Algo_claude — Research Journal
 
-**Last updated**: May 16, 2026  
+**Last updated**: May 17, 2026  
 **Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 15 strategies tested and failed/shelved, 2 recent studies (temporal patterns + LSTM 4h) → SKIP
 
 ---
@@ -744,6 +744,63 @@ Walk-forward OOS Sharpe:
 
 ---
 
+### 6.28 MVRV Z-Score as TSMOM Overlay
+
+**Status**: SKIP — scaler reduces TSMOM returns; IC not significant  
+**File**: `strategies/mvrv/feasibility.py`  
+**Hypothesis**: MVRV Z-score (market-value-to-realized-value) captures on-chain regime. Scale TSMOM position down in overheated markets (high MVRV), up in undervalued markets (low MVRV). Proxy: `(BTC_close - MA200) / rolling_std(BTC_close, 365)` (Toby Ord approximation; no Glassnode key available).
+
+**Scale thresholds tested**:
+
+| MVRV z-score | Scale factor | Time spent |
+|---|---|---|
+| z < −0.5 (undervalued) | 1.30× | 23.5% of weeks |
+| −0.5 ≤ z < 1.0 (neutral) | 1.00× | 45.9% of weeks |
+| 1.0 ≤ z < 3.0 (expensive) | 0.70× | 27.7% of weeks |
+| z ≥ 3.0 (bubble) | 0.40× | 2.8% of weeks |
+
+**Results (2021–2026, 356 weeks)**:
+- IC (MVRV[T] → BTC return[T+1]): **+0.0172**, t-stat **+0.324** (p=0.75) — not significant
+- Sub-period IC: 2021–2023: +0.047 (t=+0.58); 2024–2026: −0.032 (t=−0.35) — inconsistent direction
+- TSMOM base Sharpe: **0.349** | TSMOM × MVRV Sharpe: **0.250** — scaler hurts
+- Sub-period deltas: 2021–2023: Δ=−0.056; 2024–2026: Δ=−0.147 — worse both periods
+- corr(TSMOM signal, MVRV proxy): **+0.400** (MVRV and momentum are co-linear — both high in bull markets)
+
+**Root cause**: The MVRV proxy `(close - MA200) / std365` is directionally correlated with the TSMOM signal (+0.40), because both are high when BTC is in a bull run. The scaler therefore reduces position in bull markets (when TSMOM is right) and increases it in bear markets (when TSMOM is wrong) — exactly backwards. The theoretical MVRV effect (overvaluation predicts reversal) is real at multi-year timescales, but at weekly resolution the momentum dominates and the scaler destroys value.
+
+**Proxy quality caveat**: True Glassnode MVRV uses realized cap (the sum of all UTXOs valued at price when last moved). The proxy MA200/std365 is a 0.40-corr approximation. Even if threshold calibration were improved with real Glassnode data, the structural co-linearity with TSMOM would remain.
+
+---
+
+### 6.29 Funding Rate Momentum (Second Derivative)
+
+**Status**: SKIP — IC not significant; positive only in 8-month bear window (insufficient N)  
+**File**: `strategies/funding_momentum/feasibility.py`  
+**Hypothesis**: Funding rate *trend* (acceleration) is distinct from funding rate *level* (Strategy B). Signal: `trend[T] = fund_7d[T-1] - fund_14d[T-8]`, z-scored vs 60d rolling baseline. Long when z > 0.5 (funding accelerating), flat otherwise. Tests whether the second derivative of sentiment predicts directional returns.
+
+**Data**: HL BTC funding history (8h intervals). Cached CSV 2024-01–2026-05-10 + API fetch for 2023-05–2023-12 bear period. Combined: 14,181 hourly records (2023-05-12 → 2026-05-16).
+
+**Signal statistics**:
+- Signal ON (z > 0.5): 28.9% of weeks
+- Signal FLAT (z < −0.5): 30.9% of weeks
+- Neutral zone (|z| < 0.5): 40.1% of weeks
+- corr(funding level, funding trend): +0.40 (partially co-linear, as expected)
+
+**Results**:
+- IC: **+0.0091**, t-stat **+0.111** (p=0.91) — not significant
+- Sub-period IC: Bear 2023 (8mo): +0.245 (t=+1.26, n=27); Bull 2024–26: −0.027 (t=−0.30, n=124)
+- Full Sharpe: **−0.151** | MaxDD: −32.3%
+- Bear (2023-05→2023-12): Sharpe **+0.368** | MaxDD −12.1%
+- Bull (2024→2026): Sharpe **−0.324** | MaxDD −28.8%
+- corr(strategy returns, TSMOM weekly): **+0.073** ← good, but Sharpe is negative
+- corr(signal, TSMOM signal): **+0.266**
+
+**Root cause**: Funding rate acceleration correlates with the onset of funding spikes (leverage build-up) rather than with subsequent price direction. In the 2023 bear period, sharp positive funding spikes coincided with local bottoms (short squeezes → relief rallies) → signal appeared predictive. In 2024–26 bull market, funding is persistently elevated with momentum, making the trend signal essentially a lagged momentum proxy that fires late and suffers reversals. The sub-period inconsistency (2023 IC +0.245 vs 2024–26 IC −0.027) is a regime-specific artifact, not a robust signal.
+
+**Data limitation**: HL funding history starts May 2023. The 2023 bear sub-period has only 27 weekly observations — far too few to establish significance (t=+1.26 ≈ p=0.22). The bull sub-period (n=124) is the more reliable estimate.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -775,6 +832,8 @@ Walk-forward OOS Sharpe:
 | 6.25 | STR Small-Cap (Zaremba 2021) | −0.582 | −221.8% | Research | SKIP (IC t=0.99, not 3.0 as predicted) |
 | 6.26 | USDT Flow Proxy (Chi 2025) | +0.220 (corr=0.616!) | −17.7% | Research | SKIP (IC t=−0.38; proxy ≠ on-chain inflows) |
 | 6.27 | Vol Squeeze Breakout | +0.437 (SOL best) | −81.9% | Research | SKIP (Sharpe < 0.8; 80% overlap with TSMOM) |
+| 6.28 | MVRV Z-Score Overlay | 0.250 (base 0.349) | −17.8% | Research | SKIP (IC t=+0.32; scaler hurts TSMOM both periods) |
+| 6.29 | Funding Rate Momentum | −0.151 | −32.3% | Research | SKIP (IC t=+0.11; bull sub-period negative) |
 
 ---
 
@@ -819,17 +878,19 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
-### Strategy C search status — 27 signals tested, FREE-DATA EXHAUSTED
+### Strategy C search status — 29 signals tested, FREE-DATA EXHAUSTED
 
-**All free-data candidates tested. Last 6 signals (6.22–6.27) all SKIP:**
+**All free-data candidates tested. Last 8 signals (6.22–6.29) all SKIP:**
 - 6.22 Temporal patterns: SKIP (corr(TSMOM)=0.527; no bucket t>2.5 after MTC)
 - 6.23 LSTM 4h: SKIP (AUC=0.64 real, but 117 trades/yr × 0.17% cost-killed)
 - 6.24 LSTM weekly: SKIP (intraday edge evaporates at weekly frequency)
 - 6.25 STR small-cap: SKIP (IC t=0.99 vs Zaremba's predicted >3.0)
 - 6.26 USDT flow proxy: SKIP (IC t=−0.38; Binance volume is price momentum, not inflow signal)
 - 6.27 Vol squeeze breakout: SKIP (Sharpe ≤ 0.44; 73–82% overlap with TSMOM)
+- 6.28 MVRV Z-score overlay: SKIP (IC t=+0.32; proxy corr(TSMOM)=+0.40; scaler reduces Sharpe both sub-periods)
+- 6.29 Funding rate momentum: SKIP (IC t=+0.11; bull-era IC negative; regime-specific bear-only pattern)
 
-**Key structural finding**: In crypto, almost every non-price signal is correlated with the trend regime (bull = more volume, more breakouts, more calendar anomalies). Only cross-sectional signals (XGBoost CS, corr=+0.003) reliably diversify TSMOM. This is a structural property of the asset class, not a data limitation.
+**Key structural finding**: In crypto, almost every non-price signal is correlated with the trend regime (bull = more volume, more breakouts, more calendar anomalies, higher MVRV, higher funding). Only cross-sectional signals (XGBoost CS, corr=+0.003) reliably diversify TSMOM. This is a structural property of the asset class, not a data limitation. Confirmed by MVRV (+0.40 TSMOM corr) and funding trend (+0.27 signal corr): even on-chain/derivatives signals that appear theoretically orthogonal are regime-co-linear in practice.
 
 **Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found.
 
