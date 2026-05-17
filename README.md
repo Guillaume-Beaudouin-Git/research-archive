@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
 **Last updated**: May 17, 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 34 signals tested, 13 consecutive SKIPs (6.22–6.34) — free-data exhausted
+**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 36 signals tested, 15 consecutive SKIPs (6.22–6.36) — free-data exhausted
 
 ---
 
@@ -993,6 +993,103 @@ Positive = near/above recent 21d high (breakout strength). Negative = far below 
 
 ---
 
+### 6.35 Extreme Funding Rate Reversal (Contrarian)
+
+**Status**: SKIP — IC is NEGATIVE (wrong direction); extreme funding confirms momentum continuation, not reversal  
+**File**: `strategies/funding_reversal/feasibility.py`  
+**Hypothesis**: When 8h funding rate spikes to extreme positive (z>+2.5), longs are massively overleveraged → forced deleveraging → price DROP within 5 days. When z<−2.0, short squeeze imminent → price RISE. Signal: `funding_8h_zscore[T] = (funding_8h[T-1] - rolling_mean_30d[T-1]) / rolling_std_30d[T-1]`. Normalization: 8h-equivalent rate regardless of HL's interval switching (8h pre-2024, 1h post-2024).
+
+**Assets**: BTC, ETH, SOL | Data: HL funding history (May 2023 – Apr 2026, 25,782 records) + Binance daily prices
+
+**IC analysis (pooled, |z|>0.3 trigger days)**:
+
+| Hold | IC | t-stat | n | Verdict |
+|---|---|---|---|---|
+| 1d | −0.0261 | −1.046 | 1,607 | FAIL |
+| 3d | −0.0566 | −2.267 | 1,604 | FAIL (wrong direction) |
+| 5d | −0.0743 | −3.354 | 1,601 | FAIL (wrong direction, significant) |
+| 7d | −0.0889 | −4.191 | 1,591 | FAIL (wrong direction, significant) |
+
+IC definition: `spearman(z, -fwd_return)`, so IC<0 means high positive funding → price RISES (opposite of thesis).
+
+**Backtest results (5d default hold)**:
+- Total trades: 241 (46.3/yr) | Win rate: 41.5% | PF: **0.587** | SL rate: 26.6%
+- SHORT trades (z>+2.5): n=131, PF=**0.411** — extreme funding → price continues UP
+- LONG trades (z<−2.0): n=110, PF=**0.756** — extreme negative funding → price continues DOWN
+- Portfolio Sharpe: **−1.484** | MaxDD: −16.5%
+
+**Asset breakdown**:
+
+| Asset | n | PF | Direction |
+|---|---|---|---|
+| BTC | 78 | **1.163** | Exception: faster arbitrage, funding mean-reverts quickly |
+| ETH | 86 | 0.615 | FAIL |
+| SOL | 77 | 0.393 | FAIL (most leveraged, momentum strongest) |
+
+**Root cause**: Funding rate is a sentiment momentum proxy. High positive funding → longs are right (it's a bull market) → price continues up. The "forced deleveraging" mechanism requires a large spot arbitrage army ready to short perp and buy spot; at 5d horizon, momentum dominates. The IC direction is not just failing — it's significantly negative (t=−4.19 at 7d). Extreme funding confirms momentum continuation, not reversal. BTC exception (PF=1.163) reflects more liquid arbitrage that actually mean-reverts funding, but insufficient n=78 to be reliable.
+
+**Archetype 3 confirmed**: Funding z-score is a momentum proxy, not a reversal indicator. Joins crash recovery (6.34), CS L/S (6.32), short-term reversal (6.17) — all structural continuations, not mean-reversions.
+
+---
+
+### 6.36 Perp-Spot Basis Mean Reversion (He & Manela 2024)
+
+**Status**: SKIP — PF=0.955, IC negative; basis z-score does not predict perp price direction at 5-day horizon  
+**File**: `strategies/basis_trading/feasibility.py`  
+**Source**: He & Manela (2024), arXiv 2212.06888 — "High Sharpe ratios even for highest trading cost tier on Binance"  
+**Hypothesis**: When Binance perp trades at significant premium to spot (basis_z>+1.5), arbitrageurs buy spot + short perp → convergence. Signal: SHORT perp (bet on convergence). Exit when |basis_z|<0.5 (MR complete) OR 10d max. Basis computed self-consistently from same exchange (Binance perp vs Binance spot).
+
+**Assets**: BTC, ETH, SOL | Data: Binance perpetual futures + spot daily OHLCV (2021-01-01 → 2026-05-10, 1,956 days)
+
+**Basis statistics (Binance perp − Binance spot) / spot × 100%**:
+
+| Asset | Mean% | Std% | Max% | Min% | p5% | p95% |
+|---|---|---|---|---|---|---|
+| BTC | −0.019% | 0.050% | +0.19% | −0.11% | −0.063% | +0.085% |
+| ETH | −0.016% | 0.057% | +0.36% | −0.25% | −0.065% | +0.094% |
+| SOL | −0.033% | 0.402% | +0.48% | −16.9% | −0.102% | +0.116% |
+
+**IC analysis (pooled)**:
+
+| Hold | IC | t-stat | n | Verdict |
+|---|---|---|---|---|
+| 3d | −0.0024 | −0.161 | 4,462 | FAIL |
+| 5d | −0.0158 | −1.053 | 4,457 | FAIL |
+| 7d | −0.0193 | −1.291 | 4,453 | FAIL |
+| 10d | −0.0331 | −2.210 | 4,445 | FAIL (wrong direction) |
+
+**Backtest results (10d max hold)**:
+- Total trades: 680 (130.6/yr) | Win rate: 48.2% | PF: **0.955** | Trade Sharpe: −0.190
+- SHORT trades (basis_z>+1.5): n=349, PF=**0.831** — perp premium → perp continues UP
+- LONG trades (basis_z<−1.5): n=331, PF=**1.089** — slight edge on long side
+- MR exit rate: **88.7%** | Avg hold: **1.0d** (mean-reversion fires within 1 day — not the signal)
+- SL rate: 11.3%
+
+**Asset breakdown**:
+
+| Asset | n | PF | Note |
+|---|---|---|---|
+| BTC | 244 | 0.892 | Near-zero basis; low n per signal |
+| ETH | 226 | **1.472** | Most consistent basis variation |
+| SOL | 210 | 0.740 | SOL negative outlier (−16.9% min basis) |
+
+**Sub-period (2021–2026)**:
+
+| Year | n | PF | Mean% |
+|---|---|---|---|
+| 2021 | 120 | 0.84 | −0.349% |
+| 2022 | 121 | 1.26 | +0.441% |
+| 2023 | 135 | 0.73 | −0.353% |
+| 2024 | 152 | 0.98 | −0.031% |
+| 2025 | 115 | 1.32 | +0.370% |
+| 2026 | 37 | 0.38 | −1.311% |
+
+**Root cause**: The Binance perp-spot basis is a microstructure artifact, not a durable pricing anomaly. At daily close prices, the basis is extremely small (Std=0.05% for BTC) — well within the bid-ask spread. The 88.7% MR exit rate confirms the z-score reverts within **1 day** (not 10 days as the paper assumed), which means the strategy is entering and exiting in 1-bar windows where cost (0.17% RT) dominates any gross edge. He & Manela (2024) used mark-to-index basis (which can be 0.5–2% during stress) on a specific dataset; at Binance daily close, the signal has near-zero amplitude. ETH's PF=1.472 is the only exception — insufficient n (226 trades) for standalone viability.
+
+**Key distinction from Strategy B (6.13)**: Strategy B earns FUNDING INCOME by holding a delta-neutral perp+spot position (flow). This trade bets on PRICE CONVERGENCE via a directional perp position (stock). At daily granularity, basis has too little amplitude to provide edge after costs.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -1031,6 +1128,8 @@ Positive = near/above recent 21d high (breakout strength). Negative = far below 
 | 6.32 | CS Breakout L/S (Robot Wealth) | +0.036 L/S; +0.199 LO | −80.8% | Research | SKIP (Sharpe~0; corrB=−0.05, carry correlation not confirmed) |
 | 6.33 | Monthly TSMOM (40 assets) | 0.381 | −122.5%† | Research | SKIP (monthly rebalance reduces cost but reduces signal freshness; 58% turnover/month) |
 | 6.34 | Crash Recovery Dip-Buying | −0.604 (portfolio) | — | Research | SKIP (post-crash mean −0.131% < unconditional 0.384%; SL fires 68%; t=−1.54) |
+| 6.35 | Extreme Funding Reversal | −1.484 | −16.5% | Research | SKIP (IC t=−4.19 wrong direction; extreme funding = momentum, not reversal) |
+| 6.36 | Perp-Spot Basis MR (He & Manela 2024) | −0.190 (trade) | — | Research | SKIP (PF=0.955; avg hold=1d; basis amplitude too small vs cost) |
 
 ---
 
@@ -1075,9 +1174,9 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
-### Strategy C search status — 34 signals tested, FREE-DATA EXHAUSTED
+### Strategy C search status — 36 signals tested, FREE-DATA EXHAUSTED
 
-**All free-data candidates tested. Last 13 signals (6.22–6.34) all SKIP:**
+**All free-data candidates tested. Last 15 signals (6.22–6.36) all SKIP:**
 - 6.22 Temporal patterns: SKIP (corr(TSMOM)=0.527; no bucket t>2.5 after MTC)
 - 6.23 LSTM 4h: SKIP (AUC=0.64 real, but 117 trades/yr × 0.17% cost-killed)
 - 6.24 LSTM weekly: SKIP (intraday edge evaporates at weekly frequency)
@@ -1091,18 +1190,22 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 - 6.32 CS Breakout L/S (Robot Wealth): SKIP (L/S Sharpe=0.036; corrB=−0.048 not negative enough; carry correlation hypothesis not confirmed in single-class crypto)
 - 6.33 Monthly TSMOM (40 assets): SKIP (Sharpe 0.381 < 0.533 weekly same universe; 58% monthly turnover eliminates cost advantage; recent 2024–2026 deterioration)
 - 6.34 Crash Recovery dip-buying: SKIP (post-crash mean −0.131% < unconditional 0.384%; SL fires 68%; PF<1.0 in 7/9 years; t=−1.54 anti-edge)
+- 6.35 Extreme Funding Reversal: SKIP (IC t=−4.19 at 7d — wrong direction; extreme funding = momentum continuation, not reversal; PF=0.587)
+- 6.36 Perp-Spot Basis MR (He & Manela 2024): SKIP (PF=0.955; IC t=−2.21; avg hold=1d; Binance basis amplitude ~0.05% Std vs 0.17% RT cost)
 
-**Extended structural finding** (confirmed across 34 signals): In crypto, all free-data standalone strategies are either:
+**Extended structural finding** (confirmed across 36 signals): In crypto, all free-data standalone strategies are either:
 1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout) — work in bull, fail in bear, corr > 0.4
-2. **Cost-inaccessible at retail fees** (LSTM, residual MR, STR) — real AUC/IC but n_trades × fee > gross return
-3. **Mean-reversion into momentum** (crash recovery, CS L/S, funding MR) — dip-buying is anti-edge; crash signals predict continuation not reversal
+2. **Cost-inaccessible at retail fees** (LSTM, residual MR, STR, basis MR) — real AUC/IC but n_trades × fee > gross return OR signal amplitude < cost
+3. **Mean-reversion into momentum** (crash recovery, CS L/S, funding reversal, basis z-score) — funding and basis spikes are momentum proxies; dip-buying and reversal bets are anti-edge
 4. **Cross-sectional orthogonal but Sharpe < 1.0** (XGBoost CS, 0.734) — only approach that escapes TSMOM co-linearity
+
+**Key new finding (6.35+6.36)**: Both extreme funding (6.35) and perp-spot basis (6.36) produce IC in the **wrong direction** — they predict the opposite of what theory suggests. This confirms the archetype: in crypto, both funding and basis are **momentum proxies** (high when sentiment is bullish), not **dislocation indicators** (high when price is stretched beyond equilibrium). Arbitrage convergence does not happen at 5-day horizons.
 
 **Conclusion**: Published multi-asset strategies do not transfer to single-class crypto because the structural properties (regime co-linearity, lack of cross-asset diversification, 24/7 trading, funding-momentum coupling) are fundamentally different. Two strategy archetypes remain untested:
 - **Paid data**: Glassnode on-chain stablecoin flows (true mint/burn on-chain, ~$500/mo) — theoretical zero TSMOM corr
 - **Alternative prop firm**: FTMO (5% daily DD vs Propr's 3%) — structural ceiling fix, not a new signal
 
-**Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found after 34 signals.
+**Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found after 36 signals.
 
 ### Immediate
 1. **FTMO compatibility analysis** (now Priority #1). FTMO: 5% daily DD limit vs Propr's 3%. Run 44-path simulation with FTMO rules (trailing HWM, 10% profit target, 10% total DD, 5% daily DD). Expected pass rate: 55–65% vs current 39% Propr ceiling. This is the highest-leverage next step given the structural ceiling found in Strategy C search.
