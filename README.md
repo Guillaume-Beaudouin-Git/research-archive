@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
 **Last updated**: May 17, 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 32 signals tested, 11 consecutive SKIPs (6.22–6.32) — free-data exhausted
+**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 34 signals tested, 13 consecutive SKIPs (6.22–6.34) — free-data exhausted
 
 ---
 
@@ -901,6 +901,98 @@ Positive = near/above recent 21d high (breakout strength). Negative = far below 
 
 ---
 
+### 6.33 Monthly TSMOM on 40 Assets (Cost Reduction)
+
+**Status**: SKIP — monthly rebalance reduces cost but also reduces signal freshness; Sharpe 0.381 < threshold  
+**File**: `strategies/monthly_tsmom/feasibility.py`  
+**Hypothesis**: Weekly TSMOM costs ~3.5%/yr actual (52 × 0.17% × ~40% turnover). Monthly rebalance drops this to ~0.8%/yr, potentially rescuing the edge on a larger universe. Also tests whether adding assets 11–40 by HL volume provides scale benefits.
+
+**Universe**: Top-40 HL perps by 24h notional volume. 27 tradable on Binance with ≥365 days history (HYPE, FARTCOIN, MEGA, VVV, kPEPE, kLUNC, MON, STABLE and other new/exchange-specific coins unavailable).  
+**Data**: Binance daily close, 2020-01-01 to 2026-05-14 (27 assets × 2,329 days).  
+**Rebalance**: First trading Monday of each calendar month (77 rebalance dates).  
+**Signal**: Equal-weight mean of TSMOM at 1m/3m/6m lookbacks, vol-targeted at 15%, long-only top-10.
+
+**Results**:
+
+| Variant | Sharpe | MaxDD | AnnRet | Cost/yr | 2022 |
+|---|---|---|---|---|---|
+| Monthly-40 | 0.381 | −122.5%† | 15.7% | 0.78% | −1.763 |
+| Weekly-40 (same universe) | 0.533 | −127.4%† | 28.6% | ~3.5% | −1.449 |
+| TSMOM v3 (focused 10-asset) | 1.33 | −6.9% | — | — | — |
+
+†MaxDD in cumulative log-return terms over 6-year period with vol-targeted positions.
+
+**Sub-period Sharpe**:
+
+| Year | Monthly-40 | Weekly-40 |
+|---|---|---|
+| 2020 | +1.160 | +0.860 |
+| 2021 | +1.181 | +1.671 |
+| 2022 | −1.763 | −1.449 ← bear |
+| 2023 | +1.044 | +1.626 |
+| 2024 | +0.320 | +0.568 |
+| 2025 | −0.423 | −0.340 |
+| 2026 | −0.601 | −0.373 |
+
+**Walk-forward** (4 windows): 2020=+1.212, 2021=−0.848, 2023=+0.605, 2024=+0.077 — recent deterioration in both variants.
+
+**Root cause**: Monthly rebalance reduces cost drag (0.78%/yr vs 3.5%/yr) but simultaneously reduces signal freshness — positions held 4 weeks on average vs 1 week, capturing trend reversals that weekly TSMOM would exit quickly. Net result: cost saving is offset by stale-signal losses, leaving Sharpe 0.381. The 27-asset extended universe adds noise (ZEC, XMR, PENDLE, APE behave differently from the focused BTC/ETH/SOL/BNB). The TSMOM v3 benchmark (1.33) requires handpicked liquid assets, not a volumetric top-40 ranking.
+
+**Avg turnover per rebalance**: 58.3% of portfolio (higher than expected — most assets replaced each month, eliminating the assumed cost advantage and confirming signal freshness is the real issue).
+
+**Lesson**: The cost advantage of monthly rebalancing is real (0.78% vs 3.5%/yr), but on TSMOM the cost was never the binding constraint — the Sharpe 1.33 from focused TSMOM v3 already accounts for 3.5%/yr cost. Switching to monthly rebalance decreases signal freshness faster than it reduces costs. Confirmed 6.18 (monthly seasonality) finding: monthly-frequency momentum is inherently weaker than weekly in crypto.
+
+---
+
+### 6.34 Crash Recovery — Dip-Buying with Hard Stop-Loss
+
+**Status**: SKIP — post-crash return is WORSE than unconditional; dip-buying has anti-edge in crypto  
+**File**: `strategies/crash_recovery/feasibility.py`  
+**Hypothesis**: Large-cap crypto -8% in 3 days triggers forced liquidations creating oversold conditions → mean-reversion snap-back within 5 days. Different from 6.2/6.9/6.11: event-triggered only, hard -5% SL prevents blow-up.
+
+**Assets**: BTC, ETH, SOL, BNB, AVAX | Data: Binance daily OHLCV 2018–2026 (3,059 days for BTC/ETH/BNB)
+
+**Threshold sensitivity grid** (all configs fail):
+
+| Threshold | Hold | n/yr | Win Rate | PF | SL rate | t-stat |
+|---|---|---|---|---|---|---|
+| −5% | 3d | 168.6 | 36.8% | 0.79 | 54.5% | −1.64 |
+| −5% | 7d | 152.7 | 28.8% | **0.81** | 67.0% | −1.64 |
+| −8% | 5d | 103.4 | 27.7% | 0.74 | 67.7% | −1.54 |
+| −10% | 5d | 78.9 | 26.2% | 0.68 | 69.6% | −1.69 |
+| −15% | 3d | 37.6 | 28.7% | 0.69 | 68.6% | −0.61 |
+
+**Statistical test (default -8%/5d)**:
+- Post-crash 5d mean return: **−0.131%** (negative)
+- Unconditional 5d mean return: **+0.384%**
+- Ratio: −0.34× (pass threshold: >2.0×) — dips predict worse-than-unconditional returns
+- t-stat: **−1.54**, p=0.12 — anti-edge confirmed
+
+**Sub-period breakdown (default -8%/5d)**:
+
+| Year | n | PF | Mean return |
+|---|---|---|---|
+| 2018 | 118 | 0.57 | −1.68% |
+| 2019 | 51 | 1.42 | +1.30% ← only positive year |
+| 2020 | 79 | 0.86 | −0.50% |
+| 2021 | 170 | 0.82 | −0.72% |
+| 2022 | 152 | 0.48 | −2.04% ← worst (bear crashes continue) |
+| 2023 | 46 | 1.11 | +0.34% |
+| 2024 | 97 | 0.63 | −1.28% |
+| 2025 | 109 | 0.84 | −0.52% |
+
+**Walk-forward** (3 windows): PF=0.81, 0.70, 0.71 — consistent failure, no regime where it works.
+
+**Portfolio P&L**: Cumulative −13.4%, Sharpe −0.604 (full-period), −0.943 (active days only).
+
+**Root cause**: Crypto crash dynamics are fundamentally different from equities. In equities, a −8% 3-day crash often reflects institutional forced selling at temporary oversold prices → snap-back. In crypto: (1) crashes are momentum events — weak projects continue falling; (2) the SL rate of 67.7% confirms empirically that after a −8% crash, the next 5 days reach −5% in 2 out of 3 cases; (3) in 2022 bear market, PF=0.48 — the worst environment is exactly the one where the strategy should theoretically "buy cheap." The strategy is long the most liquidation-prone, weakest assets in the market — the opposite of what vol-targeting TSMOM does (which sizes away from high-vol assets). The one year with positive PF (2019, PF=1.42) coincides with a crypto recovery from the 2018 crash — a different regime.
+
+**Structural confirmation**: `post_crash_mean < unconditional_mean` across all 12 threshold × hold_period configurations. This is not a calibration failure — it's a structural property of crypto: dips continue.
+
+**Lesson**: Event-driven dip-buying is a legitimate equity strategy (VIX spike → buy SPX) because equity crashes are liquidity-driven, not sentiment/leverage-driven. Crypto crashes are predominantly leverage liquidation cascades — the crash signal predicts continuation, not reversal. This is the exact opposite direction needed. Confirmed 6.17 (1-month reversal) and 6.9 (vol-regime MR) structural failures.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -937,6 +1029,8 @@ Positive = near/above recent 21d high (breakout strength). Negative = far below 
 | 6.30 | ORB Crypto v2 (Asian Range) | +0.058 (strict filter) | −10.5% | Research | SKIP (negative expectancy all configs; EOD exits dominate) |
 | 6.31 | AdaptiveTrend (multi-LB TSMOM) | 0.690 (fixed-28d best) | −6.7% | Research | SKIP (adaptive weights=equal; no improvement over TSMOM v3) |
 | 6.32 | CS Breakout L/S (Robot Wealth) | +0.036 L/S; +0.199 LO | −80.8% | Research | SKIP (Sharpe~0; corrB=−0.05, carry correlation not confirmed) |
+| 6.33 | Monthly TSMOM (40 assets) | 0.381 | −122.5%† | Research | SKIP (monthly rebalance reduces cost but reduces signal freshness; 58% turnover/month) |
+| 6.34 | Crash Recovery Dip-Buying | −0.604 (portfolio) | — | Research | SKIP (post-crash mean −0.131% < unconditional 0.384%; SL fires 68%; t=−1.54) |
 
 ---
 
@@ -981,9 +1075,9 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
-### Strategy C search status — 32 signals tested, FREE-DATA EXHAUSTED
+### Strategy C search status — 34 signals tested, FREE-DATA EXHAUSTED
 
-**All free-data candidates tested. Last 11 signals (6.22–6.32) all SKIP:**
+**All free-data candidates tested. Last 13 signals (6.22–6.34) all SKIP:**
 - 6.22 Temporal patterns: SKIP (corr(TSMOM)=0.527; no bucket t>2.5 after MTC)
 - 6.23 LSTM 4h: SKIP (AUC=0.64 real, but 117 trades/yr × 0.17% cost-killed)
 - 6.24 LSTM weekly: SKIP (intraday edge evaporates at weekly frequency)
@@ -995,14 +1089,20 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 - 6.30 ORB Crypto v2 (Asian Range): SKIP (Sharpe+0.058 at best; EOD exits dominate; 24/7 market has no session structure; 4h resolution too coarse)
 - 6.31 AdaptiveTrend (arXiv 2602.11708): SKIP (adaptive weights=equal; no improvement over fixed 28d; Sharpe 0.449 < 0.690 baseline replication; universe effect negative)
 - 6.32 CS Breakout L/S (Robot Wealth): SKIP (L/S Sharpe=0.036; corrB=−0.048 not negative enough; carry correlation hypothesis not confirmed in single-class crypto)
+- 6.33 Monthly TSMOM (40 assets): SKIP (Sharpe 0.381 < 0.533 weekly same universe; 58% monthly turnover eliminates cost advantage; recent 2024–2026 deterioration)
+- 6.34 Crash Recovery dip-buying: SKIP (post-crash mean −0.131% < unconditional 0.384%; SL fires 68%; PF<1.0 in 7/9 years; t=−1.54 anti-edge)
 
-**Extended structural finding**: Two literature-sourced signals (AdaptiveTrend, CS Breakout) confirm the same conclusion from different angles:
-- **AdaptiveTrend (6.31)**: adaptive lookback weights degenerate to equal (0.25 each) because all lookbacks have identical IC in crypto — momentum is regime-driven, not lookback-specific. The paper's Sharpe 2.41 reflects cross-class structural diversity (equities vs FX vs commodities respond to different lookbacks) absent in single-class crypto.
-- **CS Breakout (6.32)**: corrB=−0.048 disproves Robot Wealth's negative carry correlation in this universe. In multi-asset, breakout and carry respond to different macro factors. In crypto, all strategies are beta_crypto co-linear — there is no orthogonal macro decomposition.
+**Extended structural finding** (confirmed across 34 signals): In crypto, all free-data standalone strategies are either:
+1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout) — work in bull, fail in bear, corr > 0.4
+2. **Cost-inaccessible at retail fees** (LSTM, residual MR, STR) — real AUC/IC but n_trades × fee > gross return
+3. **Mean-reversion into momentum** (crash recovery, CS L/S, funding MR) — dip-buying is anti-edge; crash signals predict continuation not reversal
+4. **Cross-sectional orthogonal but Sharpe < 1.0** (XGBoost CS, 0.734) — only approach that escapes TSMOM co-linearity
 
-**Conclusion**: Published multi-asset strategies do not transfer to single-class crypto because the structural properties (regime co-linearity, lack of cross-asset diversification, 24/7 trading, funding-momentum coupling) are fundamentally different.
+**Conclusion**: Published multi-asset strategies do not transfer to single-class crypto because the structural properties (regime co-linearity, lack of cross-asset diversification, 24/7 trading, funding-momentum coupling) are fundamentally different. Two strategy archetypes remain untested:
+- **Paid data**: Glassnode on-chain stablecoin flows (true mint/burn on-chain, ~$500/mo) — theoretical zero TSMOM corr
+- **Alternative prop firm**: FTMO (5% daily DD vs Propr's 3%) — structural ceiling fix, not a new signal
 
-**Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found.
+**Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found after 34 signals.
 
 ### Immediate
 1. **FTMO compatibility analysis** (now Priority #1). FTMO: 5% daily DD limit vs Propr's 3%. Run 44-path simulation with FTMO rules (trailing HWM, 10% profit target, 10% total DD, 5% daily DD). Expected pass rate: 55–65% vs current 39% Propr ceiling. This is the highest-leverage next step given the structural ceiling found in Strategy C search.
