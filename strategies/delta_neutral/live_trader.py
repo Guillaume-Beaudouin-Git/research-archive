@@ -396,7 +396,19 @@ def open_pair(
     # ── Leg B: Hyperliquid perp short ────────────────────────────────────────
     try:
         hl_client.open_short(asset, notional_usd)
-        logger.info(f"[{asset}] HL perp short opened: ${notional_usd:.2f}")
+
+        # Fix C: verify the position actually exists — _check_order_response()
+        # raises on API-level errors, but a silent mismatch (e.g. size rounded
+        # to zero) would still return success without an open position.
+        hl_pos = hl_client.get_position(asset)
+        if hl_pos["side"] != "short" or hl_pos["size"] == 0.0:
+            raise RuntimeError(
+                f"Position verification failed after HL short: "
+                f"expected short, got side={hl_pos['side']} size={hl_pos['size']}"
+            )
+
+        logger.info(f"[{asset}] HL perp short verified: "
+                    f"size={hl_pos['size']} @ entry_px={hl_pos['entry_price']:.4f}")
 
         return {
             "position":         "open",

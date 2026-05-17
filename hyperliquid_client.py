@@ -168,11 +168,50 @@ class HyperliquidClient:
 
         env = "TESTNET" if testnet else "MAINNET"
         logger.info(f"Hyperliquid {env} ready | wallet: {self.wallet_address}")
+        self._sz_cache: dict[str, int] = {}   # coin → szDecimals, populated lazily
 
     def _coin(self, symbol: str) -> str:
         if symbol not in SYMBOL_MAP:
             raise ValueError(f"Unknown symbol: {symbol}")
         return SYMBOL_MAP[symbol]
+
+    def _sz_decimals(self, coin: str) -> int:
+        """
+        Return the HL-required decimal places for `coin` order size.
+        Fetched once from the meta endpoint and cached for the session.
+        Falls back to 4 on any API failure.
+        """
+        if coin not in self._sz_cache:
+            try:
+                meta = self.info.meta()
+                for asset in meta.get("universe", []):
+                    self._sz_cache[asset["name"]] = int(asset.get("szDecimals", 4))
+                logger.info(f"szDecimals cache populated: {len(self._sz_cache)} assets")
+            except Exception as exc:
+                logger.warning(f"_sz_decimals: meta fetch failed ({exc}); "
+                               f"defaulting to 4 for {coin}")
+                return 4
+        return self._sz_cache.get(coin, 4)
+
+    def _check_order_response(self, resp: dict, coin: str, action: str) -> None:
+        """
+        Raise ValueError if the HL order response contains an error.
+
+        Checks two levels:
+          1. Top-level {"error": "..."} — auth failures, invalid size, etc.
+          2. Per-status {"statuses": [{"error": "..."}]} — order-level rejection.
+        """
+        if isinstance(resp, dict) and "error" in resp:
+            raise ValueError(f"HL {action} {coin} rejected: {resp['error']}")
+        try:
+            statuses = resp["response"]["data"]["statuses"]
+            for status in statuses:
+                if "error" in status:
+                    raise ValueError(
+                        f"HL {action} {coin} order status error: {status['error']}"
+                    )
+        except (KeyError, IndexError, TypeError):
+            pass  # missing statuses path means success in normal SDK responses
 
     def get_mid_price(self, symbol: str) -> float:
         coin = self._coin(symbol)
@@ -201,8 +240,10 @@ class HyperliquidClient:
         return {"side": "flat", "size": 0.0, "entry_price": 0.0}
 
     def _size_from_usd(self, symbol: str, usd: float) -> float:
-        mid = self.get_mid_price(symbol)
-        return round(usd / mid, 4)
+        coin     = self._coin(symbol)
+        mid      = self.get_mid_price(symbol)
+        decimals = self._sz_decimals(coin)
+        return round(usd / mid, decimals)
 
     def open_long(self, symbol: str, usd_size: float) -> dict:
         """
@@ -221,6 +262,7 @@ class HyperliquidClient:
         t0 = time.time()
         resp = self.exchange.market_open(coin, True, size)
         latency_ms = (time.time() - t0) * 1000
+        self._check_order_response(resp, coin, "open_long")
         _log_fill(symbol, "buy", size, expected, resp, latency_ms)
         return {"response": resp, "expected_price": expected,
                 "size": size, "latency_ms": latency_ms}
@@ -242,6 +284,7 @@ class HyperliquidClient:
         t0 = time.time()
         resp = self.exchange.market_open(coin, False, size)
         latency_ms = (time.time() - t0) * 1000
+        self._check_order_response(resp, coin, "open_short")
         _log_fill(symbol, "sell", size, expected, resp, latency_ms)
         return {"response": resp, "expected_price": expected,
                 "size": size, "latency_ms": latency_ms}
@@ -265,6 +308,7 @@ class HyperliquidClient:
         t0 = time.time()
         resp = self.exchange.market_close(coin)
         latency_ms = (time.time() - t0) * 1000
+        self._check_order_response(resp, coin, "close_position")
 
         # Infer close-order direction from position side
         close_side = {"long": "sell", "short": "buy"}.get(side, "unknown")
