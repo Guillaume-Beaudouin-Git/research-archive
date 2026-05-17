@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
 **Last updated**: May 17, 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 30 signals tested, 9 consecutive SKIPs (6.22–6.30) — free-data exhausted
+**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 32 signals tested, 11 consecutive SKIPs (6.22–6.32) — free-data exhausted
 
 ---
 
@@ -835,6 +835,72 @@ Sub-period Sharpe (strict filter): 2024 +1.953 (n=8), 2025 −0.056 (n=19). No b
 
 ---
 
+### 6.31 AdaptiveTrend — Multi-Timeframe TSMOM with Adaptive Lookback Weights
+
+**Status**: SKIP — adaptive weights ≈ equal weights; larger universe dilutes alpha; no improvement over fixed 28d  
+**File**: `strategies/adaptive_trend/feasibility.py`  
+**Source**: AdaptiveTrend (arXiv 2602.11708) — reported Sharpe 2.41 on 150+ pairs  
+**Hypothesis**: Softmax weights across [14, 28, 56, 112]d lookbacks, driven by rolling 12-week cross-sectional IC, outperform fixed 28d TSMOM on a larger universe (30 assets vs 10).
+
+**Universe**: Top-30 HL perps by 24h volume. 22 tradable on Binance (HYPE, FARTCOIN, MEGA, VVV unavailable).  
+**Data**: Binance daily close, 2021-01-01 to 2026-05-14 (1,963 days).
+
+**Results (full period 2021–2026)**:
+
+| Variant | Sharpe | MaxDD | corrA | corrB (carry) |
+|---|---|---|---|---|
+| TSMOM-10-fixed (baseline replication) | 0.690 | −6.7% | +1.000 | +0.069 |
+| Adaptive-10 (same 10 assets, adaptive) | 0.449 | −6.1% | +0.898 | +0.043 |
+| Adaptive-30 (full 30-asset, adaptive) | 0.374 | −11.6% | +0.877 | +0.040 |
+
+**Adaptive weight allocation**: All four lookbacks average ≈ 0.250 (uniform). The softmax IC provides no differentiation — there is no "lookback that recently worked" phenomenon in crypto. Rolling IC between lookbacks is flat throughout the test period, confirming that momentum persistence is regime-driven (all lookbacks work/fail simultaneously within each regime) rather than lookback-specific.
+
+**Replication gap**: TSMOM-10-fixed Sharpe 0.690 vs known TSMOM v3 Sharpe 1.33. Explained by universe composition: the top-10 by HL volume includes ZEC, DOGE, AAVE, TON — noisier than the handpicked BTC/ETH/SOL/BNB/XRP focus assets in TSMOM v3. The mechanism is correct; the asset selection is diluted.
+
+**Sub-period Sharpe (TSMOM-10-fixed replica)**: 2021 +1.73, 2022 −1.17 (bear), 2023 +0.87, 2024 +1.47, 2025 +0.04, 2026 −1.13. Highly regime-dependent.
+
+**Root cause of adaptive weight failure**: In crypto, momentum is a single-regime phenomenon — all lookbacks win in bull, all lose in bear. Cross-asset adaptive trend (arXiv paper) benefits from structural diversity between asset classes (equities respond to different lookbacks than commodities). Within single-asset-class crypto, this structural diversity doesn't exist. The adaptive mechanism degenerates to equal weights.
+
+---
+
+### 6.32 Cross-Sectional Breakout — Robot Wealth Market-Neutral Approach
+
+**Status**: SKIP — L/S Sharpe=+0.036; Robot Wealth negative carry correlation NOT confirmed on crypto  
+**File**: `strategies/cross_breakout/feasibility.py`  
+**Source**: Robot Wealth (2024) — breakout negatively correlated with carry in multi-asset universe  
+**Hypothesis**: CS breakout (long top-5 / short bottom-5 by 21d breakout score on top-20 HL perps) is market-neutral by construction, avoiding the β_crypto problem that killed Donchian (6.16). Robot Wealth predicts negative correlation with carry → genuine Strategy B diversifier.
+
+**Signal**: `breakout_score[i] = close[i] / rolling_max_21d(close[i, past]) − 1`  
+Positive = near/above recent 21d high (breakout strength). Negative = far below (weakness).
+
+**P&L decomposition**:
+
+| Leg | Sharpe | MaxDD | Note |
+|---|---|---|---|
+| L/S total | +0.036 | −80.8% | near-zero net edge |
+| Long leg (top-5 by score) | +0.294 | −45.8% | weak positive |
+| Short leg (bottom-5 by score) | −0.137 | −92.3% | drag, but Sharpe > −0.5 threshold |
+| CS breakout long-only | +0.199 | −65.8% | insufficient |
+
+**Correlation analysis**:
+- corrA (vs TSMOM): **−0.416** — L/S is anti-correlated with momentum by construction (long recent leaders / short recent laggards = momentum; this signal does the opposite via the short leg)
+- corrB (vs carry proxy BTC+ETH funding): **−0.048** — Robot Wealth's negative carry correlation NOT confirmed in crypto
+
+**Sub-period Sharpe (L/S)**:
+
+| Year | Sharpe | Note |
+|---|---|---|
+| 2021 | −1.243 | strong momentum destroys short leg |
+| 2022 | +1.421 | bear reversal: momentum reverses, anti-momentum profits |
+| 2023 | −0.895 | recovery hurts |
+| 2024 | +0.419 | mild positive |
+| 2025 | +1.602 | choppy market favours mean-reversion |
+| 2026 YTD | −2.425 | momentum resumes |
+
+**Root cause**: The CS breakout L/S is mean-reversion / anti-momentum in disguise. The short leg bets against crypto losers — which violently mean-revert (same structural finding as 6.3). Year-by-year performance alternates +/− with no stable regime-independent edge. The Robot Wealth negative carry correlation likely holds in a genuinely diversified multi-asset universe (equities, FX, rates, commodities) where breakout and carry respond to different macro factors. In single-class crypto, all strategies are strongly beta_crypto co-linear — breakout scores are momentum proxies, so the carry-breakout orthogonality does not exist. corrB = −0.048 (near zero) confirms this.
+
+---
+
 ## 7. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
@@ -869,6 +935,8 @@ Sub-period Sharpe (strict filter): 2024 +1.953 (n=8), 2025 −0.056 (n=19). No b
 | 6.28 | MVRV Z-Score Overlay | 0.250 (base 0.349) | −17.8% | Research | SKIP (IC t=+0.32; scaler hurts TSMOM both periods) |
 | 6.29 | Funding Rate Momentum | −0.151 | −32.3% | Research | SKIP (IC t=+0.11; bull sub-period negative) |
 | 6.30 | ORB Crypto v2 (Asian Range) | +0.058 (strict filter) | −10.5% | Research | SKIP (negative expectancy all configs; EOD exits dominate) |
+| 6.31 | AdaptiveTrend (multi-LB TSMOM) | 0.690 (fixed-28d best) | −6.7% | Research | SKIP (adaptive weights=equal; no improvement over TSMOM v3) |
+| 6.32 | CS Breakout L/S (Robot Wealth) | +0.036 L/S; +0.199 LO | −80.8% | Research | SKIP (Sharpe~0; corrB=−0.05, carry correlation not confirmed) |
 
 ---
 
@@ -913,9 +981,9 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ## 9. Research Priorities
 
-### Strategy C search status — 30 signals tested, FREE-DATA EXHAUSTED
+### Strategy C search status — 32 signals tested, FREE-DATA EXHAUSTED
 
-**All free-data candidates tested. Last 9 signals (6.22–6.30) all SKIP:**
+**All free-data candidates tested. Last 11 signals (6.22–6.32) all SKIP:**
 - 6.22 Temporal patterns: SKIP (corr(TSMOM)=0.527; no bucket t>2.5 after MTC)
 - 6.23 LSTM 4h: SKIP (AUC=0.64 real, but 117 trades/yr × 0.17% cost-killed)
 - 6.24 LSTM weekly: SKIP (intraday edge evaporates at weekly frequency)
@@ -924,9 +992,15 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 - 6.27 Vol squeeze breakout: SKIP (Sharpe ≤ 0.44; 73–82% overlap with TSMOM)
 - 6.28 MVRV Z-score overlay: SKIP (IC t=+0.32; proxy corr(TSMOM)=+0.40; scaler reduces Sharpe both sub-periods)
 - 6.29 Funding rate momentum: SKIP (IC t=+0.11; bull-era IC negative; regime-specific bear-only pattern)
-- 6.30 ORB Crypto v2 (Asian Range): SKIP (Sharpe+0.058 at best; EOD exits dominate; 24/7 market has no session structure; 4h resolution too coarse for genuine ORB timing)
+- 6.30 ORB Crypto v2 (Asian Range): SKIP (Sharpe+0.058 at best; EOD exits dominate; 24/7 market has no session structure; 4h resolution too coarse)
+- 6.31 AdaptiveTrend (arXiv 2602.11708): SKIP (adaptive weights=equal; no improvement over fixed 28d; Sharpe 0.449 < 0.690 baseline replication; universe effect negative)
+- 6.32 CS Breakout L/S (Robot Wealth): SKIP (L/S Sharpe=0.036; corrB=−0.048 not negative enough; carry correlation hypothesis not confirmed in single-class crypto)
 
-**Key structural finding**: In crypto, almost every non-price signal is correlated with the trend regime (bull = more volume, more breakouts, more calendar anomalies, higher MVRV, higher funding). Only cross-sectional signals (XGBoost CS, corr=+0.003) reliably diversify TSMOM. This is a structural property of the asset class, not a data limitation. Confirmed by MVRV (+0.40 TSMOM corr) and funding trend (+0.27 signal corr): even on-chain/derivatives signals that appear theoretically orthogonal are regime-co-linear in practice.
+**Extended structural finding**: Two literature-sourced signals (AdaptiveTrend, CS Breakout) confirm the same conclusion from different angles:
+- **AdaptiveTrend (6.31)**: adaptive lookback weights degenerate to equal (0.25 each) because all lookbacks have identical IC in crypto — momentum is regime-driven, not lookback-specific. The paper's Sharpe 2.41 reflects cross-class structural diversity (equities vs FX vs commodities respond to different lookbacks) absent in single-class crypto.
+- **CS Breakout (6.32)**: corrB=−0.048 disproves Robot Wealth's negative carry correlation in this universe. In multi-asset, breakout and carry respond to different macro factors. In crypto, all strategies are beta_crypto co-linear — there is no orthogonal macro decomposition.
+
+**Conclusion**: Published multi-asset strategies do not transfer to single-class crypto because the structural properties (regime co-linearity, lack of cross-asset diversification, 24/7 trading, funding-momentum coupling) are fundamentally different.
 
 **Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found.
 
