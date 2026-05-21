@@ -961,5 +961,31 @@
     "ci_low": 9.23,
     "ci_high": 215.34,
     "verdict": "RESEARCH_PASS"
+  },
+  {
+    "iteration": "iter_10",
+    "n_tests": 142,
+    "description": "Opening+VWAP, dollar_stop=400, gap_thresh=1.2%, rng_min=30pt",
+    "n_trades": 346,
+    "win_rate": 0.2775,
+    "avg_trade_usd": 131.53,
+    "avg_winner_usd": 1571.6,
+    "avg_loser_usd": -421.45,
+    "profit_factor": 1.4319,
+    "sharpe_daily_hac": 1.5212,
+    "max_dd_pct": -0.1342,
+    "best_day_usd": 4473.5,
+    "worst_day_usd": -438.0,
+    "pct_time_in_mkt": 0.0278,
+    "avg_bars_held": 23.6,
+    "total_pnl_usd": 45510.5,
+    "p_ev_zero": 0.0048,
+    "wf_pct_positive": 100.0,
+    "wf_pct_extended": 77.77777777777779,
+    "wf_n_windows": 9,
+    "ftmo_p_success": 0.0245,
+    "ftmo_p_bust": 0.0,
+    "ftmo_verdict": "FTMO_RISKY",
+    "verdict": "RESEARCH_PASS"
   }
 ]
