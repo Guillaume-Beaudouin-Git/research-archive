@@ -732,25 +732,34 @@ def run(
             notifier.send(f"[DN ERROR] {asset}: {exc}", level="error")
 
     # ── Telegram summary ──────────────────────────────────────────────────────
-    n_open    = sum(1 for r in results if load_state(r["asset"])["position"] == "open")
-    total_carry = sum(r["carry_earned"] for r in results)
+    open_states   = {r["asset"]: load_state(r["asset"]) for r in results}
+    n_open        = sum(1 for s in open_states.values() if s["position"] == "open")
+    period_carry  = sum(r["carry_earned"] for r in results)
+    total_cum     = sum(
+        s.get("cumulative_carry", 0.0)
+        for s in open_states.values()
+        if s["position"] == "open"
+    )
 
     lines = [
         f"DELTA NEUTRAL | {now_utc.strftime('%Y-%m-%d %H:%M UTC')}",
         f"Active pairs: {n_open}",
-        f"Carry earned this period: ${total_carry:.2f}",
+        f"Carry this period: ${period_carry:.4f}",
+        f"Cumulative carry:  ${total_cum:.2f}",
     ]
     for r in results:
+        if open_states[r["asset"]]["position"] != "open":
+            continue
         ann_pct   = r["carry_8h"] * 3 * 365 * 100
         basis_str = f", basis={r['basis_pct']:.3f}%" if r.get("basis_pct") is not None else ""
-        spot_val  = r["spot_qty"] * 1.0  # rough; exact in live mode via reconcile
+        cum_asset = open_states[r["asset"]].get("cumulative_carry", 0.0)
         lines.append(
-            f"  {r['asset']}: spot={r['spot_qty']:.4f} long, "
-            f"carry≈{ann_pct:.1f}%/yr, action={r['action']}{basis_str}"
+            f"  {r['asset']}: spot={r['spot_qty']:.4f}, "
+            f"carry≈{ann_pct:.1f}%/yr, cum=${cum_asset:.2f}, action={r['action']}{basis_str}"
         )
     if results:
         lines.append(
-            f"Portfolio: carry=${total_carry:.4f} "
+            f"Portfolio: period=${period_carry:.4f} cum=${total_cum:.2f} "
             f"fees=~${sum(NOTIONAL_USD * 0.0042 for r in results if r['action'] in ('OPEN','CLOSE')):.2f}"
         )
     if errors:
