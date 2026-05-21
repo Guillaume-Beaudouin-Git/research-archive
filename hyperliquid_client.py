@@ -350,10 +350,13 @@ class HyperliquidClient:
             logger.error(f"get_funding_paid: API error for {symbol}: {exc}")
             return []
 
-        # Filter to this coin and build records
+        # Filter to this coin and build records.
+        # HL API response structure: {"time": ..., "hash": ..., "delta": {"coin": ..., "usdc": ..., ...}}
+        # Fields are nested under "delta", not at top level.
         records: list[dict] = []
         for item in raw:
-            if item.get("coin") != coin:
+            delta   = item.get("delta", {})
+            if delta.get("coin") != coin:
                 continue
             ts_ms   = int(item.get("time", 0))
             ts_iso  = datetime.fromtimestamp(ts_ms / 1000, tz=timezone.utc).isoformat()
@@ -361,9 +364,9 @@ class HyperliquidClient:
                 "timestamp":     ts_iso,
                 "symbol":        symbol,
                 "coin":          coin,
-                "funding_usd":   str(item.get("usdc", "0")),
-                "position_size": str(item.get("szi", "0")),
-                "funding_rate":  str(item.get("fundingRate", "0")),
+                "funding_usd":   str(delta.get("usdc", "0")),
+                "position_size": str(delta.get("szi", "0")),
+                "funding_rate":  str(delta.get("fundingRate", "0")),
             })
 
         if not records:
