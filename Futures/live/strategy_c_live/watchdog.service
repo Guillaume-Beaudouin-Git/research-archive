@@ -1,0 +1,35 @@
+# watchdog.service — systemd unit for Strategy C VPS watchdog
+# ============================================================
+# Deploy:
+#   sudo cp watchdog.service /etc/systemd/system/strategy_c_watchdog.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable strategy_c_watchdog
+#   sudo systemctl start strategy_c_watchdog
+#   sudo systemctl status strategy_c_watchdog
+#
+# The service runs watchdog.py (Flask) listening on 0.0.0.0:8765.
+# Restarts automatically on crash (RestartSec=10).
+#
+# Assumes:
+#   User:             algo
+#   Repo path:        /home/algo/projects/Algo_claude
+#   Python venv:      /home/algo/projects/Algo_claude/.env
+#   Env file:         /home/algo/projects/Algo_claude/.env  (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID)
+
+[Unit]
+Description=Strategy C VPS Watchdog (Flask heartbeat endpoint)
+After=network.target
+
+[Service]
+Type=simple
+User=algo
+WorkingDirectory=/home/algo/projects/Algo_claude
+ExecStart=/home/algo/projects/Algo_claude/.env/bin/python -m Futures.live.strategy_c_live.watchdog
+Restart=always
+RestartSec=10
+EnvironmentFile=/home/algo/projects/Algo_claude/.env
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
