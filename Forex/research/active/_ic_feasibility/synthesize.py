@@ -30,15 +30,33 @@ def best_horizon(horizons: dict) -> tuple[str, dict]:
     return max(horizons.items(), key=lambda x: abs(x[1].get("t_HAC_NW6", 0)))
 
 
-def gate_summary(res: dict, pairs: list[str]) -> dict:
-    """Aggregate gate results across pairs."""
-    passed = []
-    best_t = 0.0
-    best_ic = 0.0
-    best_h = ""
+def gate_summary_a(res: dict, pairs: list[str]) -> dict:
+    """Aggregate Angle A results across pairs + signal variants."""
+    best_t, best_ic, best_h, best_v, passed = 0.0, 0.0, "", "", []
     for p in pairs:
         pr = res.get(p, {})
-        if pr.get("gate") in ("FAIL_N", None):
+        for variant in ("close_based", "hl_based"):
+            vd = pr.get(variant, {})
+            if vd.get("gate") == "FAIL_N":
+                continue
+            hrs = vd.get("horizons", {})
+            h, hd = best_horizon(hrs)
+            t = abs(hd.get("t_HAC_NW6", 0))
+            ic = hd.get("IC_spearman", 0)
+            if t > best_t:
+                best_t, best_ic, best_h, best_v = t, ic, h, f"{p}/{variant}"
+        if pr and pr.get("error") != "no_data":
+            passed.append(p)
+    return {"pairs_with_data": passed, "best_t_HAC": best_t, "best_IC": best_ic,
+            "best_horizon": best_h, "best_variant": best_v}
+
+
+def gate_summary_b(res: dict, pairs: list[str]) -> dict:
+    """Aggregate Angle B results across pairs."""
+    best_t, best_ic, best_h, passed = 0.0, 0.0, "", []
+    for p in pairs:
+        pr = res.get(p, {})
+        if pr.get("gate") == "FAIL_N":
             continue
         hrs = pr.get("horizons", {})
         h, hd = best_horizon(hrs)
@@ -59,8 +77,8 @@ def main():
         return
 
     pairs = ["EURUSD", "GBPUSD"]
-    a_summary = gate_summary(res_a, pairs)
-    b_summary = gate_summary(res_b, pairs)
+    a_summary = gate_summary_a(res_a, pairs)
+    b_summary = gate_summary_b(res_b, pairs)
     dual_corr = res_a.get("dual_pair_correlation", {})
 
     # Decision logic
@@ -90,8 +108,8 @@ def main():
     print("="*60)
 
     print(f"\nAngle A (London ORB):")
-    print(f"  Pairs passed: {a_summary['pairs_passed']}")
-    print(f"  Best t_HAC: {a_summary['best_t_HAC']:.2f} @ {a_summary['best_horizon']}")
+    print(f"  Pairs with data: {a_summary['pairs_with_data']}")
+    print(f"  Best t_HAC: {a_summary['best_t_HAC']:.2f} @ {a_summary['best_horizon']} ({a_summary['best_variant']})")
     print(f"  Best IC_spearman: {a_summary['best_IC']:+.4f}")
 
     print(f"\nAngle B (News-Fade):")

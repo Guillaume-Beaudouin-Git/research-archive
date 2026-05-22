@@ -74,19 +74,31 @@ def compute_daily_signals(df: pd.DataFrame) -> pd.DataFrame:
         if asian_range < 1e-6:
             continue
 
-        # Get 07:00-08:00 UTC bar (the transition bar)
+        # Get 07:00-07:59 UTC bars (London open transition)
         london_open = day_df.between_time("07:00", "07:59")
         if london_open.empty:
             continue
-        lo_close = london_open["close"].iloc[-1]
+        lo_close   = london_open["close"].iloc[-1]
+        lo_high    = london_open["high"].max()
+        lo_low     = london_open["low"].min()
 
-        # Breakout signal
+        # Signal variant 1: close-based (close of 07:59 bar vs Asian range)
         if lo_close > asian_high:
             signal = 1.0
         elif lo_close < asian_low:
             signal = -1.0
         else:
             signal = 0.0
+
+        # Signal variant 2: high/low-based (did price TRADE through range?)
+        broke_high = lo_high > asian_high
+        broke_low  = lo_low  < asian_low
+        if broke_high and not broke_low:
+            signal_hl = 1.0
+        elif broke_low and not broke_high:
+            signal_hl = -1.0
+        else:
+            signal_hl = 0.0  # no break OR whipsaw (both sides)
 
         # Entry price: open of 08:00 bar
         entry_bars = day_df.between_time("08:00", "08:00")
@@ -118,12 +130,46 @@ def compute_daily_signals(df: pd.DataFrame) -> pd.DataFrame:
         rows.append({
             "date":         date,
             "signal":       signal,
+            "signal_hl":    signal_hl,
             "asian_range":  asian_range,
             "entry_price":  entry_price,
             **{f"ret_{k}": v for k, v in fwd.items()},
         })
 
     return pd.DataFrame(rows).set_index("date")
+
+
+def run_ic_for_signal(signals: pd.DataFrame, sig_col: str, label: str) -> dict:
+    """Run IC analysis for one signal variant across all horizons."""
+    active = signals[signals[sig_col] != 0]
+    N = len(active)
+    print(f"\n  [{label}] N breakout days: {N}")
+    if N < 400:
+        print(f"  FAIL: N={N} < 400 gate")
+        return {"N": N, "gate": "FAIL_N", "horizons": {}}
+
+    header = f"  {'Horizon':<12} {'IC_spearman':>12} {'t_HAC_NW6':>12} {'p_val':>8} {'gate':>8}"
+    print(header)
+    print(f"  {'-'*65}")
+    res_h = {}
+    for h in HORIZONS:
+        col = f"ret_{h}"
+        mask = (active[sig_col] != 0) & (~active[col].isna())
+        sub  = active[mask]
+        n_h  = len(sub)
+        if n_h < 100:
+            print(f"  {h:<12} {'n<100':>12}")
+            continue
+        sig = sub[sig_col].values
+        ret = sub[col].values
+        ic, _  = stats.spearmanr(sig, ret)
+        t_hac  = hac_tstat(ret, sig, lag=6)
+        pval   = 2 * (1 - stats.norm.cdf(abs(t_hac)))
+        gate   = "PASS" if abs(t_hac) > 1.65 and ic > 0 else "WEAK" if abs(t_hac) > 1.0 else "FAIL"
+        print(f"  {h:<12} {ic:>+12.4f} {t_hac:>+12.2f} {pval:>8.4f} {gate:>8}")
+        res_h[h] = {"n": n_h, "IC_spearman": round(ic, 4), "t_HAC_NW6": round(t_hac, 3),
+                    "p_val": round(pval, 4), "gate": gate}
+    return {"N": N, "horizons": res_h}
 
 
 def run_ic_analysis(pair: str) -> dict:
@@ -134,72 +180,37 @@ def run_ic_analysis(pair: str) -> dict:
         return {"pair": pair, "error": "no_data"}
 
     signals = compute_daily_signals(df)
-    signals = signals[signals["signal"] != 0].dropna(subset=[f"ret_{h}" for h in HORIZONS])
-    N = len(signals)
-    print(f"  Breakout days (signal≠0): {N}")
-    if N < 400:
-        print(f"  FAIL: N={N} < 400 gate")
-        return {"pair": pair, "N": N, "gate": "FAIL_N"}
+    print(f"  Total trading days: {len(signals)}")
 
-    results = {"pair": pair, "N": N, "horizons": {}}
-    header = f"{'Horizon':<12} {'IC_spearman':>12} {'t_OLS':>10} {'t_HAC_NW6':>12} {'p_val':>8} {'gate':>8}"
-    print(f"\n  {header}")
-    print(f"  {'-'*70}")
+    res_close = run_ic_for_signal(signals, "signal",    "close-based")
+    res_hl    = run_ic_for_signal(signals, "signal_hl", "high/low-based")
 
-    for h in HORIZONS:
-        col = f"ret_{h}"
-        sig = signals["signal"].values
-        ret = signals[col].dropna().values
-        # Align
-        mask = ~np.isnan(signals[col].values)
-        sig_m, ret_m = sig[mask], signals[col].values[mask]
-        n_h = len(ret_m)
-        if n_h < 100:
-            print(f"  {h:<12} {'n<100':>12}")
-            continue
-
-        ic_spear, _ = stats.spearmanr(sig_m, ret_m)
-        t_ols  = hac_tstat(ret_m, sig_m, lag=0)
-        t_hac  = hac_tstat(ret_m, sig_m, lag=6)
-        pval   = 2 * (1 - stats.norm.cdf(abs(t_hac)))
-        gate   = "PASS" if abs(t_hac) > 1.65 and ic_spear > 0 else "WEAK" if abs(t_hac) > 1.0 else "FAIL"
-
-        print(f"  {h:<12} {ic_spear:>+12.4f} {t_ols:>+10.2f} {t_hac:>+12.2f} {pval:>8.4f} {gate:>8}")
-        results["horizons"][h] = {
-            "n": n_h, "IC_spearman": round(ic_spear, 4),
-            "t_OLS": round(t_ols, 3), "t_HAC_NW6": round(t_hac, 3),
-            "p_val": round(pval, 4), "gate": gate,
-        }
-
-    return results
+    return {"pair": pair, "close_based": res_close, "hl_based": res_hl}
 
 
 def run_dual_pair_analysis(eu_signals: pd.DataFrame, gb_signals: pd.DataFrame) -> dict:
-    """Task 4: EUR/GBP breakout correlation — P(same direction)."""
+    """Task 4: EUR/GBP breakout correlation — P(same direction), both signal variants."""
     print(f"\n{'='*60}")
     print("Task 4 — EUR/GBP Breakout Correlation")
     common = eu_signals.index.intersection(gb_signals.index)
-    eu_sig = eu_signals.loc[common, "signal"]
-    gb_sig = gb_signals.loc[common, "signal"]
-    both_nonzero = (eu_sig != 0) & (gb_sig != 0)
-    eu_s = eu_sig[both_nonzero]
-    gb_s = gb_sig[both_nonzero]
-    N = len(eu_s)
-    same_dir = (eu_s == gb_s).sum()
-    p_same = same_dir / N if N > 0 else np.nan
-
-    print(f"  Days both pairs break out: {N}")
-    print(f"  Same direction: {same_dir} ({p_same:.1%})")
-    print(f"  Opposite direction: {N - same_dir} ({1-p_same:.1%})")
-
-    # IC of confirmed (same dir) vs single pair
-    return {"N_both": N, "P_same_direction": round(float(p_same), 4),
-            "confirms_remove_pct": round(float(1 - p_same), 4)}
+    results = {}
+    for sig_col in ("signal", "signal_hl"):
+        eu_sig = eu_signals.loc[common, sig_col]
+        gb_sig = gb_signals.loc[common, sig_col]
+        both = (eu_sig != 0) & (gb_sig != 0)
+        eu_s, gb_s = eu_sig[both], gb_sig[both]
+        N = len(eu_s)
+        same_dir = (eu_s == gb_s).sum()
+        p_same = same_dir / N if N > 0 else np.nan
+        label = "close" if sig_col == "signal" else "hl"
+        print(f"  [{label}] Both break out: {N} | Same dir: {same_dir} ({p_same:.1%})")
+        results[label] = {"N_both": N, "P_same_direction": round(float(p_same), 4) if not np.isnan(p_same) else None}
+    return results
 
 
 def main():
     all_results = {}
-    eu_signals = gb_signals = None
+    pair_signals: dict[str, pd.DataFrame] = {}
 
     for pair in PAIRS:
         df = load_pair(pair)
@@ -207,15 +218,12 @@ def main():
             print(f"ERROR: {pair} data not found. Run fetch_data.py first.")
             continue
         signals = compute_daily_signals(df)
-        if pair == "EURUSD":
-            eu_signals = signals
-        else:
-            gb_signals = signals
+        pair_signals[pair] = signals
         res = run_ic_analysis(pair)
         all_results[pair] = res
 
-    if eu_signals is not None and gb_signals is not None:
-        corr_res = run_dual_pair_analysis(eu_signals, gb_signals)
+    if "EURUSD" in pair_signals and "GBPUSD" in pair_signals:
+        corr_res = run_dual_pair_analysis(pair_signals["EURUSD"], pair_signals["GBPUSD"])
         all_results["dual_pair_correlation"] = corr_res
 
     RESULT_FILE.write_text(json.dumps(all_results, indent=2, default=str))

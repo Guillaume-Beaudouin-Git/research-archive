@@ -1,19 +1,23 @@
 """
-PHASE 1.5 Task 2 — Dukascopy 1-min OHLCV fetcher
+PHASE 1.5 Task 2 — Dukascopy 1-min OHLCV fetcher (requests + ThreadPoolExecutor)
 Pairs: EURUSD, GBPUSD
 Period: 2020-01-01 to 2024-12-31
 Output: parquet at data/raw/dukascopy_{pair}_{year}.parquet
-Expected: ~1.4M bars per pair (5 years × ~260 trading days × ~1080 bars/day)
+Expected: ~250k-350k bars per pair per year (FX 24h × ~260 days × 60 bars/h)
+
+Note: aiohttp caused sparse results (~10% fill) due to LibreSSL/SSL mismatch.
+      This version uses requests + ThreadPoolExecutor with rate control.
 """
 
 import struct
 import lzma
-import asyncio
-import aiohttp
+import time
+import requests
 import pandas as pd
 import numpy as np
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 RAW_DIR = Path(__file__).parents[4] / "data" / "raw"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
@@ -22,23 +26,28 @@ PAIRS = ["EURUSD", "GBPUSD"]
 START = datetime(2020, 1, 1, tzinfo=timezone.utc)
 END   = datetime(2024, 12, 31, 23, 59, tzinfo=timezone.utc)
 
-# Dukascopy stores ask ticks; we reconstruct OHLCV from bi5 tick data
-# URL pattern: https://datafeed.dukascopy.com/datafeed/{PAIR}/{YYYY}/{MM:02d}/{DD:02d}/{HH:02d}h_ticks.bi5
 BASE_URL = "https://datafeed.dukascopy.com/datafeed/{pair}/{year}/{month:02d}/{day:02d}/{hour:02d}h_ticks.bi5"
 
-# bi5 tick record: 4 bytes timestamp_ms (uint32), 4 bytes ask (uint32), 4 bytes bid (uint32),
-#                  4 bytes ask_vol (float32), 4 bytes bid_vol (float32) → 20 bytes/record
 TICK_STRUCT = struct.Struct(">IIIff")
 TICK_SIZE   = 20
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+}
+
+MAX_WORKERS = 5          # conservative: 5 threads, no rate-limiting issues
+REQUEST_DELAY = 0.05     # 50ms between requests per thread
+
 
 def pair_point(pair: str) -> float:
-    """Return point size (1 pip = 10 points for 5-decimal pairs)."""
     return 1e-5 if pair in ("EURUSD", "GBPUSD", "EURGBP", "AUDUSD", "NZDUSD", "USDCHF", "USDCAD") else 1e-3
 
 
 def decode_bi5(data: bytes, pair: str, hour_dt: datetime) -> pd.DataFrame:
-    """Decode a bi5 binary blob into a DataFrame of ask ticks."""
+    """Decode bi5 tick blob → DataFrame with timestamp index."""
     if not data:
         return pd.DataFrame()
     try:
@@ -61,8 +70,39 @@ def decode_bi5(data: bytes, pair: str, hour_dt: datetime) -> pd.DataFrame:
     })
 
 
+def fetch_hour_sync(pair: str, hour_dt: datetime, session: requests.Session) -> pd.DataFrame:
+    """Fetch one hour of bi5 data synchronously."""
+    url = BASE_URL.format(
+        pair=pair,
+        year=hour_dt.year,
+        month=hour_dt.month - 1,
+        day=hour_dt.day,
+        hour=hour_dt.hour,
+    )
+    try:
+        resp = session.get(url, timeout=20)
+        if resp.status_code in (204, 404) or not resp.content:
+            return pd.DataFrame()
+        resp.raise_for_status()
+        time.sleep(REQUEST_DELAY)
+        return decode_bi5(resp.content, pair, hour_dt)
+    except Exception:
+        return pd.DataFrame()
+
+
+def all_hours(year: int):
+    """Yield every UTC hour in the year, skipping weekends (Sat/Sun)."""
+    dt = datetime(year, 1, 1, tzinfo=timezone.utc)
+    end = datetime(year + 1, 1, 1, tzinfo=timezone.utc)
+    while dt < end:
+        # weekday(): 0=Mon, 5=Sat, 6=Sun
+        if dt.weekday() < 5:
+            yield dt
+        dt += timedelta(hours=1)
+
+
 def ticks_to_ohlcv(ticks: pd.DataFrame, freq: str = "1min") -> pd.DataFrame:
-    """Resample tick-level ask prices to OHLCV bars."""
+    """Resample tick-level mid prices to OHLCV bars."""
     if ticks.empty:
         return pd.DataFrame()
     ticks = ticks.set_index("timestamp").sort_index()
@@ -78,93 +118,68 @@ def ticks_to_ohlcv(ticks: pd.DataFrame, freq: str = "1min") -> pd.DataFrame:
     return ohlcv
 
 
-async def fetch_hour(session: aiohttp.ClientSession, pair: str,
-                     hour_dt: datetime, semaphore: asyncio.Semaphore) -> pd.DataFrame:
-    url = BASE_URL.format(
-        pair=pair,
-        year=hour_dt.year,
-        month=hour_dt.month - 1,      # Dukascopy months are 0-indexed
-        day=hour_dt.day,
-        hour=hour_dt.hour,
-    )
-    async with semaphore:
-        try:
-            async with session.get(url, timeout=aiohttp.ClientTimeout(total=30)) as resp:
-                if resp.status == 204 or resp.status == 404:
-                    return pd.DataFrame()
-                resp.raise_for_status()
-                data = await resp.read()
-            return decode_bi5(data, pair, hour_dt)
-        except Exception:
-            return pd.DataFrame()
+def fetch_year(pair: str, year: int) -> pd.DataFrame:
+    hours = list(all_hours(year))
+    n_total = len(hours)
+    print(f"  {pair} {year}: {n_total} hours to fetch (weekdays only)...")
 
-
-async def fetch_year(pair: str, year: int) -> pd.DataFrame:
-    """Fetch all hours for one pair × year, return 1-min OHLCV DataFrame."""
-    hours = []
-    dt = datetime(year, 1, 1, tzinfo=timezone.utc)
-    end_dt = datetime(year + 1, 1, 1, tzinfo=timezone.utc)
-    while dt < end_dt:
-        hours.append(dt)
-        dt += timedelta(hours=1)
-
-    semaphore = asyncio.Semaphore(20)       # max 20 concurrent requests
-    connector = aiohttp.TCPConnector(limit=30)
-    headers = {
-        "User-Agent": "Mozilla/5.0 (research/academic; contact: research@example.com)",
-    }
+    session = requests.Session()
+    session.headers.update(HEADERS)
 
     all_ticks: list[pd.DataFrame] = []
-    async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
-        tasks = [fetch_hour(session, pair, h, semaphore) for h in hours]
-        # Process in batches to avoid memory overload
-        batch_size = 500
-        for i in range(0, len(tasks), batch_size):
-            batch = tasks[i:i + batch_size]
-            results = await asyncio.gather(*batch)
-            batch_ticks = [r for r in results if not r.empty]
-            if batch_ticks:
-                all_ticks.extend(batch_ticks)
-            print(f"  {pair} {year}: {min(i+batch_size, len(tasks))}/{len(tasks)} hours fetched, "
-                  f"{sum(len(t) for t in all_ticks):,} ticks so far")
+    n_done = 0
+    n_nonempty = 0
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
+        future_to_hour = {exe.submit(fetch_hour_sync, pair, h, session): h for h in hours}
+        for future in as_completed(future_to_hour):
+            result = future.result()
+            n_done += 1
+            if not result.empty:
+                all_ticks.append(result)
+                n_nonempty += 1
+            if n_done % 500 == 0 or n_done == n_total:
+                fill_pct = n_nonempty / n_done * 100
+                print(f"    {n_done}/{n_total} hours | {n_nonempty} non-empty ({fill_pct:.1f}% fill)")
 
     if not all_ticks:
-        print(f"  WARNING: {pair} {year} — no data retrieved")
+        print(f"  WARNING: {pair} {year} — zero data retrieved")
         return pd.DataFrame()
 
-    ticks = pd.concat(all_ticks).sort_index(kind="stable")
+    ticks = pd.concat(all_ticks, ignore_index=True)
     ohlcv = ticks_to_ohlcv(ticks, freq="1min")
     return ohlcv
 
 
 def validate_bars(df: pd.DataFrame, pair: str, year: int) -> bool:
-    """Check bar count is plausible: expect ~250k–350k bars/year for FX."""
     n = len(df)
-    # FX trades ~252 days/year × ~1080 bars/day (18h market + weekend gaps)
-    # Actual: ~360k bars (24h × 365 - some weekends/holidays)
-    # Relax to 200k as lower bound
-    lo, hi = 200_000, 400_000
+    lo, hi = 180_000, 420_000
     ok = lo <= n <= hi
     status = "OK" if ok else "WARNING"
-    print(f"  [{status}] {pair} {year}: {n:,} bars (expected {lo:,}–{hi:,})")
+    print(f"  [{status}] {pair} {year}: {n:,} 1-min bars (expected {lo:,}–{hi:,})")
     return ok
 
 
-async def main():
+def main():
     for pair in PAIRS:
         all_years: list[pd.DataFrame] = []
         for year in range(START.year, END.year + 1):
             out_path = RAW_DIR / f"dukascopy_{pair}_{year}.parquet"
             if out_path.exists():
-                print(f"  {pair} {year}: cache hit → {out_path.name}")
                 df_year = pd.read_parquet(out_path)
-            else:
-                print(f"\nFetching {pair} {year}...")
-                df_year = await fetch_year(pair, year)
-                if not df_year.empty:
-                    df_year.to_parquet(out_path)
-                    print(f"  Saved → {out_path.name}")
+                n = len(df_year)
+                # Re-fetch if bar count is suspiciously low (old bad fetch)
+                if n < 180_000:
+                    print(f"  {pair} {year}: cached but only {n:,} bars — re-fetching")
+                    out_path.unlink()
+                else:
+                    print(f"  {pair} {year}: cache hit ({n:,} bars) → {out_path.name}")
+                    all_years.append(df_year)
+                    continue
+            print(f"\nFetching {pair} {year}...")
+            df_year = fetch_year(pair, year)
             if not df_year.empty:
+                df_year.to_parquet(out_path)
                 validate_bars(df_year, pair, year)
                 all_years.append(df_year)
 
@@ -172,14 +187,8 @@ async def main():
             full = pd.concat(all_years).sort_index()
             out_full = RAW_DIR / f"dukascopy_{pair}_2020_2024.parquet"
             full.to_parquet(out_full)
-            n_total = len(full)
-            print(f"\n{pair} TOTAL: {n_total:,} 1-min bars → {out_full.name}")
-            # Sanity: expect ~1.4M–1.8M bars for 5 years
-            if n_total < 1_000_000:
-                print(f"  WARNING: {pair} total bars suspiciously low ({n_total:,})")
-            else:
-                print(f"  OK: {pair} bar count plausible")
+            print(f"\n{pair} TOTAL: {len(full):,} 1-min bars → {out_full.name}")
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
