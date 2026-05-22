@@ -1,0 +1,32 @@
+[
+  {
+    "iteration": "v1",
+    "n_tests": 147,
+    "verdict": "RESEARCH_FAIL",
+    "metrics": {
+      "sharpe_hac": -0.551,
+      "ann_ret": -22.98,
+      "ann_vol": 39.75,
+      "max_dd": -65.02,
+      "n_trades": 1392,
+      "win_rate": 49.1,
+      "mean_hold_d": 2.9,
+      "n_obs": 615
+    },
+    "wf_pct": 0.0,
+    "wf_periods": 2,
+    "orthogonality": {
+      "corr_A": 0.1799,
+      "corr_B": 0.0565
+    },
+    "events_2024": 912,
+    "gate_checks": {
+      "Sharpe HAC \u2265 0.70": "False",
+      "MaxDD \u2265 -25%": false,
+      "WF% > 50%": "False",
+      "N_trades \u2265 30": true,
+      "|\u03c1_A| < 0.30": "True",
+      "|\u03c1_B| < 0.30": "True"
+    }
+  }
+]

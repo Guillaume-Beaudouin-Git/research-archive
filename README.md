@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
-**Last updated**: May 17, 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 36 signals tested, 15 consecutive SKIPs (6.22–6.36) — free-data exhausted
+**Last updated**: May 22, 2026  
+**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 82 signals/variants tested — Strategy C = NQ ORB iter_10 (Sharpe 1.52, RESEARCH_PASS, paper trade phase pending TWS)
 
 ---
 
@@ -1090,7 +1090,104 @@ IC definition: `spearman(z, -fwd_return)`, so IC<0 means high positive funding �
 
 ---
 
-## 7. Strategy Performance Summary
+## 7. FX Research — Negative Results (May 2026)
+
+**Asset class expansion initiated 2026-05-19. n_tests running total: 57 (53 crypto + 4 FX).**
+
+Universe: G10 FX — EUR, GBP, JPY, AUD, CAD, CHF, NOK, SEK vs USD (8 pairs).  
+Data: yfinance weekly + FRED 3M interbank rates (DTB3, IR3TIB01* series) — monthly granularity.  
+Cost: 15 bps RT (institutional FX, mid-point of retail 20 bps / prime 5 bps).  
+Period: 2005-01-14 → 2026-05-15. Script: `Forex/research/archived/fx_carry_fred/`, `fx_momentum_monthly/`, `fx_carry_em/`.
+
+### FX-1: Carry FRED 3M G10 — WEAK / untradeable
+
+**Signal**: carry[ccy] = r_3M[foreign] − r_3M[USD], cross-sectional L/S tercile, weekly.  
+**Result**: IC=+0.027, t=+2.02 (**WEAK**), Sharpe=−0.13, MaxDD=−53%.
+
+IC is real (forward premium puzzle confirmed at t=2.02, n=1114 weeks). Strategy is not viable as a raw L/S position. Carry crashes during risk-off events destroy full-sample Sharpe:
+- GFC 2008: cumret −9%, MaxDD −24%
+- EM unwind 2015: cumret −13%, MaxDD −15%
+- COVID 2020: cumret −17%, MaxDD −21% in 15 weeks
+
+Root cause: carry premium distribution is right-skewed with fat left tail (negative skewness). Average week is profitable, but sudden unwind events overwhelm the cumulative carry collected. Raw L/S with no crash protection produces negative Sharpe over 21-year sample. Reference: Brunnermeier, Nagel & Pedersen (2008) "Carry Trades and Currency Crashes".
+
+Remaining hypothesis not tested: carry + trend filter (Asness et al. 2009) reduces MaxDD from −53% to ~−20% by identifying reversals before crashes materialize. Not pursued — see structural conclusion below.
+
+### FX-2: CS Momentum 12M-1M G10 — SKIP
+
+**Signal**: cumret[t-12M : t-1M] / vol_12M, cross-sectional rank, L/S tercile, monthly.  
+**Result**: IC=−0.024, t=−0.83 (**SKIP**), Sharpe=−0.06, MaxDD=−42%.
+
+Factor is dead in the 2005-2026 G10 sample. IC is slightly negative (not just zero), indicating mild mean-reversion tendency at monthly horizon. Root causes: (a) post-publication crowding — Menkhoff et al. (2012) used pre-2011 data; the strategy has been extensively replicated since publication; (b) central bank FX interventions systematically reverse trends: SNB CHF floor (2011-2015), ECB QE (2015-2018), BOJ Yield Curve Control (2016-2024) all cap appreciation in the winning currencies and create abrupt reversals in momentum positions. SKIP permanently for G10 FX.
+
+### FX-3: TSMOM tanh 12M G10 — SKIP
+
+**Signal**: tanh(cumret_12M / (vol_12M × sqrt(12))), time-series, monthly.  
+**Result**: IC=−0.025, t=−0.87 (**SKIP**), Sharpe=−0.13, MaxDD=−23%.
+
+Same conclusion as FX-2. TSMOM does not transfer from crypto to G10 FX at monthly frequency. In crypto, TSMOM works because no central bank anchor exists — momentum can persist 1-2 years. In G10 FX, central banks actively suppress appreciation in winning currencies, creating systematic reversals against the signal direction. The vol-scaling (tanh) reduces MaxDD from −42% to −23% (useful structural confirmation), but does not rescue the negative IC. SKIP permanently.
+
+### FX-4: Carry G10 + EM (BRL, MXN, ZAR, TRY) — SKIP
+
+**Signal**: same carry as FX-1 extended to 12 pairs. FRED EM tickers: IRSTCI01{BRM/MXM/ZAM/TRM}156N — all downloaded successfully.  
+**Result**: 1W IC=+0.001, t=+0.06; 4W IC=−0.022, t=−1.67 (**SKIP**). Sharpe=−0.49, MaxDD=−77%.
+
+Adding EM pairs dilutes and then reverses the G10 carry signal. At 1-week horizon: EM carry IC is zero (peso problem — high rates = anticipated depreciation, no FX gain). At 4-week horizon: IC is negative — high-carry EM currencies (TRY 40-50%, BRL 13%) suffer capital losses over 4-week windows larger than the carry compensates. The 2020 COVID EM unwind: MaxDD −21% in 15 weeks, Sharpe −3.71. Propfirm-compatible on COVID MaxDD alone (−21% < −25% threshold) but full-sample Sharpe −0.49 disqualifies. SKIP.
+
+**Structural FX conclusion (carries forward to equities research)**:
+> FX carry IC is real in G10 (t=2.02) but requires crash protection incompatible with raw propfirm rules. FX momentum is permanently dead post-Menkhoff-publication in G10 due to central bank anchor effect. EM carry is dominated by periodic unwind events that reverse 12+ months of carry premium in weeks. TSMOM transfers naturally to assets without central bank anchors (crypto, commodities, equity indices) — not to FX.
+
+---
+
+## 8. Multi-Asset TSMOM Research (May 2026) — ARCHIVED
+
+**Verdict: DID NOT SURVIVE METHODOLOGY CORRECTION. Archived after rigorous re-evaluation.**
+
+### 8.1 Research progression
+
+**Universe**: 10 ETFs — SPY, QQQ, EFA, EEM, IWM (equity), TLT, IEF, SHY (bonds), GLD (gold), VNQ (real estate).  
+**Signal**: `tsmom = tanh(cumret_12M / (vol_12M × sqrt(12)))`, monthly rebalance, L/S, weight = signal/n_assets. Cost 5 bps RT.  
+**Files**: `Equities/research/archived/multi_asset_tsmom/` — full audit trail preserved.
+
+**Feasibility** (`feasibility.py`): Sharpe 0.43, alpha_ann 3.6% (t=2.4 OLS), residual Sharpe 0.54 → **PASSED** preliminary gates.
+
+**Walk-forward** (`walkforward.py`, 16 OOS windows 2010–2025): median OOS Sharpe 0.78, 69% windows positive, 81% alpha-positive → **PASSED** walk-forward.
+
+**Risk overlays** (`risk_overlays.py`): best variant (Overlay B, −5% per-leg stop): Sharpe 0.62, MaxDD −14.0% — failed −10% propfirm MaxDD gate.
+
+**Multi-horizon** (`multi_horizon.py`, HOP 2013 1M+3M+12M ensemble + Overlay B): Sharpe 0.48, MaxDD −14.5%, EuroCrisis MaxDD −7.1% — improved EuroCrisis significantly but still failed MaxDD gate.
+
+### 8.2 Methodology audit — fatal degradation
+
+`methodology_audit.py` applied 5 simultaneous infrastructure fixes (now **canonical for all future strategies**):
+
+| Metric | Original MH+B | Corrected MH+B | Change |
+|--------|--------------|----------------|--------|
+| Sharpe | 0.48 | **0.21** | −0.27 |
+| Ann ret | 4.9% | 1.9% | −3.0pp |
+| MaxDD | −14.5% | **−20.7%** | −6.2pp (worse) |
+| Alpha t-stat | 2.4 (OLS) | **1.31 (HAC)** | not significant at 5% |
+| Residual Sharpe | 0.52 | **0.30** | below 0.40 gate |
+| Directional accuracy | — | **52.0%** | below 53% gate |
+| Quintile monotonicity | — | non-monotone (Q5 < Q1 by 0.165%) | fail |
+| Convexity β | — | +0.13 (t=0.92) | not significant |
+| Gates passed | — | **1/6** | FAIL |
+
+**Root cause of degradation**: Fix 2 (excess returns over DTB3) is the dominant driver — stripping the risk-free rate exposes that much of the headline Sharpe was capturing the equity risk premium from long ETF positions, not pure alpha. Fix 1 (daily vol targeting with 63-day lookback) also increases MaxDD from −14.5% to −20.7% because daily realized vol is more responsive than the original monthly rolling(3).std() estimate — the prior framework was systematically *under-estimating* realized volatility, producing an over-levered strategy.
+
+**Methodological lesson**: consistent with Harvey, Liu & Zhu (2016) "...and the Cross-Section of Expected Returns" — a substantial fraction of published "Sharpe 0.5+" strategies do not survive HAC correction and proper excess-return accounting. Our experience directly replicates this empirically: a strategy with OLS alpha t=2.4 becomes t=1.31 under HAC(6), i.e. not significant at 5% once serial correlation in monthly returns is properly accounted for.
+
+> **DSR formula correction (2026-05)**: Both `walkforward.py` and `risk_overlays.py` used `norm.cdf(z)` instead of `norm.sf(z)`, inverting p-values. Corrected. The DSR gate was structurally impossible to pass at n_tests=64 anyway (SR* benchmark ≈ 0.147 monthly; strategies with annualized SR < ~0.9 all fail).
+
+### 8.3 EuroCrisis 2011 root cause (insight preserved)
+
+EuroCrisis was a **risk-off rotation** (equities down, bonds/gold up), not a correlation breakdown. Peak avg pairwise correlation was 0.32 — well below the Overlay C threshold of 0.50. The actual failure mode was **signal latency**: 12M lookback maintained long-equity positions during a multi-month correction. Multi-horizon (1M+3M+12M) partially addressed this — EuroCrisis MaxDD improved from −16.0% to −7.1% — but full-sample MaxDD worsened under corrected methodology.
+
+**Archive location**: `Equities/research/archived/multi_asset_tsmom/` — all JSON results, summary MDs, and the full 5-file research record preserved.
+
+---
+
+## 9. Strategy Performance Summary
 
 | # | Strategy | Sharpe | MaxDD | Status | Verdict |
 |---|---|---|---|---|---|
@@ -1170,11 +1267,19 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 - **Conclusion**: to exceed 39%, need either a different asset universe (non-correlated to BTC), delta-neutral execution, or a prop firm with a less punitive daily limit (FTMO: 5% vs Propr: 3%)
 - `VOL_TARGET_LIVE` updated to 0.18 (from 0.15) based on this analysis
 
+### On long-only crypto CS strategies — β-dominance (Lesson 11, 2026-05-23)
+
+Any long-only cross-sectional portfolio of crypto perps has portfolio-level correlation ≈ 0.80–0.85 with Strategy A (TSMOM), regardless of signal-level orthogonality. Tested: MAX factor (IC t=3.06, port corr=0.81), ILLIQ factor (IC t=3.60, port corr=0.84), MAX residualized (IC t=3.72, port corr≈0.80+). Root cause: all top liquid crypto perps share β_crypto ≈ 0.65+. Signal-level Spearman IC is necessary but not sufficient — it measures cross-sectional rank correlation, not portfolio market exposure. Residualizing the signal does not residualize the portfolio. **The only structural escape is delta-neutral execution** (long+short perp legs cancel β_crypto). Any future strategy with |ρ_A| < 0.3 must use delta-neutral design. See `Crypto/research/_meta/lesson_11_beta_dominance.md`.
+
+### On event-count ceiling in threshold strategies (Lesson 12, 2026-05-23)
+
+Pre-flight event-count checks must gate both floor (too sparse → underpowered WF) AND ceiling (too dense → cost overflow). PMR basis mean-reversion: IC t=2.86 at 3d, but 1.5σ threshold fires 12.6% of coin-days (912 events in 2024 for 29 coins) → portfolio always fully deployed → mean hold = 2.9 days → ~97%/year cost drag → Sharpe = −0.55 backtest. Signal is real, strategy is not exploitable at retail taker fees. Break-even requires either maker rebates (<0.03% cost) or threshold ≥3.0σ (yields <20 events/year — below minimum gate). Free-data crypto edge orthogonal to A+B is structurally exhausted at this stage.
+
 ---
 
-## 9. Research Priorities
+## 10. Research Priorities
 
-### Strategy C search status — 36 signals tested, FREE-DATA EXHAUSTED
+### Signal search status — 65 signals/variants tested (53 crypto + 4 FX + 5 multi-asset variants + 1 methodology audit + 1 NQ ORB feasibility pending), crypto FREE-DATA EXHAUSTED
 
 **All free-data candidates tested. Last 15 signals (6.22–6.36) all SKIP:**
 - 6.22 Temporal patterns: SKIP (corr(TSMOM)=0.527; no bucket t>2.5 after MTC)
@@ -1192,8 +1297,14 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 - 6.34 Crash Recovery dip-buying: SKIP (post-crash mean −0.131% < unconditional 0.384%; SL fires 68%; PF<1.0 in 7/9 years; t=−1.54 anti-edge)
 - 6.35 Extreme Funding Reversal: SKIP (IC t=−4.19 at 7d — wrong direction; extreme funding = momentum continuation, not reversal; PF=0.587)
 - 6.36 Perp-Spot Basis MR (He & Manela 2024): SKIP (PF=0.955; IC t=−2.21; avg hold=1d; Binance basis amplitude ~0.05% Std vs 0.17% RT cost)
+- 6.37 CS-FS (cross-sectional funding spread, delta-neutral): SKIP (IC t=1.54, below gate t>2.5)
+- 6.38 FRA-DN (funding rate acceleration, delta-neutral): SKIP (IC t=1.01, unstable: 2024 IC=+0.051 vs 2025 IC=−0.061)
+- 6.39 PMR (perp-spot basis mean-reversion, threshold event-driven): SKIP (IC t=2.86 at 3d PASS, but 912 events/year at 1.5σ → 97%/yr cost drag → Sharpe=−0.55, MaxDD=−65%. Signal real, strategy unexploitable at retail taker fees. See `Crypto/research/archived/other/pmr_basis/POSTMORTEM.md`)
 
-**Extended structural finding** (confirmed across 36 signals): In crypto, all free-data standalone strategies are either:
+**N_tests cumulative: 148** (prior 142 + 5 pre-flight IC tests + 1 PMR backtest)
+**E[max_SR] at N=148: ≈ 4.33** (AMTP threshold for future strategies)
+
+**Extended structural finding** (confirmed across 39 signals): In crypto, all free-data standalone strategies are either:
 1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout) — work in bull, fail in bear, corr > 0.4
 2. **Cost-inaccessible at retail fees** (LSTM, residual MR, STR, basis MR) — real AUC/IC but n_trades × fee > gross return OR signal amplitude < cost
 3. **Mean-reversion into momentum** (crash recovery, CS L/S, funding reversal, basis z-score) — funding and basis spikes are momentum proxies; dip-buying and reversal bets are anti-edge
@@ -1205,7 +1316,9 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 - **Paid data**: Glassnode on-chain stablecoin flows (true mint/burn on-chain, ~$500/mo) — theoretical zero TSMOM corr
 - **Alternative prop firm**: FTMO (5% daily DD vs Propr's 3%) — structural ceiling fix, not a new signal
 
-**Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found after 36 signals.
+**Crypto free-data exhaustion confirmed (2026-05-23)**: After dedicated orthogonality-focused search (39 signals), the conclusion is definitive — no additional strategy with |ρ_A|<0.3 AND |ρ_B|<0.3 AND Sharpe>0.7 exists in the free-data crypto perp universe. Next viable crypto research requires either paid data (Glassnode) or institutional execution infrastructure (maker rebates).
+
+**Interim Strategy C**: XGBoost CS (6.21, Sharpe 0.734, corr=+0.003) — no better candidate found after 39 signals.
 
 ### Immediate
 1. **FTMO compatibility analysis** (now Priority #1). FTMO: 5% daily DD limit vs Propr's 3%. Run 44-path simulation with FTMO rules (trailing HWM, 10% profit target, 10% total DD, 5% daily DD). Expected pass rate: 55–65% vs current 39% Propr ceiling. This is the highest-leverage next step given the structural ceiling found in Strategy C search.
@@ -1215,12 +1328,123 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 3. **Re-examine A+B portfolio**: Carry (B) OOS still only 3 months, Sharpe possibly inflated. Re-run A+B+C(XGBoost) comparison once 6 months OOS accumulates (around Aug 2026).
 4. **XGBoost CS improvements**: The accepted Strategy C (6.21) had Sharpe 0.734. Consider feature additions (order book imbalance from HL, open interest) before live deployment.
 
-### Prop firm expansion
-5. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences: trailing HWM (harder to recover), 5% daily limit (more survivable on crash days), scaling plan available. **This is Priority #1** given the 39% Propr ceiling.
+### NQ ORB Strategy C — RESEARCH_PASS → paper trade phase (May 2026)
+
+**Strategy**: NQ Opening Range Breakout iter_10 = VWAP + A$400 dollar stop + B1.2% gap filter + M1(rng≥30pt).  
+**Edge**: Opening range momentum with VWAP confirmation. Signal fires when the 09:30–09:45 ORB close is above/below the cumulative VWAP AND gap is below 1.2% AND range ≥ 30pts. Entry at 09:46, bracket order TP=1.5×range / SL=0.5×range (capped at 20.95pts). Time stop 12:30.
+
+**Backtest** (Kaggle 1-min NQ, Dec 2022–Dec 2025, 346 trades):
+| Metric | Value |
+|---|---|
+| Sharpe (annualised) | 1.52 |
+| MaxDD (trailing) | −13.4% |
+| Walk-forward (6M train / 3M OOS, 9 windows) | 7/9 positive (78%) |
+| OOS total P&L | $41,961 |
+| Median OOS Sharpe | 1.720 |
+
+**Research gates**: RESEARCH_PASS (Sharpe≥1.0 ✓, WF≥55% ✓, MaxDD≥−20% ✓, P(EV≤0)<0.05 ✓). MaxDD gate at −10% propfirm threshold: FAIL (−13.4% < −10%).
+
+**Signal refinement** (iter_10 vs iter_05): H3 range quartile (Kruskal-Wallis p≈0.000) was the only statistically robust conditioning variable (Bonferroni k=6, p*=0.0083). M1 filter rng≥30pts adopted: ΔSharpe=+0.31, WF%=78%≥67% baseline. 5 other hypotheses (DOW, VIX, trend, direction, 30-min ORB) all FAIL Bonferroni.
+
+**Propfirm compatibility v2** (stationary block bootstrap L=20, 10K paths × 60 days, fixed DD rules):
+| Account | Sizing | C1 P(bust)<10% | C3 P(target)>40% | C4 MaxDD<8% | Binding |
+|---|---|---|---|---|---|
+| $50K | 5 MNQ | ✓ 0.0% | ✗ 12.3% | ✓ 6.2% | C3 (sizing too small) |
+| $50K | 10 MNQ | ✓ 4.2% | ✓ 45.7% | ✗ 12.4% | **C4** |
+| $100K | 10 MNQ | ✓ 0.0% | ✗ 12.3% | ✓ 6.2% | C3 (sizing too small) |
+| $100K | **20 MNQ** | **✓ 4.0%** | **✓ 46.0%** | **✗ 12.4%** | **C4** |
+
+**No config passes all 4 criteria** — binding constraint is C4 (trailing max_dd=12.4% > 8% buffer threshold). Note: C4 uses trailing DD (peak-to-trough over full backtest). Under actual FIXED propfirm rules, the worst historical 60-day window has a fixed DD of only 2.2% from window start (challenge start) — the strategy never breaches the 10% hard floor in any historical 60-day window. P(daily>5%) = 0.0% at all sizings (structural: dollar stop cap limits max single-trade loss to 0.88% at 20 MNQ/$100K).
+
+**Block bootstrap note**: block P(bust) < iid P(bust) at most sizings (−1.5 to −4.9pp). The strategy's serial correlation structure reduces bust risk relative to iid assumptions.
+
+**Recommended sizing**: **$100K / 20 /MNQ** (best available, 3/4 criteria). E[monthly P&L] = $2,413. Median days to 10% target = 32.
+
+**Live infrastructure**: `Futures/live/strategy_c_live/` — 6 files (config, ibkr_client, signal_engine, log_trade, run_daily, validate). Key design: 1-min bars from IBKR (`useRTH=True`), VWAP computed on 1-min ORB bars (exact match to backtest, closes sim-to-live gap). Validation: Test 2 (signal engine) = 10/10 = 100% match, TP/SL diff = 0.00 pts. Tests 1+3 pending TWS connection.
+
+**Status**: RESEARCH_PASS. Paper trade phase pending TWS validation (Tests 1+3).  
+`Futures/research/active/nq_intraday/`. n_tests = 82+. Path: `iter_10_refined.py`, `propfirm_compat_v2.py`.
 
 ---
 
-## 10. Prop Firm Landscape (May 2026)
+### ORB IVB on NQ — ARCHIVED (May 2026)
+5. **Opening Range Breakout on NQ futures** (Fabio Valentini IVB model, Matteo Conti 2024): ARCHIVED. Delta-free variant on Kaggle 1-min data (2022-12-26 to 2025-12-11, 736 clean sessions): **WR 53.4%, PF 0.97 (5m) / 1.02 (1m), Sharpe −0.44 / −0.09, MaxDD −28.6% / −21.6%**. 0/5 propfirm gates passed. Delta filter confirmed to be the edge in Conti's system (WR gap: 53.4% vs Conti 58.3%). Archived — revisit only if Databento subscription ($30/mo, real per-bar delta) becomes warranted. `Futures/research/archived/orb_ivb_nq/`. n_tests = 68.
+
+### Pairs trading cointegration — ARCHIVED (May 2026)
+5c. **Pairs trading cointegration** (19 pairs across 4 categories, daily, EG+Johansen+HL+Hurst screening): **0/19 pairs qualify** under rigorous statistical tests. Binding constraint: half-life > 30 days for all pairs (median HL ≈ 200 days). Root causes: (a) expense ratio drift makes same-index ETFs appear non-cointegrated over 15-year samples despite short-run mean reversion; (b) business model divergence makes fundamental equity pairs revert over months, not days. Closest: V/MA (HL=96d, EG p=0.075, Johansen trace 14.19 vs crit 15.49). No backtest triggered (n_tests unchanged at 71). `Equities/research/archived/pairs_cointegration/`. Archived May 2026.
+
+> **Methodological insight**: Classic price-level cointegration (EG + Johansen, daily data, HL ≤ 30 days) does not find statistically valid pairs in a diversified US equity/ETF universe. The academic literature's success relies on high-frequency data, very large automated universes (hundreds of pairs), or structural arbitrage pairs (ADRs, dual-listed, merger arb). A 19-pair daily universe with strict screens is insufficient.
+
+### Pairs trading distance method (Gatev 2006) — ARCHIVED (May 2026)
+5d. **Pairs trading distance method (Gatev 2006 / Zhu 2024)** (96-stock SP100 proxy, daily, T20/T100/L75 variants): **All 3 variants FAIL** — Sharpe −0.44 / −0.53 / −0.97, negative alpha (t_HAC −2.2/−2.5). Monthly return: −0.027% to −0.116% vs Zhu 2024 benchmark +0.426%/+0.461%. Walk-forward: 3/9 OOS years positive (33%). The MOM loading confirms correct contrarian implementation (coeff −0.10, t=−9.8, matches Zhu), so failure is structural, not algorithmic. n_tests = 71→74. `Equities/research/archived/pairs_distance_gatev/`. Archived May 2026.
+
+> **Root cause**: (a) **Survivorship bias** — SP100_2015 is a static forward-looking list; stocks that delisted 2012–2024 are absent, inflating past pair quality. (b) **Universe concentration** — 96 stocks vs 500–3000 in CRSP literature; fewer diversifiable pairs reduces the law-of-large-numbers benefit. (c) **Strategy decay post-2013** — academic arbitrage capital eroded the distance-method edge as the strategy became widely known; walk-forward shows 2019–2024 nearly all negative. Daily yfinance data cannot replicate CRSP's survivorship-free universe.
+
+### VIX term structure carry — ARCHIVED (May 2026)
+5b. **VIX term structure carry** (VXX/VIXY, daily, 3 variants): Sharpe HAC 0.67 / 0.50 / 0.46 (raw / VT / VT+stop). MaxDD -54.2% / -15.9% / -17.1%. Mild contango regime (29% of days) destroys edge — signal only works at extremes. Alpha vs short-VIXY naïve: t_HAC = 0.71 (timing adds minimal value vs passive variance risk premium harvesting). Archived May 2026. `ETF_Vol/research/archived/vix_term_carry/feasibility.py`. n_tests = 68→71.
+
+> **Methodological insight**: Variance risk premium exists empirically and is observable in VIX term structure, but ACTIVE TIMING of the regime (long backwardation, short contango) does not statistically outperform a static short-VIX position with conservative sizing. The premium is a static factor, not a timeable signal. This generalizes a broader principle: not every persistent return is a tradeable timing signal.
+
+### Cross-sectional sector reversal — ARCHIVED (May 2026)
+5f. **Cross-sectional sector reversal** (11 SPDR sector ETFs, weekly rebalance, 4 variants: V1 pure / V2 filtered / V3 VT / V4 both): **All 4 variants strongly FAIL** — best Sharpe −0.60, MaxDD −91.5%, only 3/19 OOS years positive (16%). Alpha vs EW sectors: t_HAC = −3.7 (significant **negative** alpha — strategy actively destroys value). n_tests = 78→82. `Equities/research/archived/sector_reversal_cs/`. Archived May 2026.
+
+> **Root cause — wrong granularity**: Jegadeesh (1990) / Lehmann (1990) documented reversal in **individual stocks** driven by microstructure liquidity provision. At sector ETF level, these effects cancel out by aggregation. Only 11 sectors also provides insufficient cross-sectional dispersion. The 13%/yr annual cost drag (weekly ETF turnover at 4 bps/leg) structurally destroys any residual gross return (~3.3%/yr estimated gross). The SRV factor loading is +0.158 (t=1.02) — correct direction but not significant. The reversal effect at sector level is completely dominated by commodity-sector momentum (XLE/XLB lose −20% to −24% cumulative from failed reversal trades against genuine oil/metals trends). This strategy requires individual stocks with intraday execution, not sector ETFs at weekly frequency.
+
+### Commodity TSMOM (Hurst-Ooi-Pedersen 2017) — ARCHIVED (May 2026)
+5e. **Commodity TSMOM** (12 commodity ETFs, daily prices / monthly rebalance, 4 variants: A1/A2 single-horizon + B1/B2 multi-horizon 1M+3M+12M): **All 4 variants FAIL** — best variant (A1, single-horizon) Sharpe 0.39, Ann +1.3%, MaxDD −6.5%. Research gates: 4/6 (fails Sharpe <0.7, AMTP p=0.808). `Commodities/research/archived/commodity_tsmom/`. n_tests = 74→78.
+
+> **Root cause — ETF roll drag vs direct futures**: The HOP 2017 paper uses direct commodity *futures* contracts. ETF proxies (USO, UNG, SLV, etc.) systematically embed negative roll yield in contango markets — the price series reflects daily loss from rolling near-term futures into further-dated contracts. **Critical evidence**: 2022 inflation surge (oil +66%, NG +175% peak gains) produced −0.67% for the strategy, when it should have been the strongest year. The H2 2022 reversal (oil −42% peak→Dec, NG −75%) hurt with monthly rebalance, but the deeper issue is that ETF price-series trend ≠ futures roll-adjusted trend. The directional accuracy (51%) is below the 53% threshold and the AMTP p=0.808 confirms this is indistinguishable from a false positive in a 78-test search. Replicating HOP properly requires futures continuous contract data (Quandl/QuantConnect, $50-200/mo).
+
+### Prop firm expansion
+6. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences: trailing HWM (harder to recover), 5% daily limit (more survivable on crash days), scaling plan available. **Priority #2** given the 39% Propr ceiling.
+
+> **n_tests counter**: **82** as of May 2026 (53 crypto + 4 FX + 5 multi-asset variants + 1 methodology audit + 1 NQ ORB SPY proxy + 1 NQ ORB 5-min + 1 NQ ORB 1-min + 3 VIX term carry variants + 3 Gatev pairs variants + 4 commodity TSMOM variants + 4 sector reversal variants = 82 total). Walk-forward windows and feasibility validation are NOT separate trials. DSR renamed → `approx_multi_test_penalty` (honest naming).
+
+### Two-tier validation framework (effective May 2026)
+
+All research uses two distinct pass thresholds reflecting different deployment contexts:
+
+| Gate | **RESEARCH_PASS** (hedge-fund grade) | **PROPFIRM_PASS** (Propr deployment) |
+|---|---|---|
+| Sharpe HAC | > 0.7 | > 1.0 |
+| MaxDD | < −25% | < −10% |
+| Walk-forward % positive years | ≥ 50% | ≥ 60% |
+| Alpha t_HAC vs SPY | > 1.5 | > 2.0 |
+| AMTP p-value | < 0.20 | < 0.10 |
+| Corr to BTC | < 0.5 | < 0.3 |
+| Worst month | — | > −5% |
+
+**Rationale**: Prior framework used propfirm gates only. This discarded potentially valid diversifiers (e.g. strategies with Sharpe 0.7–1.0 that fail the 1.0 propfirm threshold). The two-tier framework separates "is there real edge here?" (RESEARCH_PASS) from "can this be deployed at Propr today?" (PROPFIRM_PASS). A RESEARCH_PASS result stays in the candidate pool for portfolio construction even if not immediately deployable solo.
+
+**Re-evaluation of archived strategies under new framework:**
+
+| Strategy | Sharpe | MaxDD | WF% pos | Alpha t | AMTP p | Research? | Propfirm? |
+|---|---|---|---|---|---|---|---|
+| Multi-asset TSMOM (corrected) | 0.21 | −20.7% | ~50% | 1.31 | n/a | FAIL | FAIL |
+| VIX carry Variant A (raw) | 0.67 | −54.2% | 71% | 0.71 | 0.674 | FAIL (alpha) | FAIL |
+| VIX carry Variant B (VT) | 0.50 | −15.9% | 71% | 0.71 | 0.674 | FAIL (Sharpe) | FAIL |
+| Pairs cointegration | — | — | — | — | n/a | FAIL (0 pairs) | FAIL |
+| Pairs Gatev (T100 best) | −0.44 | −10.7% | 33% | −2.2 | 1.0 | FAIL | FAIL |
+| Commodity TSMOM (A1 best) | 0.39 | −6.5% | 62% | 1.59 vs DBC | 0.808 | FAIL (Sharpe, AMTP) | FAIL |
+| Sector reversal CS (V1 best) | −0.60 | −91.5% | 16% | −3.7 vs EW | 1.0 | FAIL (all gates) | FAIL |
+
+No archived strategy passes RESEARCH_PASS. VIX carry Variant A is the closest miss (Sharpe 0.67, WF 71% — fails alpha t threshold 0.71 < 1.5). Commodity TSMOM: 4/6 research gates pass but Sharpe 0.39 < 0.7 and AMTP p=0.808 disqualify it; ETF roll drag is the structural issue (requires futures data to replicate HOP properly).
+
+**Sharpe HAC formula note**: All scripts use `mean/σ × √annual_factor` (standard Sharpe). HAC is applied only to alpha t-stats via regression. The `sharpe_hac()` in commodity TSMOM uses correct LRV extraction (`cov_params[0,0] × n`). Prior scripts use simple daily Sharpe — consistent and correct.
+
+### Methodology standards (effective May 2026)
+
+**All future research scripts MUST apply these 5 fixes simultaneously:**
+
+1. **Excess returns**: subtract daily RF (FRED DTB3: `rf_daily = (1+DTB3/100)^(1/252) - 1`) from all asset returns before any P&L calculation or OLS regression
+2. **HAC standard errors**: use `statsmodels sm.OLS().fit(cov_type='HAC', cov_kwds={'maxlags': 6})` for all alpha t-stats; plain OLS t-stats are inadmissible for monthly series with serial correlation
+3. **Daily vol targeting**: compute portfolio P&L from daily weights × daily excess returns → 63-day rolling std × √252 → sample at month-ends. Do NOT use `monthly_returns.rolling(3).std()` — that is monthly vol on monthly returns, inconsistent frequency that systematically under-estimates realized vol
+4. **TSMOM diagnostics** (when applicable): (a) directional accuracy ≥53% gate, (b) quintile bucket monotonicity (Q5 > Q1), (c) convexity test regressing on |SPY_return| with HAC SE — positive β required for trend-following payoff profile. Note: these are TSMOM-specific; for other strategy types use appropriate IC / bootstrap tests
+5. **Honest naming**: `approx_multi_test_penalty` (not "DSR") — the BLP formula is a simplified approximation assuming i.i.d. returns and independent tests; document limitations clearly in every script
+
+---
+
+## 11. Prop Firm Landscape (May 2026)
 
 | Firm | Instruments | Challenge Target | Max DD | Daily DD | Payout Split | Notes |
 |---|---|---|---|---|---|---|
@@ -1240,7 +1464,7 @@ The 3% daily drawdown limit is the binding constraint, not the 6% total limit. T
 
 ---
 
-## 11. Quick Start
+## 12. Quick Start
 
 ### Run research scripts
 

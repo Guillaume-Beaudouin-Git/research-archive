@@ -23,9 +23,19 @@ model_store/
 state.json
 state_*.json
 outputs/
-data/
 fills.csv
 funding.csv
+
+# data/ — ignore raw data blobs, keep Python source + .gitkeep tracked
+data/*.csv
+data/funding_carry/
+data/delta_neutral/
+data/pairs_trading/
+data/raw/*.parquet
+data/metadata/*.json
+
+# Research cache — binary data, reproducible from API
+Crypto/research/active/_preflight/cache/
 
 # Kill switch
 STOP
