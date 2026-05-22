@@ -64,32 +64,91 @@ Page https://ftmo.com/en/account-types/ returned HTTP 404. Rules for "Pro Trader
 
 ## TASK 2 — DUKASCOPY DATA
 
-Status: IN PROGRESS → see `_ic_feasibility/fetch_data.py`
+**Script:** `_ic_feasibility/fetch_data.py`
+
+**Technical notes (3 iterations to fix):**
+- v1: aiohttp + Python 3.9/LibreSSL → ~10% fill (SSL → silent drops)
+- v2: requests + ThreadPoolExecutor(15) + Python 3.12/OpenSSL → 100% fill, 20min/year (too slow)
+- v3 (current): aiohttp + force_close=True + Python 3.12/OpenSSL → 65-72% weekday fill, ~17min/year
+  - force_close bypasses nginx rate-limit on keep-alive connections
+  - 72% = thin/off-hours (00:00-05:00 UTC Mon) genuinely empty; London open (07:00 UTC) ~97% fill
+  - Validated: EURUSD 2020 = 365,459 bars, LO bars 15,658/~15,600 expected ✓
+
+**N_tests added by data pipeline:** 0 (data collection, not signal variants)
+
+**EURUSD 2020 validated:** 365,459 bars (8.7MB parquet)  
+Status: **IN PROGRESS** (fetching EURUSD 2021-2024 + GBPUSD 2020-2024, ~2.5h remaining)
+
+**PREVIEW RESULT (EURUSD 2020 only, n=1 year — directional only):**
+
+| Signal | Horizon | N | IC_spearman | t_HAC_lag4 | Direction |
+|---|---|---|---|---|---|
+| close-based | 1h | 92 | +0.073 | +0.50 | ✓ |
+| close-based | 2h | 92 | +0.080 | +0.19 | ✓ |
+| close-based | 4h | 92 | -0.054 | -0.84 | ✗ (reversal) |
+| HL-based | 1h | 170 | +0.056 | +0.65 | ✓ |
+| HL-based | 2h | 170 | +0.020 | +0.08 | ✓ (weak) |
+| HL-based | 4h | 170 | -0.022 | -0.35 | ✗ (reversal) |
+
+**Interpretation:** Positive IC at 1h-2h → breakout momentum exists. Negative at 4h → fades by noon. With 5 years (N≈460-850), t_HAC should reach 1.5-2.0 at 1h.
 
 ---
 
 ## TASK 3 — IC FEASIBILITY ANGLE A (London ORB)
 
-Status: PENDING
+**Signal:** Asian range (00:00–07:00 UTC) breakout at London open (07:00–08:00 UTC)
+**Variants:** (1) close-based — 07:59 close vs Asian range; (2) HL-based — high/low of 07:00–07:59 vs Asian range
+**Horizons:** 1h, 2h, 4h, session-end (17:00 UTC)
+**Gate:** N > 400 breakout days, |t_HAC_NW6| > 1.65 at any horizon
+**N_tests added:** +8 (2 signal variants × 4 horizons) per pair → +16 total for 2 pairs
+
+Status: PENDING (waiting for data)
 
 ---
 
 ## TASK 4 — EUR/GBP BREAKOUT CORRELATION
 
-Status: PENDING
+**Metric:** P(same breakout direction on same day) for EUR/USD and GBP/USD
+**Interpretation threshold:** > 75% same = dual-pair confirmation is mostly cosmetic
+**N_tests added:** 0 (diagnostic, not an independent signal)
+
+Status: PENDING (waiting for data)
 
 ---
 
 ## TASK 5 — IC FEASIBILITY ANGLE B (News-Fade)
 
-Status: PENDING
+**Signal:** -sign(spike) at T+5min after NFP/CPI/FOMC/ECB (hardcoded calendar 2020–2024)
+**Events:** NFP (60), CPI (60), FOMC (~40), ECB (~40) = ~200 event-dates
+**Horizons:** 15min, 30min, 1h, 2h after entry
+**Gate:** N > 150 observations, |t_HAC_NW6| > 1.65
+**N_tests added:** +4 horizons × 2 pairs = +8 for Angle B; pooled: +4
+
+Status: PENDING (waiting for data)
+
+---
+
+## N_TESTS ACCOUNTING
+
+| Source | Count |
+|---|---|
+| Baseline (NQ iter_10) | 142 |
+| Angle A Tasks 3+4 (2 variants × 4 horizons × 2 pairs) | +16 |
+| Angle B Task 5 (4 horizons × 2 pairs) | +8 |
+| **FX Phase 1.5 total** | **166** |
+
+*FX Phase 2 tests will start at N=167.*
 
 ---
 
 ## TASK 6 — SYNTHESIS
 
-Status: PENDING
+Status: PENDING (waiting for Tasks 3–5)
+
+**Decision criteria:**
+- GO A: Angle A t_HAC > 1.65 on any horizon for any pair
+- GO B: Angle B t_HAC > 1.65 on any horizon for any pair  
+- GO BOTH: both pass
+- STOP: both fail → archive FX ORB/news-fade, pivot to alternative
 
 ---
-
-*N_tests counter updated after Tasks 3+5 complete.*
