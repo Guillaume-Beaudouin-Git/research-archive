@@ -1300,9 +1300,10 @@ Pre-flight event-count checks must gate both floor (too sparse → underpowered 
 - 6.37 CS-FS (cross-sectional funding spread, delta-neutral): SKIP (IC t=1.54, below gate t>2.5)
 - 6.38 FRA-DN (funding rate acceleration, delta-neutral): SKIP (IC t=1.01, unstable: 2024 IC=+0.051 vs 2025 IC=−0.061)
 - 6.39 PMR (perp-spot basis mean-reversion, threshold event-driven): SKIP (IC t=2.86 at 3d PASS, but 912 events/year at 1.5σ → 97%/yr cost drag → Sharpe=−0.55, MaxDD=−65%. Signal real, strategy unexploitable at retail taker fees. See `Crypto/research/archived/other/pmr_basis/POSTMORTEM.md`)
+- 6.40–6.42 OAGF (open auction gap fade at 8h settlement bars, Binance 1h perp, maker ALO): SKIP (IC_daily=−0.189 at 1h, direction correct, but t_HAC=−1.17 — gate −2.5. Root cause: 128 events/year at 0.30% threshold too sparse; reaching t=−2.5 requires ~10 years data. HL candle API has only ~7 months of history. See `Crypto/research/archived/other/oagf/POSTMORTEM.md`)
 
-**N_tests cumulative: 148** (prior 142 + 5 pre-flight IC tests + 1 PMR backtest)
-**E[max_SR] at N=148: ≈ 4.33** (AMTP threshold for future strategies)
+**N_tests cumulative: 151** (prior 148 + 3 OAGF IC horizons)
+**E[max_SR] at N=151: ≈ 4.34** (AMTP threshold for future strategies)
 
 **Extended structural finding** (confirmed across 39 signals): In crypto, all free-data standalone strategies are either:
 1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout) — work in bull, fail in bear, corr > 0.4
