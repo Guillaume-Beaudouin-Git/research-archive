@@ -1,0 +1,45 @@
+{
+  "date": "2026-05-22",
+  "data_source": "Binance 1h perp (HL candle API limited to ~7 months)",
+  "gap_threshold": 0.003,
+  "n_coins": 29,
+  "n_settlement_bars": 75870,
+  "n_triggered": 304,
+  "events_per_year": 127.6,
+  "ic_results": {
+    "1h": {
+      "ic_pooled": -0.19508,
+      "ic_daily_mean": -0.188767,
+      "t_hac": -1.166326,
+      "n_bars": 304,
+      "n_daily": 21,
+      "pass": 0
+    },
+    "2h": {
+      "ic_pooled": -0.087291,
+      "ic_daily_mean": -0.160287,
+      "t_hac": -1.015657,
+      "n_bars": 304,
+      "n_daily": 21,
+      "pass": 0
+    },
+    "4h": {
+      "ic_pooled": -0.084001,
+      "ic_daily_mean": -0.101618,
+      "t_hac": -0.613226,
+      "n_bars": 304,
+      "n_daily": 21,
+      "pass": 0
+    }
+  },
+  "corr_a": 0.055,
+  "corr_b": null,
+  "gates": {
+    "Event count floor": true,
+    "IC t_HAC \u2264 \u22122.5 (1h)": false,
+    "|corr(A)| < 0.50": true,
+    "|corr(B)| < 0.50": true
+  },
+  "verdict": "FAIL",
+  "n_tests": 151
+}
