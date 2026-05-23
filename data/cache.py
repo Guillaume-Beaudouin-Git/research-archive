@@ -370,8 +370,10 @@ def get_cached_or_fetch_http(
         log.info("Cache stale (%.2fd > %.2fd) — refetching %s", age_d, max_age_days, url[:60])
 
     import urllib.request
+    _UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
     try:
-        with urllib.request.urlopen(url, timeout=30) as resp:
+        req = urllib.request.Request(url, headers={"User-Agent": _UA})
+        with urllib.request.urlopen(req, timeout=30) as resp:
             raw = resp.read()
     except Exception as exc:
         log.warning("HTTP fetch failed for %s: %s — returning empty DataFrame", url[:60], exc)
