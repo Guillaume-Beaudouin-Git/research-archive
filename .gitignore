@@ -39,13 +39,13 @@ Crypto/research/active/_preflight/cache/
 Crypto/research/active/vrp_short_gamma/data/
 
 # Archived research data directories (binary market data, not for tracking)
-Crypto/research/archived/*/data/
-Forex/research/archived/*/data/
-Futures/research/archived/*/data/
-Equities/research/archived/*/data/
-Commodities/research/archived/*/data/
-ETF_Vol/research/archived/*/data/
-Multi_Asset/research/archived/*/data/
+Crypto/research/archived/**/data/
+Forex/research/archived/**/data/
+Futures/research/archived/**/data/
+Equities/research/archived/**/data/
+Commodities/research/archived/**/data/
+ETF_Vol/research/archived/**/data/
+Multi_Asset/research/archived/**/data/
 
 # Active research data caches (intermediate, reproducible)
 Commodities/research/active/*/data/
