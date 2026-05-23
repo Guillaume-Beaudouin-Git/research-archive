@@ -1,3 +1,12 @@
 {
-  "tested_hypotheses": []
+  "tested_hypotheses": [
+    {
+      "source_md": "quantocracy_the_skip_month_mystery_what_last_month_s_returns_a_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "SkipMonthHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_skip_month_mystery_what_last_month_s_returns_2026-05-24_report.md",
+      "stopped_at": "A"
+    }
+  ]
 }

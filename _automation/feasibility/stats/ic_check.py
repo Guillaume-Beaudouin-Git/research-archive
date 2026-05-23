@@ -18,6 +18,7 @@ def cross_sectional_ic(
     signal: pd.DataFrame,
     forward_returns: pd.DataFrame,
     method: str = "spearman",
+    min_assets: int = 2,
 ) -> pd.Series:
     """
     Compute cross-sectional IC per date.
@@ -31,11 +32,15 @@ def cross_sectional_ic(
         forward_returns.loc[t] = return from t to t+h.
     method : str
         Rank correlation: 'spearman' (default) or 'pearson'.
+    min_assets : int
+        Minimum number of valid (non-NaN) assets per date to compute IC (default 2).
+        Set to 5 for large cross-sectional universes (N ≥ 30). Use 2 for small
+        universes (e.g. BTC/ETH/SOL only).
 
     Returns
     -------
     pd.Series
-        Time series of IC values (one per date). NaN when fewer than 5 valid assets.
+        Time series of IC values (one per date). NaN when fewer than min_assets valid.
     """
     common_dates = signal.index.intersection(forward_returns.index)
     sig = signal.loc[common_dates]
@@ -46,11 +51,15 @@ def cross_sectional_ic(
         s_row = sig.loc[date]
         r_row = fwd.loc[date]
         valid = s_row.notna() & r_row.notna()
-        if valid.sum() < 5:
+        if valid.sum() < min_assets:
             ic_vals.append(np.nan)
             continue
         s_v = s_row[valid].values
         r_v = r_row[valid].values
+        # Constant input → correlation undefined; skip this date
+        if np.all(s_v == s_v[0]) or np.all(r_v == r_v[0]):
+            ic_vals.append(np.nan)
+            continue
         if method == "spearman":
             ic, _ = stats.spearmanr(s_v, r_v)
         elif method == "pearson":
@@ -96,6 +105,7 @@ def level_A_gate(
     forward_returns: pd.DataFrame,
     ic_threshold: float = 0.05,
     t_threshold: float = 2.5,
+    min_assets: int = 2,
 ) -> dict:
     """
     Niveau A complete gate: compare baseline vs variant signal via delta-IC.
@@ -129,8 +139,8 @@ def level_A_gate(
         n_dates      : int  (valid delta IC observations)
         verdict      : 'PASS' | 'FAIL_DELTA' | 'FAIL_TSTAT' | 'FAIL_SAMPLE'
     """
-    ic_base = cross_sectional_ic(signal_baseline, forward_returns)
-    ic_var = cross_sectional_ic(signal_variant, forward_returns)
+    ic_base = cross_sectional_ic(signal_baseline, forward_returns, min_assets=min_assets)
+    ic_var = cross_sectional_ic(signal_variant, forward_returns, min_assets=min_assets)
 
     common = ic_base.index.intersection(ic_var.index)
     delta_ic = (ic_var.loc[common] - ic_base.loc[common]).rename("delta_ic")

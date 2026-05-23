@@ -1,4 +1,9 @@
 {
-  "last_run": null,
-  "processed_promising": {}
+  "last_run": "2026-05-24",
+  "processed_promising": {
+    "quantocracy_the_skip_month_mystery_what_last_month_s_returns_a_20260523.md": {
+      "verdict": "FAIL_A",
+      "report": "_automation/feasibility/tested/quantocracy_the_skip_month_mystery_what_last_month_s_returns_2026-05-24_report.md"
+    }
+  }
 }
