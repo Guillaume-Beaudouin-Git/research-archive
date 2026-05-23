@@ -245,6 +245,54 @@ Forex/research/active/<slug>/
 
 Bootstrap complet. Les 4 stratégies FX archivées échouent toutes sur des causes structurelles distinctes (carry crash risk, momentum mort post-publication CB, peso problem EM). Les 3 angles proposés sont structurellement différents des archivés : orientation intraday (pas weekly/monthly), sizing fixed fractional (pas L/S carry pur), hit rate > 45% comme contrainte primaire.
 
-**Recommandation** : Commencer par Angle A (London Open Breakout) — analogie la plus directe avec Strategy C (NQ ORB, RESEARCH_PASS validé), edge économique défendable, données Dukascopy 1min gratuites disponibles.
+**Recommandation initiale** : Angle A (London Open Breakout). Testé → MORT. Voir section "Archived Hypotheses" ci-dessous.
 
-**GATE 0 : STOP. Attendre "GO PHASE 1" explicite.**
+**GATE 0 : STOP initial → Angle A testé et archivé. Phase 1 Redo en cours.**
+
+---
+
+## N_tests Tracking — FX Research
+
+| Phase | Tests | Running total |
+|-------|-------|---------------|
+| NQ iter_10 baseline | 142 | 142 |
+| Phase 1.5 — Angle A (4 horizons × 2 variants × 2 pairs) | 16 | 158 |
+| Phase 1.5 — Angle B (4 horizons × 2 pairs) | 8 | 166 |
+| Phase 1.5 — Dual-pair correlation (2 variants) | 2 | 168 |
+| Phase 1.5 — Data quality variants (v1 + v2) | 2 | 170 |
+| **TOTAL après archive ORB v1** | **+28** | **170** |
+
+N_tests courant FX: **170**. Les tests futurs partent de 171.
+
+---
+
+## Archived Hypotheses (FX)
+
+### ORB v1 — London ORB + News-Fade (Phase 1.5, 2026-05-22 → 2026-05-23)
+
+**Hypothèse A (Angle A)** : Asian range (00:00-07:00 UTC) breakout at London open. EUR/USD + GBP/USD, 2 signal variants (close-based, hl-based), 4 horizons (1h, 2h, 4h, session-end).
+
+**Résultats** :
+- Meilleur IC momentum : GBPUSD hl-based 1h, IC=+0.055, t_HAC=+1.01 — below gate (t > 1.65)
+- Signal statistiquement significatif trouvé : EURUSD 4h IC=-0.102, t=-2.45 — MAUVAISE DIRECTION (reversal, pas momentum)
+- Corrélation EUR/GBP breakouts : 95.5% même direction → confirmation dual-pair cosmétique
+
+**Hypothèse B (Angle B)** : News-fade après NFP/ECB/FOMC/BOE. N=130 (EURUSD), N=118 (GBPUSD) — below gate.
+
+**Raison mort** : IC momentum trop faible pour survivre aux coûts (t < 1.0 sur tous horizons/paires sauf GBP 1h t=1.01). Le vrai signal détecté est une reversal à 4h non exploitable sans nouveau test. N_tests : +28.
+
+**Archive** : `Forex/research/archived/london_orb_v1/POSTMORTEM.md`
+
+---
+
+## Phase 1 Redo — 3 Nouveaux Candidats
+
+Suite à l'échec ORB v1, 3 nouveaux candidats générés avec :
+- Mécanisme documenté académiquement (sources vérifiées web)
+- Structurellement distincts de l'ORB
+- Testables avec EUR/USD + GBP/USD 1-min 2020-2024 (données sur disque)
+- Fréquence 30-100 trades/an justifiée
+
+Voir : `Forex/research/active/_phase1_candidates.md`
+
+**GATE 1 : Attendre sélection candidat explicite dans _phase1_candidates.md.**
