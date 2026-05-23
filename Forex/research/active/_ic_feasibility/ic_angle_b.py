@@ -225,7 +225,9 @@ def main():
             continue
 
         obs = compute_event_observations(df, pair)
-        obs = obs.dropna(subset=[f"ret_{m}m" for m in HORIZONS_MIN])
+        ret_cols = [f"ret_{m}m" for m in HORIZONS_MIN]
+        present = [c for c in ret_cols if c in obs.columns]
+        obs = obs.dropna(subset=present) if present else pd.DataFrame()
         N = len(obs)
         print(f"  Total news events processed: {len(NEWS_EVENTS)}")
         print(f"  Observations with spike + returns: {N}")

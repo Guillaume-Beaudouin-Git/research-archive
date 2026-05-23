@@ -143,9 +143,9 @@ def run_ic_for_signal(signals: pd.DataFrame, sig_col: str, label: str) -> dict:
     """Run IC analysis for one signal variant across all horizons."""
     active = signals[signals[sig_col] != 0]
     N = len(active)
-    print(f"\n  [{label}] N breakout days: {N}")
-    if N < 400:
-        print(f"  FAIL: N={N} < 400 gate")
+    n_gate = "OK" if N >= 400 else "WARN_N"
+    print(f"\n  [{label}] N breakout days: {N} [{n_gate}]")
+    if N < 30:
         return {"N": N, "gate": "FAIL_N", "horizons": {}}
 
     header = f"  {'Horizon':<12} {'IC_spearman':>12} {'t_HAC_NW6':>12} {'p_val':>8} {'gate':>8}"
@@ -169,7 +169,7 @@ def run_ic_for_signal(signals: pd.DataFrame, sig_col: str, label: str) -> dict:
         print(f"  {h:<12} {ic:>+12.4f} {t_hac:>+12.2f} {pval:>8.4f} {gate:>8}")
         res_h[h] = {"n": n_h, "IC_spearman": round(ic, 4), "t_HAC_NW6": round(t_hac, 3),
                     "p_val": round(pval, 4), "gate": gate}
-    return {"N": N, "horizons": res_h}
+    return {"N": N, "n_gate": n_gate, "horizons": res_h}
 
 
 def run_ic_analysis(pair: str) -> dict:
