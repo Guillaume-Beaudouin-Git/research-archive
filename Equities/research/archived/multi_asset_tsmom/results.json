@@ -1,0 +1,120 @@
+{
+  "monthly": {
+    "signal": "tsmom_12M_monthly",
+    "universe": "10 ETFs",
+    "freq": "monthly",
+    "cost_rt": 0.0005,
+    "period_start": "2005-02-28",
+    "period_end": "2026-04-30",
+    "sharpe": 0.43161411165887525,
+    "max_dd": -0.23119384169977608,
+    "ann_ret": 0.029369298130634696,
+    "avg_gross_lev": 0.6459216280649112,
+    "avg_turnover": 0.16593604531322623,
+    "n_assets": 10,
+    "ic_mean": -0.008556998556998558,
+    "ic_std": 0.46583407404632315,
+    "ic_tstat": -0.29333257627548553,
+    "ic_n": 255,
+    "ic_pct_pos": 0.5098039215686274,
+    "crashes": {
+      "GFC_2008": {
+        "period": "2008-07-01 \u2192 2009-06-30",
+        "sharpe": -0.02,
+        "max_dd": -0.1941,
+        "cum_ret": -0.0162,
+        "n_obs": 12
+      },
+      "EuroCrisis": {
+        "period": "2011-04-01 \u2192 2012-01-31",
+        "sharpe": -0.51,
+        "max_dd": -0.0965,
+        "cum_ret": -0.0453,
+        "n_obs": 10
+      },
+      "COVID_2020": {
+        "period": "2020-02-01 \u2192 2020-05-31",
+        "sharpe": -1.1,
+        "max_dd": -0.0106,
+        "cum_ret": -0.039,
+        "n_obs": 4
+      },
+      "Inflation22": {
+        "period": "2022-01-01 \u2192 2022-12-31",
+        "sharpe": -0.11,
+        "max_dd": -0.0798,
+        "cum_ret": -0.0163,
+        "n_obs": 12
+      }
+    },
+    "beta": {
+      "alpha_ann": 0.0363,
+      "alpha_t": 2.4,
+      "r2": 0.0171,
+      "resid_sharpe": 0.539,
+      "n_months": 255,
+      "beta_SPY": -0.055,
+      "beta_SPY_t": -1.88,
+      "beta_AGG": -0.043,
+      "beta_AGG_t": -0.44
+    },
+    "gate": "PASS"
+  },
+  "weekly": {
+    "signal": "tsmom_52W_weekly",
+    "universe": "10 ETFs",
+    "freq": "weekly",
+    "cost_rt": 0.0005,
+    "period_start": "2005-01-07",
+    "period_end": "2026-05-15",
+    "sharpe": 0.37412406804607845,
+    "max_dd": -0.23752543766475598,
+    "ann_ret": 0.028599838895879935,
+    "avg_gross_lev": 0.6225895828676895,
+    "avg_turnover": 0.08041946233498433,
+    "n_assets": 10,
+    "ic_mean": 0.012856811926628157,
+    "ic_std": 0.4700694617697439,
+    "ic_tstat": 0.9132899668625477,
+    "ic_n": 1115,
+    "ic_pct_pos": 0.5121076233183857,
+    "crashes": {
+      "GFC_2008": {
+        "period": "2008-07-01 \u2192 2009-06-30",
+        "sharpe": 0.41,
+        "max_dd": -0.1938,
+        "cum_ret": 0.0692,
+        "n_obs": 52
+      },
+      "EuroCrisis": {
+        "period": "2011-04-01 \u2192 2012-01-31",
+        "sharpe": -0.92,
+        "max_dd": -0.0809,
+        "cum_ret": -0.0578,
+        "n_obs": 44
+      },
+      "COVID_2020": {
+        "period": "2020-02-01 \u2192 2020-05-31",
+        "sharpe": -2.47,
+        "max_dd": -0.1132,
+        "cum_ret": -0.1034,
+        "n_obs": 17
+      },
+      "Inflation22": {
+        "period": "2022-01-01 \u2192 2022-12-31",
+        "sharpe": -0.29,
+        "max_dd": -0.0829,
+        "cum_ret": -0.029,
+        "n_obs": 52
+      }
+    },
+    "gate": "WEAK"
+  },
+  "rolling_correlation": {
+    "n_pairs": 45,
+    "window": 12,
+    "mean_rolling_corr": 0.273,
+    "max_rolling_corr": 0.946,
+    "diversified": true
+  }
+}
