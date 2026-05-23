@@ -247,7 +247,7 @@ def monitor_position(
             exit_price  = None
             if flat_result is not None:
                 # MT5: flat_result is {'ticket': int}; IBKR: Trade object
-                ticket = (flat_result.get("ticket") if isinstance(flat_result, dict)
+                ticket = (flat_result.get("orderId") if isinstance(flat_result, dict)
                           else flat_result)
                 exit_price = client.wait_for_fill(ticket, timeout_secs=30)
             if exit_price is None:
