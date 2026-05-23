@@ -1,0 +1,271 @@
+{
+  "best_combo": "B+C",
+  "scores": {
+    "A": 0.23177722805643738,
+    "B": 0.5354431631220345,
+    "C": 0.42242257433221836
+  },
+  "variants": {
+    "Baseline VT": {
+      "sharpe": 0.516,
+      "max_dd": -0.1869,
+      "ann_ret": 0.0507,
+      "ann_vol": 0.0982,
+      "n_months": 252,
+      "alpha_ann": 0.0595,
+      "alpha_t": 2.7,
+      "beta_SPY": -0.031,
+      "beta_AGG": -0.186,
+      "r2": 0.0114,
+      "resid_sharpe": 0.609,
+      "dsr_actual": {
+        "n_tests": 58,
+        "dsr_pvalue": 0.4902,
+        "dsr_pass": false
+      },
+      "dsr_58": {
+        "n_tests": 58,
+        "dsr_pvalue": 0.4902,
+        "dsr_pass": false
+      },
+      "crashes": {
+        "GFC_2008": {
+          "sharpe": 0.52,
+          "max_dd": -0.1068,
+          "cum_ret": 0.0682,
+          "n_obs": 12
+        },
+        "EuroCrisis": {
+          "sharpe": -1.18,
+          "max_dd": -0.16,
+          "cum_ret": -0.13,
+          "n_obs": 10
+        },
+        "COVID_2020": {
+          "sharpe": -1.18,
+          "max_dd": -0.0081,
+          "cum_ret": -0.044,
+          "n_obs": 4
+        },
+        "Inflation22": {
+          "sharpe": 0.1,
+          "max_dd": -0.0753,
+          "cum_ret": 0.006,
+          "n_obs": 12
+        }
+      }
+    },
+    "Overlay A": {
+      "sharpe": 0.444,
+      "max_dd": -0.4778,
+      "ann_ret": 0.0737,
+      "ann_vol": 0.1661,
+      "n_months": 254,
+      "alpha_ann": 0.0913,
+      "alpha_t": 2.47,
+      "beta_SPY": -0.123,
+      "beta_AGG": -0.163,
+      "r2": 0.0167,
+      "resid_sharpe": 0.555,
+      "dsr_actual": {
+        "n_tests": 59,
+        "dsr_pvalue": 0.613,
+        "dsr_pass": false
+      },
+      "dsr_58": {
+        "n_tests": 58,
+        "dsr_pvalue": 0.6106,
+        "dsr_pass": false
+      },
+      "crashes": {
+        "GFC_2008": {
+          "sharpe": -0.03,
+          "max_dd": -0.404,
+          "cum_ret": -0.0827,
+          "n_obs": 12
+        },
+        "EuroCrisis": {
+          "sharpe": -0.69,
+          "max_dd": -0.2319,
+          "cum_ret": -0.144,
+          "n_obs": 10
+        },
+        "COVID_2020": {
+          "sharpe": -1.01,
+          "max_dd": -0.0193,
+          "cum_ret": -0.0937,
+          "n_obs": 4
+        },
+        "Inflation22": {
+          "sharpe": -0.11,
+          "max_dd": -0.1967,
+          "cum_ret": -0.0583,
+          "n_obs": 12
+        }
+      }
+    },
+    "Overlay B": {
+      "sharpe": 0.623,
+      "max_dd": -0.14,
+      "ann_ret": 0.0526,
+      "ann_vol": 0.0844,
+      "n_months": 254,
+      "alpha_ann": 0.043,
+      "alpha_t": 2.29,
+      "beta_SPY": 0.084,
+      "beta_AGG": 0.031,
+      "r2": 0.0236,
+      "resid_sharpe": 0.516,
+      "dsr_actual": {
+        "n_tests": 60,
+        "dsr_pvalue": 0.3008,
+        "dsr_pass": false
+      },
+      "dsr_58": {
+        "n_tests": 58,
+        "dsr_pvalue": 0.2963,
+        "dsr_pass": false
+      },
+      "crashes": {
+        "GFC_2008": {
+          "sharpe": 0.68,
+          "max_dd": -0.0777,
+          "cum_ret": 0.0826,
+          "n_obs": 12
+        },
+        "EuroCrisis": {
+          "sharpe": -0.98,
+          "max_dd": -0.1282,
+          "cum_ret": -0.0781,
+          "n_obs": 10
+        },
+        "COVID_2020": {
+          "sharpe": -4.01,
+          "max_dd": -0.017,
+          "cum_ret": -0.0381,
+          "n_obs": 4
+        },
+        "Inflation22": {
+          "sharpe": 0.11,
+          "max_dd": -0.0357,
+          "cum_ret": 0.0063,
+          "n_obs": 12
+        }
+      }
+    },
+    "Overlay C": {
+      "sharpe": 0.52,
+      "max_dd": -0.1869,
+      "ann_ret": 0.05,
+      "ann_vol": 0.0963,
+      "n_months": 252,
+      "alpha_ann": 0.0606,
+      "alpha_t": 2.81,
+      "beta_SPY": -0.033,
+      "beta_AGG": -0.234,
+      "r2": 0.0172,
+      "resid_sharpe": 0.634,
+      "dsr_actual": {
+        "n_tests": 61,
+        "dsr_pvalue": 0.4907,
+        "dsr_pass": false
+      },
+      "dsr_58": {
+        "n_tests": 58,
+        "dsr_pvalue": 0.4836,
+        "dsr_pass": false
+      },
+      "crashes": {
+        "GFC_2008": {
+          "sharpe": 0.52,
+          "max_dd": -0.1068,
+          "cum_ret": 0.0682,
+          "n_obs": 12
+        },
+        "EuroCrisis": {
+          "sharpe": -1.18,
+          "max_dd": -0.16,
+          "cum_ret": -0.13,
+          "n_obs": 10
+        },
+        "COVID_2020": {
+          "sharpe": -1.18,
+          "max_dd": -0.0081,
+          "cum_ret": -0.044,
+          "n_obs": 4
+        },
+        "Inflation22": {
+          "sharpe": 0.42,
+          "max_dd": -0.032,
+          "cum_ret": 0.0362,
+          "n_obs": 12
+        }
+      }
+    },
+    "Combined B+C": {
+      "sharpe": 0.666,
+      "max_dd": -0.14,
+      "ann_ret": 0.0544,
+      "ann_vol": 0.0818,
+      "n_months": 254,
+      "alpha_ann": 0.0434,
+      "alpha_t": 2.4,
+      "beta_SPY": 0.087,
+      "beta_AGG": 0.068,
+      "r2": 0.0298,
+      "resid_sharpe": 0.539,
+      "dsr_actual": {
+        "n_tests": 62,
+        "dsr_pvalue": 0.2375,
+        "dsr_pass": false
+      },
+      "dsr_58": {
+        "n_tests": 58,
+        "dsr_pvalue": 0.2297,
+        "dsr_pass": false
+      },
+      "crashes": {
+        "GFC_2008": {
+          "sharpe": 0.68,
+          "max_dd": -0.0777,
+          "cum_ret": 0.0826,
+          "n_obs": 12
+        },
+        "EuroCrisis": {
+          "sharpe": -0.98,
+          "max_dd": -0.1282,
+          "cum_ret": -0.0781,
+          "n_obs": 10
+        },
+        "COVID_2020": {
+          "sharpe": -4.01,
+          "max_dd": -0.017,
+          "cum_ret": -0.0381,
+          "n_obs": 4
+        },
+        "Inflation22": {
+          "sharpe": 0.16,
+          "max_dd": -0.0183,
+          "cum_ret": 0.0088,
+          "n_obs": 12
+        }
+      }
+    }
+  },
+  "eurocrisis": {
+    "period": "2011-04-01 \u2192 2012-01-31",
+    "top_drag_assets": {
+      "EEM": -0.0285,
+      "IWM": -0.0246,
+      "EFA": -0.0204
+    },
+    "top_lift_assets": {
+      "GLD": 0.0119,
+      "IEF": 0.0108
+    },
+    "peak_avg_pairwise_corr": 0.322,
+    "peak_corr_date": "2011-01-03",
+    "months_corr_above_0.50": 0,
+    "months_corr_above_0.65": 0
+  }
+}
