@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
-**Last updated**: May 22, 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 82 signals/variants tested — Strategy C = NQ ORB iter_10 (Sharpe 1.52, RESEARCH_PASS, paper trade phase pending TWS)
+**Last updated**: May 23, 2026  
+**Status**: 3 strategies validated (A TSMOM Sharpe 1.13 OOS, B delta-neutral carry, C NQ ORB Sharpe 1.52), **321 signals/variants tested** (crypto 157 + NQ/futures ~148 + FX ~85 + equities/ETF 82 + options 1), Strategy C Tradeify paper trade in progress
 
 ---
 
@@ -1309,9 +1309,9 @@ Pre-flight event-count checks must gate both floor (too sparse → underpowered 
 
 ---
 
-### 6.50 Saturation Summary — 156 Tests, 3 Missions, 4 Archived Families
+### 6.50 Saturation Summary — 157 Tests, 4 Missions, 5 Archived Families
 
-Between January 2026 and May 2026, this research program ran **156 hypothesis tests** across three sequential missions on crypto perpetual futures and options, mapping the extractable alpha available to a systematic retail trader using exclusively public APIs. Methodology throughout: excess returns over cash rate, HAC Newey-West SE (lag-6), walk-forward validation (≥5 folds, 18m train / 6m test / 3m step), multiple-testing correction (AMTP/DSR per López de Prado 2018), and explicit stress tests on tail events.
+Between January 2026 and May 2026, this research program ran **157 hypothesis tests** across four sequential missions on crypto perpetual futures and options, mapping the extractable alpha available to a systematic retail trader using exclusively public APIs. Methodology throughout: excess returns over cash rate, HAC Newey-West SE (lag-6), walk-forward validation (≥5 folds, 18m train / 6m test / 3m step), multiple-testing correction (AMTP/DSR per López de Prado 2018), and explicit stress tests on tail events.
 
 The structural conclusion is that **free-data retail alpha on 29-coin Binance/HL perpetuals is exhausted**: every remaining candidate edge requires either institutional execution access (options market-maker rebates, maker fills at sustained scale) or paid proprietary data sources. One live strategy was extracted (Strategy A — TSMOM v3, OOS Sharpe 1.33) and one is in testnet validation (Strategy B — delta-neutral 8h carry, proxy Sharpe 2.0). Limitations: data gap in Deribit DVOL pre-2021 constrains VRP analysis to the post-DeFi-summer period; Phase 2 IC sub-period stability (33% of years positive) suggests potential regime shift post-ETF approval; all costs assume taker execution (no rebate access).
 
@@ -1551,7 +1551,11 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 ### Prop firm expansion
 6. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences: trailing HWM (harder to recover), 5% daily limit (more survivable on crash days), scaling plan available. **Priority #2** given the 39% Propr ceiling.
 
-> **n_tests counter**: **82** as of May 2026 (53 crypto + 4 FX + 5 multi-asset variants + 1 methodology audit + 1 NQ ORB SPY proxy + 1 NQ ORB 5-min + 1 NQ ORB 1-min + 3 VIX term carry variants + 3 Gatev pairs variants + 4 commodity TSMOM variants + 4 sector reversal variants = 82 total). Walk-forward windows and feasibility validation are NOT separate trials. DSR renamed → `approx_multi_test_penalty` (honest naming).
+> **n_tests counter (equities/ETF/options)**: **83** as of May 2026 (82 equities/ETF + 1 Options_Vol SPX VRP Angle C IC test). Breakdown: 53 crypto-era equities + 4 FX + 5 multi-asset variants + 1 methodology audit + 1 NQ ORB SPY proxy + 1 NQ ORB 5-min + 1 NQ ORB 1-min + 3 VIX term carry variants + 3 Gatev pairs variants + 4 commodity TSMOM variants + 4 sector reversal variants + 1 SPX VRP conditional IC = 83. Walk-forward windows and feasibility validation are NOT separate trials. DSR renamed → `approx_multi_test_penalty` (honest naming).
+
+### Options_Vol — SPX VRP Angle C — ARCHIVED (2026-05-23)
+
+Short ATM straddle conditional on VIX_z > 1.0. Phase 1 IC FAIL: conditional IC = −0.009, t_HAC = −0.144 (gate: t > 3.5). 2020–2025 sub-period mean outcome = −70.78 variance pts (COVID + 2022 inflation regime). Root cause: conditioning on elevated VIX selects exact tail-risk windows where RV > IV. Static VRP exists (unconditional IC = +0.152, t = 3.671) but is a different untested hypothesis. `Options_Vol/research/archived/vrp_spx_angle_c/`. n_tests = 321 global.
 
 ### Two-tier validation framework (effective May 2026)
 
