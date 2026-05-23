@@ -83,9 +83,9 @@
 8. Excess returns + HAC lag-6 + daily vol targeting mandatory.
 9. Crypto fees 0.17% RT | futures ~0.01% RT | equities 0.05-0.10% RT.
 10. 3 modifications maximum per strategy to avoid overfitting.
-11. IC significance ≠ backtest viability. Daily-rebalanced equity swing signals need IC > 0.10 at 0.10% RT or IC > 0.06 at 0.01% RT to clear RESEARCH_PASS Sharpe 0.70. Spearman IC systematically overstates linear P&L (actual gross SR ≈ 35–40% of Grinold-Kahn). Run cost-adjusted IC gate before investing in full backtest.
-11. FX carry IC is regime-dependent: 2005-2007 pre-GFC boom drives all positive carry IC in G10. Always check per-decade IC breakdown before calling carry feasible.
-12. BIS trade-weighted REER ≠ bilateral USD valuation: unsuitable as carry signal modifier for USD-base FX positions.
+11. IC → net Sharpe translation requires turnover-aware cost gate, NOT IC threshold alone. Empirical translation factor: SR_real / (IC × √breadth × σ_target) ≈ 0.35–0.45 (Israel-Jiang-Ross 2017, "Craftsmanship Alpha"). Before launching a full backtest: (1) expected_gross_alpha ≈ 0.40 × IC × √breadth × σ_target; (2) expected_cost_drag = avg_turnover_per_year × cost_per_RT; (3) require gross_alpha > 3 × cost_drag. Daily-rebal ETF signals (0.10% RT): require IC > 0.08. Daily-rebal futures (0.01% RT): require IC > 0.04. Monthly-rebal (breadth ~12): cost gate essentially absent.
+12. FX carry IC is regime-dependent: 2005-2007 pre-GFC boom drives all positive carry IC in G10. Always check per-decade IC breakdown before calling carry feasible.
+13. BIS trade-weighted REER ≠ bilateral USD valuation: unsuitable as carry signal modifier for USD-base FX positions.
 
 ## Methodology toolkit
 - **Significance**: HAC lag-6 (Newey-West) t-stat, threshold t > 2.5 for IC feasibility
