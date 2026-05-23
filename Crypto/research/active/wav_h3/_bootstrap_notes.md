@@ -78,28 +78,29 @@ GET https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia
 
 ### 3.2 BTC/Altcoin Price — Yahoo Finance
 
-For altcoin prices: `yfinance.download(['{TOKEN}-USD', ...], start='2018-01-01', auto_adjust=True)`. BTC-USD already cached from FGVD mission at `Crypto/research/archived/other/fgvd_h1/data/btc_price_raw.parquet` (reuse).
+Priority order (FIX 4):
+1. **yfinance** `{TOKEN}-USD`, `start='2018-01-01'`, `auto_adjust=True` — fast, cached via `data/cache.py`
+2. **Binance REST API** `GET /api/v3/klines?symbol={TOKEN}USDT&interval=1d` — if yfinance returns < 365 days or raises an error. Self-contained fetcher in `fetch_data.py` (no shared helper exists for Binance).
+3. **Exclude** token if Binance also returns < 365 days.
 
-**Issue with yfinance altcoin coverage**: Some tokens may have incomplete history or incorrect data on yfinance. If yfinance fails for a token:
-- Primary: try `{TOKEN}-USDT` pair (some tokens only have USDT pairs)
-- Fallback: skip token (exclude from universe)
+BTC-USD already cached from FGVD mission at `Crypto/research/archived/other/fgvd_h1/data/btc_price_raw.parquet` (reuse for orthogonality TSMOM computation).
 
-Validate: drop tokens where yfinance returns < 365 days of history before the analysis window.
+**Validation**: drop tokens where the best available source returns < 365 days of history. The min_wiki_days=730 filter is the binding constraint in practice (Wikipedia history is shorter than price history for newer tokens).
 
 ### 3.3 Universe: Token → Wikipedia Article Mapping
 
-**Pre-registered mapping** (40 tokens identified with high-confidence Wikipedia articles):
+**Pre-registered mapping** (38 tokens — SAND and GRT pre-excluded; see FIX 2):
 
 | Ticker | Wikipedia Article | Notes |
 |--------|------------------|-------|
 | SOL | `Solana_(blockchain_platform)` | Confirmed exists |
-| BNB | `BNB_(cryptocurrency)` | Check disambiguation |
-| XRP | `XRP_(cryptocurrency)` | Formerly Ripple, article renamed |
+| BNB | `BNB_(cryptocurrency)` | Runtime-test: if 404 or redirect broken → exclude |
+| XRP | `XRP_(cryptocurrency)` | Runtime-test: article renamed from "Ripple"; if 404 → exclude |
 | ADA | `Cardano_(blockchain_platform)` | Confirmed exists |
 | AVAX | `Avalanche_(blockchain_platform)` | Likely exists |
 | DOGE | `Dogecoin` | Confirmed exists |
 | DOT | `Polkadot_(cryptocurrency)` | Confirmed exists |
-| MATIC/POL | `Polygon_(blockchain)` | Confirmed exists |
+| MATIC | `Polygon_(blockchain)` | Confirmed exists |
 | TRX | `TRON_(cryptocurrency)` | Confirmed exists |
 | LINK | `Chainlink_(blockchain)` | Confirmed exists |
 | LTC | `Litecoin` | Confirmed exists |
@@ -107,8 +108,8 @@ Validate: drop tokens where yfinance returns < 365 days of history before the an
 | BCH | `Bitcoin_Cash` | Confirmed exists |
 | XLM | `Stellar_(payment_network)` | Confirmed exists |
 | ATOM | `Cosmos_(blockchain)` | Confirmed exists |
-| SUI | `Sui_(cryptocurrency)` | Check if exists |
-| APT | `Aptos_(blockchain)` | Check if exists |
+| SUI | `Sui_(cryptocurrency)` | Short history — likely fails min_wiki_days=730 filter |
+| APT | `Aptos_(blockchain)` | Short history — likely fails min_wiki_days=730 filter |
 | NEAR | `NEAR_Protocol` | Confirmed exists |
 | FIL | `Filecoin` | Confirmed exists |
 | ICP | `Internet_Computer` | Confirmed exists |
@@ -120,20 +121,26 @@ Validate: drop tokens where yfinance returns < 365 days of history before the an
 | DASH | `Dash_(cryptocurrency)` | Confirmed exists |
 | AXS | `Axie_Infinity` | Confirmed exists |
 | MANA | `Decentraland` | Confirmed exists |
-| SAND | `The_Sandbox_(video_game)` | Check disambiguation |
-| GRT | `The_Graph_(database)` | Check disambiguation |
-| WLD | `Worldcoin` | Probably exists |
+| WLD | `Worldcoin` | Short history — likely fails min_wiki_days=730 filter |
 | BAT | `Basic_Attention_Token` | Confirmed exists |
 | COMP | `Compound_(DeFi_protocol)` | Probably exists |
 | EGLD | `MultiversX` | Check |
-| INJ | `Injective_Protocol` | Probably stub |
+| INJ | `Injective_Protocol` | Probably stub; short history |
 | CRO | `Cronos_(blockchain)` | May not exist |
 | ZIL | `Zilliqa` | Confirmed exists |
 | WAVES | `Waves_(cryptocurrency)` | Confirmed exists |
 | ONT | `Ontology_(blockchain)` | Check |
 | ICX | `ICON_(cryptocurrency)` | Check |
 
-**Auto-validation step in Phase 1**: For each token, fetch a 7-day sample from Wikimedia API. If response is 404 → article doesn't exist → exclude. If avg views < 50/day → too low traffic → exclude. Expected valid universe: 30–45 tokens.
+**Pre-exclusions (FIX 2)**:
+- **SAND**: pre-excluded — `The_Sandbox_(video_game)` article dominated by gaming traffic, not crypto token discovery
+- **GRT**: pre-excluded — `The_Graph_(database)` polluted by computer science searches unrelated to GRT token
+
+**Auto-validation step in Phase 1**: For each token, fetch the full date range from Wikimedia API.
+- If response is 404 → exclude (article doesn't exist or redirect broken)
+- If available history < **730 days** (2 years) → exclude (min_wiki_days=730, FIX 1)
+- If avg views < 50/day over available history → exclude (too noisy, bot-dominated)
+- Expected valid universe after all filters: **25–35 tokens**
 
 **Stablecoins excluded by definition** (USDT, USDC, DAI, BUSD — no price signal).
 **BTC, ETH excluded** per mission spec (too dominant, macro-driven, separate universe from altcoins).
@@ -216,17 +223,19 @@ Three parallel IC tests on same window 2018-01 → 2026-05, cross-sectional (all
 | B | `attention_z(t)` (WAV) | IC < 0 (contrarian) |
 | C | `attention_z(t) - price_velocity_7d_z(t)` (combined) | IC < 0 (enhanced) |
 
-**Decision rules** (pre-registered, same structure as FGVD but adapted for positive attention_z signal):
+**Evaluation order** (all gates pre-registered, evaluated in sequence):
 
-**D1 (Price MR dominates WAV)**: If `|IC_A| ≥ 0.5 × |IC_B|` → Wikipedia attention does not add independent contrarian information beyond price mean-reversion. STOP.
+**LAGGING GATE (pre-IC, fires first)**: Compute `corr(attention_z_t, price_ret_7d_prior_t)` as a panel correlation across all tokens and all dates. If > +0.3 → Wikipedia attention lags price moves → causal direction reversed (price drives curiosity, not discovery drives price). STOP. Lesson L18 candidate: "Wikipedia altcoin pageviews lag price moves in crypto, replicating Kristoufek 2013 bidirectional issue in altcoin context."
 
-**D2 (WAV has independent value)**: If `|IC_B| ≥ 0.3 × |IC_A|` AND `|IC_B| > |IC_A|` → Wikipedia provides independent contrarian signal beyond price MR. PROCEED.
+*Rationale: this is a causal test, not a magnitude test. If attention is lagging, all IC magnitudes are irrelevant — the whole premise is invalid.*
 
-**D3 (Wikipedia void)**: If `|IC_B| < 0.01` → Wikipedia attention has no predictive power at all. STOP.
+**D4 (Wrong direction, momentum proxy)**: If `IC_B > 0` → attention spike predicts continuation → Wikipedia is a momentum proxy. STOP, archive with L18.
 
-**D4 (Wrong direction, momentum proxy)**: If `IC_B > 0` (positive IC = attention spike predicts continuation) → Wikipedia is a momentum proxy, not contrarian. STOP, archive with L18.
+**D1 (Price MR dominates WAV)**: If `|IC_A| ≥ 0.5 × |IC_B|` → price mean-reversion dominates; Wikipedia adds no independent signal. STOP.
 
-**Additional check**: `corr(attention_z, price_ret_7d_prior)` — if > +0.3 on average across tokens → Wikipedia is lagging price → same failure as MVRV → STOP D4.
+**D2 (WAV has independent value — FIX 3)**: If `|IC_B| > |IC_A|` AND `IC_B < -0.05` AND `t_HAC_B < -2.0` → Wikipedia is the dominant signal AND meets the IC magnitude gate. PROCEED.
+
+**D3 (Wikipedia void)**: If `|IC_B| < 0.01` → Wikipedia has no predictive power. STOP.
 
 ---
 
