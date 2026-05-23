@@ -18,20 +18,36 @@
 ## Live strategies snapshot
 
 ### Strategy A — TSMOM v3 propfirm (LIVE on Propr)
-- Signal: tanh(cumret_28d / (vol_28d × sqrt(28))).clip(lower=0)
-- Assets: BTC, ETH, SOL | Rebalance: Monday
+- Signal: tanh(cumret_28d / (vol_28d × sqrt(28))).clip(lower=0) — long-only
+- Vol: log returns, 28-bar window, sqrt(365) annualization (MUST match backtest)
+- Assets: BTC, ETH, SOL | Rebalance: Monday 00:05 UTC
 - Validation: Sharpe 1.33 OOS, MaxDD -6.9%
+- Status: PRODUCTION
 
-### Strategy B — Delta-neutral carry (LIVE on HL testnet)
-- Active pairs: TST + MEGA | Rebalance: every 8h
+### Strategy B — Delta-neutral carry (LIVE on HL testnet since 2026-05-17)
+- Active pairs: TST + MEGA | Rebalance: every 8h (00:10, 08:10, 16:10 UTC)
 - Backtest Sharpe: 4.10, MaxDD: -0.52%
-- Caveat: testnet funding artificial, mainnet deployment pending
+- Cumulative carry to date: ~$16.43 (testnet, artificial rates)
+- Status: EXECUTION-VALIDATED, CARRY-PROXIED (mainnet pending, 60-day live required)
 
-### Strategy C — NQ opening momentum (BACKTEST ONLY, paper imminent)
-- Signal: direction of 09:30-09:45 ORB
-- Filters: VWAP confirmation + gap≤1.2% + opening range≥30pts + $400 SL cap
+### Strategy C — NQ opening momentum iter_10 (BACKTEST ONLY, paper imminent)
+- Signal: direction of 09:30-09:45 ORB, entry at 09:46 ET
+- Filters: VWAP confirmation + gap < 1.2% + opening range ≥ 30pts + $400 SL cap
 - TP: 1.5R | SL: min(0.5R, 20pts) | Time stop: 12:30 ET
-- Backtest: Sharpe 1.52, MaxDD -13.4% rel / -9.5% on $50K, WF 78%, N=346
+- Sizing target: 5-10 /MNQ on $50K (pending block bootstrap P(bust) analysis)
+- Backtest: Sharpe 1.52, MaxDD -13.4% rel / -9.5% on $50K, WF 78% positive (7/9), N=346
+- Cross-validated: ES + YM directionally confirm (60-day yfinance sample)
+- Data: Kaggle NQ 1-min 2022-2025 (Dataset_NQ_1min_2022_2025.csv, gitignored)
+- KNOWN GAP: backtest uses VWAP 1-min, live uses VWAP 5-min — to reconcile before paper start
+- Status: BACKTEST-ONLY, paper infra built, execution not started
+
+  ## Portfolio context
+- A+C theoretical: Sharpe 1.5-1.7, corr(A,C) ≈ 0.015 (validated)
+- A+B+C theoretical: Sharpe 2.24, MaxDD -1.0% (ERC sizing, B backtest-proxied)
+- Two narratives:
+  - Personal book: A (crypto TSMOM) + B (HL delta-neutral, mainnet pending)
+  - Propfirm book: C (NQ momentum) + potential D (decorrelated NQ strategy)
+- Propfirms do NOT accept crypto/delta-neutral → A and B stay personal
 
 ## Repo layout
 - Live code: `strategies/{tsmom_v2_propfirm, delta_neutral}`
@@ -65,3 +81,24 @@
 8. Excess returns + HAC lag-6 + daily vol targeting mandatory.
 9. Crypto fees 0.17% RT | futures ~0.01% RT | equities 0.05-0.10% RT.
 10. 3 modifications maximum per strategy to avoid overfitting.
+
+
+## Research history (n_tests = 134+)
+
+### ✓ Validated and live/ready
+- Crypto TSMOM tanh + vol scaling (Strategy A)
+- Delta-neutral carry HL (Strategy B)
+- NQ opening momentum iter_10 (Strategy C)
+
+### ✗ Archived with reason (DO NOT re-propose without strong new evidence)
+- FX carry G10 (4 tests): t < 2.5 with FRED 3M rates, edge insufficient post-2018
+- FX carry G10+EM, FX CS momentum, FX TSMOM: similar — all archived
+- Equity momentum 73 large caps (8+ tests): β-dominance, edge dies after costs
+- Equity pairs cointegration (Gatev distance + Engle-Granger): ADF rejects everything 2024-2025
+- Sector reversal, multi-asset TSMOM equities: archived
+- VIX term structure carry (3 tests): edge died post-2020
+- Network Momentum GMOM (4 tests): universe too small (N<64), graph density=1.0
+- TSMOM on commodity ETFs (4 tests): ETF roll drag contaminates momentum signal
+- NQ VWAP mean reversion (4 iter): NQ afternoon is momentum-continuation, not MR
+- NQ afternoon momentum (4 iter): edge insufficient after costs
+
