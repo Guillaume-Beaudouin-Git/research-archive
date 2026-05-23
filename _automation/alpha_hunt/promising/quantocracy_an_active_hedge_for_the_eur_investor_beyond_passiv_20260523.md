@@ -2,18 +2,20 @@
 
 **Source**: quantocracy
 **URL**: https://quantocracy.com/redirect.php?key=CMaik3NCDN&source=feedburner
-**Captured**: 2026-05-23 18:12 UTC
-**Filters passed**: L1=[trading_topic], L2_OK
-**Hash**: 439a832f8a22de37af3dac1e45ae2698
+**Captured**: 2026-05-23 19:32 UTC
+**Filters passed**: L1=[trading_topic, metrics], L2_OK
+**Hash**: 409a727a5e920fa45385bd498d6992a2
 
 ## Summary
-Static currency hedging is a coin toss with predictable losers. The investor either pays the interest-rate differential as carry every month for years, or accepts the full drawdown when the dollar reverses. A trend-following forecast on EUR/USD, combined with carry treated honestly as a cost rather than a feature, sizes the hedge dynamically and finishes ahead of the US-domiciled investor over
+Static currency hedging traps investors in a no-win structure: paying interest-rate differential as carry drag in normal markets, or absorbing full currency drawdown in crisis periods when the hedge was avoided. The article proposes dynamic, signal-driven hedging — selectively turning on currency protection only when currency risk metrics indicate elevated exposure.
 
 ## Why it might be useful
-- Strategy B (HL delta-neutral carry, mainnet pending)
+The dynamic carry logic parallels Strategy B (delta-neutral carry on Hyperliquid): the 8h rebalance already approximates dynamic adjustment when funding rates shift. Static hedging critique mirrors our archived FX carry thesis — static carry collection fails post-2018 as edges compress. This article doesn't provide new evidence to reopen FX testing. No immediate test path given all active strategies are USD-denominated.
 
 ## Extracted content
-No explicit numeric claims in excerpt.
+No code, formulas, or specific numeric claims in the excerpt. Full article needed for further extraction.
 
 ## Action proposed
 REFERENCE
+
+Currency hedging overlay design. No path to new test; FX carry archived.
