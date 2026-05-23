@@ -140,7 +140,7 @@ def compute_daily_signals(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def run_ic_for_signal(signals: pd.DataFrame, sig_col: str, label: str) -> dict:
-    """Run IC analysis for one signal variant across all horizons."""
+    """Run IC analysis for one signal variant across all horizons, with per-year breakdown."""
     active = signals[signals[sig_col] != 0]
     N = len(active)
     n_gate = "OK" if N >= 400 else "WARN_N"
@@ -148,28 +148,69 @@ def run_ic_for_signal(signals: pd.DataFrame, sig_col: str, label: str) -> dict:
     if N < 30:
         return {"N": N, "gate": "FAIL_N", "horizons": {}}
 
-    header = f"  {'Horizon':<12} {'IC_spearman':>12} {'t_HAC_NW6':>12} {'p_val':>8} {'gate':>8}"
+    # ── pooled IC across all horizons ──────────────────────────────────────
+    print(f"\n  POOLED (all years):")
+    header = f"  {'Horizon':<12} {'IC_spearman':>12} {'t_HAC_NW6':>12} {'mean_signed_ret':>16} {'p_val':>8} {'gate':>8}"
     print(header)
-    print(f"  {'-'*65}")
+    print(f"  {'-'*75}")
     res_h = {}
     for h in HORIZONS:
         col = f"ret_{h}"
         mask = (active[sig_col] != 0) & (~active[col].isna())
         sub  = active[mask]
         n_h  = len(sub)
-        if n_h < 100:
-            print(f"  {h:<12} {'n<100':>12}")
+        if n_h < 50:
+            print(f"  {h:<12} {'n<50':>12}")
             continue
-        sig = sub[sig_col].values
-        ret = sub[col].values
-        ic, _  = stats.spearmanr(sig, ret)
-        t_hac  = hac_tstat(ret, sig, lag=6)
-        pval   = 2 * (1 - stats.norm.cdf(abs(t_hac)))
-        gate   = "PASS" if abs(t_hac) > 1.65 and ic > 0 else "WEAK" if abs(t_hac) > 1.0 else "FAIL"
-        print(f"  {h:<12} {ic:>+12.4f} {t_hac:>+12.2f} {pval:>8.4f} {gate:>8}")
-        res_h[h] = {"n": n_h, "IC_spearman": round(ic, 4), "t_HAC_NW6": round(t_hac, 3),
-                    "p_val": round(pval, 4), "gate": gate}
-    return {"N": N, "n_gate": n_gate, "horizons": res_h}
+        sig_v = sub[sig_col].values
+        ret_v = sub[col].values
+        ic, _        = stats.spearmanr(sig_v, ret_v)
+        t_hac        = hac_tstat(ret_v, sig_v, lag=6)
+        mean_sret    = float(np.mean(ret_v))   # signed return in signal direction
+        pval         = 2 * (1 - stats.norm.cdf(abs(t_hac)))
+        gate         = "PASS" if abs(t_hac) > 1.65 and ic > 0 else "WEAK" if abs(t_hac) > 1.0 else "FAIL"
+        dir_note     = "(reversal)" if ic < 0 and abs(t_hac) > 1.0 else ""
+        print(f"  {h:<12} {ic:>+12.4f} {t_hac:>+12.2f} {mean_sret:>+16.6f} {pval:>8.4f} {gate:>8}  {dir_note}")
+        res_h[h] = {
+            "n": n_h,
+            "IC_spearman": round(ic, 4),
+            "t_HAC_NW6":   round(t_hac, 3),
+            "mean_signed_ret": round(mean_sret, 6),
+            "p_val":       round(pval, 4),
+            "gate":        gate,
+        }
+
+    # ── per-year breakdown for 1h horizon ─────────────────────────────────
+    h1_col = "ret_1h"
+    if h1_col in active.columns:
+        print(f"\n  PER-YEAR breakdown (1h horizon — COVID-regime check):")
+        yrs_header = f"  {'Year':<8} {'N':>6} {'IC':>8} {'t_HAC':>8} {'mean_sret':>12} {'hit_rate':>10}"
+        print(yrs_header)
+        print(f"  {'-'*55}")
+        yr_results = {}
+        for yr, grp in active.groupby(active.index.year):
+            sub = grp.dropna(subset=[h1_col])
+            n_yr = len(sub)
+            if n_yr < 10:
+                print(f"  {yr:<8} {'n<10':>6}")
+                continue
+            sv = sub[sig_col].values
+            rv = sub[h1_col].values
+            ic_yr, _ = stats.spearmanr(sv, rv)
+            t_yr     = hac_tstat(rv, sv, lag=min(4, n_yr // 5)) if n_yr >= 10 else np.nan
+            msret_yr = float(np.mean(rv))
+            hit_yr   = float(np.mean(rv > 0))
+            yr_results[str(yr)] = {
+                "n": n_yr, "IC": round(ic_yr, 4),
+                "t_HAC": round(t_yr, 3) if not np.isnan(t_yr) else None,
+                "mean_signed_ret": round(msret_yr, 6),
+                "hit_rate": round(hit_yr, 4),
+            }
+            print(f"  {yr:<8} {n_yr:>6} {ic_yr:>+8.4f} {t_yr:>+8.2f} {msret_yr:>+12.6f} {hit_yr:>10.1%}")
+    else:
+        yr_results = {}
+
+    return {"N": N, "n_gate": n_gate, "horizons": res_h, "per_year_1h": yr_results}
 
 
 def run_ic_analysis(pair: str) -> dict:
