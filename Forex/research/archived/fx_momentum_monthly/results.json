@@ -1,0 +1,36 @@
+{
+  "momentum_cs": {
+    "signal": "momentum_cs_monthly_g10",
+    "universe": "G10 vs USD",
+    "freq": "monthly",
+    "cost_rt": 0.00015,
+    "ic_mean": -0.02371194379391101,
+    "ic_std": 0.44498868558304866,
+    "ic_tstat": -0.832363641286097,
+    "ic_n": 244,
+    "sharpe": -0.058237382913682724,
+    "max_dd": -0.41696882219095355,
+    "ann_ret": -0.004770451354241924,
+    "n_pairs": 8,
+    "avg_turnover": 0.9959016393442623,
+    "gate": "SKIP"
+  },
+  "tsmom": {
+    "signal": "tsmom_monthly_g10",
+    "universe": "G10 vs USD",
+    "freq": "monthly",
+    "cost_rt": 0.00015,
+    "ic_mean": -0.024638953942232627,
+    "ic_std": 0.4416931985246709,
+    "ic_tstat": -0.8713576875748643,
+    "ic_n": 244,
+    "sharpe": -0.13409888745489126,
+    "max_dd": -0.23075108301557323,
+    "ann_ret": -0.006068911684183274,
+    "n_pairs": 8,
+    "avg_turnover": 0.2120887287462262,
+    "gate": "SKIP"
+  },
+  "period_start": "2005-02-28",
+  "period_end": "2026-05-31"
+}
