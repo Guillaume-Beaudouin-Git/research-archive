@@ -6,9 +6,12 @@ Multi-source alpha hunting pipeline. Three stages:
    Reddit/HN/Quantocracy/GitHub Trending/SSRN/FRED into `_raw/`.
 
 2. **Filtering** (routine `alpha-hunt-collector`, every 2h 06:00-20:00 UTC):
-   reads `_raw/`, applies multi-level filters (L0 exclusion, L1 signal, L2
-   relevance to Algo_claude). Promising items → `promising/`. Dedup via
-   `_seen.json` (hash of canonical content).
+   reads `_raw/`, applies multi-level filters:
+   - L0 exclusion (noise removal)
+   - L1 signal of substance (metrics, code, methodology, macro signals)
+   - L2 retail quant accessibility (rejects items requiring institutional data feeds,
+     prime brokers, HFT colo, or capital > $100K minimum)
+   Promising items → `promising/`. Dedup via `_seen.json`.
 
 3. **Feasibility testing** (routine `alpha-hunt-feasibility`, daily 21:30 UTC):
    triages new `promising/` items, deep-tests top 2-3 with WF + block bootstrap
