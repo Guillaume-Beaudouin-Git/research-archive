@@ -132,3 +132,11 @@
 - NQ VWAP mean reversion (4 iter): NQ afternoon is momentum-continuation, not MR
 - NQ afternoon momentum (4 iter): edge insufficient after costs
 
+
+## Parallel session coordination (READ BEFORE LAUNCHING /goal)
+- This repo is accessed by multiple Claude.ai chats AND Claude Code sessions.
+- Before any /goal: run `git pull origin main` and read this CLAUDE.md.
+- Never create parallel infrastructure folders without checking existing live/ first.
+- Strategy C canonical live infra: Futures/live/strategy_c_live/ (NOT strategy_c_paper/).
+- strategy_c_paper/ contains ONLY pre-existing log infra (log_trade.py, paper_trade_log.csv).
+- For new asset classes, check the Research history section before assuming nothing was tested.
