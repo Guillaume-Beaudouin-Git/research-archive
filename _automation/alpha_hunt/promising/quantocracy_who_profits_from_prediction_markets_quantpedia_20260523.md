@@ -2,18 +2,20 @@
 
 **Source**: quantocracy
 **URL**: https://quantocracy.com/redirect.php?key=onI6CxvqSI&source=feedburner
-**Captured**: 2026-05-23 18:12 UTC
+**Captured**: 2026-05-23 19:32 UTC
 **Filters passed**: L1=[trading_topic], L2_OK
-**Hash**: b56fcef4a9c8cd665a168a8eb9af4d1a
+**Hash**: b2277632e4751cf4af7f7e434d9b1151
 
 ## Summary
-In the high-stakes arena of prediction markets, a counterintuitive pattern emerges: retail traders who correctly pick winners more than half the time still lose money, while automated traders with coin-flip accuracy pocket nine-figure profits. Using 222 million prediction market trades with directly observable terminal payoffs, the paper Who Profits from Prediction? Execution, Not
+Quantpedia examines the profit distribution in prediction markets, finding a counterintuitive pattern: retail traders with better-than-50% accuracy on event outcomes still lose money, while automated traders with worse raw accuracy profit. The mechanism is transaction timing and position sizing — automated traders enter at better prices and size positions efficiently, extracting the market maker spread from retail's overconfidence.
 
 ## Why it might be useful
-- General methodology / background research
+Prediction markets are not part of the current Algo_claude strategy set. The finding that accuracy alone doesn't determine profitability — execution quality and sizing matter more — is a useful calibration for all strategies, but particularly for Strategy B (delta-neutral carry): carry is effectively an "accurate" forecast of funding direction but profitability depends on timing and rebalance cost management. No direct test path into prediction markets.
 
 ## Extracted content
-No explicit numeric claims in excerpt.
+No code, formulas, or specific numeric claims in the excerpt. Full article needed for further extraction.
 
 ## Action proposed
 REFERENCE
+
+Prediction market structure study. The execution-quality insight supports Strategy B's 8h rebalance design — no test path to prediction markets themselves.

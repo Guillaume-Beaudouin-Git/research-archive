@@ -2,19 +2,20 @@
 
 **Source**: quantocracy
 **URL**: https://quantocracy.com/redirect.php?key=aE4mv1x4WA&source=feedburner
-**Captured**: 2026-05-23 18:12 UTC
+**Captured**: 2026-05-23 19:32 UTC
 **Filters passed**: L1=[trading_topic], L2_OK
-**Hash**: 9ffe8f72b6df28fe0fbe46748d82b954
+**Hash**: 80c0dbd38c8aecd4531306f3b76be17d
 
 ## Summary
-Most trend-following research focuses on signal construction: how to detect trends better, faster, or earlier. The paper asks a different question, and arguably a more important one for investors: once a market regime has been identified, what is the optimal portfolio exposure in that regime? That is the central novelty of the paper which is available here. Traditional time-series momentum
+Rather than asking "how do we detect trends better," the paper examined here asks "how should allocation to a trend-following strategy vary across market regimes?" The central finding is that optimal trend allocation is regime-dependent: the strategy should be sized up or down not based on the trend signal strength alone, but based on the identified macro or vol regime in which the trend is occurring.
 
 ## Why it might be useful
-- Strategy A (TSMOM v3 — tanh-based crypto momentum signal)
-- Strategy C regime filtering (VWAP + gap filters)
+Directly applicable to Strategy A (crypto TSMOM v3, PAUSED): the tanh signal already vol-normalizes position size, but this framework adds a layer — regime-conditional scaling on top of vol targeting. Concretely, a two-regime model (high-vol expansion vs. low-vol consolidation) applied to crypto would increase position size in confirmed uptrend + low vol regimes and reduce in high vol or regime-ambiguous conditions. This is modification #1 or #2 candidate for Strategy A v4. Also relevant to Strategy C (NQ momentum): the ORB signal could be scaled by market regime (trending vs range-bound open) to improve the risk-adjusted Sharpe above 1.52. Full article needed for the specific regime classification methodology used.
 
 ## Extracted content
-No explicit numeric claims in excerpt.
+No code, formulas, or specific numeric claims in the excerpt. Full article needed for further extraction.
 
 ## Action proposed
-TEST_LATER
+TEST_NOW
+
+Strategy A v4 (awaiting new propfirm deployment) needs regime-dependent sizing to hit PROPFIRM_PASS gate (MaxDD<-10%). Read full article, implement regime classifier on crypto data in data/raw/, add regime-scaled sizing to TSMOM signal. Walk-forward ≥5 folds with HAC lag-6. Counts as modification #1 toward 3-mod cap.
