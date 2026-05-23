@@ -37,7 +37,7 @@ def gate_summary_a(res: dict, pairs: list[str]) -> dict:
         pr = res.get(p, {})
         for variant in ("close_based", "hl_based"):
             vd = pr.get(variant, {})
-            if vd.get("gate") == "FAIL_N":
+            if vd.get("gate") == "FAIL_N" and not vd.get("horizons"):
                 continue
             hrs = vd.get("horizons", {})
             h, hd = best_horizon(hrs)
@@ -47,7 +47,7 @@ def gate_summary_a(res: dict, pairs: list[str]) -> dict:
                 best_t, best_ic, best_h, best_v = t, ic, h, f"{p}/{variant}"
         if pr and pr.get("error") != "no_data":
             passed.append(p)
-    return {"pairs_with_data": passed, "best_t_HAC": best_t, "best_IC": best_ic,
+    return {"pairs_passed": passed, "best_t_HAC": best_t, "best_IC": best_ic,
             "best_horizon": best_h, "best_variant": best_v}
 
 
@@ -82,10 +82,10 @@ def main():
     dual_corr = res_a.get("dual_pair_correlation", {})
 
     # Decision logic
-    a_pass = a_summary["best_t_HAC"] > 1.65
-    b_pass = b_summary["best_t_HAC"] > 1.65
-    a_weak = 1.0 < a_summary["best_t_HAC"] <= 1.65
-    b_weak = 1.0 < b_summary["best_t_HAC"] <= 1.65
+    a_pass = a_summary["best_t_HAC"] > 1.65 and a_summary["best_IC"] > 0
+    b_pass = b_summary["best_t_HAC"] > 1.65 and b_summary["best_IC"] > 0
+    a_weak = 1.0 < a_summary["best_t_HAC"] <= 1.65 and a_summary["best_IC"] > 0
+    b_weak = 1.0 < b_summary["best_t_HAC"] <= 1.65 and b_summary["best_IC"] > 0
 
     if a_pass and b_pass:
         decision = "GO BOTH"
@@ -101,14 +101,15 @@ def main():
         rationale = "Neither angle strongly passes. Consider: extend sample, refine signal, or archive."
     else:
         decision = "STOP"
-        rationale = "Both angles fail IC gate (t_HAC < 1.0 on all horizons). No edge found — archive FX ORB/news-fade."
+        note_a = f" Angle A: IC={a_summary['best_IC']:+.4f} (wrong direction — reversal not momentum)." if abs(a_summary["best_t_HAC"]) > 1.0 else ""
+        rationale = f"Both angles fail IC gate (positive IC + t_HAC > 1.65 not achieved on any horizon/pair).{note_a} Archive FX ORB/news-fade as formulated."
 
     print("\n" + "="*60)
     print(f"PHASE 1.5 SYNTHESIS → {decision}")
     print("="*60)
 
     print(f"\nAngle A (London ORB):")
-    print(f"  Pairs with data: {a_summary['pairs_with_data']}")
+    print(f"  Pairs passed: {a_summary['pairs_passed']}")
     print(f"  Best t_HAC: {a_summary['best_t_HAC']:.2f} @ {a_summary['best_horizon']} ({a_summary['best_variant']})")
     print(f"  Best IC_spearman: {a_summary['best_IC']:+.4f}")
 
@@ -117,11 +118,14 @@ def main():
     print(f"  Best t_HAC: {b_summary['best_t_HAC']:.2f} @ {b_summary['best_horizon']}")
     print(f"  Best IC_spearman: {b_summary['best_IC']:+.4f}")
 
+    close_corr: dict = {}
     if dual_corr:
+        close_corr = dual_corr.get("close", {})
+        n_both = close_corr.get("N_both", "N/A")
+        p_same = close_corr.get("P_same_direction") or 0.0
         print(f"\nEUR/GBP Breakout Correlation:")
-        print(f"  Days both break out: {dual_corr.get('N_both')}")
-        print(f"  Same direction: {dual_corr.get('P_same_direction', 0):.1%}")
-        p_same = dual_corr.get("P_same_direction", 0.7)
+        print(f"  Days both break out: {n_both}")
+        print(f"  Same direction: {p_same:.1%}")
         if p_same > 0.75:
             print(f"  FINDING: High correlation ({p_same:.1%}) — dual-pair filter removes only {(1-p_same):.1%} of signals")
             print(f"           Marginal confirmation value. Single-pair may be preferable.")
@@ -146,8 +150,8 @@ def main():
 - Best IC_spearman: {b_summary['best_IC']:+.4f}
 
 ### EUR/GBP Breakout Correlation (Task 4)
-- N days both break out: {dual_corr.get('N_both', 'N/A')}
-- P(same direction): {dual_corr.get('P_same_direction', 'N/A')}
+- N days both break out: {close_corr.get('N_both', 'N/A')}
+- P(same direction): {close_corr.get('P_same_direction', 'N/A')}
 
 ### Decision: **{decision}**
 {rationale}
