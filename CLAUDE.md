@@ -82,6 +82,34 @@
 9. Crypto fees 0.17% RT | futures ~0.01% RT | equities 0.05-0.10% RT.
 10. 3 modifications maximum per strategy to avoid overfitting.
 
+## Methodology toolkit
+- **Significance**: HAC lag-6 (Newey-West) t-stat, threshold t > 2.5 for IC feasibility
+- **Multiple testing**: AMTP (Adjusted Multiple-Testing P-value) when n_tests > 1
+- **Sharpe deflation**: DSR (Deflated Sharpe Ratio) for backtests >5 modifications
+- **Bootstrap**: block bootstrap (Politis-Romano) for serially-correlated P&L,
+  iid bootstrap forbidden when trade clusters exist (e.g. Strategy C max 1 trade/day)
+- **Walk-forward**: expanding window ≥5 folds (single split forbidden)
+- **TSMOM diagnostics**: cumulative return decomposition, vol scaling impact
+- **IC feasibility**: 30-min budget, Spearman cross-sectional IC + t-stat on mean
+
+  ## Data sources
+- Crypto prices: cached parquet in data/raw/, Hyperliquid 8h OHLCV + funding
+- NQ 1-min: Dataset_NQ_1min_2022_2025.csv (Kaggle, local only, gitignored)
+- ES/YM cross-validation: yfinance (60-day intraday limit, partial only)
+- FX: FRED 3M interbank rates (monthly, forward-filled to weekly)
+- Equities: yfinance + Tiingo (limited free tier)
+- Funding rates: Hyperliquid 8h, stored in data/funding_carry/
+
+
+## Automation infrastructure
+- VPS crons (active): see VPS `crontab -l` (do NOT modify from routine sessions)
+- Routine outputs: `_automation/<category>/YYYY-MM-DD.md`
+  - `arxiv/`: daily q-fin scan + alpha analysis (deduplicated via _seen.json)
+  - `synthesis/`: weekly cross-paper synthesis (to be created)
+  - `code_health/`, `methodology/`: planned
+- VPS data fetchers: `scripts/*.sh` push raw data to repo (e.g. arxiv XML)
+- Routines run on Anthropic cloud, restricted network (use repo data, not external APIs)
+- Each routine commits to `claude/<routine-name>-<date>` branch and opens a PR
 
 ## Research history (n_tests = 134+)
 
