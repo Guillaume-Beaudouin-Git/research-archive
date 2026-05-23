@@ -1,0 +1,86 @@
+{
+  "strategy": "modified_carry_g10",
+  "run_date": "2026-05-23T13:12:58.609275+00:00",
+  "n_tests_consumed": [
+    173,
+    174
+  ],
+  "n_tests_total_after": 174,
+  "universe": "G10 vs USD (9 currencies)",
+  "period": "2005-01-01 to 2026-05-01",
+  "frequency": "monthly",
+  "raw_carry": {
+    "ic_mean": 0.02206,
+    "ic_std": 0.4578,
+    "t_hac_lag6": 0.813,
+    "ic_n": 255,
+    "ic_min": -0.9,
+    "ic_max": 0.9167,
+    "ir": 0.048,
+    "n_tests": 173,
+    "gate_stop": true
+  },
+  "modified_carry_reer": {
+    "ic_mean": -0.00967,
+    "ic_std": 0.46257,
+    "t_hac_lag6": -0.264,
+    "ic_n": 131,
+    "ic_min": -0.95,
+    "ic_max": 0.9167,
+    "ir": -0.021,
+    "n_tests": 174,
+    "reer_data_available": true,
+    "reer_date_range": "2005-02-28 \u2192 2023-12-31"
+  },
+  "ic_by_vix_regime": {
+    "low_vix": {
+      "ic_mean": 0.04302,
+      "ic_std": 0.43425,
+      "t_hac_lag6": 0.754,
+      "ic_n": 43,
+      "ic_min": -0.8167,
+      "ic_max": 0.85,
+      "ir": 0.099
+    },
+    "mid_vix": {
+      "ic_mean": 0.02326,
+      "ic_std": 0.44517,
+      "t_hac_lag6": 0.424,
+      "ic_n": 43,
+      "ic_min": -0.95,
+      "ic_max": 0.8333,
+      "ir": 0.052
+    },
+    "high_vix": {
+      "ic_mean": -0.09148,
+      "ic_std": 0.5024,
+      "t_hac_lag6": -0.984,
+      "ic_n": 45,
+      "ic_min": -0.9,
+      "ic_max": 0.9167,
+      "ir": -0.182
+    }
+  },
+  "ic_by_decade": {
+    "2010_2018": {
+      "ic_mean": -0.02684,
+      "ic_std": 0.42032,
+      "t_hac_lag6": -0.458,
+      "ic_n": 59,
+      "ic_min": -0.8167,
+      "ic_max": 0.85,
+      "ir": -0.064
+    },
+    "2018_2026": {
+      "ic_mean": 0.0044,
+      "ic_std": 0.49701,
+      "t_hac_lag6": 0.096,
+      "ic_n": 72,
+      "ic_min": -0.95,
+      "ic_max": 0.9167,
+      "ir": 0.009
+    }
+  },
+  "recommendation": "INCONCLUSIVE",
+  "recommendation_detail": "REER modification reduces IC (-0.0097 < 0.0221). REER factor adds no value. Consider Modification #1: test without REER."
+}

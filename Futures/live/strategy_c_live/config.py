@@ -5,13 +5,13 @@ iter_10: VWAP + A$400 dollar stop + B1.2% gap filter + M1(rng≥30pt)
 
 Broker: Tradeify Select Flex $25K via Tradovate REST API.
   - Real CME MNQ, headless Linux/VPS compatible
-  - EOD trailing DD $1,500 (locks to $25,100 floor after first payout)
+  - EOD trailing DD $1,000 (confirmed from checkout screenshot; locks to $25,100 floor after first payout)
   - No daily loss limit, no consistency rule (funded)
   - Python automation allowed (FTA §6.6), 90/10 profit split
 
-Sizing: 3 MNQ all phases (conservative, from propfirm_25k.py analysis):
-  P(eval 90d)=66.1%, P(bust eval)=26.8%. 4 MNQ rejected: P(bust eval)=59%.
-  Post-lock floor budget only $1,000 — conservative flat sizing required.
+Sizing: 3 MNQ all phases (from propfirm_tradeify_25k_sizing.py v3 analysis, $1,000 trailing DD):
+  P(pass eval, no time limit)=53.8%, P(bust eval)=46.2%. E[attempts]=1.9×, E[eval cost]=$121.
+  Post-lock floor budget only $1,000 — early payout request critical.
   Phase 1 — Eval  (3 MNQ): up to +$1,500 eval target
   Phase 2 — Pré-lock (3 MNQ): funded, until lock trigger (EOD ≥ $26,100 + first payout)
   Phase 3 — Post-lock (3 MNQ): floor locked at $25,100, ad infinitum
@@ -90,19 +90,19 @@ POINT_VALUE         = MNQ_POINT_VALUE   # $2/pt/contract
 TRADE_COST_PER_UNIT = MNQ_COST_RT       # per contract round-trip
 
 # ── Guardrails — Tradeify Select Flex $25K ────────────────────────────────────
-# Tradeify limits:
-#   EOD trailing DD from peak: $1,500  (pre-lock)
+# Tradeify limits (CONFIRMED from checkout screenshot):
+#   EOD trailing DD from peak: $1,000  (pre-lock) — was incorrectly $1,500 in v1
 #   Post-lock floor:           $25,100 (permanent, after first payout + EOD ≥ $26,100)
 #   Daily loss limit:          None    (Tradeify has no DLL)
 #
 # Our guardrails fire BEFORE Tradeify limits:
 TRADEIFY_INITIAL_BALANCE  = 25_000
-TRADEIFY_TRAILING_DD_USD  = 1_500     # Tradeify hard limit (pre-lock)
+TRADEIFY_TRAILING_DD_USD  = 1_000     # Tradeify hard limit (pre-lock) — confirmed $1,000
 TRADEIFY_LOCK_BALANCE     = 26_100    # EOD balance that triggers lock
 TRADEIFY_LOCKED_FLOOR     = 25_100    # permanent floor post-lock
 TRADEIFY_PROFIT_TARGET    = 1_500     # eval target (6% of $25K)
 
-GUARDRAIL_TRAILING_DD_USD  = 1_300    # halt at $1,300 from peak (buffer $200 before $1,500)
+GUARDRAIL_TRAILING_DD_USD  = 850      # halt at $850 from peak (buffer $150 before $1,000 limit)
 GUARDRAIL_POST_LOCK_FLOOR  = 25_175   # halt $75 above Tradeify locked floor
 GUARDRAIL_DAILY_BUFFER_PCT = None     # no Tradeify DLL — disabled
 GUARDRAIL_DAILY_SELF_LIMIT = 400      # self-imposed: 2 SL hits (~$126 each at 3 MNQ, round up)

@@ -55,6 +55,7 @@ from Futures.live.strategy_c_live.config import (
     IBKR_PORT,
     N_CONTRACTS,
     N_CONTRACTS_DEFAULT,
+    TRADEIFY_LOCK_BALANCE,
 )
 from Futures.live.strategy_c_live.guardrails import (
     GuardrailTriggered,
@@ -294,13 +295,13 @@ def main() -> None:
         except Exception as e:
             log.warning("Cannot read final balance: %s", e)
 
-        # EOD lock trigger check (Tradeify: EOD balance >= $52,100 + payout requested)
+        # EOD lock trigger check (Tradeify: EOD balance >= $26,100 + payout requested)
         if final_balance is not None and hasattr(state, 'check_lock_trigger'):
             if state.check_lock_trigger(final_balance):
                 _send_telegram(
                     f"NQ-C | {trade_date} | LOCK TRIGGERED\n"
-                    f"EOD balance ${final_balance:,.2f} >= $52,100 + payout requested.\n"
-                    f"Floor locked at ${state.lock_floor:,.0f}. Phase → post_lock (5 MNQ)."
+                    f"EOD balance ${final_balance:,.2f} >= ${TRADEIFY_LOCK_BALANCE:,} + payout requested.\n"
+                    f"Floor locked at ${state.lock_floor:,.0f}. Phase → post_lock ({state.get_n_contracts()} MNQ)."
                 )
 
         if final_balance is not None and hasattr(state, 'trailing_dd_usd'):

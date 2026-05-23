@@ -1,0 +1,192 @@
+{
+  "mh_vt": {
+    "sharpe": 0.332,
+    "max_dd": -0.1768,
+    "ann_ret": 0.0293,
+    "ann_vol": 0.0881,
+    "n_months": 253,
+    "alpha_ann": 0.0365,
+    "alpha_t": 1.85,
+    "r2": 0.0105,
+    "resid_sharpe": 0.417,
+    "beta_SPY": -0.015,
+    "beta_AGG": -0.184,
+    "dsr": {
+      "n_tests": 63,
+      "dsr_pvalue": 0.7924,
+      "dsr_pass": false
+    },
+    "crashes": {
+      "GFC_2008": {
+        "sharpe": 0.51,
+        "max_dd": -0.1109,
+        "cum_ret": 0.071,
+        "n_obs": 12
+      },
+      "EuroCrisis": {
+        "sharpe": -1.34,
+        "max_dd": -0.074,
+        "cum_ret": -0.0695,
+        "n_obs": 10
+      },
+      "COVID_2020": {
+        "sharpe": -3.37,
+        "max_dd": -0.0637,
+        "cum_ret": -0.0747,
+        "n_obs": 4
+      },
+      "Inflation22": {
+        "sharpe": 0.21,
+        "max_dd": -0.0942,
+        "cum_ret": 0.0197,
+        "n_obs": 12
+      }
+    }
+  },
+  "mh_b": {
+    "sharpe": 0.478,
+    "max_dd": -0.145,
+    "ann_ret": 0.0361,
+    "ann_vol": 0.0755,
+    "n_months": 255,
+    "alpha_ann": 0.04,
+    "alpha_t": 2.36,
+    "r2": 0.0051,
+    "resid_sharpe": 0.531,
+    "beta_SPY": -0.035,
+    "beta_AGG": -0.009,
+    "dsr": {
+      "n_tests": 64,
+      "dsr_pvalue": 0.5688,
+      "dsr_pass": false
+    },
+    "crashes": {
+      "GFC_2008": {
+        "sharpe": 1.37,
+        "max_dd": -0.038,
+        "cum_ret": 0.1619,
+        "n_obs": 12
+      },
+      "EuroCrisis": {
+        "sharpe": 0.1,
+        "max_dd": -0.0715,
+        "cum_ret": 0.0045,
+        "n_obs": 10
+      },
+      "COVID_2020": {
+        "sharpe": -0.73,
+        "max_dd": -0.0492,
+        "cum_ret": -0.0287,
+        "n_obs": 4
+      },
+      "Inflation22": {
+        "sharpe": 0.27,
+        "max_dd": -0.0364,
+        "cum_ret": 0.0218,
+        "n_obs": 12
+      }
+    }
+  },
+  "flip": {
+    "SPY": {
+      "first_neg_1m": "2011-06-30",
+      "apr2011_1m": 0.002,
+      "first_neg_3m": "2011-08-31",
+      "apr2011_3m": 0.564,
+      "first_neg_12m": "never",
+      "apr2011_12m": 0.668,
+      "first_neg_combined": "2011-08-31",
+      "apr2011_combined": 0.411
+    },
+    "QQQ": {
+      "first_neg_1m": "2011-04-30",
+      "apr2011_1m": -0.076,
+      "first_neg_3m": "2011-07-31",
+      "apr2011_3m": 0.489,
+      "first_neg_12m": "never",
+      "apr2011_12m": 0.721,
+      "first_neg_combined": "2011-09-30",
+      "apr2011_combined": 0.378
+    },
+    "EFA": {
+      "first_neg_1m": "2011-04-30",
+      "apr2011_1m": -0.344,
+      "first_neg_3m": "2011-08-31",
+      "apr2011_3m": 0.263,
+      "first_neg_12m": "2011-10-31",
+      "apr2011_12m": 0.395,
+      "first_neg_combined": "2011-08-31",
+      "apr2011_combined": 0.105
+    },
+    "EEM": {
+      "first_neg_1m": "2011-02-28",
+      "apr2011_1m": 0.747,
+      "first_neg_3m": "2011-07-31",
+      "apr2011_3m": 0.193,
+      "first_neg_12m": "2011-10-31",
+      "apr2011_12m": 0.623,
+      "first_neg_combined": "2011-08-31",
+      "apr2011_combined": 0.521
+    },
+    "IWM": {
+      "first_neg_1m": "2011-02-28",
+      "apr2011_1m": 0.366,
+      "first_neg_3m": "2011-07-31",
+      "apr2011_3m": 0.584,
+      "first_neg_12m": "2011-10-31",
+      "apr2011_12m": 0.769,
+      "first_neg_combined": "2011-08-31",
+      "apr2011_combined": 0.573
+    },
+    "TLT": {
+      "first_neg_1m": "2011-01-31",
+      "apr2011_1m": 0.007,
+      "first_neg_3m": "2011-01-31",
+      "apr2011_3m": -0.205,
+      "first_neg_12m": "2011-07-31",
+      "apr2011_12m": 0.456,
+      "first_neg_combined": "2011-01-31",
+      "apr2011_combined": 0.086
+    },
+    "IEF": {
+      "first_neg_1m": "2011-01-31",
+      "apr2011_1m": -0.08,
+      "first_neg_3m": "2011-01-31",
+      "apr2011_3m": -0.114,
+      "first_neg_12m": "never",
+      "apr2011_12m": 0.776,
+      "first_neg_combined": "2011-01-31",
+      "apr2011_combined": 0.194
+    },
+    "SHY": {
+      "first_neg_1m": "2011-01-31",
+      "apr2011_1m": -0.474,
+      "first_neg_3m": "2011-01-31",
+      "apr2011_3m": -0.269,
+      "first_neg_12m": "never",
+      "apr2011_12m": 0.93,
+      "first_neg_combined": "never",
+      "apr2011_combined": 0.062
+    },
+    "GLD": {
+      "first_neg_1m": "2011-02-28",
+      "apr2011_1m": 0.351,
+      "first_neg_3m": "2011-02-28",
+      "apr2011_3m": 0.109,
+      "first_neg_12m": "never",
+      "apr2011_12m": 0.931,
+      "first_neg_combined": "2011-02-28",
+      "apr2011_combined": 0.463
+    },
+    "VNQ": {
+      "first_neg_1m": "2011-04-30",
+      "apr2011_1m": -0.335,
+      "first_neg_3m": "2011-08-31",
+      "apr2011_3m": 0.644,
+      "first_neg_12m": "never",
+      "apr2011_12m": 0.873,
+      "first_neg_combined": "2011-09-30",
+      "apr2011_combined": 0.394
+    }
+  }
+}

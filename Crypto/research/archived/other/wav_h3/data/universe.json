@@ -1,0 +1,338 @@
+{
+  "SOL": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1715,
+    "avg_views": 1695.4,
+    "price_days": 2235,
+    "price_source": "yfinance"
+  },
+  "BNB": {
+    "status": "EXCLUDED",
+    "reason": "article 'BNB_(cryptocurrency)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "XRP": {
+    "status": "EXCLUDED",
+    "reason": "history 379d < 730d minimum",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "ADA": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1850,
+    "avg_views": 1788.7,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "AVAX": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1615,
+    "avg_views": 189.3,
+    "price_days": 2072,
+    "price_source": "yfinance"
+  },
+  "DOGE": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 4121.1,
+    "price_days": 3065,
+    "price_source": "cached"
+  },
+  "DOT": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1964,
+    "avg_views": 347.3,
+    "price_days": 2103,
+    "price_source": "yfinance"
+  },
+  "MATIC": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1377,
+    "avg_views": 224.7,
+    "price_days": 2158,
+    "price_source": "yfinance"
+  },
+  "TRX": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 2406,
+    "avg_views": 246.4,
+    "price_days": 3065,
+    "price_source": "cached"
+  },
+  "LINK": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1782,
+    "avg_views": 211.0,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "LTC": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 1059.9,
+    "price_days": 3065,
+    "price_source": "cached"
+  },
+  "ETC": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 307.7,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "BCH": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 986.2,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "XLM": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 330.4,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "ATOM": {
+    "status": "EXCLUDED",
+    "reason": "article 'Cosmos_(blockchain)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "SUI": {
+    "status": "EXCLUDED",
+    "reason": "article 'Sui_(cryptocurrency)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "APT": {
+    "status": "EXCLUDED",
+    "reason": "article 'Aptos_(blockchain)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "NEAR": {
+    "status": "EXCLUDED",
+    "reason": "history 241d < 730d minimum",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "FIL": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 180.8,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "ICP": {
+    "status": "EXCLUDED",
+    "reason": "article 'Internet_Computer' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "VET": {
+    "status": "EXCLUDED",
+    "reason": "article 'VeChain' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "ALGO": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1801,
+    "avg_views": 192.9,
+    "price_days": 2529,
+    "price_source": "yfinance"
+  },
+  "EOS": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3024,
+    "avg_views": 266.7,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "ZEC": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 245.5,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "XMR": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 423.2,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "DASH": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 3063,
+    "avg_views": 216.7,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "AXS": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1779,
+    "avg_views": 790.7,
+    "price_days": 2027,
+    "price_source": "yfinance"
+  },
+  "MANA": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 2516,
+    "avg_views": 255.1,
+    "price_days": 3065,
+    "price_source": "yfinance"
+  },
+  "WLD": {
+    "status": "OK",
+    "reason": "passed all filters",
+    "wiki_days": 1136,
+    "avg_views": 354.0,
+    "price_days": 1529,
+    "price_source": "yfinance"
+  },
+  "BAT": {
+    "status": "EXCLUDED",
+    "reason": "avg views 43.7/day < 50 minimum",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "COMP": {
+    "status": "EXCLUDED",
+    "reason": "article 'Compound_(DeFi_protocol)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "EGLD": {
+    "status": "EXCLUDED",
+    "reason": "article 'MultiversX' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "INJ": {
+    "status": "EXCLUDED",
+    "reason": "article 'Injective_Protocol' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "CRO": {
+    "status": "EXCLUDED",
+    "reason": "article 'Cronos_(blockchain)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "ZIL": {
+    "status": "EXCLUDED",
+    "reason": "article 'Zilliqa' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "WAVES": {
+    "status": "EXCLUDED",
+    "reason": "article 'Waves_(cryptocurrency)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "ONT": {
+    "status": "EXCLUDED",
+    "reason": "article 'Ontology_(blockchain)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "ICX": {
+    "status": "EXCLUDED",
+    "reason": "article 'ICON_(cryptocurrency)' does not exist (recent 404)",
+    "wiki_days": 0,
+    "avg_views": 0.0,
+    "price_days": 0,
+    "price_source": "N/A"
+  },
+  "_meta": {
+    "total_candidates": 38,
+    "valid_count": 21,
+    "valid_tokens": [
+      "SOL",
+      "ADA",
+      "AVAX",
+      "DOGE",
+      "DOT",
+      "MATIC",
+      "TRX",
+      "LINK",
+      "LTC",
+      "ETC",
+      "BCH",
+      "XLM",
+      "FIL",
+      "ALGO",
+      "EOS",
+      "ZEC",
+      "XMR",
+      "DASH",
+      "AXS",
+      "MANA",
+      "WLD"
+    ],
+    "backtest_start": "2018-01-01",
+    "backtest_end": "2026-05-23",
+    "min_wiki_days": 730,
+    "min_avg_views": 50,
+    "min_price_days": 365
+  }
+}

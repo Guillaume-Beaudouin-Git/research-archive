@@ -192,17 +192,18 @@ def test_t4() -> None:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def test_t5() -> None:
-    print("\n── T5: Guardrails pre/post-lock ─────────────────────────────")
+    print("\n── T5: Guardrails pre/post-lock ($25K config) ───────────────")
     try:
         from Futures.live.strategy_c_live.challenge_state import ChallengeState
         from Futures.live.strategy_c_live.guardrails import PropfirmGuardrails, GuardrailTriggered
 
+        # $25K account: initial=25_000, trailing_dd guardrail=$1,300, daily=$400
         state = ChallengeState.__new__(ChallengeState)
-        state.initial_balance        = 50_000.0
-        state.peak_balance           = 51_500.0
-        state.balance_at_day_open    = 50_200.0   # small day open so daily self-limit stays clear
+        state.initial_balance        = 25_000.0
+        state.peak_balance           = 26_000.0
+        state.balance_at_day_open    = 25_200.0   # small day open so daily self-limit stays clear
         state.lock_triggered         = False
-        state.lock_floor             = 50_100.0
+        state.lock_floor             = 25_100.0
         state.is_funded              = True
         state.trades_since_start     = 0
         state.first_payout_requested = False
@@ -212,17 +213,17 @@ def test_t5() -> None:
         mock_client = MagicMock()
         g = PropfirmGuardrails(state, mock_client)
 
-        # T5.1: pre-lock, trailing DD $1,500 from peak $51,500 → OK
-        #   trailing: $51,500-$50,000=$1,500 < $1,750 guardrail ✓
-        #   daily: $50,200-$50,000=$200 < $800 ✓
-        g.check_all(50_000.0)
-        print(f"  T5.1 {PASS}: pre-lock trailing DD $1,500 OK (guardrail=${GUARDRAIL_TRAILING_DD_USD:,})")
+        # T5.1: pre-lock, trailing DD $1,000 from peak $26,000 → OK
+        #   trailing: $26,000-$25,000=$1,000 < $1,300 guardrail ✓
+        #   daily: $25,200-$25,000=$200 < $400 ✓
+        g.check_all(25_000.0)
+        print(f"  T5.1 {PASS}: pre-lock trailing DD $1,000 OK (guardrail=${GUARDRAIL_TRAILING_DD_USD:,})")
 
-        # T5.2: pre-lock, trailing DD $1,800 → GuardrailTriggered TRAILING_DD
-        #   trailing: $51,500-$49,700=$1,800 >= $1,750 → FAIL
-        #   daily: $50,200-$49,700=$500 < $800 → fires trailing first ✓
+        # T5.2: pre-lock, trailing DD $1,500 → GuardrailTriggered TRAILING_DD
+        #   trailing: $26,000-$24,500=$1,500 >= $1,300 → FAIL
+        #   daily: $25,200-$24,500=$700 > $400, but trailing fires first ✓
         try:
-            g.check_all(49_700.0)
+            g.check_all(24_500.0)
             print(f"  T5.2 {FAIL}: should have raised TRAILING_DD")
             results["T5"] = "FAIL: T5.2 did not raise"
             return
@@ -230,11 +231,12 @@ def test_t5() -> None:
             assert "TRAILING_DD" in str(e), f"Expected TRAILING_DD, got: {e}"
             print(f"  T5.2 {PASS}: {e}")
 
-        # T5.3: daily self-limit — $900 loss from day open → GuardrailTriggered
-        #   trailing: $51,500-$50,600=$900 < $1,750 → OK, daily fires
-        state.balance_at_day_open = 51_500.0
+        # T5.3: daily self-limit — $450 loss from day open → GuardrailTriggered
+        #   trailing: $26,000-$25,550=$450 < $1,300 → OK, daily fires
+        #   daily: $26,000-$25,550=$450 >= $400 → DAILY_SELF_LIMIT
+        state.balance_at_day_open = 26_000.0
         try:
-            g.check_all(50_600.0)
+            g.check_all(25_550.0)
             print(f"  T5.3 {FAIL}: should have raised DAILY_SELF_LIMIT")
             results["T5"] = "FAIL: T5.3 did not raise"
             return
@@ -242,17 +244,17 @@ def test_t5() -> None:
             assert "DAILY_SELF_LIMIT" in str(e), f"Expected DAILY_SELF_LIMIT, got: {e}"
             print(f"  T5.3 {PASS}: {e}")
 
-        # T5.4: post-lock, balance $50,500 > $50,175 guardrail → OK
-        #   daily: $50,900-$50,500=$400 < $800 ✓
+        # T5.4: post-lock, balance $25,200 > $25,175 guardrail → OK
+        #   daily: $25,400-$25,200=$200 < $400 ✓
         state.lock_triggered      = True
-        state.balance_at_day_open = 50_900.0
-        g.check_all(50_500.0)
-        print(f"  T5.4 {PASS}: post-lock $50,500 > guardrail ${GUARDRAIL_POST_LOCK_FLOOR:,} OK")
+        state.balance_at_day_open = 25_400.0
+        g.check_all(25_200.0)
+        print(f"  T5.4 {PASS}: post-lock $25,200 > guardrail ${GUARDRAIL_POST_LOCK_FLOOR:,} OK")
 
-        # T5.5: post-lock, balance $50,100 < $50,175 guardrail → GuardrailTriggered POST_LOCK
-        #   daily: $50,900-$50,100=$800 → at limit, but post-lock check fires first
+        # T5.5: post-lock, balance $25,100 < $25,175 guardrail → GuardrailTriggered POST_LOCK
+        #   post-lock check fires before daily check ✓
         try:
-            g.check_all(50_100.0)
+            g.check_all(25_100.0)
             print(f"  T5.5 {FAIL}: should have raised POST_LOCK_FLOOR")
             results["T5"] = "FAIL: T5.5 did not raise"
             return

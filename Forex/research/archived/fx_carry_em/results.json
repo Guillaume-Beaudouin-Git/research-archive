@@ -1,0 +1,62 @@
+{
+  "signal": "carry_fred_g10_em",
+  "universe": "G10 + EM (12 pairs vs USD)",
+  "freq": "weekly",
+  "cost_g10_rt": 0.00015,
+  "cost_em_rt": 0.0006,
+  "period_start": "2005-01-14",
+  "period_end": "2026-05-15",
+  "rate_sources": {
+    "USD": "FRED:DTB3",
+    "EUR": "FRED:IR3TIB01EZM156N",
+    "GBP": "FRED:IR3TIB01GBM156N",
+    "JPY": "FRED:IR3TIB01JPM156N",
+    "AUD": "FRED:IR3TIB01AUM156N",
+    "CAD": "FRED:IR3TIB01CAM156N",
+    "CHF": "FRED:IR3TIB01CHM156N",
+    "NOK": "FRED:IR3TIB01NOM156N",
+    "SEK": "FRED:IR3TIB01SEM156N",
+    "BRL": "FRED:IRSTCI01BRM156N",
+    "MXN": "FRED:IRSTCI01MXM156N",
+    "ZAR": "FRED:IRSTCI01ZAM156N",
+    "TRY": "FRED:IRSTCI01TRM156N"
+  },
+  "h1w_ic_mean": 0.000829416483155355,
+  "h1w_ic_std": 0.43331697559051324,
+  "h1w_ic_tstat": 0.06388656737210206,
+  "h1w_ic_n": 1114,
+  "h4w_ic_mean": -0.022056366562432483,
+  "h4w_ic_std": 0.440202558175627,
+  "h4w_ic_tstat": -1.6708359167425424,
+  "h4w_ic_n": 1112,
+  "sharpe": -0.4927398019434662,
+  "max_dd": -0.7652187040402082,
+  "ann_ret": -0.05237981640889743,
+  "n_pairs": 12,
+  "avg_turnover": 0.013464991023339317,
+  "crashes": {
+    "GFC_2008": {
+      "period": "2008-07-01 \u2192 2009-06-30",
+      "sharpe": -0.4658521955514342,
+      "max_dd": -0.23771811667722886,
+      "cum_ret": -0.0931933744627127,
+      "n_obs": 52
+    },
+    "EM_2015": {
+      "period": "2015-08-01 \u2192 2016-02-29",
+      "sharpe": -1.9271583595088697,
+      "max_dd": -0.14695340147654068,
+      "cum_ret": -0.12688617388834678,
+      "n_obs": 30
+    },
+    "COVID_2020": {
+      "period": "2020-02-15 \u2192 2020-05-31",
+      "sharpe": -3.7110639020328904,
+      "max_dd": -0.2098993085061468,
+      "cum_ret": -0.1691132894654055,
+      "n_obs": 15
+    }
+  },
+  "propfirm_compatible": true,
+  "gate": "SKIP"
+}

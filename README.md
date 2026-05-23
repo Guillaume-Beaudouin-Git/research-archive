@@ -1,7 +1,7 @@
 # Algo_claude — Research Journal
 
-**Last updated**: May 22, 2026  
-**Status**: 2 strategies live on Propr testnet (TSMOM v2 + delta-neutral carry), 82 signals/variants tested — Strategy C = NQ ORB iter_10 (Sharpe 1.52, RESEARCH_PASS, paper trade phase pending TWS)
+**Last updated**: May 23, 2026  
+**Status**: 3 strategies validated (A TSMOM Sharpe 1.13 OOS, B delta-neutral carry, C NQ ORB Sharpe 1.52), **321 signals/variants tested** (crypto 157 + NQ/futures ~148 + FX ~85 + equities/ETF 82 + options 1), Strategy C Tradeify paper trade in progress
 
 ---
 
@@ -1304,14 +1304,17 @@ Pre-flight event-count checks must gate both floor (too sparse → underpowered 
 - 6.43–6.44 ETH MVRV + Exchange Netflow (on-chain, CoinMetrics Community free tier, Phase 1 sanity): SKIP (MVRV IC=+0.11 as MOMENTUM signal — wrong direction for mean-reversion hypothesis, corr_A=0.73. Netflow IC collapses to t_HAC≈0 after HAC correction — 90d accumulation regime autocorrelation → effective N≈73 from 3398 daily obs. Gate 1 FAIL. See `Crypto/research/archived/other/eth_mvrv_netflow/POSTMORTEM.md`)
 - 6.45 BTC VRP Deribit — Phase 2 IC (unconditional signal test): SKIP (IC=+0.126, t_HAC=2.35 — borderline, sub-period stability 33%, non-overlapping IC≈0. Proceeded to Phase 3 unconditional as per user GO.)
 - 6.46–6.47 BTC VRP Deribit — Phase 3 walk-forward (unconditional always-short straddle 30DTE→14DTE, 184 cycles, 2021–2026): ARCHIVE (Sharpe_HAC=−2.68, 0/13 folds positive. Gross=+4.44%/yr, costs=8.89%/yr, net=−4.46%/yr. Cost/gross ratio 200%. Strategy systematically loses: option fees 49% + bid-ask spread 49% = double the gross VRP premium. Stress: LUNA −0.44%, FTX −2.56% (2 cycles). Synthetic COVID worst-case: −38% of notional. Root cause: GATE 1 unit error — Almeida's 14%/yr VRP is in variance units, not % of underlying notional; after B-S conversion, gross is only 4.4%/yr. See `Crypto/research/archived/options/vrp_deribit/DECISION.md`. Lesson 13 added.)
+- 6.48 ETF Regime Overlay (macro liquidity gate on Strat A TSMOM-28d): SKIP (Δ=+0.022%/day conditional return differential, Gate 2 FAIL — below 0.05%/day floor. Strong-trend TSMOM self-filters; marginal regime lift ≈ +1.7%/yr, sub-threshold. n_tests: 156→157. L15. See `Crypto/research/archived/etf_regime_overlay/POSTMORTEM.md`)
+- 6.49 FGVD H1 (Fear & Greed Velocity Divergence, BTC daily TS, 7-day window): SKIP (IC_C=+0.0054 wrong direction, t=+0.20; IC_B=+0.0085 positive — F&G velocity is a momentum proxy, not contrarian. D1 fires (|IC_A|/|IC_C|=1.54). Events/yr=16.9. n_tests: 157→158. L17. See `Crypto/research/archived/other/fgvd_h1/POSTMORTEM.md`)
+- 6.49b WAV H3 (Wikipedia Attention Velocity, 21-altcoin CS panel, 7-day daily): SKIP (IC_B=+0.00158, t=+0.16; D4 fires — positive IC = momentum proxy. Lagging gate PASSED (corr=+0.10). Sentiment branch permanently closed. n_tests: 158→159. L18. See `Crypto/research/archived/other/wav_h3/POSTMORTEM.md`)
 
 ## Crypto Research — Saturation Map (2026-05)
 
 ---
 
-### 6.50 Saturation Summary — 156 Tests, 3 Missions, 4 Archived Families
+### 6.50 Saturation Summary — 159 Tests, 7 Missions, 11 Signal Families
 
-Between January 2026 and May 2026, this research program ran **156 hypothesis tests** across three sequential missions on crypto perpetual futures and options, mapping the extractable alpha available to a systematic retail trader using exclusively public APIs. Methodology throughout: excess returns over cash rate, HAC Newey-West SE (lag-6), walk-forward validation (≥5 folds, 18m train / 6m test / 3m step), multiple-testing correction (AMTP/DSR per López de Prado 2018), and explicit stress tests on tail events.
+Between January 2026 and May 2026, this research program ran **159 hypothesis tests** across seven sequential missions on crypto perpetual futures, options, and alternative data, mapping the extractable alpha available to a systematic retail trader using exclusively public APIs. Methodology throughout: excess returns over cash rate, HAC Newey-West SE (lag-6), walk-forward validation (≥5 folds, 18m train / 6m test / 3m step), multiple-testing correction (AMTP/DSR per López de Prado 2018), and explicit stress tests on tail events. Three additional missions in 2026-05 (ETF Regime Overlay, FGVD H1 sentiment, WAV H3 Wikipedia attention) expanded scope to macro conditioning and retail sentiment signals, consuming tests 157–159 and producing Lessons L15, L17, and L18. All three archived without backtest on IC gate failures.
 
 The structural conclusion is that **free-data retail alpha on 29-coin Binance/HL perpetuals is exhausted**: every remaining candidate edge requires either institutional execution access (options market-maker rebates, maker fills at sustained scale) or paid proprietary data sources. One live strategy was extracted (Strategy A — TSMOM v3, OOS Sharpe 1.33) and one is in testnet validation (Strategy B — delta-neutral 8h carry, proxy Sharpe 2.0). Limitations: data gap in Deribit DVOL pre-2021 constrains VRP analysis to the post-DeFi-summer period; Phase 2 IC sub-period stability (33% of years positive) suggests potential regime shift post-ETF approval; all costs assume taker execution (no rebate access).
 
@@ -1325,6 +1328,9 @@ The structural conclusion is that **free-data retail alpha on 29-coin Binance/HL
 | **V2 HL maker** (6.37–6.42) | Delta-neutral CS: PMR basis MR, OAGF gap fade, CS-FS, FRA | HL/Binance 29 perps + Deribit settlement prices | ~0.50 pre-cost (PMR vol-target est.); OAGF IC=−0.195 (preflight STOP) | PMR: −0.551; OAGF: no backtest | PMR: −65.02% | ARCHIVE | 142→151 |
 | **V2 On-chain** (6.43–6.44) | ETH on-chain: MVRV z-score, exchange Netflow z-score | CoinMetrics ETH daily 2016–2026 | — (Gate 1 fail before backtest) | — | — | GATE 1 FAIL (wrong direction + HAC deflation) | 151→153 |
 | **VRP Deribit** (6.45–6.47) | BTC ATM straddle short, daily delta-hedged via HL perp, unconditional 16d hold | Deribit BTC options + HL perp 2021–2026 | 1.45 raw unconditional (pre-cost) | −2.682 (0/13 WF folds positive) | −0.247% portfolio at 1% sizing; synthetic stress: −37.8% notional/position | ARCHIVE | 153→156 |
+| **V3 Macro overlay** (6.48) | Macro regime gate: ETF net flow z-score + stablecoin supply z-score, ON/OFF overlay on Strat A TSMOM-28d | 14 crypto assets daily, 484 days (2024-01-12 → 2026-05-22) | N/A (overlay test, not standalone) | — | — | GATE 2 FAIL (Δ=+0.022%/day < 0.05%/day floor; L15) | 156→157 |
+| **FGVD H1** (6.49) | Sentiment TS: F&G velocity divergence `z(ΔF&G_7d) − z(Δprice_7d)`, BTC daily, entry < −1.5σ, 7d hold | BTC-USD daily 2018-02-02 → 2026-05-23 (n=3028) | — | IC_C=+0.0054, t=+0.20 (wrong direction) | — | D1 fires; F&G velocity = momentum proxy; L17 | 157→158 |
+| **WAV H3** (6.49b) | Sentiment CS: Wikipedia pageview attention velocity, 21-altcoin panel, entry > +1.5σ CS z-score, 7d hold | 21 altcoins daily 2018–2026, 3063 panel dates | — | IC_B=+0.00158, t=+0.16 | — | D4 fires; Wikipedia zero IC, slight momentum direction; sentiment branch closed (L18) | 158→159 |
 
 **VRP stress note**: the −0.247% MaxDD reflects smooth bleeding at 1% sizing/straddle × 2 concurrent. At realistic sizing for a standalone strategy (2% portfolio), synthetic COVID scenario (BTC −50%/24h, IV×3) → −75.7% portfolio, far exceeding the −15% hard-stop threshold.
 
@@ -1392,6 +1398,42 @@ The structural conclusion is that **free-data retail alpha on 29-coin Binance/HL
 
 ---
 
+#### L15 — Regime Overlays on High-Sharpe Strategies: Sub-Threshold Lift (2026-05-23)
+
+**Statement**: A macro liquidity regime filter (ETF net flows + stablecoin supply) applied as a multiplicative overlay to a high-Sharpe TSMOM strategy (SR=1.33) produces economically positive but sub-threshold conditional improvement: Δ = +0.022%/day (active vs inactive), well below the 0.05%/day gate.
+
+**Mechanism**: Strong-trend strategies self-filter through signal strength — tanh(t-stat) naturally downweights weak-trend environments. A binary regime gate (ON/OFF) adds marginal value only when the base signal is structurally noisy or biased in certain regimes. In 28-month post-ETF data, the TSMOM signal remained robust even during net-outflow periods (GBTC conversion phase, Jan–Feb 2024) because BTC was already in a confirmed uptrend. The regime signal correctly identified unfavorable macro environments (31.4% time-in-market at τ=+0.5σ, vs 31% expected) but the return differential was too small to pass Gate 2.
+
+**Verified by**: ETF Regime Overlay Phase 2 — Δ=+0.022%/day conditional return differential (HAC t=−0.17, non-significant), time-in-market=31.4% at τ=+0.5σ threshold, analysis window=484 daily observations (2024-01-12 → 2026-05-22). Implied annualized alpha ≈ +1.7%/yr at 31.4% exposure; Sharpe lift ≈ +0.08 units (needed: +0.13 to clear 1.10× gate at SR(A)=1.33). Gate 2 FAIL.
+
+**Implication**: Regime overlays are more valuable for strategies with Sharpe < 0.7 where low-liquidity environments cause most drawdowns. For high-Sharpe momentum, the marginal regime lift (~1.7%/yr alpha at 31% time-in-market) does not justify the loss of exposure. Future regime filter research should target strategies with MaxDD > 20% or conditional drawdown clustering.
+
+---
+
+#### L17 — F&G Velocity Divergence: Contrarian Hypothesis Wrong Direction (2026-05-23)
+
+**Statement**: Fear & Greed velocity divergence (`z(ΔF&G_7d) − z(Δprice_7d)`) produces near-zero IC at 7-day daily BTC frequency (IC_C = +0.0054, t = +0.20). The signal is the wrong direction: both F&G velocity standalone (IC_B = +0.0085) and the combined FGVD signal have positive IC, consistent with F&G leading returns in the SAME direction (momentum), not opposite (contrarian).
+
+**Mechanism**: The Da et al. 2011 "attention reversal" mechanism (SVI spike → uninformed buying → 2-week reversion) describes NEW external attention (first-time researchers). Fear & Greed measures EXISTING holder sentiment, which Albrecht et al. 2025 show leads prices in the same direction at 4–32 day horizons. "Sentiment rising faster than price" predicts further appreciation, not reversion — existing holders who feel good continue buying. Secondary: price mean-reversion (Test A) is also zero at 7-day BTC daily (IC_A = −0.0083, t = −0.26); BTC is not mean-reverting at this horizon.
+
+**Verified by**: FGVD H1 Phase 2 — IC_A=−0.0083 (t=−0.26), IC_B=+0.0085 (t=+0.27), IC_C=+0.0054 (t=+0.20). D1 fires: |IC_A|/|IC_C|=1.54 ≥ 0.5. Events/yr=16.9 (below 20/yr floor). corr(FGVD, TSMOM-28d)=−0.247. Window: BTC daily 2018-02-02 → 2026-05-23, n=3028.
+
+**Implication**: Do NOT propose contrarian strategies using F&G, Reddit mentions, or MVRV (all existing-holder sentiment proxies). These proxies lead returns in the momentum direction. The Da et al. mechanism requires NEW buyer attention discovery — L18 confirms Wikipedia pageviews also fail in this role. Combined: the entire retail sentiment alpha branch is closed.
+
+---
+
+#### L18 — Wikipedia Attention Velocity: Zero IC, Momentum Proxy Direction (2026-05-23)
+
+**Statement**: Wikipedia pageview attention spikes for crypto altcoins produce zero cross-sectional IC at 7-day daily frequency (IC_B = +0.00158, t = +0.16). D4 fires: the positive IC is in the wrong direction (momentum proxy, not contrarian). The lagging check PASSED (corr(wiki_z, price_prior) = +0.10 < 0.30 threshold) — Wikipedia is NOT purely a lagging indicator of price; it is simply uncorrelated with future price in either direction.
+
+**Mechanism**: The Da et al. (2011) reversal requires NEW uninformed buyers to use the searched medium for investment decisions. Google SVI in 2011 captured first-time equity investors before they bought. Wikipedia for crypto altcoins captures informational curiosity by non-participants who already saw price spikes via social media — they read for context after the move, not to decide to buy. No new buying pressure → no reversal. Additionally, 17 of 38 pre-registered tokens had no English Wikipedia article, confirming Wikipedia is not the dominant discovery channel for crypto retail.
+
+**Verified by**: WAV H3 Phase 2 — 21 tokens, 3063 panel dates (2018-01-01 → 2026-05-21). Lagging corr=+0.102 (GATE 1 PASS). IC_A=+0.013 (t=+1.41), IC_B=+0.00158 (t=+0.16), IC_C=+0.021 (t=+2.17, positive momentum-amplified). corr(attention_z_mean, TSMOM_28d)=−0.022 (orthogonal). Events/yr=343 at attention_z > +1.5σ.
+
+**Implication**: The retail sentiment alpha branch for crypto altcoins is permanently closed at daily frequency. L17 closed existing-holder sentiment (F&G, MVRV); L18 closes new-buyer attention discovery (Wikipedia). Both pathways of the Da et al. taxonomy fail in crypto. Future sentiment work requires institutional order flow, on-chain large-wallet behavior, or developer GitHub activity — not retail discovery proxies.
+
+---
+
 ### 6.53 Two-Dimensional Saturation Map
 
 Each column is a structurally distinct failure mode. ✗ = confirmed primary cause; (✗) = contributing but secondary; — = not a binding constraint for this family.
@@ -1406,6 +1448,9 @@ Each column is a structurally distinct failure mode. ✗ = confirmed primary cau
 | On-chain flow (exchange Netflow) | (✗) (corr_A=0.51) | **✗** (t: 2.58→0.11) | — | — | — | **✗** |
 | On-chain adoption (active addresses — untested) | — | **✗** (expected: slow-moving) | — | — | — | **✗** (expected) |
 | Options VRP timing (Phase 2 IC) | — | (✗) (sub-period stability 33%) | **✗** | — | **✗** | **✗** (non-overlapping IC≈0) |
+| Macro regime overlay (ETF flows + stablecoin) | — | (✗) (ETF flow persistent) | — | — | — | **✗** (Δ=+0.022%/day < gate; L15) |
+| Sentiment divergence (FGVD: F&G vel − price vel) | — | — | — | **✗** (IC wrong direction; L17) | — | **✗** (all IC ≈ 0) |
+| New-buyer attention (WAV: Wikipedia pageviews CS) | — | — | — | **✗** (IC_B > 0, momentum; L18) | — | **✗** (IC_B ≈ 0, t = 0.16) |
 
 **Interpretation**: Cost drag and statistical power are the two most prevalent failure modes (each appearing 5× as primary failures). β-dominance is structural in all long-only CS designs regardless of signal quality. Tail risk is binding for all strategies with short-gamma or leveraged mean-reversion exposure. No tested family failed for fewer than two independent reasons.
 
@@ -1419,11 +1464,11 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 |----------|---------------------|---------------------|-------------|-------------------|
 | 1. Microstructure & OFI | OFI 10-level, Binance Futures WebSocket | WSS tick stream (Binance public, free) | Low (retail) | Sub-second execution requires co-location; retail accessible only as execution timing overlay, not position signal |
 | 4. Cross-asset / cross-exchange | BTC price discovery Coinbase→Binance lead-lag (Shu et al. 2023); CS cross-crypto LASSO (Jia et al. 2023) | Multi-venue WebSocket, sub-second timestamps | Medium | Lead-lag window < 5s for HF variant; multi-day CS variant feasible but L11 applies |
-| 5. Sentiment / narrative | Fear & Greed z-score divergence vs price; Google Trends crypto | alternative.me API (free); pytrends | Medium | Daily granularity; L12b autocorrelation risk (sentiment regimes persistent); prior V1 fear/greed signal failed at cost/signal ratio |
-| 6. Macro / cross-market | ETF flow signal (Farside.co.uk) + stablecoin supply (DeFiLlama) as regime filter | FRED API + DeFiLlama stablecoins endpoint (both free) | Medium | Non-stationary BTC–NDX loading post-ETF inclusion; BTC–QQQ corr peaked at 0.87 (2024); regime signal requires HAC from day 1 |
+| 5. Sentiment / narrative | ~~Fear & Greed velocity divergence~~ **ARCHIVED** (L17: IC wrong direction). ~~Wikipedia Attention Velocity CS~~ **ARCHIVED** (L18: IC_B = +0.00158, t = +0.16, D4 fires — momentum proxy). **BRANCH CLOSED**: both H1 and H3 hypotheses tested and failed. No H3b. | alternative.me API (free); Wikimedia REST API | **Completed** | L17 + L18: entire retail sentiment alpha branch exhausted at daily frequency. Future requires institutional/on-chain signals. |
+| 6. Macro / cross-market | ~~ETF flow signal + stablecoin supply as regime overlay on Strategy A~~ **TESTED & ARCHIVED** (2026-05-23): Gate 2 FAIL — Δ=+0.022%/day < 0.05%/day floor; 1 test consumed (n_tests=157). Lesson L15: regime overlays on high-Sharpe strategies produce sub-threshold lift. | BitBO.io (Farside blocked), DeFiLlama | Completed | L15: conditional lift insufficient for SR>1.0 base strategies |
 | 7. Calendar / event-driven | Token unlock cliff short (Keyrock 2024: 16,000+ events); short post-listing micro-cap (Empirica 2024 inversion documented) | TokenUnlocks.app (free); Binance Announcements RSS | Medium | L12 floor applies per coin; 2024 data shows naïve listing-long inverted (−22.7% at 3m); short variant requires per-event statistical screening |
 | 8. DEX-specific edges | HLP Hyperliquid vault flow contrarian; Uniswap V3 LP active rebalancing (Loesche et al.: 50% of V3 LPs underperform HODL) | HL API public; Uniswap subgraphs via The Graph (free with rate limit) | Medium | Pure MEV fully saturated by professional searchers; LP management feasible; requires web3.py + gas cost model; IL complicates P&L accounting |
-| 9. Alternative data | Wikipedia pageviews z-score (Kristoufek 2013 prior); GitHub commit velocity as dev proxy | Wikimedia REST API + GitHub REST API (both free, no key required) | High | Very low institutional competition; slow-moving series → L12b autocorrelation risk; daily granularity caps signal frequency |
+| 9. Alternative data | ~~Wikipedia pageviews z-score~~ **ARCHIVED** (L18: zero IC at 7d CS daily). GitHub commit velocity as dev proxy remains untested. | GitHub REST API (free, no key required) | Medium | Wikipedia exhausted (L18); GitHub velocity untested — institutional competition low but developer activity slow-moving (L12b autocorrelation risk) |
 | 10. ML / feature engineering transfer | Cross-sectional SHAP-universal model: OFI+spread+VWAP (Bieganowski-Ślepaczuk 2025 show same SHAP structure across BTC/ETH/SOL/alts) | Binance tick stream (public WebSocket) | Low–Medium | L11 applies unless delta-neutral execution; tick data infra cost; requires TimeSeries CV to avoid regime-shift overfitting |
 
 ---
@@ -1444,8 +1489,8 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 
 ---
 
-**N_tests cumulative: 156** (prior 153 + 1 Phase-2 IC + 2 Phase-3 WF cycles)
-**E[max_SR] at N=156: ≈ 4.34** (marginal increase, no meaningful change)
+**N_tests cumulative: 159** (156→157: ETF Regime Overlay Gate 2 FAIL, Δ=+0.022%/day, L15; 157→158: FGVD H1 IC wrong direction, IC_C=+0.0054, D1 fires, L17; 158→159: WAV H3 IC_B=+0.00158, D4 fires, L18)
+**E[max_SR] at N=159: ≈ 4.34** (no meaningful change)
 
 **Extended structural finding** (confirmed across 44 signals): In crypto, all free-data standalone strategies are either:
 1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout, MVRV, active addresses) — work in bull, fail in bear, corr > 0.4
@@ -1542,7 +1587,11 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 ### Prop firm expansion
 6. **FTMO crypto**: Run 44-path sim with FTMO rules. Key structural differences: trailing HWM (harder to recover), 5% daily limit (more survivable on crash days), scaling plan available. **Priority #2** given the 39% Propr ceiling.
 
-> **n_tests counter**: **82** as of May 2026 (53 crypto + 4 FX + 5 multi-asset variants + 1 methodology audit + 1 NQ ORB SPY proxy + 1 NQ ORB 5-min + 1 NQ ORB 1-min + 3 VIX term carry variants + 3 Gatev pairs variants + 4 commodity TSMOM variants + 4 sector reversal variants = 82 total). Walk-forward windows and feasibility validation are NOT separate trials. DSR renamed → `approx_multi_test_penalty` (honest naming).
+> **n_tests counter (equities/ETF/options)**: **83** as of May 2026 (82 equities/ETF + 1 Options_Vol SPX VRP Angle C IC test). Breakdown: 53 crypto-era equities + 4 FX + 5 multi-asset variants + 1 methodology audit + 1 NQ ORB SPY proxy + 1 NQ ORB 5-min + 1 NQ ORB 1-min + 3 VIX term carry variants + 3 Gatev pairs variants + 4 commodity TSMOM variants + 4 sector reversal variants + 1 SPX VRP conditional IC = 83. Walk-forward windows and feasibility validation are NOT separate trials. DSR renamed → `approx_multi_test_penalty` (honest naming).
+
+### Options_Vol — SPX VRP Angle C — ARCHIVED (2026-05-23)
+
+Short ATM straddle conditional on VIX_z > 1.0. Phase 1 IC FAIL: conditional IC = −0.009, t_HAC = −0.144 (gate: t > 3.5). 2020–2025 sub-period mean outcome = −70.78 variance pts (COVID + 2022 inflation regime). Root cause: conditioning on elevated VIX selects exact tail-risk windows where RV > IV. Static VRP exists (unconditional IC = +0.152, t = 3.671) but is a different untested hypothesis. `Options_Vol/research/archived/vrp_spx_angle_c/`. n_tests = 321 global.
 
 ### Two-tier validation framework (effective May 2026)
 

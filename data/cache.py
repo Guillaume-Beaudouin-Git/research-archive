@@ -14,6 +14,12 @@ Public API
     get_cached_or_fetch(ticker, start, end, interval, source, max_age_days) -> pd.DataFrame
         Generic yfinance fetch with parquet cache.
 
+    get_cached_or_fetch_fred(series, start, end, max_age_days) -> pd.DataFrame
+        FRED series fetch with parquet cache. No API key required.
+
+    get_cached_or_fetch_http(url, cache_key, parser, max_age_days) -> pd.DataFrame
+        Generic HTTP fetch with parquet cache. Suitable for CBOE, AAII etc.
+
     list_cache() -> pd.DataFrame
         Inventory table of all cached parquets.
 
@@ -28,6 +34,7 @@ import json
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Callable
 
 import numpy as np
 import pandas as pd
@@ -225,6 +232,173 @@ def get_cached_or_fetch(
         json.dump(meta, fh, indent=2)
 
     log.info("Fetched & cached → %s (%d rows)", pq_path.name, len(df))
+    return df
+
+
+def get_cached_or_fetch_fred(
+    series: str | list[str],
+    start:  str,
+    end:    str | None  = None,
+    max_age_days: float = 1.0,
+) -> pd.DataFrame:
+    """
+    Fetch one or more FRED series with parquet cache.
+
+    Strategy (in order):
+      1. If FRED_API_KEY set in environment → fredapi (most reliable, full history).
+      2. Otherwise → FRED Graph CSV public endpoint (full history, no key needed).
+         URL: https://fred.stlouisfed.org/graph/fredgraph.csv?id={SERIES}
+
+    Parameters
+    ----------
+    series : single ticker or list, e.g. 'DGS3MO' or ['DGS3MO', 'T10Y2Y'].
+    start  : 'YYYY-MM-DD'
+    end    : 'YYYY-MM-DD', defaults to today.
+
+    Returns
+    -------
+    pd.DataFrame  —  DatetimeIndex (tz-naive), one column per series (lowercase).
+    Values are numeric; FRED weekends/holidays are NaN (forward-fill at callers).
+    """
+    import io as _io
+    import urllib.request as _req
+    import os
+
+    if isinstance(series, str):
+        series = [series]
+
+    key       = hashlib.md5(f"fred|{'_'.join(sorted(series))}|{start}|{end}".encode()).hexdigest()[:10]
+    pq_path   = _RAW  / f"fred_{'_'.join(s[:8] for s in sorted(series)[:3])}_{key}.parquet"
+    meta_path = _META / f"fred_{'_'.join(s[:8] for s in sorted(series)[:3])}_{key}.json"
+
+    if pq_path.exists() and meta_path.exists():
+        with open(meta_path) as fh:
+            meta = json.load(fh)
+        age_d = (datetime.now(timezone.utc) - datetime.fromisoformat(meta["created_at"])).total_seconds() / 86400
+        if age_d <= max_age_days:
+            log.info("Cache hit  → %s (age %.2fd)", pq_path.name, age_d)
+            return pd.read_parquet(pq_path, engine="pyarrow")
+        log.info("Cache stale (%.2fd) — refetching FRED", age_d)
+
+    end_str   = end or datetime.utcnow().strftime("%Y-%m-%d")
+    api_key   = os.environ.get("FRED_API_KEY", "")
+    frames: list[pd.DataFrame] = []
+
+    for s in series:
+        df_s: pd.DataFrame | None = None
+
+        # ── Path 1: fredapi if key available ─────────────────────────────────
+        if api_key:
+            try:
+                from fredapi import Fred
+                fred   = Fred(api_key=api_key)
+                raw_s  = fred.get_series(s, observation_start=start, observation_end=end_str)
+                df_s   = raw_s.to_frame(name=s.lower())
+                df_s.index = pd.to_datetime(df_s.index).tz_localize(None)
+            except Exception as exc:
+                log.warning("fredapi failed for %s: %s — trying graph CSV", s, exc)
+
+        # ── Path 2: FRED Graph CSV (public, full history) ────────────────────
+        if df_s is None:
+            url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={s}"
+            try:
+                with _req.urlopen(url, timeout=20) as resp:
+                    raw = resp.read()
+                tmp = pd.read_csv(_io.BytesIO(raw))
+                tmp.columns = ["date", s.lower()]
+                tmp["date"] = pd.to_datetime(tmp["date"], errors="coerce")
+                tmp = tmp.dropna(subset=["date"]).set_index("date")
+                tmp[s.lower()] = pd.to_numeric(tmp[s.lower()], errors="coerce")
+                mask  = (tmp.index >= pd.Timestamp(start)) & (tmp.index <= pd.Timestamp(end_str))
+                df_s  = tmp.loc[mask]
+            except Exception as exc:
+                log.warning("FRED Graph CSV failed for %s: %s — NaN column", s, exc)
+                df_s = pd.DataFrame({s.lower(): pd.Series(dtype=float)}, index=pd.DatetimeIndex([]))
+
+        frames.append(df_s)
+
+    df = pd.concat(frames, axis=1).sort_index() if frames else pd.DataFrame()
+
+    _RAW.mkdir(parents=True, exist_ok=True)
+    _META.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(pq_path, engine="pyarrow", compression="snappy")
+    meta = {
+        "source": "fred_graph_csv", "series": series, "start": start, "end": end_str,
+        "rows":       len(df),
+        "date_start": str(df.index[0])  if len(df) else None,
+        "date_end":   str(df.index[-1]) if len(df) else None,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "parquet_path": str(pq_path),
+    }
+    with open(meta_path, "w") as fh:
+        json.dump(meta, fh, indent=2)
+    log.info("Fetched & cached FRED → %s (%d rows)", pq_path.name, len(df))
+    return df
+
+
+def get_cached_or_fetch_http(
+    url:          str,
+    cache_key:    str,
+    parser:       Callable[[bytes], pd.DataFrame],
+    max_age_days: float = 7.0,
+) -> pd.DataFrame:
+    """
+    Fetch data from an HTTP URL with parquet cache.
+
+    Parameters
+    ----------
+    url        : full URL to download.
+    cache_key  : stable human-readable key (used in filename), e.g. 'cboe_pcr_equity'.
+    parser     : callable that takes raw bytes and returns a DataFrame.
+    max_age_days : cache TTL.
+
+    Returns
+    -------
+    pd.DataFrame as returned by parser, or empty DataFrame on fetch failure.
+    """
+    key = hashlib.md5(url.encode()).hexdigest()[:8]
+    pq_path   = _RAW  / f"http_{cache_key}_{key}.parquet"
+    meta_path = _META / f"http_{cache_key}_{key}.json"
+
+    if pq_path.exists() and meta_path.exists():
+        with open(meta_path) as fh:
+            meta = json.load(fh)
+        age_d = (datetime.now(timezone.utc) - datetime.fromisoformat(meta["created_at"])).total_seconds() / 86400
+        if age_d <= max_age_days:
+            log.info("Cache hit  → %s (age %.2fd)", pq_path.name, age_d)
+            return pd.read_parquet(pq_path, engine="pyarrow")
+        log.info("Cache stale (%.2fd > %.2fd) — refetching %s", age_d, max_age_days, url[:60])
+
+    import urllib.request
+    _UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": _UA})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            raw = resp.read()
+    except Exception as exc:
+        log.warning("HTTP fetch failed for %s: %s — returning empty DataFrame", url[:60], exc)
+        return pd.DataFrame()
+
+    try:
+        df = parser(raw)
+    except Exception as exc:
+        log.warning("Parser failed for %s: %s — returning empty DataFrame", cache_key, exc)
+        return pd.DataFrame()
+
+    _RAW.mkdir(parents=True, exist_ok=True)
+    _META.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(pq_path, engine="pyarrow", compression="snappy")
+    meta = {
+        "source": url, "cache_key": cache_key,
+        "rows": len(df),
+        "date_start": str(df.index[0]) if len(df) else None,
+        "date_end":   str(df.index[-1]) if len(df) else None,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "parquet_path": str(pq_path),
+    }
+    with open(meta_path, "w") as fh:
+        json.dump(meta, fh, indent=2)
+    log.info("Fetched & cached HTTP → %s (%d rows)", pq_path.name, len(df))
     return df
 
 
