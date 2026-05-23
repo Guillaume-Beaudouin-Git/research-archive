@@ -114,26 +114,52 @@ Page https://ftmo.com/en/account-types/ returned HTTP 404. Rules for "Pro Trader
 **Gate:** N > 400 breakout days, |t_HAC_NW6| > 1.65 at any horizon
 **N_tests added:** +8 (2 signal variants × 4 horizons) per pair → +16 total for 2 pairs
 
-**EURUSD results (N=454 valid days, rate-limited data — WARN_N below 400 gate):**
+**v1 results (INVALID — sparse data):** IC negative at all horizons, N < 400. Superseded by v2.
+
+**v2 results — EURUSD (1,299 valid days, N gate ✓):**
+
+| Variant | Horizon | N | IC_spearman | t_HAC_NW6 | mean_signed_ret | Gate |
+|---|---|---|---|---|---|---|
+| close-based | **1h** | 489 | **+0.0564** | +0.39 | +0.000066 | FAIL (not sig.) |
+| close-based | 2h | 489 | +0.0134 | −0.50 | +0.000083 | FAIL |
+| close-based | 4h | 489 | −0.1022 | −2.45 | +0.000111 | WEAK (reversal) |
+| close-based | session | 489 | −0.0893 | −1.41 | +0.000387 | WEAK (reversal) |
+| HL-based | **1h** | 864 | **+0.0374** | +0.12 | +0.000037 | FAIL (not sig.) |
+| HL-based | 2h | 864 | −0.0031 | −0.57 | +0.000048 | FAIL |
+| HL-based | 4h | 864 | −0.0741 | −2.37 | +0.000056 | WEAK (reversal) |
+| HL-based | session | 864 | −0.0671 | −1.34 | +0.000176 | WEAK (reversal) |
+
+**Per-year 1h IC (EURUSD, COVID-regime check):**
+
+| Year | N | IC | t_HAC | mean_sret | hit_rate |
+|---|---|---|---|---|---|
+| 2020 | 92 | +0.073 | +0.50 | +0.000138 | 48.9% |
+| 2021 | 109 | +0.113 | +1.04 | −0.000061 | 48.6% |
+| 2022 | 93 | −0.024 | −0.87 | +0.000065 | 48.4% |
+| 2023 | 96 | +0.056 | −0.11 | +0.000095 | 47.9% |
+| 2024 | 99 | +0.081 | +0.36 | +0.000111 | 53.5% |
+
+**v2 results — GBPUSD (1,298 valid days, N gate ✓):**
 
 | Variant | Horizon | N | IC_spearman | t_HAC_NW6 | Gate |
 |---|---|---|---|---|---|
-| close-based | 1h | 185 | −0.0356 | −1.37 | WRONG DIR |
-| close-based | 2h | 185 | −0.0723 | −1.33 | WRONG DIR |
-| close-based | **4h** | 185 | **−0.1701** | **−2.26** | WRONG DIR (reversal) |
-| close-based | session | 185 | −0.1663 | −1.62 | WRONG DIR |
-| HL-based | 1h | 320 | −0.0104 | −1.31 | WRONG DIR |
-| HL-based | 2h | 320 | −0.0747 | −1.30 | WRONG DIR |
-| HL-based | 4h | 320 | −0.1253 | −2.11 | WRONG DIR (reversal) |
-| HL-based | session | 320 | −0.1261 | −1.19 | WRONG DIR |
+| close-based | 1h | 517 | +0.0518 | +0.76 | FAIL |
+| close-based | 2h | 517 | +0.0526 | +0.46 | FAIL |
+| close-based | 4h | 517 | +0.0336 | −0.19 | FAIL |
+| HL-based | **1h** | 905 | **+0.0550** | **+1.01** | WEAK |
+| HL-based | 2h | 905 | +0.0495 | +0.70 | FAIL |
+| HL-based | 4h | 905 | +0.0528 | −0.02 | FAIL |
 
-**GBPUSD results:** N=67–88 breakout days (all n<100, skip).
+**Task 4 (EUR/GBP correlation) — v2:** 254/266 same direction = **95.5%** (close-based). Dual-pair filter cosmetic.
 
-**Finding:** IC is **negative at all horizons** — breakout does NOT continue (momentum hypothesis fails). Strong negative IC at 4h (t_HAC ≈ −2.2 in absolute terms) reflects **mean reversion** by 4h post-breakout. The 2020 preview showed positive IC at 1h (momentum); the full 5-year sample reverses this, suggesting 2020 was atypically momentum-favorable or that data sparsity in 2021-2024 biases the sample toward reversals.
+**Findings:**
+- Momentum direction (positive IC at 1h) EXISTS for both pairs but is **not statistically significant** (t_HAC ≈ 0.1–1.0)
+- EURUSD shows a strong **reversal** at 4h (t_HAC = −2.45) — breakout fades by afternoon, London session mean-reverts
+- GBPUSD shows no reversal (positive IC at all horizons) — momentum more persistent in GBP
+- Per-year EURUSD: IC positive in 4 of 5 years — not COVID-dominated. Weak but consistent direction.
+- The **signal exists but is too weak** to clear the IC gate (t_HAC < 1.65 at 1h for both pairs)
 
-**N gate:** FAIL (N=185–320 < 400). Data quality insufficient for conclusive IC test.
-
-Status: **COMPLETE — FAIL (wrong direction + N below gate)**
+Status: **COMPLETE v2 — FAIL (t_HAC < 1.65 at any momentum horizon)**
 
 ---
 
@@ -143,12 +169,11 @@ Status: **COMPLETE — FAIL (wrong direction + N below gate)**
 **Interpretation threshold:** > 75% same = dual-pair confirmation is mostly cosmetic
 **N_tests added:** 0 (diagnostic, not an independent signal)
 
-**Result:** Close-based: 14/15 same direction = **93.3%**. HL-based: 30/37 = **81.1%**.
-N is very low (15/37 days where both pairs had valid breakout data), driven by GBPUSD sparse coverage. Both exceed 75% threshold.
+**v2 result:** Close-based: 254/266 = **95.5%** (N=266 ✓). HL-based: 565/666 = **84.8%** (N=666 ✓).
 
-**Finding:** EUR/GBP dual-pair filter is cosmetic — both pairs break in same direction 81–93% of the time. Single-pair strategy is preferable; dual-pair adds no meaningful edge filter.
+**Finding:** EUR/GBP filter is cosmetic — 85–96% of breakouts align. Single-pair preferable.
 
-Status: **COMPLETE**
+Status: **COMPLETE v2**
 
 ---
 
@@ -160,11 +185,19 @@ Status: **COMPLETE**
 **Gate:** N > 150 observations, |t_HAC_NW6| > 1.65
 **N_tests added:** +4 horizons × 2 pairs = +8 for Angle B; pooled: +4
 
-**Result:** N=0 for both EURUSD and GBPUSD. All 201 events failed to find valid spike bars (pre/post bars missing).
+**v1 result:** N=0 (data quality bug — sparse fetch + ATR NaN bug). Superseded by v2.
 
-**Root cause:** Same rate-limiting issue as Task 2. The specific 1-min bars at news event times (13:30 for NFP/CPI, 18:00-19:00 for FOMC, 11:45-13:15 for ECB) were dropped during fetch. With 23-58% overall hourly fill on years 2021-2024, there is a high probability the event-hour files are missing. Result is statistically invalid (not evidence of no signal, just missing data).
+**v2 result (fetch_data_v2 + ATR min_periods=5 fix):**
+- EURUSD: **N=130** / 201 events (65% retention) — below N=150 gate by 20 obs
+- GBPUSD: **N=118** / 201 events (59% retention) — below N=150 gate by 32 obs
+- ATR bug fixed: `rolling(14)` with default `min_periods=14` produced NaN on weekends (calendar days in rolling window), silently dropping events near year start. Fixed: `min_periods=5`.
+- Remaining dropout (71 events EURUSD): spike filter (|spike| < 5% daily ATR = micro-noise days), missing T+2min bar, missing exit bars.
 
-Status: **COMPLETE — INCONCLUSIVE (data quality, N=0)**
+**IC not computed (N < 150 gate).** Directional test not possible with current event count.
+
+**Root cause of low N:** FOMC events at 18:00-19:00 UTC and ECB at 11:45-13:15 UTC — these hours likely had valid bar data, but the spike ATR filter rejected low-volatility days. With N=130 (< 150), the gate is not met.
+
+Status: **COMPLETE v2 — FAIL (N=130/118 < 150 gate)**
 
 ---
 
@@ -184,34 +217,44 @@ Status: **COMPLETE — INCONCLUSIVE (data quality, N=0)**
 
 ---
 
-## TASK 6 — SYNTHESIS
+## TASK 6 — SYNTHESIS (v2 — final)
 
-## SYNTHESIS — STOP (INCONCLUSIVE — DATA QUALITY)
+**Date:** 2026-05-23 | Data: fetch_data_v2 (99% LO fill all year-pairs) | N_tests: 172
 
-**Date completed:** 2026-05-23  
-**Data status:** Rate-limited fetch → LO coverage 23–100% for EURUSD, 25–36% for GBPUSD
+### Angle A (London ORB) — v2
 
-### Angle A (London ORB)
-- EURUSD: N=185 (close-based) / N=320 (HL-based) — **below N=400 gate**
-- All horizons show **negative IC** (reversal, not momentum): IC = −0.04 to −0.17
-- Strongest signal: IC = −0.17, t_HAC = −2.26 at 4h (statistically significant REVERSAL)
-- The breakout momentum hypothesis **fails**: price reverses rather than continues post-breakout
-- GBPUSD: n<100 on all combos — skip
+| Pair | Variant | 1h IC | 1h t_HAC | 4h IC | 4h t_HAC | Verdict |
+|---|---|---|---|---|---|---|
+| EURUSD | close | +0.056 | +0.39 | −0.102 | −2.45 | FAIL (not sig. at 1h; reversal at 4h) |
+| EURUSD | HL | +0.037 | +0.12 | −0.074 | −2.37 | FAIL |
+| GBPUSD | close | +0.052 | +0.76 | +0.034 | −0.19 | FAIL |
+| GBPUSD | HL | +0.055 | +1.01 | +0.053 | −0.02 | WEAK (not sig.) |
 
-### Angle B (News-Fade)
-- EURUSD + GBPUSD: N=0 (all event bars missing due to rate-limiting)
-- **Inconclusive** — not evidence of no signal, just missing data
+Key observations:
+- Momentum direction is **correct** (positive IC at 1h) for both pairs and both variants — the breakout tends to continue in the first hour
+- The signal is **too weak** to be statistically significant (best t_HAC = +1.01 at 1h)
+- EURUSD shows a statistically significant **reversal at 4h** (t = −2.45) — the breakout fades in the afternoon
+- Per-year check: IC positive in 4/5 years for EURUSD — signal NOT COVID-driven
+- EUR/GBP breakout correlation: 95.5% — dual-pair confirmation adds no value
 
-### EUR/GBP Breakout Correlation (Task 4)
-- P(same direction) = 93.3% (close) / 81.1% (HL)
-- Dual-pair filter cosmetic — single-pair preferable
+### Angle B (News-Fade) — v2
+- EURUSD N=130, GBPUSD N=118 — both below N=150 gate
+- Low N driven by ATR filter rejecting soft-volatility events, not data gaps
+- IC not computed (gate not met)
 
-### Decision: **STOP**
-Both angles fail the IC gate (positive IC + t_HAC > 1.65 not met). Angle A shows a statistically significant REVERSAL signal (IC = −0.17 at 4h, t = −2.26) but this is the opposite of the hypothesized momentum direction.
+### Decision: **STOP** (as formulated)
 
-### Open questions (user decision needed)
-1. **Re-fetch?** Fetch with CONCURRENCY=5 + 0.5s inter-batch delay → estimated ~2h/year vs current ~17min/year. Would give N≈800 EURUSD + N≈800 GBPUSD. With more data, the reversal signal could be properly tested.
-2. **Reversal pivot?** If reversal at 4h is real (IC ≈ −0.17 with proper N), flip signal direction — trade fade of London breakout rather than breakout momentum. Costs +8 n_tests (same horizons, new direction hypothesis).
-3. **Archive FX?** If neither momentum nor reversal is pursued, archive and pivot to another asset class or strategy type.
+The momentum hypothesis (Asian range breakout continues at London Open) shows the correct directional IC but fails the statistical significance gate. The signal exists (IC ≈ +0.04–0.06 at 1h) but is too small to clear t_HAC > 1.65 with 5 years of data (N ≈ 500–900).
 
-**WAITING FOR USER VALIDATION — DO NOT START PHASE 2 WITHOUT EXPLICIT APPROVAL**
+### Options for user validation
+
+| Option | What it tests | n_tests cost | Prerequisite |
+|---|---|---|---|
+| **A — More data** | Extend to 2015-2024 (10 years) → N doubles → t_HAC ≈ ×√2 → might hit 1.4 | 0 (same tests) | Re-fetch 2015-2019 (Dukascopy available) |
+| **B — Pooled pairs** | Test EURUSD+GBPUSD pooled (N ≈ 1,400) → t_HAC ≈ ×√2 | +8 n_tests | No data cost |
+| **C — Tighter filter** | Add Asian range size filter (only trade large-range days) | +8 n_tests | Post-hoc risk |
+| **D — Archive** | Archive FX ORB/news-fade, pivot elsewhere | 0 | — |
+
+**Option A** (more data, same tests) is the cleanest: no n_tests cost, no new hypothesis. If IC ≈ +0.05 holds over 10 years with N ≈ 1,000, t_HAC ≈ +1.6 — still marginal but testable.
+
+**WAITING FOR USER VALIDATION. DO NOT START PHASE 2 WITHOUT EXPLICIT APPROVAL.**

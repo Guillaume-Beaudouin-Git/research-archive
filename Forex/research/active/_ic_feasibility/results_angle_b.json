@@ -1,12 +1,12 @@
 {
   "EURUSD": {
     "pair": "EURUSD",
-    "N": 0,
+    "N": 130,
     "gate": "FAIL_N"
   },
   "GBPUSD": {
     "pair": "GBPUSD",
-    "N": 0,
+    "N": 118,
     "gate": "FAIL_N"
   }
 }
