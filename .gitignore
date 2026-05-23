@@ -53,3 +53,7 @@ Thumbs.db
 # Claude Code local settings
 .claude/
 graphify-out/
+
+# Runtime state files (live strategies)
+orders_log.db
+tsmom_state_*.json
