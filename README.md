@@ -1301,14 +1301,16 @@ Pre-flight event-count checks must gate both floor (too sparse → underpowered 
 - 6.38 FRA-DN (funding rate acceleration, delta-neutral): SKIP (IC t=1.01, unstable: 2024 IC=+0.051 vs 2025 IC=−0.061)
 - 6.39 PMR (perp-spot basis mean-reversion, threshold event-driven): SKIP (IC t=2.86 at 3d PASS, but 912 events/year at 1.5σ → 97%/yr cost drag → Sharpe=−0.55, MaxDD=−65%. Signal real, strategy unexploitable at retail taker fees. See `Crypto/research/archived/other/pmr_basis/POSTMORTEM.md`)
 - 6.40–6.42 OAGF (open auction gap fade at 8h settlement bars, Binance 1h perp, maker ALO): SKIP (IC_daily=−0.189 at 1h, direction correct, but t_HAC=−1.17 — gate −2.5. Root cause: 128 events/year at 0.30% threshold too sparse; reaching t=−2.5 requires ~10 years data. HL candle API has only ~7 months of history. See `Crypto/research/archived/other/oagf/POSTMORTEM.md`)
+- 6.43–6.44 ETH MVRV + Exchange Netflow (on-chain, CoinMetrics Community free tier, Phase 1 sanity): SKIP (MVRV IC=+0.11 as MOMENTUM signal — wrong direction for mean-reversion hypothesis, corr_A=0.73. Netflow IC collapses to t_HAC≈0 after HAC correction — 90d accumulation regime autocorrelation → effective N≈73 from 3398 daily obs. Gate 1 FAIL. See `Crypto/research/archived/other/eth_mvrv_netflow/POSTMORTEM.md`)
 
-**N_tests cumulative: 151** (prior 148 + 3 OAGF IC horizons)
-**E[max_SR] at N=151: ≈ 4.34** (AMTP threshold for future strategies)
+**N_tests cumulative: 153** (prior 151 + 2 Phase-1 sanity IC tests: MVRV + Netflow)
+**E[max_SR] at N=153: ≈ 4.34** (AMTP threshold, marginal change)
 
-**Extended structural finding** (confirmed across 39 signals): In crypto, all free-data standalone strategies are either:
-1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout) — work in bull, fail in bear, corr > 0.4
+**Extended structural finding** (confirmed across 44 signals): In crypto, all free-data standalone strategies are either:
+1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout, MVRV, active addresses) — work in bull, fail in bear, corr > 0.4
 2. **Cost-inaccessible at retail fees** (LSTM, residual MR, STR, basis MR) — real AUC/IC but n_trades × fee > gross return OR signal amplitude < cost
-3. **Mean-reversion into momentum** (crash recovery, CS L/S, funding reversal, basis z-score) — funding and basis spikes are momentum proxies; dip-buying and reversal bets are anti-edge
+3. **Mean-reversion into momentum** (crash recovery, CS L/S, funding reversal, basis z-score, MVRV) — funding, basis, and on-chain cycle signals are momentum proxies; reversion bets are anti-edge
+4. **Autocorrelation-deflated to zero** (exchange netflow, stablecoin supply) — regime persistence makes effective N << nominal N; HAC destroys t-stat
 4. **Cross-sectional orthogonal but Sharpe < 1.0** (XGBoost CS, 0.734) — only approach that escapes TSMOM co-linearity
 
 **Key new finding (6.35+6.36)**: Both extreme funding (6.35) and perp-spot basis (6.36) produce IC in the **wrong direction** — they predict the opposite of what theory suggests. This confirms the archetype: in crypto, both funding and basis are **momentum proxies** (high when sentiment is bullish), not **dislocation indicators** (high when price is stretched beyond equilibrium). Arbitrage convergence does not happen at 5-day horizons.
