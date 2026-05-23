@@ -370,7 +370,7 @@ def main():
         if stat is None:
             continue
 
-        if h in items_seen:
+        if h in items_seen and items_seen[h].get("decision") != "deferred_to_next_run":
             continue
 
         stat["new"] += 1
