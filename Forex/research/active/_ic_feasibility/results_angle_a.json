@@ -2,70 +2,152 @@
   "EURUSD": {
     "pair": "EURUSD",
     "close_based": {
-      "N": 185,
-      "n_gate": "WARN_N",
+      "N": 489,
+      "n_gate": "OK",
       "horizons": {
         "1h": {
-          "n": 185,
-          "IC_spearman": -0.0356,
-          "t_HAC_NW6": -1.369,
-          "p_val": 0.171,
-          "gate": "WEAK"
+          "n": 489,
+          "IC_spearman": 0.0564,
+          "t_HAC_NW6": 0.394,
+          "mean_signed_ret": 6.6e-05,
+          "p_val": 0.6939,
+          "gate": "FAIL"
         },
         "2h": {
-          "n": 185,
-          "IC_spearman": -0.0723,
-          "t_HAC_NW6": -1.327,
-          "p_val": 0.1846,
-          "gate": "WEAK"
+          "n": 489,
+          "IC_spearman": 0.0134,
+          "t_HAC_NW6": -0.504,
+          "mean_signed_ret": 8.3e-05,
+          "p_val": 0.6146,
+          "gate": "FAIL"
         },
         "4h": {
-          "n": 185,
-          "IC_spearman": -0.1701,
-          "t_HAC_NW6": -2.256,
-          "p_val": 0.0241,
+          "n": 489,
+          "IC_spearman": -0.1022,
+          "t_HAC_NW6": -2.45,
+          "mean_signed_ret": 0.000111,
+          "p_val": 0.0143,
           "gate": "WEAK"
         },
         "session": {
-          "n": 173,
-          "IC_spearman": -0.1663,
-          "t_HAC_NW6": -1.616,
-          "p_val": 0.1061,
+          "n": 489,
+          "IC_spearman": -0.0893,
+          "t_HAC_NW6": -1.411,
+          "mean_signed_ret": 0.000387,
+          "p_val": 0.1582,
           "gate": "WEAK"
+        }
+      },
+      "per_year_1h": {
+        "2020": {
+          "n": 92,
+          "IC": 0.0726,
+          "t_HAC": 0.502,
+          "mean_signed_ret": 0.000138,
+          "hit_rate": 0.4891
+        },
+        "2021": {
+          "n": 109,
+          "IC": 0.1129,
+          "t_HAC": 1.04,
+          "mean_signed_ret": -6.1e-05,
+          "hit_rate": 0.4862
+        },
+        "2022": {
+          "n": 93,
+          "IC": -0.024,
+          "t_HAC": -0.865,
+          "mean_signed_ret": 6.5e-05,
+          "hit_rate": 0.4839
+        },
+        "2023": {
+          "n": 96,
+          "IC": 0.0561,
+          "t_HAC": -0.107,
+          "mean_signed_ret": 9.5e-05,
+          "hit_rate": 0.4792
+        },
+        "2024": {
+          "n": 99,
+          "IC": 0.0807,
+          "t_HAC": 0.356,
+          "mean_signed_ret": 0.000111,
+          "hit_rate": 0.5354
         }
       }
     },
     "hl_based": {
-      "N": 320,
-      "n_gate": "WARN_N",
+      "N": 864,
+      "n_gate": "OK",
       "horizons": {
         "1h": {
-          "n": 320,
-          "IC_spearman": -0.0104,
-          "t_HAC_NW6": -1.314,
-          "p_val": 0.1889,
-          "gate": "WEAK"
+          "n": 864,
+          "IC_spearman": 0.0374,
+          "t_HAC_NW6": 0.124,
+          "mean_signed_ret": 3.7e-05,
+          "p_val": 0.9014,
+          "gate": "FAIL"
         },
         "2h": {
-          "n": 320,
-          "IC_spearman": -0.0747,
-          "t_HAC_NW6": -1.304,
-          "p_val": 0.1924,
-          "gate": "WEAK"
+          "n": 864,
+          "IC_spearman": -0.0031,
+          "t_HAC_NW6": -0.573,
+          "mean_signed_ret": 4.8e-05,
+          "p_val": 0.5665,
+          "gate": "FAIL"
         },
         "4h": {
-          "n": 320,
-          "IC_spearman": -0.1253,
-          "t_HAC_NW6": -2.114,
-          "p_val": 0.0345,
+          "n": 864,
+          "IC_spearman": -0.0741,
+          "t_HAC_NW6": -2.365,
+          "mean_signed_ret": 5.6e-05,
+          "p_val": 0.018,
           "gate": "WEAK"
         },
         "session": {
-          "n": 298,
-          "IC_spearman": -0.1261,
-          "t_HAC_NW6": -1.194,
-          "p_val": 0.2326,
+          "n": 864,
+          "IC_spearman": -0.0671,
+          "t_HAC_NW6": -1.342,
+          "mean_signed_ret": 0.000176,
+          "p_val": 0.1797,
           "gate": "WEAK"
+        }
+      },
+      "per_year_1h": {
+        "2020": {
+          "n": 170,
+          "IC": 0.055,
+          "t_HAC": 0.323,
+          "mean_signed_ret": 8.7e-05,
+          "hit_rate": 0.2647
+        },
+        "2021": {
+          "n": 187,
+          "IC": 0.0972,
+          "t_HAC": 1.207,
+          "mean_signed_ret": -3.5e-05,
+          "hit_rate": 0.2727
+        },
+        "2022": {
+          "n": 166,
+          "IC": -0.0178,
+          "t_HAC": -1.181,
+          "mean_signed_ret": 9.3e-05,
+          "hit_rate": 0.2651
+        },
+        "2023": {
+          "n": 169,
+          "IC": 0.0211,
+          "t_HAC": -0.066,
+          "mean_signed_ret": 3.4e-05,
+          "hit_rate": 0.2367
+        },
+        "2024": {
+          "n": 172,
+          "IC": 0.0218,
+          "t_HAC": 0.14,
+          "mean_signed_ret": 1.7e-05,
+          "hit_rate": 0.2616
         }
       }
     }
@@ -73,24 +155,164 @@
   "GBPUSD": {
     "pair": "GBPUSD",
     "close_based": {
-      "N": 67,
-      "n_gate": "WARN_N",
-      "horizons": {}
+      "N": 517,
+      "n_gate": "OK",
+      "horizons": {
+        "1h": {
+          "n": 517,
+          "IC_spearman": 0.0518,
+          "t_HAC_NW6": 0.764,
+          "mean_signed_ret": 4.7e-05,
+          "p_val": 0.4446,
+          "gate": "FAIL"
+        },
+        "2h": {
+          "n": 517,
+          "IC_spearman": 0.0526,
+          "t_HAC_NW6": 0.462,
+          "mean_signed_ret": 3.9e-05,
+          "p_val": 0.644,
+          "gate": "FAIL"
+        },
+        "4h": {
+          "n": 517,
+          "IC_spearman": 0.0336,
+          "t_HAC_NW6": -0.187,
+          "mean_signed_ret": 0.000118,
+          "p_val": 0.8515,
+          "gate": "FAIL"
+        },
+        "session": {
+          "n": 517,
+          "IC_spearman": 0.0119,
+          "t_HAC_NW6": -0.44,
+          "mean_signed_ret": 0.000181,
+          "p_val": 0.6597,
+          "gate": "FAIL"
+        }
+      },
+      "per_year_1h": {
+        "2020": {
+          "n": 109,
+          "IC": 0.0012,
+          "t_HAC": -0.341,
+          "mean_signed_ret": 0.000109,
+          "hit_rate": 0.5046
+        },
+        "2021": {
+          "n": 101,
+          "IC": -0.0183,
+          "t_HAC": -0.137,
+          "mean_signed_ret": 2.1e-05,
+          "hit_rate": 0.5347
+        },
+        "2022": {
+          "n": 93,
+          "IC": 0.1522,
+          "t_HAC": 1.697,
+          "mean_signed_ret": -3.9e-05,
+          "hit_rate": 0.4946
+        },
+        "2023": {
+          "n": 107,
+          "IC": 0.0773,
+          "t_HAC": 0.054,
+          "mean_signed_ret": 5e-05,
+          "hit_rate": 0.5047
+        },
+        "2024": {
+          "n": 107,
+          "IC": 0.0588,
+          "t_HAC": 0.789,
+          "mean_signed_ret": 8.1e-05,
+          "hit_rate": 0.5047
+        }
+      }
     },
     "hl_based": {
-      "N": 88,
-      "n_gate": "WARN_N",
-      "horizons": {}
+      "N": 905,
+      "n_gate": "OK",
+      "horizons": {
+        "1h": {
+          "n": 905,
+          "IC_spearman": 0.055,
+          "t_HAC_NW6": 1.011,
+          "mean_signed_ret": 1.5e-05,
+          "p_val": 0.3122,
+          "gate": "WEAK"
+        },
+        "2h": {
+          "n": 905,
+          "IC_spearman": 0.0495,
+          "t_HAC_NW6": 0.698,
+          "mean_signed_ret": 1.2e-05,
+          "p_val": 0.4852,
+          "gate": "FAIL"
+        },
+        "4h": {
+          "n": 905,
+          "IC_spearman": 0.0528,
+          "t_HAC_NW6": -0.02,
+          "mean_signed_ret": 5.3e-05,
+          "p_val": 0.9844,
+          "gate": "FAIL"
+        },
+        "session": {
+          "n": 905,
+          "IC_spearman": 0.0163,
+          "t_HAC_NW6": -0.257,
+          "mean_signed_ret": 0.000107,
+          "p_val": 0.7973,
+          "gate": "FAIL"
+        }
+      },
+      "per_year_1h": {
+        "2020": {
+          "n": 169,
+          "IC": 0.02,
+          "t_HAC": -0.316,
+          "mean_signed_ret": 5.4e-05,
+          "hit_rate": 0.3077
+        },
+        "2021": {
+          "n": 197,
+          "IC": 0.0253,
+          "t_HAC": 0.063,
+          "mean_signed_ret": 9e-06,
+          "hit_rate": 0.269
+        },
+        "2022": {
+          "n": 170,
+          "IC": 0.0852,
+          "t_HAC": 1.648,
+          "mean_signed_ret": -3.9e-05,
+          "hit_rate": 0.2647
+        },
+        "2023": {
+          "n": 184,
+          "IC": 0.1254,
+          "t_HAC": 0.409,
+          "mean_signed_ret": 1.4e-05,
+          "hit_rate": 0.2826
+        },
+        "2024": {
+          "n": 185,
+          "IC": 0.0253,
+          "t_HAC": 0.899,
+          "mean_signed_ret": 3.5e-05,
+          "hit_rate": 0.2757
+        }
+      }
     }
   },
   "dual_pair_correlation": {
     "close": {
-      "N_both": 15,
-      "P_same_direction": 0.9333
+      "N_both": 266,
+      "P_same_direction": 0.9549
     },
     "hl": {
-      "N_both": 37,
-      "P_same_direction": 0.8108
+      "N_both": 666,
+      "P_same_direction": 0.8483
     }
   }
 }

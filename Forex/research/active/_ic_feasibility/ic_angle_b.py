@@ -145,7 +145,7 @@ def compute_atr_daily(df: pd.DataFrame, window: int = 14) -> pd.Series:
         (daily["high"] - daily["prev_close"]).abs(),
         (daily["low"] - daily["prev_close"]).abs(),
     ], axis=1).max(axis=1)
-    return tr.rolling(window).mean()
+    return tr.rolling(window, min_periods=5).mean()
 
 
 def compute_event_observations(df: pd.DataFrame, pair: str) -> pd.DataFrame:
