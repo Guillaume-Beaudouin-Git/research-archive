@@ -1,0 +1,9 @@
+strategy,n_days,n_years,sharpe_gross,sharpe_net,ann_ret,ann_vol,max_dd,calmar,turnover_ann,wf_pos_frac,wf_sharpes,verdict
+s1_vrp_SPY,5047,20.0,0.309,0.143,0.0201,0.1403,-0.5377,0.037,46.682,0.4,"[np.float64(0.085), np.float64(-0.066), np.float64(-0.676), np.float64(0.734), np.float64(-0.283)]",FAIL
+s1_vrp_QQQ,5047,20.0,0.467,0.341,0.044,0.129,-0.4164,0.106,32.874,0.8,"[np.float64(0.049), np.float64(-0.284), np.float64(0.033), np.float64(0.881), np.float64(0.316)]",FAIL
+s2_vix_term_SPY,4014,15.9,0.184,-0.129,-0.0186,0.1444,-0.6548,-0.028,71.808,0.2,"[np.float64(-0.193), np.float64(-0.139), np.float64(-0.763), np.float64(-0.315), np.float64(0.516)]",FAIL
+s2_vix_term_QQQ,4014,15.9,0.174,-0.085,-0.0116,0.1363,-0.4673,-0.025,56.085,0.4,"[np.float64(-0.585), np.float64(0.215), np.float64(-0.485), np.float64(-0.225), np.float64(0.54)]",FAIL
+s2_vix_term_EWQ,4014,15.9,0.259,0.017,0.0023,0.1371,-0.4821,0.005,52.86,0.6,"[np.float64(-0.163), np.float64(0.212), np.float64(-0.718), np.float64(0.436), np.float64(0.339)]",FAIL
+combo_SPY,4922,19.5,,0.171,0.0221,0.1293,-0.4651,0.048,,0.4,"[np.float64(-0.012), np.float64(0.246), np.float64(-0.662), np.float64(0.328), np.float64(0.0)]",FAIL
+combo_QQQ,4922,19.5,,0.319,0.0363,0.1137,-0.2901,0.125,,0.6,"[np.float64(-0.092), np.float64(0.068), np.float64(-0.197), np.float64(0.64), np.float64(0.333)]",FAIL
+portfolio_erc,5047,20.0,,0.088,0.0065,0.0741,-0.2469,0.026,,0.4,"[np.float64(-0.004), np.float64(-0.101), np.float64(-0.32), np.float64(0.258), np.float64(0.227)]",FAIL
