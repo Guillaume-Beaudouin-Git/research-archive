@@ -1,1 +1,2259 @@
-{"items_seen": {}}
+{
+  "items_seen": {
+    "d51d503bcb05e751db601f51f3d0793e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Rich Formula: Quant Trading (2015)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e863bb6e75e1c920c1aa08b076aac244": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Medallion fund: a remarkably successful quant trading firm built by scientists",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ea2d30e525ca65e3a76ee74ddf791dbf": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Math and Computer Wizards Now Billionaires Thanks to Quant Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e103336f598c21337822bd13b4c014c2": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: Any developer who transitioned from Tech to Quant Trading?",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "accdb4d906f5e1eba857156d1387dc10": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Shockmarket: Quant trading startup circa 1999.",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "37d0e0ff1fb3bbf78c641a049c1573f1": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Curated Interviews From Quants: Algorithmic Trading and High Frequency Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "582a3d5d32ffec9b2116d0c368331e64": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Epsilab: Convert ideas into quant trading strategies in seconds",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c5f1cb815277f11b53176e4cd40a12df": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Trading Strategy built a data stack for crypto quant trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "62c354ab2c2365e6d64ddeb9f93ee05a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Quant Trading Tool with LLM (code gen)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8a552a80194d7f30e363128acfcc2497": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: QuantDinger \u2013 A local-first, open-source AI quant trading workspace",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0579bdad9f58b61a3eaa4feb2308a256": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: How to get started in quant trading?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6393093c72ee9e913b0034fd2c51bfb7": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Quant Trading Comes to Main Street",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "cd435b3d698a30c35834220f15c00693": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Strix \u2013 Drone swarm orchestration using quant trading algorithms (Rust)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0a7bfa10a85f25caa74266c38e0543f9": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "How Hard Can Quant Trading Be? I Tried It to Find Out",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "869d432311b166de2ce12e7fb369d7f7": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Wall Street's Greatest Gambler: On Jeff Yaas, Quant Trading, ByteDance and Poker",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2e448c18cc2c5c3982954ea39b76476c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Quant Trading Platform Quantopian Closes Down",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6eeb180d62c0f56dc382576a1046a2c3": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "QuantCup: a quant trading themed programming contest",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ee28b92d849786616e20f65dbd325c6a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Building a real time quant trading engine on gCloud Dataflow and Apache Beam",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a0ceb5a41ec95fc5112e3d2f9687cd12": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Bringing quant trading to a new market: Sports betting",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c5e2828bdb819451afacea4781decb7f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: An open-source AI Quant Agent trading live with my own $1000",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7c8e179528c6357ba72b96c8e14bf47c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Democratizing quant trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6017f0f8f174d3acb2be58682954e1af": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Systematic Strategies and Quant Trading 2025",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a017e3afe912548db26e168e0f974459": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Automation in Quant Trading \u2013 Hudson River Trading [video]",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f137db89807ec3dfb41c82e254d0abc1": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: Are there any firms for UHNWI's that code bespoke quant trading algos?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3fe6405d5503eca3061ef7370b350a4f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "How Alex GB earned millions for charity within years by working in quant trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "4162637aae9e3b118a80e467aa9ad84f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Buying vs. Renting a GPU-Based Deep Learning Machine for Quant Trading Research",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e9d519f058e36474f1d1ba9bfe8880e8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: What are the best resources to learn quant trading?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "168b036d94a1d133328517aa9678a0eb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Quant trading economies of scale",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b0494942526c2ddba69be83cec50ed93": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: Any Day Traders on HN?",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "b7c48789e47ce46bee16eb71c3435c85": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: Does the prestige of a PhD matter for getting a quant position?",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "037c288182738162310f8f6021fd477e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: X1 Carbon or MacBook Pro?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "11106caace4a3eeeb45adb9a4464d00c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Starting a small company with partners, what bootstrapping services can I use?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "075939bbdf128351373f2c9f6c8545ed": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: Computational finance really works?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ea0e0bc2b04e9eecf995e8e09fb0f87b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: iblncr, a cli tool to rebalance your Interactive Brokers portfolio",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2440497bae70a43ba2957993798c9e70": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: Anyone want to start a prop fund?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b8627d810674a78351ea3db08de938dc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Erlang scores a marketing coup",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "923262ffea5773d6fc0d68e061b7122f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Principles used in Wall Street trading algorithms",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ecf6030f1f25b6bbb49f402960536aca": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Goldman-Sachs using packet sniffing to game market?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "52c131e8fa4ea3a98d042ff51a34be95": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Quantopian Plans a Quant Hedge Fund",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "69ea0a4a5fc315abdb7933327befd457": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "AI labs are coming for Wall Street's quants",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "714be91675bdb1196a590b9e5de995da": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Curated Interviews From Quants",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "40c02b74445e336dacb0c0a77006ba30": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Algorithmic Trading and High Frequency Trading Interviews (Reddit's IAmA)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "23fd66321a733536eeff4bfd407e3e93": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Quant Strategies Used by a Wall Street Trader",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "512806a3bdfe72b75e10bd28c2e22b2d": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Trading strategies used in Wall Street",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1881088ce39e6821fc19f4025f6bd9d0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "4 steps to learning retail algo trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1a7a907ba0b605d6ada8e06a1b756cfb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Curated Interviews From Quants, Part 3",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6188d6c02a263b1340b8e3ba46e43943": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Quant News \u2013 Quantitative trading research, news, blogs, and comments",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "bea592d344253a042abd0ede89164002": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Quant hedge fund trading strategy",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "96c455872e50b5efec9be91f96c9e129": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Interview with a (self-taught) crypto quant about HFT trading in crypto",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8ef26f4443becaeb667f6f090008b61a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: How do algotraders backtest",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b7c0cc7537d4c5cb8e8ece6b2098524e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: AI trading platform with 34% returns (3 months) \u2013 seeking acquisition",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0650e4e0487434aa298db1a48d6b5085": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Is this cloud/local boundary for trading infra reasonable?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6b8245bbf89fb2c845fba9c116b1ca2b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: C++26 Reflection for Python Algo Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "cd98911b2423e4d6d0f723c29ee88787": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: I built a simple quant scanner for mean-reversion setups (ZcoreAI)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e2fa9c9e12e5657b603c64916baec21a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "The Sci-Fi Quants Dominating Europe's Most Volatile Power Market",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b84b317f74aa04dd545e5e3c376e7567": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: I Gave Claude Code a Job as a Quant Researcher",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "4912c41b9ed842302258326f308124fc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: QuantDinger\u2013An open-source, local AI quantitative trading platform",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f1c5121f08971d036f29f60aaaf010df": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: CryptoBob \u2013 a market intelligence API for crypto trading systems",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "21470ad255a1bcb083b0ff384794779f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: I built a quantitative analysis tool to retail traders",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b8fd29b0367c398f3d84f26d9f58624d": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Kronos \u2013 Type-safe trading framework in Go with terminal UI",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b230279741510546be6fa059b4657b0d": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: RIMC \u2013 An Alpha-Drift Framework for Finite-Speed Learning Markets",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f22f972c79709494282879b822b67c8b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Quant, the AI stock trading analyst",
+      "decision": "rejected_L2_not_accessible",
+      "promising_file": null
+    },
+    "d65b4cd9f808b9a65481843cab756d5f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Run your own Hedge Fund in a Spreadsheet",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "383fb272dd4edb682cae0183d766aafc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Interns Are Making Up to $14,000 a Month at Indian Trading Firms",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9a76be49a846b39079e2ade55aa2d3e4": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Democratizing Derivatives Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3a3085f425f96839fc798bb1b9e391ec": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Open-source market screener and backtester for algo traders",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "cac009d5d7158679913bac8a9285d29f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: FishSonar \u2013 Real-Time Crypto \"Fish\" Detector for Binance",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2f436c72664033de5b14db2d0c1f098c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Epoch \u2013 build and backtest trading strategies with plain English",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c377cf8bd5b2d17af80f542f3a44b356": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: StrateQueue- Bridge backtest and live trading with microsecond latency",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f85e3acfd7714248e9809226fce56343": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Billionaire Quant Is Turbocharging His Trading Models with GenAI",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "abcecaccc3fabd37474143566d4bf82b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Soviet Refugee Igor Tulchinsky Became a Hedge Fund Billionaire",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "762b3e5d85526f5dffe70b98f8a7fe17": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: A good trading community to discuss infrastructure, strategies and quant",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e0aa6e2d201e3ece4afb89a3e832e26e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Stock trading advisor with technical analysis, Quant invest and GenAI",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "20ef2fa3f3ccfc12968b4a7391e02313": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Stock trading game that spoofs Bloomberg Terminal",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7072188725b818edbcc08c519eec730b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Any algo/quant traders here? Is there a place for learning in public?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "bbc6da710b3f7b5a72c9b32a789e6626": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask an Algo Dev \u2013 6 HRT quants answer common questions about their role [video]",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "04c7529df0f097672cdc68120d3f9da4": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "China Tightens Some Trading Restrictions for Domestic and Offshore Investors",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1cd902674e278b63f4f0cf886c32978f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Quant at Two Sigma Made Unauthorized Changes, Caused $620M in Gains and Losses",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f66559ab21d21dcfc64eff481da589d0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Chicago-Based Radix Trading Is One of Quant Firms Named in CFTC Binance Suit",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c9ad997214f0095f830fa1f8c6db90a9": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Ask HN: What career path should I take as a student about to graduate?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6630507bfb64741e47647354ceda9bca": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "\u201cI quit my job to focus on a highly profitable quantitative trading system\u201d",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d6b0afc0c7ddacae35be3a90affe719b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Show HN: Top Quant/Algotrading Githubs Automated",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "6f125d4024da2f2d9a7ff305e316cc74": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "How Jim Simons\u2019 Trading Strategies Made 66% a Year (Medallion Fund\u2019s Strategies)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1889988ae55f49737bd77b8d07a8ddd5": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_quant",
+      "title": "Launch HN: Promoted (YC W21) - Search and feed ranking for marketplaces",
+      "decision": "accepted",
+      "promising_file": "hn_quant_launch_hn_promoted_yc_w21_search_and_feed_ranking__20260523.md"
+    },
+    "4833cca613e03b5a5ebb93dfa75474ab": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Case study: Algorithmic trading with Go",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e8cad2d5d8961e68eb2484e8a65760f3": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Anyone making money through algorithmic trading?",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "b55220b9b1c4f27fc8b71c7e5a8e50ad": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Python For Finance: Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c37737dfb13831a66b8517d7177fab90": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading: A Practitioner\u2019s Guide",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "09538c39f26a49643b2aabe8b15bb9b3": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Using Reinforcement Learning in the Algorithmic Trading Problem",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "346413bca4f5d04a7b5aee73bdc733a6": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Gryphon: An open-source framework for algorithmic trading in cryptocurrency",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "780f8002a1ac948df53d0a1982d8fa1b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Staff Report on Algorithmic Trading in U.S. Capital Markets [pdf]",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "df0a024fa1c7c53720d20f1c2347cc18": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "NautilusTrader: Open-source algorithmic trading platform",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "060668fe36f15237120742ddfc8434b2": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Adventures in algorithmic trading on the Runescape Grand Exchange",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e74274f295d48704b11c103b763ff752": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading: The Play-at-Home Version",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d73fc0ea5b1c811c147d0f911f09f728": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Zipline - algorithmic trading in open source Python",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c16f42de885360481f036be6ed415c12": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading is Not High Frequency Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "90dfeba41bfbc835c4b832f5bf0af46b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "How to identify algorithmic trading strategies",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "89a912ffb3f274398e8860d2f93dddb4": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Algorithmic trading for everyone",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "51326d37875d73ea65d797969c8224fa": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "How to Get a Job in Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "948adbd9ec2d1c3454d401082665721c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: What are the best resources for learning about algorithmic trading?",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "4bc505141c908a3bc6bd362810dcf6ed": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Why I Quit Algorithmic Trading to Do Web Startups ",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3902fd3b6ef32bae49bb24371c2bd416": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Quantopian Brings Algorithmic Trading To The Masses",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "bb926cfc98c320c5844a4803bcec5506": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Getting Started with Algorithmic Cryptocurrency Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "4e075ae2737559f6aea9b55b798e6ebf": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Simple algorithmic trading in JavaScript",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c3722267da965242ae3bfe4eb9d9b78b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "A bestiary of algorithmic trading strategies",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "513d8222626b0e0f3bae5788467de077": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "On latency, measurement, and optimization in algorithmic trading systems",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d61556dd5cf394b437f0991afd11bfea": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Cloud9Trader \u2013 Simple, powerful platform for algorithmic trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "49465a815d3496fbdb84966a68d601e6": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading: A Practical Tale for Engineers",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d6f659337dd806799db56b6d73caef91": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "I rebuilt my algorithmic trading platform in Rust. I'm filled with regret",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "39aace2649169d24a5f302ff376fa6cb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic trading -- the positive side",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "05f23ca3abe12a0eb87d918f721b0d8b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Quantopian wants to Turn Stock Trading Algorithmic",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c255811e7dc3cb75c2bebd46bbb8a733": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Quantopian\u2019s algorithmic trading platform now accepts outside data sets",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "<ACCOUNT_ID>f6d89de4966b40a9bd19ed4": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading Using Logistic Regression",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8b7ca915400beced0fd7e7825683ff1a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Value at Risk for Algorithmic Trading Risk Management \u2013 Part I",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b00158eb164c8bc7c3d6992055b6c6b4": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading of Futures via Machine Learning [pdf]",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "66d41795e2955a27e9a2dbb936c5d647": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Is algorithmic trading making markets less efficient & gaming the system?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "78b02106a65fe204a35c81d90067ed73": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic trading in less than 100 lines of Python code",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "99a9de633839ab4d5e671871147e2cf3": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "QuantConnect wants to open source its algorithmic trading engine",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d3d0a4a20b38b4bac81255e55866d30a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "How to Learn Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c43ad26c1db2c9fb00fc51a8b7be1aff": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "The \u2018Final\u2019 Frontier of Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2a69e0ceff0d051b669fb0b7cdba59c4": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Algorithmic trading for hackers",
+      "decision": "accepted",
+      "promising_file": "hn_algotrading_ask_hn_algorithmic_trading_for_hackers_20260523.md"
+    },
+    "ecc15580271fadd73d0ec6c8c89c1a20": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Algorithmic trading for everyone",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "879f2554ac<ACCOUNT_ID>d6ffdf8bd9b29": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: What books for algorithmic crypto trading can you recommend?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "653eb5a7d3cbd2dc2d8f28a733298701": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading: The Play-At-Home Version",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ebae0f21b42c32bdd50fdfdcb8d35719": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Quantopian Emerges From Beta, Sets Out to Revolutionize Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ffbb44d5433d7eb0731795b339bd8d7a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Selecting a Database for an Algorithmic Trading System",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9c03750b5c865ada8d84ad59111ee811": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading in Python Using Open Tools and Open Data",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2af6c907576dfa622910b70a5fb038dc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "I spent 18 months rebuilding my algorithmic trading platform in Rust",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1304fe15be7a873f2e638c84742342aa": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "The Algorithmic Trading Podcast",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a2bd2b812574ca021151e52b88e41dd0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "The right (or wrong) way of running an algorithmic trading group",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "dacf62af2b10e3e6d8f304108ce0a4cf": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Algorithmic Trading Platform",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "70cf979b204f0861be8c47544cda27bb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Launching no-code algorithmic trading platform",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5f7cf8aad4aed6e4f519e106ac700618": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algonaut - Algorithmic stock trading platform in the cloud ",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b2db8c59e7df07f381f2cf10b9132780": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Anyone making money through algorithmic trading?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5a3504599ab8f02256ccc4afd5dc15d4": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I Dedicated 4 Years to Mastering Offline Password Cracking",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "913ba4fb9b8d734652eead5673891f74": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: An LLM that's better at writing",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9977239edd988829bf19c5af8b85639e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Subscribe to RSS Feeds on Kindle",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c5e9fd4ffd793141d9e11921d34a3c5f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: SVG Fitter \u2013 Rust+WASM Vectorizer",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "79d0e3334f0d8c52773df51016d990df": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Everything is AI now \u2013 does this kill the excitment of software development?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "70f3d74e3a8a031722932599790d1a17": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Do I Stop Learning Coding? DSA?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f763968508a899b16998c05d8e84b431": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Strix \u2013 Drone swarm orchestration using quant trading algorithms (Rust)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "16466cf554e47dd7e6e6f789cc45f0ad": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Tell HN: Google bot suspended our startup's email with 0 human recourse",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b1db6983a9a6f411b78e8e344381299f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: FaultWall \u2013 Which tenant is killing your Postgres? Now you can find out",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f97cd9ed4e7a0ff428357e71da917844": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Micro \u2013 apps without ads, algorithms or tracking",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "53adeb584ebaa6dd9ed88039fc9efa96": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I build a free feed reader that reimagines what is possible with RSS",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d2b62a8a2062e0758716982bd75f9d17": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: P-book \u2013 an interactive book for kids about recommendation algorithms",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "94e45faa3649e5f987867fd9d54f3d3c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: One, cross domain auto-researching knowledge graph Claude orchestrator",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "64d98113fdc4f4b1c40522a3564bfba8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: How are you doing technical interviews in the age of Claude/ChatGPT?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "<ACCOUNT_ID>a50afa7a06c7992dce7d355": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Replacing $50k manual forensic audits with a deterministic .py engine",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "30f1d8e92d02ca4a06f072bdeb8ed978": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Mapping Middle East kinetic events via automated OSINT and deduplication",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8a6a4078f9e56abb13ca031baefaefec": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I built an AI-powered technical interview prep tool",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9a8f5aa4da6574d3490272d0b3aa725c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Tell HN: The proposed KIDS Act (HR 7757) effectively mandates biometric browsing",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "461e5008f2f690b19950106900c1da01": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: One Good Thing \u2013 one thought a day, then asks you to close the app",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "308319059976589fbfc962149848b323": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I Built Systems AGI \u2013 1600 Verticals, Self-Healing\\Self-Evolving",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "11ff3ab59ad0fdbdc998cd0ee429f8eb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I Built Systems AGI \u2013 1600 Verticals, Self-Healing, Self-Evolving",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "cd877d49cc756797e460a9674634a1dc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Market Digest: Self-hosted market analysis and Telegram",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e728eb754ecc6ebc9759dfe3fcbc4e4a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Brainrot messed up my kid's attention span, so I built a tool to fix it",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "da7844714fd561e8c7e6430b884a17cd": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "SenseStream \u2013 Mood-based film discovery instead of genre browsing",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "412e691857b3ecfb9659d163d9d1314e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "How AI Is Turning Average Posts into Viral Content",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "35b9ec5bfb1fb0915cdaba2d0d6daa2d": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: ZoneMapzone World Clock",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5a36ccfeb20b6cd94024ce9285cf9137": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Built an algorithmic forensic accounting tool",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "858d3baa9481b9c530b0394084da3144": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Developers cloned my student project in 2 weeks. Why?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7769e3e8948554ecd42da5f2be51a946": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Review my new app platform Mu",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "851ce4a5b74ee96e76acdac7917658d6": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Museum of Handwritten Code (If, While, Binary Search, Merge Sort)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a3316464ad6ba04a9bfc85cf2b33b9af": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Everdone CodeSecurity and CodePerformance",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "38b9107cb8d40ea7de7daa445d1d3ac8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Nautilus, high-performance algorithmic trading platform, event-driven backtester",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "4c16186f2ec5ed32645d974525024b94": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I built an \"Agency Score\" to measure how much your phone controls you",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c1da45fd84883f454559bbd6a5507917": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading with VectorBT and Lumibot",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6011514e88e4ab01dbb20e804c543fe0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Fighting the War Against Expensive Reinforcement Learning",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "12c2c9ed9dca22acf3577a959bad6380": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "FxCapKyn: A Study of Socially-Engineered Fraud",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "30ac893881dad419252c6df03f74d5eb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Prism \u2013 7 AI stories daily with credibility tags, no doomscrolling",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "619a777bff7b74b72dfa0fba2b29ae10": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "I spent 5 years how to code .made real projects only to be called AI slop?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "fc8361f766992a792078c7401c9b6c1e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Meepr \u2013 A Quiet Social Network",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e4a9b426a3314a5b2e695a0e7bb829f9": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: The OASI 6 Engineering Structural Abundance via SMR and Modular",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1c987282010f41c58b9ec15474690259": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Various shape regularization algorithms",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "a838f945025ae4603d6034ed55aba383": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: PutHouse \u2013 The AI Options Trader",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "daf8af9b416120d9a9fadaab5ee558e0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I built a forensic accounting tool for high-conflict litigation",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5339bf6dd3be93b4414844d3a29b1ac2": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: DayLeet \u2013 A daily habit for sharpening whiteboard logic",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "65eb2336f34e037621c26de2c614d8d0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Lean: Open source algorithmic trading engine",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a2690fe1bc57259ed60264cc9f5ae575": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: Solo trader built algo trading platform via AI \u2013 no dev experience",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "4960fef678b9111eef0bf9ef91b8b0db": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: How do people validate deep self-study in math or CS?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f766a89312967aa8545d89322b1e35d2": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Ask HN: What skills and projects should an unemployed software dev focus on?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8f0613cded69be450a16f1f99bcf08b5": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "Show HN: I built a forensic accounting engine for divorce",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8994f08e395badec9145a8dbf9f97576": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "hn_algotrading",
+      "title": "A Global Forum Built for Real, Unfiltered Conversations",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e14d2862b472cdac4a2e19ee871c4bac": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "How to Manage an Intraday Trend Trade [Concretum Group]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_how_to_manage_an_intraday_trend_trade_concretum_gr_20260523.md"
+    },
+    "7a369779c4bfb9421ee8e09611acaa37": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "A Century Without Data: Reconstructing Emerging Markets Equity History [Quantped",
+      "decision": "accepted",
+      "promising_file": "quantocracy_a_century_without_data_reconstructing_emerging_mar_20260523.md"
+    },
+    "a66d62eca1921b73152c5b92d4042a9e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Market Effect Research: Turn of the Month Effect [TradeQuantiX]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "405b98b32f8638618bc3ced6c5f9dcef": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Nine Pounds of Ore for an Ounce of Gold [Tommi Johnsen]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "b56fcef4a9c8cd665a168a8eb9af4d1a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Who Profits from Prediction Markets? [Quantpedia]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_who_profits_from_prediction_markets_quantpedia_20260523.md"
+    },
+    "a3986c29911fa257c7f5a15f884d5409": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Volatility Derivatives and VIX Market Dynamics [Relative Value Arbitrage]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_volatility_derivatives_and_vix_market_dynamics_rel_20260523.md"
+    },
+    "486f6451433d21e43defddbf3a6638c3": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Agentic Workflows for Alpha Research [Jonathan Kinlay]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "439a832f8a22de37af3dac1e45ae2698": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "An Active Hedge for the EUR Investor [Beyond Passive]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_an_active_hedge_for_the_eur_investor_beyond_passiv_20260523.md"
+    },
+    "04ffe6f2b88f373f414541a9370656b0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "An Index of Commodity Futures Returns Since 1871 [Quantpedia]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "a06fb443316d4ff969a1491bebcd0c09": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "A Historical Look at the Top 20 6-week $SPX Rallies Since 1950 [Quantifiable Edg",
+      "decision": "accepted",
+      "promising_file": "quantocracy_a_historical_look_at_the_top_20_6_week_spx_rallies_20260523.md"
+    },
+    "65833a70cb28d8985113f6ee0bb8e84d": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "The Effective Number of Tested Strategies [Vertox Quant]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "2f75f842cdfa63ccd971496f7ffcc407": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "The 100% Club. 2000 Tech vs 2026 AI [Alvarez Quant Trading]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "7ba2396bd272bede5e81dc948cc0627e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "\u201cSurfing the Equity Curve\u201d: Using Trend-Following to Switch Strategies On and Of",
+      "decision": "accepted",
+      "promising_file": "quantocracy_surfing_the_equity_curve_using_trend_following_to__20260523.md"
+    },
+    "a0e0117a88bf643b0d9bca6c0c085dba": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Martyn Tinsley \u2013 Beyond the BackTest [Algorithmic Advantage]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_martyn_tinsley_beyond_the_backtest_algorithmic_adv_20260523.md"
+    },
+    "1550ea7d51d97fc62488f00df9f7dc89": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "A Day Is Now What a Decade Used to Be [Tommi Johnsen]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "89d3e4f5e5d84fb69f08a5f19db10dfe": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "The NAAIM Exposure Index: Incorporating Active Investment Mgr Sentiment into Ass",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "cef5c44f246678eeae6a8ec73ae83823": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "The Currency You Didn   t Choose [Beyond Passive]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_the_currency_you_didn_t_choose_beyond_passive_20260523.md"
+    },
+    "fa7f8813d45a174b7a2a90137d3dbdb5": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "AI Forex Backtesting with LLM Regime Labels: DeepSeek vs KMeans in Python [Quant",
+      "decision": "accepted",
+      "promising_file": "quantocracy_ai_forex_backtesting_with_llm_regime_labels_deepse_20260523.md"
+    },
+    "596e08d5517a4c7659d98bbec703a2ce": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Reinforcement Learning for Optimal Execution [Jonathan Kinlay]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "4082f67abafe2011dc775a72f07d6053": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Designing State-of-the-Art Logging in Python [Hanguk Quant]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "24e557673c9bf73276caf65477e1c51c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Why Momentum Investing Has Been Struggling   And What Volatility Has to Do With ",
+      "decision": "accepted",
+      "promising_file": "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523.md"
+    },
+    "ed1d1c496a3f8ebaba0ad1d690a5c1d8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Selecting TAA Strategies Based on Recent Performance, Part 2: Recent Sharpe Rati",
+      "decision": "accepted",
+      "promising_file": "quantocracy_selecting_taa_strategies_based_on_recent_performan_20260523.md"
+    },
+    "7c4fab7ef499dd0a2223f746d542aecd": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Dual Momentum Allocation Between Physical Gold and Bitcoin (Digital Gold) [Quant",
+      "decision": "accepted",
+      "promising_file": "quantocracy_dual_momentum_allocation_between_physical_gold_and_20260523.md"
+    },
+    "7b09cc5e75d5b0b1bce7cb50fc4da618": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Bad Month for Your Strategy? Should You Change It? [Alvarez Quant Trading]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_bad_month_for_your_strategy_should_you_change_it_a_20260523.md"
+    },
+    "c850acf51f5c086f05886c0021dcc09c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Modeling with the NAAIM Exposure Index [Quantifiable Edges]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "7fc07465828a18606da49c182180520d": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Sentiment is not one signal [Tommi Johnsen]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "a0e6dff52318a7c9d37b62859ea048aa": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "The Attention Factor: The Link That Connects Crypto and Public Equity Markets [Q",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "0dcbb11852bcef60eb56e8cbd60755dd": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Deep Learning for Volatility Surface Repair [Jonathan Kinlay]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "a2f154cae906ee82accf975d10c7fdde": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "New Contributor: Modeling Asymmetric Volatility With EGARCH [Krzysztof Ozimek]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_new_contributor_modeling_asymmetric_volatility_wit_20260523.md"
+    },
+    "ee0368dc9b71acd9597aae832b4e2099": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "A Strong Start to May Has Often Been Followed by a Short-Term Dip [Quantifiable ",
+      "decision": "accepted",
+      "promising_file": "quantocracy_a_strong_start_to_may_has_often_been_followed_by_a_20260523.md"
+    },
+    "376fdfdd02ffb1aa1e3ed7046387fb05": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Overfitting and Parameter Selection in Trading Strategies [Relative Value Arbitr",
+      "decision": "accepted",
+      "promising_file": "quantocracy_overfitting_and_parameter_selection_in_trading_str_20260523.md"
+    },
+    "1e2decc458a5ae17e43f6d75af2461fa": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "I paper-traded 22 popular crypto strategies on real fees for 10 days. Here\u2019s the",
+      "decision": "accepted",
+      "promising_file": "quantocracy_i_paper_traded_22_popular_crypto_strategies_on_rea_20260523.md"
+    },
+    "1bd792dca1618c68237858e44b6047bf": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Where Risk Parity Hurts: A 58-Year Audit of Tails and Drawdowns [Beyond Passive]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_where_risk_parity_hurts_a_58_year_audit_of_tails_a_20260523.md"
+    },
+    "09cdd21bc496d88eb52fdea0927b9d36": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Almost Explicit Implied Volatility [Chase the Devil]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "9ffe8f72b6df28fe0fbe46748d82b954": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Rethinking Trend Following: Optimal Regime-Dependent Allocation [Alpha Architect",
+      "decision": "accepted",
+      "promising_file": "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523.md"
+    },
+    "96247c177fdcd718afdb6a2d8263e706": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Curve trades with macroeconomic signals [Macrosynergy]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_curve_trades_with_macroeconomic_signals_macrosyner_20260523.md"
+    },
+    "8e22b67a1e7db560693d65ce5e072f76": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Selecting TAA Strategies Based on Recent Performance (Part 1) [Allocate Smartly]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_selecting_taa_strategies_based_on_recent_performan_20260523.md"
+    },
+    "82cbb12b0207e78ad92ede231560c0b8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "For The Love of The Game [Robot Wealth]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "e84c5176fcb4f73d7bf902adffdee3bb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "When Big Gets Small: Trading the Lower Tier of Large Caps and Upper Mid Caps [Qu",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "0e011def39d00d2a573e4f13a0d9ce2b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "How to Break a Financial Sentiment Model Without Changing What It Means [Tommi J",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "7593b0af03f89f3cba912992018a5bdb": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Lazy Prices, Lazy Investors \u2013 and the 22% Alpha Hidden in 10-Ks That Nobody Read",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "a21dc340f1a56ba9d32c2a7f26203576": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Revisiting Beyond 60/40: Five Decades of Risk-Weighted Allocation [Beyond Passiv",
+      "decision": "rejected_L2_not_accessible",
+      "promising_file": null
+    },
+    "b9e8e5737abb77c01cfbc175d2d45880": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "The Skip-Month Mystery: What Last Month   s Returns Are Really Telling You [Alph",
+      "decision": "accepted",
+      "promising_file": "quantocracy_the_skip_month_mystery_what_last_month_s_returns_a_20260523.md"
+    },
+    "3a9cffd2c7391f59d815c8554c379f25": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Unsupervised Learning for Trading: K-Means, PCA & Python Examples [Quant Insti]",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "727f77e2e1b13eade48b1b8b6d6cfca9": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Research Review  | 24 April 2026 |  Prediction Markets [Capital Spectator]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_research_review_24_april_2026_prediction_markets_c_20260523.md"
+    },
+    "5f2d47a0c6b023590df14513122a3653": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Backtests Lie: Building a Stress-Test Framework for ML Trading Signals [Vertox Q",
+      "decision": "accepted",
+      "promising_file": "quantocracy_backtests_lie_building_a_stress_test_framework_for_20260523.md"
+    },
+    "22461b6ccc7ef67c9d1c6e7c9c96d029": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "TradeLock: New site from ex-Quantocracy contributor Sanzprophet \u2013 build independ",
+      "decision": "accepted",
+      "promising_file": "quantocracy_tradelock_new_site_from_ex_quantocracy_contributor_20260523.md"
+    },
+    "4fefce547a99523b9a52776a7679bc04": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantocracy",
+      "title": "Volatility Risk Premium and Clustering: Intraday vs Overnight Dynamics [Relative",
+      "decision": "accepted",
+      "promising_file": "quantocracy_volatility_risk_premium_and_clustering_intraday_vs_20260523.md"
+    },
+    "e9c533e4f9107ff54db50f87ea294319": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "The Data Infrastructure Behind Algorithmic Trading: Understanding Financial Data",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "4dd1a3ca8ab99b22da993565c1f0fd4f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Statistical Arbitrage Using Cointegrated Stock Pairs in Indian Equity Market (20",
+      "decision": "accepted",
+      "promising_file": "quantinsti_statistical_arbitrage_using_cointegrated_stock_pai_20260523.md"
+    },
+    "3edd0aa9e86d826804ebb66fc6d74fe1": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Integrating AI and Quantitative Trading",
+      "decision": "accepted",
+      "promising_file": "quantinsti_integrating_ai_and_quantitative_trading_20260523.md"
+    },
+    "383ca45d0af76b02eea517bbe4f0dfbc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "QuantInsti in 2026: A Summary of our Contributions, Collaborations, Events & Upd",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d727feaac7d1b9fcfd633ad79ed6a7f0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "[EPAT Project] Dynamic Capital Allocation using Market Breadth & Random Forest: ",
+      "decision": "accepted",
+      "promising_file": "quantinsti_epat_project_dynamic_capital_allocation_using_mark_20260523.md"
+    },
+    "eceef3dad44cac30d57999a6a2712244": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Gold Price Prediction: Step By Step Guide Using Python Machine Learning",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "78473e8d4218cd00021363d86e8c7dfe": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "QuantInsti in 2025: A Summary of our Contributions, Collaborations, Events & Upd",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "bba905a83f36e96ebf02f837ba923b21": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Donchian Channels: How to Turn a Simple Idea Into Working Strategies",
+      "decision": "accepted",
+      "promising_file": "quantinsti_donchian_channels_how_to_turn_a_simple_idea_into_w_20260523.md"
+    },
+    "9a892257fa2453b7f7378eba9c114a77": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Building a Robust Portfolio with Risk Parity",
+      "decision": "accepted",
+      "promising_file": "quantinsti_building_a_robust_portfolio_with_risk_parity_20260523.md"
+    },
+    "7c16224e0c5ae706bdded8ee04a5a467": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Retrospective Simulation for Trading",
+      "decision": "accepted",
+      "promising_file": "quantinsti_retrospective_simulation_for_trading_20260523.md"
+    },
+    "c715ca7058da1ed2ef4311103e3b0c9f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Market Regime using Hidden Markov Model",
+      "decision": "accepted",
+      "promising_file": "quantinsti_market_regime_using_hidden_markov_model_20260523.md"
+    },
+    "aeeb40963afffc23cbb593639828a349": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Bayesian Statistics in Finance: A Trader's Guide to Smarter Decisions",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "9584dbe8c4ce0d86dedc5b50e24748c0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Simple and Multiple Linear Regression in Algorithmic Trading: A Practical Guide ",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "e349eb48ea1846ff2c44d64e756f2a5b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Beyond the Hype: What \"Independent Events\" REALLY Mean for Your Trades",
+      "decision": "accepted",
+      "promising_file": "quantinsti_beyond_the_hype_what_independent_events_really_mea_20260523.md"
+    },
+    "a2739885f799eacf65281cfc8c000d2b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantinsti",
+      "title": "Beginner's Guide to Machine Learning Classification in Python",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "5665bf7d577d078cb0bd18789795bb6e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "Active Dual Momentum GTAA Strategy",
+      "decision": "accepted",
+      "promising_file": "quantpedia_active_dual_momentum_gtaa_strategy_20260523.md"
+    },
+    "37e869003097832723315d03280dea2e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "A Century Without Data: Reconstructing Emerging Markets Equity History",
+      "decision": "accepted",
+      "promising_file": "quantpedia_a_century_without_data_reconstructing_emerging_mar_20260523.md"
+    },
+    "2bfcb664ba12c691b1cbb06e4d0aef82": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "Who Profits from Prediction Markets?",
+      "decision": "accepted",
+      "promising_file": "quantpedia_who_profits_from_prediction_markets_20260523.md"
+    },
+    "7be62b8925bae8f2e08ed6c2d3857b49": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "An Index of Commodity Futures Returns Since 1871",
+      "decision": "accepted",
+      "promising_file": "quantpedia_an_index_of_commodity_futures_returns_since_1871_20260523.md"
+    },
+    "41107d6773cab96c89147030832c28ed": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "Quantpedia in April 2026",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0d41d73ef0fd9a8361bf4bb1320a2b48": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "Quantpedia Premium Update \u2013 May 7th",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "93fc36bf0895e216991b9c8ee6c357bd": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "Dual Momentum Allocation Between Physical Gold and Bitcoin (Digital Gold)",
+      "decision": "accepted",
+      "promising_file": "quantpedia_dual_momentum_allocation_between_physical_gold_and_20260523.md"
+    },
+    "dc5b7e5b04f4c9f1532cb7ae72d7dccc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "The Attention Factor: The Link That Connects Crypto and Public Equity Markets",
+      "decision": "accepted",
+      "promising_file": "quantpedia_the_attention_factor_the_link_that_connects_crypto_20260523.md"
+    },
+    "c6c9ce0eb2204c1ba114c4c1776242ad": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "Commodity Portfolio Strategy for a Potential 2026 Inflationary and Supply Shock ",
+      "decision": "accepted",
+      "promising_file": "quantpedia_commodity_portfolio_strategy_for_a_potential_2026__20260523.md"
+    },
+    "e0ab08d0088f68e1b24c3003904fe0a1": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "quantpedia",
+      "title": "When Big Gets Small: Trading the Lower Tier of Large Caps and Upper Mid Caps",
+      "decision": "accepted",
+      "promising_file": "quantpedia_when_big_gets_small_trading_the_lower_tier_of_larg_20260523.md"
+    },
+    "710ef576507560b17bbdb462022e0358": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "anthropics/claude-plugins-official",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a4819608e9abeba1371eab1fadfeb244": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "rohitg00/ai-engineering-from-scratch",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "282451bebe8ed92b4f317435242f5f1c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "Fincept-Corporation/FinceptTerminal",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "3927c026e1ffd48cba87f1a521862cb8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "mukul975/Anthropic-Cybersecurity-Skills",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5d1e10fa0212ab6dbda40bc3ed459455": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "odoo/odoo",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "742a50042b6cb31c1792ea279614c698": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "NVlabs/LongLive",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2f3f6869c9c3a9ab51520f58be6f1f24": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "yt-dlp/yt-dlp",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "437316fdf9234e748d7721bfcab74e96": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "NousResearch/hermes-agent",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7c25233a5fb64a797673439a05e2668f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "Alishahryar1/free-claude-code",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "968fd8af92b944eccf558de03d7c6e7e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "databricks-solutions/ai-dev-kit",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b83433b0a4534d9d8d436b360922621c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "plastic-labs/honcho",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "814044ba434f6bafbf4477b82b10c707": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "google-research/timesfm",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "7ab9d5b35661f840a9856a1157b9f4bd": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "crewAIInc/crewAI",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d803bb6bb942618734f9db39b9ea551b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "pydantic/pydantic-ai",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a8eacb9e66c9b7f3e0d046804d3565c3": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "github_python",
+      "title": "OpenPipe/ART",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2face125428f05b9dc192b140df0e753": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Correlated Random Coefficient Distributions in Linear Panel Models",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3fa0ef3cbbbd82b360d9a8e3b6f0cca8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Endogenous Quantile Regression with Measurement Error in Dependent Variable",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2936f37a8fcbc1fd1bbbe70b91ad6a57": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "The Harmonic Synthetic Control Method",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_the_harmonic_synthetic_control_method_20260523.md"
+    },
+    "59f598259632c52a6d2da4b32a76a76c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Testing Heteroskedasticity Under Measurement Error",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "97bfdd8b3fcf3d74f3fd1e9d7c8e22c5": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "SAGA: A Sequence-Adaptive Generative Architecture for Multi-Horizon Probabilisti",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_saga_a_sequence_adaptive_generative_architecture_f_20260523.md"
+    },
+    "11fab51034fba921ba277c822a5f4c7a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "critband: A Python Package for Critical Bandwidth Analysis of Multimodal Distrib",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "85e5fcf8b2320c489b735b0f6b4117f8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "The Agentic Economy: Humans, AI Agents, Robots, and the Measurable Transition to",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7ddecd9da8608fa4fdeb1ea9f4222c8c": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Fixed-order PCA: Theory for Overestimated Factor Models",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "e5afdffcf8675441a589810568ff995f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Demographic Transition and the Dynamics of Income Distribution in Japan: A Bayes",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "a7b1bb279d6e0ef7146f89829f1e622e": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Parameterized 4-Qubit EWL Quantum Game Circuits with Dirac-Solow-Swan Hamiltonia",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b9e64e97f2e57be76984d51887646de2": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Comment on Scientific production in the era of large language models",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "37d225a11b3db128602961c8ab2caae9": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Valuing Winners: When and How to Correct for Selection Bias in Randomized Experi",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f00146ebfc8f97a2e8507c5c2fff0e1f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Nonparametric Bayesian Policy Learning",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5e5cd3f367f15c7010738926fb7ba7ac": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Asymptotic Variance Theory for Trimmed Least Squares and Trimmed Least Absolute ",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1a87ff5086de4d958134dcf4ac814a46": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Heavy Tails and Predictive Ability Testing",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_heavy_tails_and_predictive_ability_testing_20260523.md"
+    },
+    "d77b329d3e5dadb5b32f9cb53bf2a254": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Designing Persuasive Experiments",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f9ab71b35fbfd54ccfc83148818a4395": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Policy Learning with Observational Data: The Case of Hepatitis C Treatment for H",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "098f9e454de105d6c7d05a8acf70e599": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Quasi-Bayesian Local Projection Instrumental-Variables Method: Application to Re",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "dbce7cade93100715c7409cbfcc565c3": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Tweedie's Formula, Variance Functions, and Score-Driven Updating",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_tweedie_s_formula_variance_functions_and_score_dri_20260523.md"
+    },
+    "15ddde80a83b18571895c53ccb5b7a3f": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Double Descent and Benign Overfitting in Macroeconomic Forecasting",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_double_descent_and_benign_overfitting_in_macroecon_20260523.md"
+    },
+    "f08e622edcc22e57b353d81c3dd8db69": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Identification and Estimation of Staggered Difference-in-Differences with Networ",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2f775cdca8bf99289bf44527793b3594": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "A Practical Guide to Instrumental Variables Methods with Heterogeneous Treatment",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "00baa6b3b3eaefebbbfc5fb37ee067c2": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Monetary Policy in the Media Spotlight: Sentiments, Signals, and Economic Impact",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_monetary_policy_in_the_media_spotlight_sentiments__20260523.md"
+    },
+    "4e5f586d9d58b80febabfeb7d1be662a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Multi-regime Markov-switching models with time-varying transition probabilities:",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_multi_regime_markov_switching_models_with_time_var_20260523.md"
+    },
+    "c5a643b19d6eca5f5528a98457ee92a6": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Partial Identification of the Valuation Distribution in Sequential English Aucti",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2fe3328675b393147f80cb8d6cbab05a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Regret Equals Covariance: A Closed-Form Characterization for Stochastic Optimiza",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ae176a11bd09be9eb1bb7537147f96c6": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "EnergyAgentBench: Benchmarking LLM Agents on Live Energy Infrastructure Data",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f3f89ed0c8fa2b18aa879681f54c7cfc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "The fine structure of electricity price volatility",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d6dbc1b4655b847b77bbad30fab05636": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "A Grid-Rate Condition for Valid Uniform Inference",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "046f20d5beb0a5b9f4d6476a98c9d1d9": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Higher-Order Neyman Orthogonality in Moment-Condition Models",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3471a589c6bcd74df5d509a81d6d160a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Analyzing the Impact of Release Season and Production Budget on Movie Revenue an",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9437dc082e2dfae29663266728a68759": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "LGB+: A Macroeconomic Forecasting Road Test",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_lgb_a_macroeconomic_forecasting_road_test_20260523.md"
+    },
+    "35d9c8a4c63381dba1eed41ab4459fe0": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Quantifying the Risk-Return Tradeoff in Forecasting",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_quantifying_the_risk_return_tradeoff_in_forecastin_20260523.md"
+    },
+    "15a5bfee94ca839de60de3d39b51b7e8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "The Payment Heterogeneity Index: An Integrated Unsupervised Framework for High-V",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2801d3b94bdb26540d84b3e7f026e549": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Engineering Economy: A New Paradigm for Escaping the Middle-Income Trap",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "97073b971f1c92fdfc979b476590eec8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Sufficient conditions for a Heuristic Rating Estimation Method application",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d0936a1b0298571610a173d7aeb8d502": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Nowcasting Italian Municipal Income with Nightlights: A Deep Learning Approach",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "05dab765a4aa142085705ebe90cb2efc": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Nonparametric Empirical Bayes Confidence Intervals",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "960449911f312d54de5b5e94c5ae3268": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Rolling-Origin Conformal Prediction under Local Stationarity and Weak Dependence",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_rolling_origin_conformal_prediction_under_local_st_20260523.md"
+    },
+    "1bddba7bed8488a7ef9c2b1a4e35e33b": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Vibe Econometrics and the Analysis Contract",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e26b10da3f258deb9d85db33b0584861": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Self-normalized tests for multistep conditional predictive ability",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_self_normalized_tests_for_multistep_conditional_pr_20260523.md"
+    },
+    "eec3c630e4212596871ba68fa1f29162": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Causal EpiNets: Precision-corrected Bounds on Individual Treatment Effects using",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "556d6e5a6b188a2e97c8ff3514e12ef8": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Inference on Linear Regressions with Two-Way Unobserved Heterogeneity",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "fcda208e57d3294cf4ddebd514af7c54": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Scaling the Queue: Reinforcement Learning for Equitable Call Classification Capa",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ee7295ed71b8f87792317db24ac019ba": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Covariate Balancing and Riesz Regression Should Be Guided by the Neyman Orthogon",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "852a053c9b367431eddf88c36311dbec": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Optimal Contextual Pricing under Agnostic Non-Lipschitz Demand",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0c062608aaef7cda62b1771ce335631a": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Estimator Averaging of Local Projection and VAR Impulse Responses",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1936ad7f67990445e68c0f69bc7661d2": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Causal State-Dependent Local Projections",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6fc4a932144a971c866b8095f3e05c13": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "MSE-Optimal Difference-in-Differences Estimator",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "01ebbf16ae764024a71c4bb4ef0b8110": {
+      "first_seen": "2026-05-23 18:12",
+      "source": "arxiv_econ_em",
+      "title": "Approximate Operator Inversion for Average Effects in Nonlinear Panel Models",
+      "decision": "rejected_L0",
+      "promising_file": null
+    }
+  },
+  "last_run": "2026-05-23 18:12 UTC"
+}
