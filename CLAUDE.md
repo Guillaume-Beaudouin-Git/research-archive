@@ -83,6 +83,9 @@
 8. Excess returns + HAC lag-6 + daily vol targeting mandatory.
 9. Crypto fees 0.17% RT | futures ~0.01% RT | equities 0.05-0.10% RT.
 10. 3 modifications maximum per strategy to avoid overfitting.
+11. IC → net Sharpe translation requires turnover-aware cost gate, NOT IC threshold alone. Empirical translation factor: SR_real / (IC × √breadth × σ_target) ≈ 0.35–0.45 (Israel-Jiang-Ross 2017, "Craftsmanship Alpha"). Before launching a full backtest: (1) expected_gross_alpha ≈ 0.40 × IC × √breadth × σ_target; (2) expected_cost_drag = avg_turnover_per_year × cost_per_RT; (3) require gross_alpha > 3 × cost_drag. Daily-rebal ETF signals (0.10% RT): require IC > 0.08. Daily-rebal futures (0.01% RT): require IC > 0.04. Monthly-rebal (breadth ~12): cost gate essentially absent.
+12. FX carry IC is regime-dependent: 2005-2007 pre-GFC boom drives all positive carry IC in G10. Always check per-decade IC breakdown before calling carry feasible.
+13. BIS trade-weighted REER ≠ bilateral USD valuation: unsuitable as carry signal modifier for USD-base FX positions.
 
 ## Methodology toolkit
 - **Significance**: HAC lag-6 (Newey-West) t-stat, threshold t > 2.5 for IC feasibility
@@ -113,7 +116,7 @@
 - Routines run on Anthropic cloud, restricted network (use repo data, not external APIs)
 - Each routine commits to `claude/<routine-name>-<date>` branch and opens a PR
 
-## Research history (n_tests = 134+)
+## Research history (n_tests = 274)
 
 ### ✓ Validated and live/ready
 - Crypto TSMOM tanh + vol scaling (Strategy A)
@@ -123,6 +126,7 @@
 ### ✗ Archived with reason (DO NOT re-propose without strong new evidence)
 - FX carry G10 (4 tests): t < 2.5 with FRED 3M rates, edge insufficient post-2018
 - FX carry G10+EM, FX CS momentum, FX TSMOM: similar — all archived
+- Modified FX carry G10 à la Macrosynergy (n=173-174, Phase 1 IC FAIL): raw carry IC +0.022 is entirely a 2005-2007 pre-GFC artifact (IC=-0.028 on 2013-2023). BIS REER modification reduces IC further (-0.010). G10 carry is structurally dead post-GFC. DO NOT re-propose without strong evidence of post-2020 carry recovery.
 - Equity momentum 73 large caps (8+ tests): β-dominance, edge dies after costs
 - Equity pairs cointegration (Gatev distance + Engle-Granger): ADF rejects everything 2024-2025
 - Sector reversal, multi-asset TSMOM equities: archived
@@ -131,6 +135,7 @@
 - TSMOM on commodity ETFs (4 tests): ETF roll drag contaminates momentum signal
 - NQ VWAP mean reversion (4 iter): NQ afternoon is momentum-continuation, not MR
 - NQ afternoon momentum (4 iter): edge insufficient after costs
+- Equities indices swing IC scan (100 tests: 92 IC + 8 backtest): 12 IC-GO signals (S1 VRP + S2 VIX term), ALL fail full backtest. Root cause: IC 0.033–0.075 too small; daily turnover 33–72×/yr; gross Sharpe 0.18–0.47 eaten by 2–5%/yr cost drag. Even at futures costs (0.01% RT), best achievable = 0.45 Sharpe (S1 QQQ). DO NOT re-propose without IC > 0.10 (ETF) or IC > 0.06 (futures).
 
 
 ## Parallel session coordination (READ BEFORE LAUNCHING /goal)

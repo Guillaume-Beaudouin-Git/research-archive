@@ -1,0 +1,73 @@
+{
+  "momentum_cs": {
+    "signal": "jt_momentum_cs_monthly",
+    "universe": "SPX large-cap ~70 stocks",
+    "freq": "monthly",
+    "cost_rt": 0.0008,
+    "period_start": "2005-02-28",
+    "period_end": "2026-05-31",
+    "ic_mean": -0.007825476498281348,
+    "ic_std": 0.2504103496671848,
+    "ic_tstat": -0.4881501532644233,
+    "ic_n": 244,
+    "ic_pct_positive": 0.5081967213114754,
+    "sharpe": -0.026428314428206267,
+    "max_dd": -0.583337599605688,
+    "ann_ret": -0.00499678883406383,
+    "n_stocks": 73,
+    "quintile_k": 14,
+    "avg_turnover": 1.0212827988338193,
+    "crashes": {
+      "GFC_2008": {
+        "period": "2008-07-01 \u2192 2009-06-30",
+        "sharpe": -1.208,
+        "max_dd": -0.4383,
+        "cum_ret": -0.3716,
+        "n_obs": 12
+      },
+      "COVID_2020": {
+        "period": "2020-02-01 \u2192 2020-06-30",
+        "sharpe": 1.176,
+        "max_dd": -0.0949,
+        "cum_ret": 0.2264,
+        "n_obs": 5
+      }
+    },
+    "gate": "SKIP"
+  },
+  "tsmom": {
+    "signal": "tsmom_tanh_monthly",
+    "universe": "SPX large-cap ~70 stocks",
+    "freq": "monthly",
+    "cost_rt": 0.0008,
+    "period_start": "2005-02-28",
+    "period_end": "2026-05-31",
+    "ic_mean": -0.005092856723779699,
+    "ic_std": 0.25879220550768506,
+    "ic_tstat": -0.3074009319431239,
+    "ic_n": 244,
+    "ic_pct_positive": 0.5122950819672131,
+    "sharpe": 0.2815024334508544,
+    "max_dd": -0.2608911886195464,
+    "ann_ret": 0.020651588003952982,
+    "n_stocks": 73,
+    "avg_turnover": 0.1894407227688265,
+    "crashes": {
+      "GFC_2008": {
+        "period": "2008-07-01 \u2192 2009-06-30",
+        "sharpe": 0.205,
+        "max_dd": -0.2301,
+        "cum_ret": 0.0233,
+        "n_obs": 12
+      },
+      "COVID_2020": {
+        "period": "2020-02-01 \u2192 2020-06-30",
+        "sharpe": -0.014,
+        "max_dd": -0.0484,
+        "cum_ret": -0.0023,
+        "n_obs": 5
+      }
+    },
+    "gate": "SKIP"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "n_obs": 2985,
+  "date_start": "2018-03-10",
+  "date_end": "2026-05-16",
+  "test_a": {
+    "ic": -0.008342,
+    "t_hac": -0.2558,
+    "events_per_year": 25.8
+  },
+  "test_b": {
+    "ic": 0.008491,
+    "t_hac": 0.2742,
+    "events_per_year": 27.7
+  },
+  "test_c": {
+    "ic": 0.00539,
+    "t_hac": 0.202,
+    "events_per_year": 16.9
+  },
+  "corr_tsmom": -0.247444,
+  "orthogonality_pass": true,
+  "decomposition": {
+    "D1_price_MR_dominates": true,
+    "D2_combined_signal": false,
+    "D3_fg_void": false,
+    "verdict": "STOP_D1: FGVD dominated by price mean-reversion; no incremental sentiment"
+  },
+  "gates": {
+    "ic_direction": false,
+    "ic_magnitude": false,
+    "t_hac": false,
+    "event_frequency": false,
+    "orthogonality": true,
+    "all_pass": false
+  },
+  "final_verdict": "STOP_D1: FGVD dominated by price mean-reversion; no incremental sentiment",
+  "n_tests_consumed": 1,
+  "n_tests_cumulative": 158
+}
