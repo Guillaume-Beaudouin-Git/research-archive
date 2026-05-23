@@ -1,0 +1,21 @@
+{
+  "gate2": "FAIL",
+  "gate2_msg": "\u0394=0.0224%/day < 0.05%/day \u2192 STOP, archive",
+  "tau": 0.5,
+  "hac_lag": 6,
+  "period_start": "2024-02-13",
+  "period_end": "2026-05-22",
+  "n_days_total": 830,
+  "n_days_active": 261,
+  "n_days_inactive": 569,
+  "pct_active": 0.3144578313253012,
+  "mean_ret_active_pct_per_day": 0.019785489518581702,
+  "mean_ret_inactive_pct_per_day": -0.0025935389097841454,
+  "diff_pct_per_day": 0.022379028428365845,
+  "hac_t_stat": -0.17286448056273704,
+  "sharpe_active_ann": 0.3091402820034802,
+  "sharpe_inactive_ann": -0.0338732696282647,
+  "sharpe_unfiltered_ann": 0.06102968594735639,
+  "regime_score_mean": 0.025823368204815123,
+  "regime_score_std": 1.0082603705660862
+}
