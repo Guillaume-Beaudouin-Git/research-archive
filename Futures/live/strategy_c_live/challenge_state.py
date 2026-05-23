@@ -204,7 +204,7 @@ class ChallengeState:
             return
         self.is_funded = True
         self._save()
-        log.info("Marked funded. Phase: eval → pre_lock. Sizing: 3 MNQ → 4 MNQ.")
+        log.info("Marked funded. Phase: eval → pre_lock. Sizing: 3 MNQ → 3 MNQ.")
 
     # ── Balance updates ──────────────────────────────────────────────────────
 
