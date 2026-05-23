@@ -17,12 +17,13 @@
 
 ## Live strategies snapshot
 
-### Strategy A — TSMOM v3 propfirm (LIVE on Propr)
+### Strategy A — TSMOM v3 (PAUSED — Propr breach)
 - Signal: tanh(cumret_28d / (vol_28d × sqrt(28))).clip(lower=0) — long-only
 - Vol: log returns, 28-bar window, sqrt(365) annualization (MUST match backtest)
 - Assets: BTC, ETH, SOL | Rebalance: Monday 00:05 UTC
 - Validation: Sharpe 1.33 OOS, MaxDD -6.9%
-- Status: PRODUCTION
+- Status: NOT LIVE (Propr account breached). Methodology validated, awaiting new propfirm deployment.
+- VPS crons still active for state tracking but not trading live capital.
 
 ### Strategy B — Delta-neutral carry (LIVE on HL testnet since 2026-05-17)
 - Active pairs: TST + MEGA | Rebalance: every 8h (00:10, 08:10, 16:10 UTC)
@@ -30,7 +31,7 @@
 - Cumulative carry to date: ~$16.43 (testnet, artificial rates)
 - Status: EXECUTION-VALIDATED, CARRY-PROXIED (mainnet pending, 60-day live required)
 
-### Strategy C — NQ opening momentum iter_10 (BACKTEST ONLY, paper imminent)
+### Strategy C — NQ opening momentum iter_10 (IN PROGRESS, paper trade pending)
 - Signal: direction of 09:30-09:45 ORB, entry at 09:46 ET
 - Filters: VWAP confirmation + gap < 1.2% + opening range ≥ 30pts + $400 SL cap
 - TP: 1.5R | SL: min(0.5R, 20pts) | Time stop: 12:30 ET
@@ -38,8 +39,9 @@
 - Backtest: Sharpe 1.52, MaxDD -13.4% rel / -9.5% on $50K, WF 78% positive (7/9), N=346
 - Cross-validated: ES + YM directionally confirm (60-day yfinance sample)
 - Data: Kaggle NQ 1-min 2022-2025 (Dataset_NQ_1min_2022_2025.csv, gitignored)
-- KNOWN GAP: backtest uses VWAP 1-min, live uses VWAP 5-min — to reconcile before paper start
-- Status: BACKTEST-ONLY, paper infra built, execution not started
+- KNOWN GAP: backtest uses VWAP 1-min, live infra uses VWAP 5-min — to reconcile before paper start
+- Target propfirm: Tradeify (Topstep abandoned, Propr breached)
+- Status: BACKTEST-VALIDATED, paper infra built, execution not started
 
   ## Portfolio context
 - A+C theoretical: Sharpe 1.5-1.7, corr(A,C) ≈ 0.015 (validated)
