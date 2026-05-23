@@ -1302,9 +1302,11 @@ Pre-flight event-count checks must gate both floor (too sparse → underpowered 
 - 6.39 PMR (perp-spot basis mean-reversion, threshold event-driven): SKIP (IC t=2.86 at 3d PASS, but 912 events/year at 1.5σ → 97%/yr cost drag → Sharpe=−0.55, MaxDD=−65%. Signal real, strategy unexploitable at retail taker fees. See `Crypto/research/archived/other/pmr_basis/POSTMORTEM.md`)
 - 6.40–6.42 OAGF (open auction gap fade at 8h settlement bars, Binance 1h perp, maker ALO): SKIP (IC_daily=−0.189 at 1h, direction correct, but t_HAC=−1.17 — gate −2.5. Root cause: 128 events/year at 0.30% threshold too sparse; reaching t=−2.5 requires ~10 years data. HL candle API has only ~7 months of history. See `Crypto/research/archived/other/oagf/POSTMORTEM.md`)
 - 6.43–6.44 ETH MVRV + Exchange Netflow (on-chain, CoinMetrics Community free tier, Phase 1 sanity): SKIP (MVRV IC=+0.11 as MOMENTUM signal — wrong direction for mean-reversion hypothesis, corr_A=0.73. Netflow IC collapses to t_HAC≈0 after HAC correction — 90d accumulation regime autocorrelation → effective N≈73 from 3398 daily obs. Gate 1 FAIL. See `Crypto/research/archived/other/eth_mvrv_netflow/POSTMORTEM.md`)
+- 6.45 BTC VRP Deribit — Phase 2 IC (unconditional signal test): SKIP (IC=+0.126, t_HAC=2.35 — borderline, sub-period stability 33%, non-overlapping IC≈0. Proceeded to Phase 3 unconditional as per user GO.)
+- 6.46–6.47 BTC VRP Deribit — Phase 3 walk-forward (unconditional always-short straddle 30DTE→14DTE, 184 cycles, 2021–2026): ARCHIVE (Sharpe_HAC=−2.68, 0/13 folds positive. Gross=+4.44%/yr, costs=8.89%/yr, net=−4.46%/yr. Cost/gross ratio 200%. Strategy systematically loses: option fees 49% + bid-ask spread 49% = double the gross VRP premium. Stress: LUNA −0.44%, FTX −2.56% (2 cycles). Synthetic COVID worst-case: −38% of notional. Root cause: GATE 1 unit error — Almeida's 14%/yr VRP is in variance units, not % of underlying notional; after B-S conversion, gross is only 4.4%/yr. See `Crypto/research/archived/options/vrp_deribit/DECISION.md`. Lesson 13 added.)
 
-**N_tests cumulative: 153** (prior 151 + 2 Phase-1 sanity IC tests: MVRV + Netflow)
-**E[max_SR] at N=153: ≈ 4.34** (AMTP threshold, marginal change)
+**N_tests cumulative: 156** (prior 153 + 1 Phase-2 IC + 2 Phase-3 WF cycles)
+**E[max_SR] at N=156: ≈ 4.34** (marginal increase, no meaningful change)
 
 **Extended structural finding** (confirmed across 44 signals): In crypto, all free-data standalone strategies are either:
 1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout, MVRV, active addresses) — work in bull, fail in bear, corr > 0.4
