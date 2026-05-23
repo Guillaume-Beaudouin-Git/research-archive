@@ -1,16 +1,16 @@
 """
-guardrails.py — Propfirm guardrails for Strategy C (Tradeify Select Flex $50K)
+guardrails.py — Propfirm guardrails for Strategy C (Tradeify Select Flex $25K)
 ================================================================================
 Phase-aware defense against propfirm account bust:
 
   Pre-lock (eval + pre_lock phases):
-    L1: Trailing DD from equity peak > $1,750 (Tradeify limit $2,000, buffer $250)
-    L2: Self-imposed daily loss > $800 (2 × max SL at 5 MNQ, Tradeify has no DLL)
+    L1: Trailing DD from equity peak > $1,300 (Tradeify limit $1,500, buffer $200)
+    L2: Self-imposed daily loss > $400 (2 × max SL at 3 MNQ, Tradeify has no DLL)
     L3: Bracket integrity — TP and SL orders still alive
 
   Post-lock (post_lock phase):
-    L1: Balance < $50,175 (Tradeify locked floor $50,100, buffer $75)
-    L2: Same daily self-limit $800
+    L1: Balance < $25,175 (Tradeify locked floor $25,100, buffer $75)
+    L2: Same daily self-limit $400
     L3: Same bracket integrity
 
 Emergency flat: client.emergency_close() → write HALT sentinel → Telegram CRITICAL.
@@ -30,6 +30,7 @@ from Futures.live.strategy_c_live.config import (
     GUARDRAIL_POST_LOCK_FLOOR,
     GUARDRAIL_DAILY_SELF_LIMIT,
     HALT_SENTINEL_PATH,
+    TRADEIFY_TRAILING_DD_USD,
     # Legacy aliases kept for validate_mt5.py offline tests
     GUARDRAIL_DD_PCT,
     GUARDRAIL_DAILY_BUFFER_PCT,
@@ -99,8 +100,8 @@ class PropfirmGuardrails:
     def _check_drawdown(self, current_balance: float) -> None:
         """
         Phase-aware DD check:
-          Post-lock: absolute floor at $50,175 (Tradeify floor $50,100 + $75 buffer)
-          Pre-lock / eval: trailing DD from peak, guardrail at $1,750 (limit $2,000)
+          Post-lock: absolute floor at $25,175 (Tradeify floor $25,100 + $75 buffer)
+          Pre-lock / eval: trailing DD from peak, guardrail at $1,300 (limit $1,500)
         """
         phase = self.state.get_phase()
 
@@ -117,7 +118,7 @@ class PropfirmGuardrails:
                 raise GuardrailTriggered(
                     f"TRAILING_DD_BREACH: ${trailing_dd:,.2f} from peak "
                     f"${self.state.peak_balance:,.2f} >= ${GUARDRAIL_TRAILING_DD_USD:,} guardrail "
-                    f"(Tradeify limit ${2_000:,}, phase={phase})"
+                    f"(Tradeify limit ${TRADEIFY_TRAILING_DD_USD:,}, phase={phase})"
                 )
 
     def _check_daily_self_limit(self, current_balance: float) -> None:
