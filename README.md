@@ -1390,6 +1390,18 @@ The structural conclusion is that **free-data retail alpha on 29-coin Binance/HL
 
 **Implication**: Use SR(B)=2.0 for all portfolio simulation until N≥250 mainnet daily returns accumulate (review trigger: realized mainnet Sharpe outside [1.0, 4.0] over ≥12 months). Portfolio gate for any new strategy D: Sharpe(A+B+C+D) > 1.10 × Sharpe(A+B+C), computed at SR(B)=2.0.
 
+#### L17 — F&G Velocity Divergence: Contrarian Hypothesis Wrong Direction (2026-05-23)
+
+**Statement**: Fear & Greed velocity divergence (`z(ΔF&G_7d) − z(Δprice_7d)`) produces near-zero IC at 7-day daily BTC frequency (IC_C = +0.0054, t = +0.20). Critically, the signal is the **wrong direction**: both F&G velocity standalone (IC_B = +0.0085) and the combined FGVD signal have positive IC, consistent with F&G leading returns in the SAME direction (momentum), not opposite (contrarian).
+
+**Mechanism behind the failure**: The Da et al. 2011 "attention reversal" mechanism (SVI spike → uninformed buying → 2-week reversion) describes NEW external attention (first-time researchers). Fear & Greed measures EXISTING holder sentiment, which Albrecht et al. 2025 show leads prices in the same direction at 4–32 day horizons. "Sentiment rising faster than price" predicts further appreciation, not reversion — because existing holders who feel good continue buying. The two mechanisms are structurally different.
+
+**Secondary finding**: Price mean-reversion (Test A) also has near-zero IC at 7-day BTC daily (IC_A = −0.0083, t = −0.26). BTC is not mean-reverting at 7-day horizons — momentum dominates.
+
+**Implication**: Do NOT propose contrarian strategies based on "sentiment overshoot → price reversion" using F&G, Reddit mentions, or MVRV (all existing-holder sentiment proxies). These proxies lead returns in the momentum direction, not against it. The Da et al. mechanism requires NEW buyer attention discovery — candidate: Wikipedia pageviews for tokens with sudden external discovery, Google Trends niche altcoin spikes. Note also that the F&G velocity does not contain useful information beyond price velocity (D1 decomposition rule fires: |IC_A| ≥ 0.5 × |IC_C|).
+
+---
+
 #### L15 — Regime Overlays on High-Sharpe Strategies: Sub-Threshold Lift (2026-05-23)
 
 **Statement**: A macro liquidity regime filter (ETF flows + stablecoin supply) applied as a multiplicative overlay to a high-Sharpe TSMOM strategy (SR=1.33) produces economically positive but sub-threshold conditional improvement: Δ = +0.022%/day (active vs inactive), well below the 0.05%/day floor.
@@ -1415,6 +1427,7 @@ Each column is a structurally distinct failure mode. ✗ = confirmed primary cau
 | On-chain adoption (active addresses — untested) | — | **✗** (expected: slow-moving) | — | — | — | **✗** (expected) |
 | Options VRP timing (Phase 2 IC) | — | (✗) (sub-period stability 33%) | **✗** | — | **✗** | **✗** (non-overlapping IC≈0) |
 | Macro regime overlay (ETF flows + stablecoin) | — | (✗) (ETF flow persistent) | — | — | — | **✗** (Δ=+0.022%/day < gate; L15) |
+| Sentiment divergence (FGVD: F&G vel − price vel) | — | — | — | **✗** (IC wrong direction; L17) | — | **✗** (all IC ≈ 0) |
 
 **Interpretation**: Cost drag and statistical power are the two most prevalent failure modes (each appearing 5× as primary failures). β-dominance is structural in all long-only CS designs regardless of signal quality. Tail risk is binding for all strategies with short-gamma or leveraged mean-reversion exposure. No tested family failed for fewer than two independent reasons.
 
@@ -1428,7 +1441,7 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 |----------|---------------------|---------------------|-------------|-------------------|
 | 1. Microstructure & OFI | OFI 10-level, Binance Futures WebSocket | WSS tick stream (Binance public, free) | Low (retail) | Sub-second execution requires co-location; retail accessible only as execution timing overlay, not position signal |
 | 4. Cross-asset / cross-exchange | BTC price discovery Coinbase→Binance lead-lag (Shu et al. 2023); CS cross-crypto LASSO (Jia et al. 2023) | Multi-venue WebSocket, sub-second timestamps | Medium | Lead-lag window < 5s for HF variant; multi-day CS variant feasible but L11 applies |
-| 5. Sentiment / narrative | Fear & Greed z-score divergence vs price; Google Trends crypto | alternative.me API (free); pytrends | Medium | Daily granularity; L12b autocorrelation risk (sentiment regimes persistent); prior V1 fear/greed signal failed at cost/signal ratio |
+| 5. Sentiment / narrative | ~~Fear & Greed velocity divergence~~ **TESTED & ARCHIVED** (2026-05-23): Phase 2 FAIL — IC_C = +0.0054 (wrong direction), t = +0.20; F&G velocity is a MOMENTUM signal not contrarian. L17: contrarian F&G hypothesis invalid. Next untested: Wikipedia pageviews attention spike for niche altcoins (H3 from sentiment_alpha_deep_dive.md). | alternative.me API (free); Wikimedia REST API | Medium | L17 logged: existing-holder sentiment leads momentum; new-buyer attention signals remain untested |
 | 6. Macro / cross-market | ~~ETF flow signal + stablecoin supply as regime overlay on Strategy A~~ **TESTED & ARCHIVED** (2026-05-23): Gate 2 FAIL — Δ=+0.022%/day < 0.05%/day floor; 1 test consumed (n_tests=157). Lesson L15: regime overlays on high-Sharpe strategies produce sub-threshold lift. | BitBO.io (Farside blocked), DeFiLlama | Completed | L15: conditional lift insufficient for SR>1.0 base strategies |
 | 7. Calendar / event-driven | Token unlock cliff short (Keyrock 2024: 16,000+ events); short post-listing micro-cap (Empirica 2024 inversion documented) | TokenUnlocks.app (free); Binance Announcements RSS | Medium | L12 floor applies per coin; 2024 data shows naïve listing-long inverted (−22.7% at 3m); short variant requires per-event statistical screening |
 | 8. DEX-specific edges | HLP Hyperliquid vault flow contrarian; Uniswap V3 LP active rebalancing (Loesche et al.: 50% of V3 LPs underperform HODL) | HL API public; Uniswap subgraphs via The Graph (free with rate limit) | Medium | Pure MEV fully saturated by professional searchers; LP management feasible; requires web3.py + gas cost model; IL complicates P&L accounting |
@@ -1453,8 +1466,8 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 
 ---
 
-**N_tests cumulative: 157** (prior 156 + 1 Gate-2 IC for ETF regime overlay at pre-registered τ=+0.5σ)
-**E[max_SR] at N=157: ≈ 4.34** (marginal increase, no meaningful change)
+**N_tests cumulative: 158** (prior 157 + 1 Phase-2 IC block for FGVD H1: Tests A+B+C pre-registered as combined, all near zero, wrong direction, archived with L17)
+**E[max_SR] at N=158: ≈ 4.34** (marginal increase, no meaningful change)
 
 **Extended structural finding** (confirmed across 44 signals): In crypto, all free-data standalone strategies are either:
 1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout, MVRV, active addresses) — work in bull, fail in bear, corr > 0.4
