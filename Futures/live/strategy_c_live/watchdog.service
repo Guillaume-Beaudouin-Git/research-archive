@@ -13,7 +13,7 @@
 # Assumes:
 #   User:             algo
 #   Repo path:        /home/algo/projects/Algo_claude
-#   Python venv:      /home/algo/projects/Algo_claude/.env
+#   Python venv:      /home/algo/venv
 #   Env file:         /home/algo/projects/Algo_claude/.env  (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID)
 
 [Unit]
@@ -24,10 +24,10 @@ After=network.target
 Type=simple
 User=algo
 WorkingDirectory=/home/algo/projects/Algo_claude
-ExecStart=/home/algo/projects/Algo_claude/.env/bin/python -m Futures.live.strategy_c_live.watchdog
+EnvironmentFile=/home/algo/projects/Algo_claude/.env
+ExecStart=/home/algo/venv/bin/python -m Futures.live.strategy_c_live.watchdog
 Restart=always
 RestartSec=10
-EnvironmentFile=/home/algo/projects/Algo_claude/.env
 StandardOutput=journal
 StandardError=journal
 
