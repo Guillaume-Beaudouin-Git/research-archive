@@ -1,0 +1,18 @@
+{
+  "signal": "carry_fred_g10",
+  "universe": "G10 vs USD (8 pairs)",
+  "freq": "weekly",
+  "cost_rt": 0.00015,
+  "period_start": "2005-01-14",
+  "period_end": "2026-05-15",
+  "ic_mean": 0.02692947202523357,
+  "ic_std": 0.4450997916966432,
+  "ic_tstat": 2.0193567162555253,
+  "ic_n": 1114,
+  "sharpe": -0.12562502874177142,
+  "max_dd": -0.5257302993691693,
+  "ann_ret": -0.0130198512018111,
+  "n_pairs": 8,
+  "avg_turnover": 0.03141831238779174,
+  "gate": "WEAK"
+}

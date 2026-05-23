@@ -1,0 +1,186 @@
+# FX Universe — Strategy D Modified Carry (and all future FX strategies)
+# Last updated: 2026-05-23
+# Source conventions: yfinance spot, FRED 3M interbank, BIS REER, COT CFTC
+version: 1
+
+# ─── G10 vs USD ──────────────────────────────────────────────────────────────
+g10_vs_usd:
+  # Each entry: spot ticker (XXXUSD convention), FRED 3M rate, BIS REER code
+  EUR:
+    yfinance_spot: "EURUSD=X"          # EUR per USD (already base EUR)
+    yfinance_futures: "6E=F"           # CME EUR futures
+    fred_3m_rate: "IR3TIB01EZM156N"   # 3M Euribor
+    bis_reer_code: "RBXM"             # BIS Euro area broad REER
+    invert_spot: false                 # no inversion needed
+    publication_lag_weeks: 2
+    cpi_fred: "CPALTT01EZM659N"       # Euro area CPI y/y %
+  GBP:
+    yfinance_spot: "GBPUSD=X"
+    yfinance_futures: "6B=F"
+    fred_3m_rate: "IR3TIB01GBM156N"   # 3M GBP LIBOR
+    bis_reer_code: "RBGB"
+    invert_spot: false
+    cpi_fred: "CPALTT01GBM659N"
+  JPY:
+    yfinance_spot: "JPY=X"            # yfinance: USDJPY → need 1/px for JPYUSD
+    yfinance_futures: "6J=F"          # CME JPY futures (USD/JPY × 12.5M yen)
+    fred_3m_rate: "IR3TIB01JPM156N"   # 3M JPY TIBOR
+    bis_reer_code: "RBJP"
+    invert_spot: true                 # yfinance gives USDJPY; invert to JPYUSD
+    cpi_fred: "CPALTT01JPM659N"
+  CHF:
+    yfinance_spot: "CHF=X"            # USDCHF → invert to CHFUSD
+    yfinance_futures: "6S=F"
+    fred_3m_rate: "IR3TIB01CHM156N"   # 3M CHF LIBOR
+    bis_reer_code: "RBCH"
+    invert_spot: true
+    cpi_fred: "CPALTT01CHM659N"
+  AUD:
+    yfinance_spot: "AUDUSD=X"
+    yfinance_futures: "6A=F"
+    fred_3m_rate: "IR3TIB01AUM156N"   # 3M AUD IBOR
+    bis_reer_code: "RBAU"
+    invert_spot: false
+    cpi_fred: "CPALTT01AUM659N"
+  CAD:
+    yfinance_spot: "CAD=X"            # USDCAD → invert
+    yfinance_futures: "6C=F"
+    fred_3m_rate: "IR3TIB01CAM156N"   # 3M CAD IBOR
+    bis_reer_code: "RBCA"
+    invert_spot: true
+    cpi_fred: "CPALTT01CAM659N"
+  NZD:
+    yfinance_spot: "NZDUSD=X"
+    yfinance_futures: "6N=F"
+    fred_3m_rate: "IR3TIB01NZM156N"   # 3M NZD IBOR
+    bis_reer_code: "RBNZ"
+    invert_spot: false
+    cpi_fred: "CPALTT01NZM659N"
+  NOK:
+    yfinance_spot: "NOK=X"            # USDNOK → invert
+    yfinance_futures: null            # No liquid CME NOK futures
+    fred_3m_rate: "IR3TIB01NOM156N"   # 3M NOK NIBOR
+    bis_reer_code: "RBNO"
+    invert_spot: true
+    cpi_fred: "CPALTT01NOM659N"
+  SEK:
+    yfinance_spot: "SEK=X"            # USDSEK → invert
+    yfinance_futures: null
+    fred_3m_rate: "IR3TIB01SEM156N"   # 3M SEK STIBOR
+    bis_reer_code: "RBSE"
+    invert_spot: true
+    cpi_fred: "CPALTT01SEM659N"
+
+# ─── USD funding currency ────────────────────────────────────────────────────
+usd:
+  fred_3m_rate: "DTB3"               # US 3M T-bill (secondary market, daily)
+  bis_reer_code: "RBUS"
+  cpi_fred: "CPALTT01USM659N"
+  note: >
+    DTB3 is daily; resample to monthly last() before computing carry differential.
+    Alternative: IR3TIB01USM156N (monthly, same series family as G10).
+
+# ─── EM vs USD (optional extension, Phase 2+) ────────────────────────────────
+# Execution via CME futures or spot proxies; spreads 5-30x wider than G10.
+em_vs_usd:
+  BRL:
+    yfinance_spot: "BRL=X"           # USDBRL → invert
+    yfinance_futures: "6L=F"         # CME BRL futures (low liquidity warning)
+    fred_3m_rate: null               # Not reliably on FRED; use central bank rate
+    bis_reer_code: "RBBR"
+    invert_spot: true
+    proxy_notes: >
+      CME 6L=F is lightly traded. Use spot USDBRL=X (inverted) for research.
+      Peso problem: carry often negative net after depreciation. Treat as optional.
+    cost_rt_pips: 15
+  MXN:
+    yfinance_spot: "MXN=X"          # USDMXN → invert
+    yfinance_futures: "6M=F"
+    fred_3m_rate: null
+    bis_reer_code: "RBMX"
+    invert_spot: true
+    cost_rt_pips: 8
+  ZAR:
+    yfinance_spot: "ZAR=X"          # USDZAR → invert
+    yfinance_futures: null           # No liquid CME ZAR futures
+    fred_3m_rate: null
+    bis_reer_code: "RBZA"
+    invert_spot: true
+    proxy_notes: "Spot proxy only. No CME ZAR futures available."
+    cost_rt_pips: 12
+  INR:
+    yfinance_spot: "INR=X"          # USDINR → invert (NDF proxy)
+    yfinance_futures: null           # NDF market; 6I=F low liquidity
+    fred_3m_rate: null
+    bis_reer_code: "RBIN"
+    invert_spot: true
+    proxy_notes: >
+      India capital controls. Only NDF market accessible for foreigners.
+      USDINR=X as research proxy. Execution cost 20+ pips RT.
+    cost_rt_pips: 20
+  TRY:
+    yfinance_spot: "TRY=X"          # USDTRY → invert
+    yfinance_futures: null
+    fred_3m_rate: null
+    bis_reer_code: "RBTR"
+    invert_spot: true
+    proxy_notes: >
+      Structural peso problem. TRY depreciation consistently exceeds carry.
+      Include only as short-side candidate; high REER overvaluation filter.
+    cost_rt_pips: 30
+
+# ─── Cost model ──────────────────────────────────────────────────────────────
+costs:
+  majors:                            # EUR, GBP, AUD, NZD vs USD
+    spread_pips_rt: 0.5
+    triple_swap_day: wednesday       # triple swap cost on Wed (holding long>Mon)
+    source: IBKR TWS typical spreads
+  jpy_crosses:                       # USD/JPY, AUD/JPY, etc.
+    spread_pips_rt: 1.0
+  minor_g10:                         # CHF, CAD, NOK, SEK
+    spread_pips_rt: 1.0
+  em:
+    brl_mxn_pips_rt: 8
+    zar_pips_rt: 12
+    inr_pips_rt: 20
+    try_pips_rt: 30
+  swap_retail_multiplier: 1.5        # retail swap = interbank rate × 1.5 on short leg
+
+# ─── BIS REER metadata ───────────────────────────────────────────────────────
+bis_reer:
+  download_url: "https://www.bis.org/statistics/eer/broad.xlsx"
+  sheet_name: "Real"
+  base_year: 2020                    # index = 100 in year 2020
+  frequency: monthly
+  coverage_start: "1994-01-01"
+  coverage_end_known: "2023-12-31"   # last update as of download
+  publication_lag_months: 1
+  usage_note: >
+    Must apply .shift(1) before using as signal (1-month publication lag).
+    Values > 100 = overvalued vs 2020; < 100 = undervalued.
+    For deviation signal: rolling 10Y z-score, negate for carry adjustment
+    (overvalued currency → reduce carry weight).
+
+# ─── Current account / GDP ────────────────────────────────────────────────────
+current_account:
+  source: FRED
+  frequency: quarterly
+  forward_fill: true
+  publication_lag_quarters: 1
+  fred_codes:
+    US:  "BOPCRNT"                   # US current account, quarterly, USD bn
+    EUR: null                        # Use ECB SDW or OECD — not on FRED
+    GBP: "BOPGSTB01GBQ188S"         # UK CA balance (OECD via FRED)
+    note: >
+      Only US and GBP available directly on FRED.
+      For full G10, use OECD.Stat or IMF BOP data.
+      Defer to Phase 2 (full backtest). Not needed for IC feasibility.
+
+# ─── Research tracking ────────────────────────────────────────────────────────
+n_tests_tracker:
+  baseline_after_fx_phase_1_5: 172  # from _ic_feasibility.md, 2026-05-23
+  strategy_d_tests_start: 173
+  note: >
+    User prompt cited n=135 as starting count; actual ground truth from
+    _ic_feasibility.md is 172 after FX Phase 1.5 (Angle A + B tests).
+    Use 172 as correct denominator for AMTP calculations.

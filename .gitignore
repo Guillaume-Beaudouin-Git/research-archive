@@ -31,7 +31,7 @@ data/*.csv
 data/funding_carry/
 data/delta_neutral/
 data/pairs_trading/
-data/raw/*.parquet
+data/raw/
 data/metadata/*.json
 
 # Research cache — binary data, reproducible from API
