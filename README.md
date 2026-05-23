@@ -1390,6 +1390,14 @@ The structural conclusion is that **free-data retail alpha on 29-coin Binance/HL
 
 **Implication**: Use SR(B)=2.0 for all portfolio simulation until N≥250 mainnet daily returns accumulate (review trigger: realized mainnet Sharpe outside [1.0, 4.0] over ≥12 months). Portfolio gate for any new strategy D: Sharpe(A+B+C+D) > 1.10 × Sharpe(A+B+C), computed at SR(B)=2.0.
 
+#### L15 — Regime Overlays on High-Sharpe Strategies: Sub-Threshold Lift (2026-05-23)
+
+**Statement**: A macro liquidity regime filter (ETF flows + stablecoin supply) applied as a multiplicative overlay to a high-Sharpe TSMOM strategy (SR=1.33) produces economically positive but sub-threshold conditional improvement: Δ = +0.022%/day (active vs inactive), well below the 0.05%/day floor.
+
+**Mechanism**: Strong-trend strategies self-filter through signal strength — tanh(t-stat) naturally downweights weak-trend environments. A binary regime gate (ON/OFF) adds marginal value only when the base signal is structurally noisy or biased in certain regimes. In 28-month post-ETF data, the TSMOM signal remained robust even during net-outflow periods (GBTC conversion phase, Jan–Feb 2024) because BTC was already in a confirmed uptrend. The regime signal correctly identified unfavorable macro environments (31.4% time-in-market at τ=+0.5σ, vs 31% expected) but the return differential was too small to pass Gate 2.
+
+**Implication**: Regime overlays are more valuable for strategies with Sharpe < 0.7 where low-liquidity environments cause most drawdowns. For high-Sharpe momentum, the marginal regime lift (~1.7%/yr alpha at 31% time-in-market) does not justify the loss of exposure. Future regime filter research should target strategies with MaxDD > 20% or conditional drawdown clustering.
+
 ---
 
 ### 6.53 Two-Dimensional Saturation Map
@@ -1406,6 +1414,7 @@ Each column is a structurally distinct failure mode. ✗ = confirmed primary cau
 | On-chain flow (exchange Netflow) | (✗) (corr_A=0.51) | **✗** (t: 2.58→0.11) | — | — | — | **✗** |
 | On-chain adoption (active addresses — untested) | — | **✗** (expected: slow-moving) | — | — | — | **✗** (expected) |
 | Options VRP timing (Phase 2 IC) | — | (✗) (sub-period stability 33%) | **✗** | — | **✗** | **✗** (non-overlapping IC≈0) |
+| Macro regime overlay (ETF flows + stablecoin) | — | (✗) (ETF flow persistent) | — | — | — | **✗** (Δ=+0.022%/day < gate; L15) |
 
 **Interpretation**: Cost drag and statistical power are the two most prevalent failure modes (each appearing 5× as primary failures). β-dominance is structural in all long-only CS designs regardless of signal quality. Tail risk is binding for all strategies with short-gamma or leveraged mean-reversion exposure. No tested family failed for fewer than two independent reasons.
 
@@ -1420,7 +1429,7 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 | 1. Microstructure & OFI | OFI 10-level, Binance Futures WebSocket | WSS tick stream (Binance public, free) | Low (retail) | Sub-second execution requires co-location; retail accessible only as execution timing overlay, not position signal |
 | 4. Cross-asset / cross-exchange | BTC price discovery Coinbase→Binance lead-lag (Shu et al. 2023); CS cross-crypto LASSO (Jia et al. 2023) | Multi-venue WebSocket, sub-second timestamps | Medium | Lead-lag window < 5s for HF variant; multi-day CS variant feasible but L11 applies |
 | 5. Sentiment / narrative | Fear & Greed z-score divergence vs price; Google Trends crypto | alternative.me API (free); pytrends | Medium | Daily granularity; L12b autocorrelation risk (sentiment regimes persistent); prior V1 fear/greed signal failed at cost/signal ratio |
-| 6. Macro / cross-market | ETF flow signal (Farside.co.uk) + stablecoin supply (DeFiLlama) as regime filter | FRED API + DeFiLlama stablecoins endpoint (both free) | Medium | Non-stationary BTC–NDX loading post-ETF inclusion; BTC–QQQ corr peaked at 0.87 (2024); regime signal requires HAC from day 1 |
+| 6. Macro / cross-market | ~~ETF flow signal + stablecoin supply as regime overlay on Strategy A~~ **TESTED & ARCHIVED** (2026-05-23): Gate 2 FAIL — Δ=+0.022%/day < 0.05%/day floor; 1 test consumed (n_tests=157). Lesson L15: regime overlays on high-Sharpe strategies produce sub-threshold lift. | BitBO.io (Farside blocked), DeFiLlama | Completed | L15: conditional lift insufficient for SR>1.0 base strategies |
 | 7. Calendar / event-driven | Token unlock cliff short (Keyrock 2024: 16,000+ events); short post-listing micro-cap (Empirica 2024 inversion documented) | TokenUnlocks.app (free); Binance Announcements RSS | Medium | L12 floor applies per coin; 2024 data shows naïve listing-long inverted (−22.7% at 3m); short variant requires per-event statistical screening |
 | 8. DEX-specific edges | HLP Hyperliquid vault flow contrarian; Uniswap V3 LP active rebalancing (Loesche et al.: 50% of V3 LPs underperform HODL) | HL API public; Uniswap subgraphs via The Graph (free with rate limit) | Medium | Pure MEV fully saturated by professional searchers; LP management feasible; requires web3.py + gas cost model; IL complicates P&L accounting |
 | 9. Alternative data | Wikipedia pageviews z-score (Kristoufek 2013 prior); GitHub commit velocity as dev proxy | Wikimedia REST API + GitHub REST API (both free, no key required) | High | Very low institutional competition; slow-moving series → L12b autocorrelation risk; daily granularity caps signal frequency |
@@ -1444,8 +1453,8 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 
 ---
 
-**N_tests cumulative: 156** (prior 153 + 1 Phase-2 IC + 2 Phase-3 WF cycles)
-**E[max_SR] at N=156: ≈ 4.34** (marginal increase, no meaningful change)
+**N_tests cumulative: 157** (prior 156 + 1 Gate-2 IC for ETF regime overlay at pre-registered τ=+0.5σ)
+**E[max_SR] at N=157: ≈ 4.34** (marginal increase, no meaningful change)
 
 **Extended structural finding** (confirmed across 44 signals): In crypto, all free-data standalone strategies are either:
 1. **Regime co-linear with TSMOM** (calendar patterns, adaptive trend, breakout, MVRV, active addresses) — work in bull, fail in bear, corr > 0.4
