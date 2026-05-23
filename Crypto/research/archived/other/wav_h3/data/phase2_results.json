@@ -1,0 +1,63 @@
+{
+  "verdict": "STOP_GATE2_D4_MOMENTUM_PROXY",
+  "n_tokens": 21,
+  "tokens": [
+    "SOL",
+    "ADA",
+    "AVAX",
+    "DOGE",
+    "DOT",
+    "MATIC",
+    "TRX",
+    "LINK",
+    "LTC",
+    "ETC",
+    "BCH",
+    "XLM",
+    "FIL",
+    "ALGO",
+    "EOS",
+    "ZEC",
+    "XMR",
+    "DASH",
+    "AXS",
+    "MANA",
+    "WLD"
+  ],
+  "panel_dates": 3063,
+  "panel_start": "2018-01-01",
+  "panel_end": "2026-05-21",
+  "lagging_corr": 0.10209,
+  "ic_a": 0.012834,
+  "t_hac_a": 1.4072,
+  "ic_b": 0.001583,
+  "t_hac_b": 0.1561,
+  "ic_c": 0.021426,
+  "t_hac_c": 2.1724,
+  "n_events_total": 2873,
+  "events_per_year": 342.6,
+  "orth_corr_tsmom": -0.0218,
+  "ic_dates_a": 3047,
+  "ic_dates_b": 2995,
+  "ic_dates_c": 2995,
+  "gates": {
+    "GATE_0_universe": {
+      "n_tokens": 21,
+      "threshold": 20,
+      "pass": true
+    },
+    "GATE_1_lagging": {
+      "corr_attn_price_prior": 0.1021,
+      "threshold": 0.3,
+      "pass": true,
+      "interpretation": "OK"
+    },
+    "GATE_2_D4_direction": {
+      "IC_B": 0.00158,
+      "must_be": "< 0",
+      "pass": false,
+      "interpretation": "momentum proxy"
+    },
+    "verdict": "STOP_GATE2_D4_MOMENTUM_PROXY"
+  }
+}
