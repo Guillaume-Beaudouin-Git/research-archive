@@ -36,6 +36,7 @@ data/metadata/*.json
 
 # Research cache — binary data, reproducible from API
 Crypto/research/active/_preflight/cache/
+Crypto/research/active/vrp_short_gamma/data/
 
 # Kill switch
 STOP
