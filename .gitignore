@@ -47,8 +47,6 @@ Commodities/research/archived/**/data/
 ETF_Vol/research/archived/**/data/
 Multi_Asset/research/archived/**/data/
 
-# Active research data caches (intermediate, reproducible)
-Commodities/research/active/*/data/
 
 # NQ 1-min Kaggle dataset (local only, gitignored per CLAUDE.md)
 Dataset_NQ_1min_2022_2025.csv
