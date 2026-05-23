@@ -51,6 +51,10 @@ STOP
 .DS_Store
 Thumbs.db
 
+# VPS copy of CLAUDE.md (stale local artefact, not for tracking)
+CLAUDE.md.vps
+
 # Claude Code local settings
 .claude/
 graphify-out/
+Forex/data/cache/
