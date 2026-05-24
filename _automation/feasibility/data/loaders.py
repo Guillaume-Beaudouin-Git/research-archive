@@ -38,7 +38,7 @@ STRATEGY_A_ADJACENT: list[str] = [
 
 
 def load_strategy_a_universe(
-    start: str = "2020-01-01",
+    start: str = "2018-01-01",
     end: str = "2025-12-31",
     tickers: list[str] | None = None,
 ) -> pd.DataFrame:
@@ -48,12 +48,13 @@ def load_strategy_a_universe(
     Parameters
     ----------
     start : str
-        Start date in ISO format (default '2020-01-01').
+        Start date in ISO format (default '2018-01-01').
     end : str
         End date in ISO format (default '2025-12-31').
     tickers : list[str] or None
-        Explicit list of yfinance tickers. If None, loads the minimal core
-        universe [BTC-USD, ETH-USD, SOL-USD].
+        Explicit list of yfinance tickers. If None, loads the full 14-asset
+        Strategy A universe (BTC/ETH/SOL + 11 Hyperliquid perps).
+        Late-listed assets (OP-USD, ARB-USD) are included from their listing date.
 
     Returns
     -------
@@ -65,7 +66,7 @@ def load_strategy_a_universe(
     import yfinance as yf
 
     if tickers is None:
-        tickers = STRATEGY_A_CORE
+        tickers = STRATEGY_A_FULL_UNIVERSE
 
     prices: dict[str, pd.Series] = {}
     with warnings.catch_warnings():
