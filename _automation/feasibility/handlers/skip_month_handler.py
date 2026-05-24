@@ -14,14 +14,13 @@ import pandas as pd
 from .base import HypothesisHandler
 from ..data.loaders import (
     STRATEGY_A_ADJACENT,
-    STRATEGY_A_CORE,
+    STRATEGY_A_FULL_UNIVERSE,
     load_strategy_a_universe,
     split_universe,
 )
-from ..stats.backtest_wf import walk_forward_backtest
-from ..stats.bootstrap import stationary_bootstrap_sharpe
+from ..stats.backtest_wf import compute_pnl, vol_target_positions, walk_forward_backtest
+from ..stats.bootstrap import bootstrap_pnl_difference, stationary_bootstrap_sharpe
 from ..stats.dsr import compute_sharpe_stats, deflated_sharpe_ratio
-from ..stats.ic_check import cross_sectional_ic, hac_t_stat, level_A_gate
 from ..stats.sanity_checks import (
     adjacent_asset_replication,
     oos_decade_check,
@@ -44,7 +43,7 @@ class SkipMonthHandler(HypothesisHandler):
     """Handler for skip-month / short-term reversal hypotheses on the TSMOM signal."""
 
     skip_variants: list[int] = [0, 5, 21]  # 0=baseline, 5=week skip, 21=month skip
-    universe_tickers: list[str] = STRATEGY_A_CORE
+    universe_tickers: list[str] = STRATEGY_A_FULL_UNIVERSE  # all 14 Strategy A assets
 
     # ── Classification ─────────────────────────────────────────────────────────
 
@@ -72,7 +71,7 @@ class SkipMonthHandler(HypothesisHandler):
         self._prices: pd.DataFrame | None = None  # lazy-loaded cache
 
     def _get_prices(self) -> pd.DataFrame:
-        """Load and cache Strategy A core prices (BTC, ETH, SOL)."""
+        """Load and cache Strategy A full-universe prices (14 assets via yfinance)."""
         if self._prices is None:
             self._prices = load_strategy_a_universe(
                 start="2018-01-01",
@@ -117,66 +116,95 @@ class SkipMonthHandler(HypothesisHandler):
         signal[cum_return.isna()] = np.nan
         return signal
 
-    # ── Level A — IC Feasibility ───────────────────────────────────────────────
+    # ── Level A — P&L-based feasibility gate ──────────────────────────────────
 
     def run_level_A(self) -> dict:
         """
-        Compare IC across skip variants vs baseline (skip=0).
+        Compare full-sample P&L Sharpe across skip variants vs baseline (skip=0).
 
-        For each skip in skip_variants, computes Spearman cross-sectional IC
-        against 7-day forward returns, HAC t-stat, and runs level_A_gate vs baseline.
+        TSMOM is a time-series signal: the relevant edge is measured via P&L,
+        not cross-sectional IC (which is noisy with few assets and irrelevant
+        when every asset is sized independently via vol-targeting).
+
+        For each skip in skip_variants:
+          1. Compute signal on the full 14-asset universe.
+          2. vol_target_positions → positions (0.1 ann vol target, costs 0.17% RT).
+          3. compute_pnl → portfolio P&L series.
+          4. Annualised Sharpe on the aggregate daily P&L.
+
+        Gate (variant vs baseline):
+          - delta_Sharpe > 0.1 (meaningful improvement threshold)
+          - block-bootstrap p_value(delta_Sharpe ≤ 0) < 0.05
 
         Returns
         -------
         dict
-            variants : dict[int, dict] — IC metrics per skip value
-            surviving_variants : list[int] — skips where level_A_gate PASSed
-            pass  : bool — True if at least one variant PASSes
+            variants          : dict[int, dict] — {sharpe, n_days} per skip
+            baseline_sharpe   : float
+            gate_results      : dict[int, dict] — {delta_sharpe, p_value, verdict}
+            surviving_variants: list[int]
+            pass              : bool
         """
         prices = self._get_prices()
-        log_returns = np.log(prices / prices.shift(1))
 
-        # 7-day forward returns at time t = return from t+1 to t+7 (1-day execution lag)
-        forward_7d = log_returns.rolling(7).sum().shift(-7)
+        # Full-sample P&L per variant (cheap filter — Level B provides OOS Sharpe)
+        variant_pnl: dict[int, pd.Series] = {}
+        variant_metrics: dict[int, dict] = {}
 
-        ic_per_variant: dict[int, dict] = {}
         for skip in self.skip_variants:
             sig = self._compute_signal_with_skip(prices, skip=skip)
-            # min_assets=2: BTC/ETH/SOL universe has only 3 assets
-            ic_series = cross_sectional_ic(sig, forward_7d, min_assets=2)
-            t_hac, p_hac = hac_t_stat(ic_series)
-            ic_per_variant[skip] = {
-                "mean_ic": float(ic_series.mean()),
-                "t_hac": float(t_hac) if not np.isnan(t_hac) else np.nan,
-                "p_hac": float(p_hac) if not np.isnan(p_hac) else np.nan,
-                "n_dates": int(ic_series.notna().sum()),
-                "ic_series": ic_series,
+            pos = vol_target_positions(sig, prices, vol_target_annual=0.10)
+            pnl_df = compute_pnl(pos, prices, cost_per_side=0.00085)
+            pnl_port = pnl_df.sum(axis=1).dropna()
+
+            if len(pnl_port) < 30 or pnl_port.std() == 0:
+                sharpe = np.nan
+            else:
+                sharpe = float((pnl_port.mean() / pnl_port.std()) * np.sqrt(252))
+
+            variant_pnl[skip] = pnl_port
+            variant_metrics[skip] = {
+                "sharpe": sharpe,
+                "n_days": len(pnl_port),
             }
 
-        # level_A_gate: compare each non-baseline variant against skip=0
-        baseline_sig = self._compute_signal_with_skip(prices, skip=0)
+        baseline_sharpe = variant_metrics[0]["sharpe"]
+
+        # Gate: is the variant strictly better than baseline?
         surviving: list[int] = []
         gate_results: dict[int, dict] = {}
-        for skip in self.skip_variants[1:]:  # skip skip=0 (it's the baseline)
-            variant_sig = self._compute_signal_with_skip(prices, skip=skip)
-            # min_assets=2, min sample=30 (small 3-asset universe)
-            gate = level_A_gate(
-                baseline_sig, variant_sig, forward_7d,
-                ic_threshold=0.005, min_assets=2,
+
+        for skip in self.skip_variants[1:]:
+            v_sharpe = variant_metrics[skip]["sharpe"]
+            delta = (v_sharpe - baseline_sharpe) if not np.isnan(v_sharpe) else np.nan
+
+            boot = bootstrap_pnl_difference(
+                variant_pnl[0], variant_pnl[skip], n_resamples=500
             )
-            gate_results[skip] = gate
-            if gate["verdict"] == "PASS":
+            p_val = boot["p_value_le_zero"]
+
+            if np.isnan(delta) or delta <= 0.1:
+                verdict = "FAIL_DELTA"
+            elif p_val >= 0.05:
+                verdict = "FAIL_BOOTSTRAP"
+            else:
+                verdict = "PASS"
+
+            gate_results[skip] = {
+                "sharpe_variant": float(v_sharpe) if not np.isnan(v_sharpe) else np.nan,
+                "delta_sharpe": float(delta) if not np.isnan(delta) else np.nan,
+                "bootstrap_p_le_zero": float(p_val),
+                "verdict": verdict,
+            }
+            if verdict == "PASS":
                 surviving.append(skip)
 
-        overall_pass = len(surviving) > 0
         result = {
-            "variants": {k: {k2: v2 for k2, v2 in v.items() if k2 != "ic_series"}
-                         for k, v in ic_per_variant.items()},
-            "gate_results": {k: {k2: v2 for k2, v2 in v.items()
-                                  if k2 not in ("ic_baseline", "ic_variant", "delta_ic")}
-                              for k, v in gate_results.items()},
+            "variants": variant_metrics,
+            "baseline_sharpe": float(baseline_sharpe) if not np.isnan(baseline_sharpe) else np.nan,
+            "gate_results": gate_results,
             "surviving_variants": surviving,
-            "pass": overall_pass,
+            "pass": len(surviving) > 0,
         }
         self.results["level_A"] = result
         return result
@@ -279,25 +307,22 @@ class SkipMonthHandler(HypothesisHandler):
             adjacent_asset, shuffle_null, oos_decade: individual check dicts.
             n_pass: int (0–3), pass: bool (≥ 2/3).
         """
-        prices_core = self._get_prices()
+        prices_full = self._get_prices()
         level_b = self.results.get("level_B", {})
         best_skip = level_b.get("best_variant", 0)
 
         def best_signal_func(p: pd.DataFrame) -> pd.DataFrame:
             return self._compute_signal_with_skip(p, skip=best_skip)
 
-        # Adjacent assets: load separately (may fail on some tickers)
+        # Adjacent check: split the 14-asset universe into core vs extended.
+        # Core (BTC/ETH/SOL) = "main"; remaining 11 alts = "adjacent".
+        # This tests whether the signal generalises beyond the 3 production assets.
+        _CORE = ["BTC-USD", "ETH-USD", "SOL-USD"]
+        _EXTENDED = [t for t in prices_full.columns if t not in _CORE]
         try:
-            prices_all = load_strategy_a_universe(
-                start="2018-01-01",
-                end=str(date.today()),
-                tickers=self.universe_tickers + STRATEGY_A_ADJACENT,
-            )
-            prices_main, prices_adj = split_universe(
-                prices_all, self.universe_tickers, STRATEGY_A_ADJACENT
-            )
+            prices_main, prices_adj = split_universe(prices_full, _CORE, _EXTENDED)
         except Exception:
-            prices_main = prices_core
+            prices_main = prices_full
             prices_adj = pd.DataFrame()
 
         # --- Check 1: adjacent asset replication ---
@@ -311,12 +336,12 @@ class SkipMonthHandler(HypothesisHandler):
                 best_signal_func, prices_main, prices_adj
             )
 
-        # --- Check 2: shuffle null test ---
-        check_shuffle = shuffle_null_test(best_signal_func, prices_core, n_shuffles=50)
+        # --- Check 2: shuffle null test (on full 14-asset universe) ---
+        check_shuffle = shuffle_null_test(best_signal_func, prices_full, n_shuffles=50)
 
-        # --- Check 3: OOS decade check ---
+        # --- Check 3: OOS decade check (on full universe) ---
         check_decade = oos_decade_check(
-            best_signal_func, prices_core, cutoff_date="2023-01-01"
+            best_signal_func, prices_full, cutoff_date="2023-01-01"
         )
 
         verdicts = [
@@ -356,34 +381,36 @@ class SkipMonthHandler(HypothesisHandler):
         level_b = self.results.get("level_B", {})
         level_c = self.results.get("level_C", {})
 
+        baseline_sr = level_a.get("baseline_sharpe", np.nan)
+
         if not level_a.get("pass", False):
             overall = "FAIL"
+            sr_str = f"{baseline_sr:.3f}" if not np.isnan(baseline_sr) else "n/a"
             recommendation = (
-                "Do NOT modify Strategy A signal. "
-                "Skip-month IC improvement is non-significant on crypto TSMOM (24/7 markets). "
-                "The current 28-day window ending at t-1 remains appropriate. "
-                "This FAIL is a useful null result confirming no microstructure bias in crypto. "
-                "No n_tests increment required if hypothesis was pre-registered."
+                f"Do NOT modify Strategy A signal. "
+                f"Baseline (skip=0) Sharpe = {sr_str} (full sample, 14 assets). "
+                f"No skip variant improves on baseline by > 0.1 Sharpe with bootstrap p < 0.05. "
+                f"The skip-month convention is an equity microstructure phenomenon absent in "
+                f"24/7 crypto markets. No n_tests increment needed (pre-registered TEST_LATER)."
             )
         elif not level_b.get("pass", False):
             overall = "FAIL"
             recommendation = (
-                "IC test borderline PASS but backtest DSR FAIL. "
-                "Skip-month adjustment does not survive multiple-testing correction. "
-                "Do not deploy as Strategy A modification."
+                "Level A passed but OOS walk-forward DSR FAIL. "
+                "Skip-month Sharpe improvement does not survive multiple-testing correction "
+                f"(n_trials_global={_N_TESTS_GLOBAL}). Do not deploy as Strategy A modification."
             )
         elif not level_c.get("pass", False):
             overall = "CONDITIONAL_PASS"
             recommendation = (
-                "Strategy passes IC and WF gates but fails sanity checks. "
-                "Investigate which check failed before deploying. "
-                "Consider paper-trading for 60 days to accumulate live IC evidence."
+                "Passes P&L gate and WF gate but fails sanity checks. "
+                "Investigate which check failed. Consider 60-day paper trade before incrementing n_tests."
             )
         else:
             overall = "PASS"
             best = level_b.get("best_variant", 0)
             recommendation = (
-                f"Skip={best} variant passes all three levels. "
+                f"skip={best} passes all three levels. "
                 f"Counts as modification #1 of Strategy A (max 3). "
                 f"Validate on Strategy A propfirm account before incrementing n_tests."
             )
@@ -399,32 +426,43 @@ class SkipMonthHandler(HypothesisHandler):
             f"",
             f"---",
             f"",
-            f"## Niveau A — IC Feasibility Gate",
+            f"## Niveau A — P&L-Based Feasibility Gate",
             f"",
         ]
 
         if level_a:
-            lines.append("| Skip | Mean IC | t_HAC | n_dates |")
-            lines.append("|------|---------|-------|---------|")
+            bs = level_a.get("baseline_sharpe", np.nan)
+            lines.append(
+                f"**Gate**: Sharpe_variant > Sharpe_baseline + 0.1 AND bootstrap p(ΔSR≤0) < 0.05"
+            )
+            lines.append(f"**Universe**: {len(self.universe_tickers)} assets (full Strategy A)")
+            lines.append("")
+            lines.append("**Full-sample Sharpe per variant (vol-targeted, costs 0.17% RT):**")
+            lines.append("")
+            lines.append("| Variant | Sharpe (full sample) | n_days |")
+            lines.append("|---------|---------------------|--------|")
             for skip, v in level_a.get("variants", {}).items():
+                tag = " ← baseline" if skip == 0 else ""
+                sr = v.get("sharpe", np.nan)
                 lines.append(
-                    f"| skip={skip} | {v['mean_ic']:.4f} | "
-                    f"{v['t_hac']:.3f} | {v['n_dates']} |"
+                    f"| skip={skip}{tag} | {sr:.3f} | {v.get('n_days', 0)} |"
                 )
             lines.append("")
-            lines.append("**Delta-IC gates (vs baseline skip=0):**")
+            lines.append("**Delta-Sharpe gates (variant vs baseline skip=0):**")
             lines.append("")
-            lines.append("| Skip | delta_IC | t_HAC(delta) | Verdict |")
-            lines.append("|------|----------|--------------|---------|")
+            lines.append("| Variant | Sharpe | ΔSharpe | Bootstrap p(ΔSR≤0) | Verdict |")
+            lines.append("|---------|--------|---------|-------------------|---------|")
             for skip, g in level_a.get("gate_results", {}).items():
+                delta = g.get("delta_sharpe", np.nan)
+                p = g.get("bootstrap_p_le_zero", np.nan)
                 lines.append(
-                    f"| skip={skip} | {g['delta_ic_mean']:.4f} | "
-                    f"{g['t_hac']:.3f} | {g['verdict']} |"
+                    f"| skip={skip} | {g.get('sharpe_variant', np.nan):.3f} "
+                    f"| {delta:+.3f} | {p:.3f} | {g.get('verdict', '—')} |"
                 )
             lines.append("")
             lines.append(
                 f"**Level A Verdict**: {'✅ PASS' if level_a.get('pass') else '❌ FAIL'} "
-                f"— Surviving variants: {level_a.get('surviving_variants', [])}"
+                f"(baseline Sharpe = {bs:.3f}) — Surviving: {level_a.get('surviving_variants', [])}"
             )
         else:
             lines.append("*(Level A not run)*")
