@@ -15,6 +15,606 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantocracy_the_skip_month_mystery_what_last_month_s_returns_2026-05-24_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_double_descent_and_benign_overfitting_in_macroecon_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_double_descent_and_benign_overfitting_in_macro_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_heavy_tails_and_predictive_ability_testing_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_heavy_tails_and_predictive_ability_testing_202_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_lgb_a_macroeconomic_forecasting_road_test_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_lgb_a_macroeconomic_forecasting_road_test_2026_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_monetary_policy_in_the_media_spotlight_sentiments__20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_monetary_policy_in_the_media_spotlight_sentime_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_multi_regime_markov_switching_models_with_time_var_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_multi_regime_markov_switching_models_with_time_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_quantifying_the_risk_return_tradeoff_in_forecastin_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_quantifying_the_risk_return_tradeoff_in_foreca_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_rolling_origin_conformal_prediction_under_local_st_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_rolling_origin_conformal_prediction_under_loca_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_saga_a_sequence_adaptive_generative_architecture_f_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_saga_a_sequence_adaptive_generative_architectu_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_self_normalized_tests_for_multistep_conditional_pr_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_self_normalized_tests_for_multistep_conditiona_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_the_harmonic_synthetic_control_method_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_the_harmonic_synthetic_control_method_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_tweedie_s_formula_variance_functions_and_score_dri_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_tweedie_s_formula_variance_functions_and_score_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "hn_algotrading_ask_hn_algorithmic_trading_for_hackers_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/hn_algotrading_ask_hn_algorithmic_trading_for_hackers_202605_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "hn_quant_launch_hn_promoted_yc_w21_search_and_feed_ranking__20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/hn_quant_launch_hn_promoted_yc_w21_search_and_feed_ranking___2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantinsti_beyond_the_hype_what_independent_events_really_mea_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantinsti_beyond_the_hype_what_independent_events_really_me_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantinsti_building_a_robust_portfolio_with_risk_parity_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantinsti_building_a_robust_portfolio_with_risk_parity_2026_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantinsti_donchian_channels_how_to_turn_a_simple_idea_into_w_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantinsti_donchian_channels_how_to_turn_a_simple_idea_into__2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantinsti_epat_project_dynamic_capital_allocation_using_mark_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantinsti_epat_project_dynamic_capital_allocation_using_mar_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantinsti_integrating_ai_and_quantitative_trading_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantinsti_integrating_ai_and_quantitative_trading_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantinsti_market_regime_using_hidden_markov_model_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantinsti_market_regime_using_hidden_markov_model_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantinsti_retrospective_simulation_for_trading_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantinsti_retrospective_simulation_for_trading_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantinsti_statistical_arbitrage_using_cointegrated_stock_pai_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantinsti_statistical_arbitrage_using_cointegrated_stock_pa_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_a_century_without_data_reconstructing_emerging_mar_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_a_century_without_data_reconstructing_emerging_m_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_a_day_is_now_what_a_decade_used_to_be_tommi_johnse_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_a_day_is_now_what_a_decade_used_to_be_tommi_john_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_a_historical_look_at_the_top_20_6_week_spx_rallies_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_a_historical_look_at_the_top_20_6_week_spx_ralli_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_a_strong_start_to_may_has_often_been_followed_by_a_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_a_strong_start_to_may_has_often_been_followed_by_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_agentic_workflows_for_alpha_research_jonathan_kinl_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_agentic_workflows_for_alpha_research_jonathan_ki_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_ai_forex_backtesting_with_llm_regime_labels_deepse_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_ai_forex_backtesting_with_llm_regime_labels_deep_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_almost_explicit_implied_volatility_chase_the_devil_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_almost_explicit_implied_volatility_chase_the_dev_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_an_active_hedge_for_the_eur_investor_beyond_passiv_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_an_active_hedge_for_the_eur_investor_beyond_pass_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_an_index_of_commodity_futures_returns_since_1871_q_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_an_index_of_commodity_futures_returns_since_1871_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_backtests_lie_building_a_stress_test_framework_for_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_backtests_lie_building_a_stress_test_framework_f_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_bad_month_for_your_strategy_should_you_change_it_a_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_bad_month_for_your_strategy_should_you_change_it_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_curve_trades_with_macroeconomic_signals_macrosyner_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_curve_trades_with_macroeconomic_signals_macrosyn_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_deep_learning_for_volatility_surface_repair_jonath_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_deep_learning_for_volatility_surface_repair_jona_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_dual_momentum_allocation_between_physical_gold_and_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_dual_momentum_allocation_between_physical_gold_a_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_for_the_love_of_the_game_robot_wealth_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_for_the_love_of_the_game_robot_wealth_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_how_to_break_a_financial_sentiment_model_without_c_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_how_to_break_a_financial_sentiment_model_without_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_how_to_manage_an_intraday_trend_trade_concretum_gr_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "ExitRuleHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_how_to_manage_an_intraday_trend_trade_concretum__2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_i_paper_traded_22_popular_crypto_strategies_on_rea_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_i_paper_traded_22_popular_crypto_strategies_on_r_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_lazy_prices_lazy_investors_and_the_22_alpha_hidden_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_lazy_prices_lazy_investors_and_the_22_alpha_hidd_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_market_effect_research_turn_of_the_month_effect_tr_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_market_effect_research_turn_of_the_month_effect__2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_martyn_tinsley_beyond_the_backtest_algorithmic_adv_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_martyn_tinsley_beyond_the_backtest_algorithmic_a_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_new_contributor_modeling_asymmetric_volatility_wit_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_new_contributor_modeling_asymmetric_volatility_w_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_overfitting_and_parameter_selection_in_trading_str_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "ExitRuleHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_overfitting_and_parameter_selection_in_trading_s_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_quant_mashup_homepage_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_quant_mashup_homepage_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_quantocracy_homepage_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_quantocracy_homepage_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_reinforcement_learning_for_optimal_execution_jonat_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_reinforcement_learning_for_optimal_execution_jon_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_research_review_24_april_2026_prediction_markets_c_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_research_review_24_april_2026_prediction_markets_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_rethinking_trend_following_optimal_regime_depend_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_revisiting_beyond_60_40_five_decades_of_risk_weight_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_revisiting_beyond_60_40_five_decades_of_risk_wei_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_selecting_taa_part1_based_on_recent_performance_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_selecting_taa_part1_based_on_recent_performance__2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_selecting_taa_part2_recent_sharpe_ratio_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_selecting_taa_part2_recent_sharpe_ratio_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_selecting_taa_strategies_based_on_recent_performan_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_selecting_taa_strategies_based_on_recent_perform_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_sentiment_is_not_one_signal_tommi_johnsen_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_sentiment_is_not_one_signal_tommi_johnsen_202605_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_surfing_the_equity_curve_using_trend_following_to__20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_surfing_the_equity_curve_using_trend_following_t_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_the_100_club_2000_tech_vs_2026_ai_alvarez_quant_tr_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_100_club_2000_tech_vs_2026_ai_alvarez_quant__2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_the_currency_you_didn_t_choose_beyond_passive_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_currency_you_didn_t_choose_beyond_passive_20_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_the_effective_number_of_tested_strategies_vertox_q_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_effective_number_of_tested_strategies_vertox_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_the_naaim_exposure_index_incorporating_active_inv_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_naaim_exposure_index_incorporating_active_in_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_tradelock_new_site_from_ex_quantocracy_contributor_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_tradelock_new_site_from_ex_quantocracy_contribut_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_unsupervised_learning_for_trading_k_means_pca_pyth_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_unsupervised_learning_for_trading_k_means_pca_py_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_volatility_derivatives_and_vix_market_dynamics_rel_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_volatility_derivatives_and_vix_market_dynamics_r_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_volatility_risk_premium_and_clustering_intraday_vs_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_volatility_risk_premium_and_clustering_intraday__2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_when_big_gets_small_trading_the_lower_tier_of_larg_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_when_big_gets_small_trading_the_lower_tier_of_la_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_where_risk_parity_hurts_a_58_year_audit_of_tails_a_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_where_risk_parity_hurts_a_58_year_audit_of_tails_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_who_profits_from_prediction_markets_quantpedia_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantocracy_who_profits_from_prediction_markets_quantpedia_2_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_why_momentum_investing_has_been_struggling_and_w_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_a_century_without_data_reconstructing_emerging_mar_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_a_century_without_data_reconstructing_emerging_ma_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_active_dual_momentum_gtaa_strategy_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_active_dual_momentum_gtaa_strategy_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_an_index_of_commodity_futures_returns_since_1871_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_an_index_of_commodity_futures_returns_since_1871__2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_commodity_portfolio_strategy_for_a_potential_2026__20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_commodity_portfolio_strategy_for_a_potential_2026_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_dual_momentum_allocation_between_physical_gold_and_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_dual_momentum_allocation_between_physical_gold_an_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_the_attention_factor_the_link_that_connects_crypto_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_the_attention_factor_the_link_that_connects_crypt_2026-05-24_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_when_big_gets_small_trading_the_lower_tier_of_larg_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_B",
+      "report_path": "_automation/feasibility/tested/quantpedia_when_big_gets_small_trading_the_lower_tier_of_lar_2026-05-24_report.md",
+      "stopped_at": "B"
+    },
+    {
+      "source_md": "quantpedia_who_profits_from_prediction_markets_20260523.md",
+      "tested_date": "2026-05-24",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_who_profits_from_prediction_markets_20260523_2026-05-24_report.md",
+      "stopped_at": "A"
     }
   ]
 }
