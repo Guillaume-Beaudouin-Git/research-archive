@@ -281,8 +281,9 @@ def make_iter10_trade_generator(
       avg_winner_nq=$1,571.60, avg_loser_nq=-$421.45, win_rate=27.75%
       trade_freq=45.8% (346 trades / ~756 trading days 2022-2025)
 
-    Reproduces iter_10 block bootstrap for 3 MNQ + $1,500 DD:
-      P(pass) ≈ 66% ± 5%, P(bust) ≈ 27% ± 5% (unlimited eval).
+    Reproduces iter_10 MC for 3 MNQ + $1,000 DD (correct config, confirmed 2026-05-25):
+      P(pass) ≈ 53.7%, P(bust) ≈ 46.2% (N=20k, seed=42, max_eval_days=180).
+      Old figure (66%/27%) used BASELINE_CONFIG (eval_DD=$1,500) — see test file.
     """
     # Scale NQ → n_mnq MNQ
     NQ_COST, NQ_PV = 19.0, 20.0
