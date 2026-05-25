@@ -111,24 +111,44 @@ progress and would not match Tradeify's documented consistency rule.
 
 ---
 
+## ERRATUM 2026-05-25 — Funded DD correction
+
+**Context**: Commit 11c1eca set `TRADEIFY_TRAILING_DD_FUNDED = 1_500` and
+`TRADEIFY_LOCK_BALANCE = 26_600` based on the belief that Tradeify Select 25K
+funded trailing DD was $1,500. This was WRONG.
+
+**Correct values** (Tradeify Select 25K checkout page, verified 2026-05-25):
+- Funded trailing DD = **$1,000** (same as eval — Tradeify Select uses IDENTICAL DD eval/funded)
+- Lock balance = **$26,100** (capital + $1,000 + $100)
+
+The Config corrections table below has been retroactively annotated with ❌ where
+values were wrong. The corrected values are documented in `TRADEIFY_AUDIT_2026-05-25.md`.
+
+**MC simulation validity**: The MC results (62.6%/34.1% at 2 MNQ) remain numerically
+identical under `funded_DD=$1,000` vs `$1,500`. Funded busts are negligible vs eval busts
+(at 2 MNQ, DD runway = 11.8 avg-loss-days; most busts happen within 10-20 eval days).
+Reconfirmed N=20k seed=42 2026-05-25. **2 MNQ sizing recommendation stands.**
+
+---
+
 ## Config corrections (bundled with #2/#6, commit 11c1eca)
 
 **File**: `config.py`
 
-| Field | Was | Now | Authority |
-|-------|-----|-----|-----------|
-| `TRADEIFY_LOCK_BALANCE` | 26,100 | **26,600** | rules.md: capital + funded_DD_$1,500 + $100 |
-| `N_CONTRACTS_DEFAULT` | 3 | **2** | MC simulation (see Sizing section) |
-| `PHASE_CONTRACTS` | {all: 3} | {all: 2} | MC simulation |
-| `TRADEIFY_TRAILING_DD_FUNDED` | missing | 1,500 | rules.md |
-| `LOCK_TRIGGER_EXCESS` | missing | 100 | rules.md |
-| `LOCKED_FLOOR_OFFSET` | missing | 100 | rules.md |
-| `CONSISTENCY_RATIO_EVAL` | missing | 0.40 | rules.md |
-| `MIN_TRADING_DAYS_EVAL` | missing | 3 | rules.md |
-| `PAYOUT_THRESHOLD_DAYS` | missing | 5 | rules.md |
-| `WIN_DAY_MIN_PNL` | missing | 100.0 | rules.md |
-| `MAX_PAYOUT` | missing | 1,250.0 | rules.md |
-| `PAYOUT_PCT_OF_PROFIT` | missing | 0.50 | rules.md |
+| Field | Was | Now | Authority | Status |
+|-------|-----|-----|-----------|--------|
+| `TRADEIFY_LOCK_BALANCE` | 26,100 | **26,600** | rules.md: capital + funded_DD_$1,500 + $100 | ❌ 26,600 WRONG → **26,100** (ERRATUM) |
+| `N_CONTRACTS_DEFAULT` | 3 | **2** | MC simulation (see Sizing section) | ✓ correct |
+| `PHASE_CONTRACTS` | {all: 3} | {all: 2} | MC simulation | ✓ correct |
+| `TRADEIFY_TRAILING_DD_FUNDED` | missing | 1,500 | rules.md | ❌ 1,500 WRONG → **1,000** (ERRATUM) |
+| `LOCK_TRIGGER_EXCESS` | missing | 100 | rules.md | ✓ correct |
+| `LOCKED_FLOOR_OFFSET` | missing | 100 | rules.md | ✓ correct |
+| `CONSISTENCY_RATIO_EVAL` | missing | 0.40 | rules.md | ✓ correct |
+| `MIN_TRADING_DAYS_EVAL` | missing | 3 | rules.md | ✓ correct |
+| `PAYOUT_THRESHOLD_DAYS` | missing | 5 | rules.md | ✓ correct |
+| `WIN_DAY_MIN_PNL` | missing | 100.0 | rules.md | ✓ correct |
+| `MAX_PAYOUT` | missing | 1,250.0 | rules.md | ✓ correct |
+| `PAYOUT_PCT_OF_PROFIT` | missing | 0.50 | rules.md | ✓ correct |
 
 `test_tradeify_constants.py` (17 tests) + `test_config_sizing_alignment.py` (4 tests) pin
 all values against `PropFirms/tradeify/rules.md` and `sizing_policy.md`.
@@ -172,9 +192,9 @@ Re-evaluation trigger: N_live >= 30 trades AND funded floor locked ($25,100 reac
 
 Blockers cleared:
 - [x] VWAP NaN bypass -- signal cannot fire on corrupted data
-- [x] Lock trigger logic correct (OR, $26,600) -- funded floor protected
+- [x] Lock trigger logic correct (OR, $26,100) -- funded floor protected
 - [x] Config sizing: 2 MNQ -- quantitatively optimal (+8.9pp vs 3 MNQ under $1,000 eval DD)
-- [x] Lock threshold correct ($26,600 per rules.md)
+- [x] Lock threshold correct ($26,100 per rules.md — ERRATUM: was $26,600 in commit 11c1eca)
 - [x] ATR context field scoped to today_bars
 
 Remaining blockers before ANY execution:

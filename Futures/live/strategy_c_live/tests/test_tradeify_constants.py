@@ -36,7 +36,7 @@ def test_min_trading_days():
 # ── Funded phase — lock mechanics ─────────────────────────────────────────────
 
 def test_funded_trailing_dd():
-    assert config.TRADEIFY_TRAILING_DD_FUNDED == 1_000
+    assert config.TRADEIFY_TRAILING_DD == 1_000
 
 
 def test_lock_trigger_excess():
@@ -44,10 +44,10 @@ def test_lock_trigger_excess():
 
 
 def test_lock_balance_derivation():
-    """$25,000 + $1,000 funded_DD + $100 = $26,100."""
+    """$25,000 + $1,000 trailing_DD (eval=funded) + $100 = $26,100."""
     expected = (
         config.TRADEIFY_INITIAL_BALANCE
-        + config.TRADEIFY_TRAILING_DD_FUNDED
+        + config.TRADEIFY_TRAILING_DD
         + config.LOCK_TRIGGER_EXCESS
     )
     assert config.TRADEIFY_LOCK_BALANCE == expected == 26_100
@@ -102,7 +102,7 @@ def test_simulator_defaults_match_config():
     assert cfg.capital            == config.TRADEIFY_INITIAL_BALANCE
     assert cfg.profit_target      == config.TRADEIFY_PROFIT_TARGET
     assert cfg.trailing_dd_eval   == config.TRADEIFY_TRAILING_DD_USD
-    assert cfg.trailing_dd_funded == config.TRADEIFY_TRAILING_DD_FUNDED
+    assert cfg.trailing_dd_funded == config.TRADEIFY_TRAILING_DD
     assert cfg.lock_trigger_excess == config.LOCK_TRIGGER_EXCESS
     assert cfg.locked_floor_offset == config.LOCKED_FLOOR_OFFSET
     assert cfg.consistency_cap_pct == config.CONSISTENCY_RATIO_EVAL

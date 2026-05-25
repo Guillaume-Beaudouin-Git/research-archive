@@ -13,7 +13,7 @@ last_updated: 2026-05-24
 
 | Firm | Product | DD model | DD eval | DD funded | DLL eval | DLL funded | Consistency eval | Consistency funded | Lock | Min days eval | CME futures | Platform | Price (one-time) | In scope |
 |------|---------|----------|---------|-----------|----------|------------|-----------------|-------------------|------|---------------|-------------|----------|-----------------|----------|
-| Tradeify | Select Flex 25K | ✓ EOD trail, intraday enforced | ✓ $1,000 | ✓ $1,500 | ✓ None | ✓ None | ✓ 40% ($600/d) | ✓ None | ✓ EOD≥$26,600 or 1st payout → floor $25,100 | ✓ 3 | ✓ YES | Tradovate | ⚠️ ~$170 | **PRIMARY** |
+| Tradeify | Select Flex 25K | ✓ EOD trail, intraday enforced | ✓ $1,000 | ✓ $1,000 | ✓ None | ✓ None | ✓ 40% ($600/d) | ✓ None | ✓ EOD≥$26,100 or 1st payout → floor $25,100 | ✓ 3 | ✓ YES | Tradovate | ⚠️ ~$170 | **PRIMARY** |
 | Tradeify | Growth 25K | ⚠️ INSUFFICIENT_DATA | ⚠️ ~$1,500 | ⚠️ ~$1,500 | ⚠️ ~$500 | ⚠️ ~$500 | ⚠️ ~30% | ⚠️ ~30% | ⚠️ UNKNOWN | ⚠️ ~5 | ✓ YES | Tradovate | ⚠️ monthly sub | secondary |
 | Apex | EOD Trailing 25K | ⚠️ INSUFFICIENT_DATA | ⚠️ ~$1,500 | ⚠️ ~$1,500 | ⚠️ ~$1,000 | ⚠️ ~$1,000 | ⚠️ ~30% | ⚠️ None | ⚠️ None | ⚠️ 7 | ✓ YES | Rithmic/Tradovate | ⚠️ ~$147 | candidate |
 | Apex | Static 25K | ⚠️ INSUFFICIENT_DATA | ⚠️ ~$1,500 fixed | ⚠️ ~$1,500 fixed | ⚠️ ~$1,000 | ⚠️ ~$1,000 | ⚠️ ~30% | ⚠️ None | ⚠️ N/A | ⚠️ 7 | ✓ YES | Rithmic/Tradovate | ⚠️ ~$130 | candidate |
@@ -28,7 +28,7 @@ last_updated: 2026-05-24
 ### Trailing EOD (Tradeify Select Flex) — Primary
 - Floor updates at EOD with equity peak. Intraday bust only when daily loss > DD limit.
 - For Strat C: max daily loss = $127 (3 MNQ) or $85 (2 MNQ) vs $1,000 DD → 7-11× buffer.
-- Lock at $26,600 provides breakeven protection once funded.
+- Lock at $26,100 provides breakeven protection once funded.
 
 ### Static EOD (MFFU) — Candidate
 - Fixed floor from day 1. No trailing risk.

@@ -100,12 +100,14 @@ TRADE_COST_PER_UNIT = MNQ_COST_RT       # per contract round-trip
 # Our guardrails fire BEFORE Tradeify limits:
 TRADEIFY_INITIAL_BALANCE  = 25_000
 TRADEIFY_TRAILING_DD_USD  = 1_000     # eval trailing DD — confirmed $1,000
-TRADEIFY_TRAILING_DD_FUNDED = 1_000   # funded trailing DD — confirmed $1,000 (2026-05-25)
-LOCK_TRIGGER_EXCESS       = 100       # lock when EOD >= capital + DD_funded + this
+TRADEIFY_TRAILING_DD      = 1_000     # eval AND funded trailing DD — identical, confirmed $1,000 (2026-05-25)
+LOCK_TRIGGER_EXCESS       = 100       # lock when EOD >= capital + DD + this
 LOCKED_FLOOR_OFFSET       = 100       # locked floor = capital + this = $25,100
-TRADEIFY_LOCK_BALANCE     = 26_100    # = capital + DD_funded + excess = 25k+1k+100
+TRADEIFY_LOCK_BALANCE     = 26_100    # = capital + DD + excess = 25k+1k+100
 TRADEIFY_LOCKED_FLOOR     = 25_100    # = capital + locked_floor_offset
 TRADEIFY_PROFIT_TARGET    = 1_500     # eval target (6% of $25K)
+DAILY_LOSS_LIMIT_FUNDED_FLEX = None   # Select Flex funded: no daily loss limit
+CHALLENGE_COST            = 65        # Select Flex 25K promo MAY 2026; standard ~$170 (training data)
 
 # Eval consistency rule
 CONSISTENCY_RATIO_EVAL    = 0.40      # best single day ≤ 40% × cumulative profit
