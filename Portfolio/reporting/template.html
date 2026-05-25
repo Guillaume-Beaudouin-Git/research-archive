@@ -29,6 +29,7 @@ body {
 .badge-pass { background: #1b4d2e; color: var(--green); border: 1px solid #2ea043; }
 .badge-fail { background: #3d1a1a; color: var(--red); border: 1px solid var(--red); }
 .badge-neutral { background: #1c2128; color: var(--muted); border: 1px solid var(--border); }
+.badge-amber { background: #2d1f00; color: var(--orange); border: 1px solid var(--orange); }
 
 /* ── Section label ──────────────────────────────── */
 .sec { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase;
@@ -48,6 +49,10 @@ body {
   font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums;
 }
 .metric-card .sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.metric-divider { border: none; border-top: 1px solid var(--border); margin: 8px 0; }
+.proxy-label { font-size: 11px; color: var(--orange); font-weight: 600; margin-bottom: 2px; }
+.proxy-value { font-size: 18px; font-weight: 700; color: var(--orange); }
+.proxy-note { font-size: 10px; color: var(--muted); margin-top: 2px; }
 .pos { color: var(--green); }
 .neg { color: var(--red); }
 .neu { color: var(--blue); }
@@ -108,6 +113,9 @@ code { background: var(--panel); padding: 1px 5px; border-radius: 4px; font-size
       DSR {{ dsr_verdict }}
     </span>
     <span class="badge badge-neutral">n_trials = {{ n_trials }}</span>
+    {% if l14_proxy_active %}
+    <span class="badge badge-amber">L14 PROXY ACTIVE</span>
+    {% endif %}
   </div>
 </div>
 
@@ -115,11 +123,23 @@ code { background: var(--panel); padding: 1px 5px; border-radius: 4px; font-size
 <div class="sec">Performance Summary</div>
 <div class="metrics-grid">
 
+  {% if l14_proxy_active %}
+  <div class="metric-card">
+    <div class="label">Sharpe (HAC, raw backtest)</div>
+    <div class="value {{ sharpe_hac | color_cls(1.0, 0.5) }}">{{ sharpe_hac | fn(".2f") }}<span style="font-size:11px;color:var(--muted);font-weight:400;"> (testnet, N={{ n_obs }})</span></div>
+    <div class="sub">t = {{ sharpe_t_stat | fn(".2f") }} &nbsp; SE = {{ sharpe_se | fn(".3f") }}</div>
+    <hr class="metric-divider">
+    <div class="proxy-label">Sharpe (L14 proxy)</div>
+    <div class="proxy-value">{{ l14_proxy_sr | fn(".2f") }}</div>
+    <div class="proxy-note">Used for portfolio sizing until N&ge;250 mainnet obs</div>
+  </div>
+  {% else %}
   <div class="metric-card">
     <div class="label">Sharpe (HAC lag-6, excess)</div>
     <div class="value {{ sharpe_hac | color_cls(1.0, 0.5) }}">{{ sharpe_hac | fn(".2f") }}</div>
     <div class="sub">t = {{ sharpe_t_stat | fn(".2f") }} &nbsp; SE = {{ sharpe_se | fn(".3f") }}</div>
   </div>
+  {% endif %}
 
   <div class="metric-card">
     <div class="label">Sortino</div>
@@ -243,6 +263,11 @@ code { background: var(--panel); padding: 1px 5px; border-radius: 4px; font-size
   <strong>{{ n_trials }}</strong>&nbsp;independent backtests (Bailey&nbsp;&amp;&nbsp;López de Prado 2014).
   Gates: RESEARCH&nbsp;Sharpe&nbsp;&gt;&nbsp;0.7, MaxDD&nbsp;&gt;&nbsp;−25%;
   PROPFIRM&nbsp;Sharpe&nbsp;&gt;&nbsp;1.0, MaxDD&nbsp;&gt;&nbsp;−10%.
+  {% if l14_proxy_active %}
+  <br><strong>L14 (CLAUDE.md)</strong> — testnet/N&lt;250 Sharpe inadmissible for portfolio
+  optimization. Raw SR shown for transparency; proxy SR={{ l14_proxy_sr | fn(".2f") }} used for
+  A+B+C ERC sizing until 250+ mainnet daily returns accumulate.
+  {% endif %}
 </div>
 
 <!-- ── Footer ──────────────────────────────────────────────────────────────── -->

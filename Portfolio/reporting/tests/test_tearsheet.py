@@ -294,3 +294,68 @@ class TestHTMLOutput:
             # When benchmark is provided, excess equity plot should appear
             assert "Excess" in content or "Benchmark" in content, \
                 "Expected benchmark section in HTML"
+
+
+# ── test_l14_proxy_display ────────────────────────────────────────────────────
+
+class TestL14ProxyDisplay:
+    """
+    L14 proxy SR flag: dual display activates correctly and is absent by default.
+
+    Per CLAUDE.md §L14: testnet Sharpe is inadmissible for portfolio optimisation
+    until N≥250 live daily returns accumulate. The apply_l14_proxy flag surfaces
+    both the raw HAC backtest Sharpe and the conservative proxy used for ERC sizing.
+    """
+
+    def test_l14_proxy_dual_display(self) -> None:
+        """With apply_l14_proxy=True, HTML must contain raw SR label, proxy value,
+        the L14 PROXY ACTIVE badge, and the methodology note; internal flags must
+        not leak to the header meta line."""
+        r = _make_returns(n=600, mu=0.0010, sigma=0.005, seed=42)
+
+        from Portfolio.reporting.tearsheet import generate_tearsheet
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "l14_proxy.html"
+            result = generate_tearsheet(
+                returns=r,
+                strategy_name="L14 Proxy Test",
+                output_path=out,
+                n_trials=1,
+                rf=_zero_rf(r.index),
+                metadata={"Type": "testnet carry", "apply_l14_proxy": True, "proxy_sr": 2.0},
+            )
+            content = result.read_text(encoding="utf-8")
+
+            assert "L14 PROXY ACTIVE" in content, "L14 badge missing"
+            assert "raw backtest" in content, "Raw backtest label missing from Sharpe card"
+            assert "L14 proxy" in content, "L14 proxy sub-label missing from Sharpe card"
+            assert "2.00" in content, "Proxy SR value 2.00 not found"
+            assert "mainnet" in content, "L14 methodology note missing"
+            # Internal flags must not appear verbatim in the rendered HTML
+            assert "apply_l14_proxy" not in content, "Internal flag leaked to HTML output"
+            assert "proxy_sr" not in content, "Internal flag leaked to HTML output"
+
+    def test_l14_proxy_absent_by_default(self) -> None:
+        """Without apply_l14_proxy, standard single Sharpe card renders and
+        no L14 artefacts appear (regression guard)."""
+        r = _make_returns(n=400, mu=0.0005, sigma=0.01, seed=7)
+
+        from Portfolio.reporting.tearsheet import generate_tearsheet
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "no_l14.html"
+            result = generate_tearsheet(
+                returns=r,
+                strategy_name="Standard Strategy",
+                output_path=out,
+                n_trials=1,
+                rf=_zero_rf(r.index),
+            )
+            content = result.read_text(encoding="utf-8")
+
+            assert "L14 PROXY ACTIVE" not in content, "L14 badge appeared without flag"
+            assert "raw backtest" not in content, "Raw backtest label appeared without flag"
+            assert "L14 proxy" not in content, "L14 proxy label appeared without flag"
+            assert "Sharpe (HAC lag-6, excess)" in content, \
+                "Standard Sharpe label missing in default rendering"

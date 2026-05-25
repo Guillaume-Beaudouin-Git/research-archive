@@ -136,6 +136,18 @@ def generate_tearsheet(
     metadata : dict, optional
         Additional key-value pairs shown in the header line
         (e.g. {"Asset": "NQ MNQ", "Broker": "Tradeify"}).
+
+        Special keys consumed before rendering (never shown in header):
+          - ``apply_l14_proxy`` (bool): activates L14 dual Sharpe display.
+            Per CLAUDE.md §L14, testnet / paper-trading Sharpe is inadmissible
+            for portfolio optimisation until N≥250 live daily returns accumulate.
+            When True, the Sharpe card shows both the raw HAC backtest value AND
+            the proxy SR used for A+B+C ERC sizing.
+          - ``proxy_sr`` (float, default 2.0): the conservative proxy Sharpe to
+            display alongside the raw backtest value when ``apply_l14_proxy`` is
+            True.  Any future strategy with insufficient live history (testnet,
+            paper trading, N<250) should pass these two flags to communicate the
+            honest Sharpe used for sizing decisions.
     rf : pd.Series, optional
         Pre-fetched FRED DTB3 annualised series (fraction).
         Fetched automatically from FRED if None; falls back to zero
@@ -148,6 +160,12 @@ def generate_tearsheet(
     """
     out = Path(output_path).expanduser().resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
+
+    # Extract L14 proxy flags before passing metadata to the template so they
+    # do not appear in the header info line.
+    meta = dict(metadata or {})
+    l14_proxy_active = bool(meta.pop("apply_l14_proxy", False))
+    l14_proxy_sr: Optional[float] = float(meta.pop("proxy_sr", 2.0)) if l14_proxy_active else None
 
     metrics = compute_all_metrics(
         returns=returns,
@@ -180,7 +198,9 @@ def generate_tearsheet(
         "end_date": str(metrics["end_date"])[:10],
         "n_obs": metrics["n_obs"],
         "n_years": metrics["n_years"],
-        "metadata": metadata or {},
+        "metadata": meta,
+        "l14_proxy_active": l14_proxy_active,
+        "l14_proxy_sr": l14_proxy_sr,
         # Scalars
         "sharpe_hac": metrics["sharpe_hac"],
         "sharpe_t_stat": metrics["sharpe_t_stat"],
