@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ strategy_name }} — Tear Sheet</title>
+<style>
+:root {
+  --bg: #0d1117; --panel: #161b22; --border: #30363d;
+  --text: #e6edf3; --muted: #8b949e;
+  --green: #3fb950; --red: #f85149; --blue: #58a6ff; --orange: #d29922;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px; line-height: 1.5;
+}
+.container { max-width: 1280px; margin: 0 auto; padding: 24px 28px; }
+
+/* ── Header ─────────────────────────────────────── */
+.header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 22px; }
+.header h1 { font-size: 22px; font-weight: 700; }
+.header .meta { color: var(--muted); font-size: 12px; margin-top: 5px; }
+.badges { display: flex; gap: 7px; margin-top: 10px; flex-wrap: wrap; }
+.badge {
+  padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;
+}
+.badge-pass { background: #1b4d2e; color: var(--green); border: 1px solid #2ea043; }
+.badge-fail { background: #3d1a1a; color: var(--red); border: 1px solid var(--red); }
+.badge-neutral { background: #1c2128; color: var(--muted); border: 1px solid var(--border); }
+
+/* ── Section label ──────────────────────────────── */
+.sec { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase;
+       letter-spacing: 0.08em; margin: 22px 0 11px; }
+
+/* ── Metrics grid ───────────────────────────────── */
+.metrics-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+@media (max-width: 960px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } }
+.metric-card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 14px;
+}
+.metric-card .label { font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+.metric-card .value {
+  font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.metric-card .sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+.neu { color: var(--blue); }
+
+/* ── Chart layout ───────────────────────────────── */
+.chart-card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.chart-label {
+  padding: 9px 14px; font-size: 11px; font-weight: 600; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.chart-card img { width: 100%; display: block; }
+.chart-pair {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px;
+}
+@media (max-width: 800px) { .chart-pair { grid-template-columns: 1fr; } }
+
+/* ── Methodology note ───────────────────────────── */
+.method {
+  background: #1c2128; border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 16px; font-size: 11px; color: var(--muted); line-height: 1.7;
+  margin-top: 22px;
+}
+.method strong { color: var(--text); }
+
+/* ── Footer ─────────────────────────────────────── */
+.footer {
+  margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--muted);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px;
+}
+code { background: var(--panel); padding: 1px 5px; border-radius: 4px; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ── Header ──────────────────────────────────────────────────────────────── -->
+<div class="header">
+  <h1>{{ strategy_name }}</h1>
+  <div class="meta">
+    {{ start_date }} — {{ end_date }}
+    &nbsp;|&nbsp; {{ n_obs }} obs &nbsp;|&nbsp; {{ n_years }} yrs
+    {% if metadata %}{% for k, v in metadata.items() %}&nbsp;|&nbsp; {{ k }}: {{ v }}{% endfor %}{% endif %}
+  </div>
+  <div class="badges">
+    {% set r_pass = sharpe_hac >= 0.7 and max_dd >= -0.25 %}
+    {% set p_pass = sharpe_hac >= 1.0 and max_dd >= -0.10 %}
+    <span class="badge {{ 'badge-pass' if r_pass else 'badge-fail' }}">
+      RESEARCH {{ 'PASS' if r_pass else 'FAIL' }}
+    </span>
+    <span class="badge {{ 'badge-pass' if p_pass else 'badge-fail' }}">
+      PROPFIRM {{ 'PASS' if p_pass else 'FAIL' }}
+    </span>
+    <span class="badge {{ 'badge-pass' if dsr_verdict == 'PASS' else 'badge-fail' }}">
+      DSR {{ dsr_verdict }}
+    </span>
+    <span class="badge badge-neutral">n_trials = {{ n_trials }}</span>
+  </div>
+</div>
+
+<!-- ── Metrics ─────────────────────────────────────────────────────────────── -->
+<div class="sec">Performance Summary</div>
+<div class="metrics-grid">
+
+  <div class="metric-card">
+    <div class="label">Sharpe (HAC lag-6, excess)</div>
+    <div class="value {{ sharpe_hac | color_cls(1.0, 0.5) }}">{{ sharpe_hac | fn(".2f") }}</div>
+    <div class="sub">t = {{ sharpe_t_stat | fn(".2f") }} &nbsp; SE = {{ sharpe_se | fn(".3f") }}</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">Sortino</div>
+    <div class="value {{ sortino | color_cls(1.5, 0.7) }}">{{ sortino | fn(".2f") }}</div>
+    <div class="sub">downside deviation annualised</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">Calmar</div>
+    <div class="value {{ calmar | color_cls(1.0, 0.3) }}">{{ calmar | fn(".2f") }}</div>
+    <div class="sub">Ann. Return / |MaxDD|</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">Annual Return</div>
+    <div class="value {{ ann_return | color_cls(0.0) }}">{{ (ann_return * 100) | fn(".1f") }}%</div>
+    <div class="sub">Total: {{ (total_return * 100) | fn(".1f") }}%</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">PSR — P(SR &gt; 0)</div>
+    <div class="value {{ psr | color_cls(0.95, 0.75) }}">{{ (psr * 100) | fn(".1f") }}%</div>
+    <div class="sub">non-normality corrected</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">DSR — {{ n_trials }} trials</div>
+    <div class="value {{ dsr | color_cls(0.95, 0.75) }}">{{ (dsr * 100) | fn(".1f") }}%</div>
+    <div class="sub">SR threshold = {{ sharpe_threshold_ann | fn(".2f") }}</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">Max Drawdown</div>
+    <div class="value {{ max_dd | color_cls(-0.10, -0.25, invert=True) }}">{{ (max_dd * 100) | fn(".1f") }}%</div>
+    <div class="sub">Duration: {{ max_dd_duration_days }} days</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">CVaR 95%</div>
+    <div class="value neg">{{ (cvar_95 * 100) | fn(".2f") }}%</div>
+    <div class="sub">CVaR 99%: {{ (cvar_99 * 100) | fn(".2f") }}%</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">Tail Ratio</div>
+    <div class="value {{ tail_ratio | color_cls(1.0, 0.8) }}">{{ tail_ratio | fn(".2f") }}</div>
+    <div class="sub">P95 / |P5| daily return</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">% Positive Months</div>
+    <div class="value {{ pct_pos_months | color_cls(0.55, 0.45) }}">{{ (pct_pos_months * 100) | fn(".0f") }}%</div>
+    <div class="sub">Best: {{ (best_month * 100) | fn(".1f") }}% / Worst: {{ (worst_month * 100) | fn(".1f") }}%</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">Skewness</div>
+    <div class="value {{ skewness | color_cls(0.0) }}">{{ skewness | fn(".3f") }}</div>
+    <div class="sub">positive = right tail favoured</div>
+  </div>
+
+  <div class="metric-card">
+    <div class="label">Excess Kurtosis</div>
+    <div class="value {{ excess_kurtosis | color_cls(0.0, 0.0, invert=True) }}">{{ excess_kurtosis | fn(".3f") }}</div>
+    <div class="sub">fat tails if &gt; 0</div>
+  </div>
+
+  {% if benchmark_beta is not none %}
+  <div class="metric-card">
+    <div class="label">Beta (vs Benchmark)</div>
+    <div class="value neu">{{ benchmark_beta | fn(".3f") }}</div>
+    <div class="sub"></div>
+  </div>
+  <div class="metric-card">
+    <div class="label">Alpha Ann. (vs Benchmark)</div>
+    <div class="value {{ benchmark_alpha_ann | color_cls(0.0) }}">{{ (benchmark_alpha_ann * 100) | fn(".2f") }}%</div>
+    <div class="sub">OLS regression alpha</div>
+  </div>
+  {% endif %}
+
+</div>
+
+<!-- ── Charts ──────────────────────────────────────────────────────────────── -->
+<div class="sec">Charts</div>
+
+<div class="chart-card" style="margin-bottom:12px">
+  <div class="chart-label">Equity Curve &amp; Drawdown</div>
+  <img src="data:image/png;base64,{{ equity_plot }}" alt="Equity and drawdown">
+</div>
+
+<div class="chart-pair">
+  <div class="chart-card">
+    <div class="chart-label">Rolling 6-Month Sharpe</div>
+    <img src="data:image/png;base64,{{ rolling_sr_plot }}" alt="Rolling Sharpe">
+  </div>
+  <div class="chart-card">
+    <div class="chart-label">Return Distribution + VaR/CVaR</div>
+    <img src="data:image/png;base64,{{ dist_plot }}" alt="Return distribution">
+  </div>
+</div>
+
+<div class="chart-card" style="margin-top:12px">
+  <div class="chart-label">Monthly Returns Heatmap (%)</div>
+  <img src="data:image/png;base64,{{ heatmap_plot }}" alt="Monthly heatmap">
+</div>
+
+{% if excess_plot %}
+<div class="chart-card" style="margin-top:12px">
+  <div class="chart-label">Strategy vs Benchmark</div>
+  <img src="data:image/png;base64,{{ excess_plot }}" alt="Excess equity vs benchmark">
+</div>
+{% endif %}
+
+<!-- ── Methodology note ────────────────────────────────────────────────────── -->
+<div class="method">
+  <strong>Methodology (CLAUDE.md §L8, L20):</strong>
+  Excess returns = daily returns − FRED DTB3 / 365.
+  Sharpe uses HAC Newey-West SE (lag&nbsp;=&nbsp;6).
+  PSR&nbsp;=&nbsp;P(true&nbsp;SR&nbsp;&gt;&nbsp;0) with non-normality correction (Bailey&nbsp;&amp;&nbsp;López de Prado 2012).
+  DSR&nbsp;=&nbsp;P(true&nbsp;SR&nbsp;&gt;&nbsp;SR*) where SR*&nbsp;=&nbsp;expected max Sharpe from
+  <strong>{{ n_trials }}</strong>&nbsp;independent backtests (Bailey&nbsp;&amp;&nbsp;López de Prado 2014).
+  Gates: RESEARCH&nbsp;Sharpe&nbsp;&gt;&nbsp;0.7, MaxDD&nbsp;&gt;&nbsp;−25%;
+  PROPFIRM&nbsp;Sharpe&nbsp;&gt;&nbsp;1.0, MaxDD&nbsp;&gt;&nbsp;−10%.
+</div>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────────── -->
+<div class="footer">
+  <span>Generated {{ generated_at }}</span>
+  <span>Git&nbsp;<code>{{ git_commit }}</code></span>
+  <span>Python {{ python_version }}</span>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
