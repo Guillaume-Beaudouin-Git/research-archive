@@ -295,7 +295,7 @@ def main() -> None:
         except Exception as e:
             log.warning("Cannot read final balance: %s", e)
 
-        # EOD lock trigger check (Tradeify: EOD balance >= $26,100 + payout requested)
+        # EOD lock trigger check (Tradeify: EOD balance >= $26,600 OR first payout requested)
         if final_balance is not None and hasattr(state, 'check_lock_trigger'):
             if state.check_lock_trigger(final_balance):
                 _send_telegram(
