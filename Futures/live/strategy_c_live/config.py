@@ -5,7 +5,7 @@ iter_10: VWAP + A$400 dollar stop + B1.2% gap filter + M1(rng≥30pt)
 
 Broker: Tradeify Select Flex $25K via Tradovate REST API.
   - Real CME MNQ, headless Linux/VPS compatible
-  - EOD trailing DD $1,000 (confirmed from checkout screenshot; locks to $25,100 floor after first payout)
+  - EOD trailing DD $1,000 eval AND funded (confirmed 2026-05-25; locks to $25,100 floor after first payout)
   - No daily loss limit, no consistency rule (funded)
   - Python automation allowed (FTA §6.6), 90/10 profit split
 
@@ -13,10 +13,10 @@ Sizing: 2 MNQ all phases (from sizing_analysis.py + sizing_policy.md, 2026-05-24
   P(pass eval 180d)=57.0%, P(bust)=39.7% at baseline slippage.
   Consistency cap ($600/day) not binding at 2 MNQ (avg winner $471 < cap).
   Phase 1 — Eval  (2 MNQ): up to +$1,500 eval target
-  Phase 2 — Pre-lock (2 MNQ): funded, until lock trigger (EOD ≥ $26,600 OR first payout)
+  Phase 2 — Pre-lock (2 MNQ): funded, until lock trigger (EOD ≥ $26,100 OR first payout)
   Phase 3 — Post-lock (2 MNQ): floor locked at $25,100, ad infinitum
 
-Lock trigger: EOD balance ≥ $26,600 OR first payout requested → floor locked at $25,100.
+Lock trigger: EOD balance ≥ $26,100 OR first payout requested → floor locked at $25,100.
 
 VPS execution (headless, no MT5 terminal needed):
   Cron VPS (heure été UTC+2: 09:25 ET = 13:25 UTC):
@@ -91,19 +91,19 @@ TRADE_COST_PER_UNIT = MNQ_COST_RT       # per contract round-trip
 
 # ── Guardrails — Tradeify Select Flex $25K ────────────────────────────────────
 # Tradeify limits (CONFIRMED from checkout screenshot + rules.md 2026-05-24):
-#   EOD trailing DD from peak: $1,000  (eval, pre-lock) — confirmed $1,000
-#   Funded trailing DD:        $1,500  (pre-lock funded phase)
+#   EOD trailing DD from peak: $1,000  (eval AND funded) — confirmed $1,000 (2026-05-25)
+#   Funded trailing DD:        $1,000  (same as eval — confirmed 2026-05-25, was $1,500 in v1)
 #   Post-lock floor:           $25,100 (capital + $100, permanent)
-#   Lock trigger:              EOD ≥ $26,600 (capital + funded_DD + $100) OR first payout
+#   Lock trigger:              EOD ≥ $26,100 (capital + $1,000 + $100) OR first payout
 #   Daily loss limit:          None    (Tradeify has no DLL)
 #
 # Our guardrails fire BEFORE Tradeify limits:
 TRADEIFY_INITIAL_BALANCE  = 25_000
 TRADEIFY_TRAILING_DD_USD  = 1_000     # eval trailing DD — confirmed $1,000
-TRADEIFY_TRAILING_DD_FUNDED = 1_500   # funded trailing DD (pre-lock)
+TRADEIFY_TRAILING_DD_FUNDED = 1_000   # funded trailing DD — confirmed $1,000 (2026-05-25)
 LOCK_TRIGGER_EXCESS       = 100       # lock when EOD >= capital + DD_funded + this
 LOCKED_FLOOR_OFFSET       = 100       # locked floor = capital + this = $25,100
-TRADEIFY_LOCK_BALANCE     = 26_600    # = capital + DD_funded + excess = 25k+1.5k+100
+TRADEIFY_LOCK_BALANCE     = 26_100    # = capital + DD_funded + excess = 25k+1k+100
 TRADEIFY_LOCKED_FLOOR     = 25_100    # = capital + locked_floor_offset
 TRADEIFY_PROFIT_TARGET    = 1_500     # eval target (6% of $25K)
 

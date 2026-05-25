@@ -3,7 +3,7 @@ trailing_dd_simulator.py — Propfirm survival Monte Carlo simulator.
 
 Models Tradeify Select Flex 25K mechanics exactly:
   - Eval: EOD trailing DD ($1,000), NO lock, 40% consistency cap
-  - Funded: EOD trailing DD ($1,500), lock when EOD >= capital + DD_funded + $100
+  - Funded: EOD trailing DD ($1,000), lock when EOD >= capital + DD_funded + $100
 
 Sources:
   help.tradeify.co/articles/12853921 (eval rules, 2026-05-24 — 403 Forbidden, from session)
@@ -32,7 +32,7 @@ class PropfirmConfig:
     capital: float = 25_000.0
     profit_target: float = 1_500.0
     trailing_dd_eval: float = 1_000.0      # eval EOD trailing DD — confirmed
-    trailing_dd_funded: float = 1_500.0    # funded EOD trailing DD — confirmed
+    trailing_dd_funded: float = 1_000.0    # funded EOD trailing DD — confirmed $1,000 (2026-05-25)
     lock_trigger_excess: float = 100.0     # lock when EOD >= capital+DD_funded+this
     locked_floor_offset: float = 100.0     # locked floor = capital + this = $25,100
     consistency_cap_pct: float = 0.40      # eval only: each day capped at 40%*target
