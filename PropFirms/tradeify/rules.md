@@ -42,14 +42,14 @@ Bust: equity ≤ floor at any point intraday (hard SL cap bounds intraday loss f
 
 | Rule | Value | Source |
 |------|-------|--------|
-| Trailing DD | ✓ $1,500 EOD trailing | Session context |
+| Trailing DD | ✓ $1,000 EOD trailing | Session context (2026-05-25) |
 | Daily Loss Limit | ✓ NONE | Session context |
 | Consistency | ✓ NONE (Select Flex only) | Session context |
-| Lock trigger | ✓ EOD equity ≥ $26,600 **OR** first payout | Session context |
+| Lock trigger | ✓ EOD equity ≥ $26,100 **OR** first payout | Session context |
 | Locked floor | ✓ $25,100 (capital + $100) | Session context |
 | Lock mechanism details | floor locks at $25,100 once triggered; no longer trails | |
 
-Lock threshold: capital + DD_funded + $100 = $25,000 + $1,500 + $100 = **$26,600**.
+Lock threshold: capital + DD_funded + $100 = $25,000 + $1,000 + $100 = **$26,100**.
 Once locked: bust only if EOD equity ≤ $25,100. Trailing DD stops once locked.
 
 ## Select Flex — Payout
@@ -67,7 +67,7 @@ Safety: payout deducted from equity; payout capped at `equity - floor - $1` to a
 
 | Account size | Trailing DD | Lock trigger | Locked floor |
 |-------------|-------------|--------------|--------------|
-| $25K | ✓ $1,500 | ✓ $26,600 | ✓ $25,100 |
+| $25K | ✓ $1,000 | ✓ $26,100 | ✓ $25,100 |
 | $50K | ⚠️ PLACEHOLDER | ⚠️ PLACEHOLDER | ⚠️ PLACEHOLDER |
 | $100K | ⚠️ PLACEHOLDER | ⚠️ PLACEHOLDER | ⚠️ PLACEHOLDER |
 | $150K | ⚠️ PLACEHOLDER | ⚠️ PLACEHOLDER | ⚠️ PLACEHOLDER |
@@ -108,7 +108,7 @@ Safety: payout deducted from equity; payout capped at `equity - floor - $1` to a
 ## Strategy C live parameters
 
 Derived from trailing_dd_simulator.py (2026-05-24):
-- Config: Select Flex 25K canonical ($1,000 eval DD, $1,500 funded DD)
+- Config: Select Flex 25K canonical ($1,000 eval DD, $1,000 funded DD — confirmed 2026-05-25)
 - Guardrail: `GUARDRAIL_TRAILING_DD_USD = 850` ($150 buffer before $1,000 limit)
 - Sizing: see `Futures/live/strategy_c_live/sizing_policy.md`
 - Eval P(pass) and P(bust): see sizing_policy.md or run `sizing_analysis.py`

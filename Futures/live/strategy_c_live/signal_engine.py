@@ -1,14 +1,15 @@
 """
 signal_engine.py — Signal computation for Strategy C live trading
 ==================================================================
-Replicates iter_10 logic using 1-min bars from IBKR.
-Opening range: 09:30-09:45 ET (15 minutes, 3 × 5-min bars for OHLC).
-VWAP computed on 1-min ORB bars — matches iter_10 backtest exactly.
+Replicates iter_10 logic using 1-min bars from Tradovate.
+Opening range: 09:30-09:45 ET (16 × 1-min bars for OHLC; VWAP from 9:31).
+VWAP formula: HLC3 × volume, cumulative 9:31–9:45 — matches Kaggle vwap_rth exactly.
 Filters: VWAP confirmation + gap filter + range minimum.
 """
 from __future__ import annotations
 
 import logging
+import math
 from datetime import date, time
 from typing import Optional
 
@@ -30,15 +31,19 @@ from Futures.live.strategy_c_live.config import (
 
 def compute_vwap(bars: pd.DataFrame) -> float:
     """
-    Cumulative VWAP using (close × volume) / cumulative_volume.
+    Cumulative VWAP using HLC3 × volume — matches iter_10 backtest (Kaggle vwap_rth).
     Falls back to simple average close if volume is zero or missing.
+    Returns NaN (explicitly) if bars is empty or contains no usable price data.
+    Caller must exclude the 9:30 bar (backtest formula starts cumulation at 9:31).
     """
+    if bars.empty:
+        return float("nan")
     if "volume" not in bars.columns or bars["volume"].sum() == 0:
         return float(bars["close"].mean())
-    cum_vp = (bars["close"] * bars["volume"]).cumsum()
+    hlc3   = (bars["high"] + bars["low"] + bars["close"]) / 3.0
+    cum_vp = (hlc3 * bars["volume"]).cumsum()
     cum_v  = bars["volume"].cumsum()
-    vwap   = cum_vp / cum_v
-    return float(vwap.iloc[-1])
+    return float((cum_vp / cum_v).iloc[-1])
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -129,12 +134,20 @@ def compute_signal(bars_1min: pd.DataFrame) -> Optional[dict]:
     direction = "BUY" if close_price > open_price else "SELL"
     dir_int   = 1 if direction == "BUY" else -1
 
-    # ── VWAP from 1-min ORB bars (matches iter_10 backtest) ─────────────
+    # ── VWAP from 1-min ORB bars: HLC3, cumulative 9:31–9:45 (skip 9:30) ─
+    # Kaggle vwap_rth starts cumulation at 9:31; 9:30 bar has vwap_rth=0.
     orb_1m = bars_today_1m[
         (bars_today_1m.index.time >= ORB_OPEN) &
         (bars_today_1m.index.time <= ORB_CLOSE)
     ]
-    vwap_at_945 = compute_vwap(orb_1m)
+    orb_1m_for_vwap = orb_1m[orb_1m.index.time > ORB_OPEN]
+    if orb_1m_for_vwap.empty:
+        log.info("Signal SKIP: no 1-min bars after 09:30 for VWAP (data lag?)")
+        return None
+    vwap_at_945 = compute_vwap(orb_1m_for_vwap)
+    if math.isnan(vwap_at_945):
+        log.warning("Signal SKIP: VWAP returned NaN (corrupt price data?)")
+        return None
 
     # ── Filter 2: VWAP confirmation ──────────────────────────────────────
     if direction == "BUY" and close_price <= vwap_at_945:

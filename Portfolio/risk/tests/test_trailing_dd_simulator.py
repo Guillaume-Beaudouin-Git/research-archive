@@ -66,7 +66,7 @@ class TestEvalPhase:
         assert res.eval_passed
         assert not res.busted
         assert res.eval_days == 3
-        assert not res.funded_locked  # $0 funded PnL → equity never reaches $26,600
+        assert not res.funded_locked  # $0 funded PnL → equity never reaches $26,100
 
 
 class TestFundedPhase:
@@ -77,7 +77,7 @@ class TestFundedPhase:
         return np.array(eval_days + extra_pnl + [0.0] * 300)
 
     def test_lock_mechanism_funded(self):
-        # Funded day 1: +$1,700 → equity = 25,000 + 1,700 = 26,700 >= lock_threshold 26,600
+        # Funded day 1: +$1,700 → equity = 25,000 + 1,700 = 26,700 >= lock_threshold 26,100
         pnl = self._pass_eval_quickly([1_700.0])
         res = simulate_run(pnl, DEFAULT)
         assert res.eval_passed
