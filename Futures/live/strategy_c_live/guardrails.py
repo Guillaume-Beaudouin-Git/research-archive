@@ -4,8 +4,8 @@ guardrails.py — Propfirm guardrails for Strategy C (Tradeify Select Flex $25K)
 Phase-aware defense against propfirm account bust:
 
   Pre-lock (eval + pre_lock phases):
-    L1: Trailing DD from equity peak > $1,300 (Tradeify limit $1,500, buffer $200)
-    L2: Self-imposed daily loss > $400 (2 × max SL at 3 MNQ, Tradeify has no DLL)
+    L1: Trailing DD from equity peak > $850 (Tradeify limit $1,000, buffer $150)
+    L2: Self-imposed daily loss > $400 (2 × max SL at 2 MNQ, Tradeify has no DLL)
     L3: Bracket integrity — TP and SL orders still alive
 
   Post-lock (post_lock phase):
@@ -73,7 +73,7 @@ class GuardrailTriggered(Exception):
 
 class PropfirmGuardrails:
     """
-    Phase-aware guardrail system for Tradeify Select Flex $50K.
+    Phase-aware guardrail system for Tradeify Select Flex $25K.
     Call check_all() every 30s in the monitor loop.
     On GuardrailTriggered: call emergency_flat() then exit the loop.
     """
@@ -101,7 +101,7 @@ class PropfirmGuardrails:
         """
         Phase-aware DD check:
           Post-lock: absolute floor at $25,175 (Tradeify floor $25,100 + $75 buffer)
-          Pre-lock / eval: trailing DD from peak, guardrail at $1,300 (limit $1,500)
+          Pre-lock / eval: trailing DD from peak, guardrail at $850 (limit $1,000)
         """
         phase = self.state.get_phase()
 

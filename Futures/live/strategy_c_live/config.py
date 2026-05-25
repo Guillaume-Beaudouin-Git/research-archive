@@ -5,18 +5,18 @@ iter_10: VWAP + A$400 dollar stop + B1.2% gap filter + M1(rng≥30pt)
 
 Broker: Tradeify Select Flex $25K via Tradovate REST API.
   - Real CME MNQ, headless Linux/VPS compatible
-  - EOD trailing DD $1,000 (confirmed from checkout screenshot; locks to $25,100 floor after first payout)
+  - EOD trailing DD $1,000 eval AND funded (confirmed 2026-05-25; locks to $25,100 floor after first payout)
   - No daily loss limit, no consistency rule (funded)
   - Python automation allowed (FTA §6.6), 90/10 profit split
 
-Sizing: 3 MNQ all phases (from propfirm_tradeify_25k_sizing.py v3 analysis, $1,000 trailing DD):
-  P(pass eval, no time limit)=53.8%, P(bust eval)=46.2%. E[attempts]=1.9×, E[eval cost]=$121.
-  Post-lock floor budget only $1,000 — early payout request critical.
-  Phase 1 — Eval  (3 MNQ): up to +$1,500 eval target
-  Phase 2 — Pré-lock (3 MNQ): funded, until lock trigger (EOD ≥ $26,100 + first payout)
-  Phase 3 — Post-lock (3 MNQ): floor locked at $25,100, ad infinitum
+Sizing: 2 MNQ all phases (from sizing_analysis.py + sizing_policy.md, 2026-05-24):
+  P(pass eval 180d)=57.0%, P(bust)=39.7% at baseline slippage.
+  Consistency cap ($600/day) not binding at 2 MNQ (avg winner $471 < cap).
+  Phase 1 — Eval  (2 MNQ): up to +$1,500 eval target
+  Phase 2 — Pre-lock (2 MNQ): funded, until lock trigger (EOD ≥ $26,100 OR first payout)
+  Phase 3 — Post-lock (2 MNQ): floor locked at $25,100, ad infinitum
 
-Lock trigger: EOD balance ≥ $26,100 AND first payout requested → floor locked at $25,100.
+Lock trigger: EOD balance ≥ $26,100 OR first payout requested → floor locked at $25,100.
 
 VPS execution (headless, no MT5 terminal needed):
   Cron VPS (heure été UTC+2: 09:25 ET = 13:25 UTC):
@@ -56,11 +56,11 @@ CONTRACT_SIZE = 2.0     # $2 per point per MNQ contract
 
 # ── Staged sizing ─────────────────────────────────────────────────────────────
 PHASE_CONTRACTS = {
-    'eval':      3,
-    'pre_lock':  3,
-    'post_lock': 3,
+    'eval':      2,
+    'pre_lock':  2,
+    'post_lock': 2,
 }
-N_CONTRACTS_DEFAULT = 3   # 3 MNQ all phases — updated by challenge_state.get_n_contracts()
+N_CONTRACTS_DEFAULT = 2   # 2 MNQ all phases — per sizing_policy.md 2026-05-24
 
 # Legacy alias used by monitor_loop._build_exit
 N_CONTRACTS = N_CONTRACTS_DEFAULT
@@ -90,22 +90,39 @@ POINT_VALUE         = MNQ_POINT_VALUE   # $2/pt/contract
 TRADE_COST_PER_UNIT = MNQ_COST_RT       # per contract round-trip
 
 # ── Guardrails — Tradeify Select Flex $25K ────────────────────────────────────
-# Tradeify limits (CONFIRMED from checkout screenshot):
-#   EOD trailing DD from peak: $1,000  (pre-lock) — was incorrectly $1,500 in v1
-#   Post-lock floor:           $25,100 (permanent, after first payout + EOD ≥ $26,100)
+# Tradeify limits (CONFIRMED from checkout screenshot + rules.md 2026-05-24):
+#   EOD trailing DD from peak: $1,000  (eval AND funded) — confirmed $1,000 (2026-05-25)
+#   Funded trailing DD:        $1,000  (same as eval — confirmed 2026-05-25, was $1,500 in v1)
+#   Post-lock floor:           $25,100 (capital + $100, permanent)
+#   Lock trigger:              EOD ≥ $26,100 (capital + $1,000 + $100) OR first payout
 #   Daily loss limit:          None    (Tradeify has no DLL)
 #
 # Our guardrails fire BEFORE Tradeify limits:
 TRADEIFY_INITIAL_BALANCE  = 25_000
-TRADEIFY_TRAILING_DD_USD  = 1_000     # Tradeify hard limit (pre-lock) — confirmed $1,000
-TRADEIFY_LOCK_BALANCE     = 26_100    # EOD balance that triggers lock
-TRADEIFY_LOCKED_FLOOR     = 25_100    # permanent floor post-lock
+TRADEIFY_TRAILING_DD_USD  = 1_000     # eval trailing DD — confirmed $1,000
+TRADEIFY_TRAILING_DD      = 1_000     # eval AND funded trailing DD — identical, confirmed $1,000 (2026-05-25)
+LOCK_TRIGGER_EXCESS       = 100       # lock when EOD >= capital + DD + this
+LOCKED_FLOOR_OFFSET       = 100       # locked floor = capital + this = $25,100
+TRADEIFY_LOCK_BALANCE     = 26_100    # = capital + DD + excess = 25k+1k+100
+TRADEIFY_LOCKED_FLOOR     = 25_100    # = capital + locked_floor_offset
 TRADEIFY_PROFIT_TARGET    = 1_500     # eval target (6% of $25K)
+DAILY_LOSS_LIMIT_FUNDED_FLEX = None   # Select Flex funded: no daily loss limit
+CHALLENGE_COST            = 65        # Select Flex 25K promo MAY 2026; standard ~$170 (training data)
+
+# Eval consistency rule
+CONSISTENCY_RATIO_EVAL    = 0.40      # best single day ≤ 40% × cumulative profit
+MIN_TRADING_DAYS_EVAL     = 3         # minimum winning days to pass eval
+
+# Payout mechanics (funded phase)
+PAYOUT_THRESHOLD_DAYS     = 5         # winning days (≥WIN_DAY_MIN_PNL) since last payout
+WIN_DAY_MIN_PNL           = 100.0     # minimum daily PnL to count as winning day
+MAX_PAYOUT                = 1_250.0   # per-request cap on $25K Select Flex
+PAYOUT_PCT_OF_PROFIT      = 0.50      # 50% of total profits per payout
 
 GUARDRAIL_TRAILING_DD_USD  = 850      # halt at $850 from peak (buffer $150 before $1,000 limit)
 GUARDRAIL_POST_LOCK_FLOOR  = 25_175   # halt $75 above Tradeify locked floor
 GUARDRAIL_DAILY_BUFFER_PCT = None     # no Tradeify DLL — disabled
-GUARDRAIL_DAILY_SELF_LIMIT = 400      # self-imposed: 2 SL hits (~$126 each at 3 MNQ, round up)
+GUARDRAIL_DAILY_SELF_LIMIT = 400      # self-imposed: 2 SL hits (~$85 each at 2 MNQ, round up)
 
 # Legacy aliases (used by validate_mt5.py offline tests — keep for compatibility)
 GUARDRAIL_DD_PCT          = 0.08      # FTMO legacy (unused for Tradeify)

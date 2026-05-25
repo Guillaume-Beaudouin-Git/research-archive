@@ -7,8 +7,8 @@ Validates MNQ contract count for iter_10 deployment by:
 4. Outputting comparison table markdown + heatmap PNG + sizing_policy.md
 
 Config Select Flex 25K (CANONICAL — source: PropFirms/tradeify/rules.md):
-  trailing_dd_eval = $1,000 | trailing_dd_funded = $1,500
-  lock_trigger: EOD equity ≥ $26,600 (capital + funded_DD + $100)
+  trailing_dd_eval = $1,000 | trailing_dd_funded = $1,000 (confirmed 2026-05-25)
+  lock_trigger: EOD equity ≥ $26,100 (capital + $1,000 + $100)
   locked_floor: $25,100 (capital + $100)
   NO DLL eval or funded | 40% consistency cap eval ($600/day) | NO consistency funded
   min trading days eval = 3 | payout: 50% profits, capped $1,250, after 5 winning days ≥ $100
@@ -71,8 +71,8 @@ SELECT_FLEX = PropfirmConfig(
     capital=25_000.0,
     profit_target=1_500.0,
     trailing_dd_eval=1_000.0,     # confirmed: $1,000 eval DD
-    trailing_dd_funded=1_500.0,
-    lock_trigger_excess=100.0,    # lock at $26,600
+    trailing_dd_funded=1_000.0,
+    lock_trigger_excess=100.0,    # lock at $26,100
     locked_floor_offset=100.0,    # floor at $25,100
     consistency_cap_pct=0.40,     # $600/day cap in eval
     max_eval_days=180,
@@ -90,7 +90,7 @@ SELECT_FLEX_UNLIMITED = PropfirmConfig(
     capital=25_000.0,
     profit_target=1_500.0,
     trailing_dd_eval=1_000.0,
-    trailing_dd_funded=1_500.0,
+    trailing_dd_funded=1_000.0,
     lock_trigger_excess=100.0,
     locked_floor_offset=100.0,
     consistency_cap_pct=0.40,

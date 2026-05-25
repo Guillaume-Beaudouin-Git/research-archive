@@ -3,7 +3,7 @@ trailing_dd_simulator.py — Propfirm survival Monte Carlo simulator.
 
 Models Tradeify Select Flex 25K mechanics exactly:
   - Eval: EOD trailing DD ($1,000), NO lock, 40% consistency cap
-  - Funded: EOD trailing DD ($1,500), lock when EOD >= capital + DD_funded + $100
+  - Funded: EOD trailing DD ($1,000), lock when EOD >= capital + DD_funded + $100
 
 Sources:
   help.tradeify.co/articles/12853921 (eval rules, 2026-05-24 — 403 Forbidden, from session)
@@ -32,7 +32,7 @@ class PropfirmConfig:
     capital: float = 25_000.0
     profit_target: float = 1_500.0
     trailing_dd_eval: float = 1_000.0      # eval EOD trailing DD — confirmed
-    trailing_dd_funded: float = 1_500.0    # funded EOD trailing DD — confirmed
+    trailing_dd_funded: float = 1_000.0    # funded EOD trailing DD — confirmed $1,000 (2026-05-25)
     lock_trigger_excess: float = 100.0     # lock when EOD >= capital+DD_funded+this
     locked_floor_offset: float = 100.0     # locked floor = capital + this = $25,100
     consistency_cap_pct: float = 0.40      # eval only: each day capped at 40%*target
@@ -281,8 +281,9 @@ def make_iter10_trade_generator(
       avg_winner_nq=$1,571.60, avg_loser_nq=-$421.45, win_rate=27.75%
       trade_freq=45.8% (346 trades / ~756 trading days 2022-2025)
 
-    Reproduces iter_10 block bootstrap for 3 MNQ + $1,500 DD:
-      P(pass) ≈ 66% ± 5%, P(bust) ≈ 27% ± 5% (unlimited eval).
+    Reproduces iter_10 MC for 3 MNQ + $1,000 DD (correct config, confirmed 2026-05-25):
+      P(pass) ≈ 53.7%, P(bust) ≈ 46.2% (N=20k, seed=42, max_eval_days=180).
+      Old figure (66%/27%) used BASELINE_CONFIG (eval_DD=$1,500) — see test file.
     """
     # Scale NQ → n_mnq MNQ
     NQ_COST, NQ_PV = 19.0, 20.0

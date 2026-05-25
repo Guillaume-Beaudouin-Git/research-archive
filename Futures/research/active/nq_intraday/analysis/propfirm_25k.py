@@ -6,8 +6,8 @@ Strategy: iter_11b (gap≤2.0%, rng≥30pt, VWAP on, TP=1.5R, stop=$400)
 
 Tradeify Select Flex $25K rules:
   initial_balance      = 25,000
-  trailing_dd_usd      = 1,500  (6% of 25K, EOD trailing from equity peak)
-  lock_trigger_balance = 26,100  (initial + trailing_dd + 100)
+  trailing_dd_usd      = 1,000  (4% of 25K, EOD trailing from equity peak — confirmed 2026-05-25)
+  lock_trigger_balance = 26,100  (initial + trailing_dd + 100 = 25,000 + 1,000 + 100)
   locked_floor         = 25,100  (permanent post-lock floor)
   profit_target_eval   = 1,500  (6% of 25K)
   daily_loss_limit     = None
@@ -44,7 +44,7 @@ from Futures.research.active.nq_intraday.analysis.propfirm_compat_v2 import (
 
 # ─── Tradeify $25K rules ──────────────────────────────────────────────────────
 TV25_INITIAL     = 25_000
-TV25_TRAIL_DD    = 1_500
+TV25_TRAIL_DD    = 1_000    # confirmed $1,000 (was $1,500 in v1, corrected 2026-05-25)
 TV25_LOCK_BAL    = 26_100   # lock trigger (EOD balance ≥ this)
 TV25_FLOOR       = 25_100   # permanent post-lock floor
 TV25_EVAL_TGT    = 1_500    # 6% eval target
@@ -112,13 +112,13 @@ def build_daily_mnq(trade_log: pd.DataFrame, n_mnq: int) -> pd.Series:
 # ─── Bootstrap simulation functions ───────────────────────────────────────────
 
 def sim_eval(pnl_arr: np.ndarray, rng: np.random.Generator) -> dict:
-    """Phase 1 eval: trailing DD $1,500, target $1,500, 90 days."""
+    """Phase 1 eval: trailing DD $1,000, target $1,500, 90 days."""
     paths = _stationary_block_paths(pnl_arr, MC_PATHS, TV25_EVAL_DAYS, AVG_BLOCK_LEN, rng)
     return _simulate_tradeify_eval(paths, TV25_TRAIL_DD, TV25_EVAL_TGT, TV25_EVAL_DAYS)
 
 
 def sim_prelock(pnl_arr: np.ndarray, rng: np.random.Generator) -> dict:
-    """Phase 2 pre-lock: trailing DD $1,500, target $1,100 to reach lock trigger."""
+    """Phase 2 pre-lock: trailing DD $1,000, target $1,100 to reach lock trigger ($26,100)."""
     lock_gain = TV25_LOCK_BAL - TV25_INITIAL   # = $1,100
     paths = _stationary_block_paths(pnl_arr, MC_PATHS, TV25_PRELOCK_DAYS, AVG_BLOCK_LEN, rng)
 

@@ -50,6 +50,7 @@ Communique en français et en anglais.
 - Sizing: risk-managed — see Futures/live/strategy_c_live/sizing_policy.md
 - Broker: Tradeify Select Flex $25K via Tradovate REST API
 - Propfirm config: PropFirms/tradeify/rules.md | Simulator: Portfolio/risk/trailing_dd_simulator.py
+- Tradeify constants: eval_DD=$1,000 funded_DD=$1,000 lock=$26,100 floor=$25,100  # confirmed 2026-05-25 DO NOT revert to $1,500/$26,600
 - VPS cron (été UTC+2): 25 13 * * 1-5 | (hiver UTC+1): 25 14 * * 1-5
 - Guardrail: GUARDRAIL_TRAILING_DD_USD — see sizing_policy.md and PropFirms/tradeify/rules.md
 - KNOWN GAP: verify VWAP 1-min granularity in Tradovate client before paper start
@@ -141,8 +142,8 @@ L21. Sharpe reality check by category (live, post-costs, post-DSR):
      Backtest SR >2× expected category range → mandatory DSR/cherry-pick audit before citing.
      iter_10 post-DSR SR ≈ 1.1 ∈ [0.8, 2.0] → consistent with category prior ✓.
 L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude Code session,
-     2026-05-24). Four findings: (a) canonical config matters — eval DD=$1,000 ≠ funded lock
-     trigger=$26,600, simulate both phases separately; (b) consistency cap ($600/day) is binding
+     2026-05-24). Four findings: (a) canonical config matters — eval DD=$1,000, funded DD=$1,000,
+     lock trigger=$26,100 (capital+DD+$100), simulate both phases separately; (b) consistency cap ($600/day) is binding
      at 4 MNQ (avg winner $628 > cap), reduces P(pass) relative to uncapped; (c) FTMO does not
      support CME futures (NQ/ES/ZN/CL) — confirmed 2026, use Tradeify/Apex/Topstep/MFFU; (d)
      Gaussian generator materially overestimates bust for SL-capped strategies — use calibrated
