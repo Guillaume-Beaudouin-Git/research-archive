@@ -203,7 +203,8 @@ _STRATEGIES = {
         "metadata": {
             "Type": "Delta-neutral funding carry",
             "Exchange": "Hyperliquid testnet",
-            "Proxy SR": "2.0 (L14)",
+            "apply_l14_proxy": True,
+            "proxy_sr": 2.0,
         },
         "benchmark_ticker": None,
         "n_trials": N_TRIALS_GLOBAL,
