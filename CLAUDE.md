@@ -125,6 +125,17 @@ L17. F&G velocity divergence = momentum proxy (wrong direction). Existing-holder
 L18. Wikipedia attention velocity = zero IC, momentum proxy direction. New-buyer
      attention branch CLOSED. Both Da et al. taxonomy pathways exhausted.
 
+### FX structural — registre L (à partir de L23)
+L23. Regulatory-window kill: when an edge depends on a fixing/auction window subsequently
+     widened or restructured by regulators (BIS WMR Feb 2015: 1min→5min; MiFID II 2018),
+     pre-reform documented magnitudes are NOT predictive post-reform. Pre-flight check:
+     does the cited paper cover ≥2 years of post-regulatory-change data? If not → treat
+     edge as non-tradable until re-documented on post-reform sample.
+L23b. Institutional ≠ retail microstructure edge: persistence of an HFT-mediated edge in
+      literature does not imply retail tradability. Any microstructure edge whose mechanism
+      is HFT-mediated requires explicit cost-tier check (institutional 0.5-1.5bp RT vs
+      retail 2-7bp RT). Default: skeptical.
+
 ### Propfirm structural — registre L (à partir de L19)
 L19. NQ propfirm market impact: at-market entry 09:46 ET, baseline slippage ≈ 4 ticks RT
      ($2/MNQ). Adverse fills during gap opens or thin pre-mkt: up to 3× baseline. Slippage
@@ -172,7 +183,7 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
 - Funding rates: Hyperliquid 8h, cached CSV in data/funding_carry/
 - NQ 1-min: Dataset_NQ_1min_2022_2025.csv (Kaggle, local only, gitignored)
 - Commodity futures: yfinance =F tickers (CL=F, GC=F, …) — continuous front-month
-- FX M5: Dukascopy bi5 custom decoder in strategy_e_fix_flow/data_setup.py
+- FX M5: Dukascopy bi5 custom decoder in `Forex/research/archived/strategy_e_fix_flow/data_setup.py`
   Cache: Forex/data/cache/dukascopy_m5/. DL speed: ~12min/pair-year, 4 threads.
 - Equities: yfinance + Tiingo (limited free tier)
 - FRED: DTB3 (RF daily), interbank rates monthly
@@ -205,10 +216,6 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
   Both failed individually (Sharpe=-1.08/-1.32); portfolio combination + regime filter
   under study. Pre-registration in progress.
   `Futures/research/active/nq_intraday/analysis/` | Budget: 3 mods, 0 consumed.
-- **Strategy E — WMR Fix + EOM USD Flow** (FX, n_reg=175): H1 = fade 30-min pre-fix
-  drift at 15:57 London; H2 = short USD EOM when SPX MTD > MSCI ex-US by 2%.
-  BLOCKER: Dukascopy M5 download ~12h (6 pairs × 10 years).
-  `Forex/research/active/strategy_e_fix_flow/` | Budget: 3 mods, 0 consumed.
 - **Commodities XS — Basis + TSMOM** (n≤279): S_TSMOM (Moskowitz 2012) + S_BASIS
   (Erb-Harvey 2006), 24 continuous contracts, monthly CS IC scan.
   Phase A (data fetch + roll validation) not yet complete.
@@ -231,6 +238,10 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
 - London ORB v1 (n=170): best t_HAC=1.01 (GBPUSD), below gate 1.65
 - Round Number Cascade (n=180): all IC horizons FAIL (EUR: t=1.167→-2.357; GBP: all FAIL)
 - BIS REER ≠ bilateral USD valuation: unsuitable as carry signal modifier
+- Strategy E — WMR Fix + EOM USD Flow (n_reg=175, 0 IC tests): CLOSED at literature stage.
+  E1 W-shape: 1-4bp gross < 6-7bp retail RT post-BIS 2015 reform. E2 EOM USD conditioned:
+  t_HAC≈1.2, N_eff≈35-45 → power collapse (L12). Root: window widening (L23) + TWAP algoisation.
+  Dukascopy M5 infra reusable. `Forex/research/archived/strategy_e_fix_flow/POSTMORTEM.md`
 
 **Equities/ETF/Futures**
 - D1 (Failed ORB fade, n_test=154): NQ fade when iter_10 signal fires then reverses 0.5R/30min.
