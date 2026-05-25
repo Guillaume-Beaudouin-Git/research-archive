@@ -1,7 +1,7 @@
 """
 Tests for ChallengeState lock trigger logic.
 
-Invariant: lock triggers on FIRST of (balance >= $26,600) OR (payout_requested).
+Invariant: lock triggers on FIRST of (balance >= $26,100) OR (payout_requested).
 Lock only applies in funded phase (is_funded=True).
 """
 from unittest.mock import patch
@@ -43,7 +43,7 @@ def _eval_state(**kwargs) -> ChallengeState:
 class TestLockTrigger:
 
     def test_lock_triggers_on_balance_alone(self):
-        """Lock must trigger if balance >= $26,600 even without payout requested."""
+        """Lock must trigger if balance >= $26,100 even without payout requested."""
         state = _funded_state()
         result = state.check_lock_trigger(TRADEIFY_LOCK_BALANCE)
         assert result is True
@@ -51,17 +51,17 @@ class TestLockTrigger:
         assert state.lock_trigger_reason == "balance"
 
     def test_lock_triggers_on_payout_alone(self):
-        """Lock must trigger if payout requested even with balance below $26,600."""
+        """Lock must trigger if payout requested even with balance below $26,100."""
         state = _funded_state(first_payout_requested=True)
-        result = state.check_lock_trigger(26_400.0)   # below threshold
+        result = state.check_lock_trigger(25_500.0)   # below threshold
         assert result is True
         assert state.lock_triggered is True
         assert state.lock_trigger_reason == "payout"
 
     def test_lock_does_not_trigger_neither_condition(self):
-        """No lock if balance < $26,600 and payout not requested."""
+        """No lock if balance < $26,100 and payout not requested."""
         state = _funded_state()
-        result = state.check_lock_trigger(26_500.0)   # below threshold, no payout
+        result = state.check_lock_trigger(25_500.0)   # below threshold, no payout
         assert result is False
         assert state.lock_triggered is False
 
@@ -78,7 +78,7 @@ class TestLockTrigger:
     def test_lock_does_not_trigger_in_eval_phase(self):
         """Lock mechanism must not fire during eval phase (is_funded=False)."""
         state = _eval_state()
-        # Even with balance above $26,600 AND payout requested — no lock in eval
+        # Even with balance above $26,100 AND payout requested — no lock in eval
         state.first_payout_requested = True
         result = state.check_lock_trigger(30_000.0)
         assert result is False

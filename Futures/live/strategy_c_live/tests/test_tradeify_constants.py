@@ -36,7 +36,7 @@ def test_min_trading_days():
 # ── Funded phase — lock mechanics ─────────────────────────────────────────────
 
 def test_funded_trailing_dd():
-    assert config.TRADEIFY_TRAILING_DD_FUNDED == 1_500
+    assert config.TRADEIFY_TRAILING_DD_FUNDED == 1_000
 
 
 def test_lock_trigger_excess():
@@ -44,13 +44,13 @@ def test_lock_trigger_excess():
 
 
 def test_lock_balance_derivation():
-    """$25,000 + $1,500 funded_DD + $100 = $26,600."""
+    """$25,000 + $1,000 funded_DD + $100 = $26,100."""
     expected = (
         config.TRADEIFY_INITIAL_BALANCE
         + config.TRADEIFY_TRAILING_DD_FUNDED
         + config.LOCK_TRIGGER_EXCESS
     )
-    assert config.TRADEIFY_LOCK_BALANCE == expected == 26_600
+    assert config.TRADEIFY_LOCK_BALANCE == expected == 26_100
 
 
 def test_locked_floor_offset():

@@ -8,7 +8,7 @@ Phases:
   pre_lock  — Funded, 2 MNQ, until lock trigger
   post_lock — Floor locked at $25,100, 2 MNQ, indefinite
 
-Lock trigger: EOD balance ≥ $26,600 OR first payout requested.
+Lock trigger: EOD balance ≥ $26,100 OR first payout requested.
   check_lock_trigger() — call after market close each day (funded only)
   mark_payout_requested() — call manually when submitting first payout (funded only)
 
