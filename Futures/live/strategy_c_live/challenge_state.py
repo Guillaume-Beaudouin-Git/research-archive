@@ -1,16 +1,16 @@
 """
-challenge_state.py — Propfirm challenge state tracker (Tradeify Select Flex $50K)
+challenge_state.py — Propfirm challenge state tracker (Tradeify Select Flex $25K)
 ==================================================================================
 Persists state across daily runs. Survives machine restarts.
 
 Phases:
-  eval      — Evaluation, 3 MNQ, target +$3,000
-  pre_lock  — Funded, 4 MNQ, until lock trigger
-  post_lock — Floor locked at $50,100, 5 MNQ, indefinite
+  eval      — Evaluation, 2 MNQ, target +$1,500
+  pre_lock  — Funded, 2 MNQ, until lock trigger
+  post_lock — Floor locked at $25,100, 2 MNQ, indefinite
 
-Lock trigger: EOD balance ≥ $52,100 AND first payout requested.
-  check_lock_trigger() — call after market close each day
-  mark_payout_requested() — call manually when submitting first payout
+Lock trigger: EOD balance ≥ $26,600 OR first payout requested.
+  check_lock_trigger() — call after market close each day (funded only)
+  mark_payout_requested() — call manually when submitting first payout (funded only)
 
 CLI:
   python3 -m Futures.live.strategy_c_live.challenge_state init
@@ -56,6 +56,7 @@ class ChallengeState:
         is_funded:               bool = False,
         lock_triggered:          bool = False,
         lock_trigger_date:       Optional[str] = None,
+        lock_trigger_reason:     Optional[str] = None,
         lock_floor:              float = TRADEIFY_LOCKED_FLOOR,
         first_payout_requested:  bool = False,
         cumulative_payouts:      float = 0.0,
@@ -70,6 +71,7 @@ class ChallengeState:
         self.is_funded              = is_funded
         self.lock_triggered         = lock_triggered
         self.lock_trigger_date      = lock_trigger_date
+        self.lock_trigger_reason    = lock_trigger_reason
         self.lock_floor             = lock_floor
         self.first_payout_requested = first_payout_requested
         self.cumulative_payouts     = cumulative_payouts
@@ -86,6 +88,7 @@ class ChallengeState:
             "is_funded":              self.is_funded,
             "lock_triggered":         self.lock_triggered,
             "lock_trigger_date":      self.lock_trigger_date,
+            "lock_trigger_reason":    self.lock_trigger_reason,
             "lock_floor":             self.lock_floor,
             "first_payout_requested": self.first_payout_requested,
             "cumulative_payouts":     self.cumulative_payouts,
@@ -145,6 +148,7 @@ class ChallengeState:
             is_funded              = bool(d.get("is_funded", False)),
             lock_triggered         = bool(d.get("lock_triggered", False)),
             lock_trigger_date      = d.get("lock_trigger_date"),
+            lock_trigger_reason    = d.get("lock_trigger_reason"),
             lock_floor             = float(d.get("lock_floor", TRADEIFY_LOCKED_FLOOR)),
             first_payout_requested = bool(d.get("first_payout_requested", False)),
             cumulative_payouts     = float(d.get("cumulative_payouts", 0.0)),
@@ -167,18 +171,32 @@ class ChallengeState:
     def check_lock_trigger(self, current_balance: float) -> bool:
         """
         Check EOD lock condition. Call after market close each day.
-        Lock requires BOTH: EOD balance >= $52,100 AND first payout requested.
+        Lock triggers on FIRST of: EOD balance >= lock threshold OR payout requested.
+        Only applicable in funded phase (is_funded=True).
         Returns True if lock was just activated (caller should send Telegram alert).
         """
         if self.lock_triggered:
             return False
-        if current_balance >= TRADEIFY_LOCK_BALANCE and self.first_payout_requested:
+        if not self.is_funded:
+            return False
+        if current_balance >= TRADEIFY_LOCK_BALANCE:
             self.lock_triggered     = True
             self.lock_trigger_date  = date.today().isoformat()
+            self.lock_trigger_reason = "balance"
             self._save()
             log.info(
-                "Lock triggered! Balance=$%.2f >= $%,.0f + payout requested. Floor=$%.0f",
+                "Lock triggered! Balance=$%.2f >= $%,.0f. Floor=$%.0f",
                 current_balance, TRADEIFY_LOCK_BALANCE, self.lock_floor,
+            )
+            return True
+        if self.first_payout_requested:
+            self.lock_triggered     = True
+            self.lock_trigger_date  = date.today().isoformat()
+            self.lock_trigger_reason = "payout"
+            self._save()
+            log.info(
+                "Lock triggered! Payout requested. Balance=$%.2f. Floor=$%.0f",
+                current_balance, self.lock_floor,
             )
             return True
         return False
@@ -186,14 +204,19 @@ class ChallengeState:
     def mark_payout_requested(self) -> None:
         """
         Call manually via CLI when submitting first payout on Tradeify dashboard.
-        Sets first_payout_requested=True and checks lock condition immediately.
+        Sets first_payout_requested=True and triggers lock immediately.
+        Refused in eval phase: lock only applies to funded accounts.
         """
+        if not self.is_funded:
+            log.warning("mark_payout_requested called in eval phase — ignoring.")
+            return
         if self.first_payout_requested:
             log.warning("Payout already marked as requested.")
             return
-        self.first_payout_requested = True
-        self.lock_triggered         = True   # payout request always triggers lock immediately
-        self.lock_trigger_date      = date.today().isoformat()
+        self.first_payout_requested  = True
+        self.lock_triggered          = True
+        self.lock_trigger_date       = date.today().isoformat()
+        self.lock_trigger_reason     = "payout"
         self._save()
         log.info("Payout requested — lock triggered. Floor locked at $%.0f.", self.lock_floor)
 
