@@ -1,1 +1,101 @@
-{"last_synthesis_week": null, "themes_tracked": {}, "open_hypotheses": []}
+{
+  "last_synthesis_week": "2026-W21",
+  "themes_tracked": {
+    "mnq_intraday_falsification": {
+      "first_seen": "2026-W21",
+      "last_seen": "2026-W21",
+      "weeks_active": 1,
+      "n_papers_total": 3,
+      "status": "emerging",
+      "key_arxiv_ids": ["2605.04004", "2605.11423", "2605.17724"],
+      "note": "Three-paper cluster by Mesfin (same author, same 2021-2025 MNQ dataset). Progressive falsification: 14 signal families → VVG regime ID → ML architectures. All fail after costs under walk-forward. Single-author — needs independent replication."
+    },
+    "defi_carry_mechanics": {
+      "first_seen": "2026-W21",
+      "last_seen": "2026-W21",
+      "weeks_active": 1,
+      "n_papers_total": 3,
+      "status": "emerging",
+      "key_arxiv_ids": ["2605.05089", "2605.06405", "2605.11263"],
+      "note": "Three papers on spot-perp delta-neutral carry (Krestenko, Le, Lorig). Realized performance predominantly driven by funding environment. HL funding follows OU-plus-jump dynamics. Exit asymmetry documented."
+    },
+    "ml_portfolio_hac_robustness": {
+      "first_seen": "2026-W21",
+      "last_seen": "2026-W21",
+      "weeks_active": 1,
+      "n_papers_total": 2,
+      "status": "emerging",
+      "key_arxiv_ids": ["2605.17307", "2605.19278"],
+      "note": "ML/RL fails to produce statistically significant excess returns under HAC-robust inference. Best forecast MSE != best portfolio Sharpe."
+    },
+    "regime_conditional_trend_scaling": {
+      "first_seen": "2026-W21",
+      "last_seen": "2026-W21",
+      "weeks_active": 1,
+      "n_papers_total": 3,
+      "status": "emerging",
+      "key_sources": [
+        "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523",
+        "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523",
+        "arxiv:2605.14976"
+      ],
+      "note": "Practitioner sources: optimal trend allocation is regime-dependent. Mozes vol-spike mechanism documents why Strategy A v3 MaxDD was breached. RegimeFilterHandler stub blocks automated testing."
+    },
+    "backtest_integrity_multiple_testing": {
+      "first_seen": "2026-W21",
+      "last_seen": "2026-W21",
+      "weeks_active": 1,
+      "n_papers_total": 4,
+      "status": "emerging",
+      "key_sources": [
+        "quantocracy_backtests_lie_building_a_stress_test_framework_for_20260523",
+        "quantocracy_the_effective_number_of_tested_strategies_vertox_q_20260523",
+        "quantocracy_overfitting_and_parameter_selection_in_trading_str_20260523",
+        "quantocracy_bad_month_for_your_strategy_should_you_change_it_a_20260523"
+      ],
+      "note": "Effective-N AMTP correction critical: 274 raw tests, effective N likely 3-4 for correlated iteration series like Strategy C iter_1→iter_10."
+    }
+  },
+  "open_hypotheses": [
+    {
+      "id": "H001",
+      "raised_week": "2026-W21",
+      "description": "Funding rate mean-reversion speed (OU theta) on HL perpetuals predicts carry quality: high theta (fast reversion) → noisy carry, reduce Strategy B position size; low theta (persistent regime) → sticky carry, hold or increase.",
+      "status": "open",
+      "linked_strategy": "B",
+      "data_required": "HL 8h funding rates BTC/ETH/SOL (data/funding_carry/, ~7 months from Oct 2025)",
+      "cost_to_test": "LOW",
+      "conflict_with_archived": "none",
+      "origin_arxiv": ["2605.06405"]
+    },
+    {
+      "id": "H002",
+      "raised_week": "2026-W21",
+      "description": "Vol-ratio position scalar for Strategy A v4: position = tanh_signal × clamp(vol_28d / vol_5d, 0.5, 2.0). Scales down when near-term vol is expanding faster than medium-term baseline, reducing crash-regime exposure that caused the propfirm breach.",
+      "status": "open",
+      "linked_strategy": "A",
+      "data_required": "data/raw/ parquet files (BTC/ETH/SOL, already available)",
+      "cost_to_test": "MED",
+      "conflict_with_archived": "none",
+      "origin_sources": [
+        "quantocracy_new_contributor_modeling_asymmetric_volatility_wit_20260523",
+        "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523",
+        "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523"
+      ]
+    }
+  ],
+  "methodology_flags": [
+    {
+      "id": "MF001",
+      "raised_week": "2026-W21",
+      "description": "Heavy-tailed DM test distortion (arXiv:2605.16866): conventional HAC t-stat critical values distorted when forecast error distributions have infinite variance (Lévy-stable tails). May affect Strategy A crypto IC tests. Not applicable to Strategy C (equity index futures).",
+      "status": "open"
+    }
+  ],
+  "pipeline_notes": {
+    "first_run_week": "2026-W21",
+    "requires_human_rate_week1": 0.84,
+    "handlers_needed": ["StressTestHandler", "RegimeFilterHandler_complete", "ExitRuleHandler"],
+    "noise_items_to_filter": ["hn_quant_launch_hn_promoted_yc_w21", "quantocracy_quant_mashup_homepage", "quantocracy_quantocracy_homepage"]
+  }
+}
