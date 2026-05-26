@@ -1591,7 +1591,12 @@ Source: `Crypto/research/_meta/compass/crypto_alpha_landscape_2026.md`. Eight ca
 
 ### Options_Vol — SPX VRP Angle C — ARCHIVED (2026-05-23)
 
-Short ATM straddle conditional on VIX_z > 1.0. Phase 1 IC FAIL: conditional IC = −0.009, t_HAC = −0.144 (gate: t > 3.5). 2020–2025 sub-period mean outcome = −70.78 variance pts (COVID + 2022 inflation regime). Root cause: conditioning on elevated VIX selects exact tail-risk windows where RV > IV. Static VRP exists (unconditional IC = +0.152, t = 3.671) but is a different untested hypothesis. `Options_Vol/research/archived/vrp_spx_angle_c/`. n_tests = 321 global.
+Short ATM straddle conditional on VIX_z > 1.0. Phase 1 IC FAIL: conditional IC = −0.009, t_HAC = −0.144 (gate: t > 3.5). 2020–2025 sub-period mean outcome = −70.78 variance pts (COVID + 2022 inflation regime). Root cause: conditioning on elevated VIX selects exact tail-risk windows where RV > IV. Static VRP exists (unconditional IC = +0.152, t = 3.671) but is a different untested hypothesis. `Options_Vol/research/archived/vrp_spx_angle_c/`. n_tests = 322 global (updated: +1 F2 L11 preflight 2026-05-26).
+
+> **n_tests accounting rules (authoritative — use for all DSR/AMTP calculations):**
+> - **n_tests global**: +1 per hypothesis tested at feasibility level B or above (feasibility.py run, IC test, or backtest). Includes all refinement iterations (NQ iter_1→iter_10 = 10 tests, not 1). Walk-forward folds and parameter sensitivity checks within a single hypothesis = NOT separate tests.
+> - **DSR n_trials**: +1 per *distinct strategy* across all asset classes, regardless of iteration count. Used as `n_trials` in Bailey–López de Prado (2014) SR* benchmark. Current: **275** (274 cross-asset pre-F2 + 1 F2). NQ iter_1→10 counts as ~1–3 trials in DSR (one strategy, multiple refinements), not 10.
+> - **Incrementation boundary**: automation alpha_hunt L0/L1/L2 screening → NOT a test. First feasibility.py run or IC gate computation → +1 global, +1 DSR if new strategy class.
 
 ### Two-tier validation framework (effective May 2026)
 
