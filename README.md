@@ -1137,6 +1137,15 @@ Adding EM pairs dilutes and then reverses the G10 carry signal. At 1-week horizo
 **Structural FX conclusion (carries forward to equities research)**:
 > FX carry IC is real in G10 (t=2.02) but requires crash protection incompatible with raw propfirm rules. FX momentum is permanently dead post-Menkhoff-publication in G10 due to central bank anchor effect. EM carry is dominated by periodic unwind events that reverse 12+ months of carry premium in weeks. TSMOM transfers naturally to assets without central bank anchors (crypto, commodities, equity indices) — not to FX.
 
+### Round Number Stop-Loss Cascade (FX-RNC) — ARCHIVED (n_tests: 170 → 180)
+
+**Signal**: Osler (2003/2005) stop-loss cascade at .XX00 + .XX50 levels (50-pip spacing). Close-through breach → momentum signal (cascade direction). 5 forward horizons per pair: 1min, 5min, 15min, 30min, 60min.  
+**Data**: Dukascopy M1 EUR/USD + GBP/USD (2020–2024), 28k+/41k+ breach events (density gate PASS).  
+**Result**: FAIL on both pairs. EUR/USD: 1min WEAK only (t=+1.167), 5–60min increasingly negative (t=−1.4 to −2.4). GBP/USD: all 5 horizons FAIL. Hit rates 48.3%–49.5% systematically below 50% — consistent with mild anti-momentum, not edge-absent noise.
+
+Root cause: cascade mechanism is HFT-intermediated and absorbed within sub-minute; by 1-min close, residual is a mean-reversion artifact. Osler data (late 1990s/early 2000s) predates HFT normalization. Edge fully arbitraged at retail resolution.  
+**Archive**: `Forex/research/archived/round_number_cascade/` — POSTMORTEM.md, audit_summary.md, PRESPEC.md, ic_round_number.py, results_ic.json.
+
 ---
 
 ## 8. Multi-Asset TSMOM Research (May 2026) — ARCHIVED
