@@ -36,6 +36,8 @@ data/metadata/*.json
 
 # Research cache — binary data, reproducible from API
 Crypto/research/active/_preflight/cache/
+Portfolio/validation/data_cache/
+Portfolio/validation/reports/
 
 # Kill switch
 STOP

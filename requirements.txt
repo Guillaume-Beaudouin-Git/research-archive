@@ -27,6 +27,10 @@ python-dotenv>=1.0.0
 # Testing
 pytest>=7.0.0
 
+# Portfolio validation — CPCV meta-methodology
+skfolio>=0.17.0       # CombinatorialPurgedCV + optimal_folds_number (BSD-3)
+# pypbo: not on PyPI — DSR handled by Portfolio/reporting/metrics.py (Bailey-LdP 2014)
+
 # Live trading — Hyperliquid exchange
 # Install separately (not on PyPI as a simple package):
 #   pip install hyperliquid-python-sdk eth_account

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ strategy_name }} — CPCV Report</title>
+<style>
+:root {
+  --bg: #0d1117; --panel: #161b22; --border: #30363d;
+  --text: #e6edf3; --muted: #8b949e;
+  --green: #3fb950; --red: #f85149; --blue: #58a6ff; --orange: #d29922;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px; line-height: 1.5;
+}
+.container { max-width: 1280px; margin: 0 auto; padding: 24px 28px; }
+
+/* Header */
+.header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 22px; }
+.header h1 { font-size: 22px; font-weight: 700; }
+.header h2 { font-size: 14px; font-weight: 500; color: var(--blue); margin-top: 3px; }
+.header .meta { color: var(--muted); font-size: 12px; margin-top: 5px; }
+.badges { display: flex; gap: 7px; margin-top: 10px; flex-wrap: wrap; }
+.badge { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.badge-pass { background: #1b4d2e; color: var(--green); border: 1px solid #2ea043; }
+.badge-fail { background: #3d1a1a; color: var(--red); border: 1px solid var(--red); }
+.badge-neutral { background: #1c2128; color: var(--muted); border: 1px solid var(--border); }
+.badge-amber { background: #2d1f00; color: var(--orange); border: 1px solid var(--orange); }
+
+/* Section label */
+.sec { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase;
+       letter-spacing: 0.08em; margin: 22px 0 11px; }
+
+/* Metrics grid */
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.metrics-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 960px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .metrics-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+.metric-card { background: var(--panel); border: 1px solid var(--border);
+               border-radius: 8px; padding: 12px 14px; }
+.metric-card .label { font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+.metric-card .value { font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.metric-card .sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.metric-divider { border: none; border-top: 1px solid var(--border); margin: 8px 0; }
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+.neu { color: var(--blue); }
+.wf { color: var(--orange); }
+
+/* Comparison block */
+.compare-row { display: flex; align-items: center; gap: 16px; margin-top: 6px; }
+.compare-item { text-align: center; }
+.compare-item .c-label { font-size: 10px; color: var(--muted); }
+.compare-item .c-val { font-size: 18px; font-weight: 700; }
+.compare-arrow { font-size: 20px; color: var(--muted); }
+
+/* Chart */
+.chart-card { background: var(--panel); border: 1px solid var(--border);
+              border-radius: 8px; overflow: hidden; margin-top: 12px; }
+.chart-label { padding: 9px 14px; font-size: 11px; font-weight: 600; color: var(--muted);
+               border-bottom: 1px solid var(--border); }
+.chart-card img { width: 100%; display: block; }
+
+/* DSR table */
+.dsr-table { width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 12px; }
+.dsr-table th { color: var(--muted); font-weight: 600; font-size: 10px; text-transform: uppercase;
+                letter-spacing: 0.06em; padding: 6px 8px; border-bottom: 1px solid var(--border);
+                text-align: left; }
+.dsr-table td { padding: 5px 8px; border-bottom: 1px solid var(--border); }
+.dsr-table tr:hover td { background: var(--panel); }
+.dsr-bar { height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 6px; }
+
+/* Methodology note */
+.method { background: #1c2128; border: 1px solid var(--border); border-radius: 8px;
+          padding: 12px 16px; font-size: 11px; color: var(--muted); line-height: 1.7;
+          margin-top: 22px; }
+.method strong { color: var(--text); }
+.method code { background: #0d1117; border: 1px solid var(--border); border-radius: 4px;
+               padding: 1px 5px; font-family: 'JetBrains Mono', Consolas, monospace;
+               font-size: 10px; }
+
+/* Footer */
+.footer { margin-top: 32px; padding-top: 14px; border-top: 1px solid var(--border);
+          font-size: 10px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>{{ strategy_name }}</h1>
+  <h2>Combinatorial Purged Cross-Validation (CPCV) Report</h2>
+  <div class="meta">
+    Sample {{ start_date }} → {{ end_date }}
+    &nbsp;·&nbsp; T = {{ n_obs }} daily obs
+    &nbsp;·&nbsp; n_trials = {{ n_trials }} (project-wide)
+    &nbsp;·&nbsp; k = {{ n_folds }}, p = {{ n_test_folds }}, N_paths = {{ n_paths }}
+  </div>
+  <div class="badges">
+    {% if dsr_global >= 0.95 %}
+    <span class="badge badge-pass">DSR PASS ({{ "%.3f"|format(dsr_global) }})</span>
+    {% elif dsr_global >= 0.80 %}
+    <span class="badge badge-amber">DSR MARGINAL ({{ "%.3f"|format(dsr_global) }})</span>
+    {% else %}
+    <span class="badge badge-fail">DSR FAIL ({{ "%.3f"|format(dsr_global) }})</span>
+    {% endif %}
+    {% if median_sharpe > 0 %}
+    <span class="badge badge-pass">CPCV MEDIAN SR {{ "%.2f"|format(median_sharpe) }}</span>
+    {% else %}
+    <span class="badge badge-fail">CPCV MEDIAN SR {{ "%.2f"|format(median_sharpe) }}</span>
+    {% endif %}
+    {% if wf_baseline is not none %}
+    <span class="badge badge-neutral">WF BASELINE {{ "%.2f"|format(wf_baseline) }}</span>
+    {% endif %}
+  </div>
+</div>
+
+<!-- CPCV Distribution Metrics -->
+<div class="sec">CPCV Distribution — {{ n_paths }} Paths</div>
+<div class="metrics-grid">
+  <div class="metric-card">
+    <div class="label">Mean Sharpe (CPCV)</div>
+    <div class="value {{ 'pos' if mean_sharpe > 0 else 'neg' }}">{{ "%.3f"|format(mean_sharpe) }}</div>
+    <div class="sub">Across {{ n_paths }} combinatorial paths</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">Median Sharpe (CPCV)</div>
+    <div class="value {{ 'pos' if median_sharpe > 0 else 'neg' }}">{{ "%.3f"|format(median_sharpe) }}</div>
+    <div class="sub">50th percentile of paths</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">Sharpe Std Dev</div>
+    <div class="value neu">{{ "%.3f"|format(std_sharpe) }}</div>
+    <div class="sub">Distribution width across paths</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">CI 5%–95%</div>
+    <div class="value neu" style="font-size:16px">[{{ "%.2f"|format(ci_5) }}, {{ "%.2f"|format(ci_95) }}]</div>
+    <div class="sub">Note: paths are correlated (not IID)</div>
+  </div>
+</div>
+
+<!-- Multiple-Testing & Comparison -->
+<div class="sec">Multiple-Testing Correction & Baseline Comparison</div>
+<div class="metrics-grid-3">
+  <div class="metric-card">
+    <div class="label">DSR (global, n_trials = {{ n_trials }})</div>
+    <div class="value {{ 'pos' if dsr_global >= 0.95 else ('neu' if dsr_global >= 0.80 else 'neg') }}">
+      {{ "%.4f"|format(dsr_global) }}
+    </div>
+    <div class="sub">Bailey–López de Prado 2014 · Threshold: 0.95</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">PSR (n_trials = {{ n_trials }})</div>
+    <div class="value {{ 'pos' if psr_global >= 0.95 else 'neg' }}">{{ "%.4f"|format(psr_global) }}</div>
+    <div class="sub">P(true SR > SR*) · n_trials = {{ n_trials }}</div>
+  </div>
+  {% if wf_baseline is not none %}
+  <div class="metric-card">
+    <div class="label">WF Baseline vs CPCV Median</div>
+    <div class="value" style="font-size:15px;">
+      <span class="wf">{{ "%.2f"|format(wf_baseline) }}</span>
+      <span style="color:var(--muted);font-size:13px;"> vs </span>
+      <span class="{{ 'pos' if median_sharpe > 0 else 'neg' }}">{{ "%.2f"|format(median_sharpe) }}</span>
+    </div>
+    <div class="sub">
+      {% set delta = median_sharpe - wf_baseline %}
+      CPCV median {{ "%.2f"|format(delta) | replace('-','−') }} vs WF single-path
+      {% if delta >= -0.05 %}(consistent ✓){% elif delta >= -0.3 %}(moderate gap){% else %}(large gap — overfitting risk){% endif %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Histogram -->
+<div class="sec">Sharpe Distribution Across {{ n_paths }} CPCV Paths</div>
+<div class="chart-card">
+  <div class="chart-label">Histogram + KDE — Sharpe ratio per CPCV path</div>
+  <img src="data:image/png;base64,{{ histogram_b64 }}" alt="CPCV Sharpe Distribution">
+</div>
+
+<!-- Per-path DSR table -->
+<div class="sec">Per-Path DSR (first {{ dsr_rows|length }} paths shown)</div>
+<table class="dsr-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Path Sharpe</th>
+      <th>DSR (n=1)</th>
+      <th>Pass</th>
+      <th>DSR bar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in dsr_rows %}
+    <tr>
+      <td style="color:var(--muted)">{{ row.path }}</td>
+      <td class="{{ 'pos' if row.sharpe > 0 else 'neg' }}">{{ "%.3f"|format(row.sharpe) }}</td>
+      <td class="{{ 'pos' if row.dsr >= 0.95 else ('neu' if row.dsr >= 0.80 else 'neg') }}">{{ "%.4f"|format(row.dsr) }}</td>
+      <td>{{ '✓' if row.dsr >= 0.95 else '✗' }}</td>
+      <td>
+        <div class="dsr-bar" style="
+          width:{{ [row.dsr * 80, 80]|min }}px;
+          background:{{ '#3fb950' if row.dsr >= 0.95 else ('#d29922' if row.dsr >= 0.80 else '#f85149') }};
+        "></div>
+      </td>
+    </tr>
+    {% endfor %}
+    {% if n_paths > dsr_rows|length %}
+    <tr><td colspan="5" style="color:var(--muted);font-style:italic;padding:6px 8px;">
+      … {{ n_paths - dsr_rows|length }} more paths not shown
+    </td></tr>
+    {% endif %}
+  </tbody>
+</table>
+
+<!-- Methodology note -->
+<div class="method">
+  <strong>Methodology.</strong>
+  CPCV(<code>k={{ n_folds }}</code>, <code>p={{ n_test_folds }}</code>) →
+  <code>C({{ n_folds }},{{ n_test_folds }}) = {{ n_paths }}</code> combinatorial paths.
+  Purge = <code>{{ purge_size }}</code> bars (label horizon). Embargo = <code>1%</code> of T
+  (≈ {{ embargo_size }} bars), per López de Prado AFML ch.7.
+  DSR uses Bailey–López de Prado (2014) with <code>n_trials = {{ n_trials }}</code>
+  (project-wide backtest count as of report date).
+  BHY FDR correction (Benjamini–Hochberg–Yekutieli) applied at portfolio level.
+  <br><br>
+  <strong>Interpretation caveat.</strong> CPCV paths share data (each bar appears
+  C(k−1, p−1) = C({{ n_folds }}-1, {{ n_test_folds }}-1) times in test sets) — the
+  per-path Sharpe distribution is <em>not</em> IID. The 5%–95% range is a
+  diagnostic, not a frequentist confidence interval. A wide distribution signals
+  overfitting risk; a narrow distribution centred near the WF baseline provides
+  additional confidence.
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  Generated {{ generated_at }} · git {{ git_commit }} · Python {{ python_version }}
+</div>
+
+</div><!-- /container -->
+</body>
+</html>
