@@ -111,6 +111,13 @@ Communique en français et en anglais.
 ### Crypto structural — registre L (canonique depuis README §6.50)
 L11. Long-only CS crypto = β-dominated (port corr_A ≥ 0.80 regardless of IC).
      Only escape: delta-neutral execution.
+L11b. IJR cost gate misapplied to binary TP/SL strategies (breakout, event-driven):
+      gross_alpha ∝ √N but cost ∝ N → gate_ratio = C/√N, DECREASING in N. For IC=0.05
+      and FX intraday costs, gate passes only at N ≤ 6 trades/yr, which reveals the formula's
+      miscalibration for binary TP/SL regimes rather than economic infeasibility of the strategy class.
+      Correct gate for binary TP/SL: E[gross/trade] > 3 × cost/trade (N-independent).
+      MUST pre-register IC justified by numerical literature (win_rate by regime/filter),
+      never adjust post-failure. First case identified: F2 Asian Range Breakout archived 2026-05-26.
 L12. Event-count ceiling gate: pre-flight must compute [N_floor, N_ceiling] interval.
      At 0.17% RT, ceiling ≈ 29 events/yr per position for 5%/yr net edge.
 L12b. Autocorrelation HAC deflation: persistent regime signals (half-life > 30d) →
@@ -189,7 +196,7 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
 - FRED: DTB3 (RF daily), interbank rates monthly
 - HL API constraint: no candle data before Nov 2022; gap Dec 2022–Dec 2023
 
-## Research history (n_tests = 321 global)
+## Research history (n_tests = 322 global)
 <!-- Sequential global milestones (README §6.55 authoritative, confirmed line 1594):
      = 83  equities/ETF/options sub-total (README §10): includes crypto-era tests 1–53,
            FX carry 4, multi-asset 5+1, NQ ORB IVB 3, equities 14, options 1
@@ -232,7 +239,7 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
 - Macro overlay, FGVD sentiment (L17), Wikipedia attention (L18)
 - Remaining viable paths: Glassnode stablecoin (~$500/mo) or maker rebate execution
 
-**FX (running total at closure: n=180)**
+**FX (running total at closure: n=181)**
 - G10 carry (FX-1 to FX-4): dead post-GFC (2005-2007 artifact, IC=-0.028 on 2013-2023)
 - CS momentum, TSMOM G10: dead post-Menkhoff (central bank anchoring)
 - London ORB v1 (n=170): best t_HAC=1.01 (GBPUSD), below gate 1.65
@@ -242,6 +249,15 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
   E1 W-shape: 1-4bp gross < 6-7bp retail RT post-BIS 2015 reform. E2 EOM USD conditioned:
   t_HAC≈1.2, N_eff≈35-45 → power collapse (L12). Root: window widening (L23) + TWAP algoisation.
   Dukascopy M5 infra reusable. `Forex/research/archived/strategy_e_fix_flow/POSTMORTEM.md`
+- G1 — Carry G10 conditionnel VXY-vol + Fed-stance (n_reg=180, 0 IC tests): CLOSED at literature stage.
+  L11 3× gate fail (530 vs 540 bps best case, ratio 0.98); Lesson 10 budget épuisé (FX-1→FX-4).
+  G2D pivot: Koijen 2018 carry cross-asset (Tradovate infra réutilisable). `Forex/research/archived/g1_carry_conditional/POSTMORTEM.md`
+- **Strategy F2 — Asian Range Breakout London Open (n=181, 0 backtests):** ARCHIVED at L11 preflight.
+  IJR gate_ratio=0.751 (best case N_calendar=94) < 3.0. Root: IJR formula structurally fails for
+  binary TP/SL strategies (ratio = C/√N, decreasing in N; passes only at N≤6 trades/yr at IC=0.05).
+  Alt binary TP/SL gate: ratio=2.565 < 3.0 at IC=0.05; passes at IC≥0.107 (win_rate≥55.3%) but
+  no numerical lit backing available. See L11b. Dukascopy Pool(4) infra + news_events_2020_2025.csv
+  reusable. `Forex/research/archived/strategy_f2_asian_breakout/POSTMORTEM.md`
 
 **Equities/ETF/Futures**
 - D1 (Failed ORB fade, n_test=154): NQ fade when iter_10 signal fires then reverses 0.5R/30min.
