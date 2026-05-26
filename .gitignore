@@ -63,3 +63,6 @@ Forex/data/cache/
 # Runtime state files (live strategies)
 orders_log.db
 tsmom_state_*.json
+Dataset_NQ_1min_2022_2025.csv
+Crypto/research/archived/*/data/
+Crypto/research/archived/*/*/data/
