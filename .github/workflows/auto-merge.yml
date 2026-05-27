@@ -58,42 +58,40 @@ jobs:
             echo "rebase=conflict" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Enable auto-merge on PR
+      - name: Squash-merge PR with retry
         if: steps.check-label.outputs.skip == 'false' && steps.rebase.outputs.rebase == 'ok'
-        continue-on-error: true
+        id: squash_merge
         uses: actions/github-script@v7
         with:
           script: |
-            const prNodeId = context.payload.pull_request.node_id;
-            try {
-              const result = await github.graphql(`
-                mutation EnableAutoMerge($prId: ID!) {
-                  enablePullRequestAutoMerge(input: {
-                    pullRequestId: $prId,
-                    mergeMethod: SQUASH
-                  }) {
-                    pullRequest {
-                      id
-                      autoMergeRequest { enabledAt }
-                    }
-                  }
+            await new Promise(r => setTimeout(r, 5000));
+            for (let attempt = 1; attempt <= 5; attempt++) {
+              try {
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo:  context.repo.repo,
+                  pull_number: context.payload.pull_request.number,
+                  merge_method: 'squash',
+                });
+                core.notice(`PR merged on attempt ${attempt}`);
+                break;
+              } catch (err) {
+                if (err.status === 409 && attempt < 5) {
+                  core.info(`Attempt ${attempt}: 409 out-of-date, retrying in 3s`);
+                  await new Promise(r => setTimeout(r, 3000));
+                  continue;
+                } else if (err.status === 409) {
+                  throw new Error(`Merge failed after 5 attempts: ${err.message}`);
+                } else {
+                  throw err;
                 }
-              `, { prId: prNodeId });
-              const enabledAt = result.enablePullRequestAutoMerge.pullRequest.autoMergeRequest.enabledAt;
-              core.notice(`Auto-merge enabled at ${enabledAt}`);
-            } catch (err) {
-              if (err.message && err.message.toLowerCase().includes('auto merge is not allowed')) {
-                core.error(
-                  'Auto-merge is disabled at the repo level. ' +
-                  'Enable it at Settings → General → Pull Requests → Allow auto-merge.'
-                );
-              } else {
-                core.error(`enablePullRequestAutoMerge failed: ${err.message}`);
               }
             }
 
       - name: Label conflict PR
-        if: steps.check-label.outputs.skip == 'false' && steps.rebase.outputs.rebase == 'conflict'
+        if: |
+          steps.check-label.outputs.skip == 'false' &&
+          (steps.rebase.outputs.rebase == 'conflict' || steps.squash_merge.outcome == 'failure')
         uses: actions/github-script@v7
         with:
           script: |
@@ -104,10 +102,10 @@ jobs:
               labels: ['manual-review', 'rebase-conflict'],
             });
 
-      - name: Notify via Telegram on conflict
-        if: >
+      - name: Notify via Telegram on failure
+        if: |
           steps.check-label.outputs.skip == 'false' &&
-          steps.rebase.outputs.rebase == 'conflict' &&
+          (steps.rebase.outputs.rebase == 'conflict' || steps.squash_merge.outcome == 'failure') &&
           env.TELEGRAM_BOT_TOKEN != ''
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -115,7 +113,7 @@ jobs:
         run: |
           PR_URL="${{ github.event.pull_request.html_url }}"
           PR_TITLE="${{ github.event.pull_request.title }}"
-          MESSAGE="⚠️ Rebase conflict on claude/* PR%0A${PR_TITLE}%0A${PR_URL}"
+          MESSAGE="⚠️ Auto-merge failed on claude/* PR%0A${PR_TITLE}%0A${PR_URL}"
           curl -s -X POST \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}&text=${MESSAGE}"
