@@ -1,0 +1,79 @@
+{
+  "0d41d73ef0fd9a8361bf4bb1320a2b48": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantpedia",
+    "title": "Quantpedia Premium Update \u2013 May 7th"
+  },
+  "2bfcb664ba12c691b1cbb06e4d0aef82": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_who_profits_from_prediction_markets_20260523.md",
+    "source": "quantpedia",
+    "title": "Who Profits from Prediction Markets?"
+  },
+  "37e869003097832723315d03280dea2e": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_a_century_without_data_reconstructing_emerging_mar_20260523.md",
+    "source": "quantpedia",
+    "title": "A Century Without Data: Reconstructing Emerging Markets Equity History"
+  },
+  "41107d6773cab96c89147030832c28ed": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantpedia",
+    "title": "Quantpedia in April 2026"
+  },
+  "5665bf7d577d078cb0bd18789795bb6e": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_active_dual_momentum_gtaa_strategy_20260523.md",
+    "source": "quantpedia",
+    "title": "Active Dual Momentum GTAA Strategy"
+  },
+  "7be62b8925bae8f2e08ed6c2d3857b49": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_an_index_of_commodity_futures_returns_since_1871_20260523.md",
+    "source": "quantpedia",
+    "title": "An Index of Commodity Futures Returns Since 1871"
+  },
+  "93fc36bf0895e216991b9c8ee6c357bd": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_dual_momentum_allocation_between_physical_gold_and_20260523.md",
+    "source": "quantpedia",
+    "title": "Dual Momentum Allocation Between Physical Gold and Bitcoin (Digital Gold)"
+  },
+  "c6c9ce0eb2204c1ba114c4c1776242ad": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_commodity_portfolio_strategy_for_a_potential_2026__20260523.md",
+    "source": "quantpedia",
+    "title": "Commodity Portfolio Strategy for a Potential 2026 Inflationary and Supply Shock "
+  },
+  "c7f9314c3f174ea44c09bb334217ed75": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "quantpedia_quantpedia_awards_2026_winners_announcement_20260527.md",
+    "source": "quantpedia",
+    "title": "Quantpedia Awards 2026 \u2013 Winners Announcement"
+  },
+  "dc5b7e5b04f4c9f1532cb7ae72d7dccc": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_the_attention_factor_the_link_that_connects_crypto_20260523.md",
+    "source": "quantpedia",
+    "title": "The Attention Factor: The Link That Connects Crypto and Public Equity Markets"
+  },
+  "e0ab08d0088f68e1b24c3003904fe0a1": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantpedia_when_big_gets_small_trading_the_lower_tier_of_larg_20260523.md",
+    "source": "quantpedia",
+    "title": "When Big Gets Small: Trading the Lower Tier of Large Caps and Upper Mid Caps"
+  }
+}

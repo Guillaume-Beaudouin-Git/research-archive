@@ -1,0 +1,443 @@
+{
+  "00baa6b3b3eaefebbbfc5fb37ee067c2": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_monetary_policy_in_the_media_spotlight_sentiments__20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Monetary Policy in the Media Spotlight: Sentiments, Signals, and Economic Impact"
+  },
+  "01ebbf16ae764024a71c4bb4ef0b8110": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Approximate Operator Inversion for Average Effects in Nonlinear Panel Models"
+  },
+  "046f20d5beb0a5b9f4d6476a98c9d1d9": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Higher-Order Neyman Orthogonality in Moment-Condition Models"
+  },
+  "05dab765a4aa142085705ebe90cb2efc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Nonparametric Empirical Bayes Confidence Intervals"
+  },
+  "098f9e454de105d6c7d05a8acf70e599": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Quasi-Bayesian Local Projection Instrumental-Variables Method: Application to Re"
+  },
+  "0c062608aaef7cda62b1771ce335631a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Estimator Averaging of Local Projection and VAR Impulse Responses"
+  },
+  "11fab51034fba921ba277c822a5f4c7a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "critband: A Python Package for Critical Bandwidth Analysis of Multimodal Distrib"
+  },
+  "15a5bfee94ca839de60de3d39b51b7e8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "The Payment Heterogeneity Index: An Integrated Unsupervised Framework for High-V"
+  },
+  "15ddde80a83b18571895c53ccb5b7a3f": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_double_descent_and_benign_overfitting_in_macroecon_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Double Descent and Benign Overfitting in Macroeconomic Forecasting"
+  },
+  "1936ad7f67990445e68c0f69bc7661d2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Causal State-Dependent Local Projections"
+  },
+  "1a87ff5086de4d958134dcf4ac814a46": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_heavy_tails_and_predictive_ability_testing_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Heavy Tails and Predictive Ability Testing"
+  },
+  "1bddba7bed8488a7ef9c2b1a4e35e33b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Vibe Econometrics and the Analysis Contract"
+  },
+  "2801d3b94bdb26540d84b3e7f026e549": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Engineering Economy: A New Paradigm for Escaping the Middle-Income Trap"
+  },
+  "2936f37a8fcbc1fd1bbbe70b91ad6a57": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_the_harmonic_synthetic_control_method_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "The Harmonic Synthetic Control Method"
+  },
+  "2f775cdca8bf99289bf44527793b3594": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "A Practical Guide to Instrumental Variables Methods with Heterogeneous Treatment"
+  },
+  "2face125428f05b9dc192b140df0e753": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Correlated Random Coefficient Distributions in Linear Panel Models"
+  },
+  "2fe3328675b393147f80cb8d6cbab05a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Regret Equals Covariance: A Closed-Form Characterization for Stochastic Optimiza"
+  },
+  "3471a589c6bcd74df5d509a81d6d160a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Analyzing the Impact of Release Season and Production Budget on Movie Revenue an"
+  },
+  "35d9c8a4c63381dba1eed41ab4459fe0": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_quantifying_the_risk_return_tradeoff_in_forecastin_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Quantifying the Risk-Return Tradeoff in Forecasting"
+  },
+  "36eb4464d6ddd04eab21cf2bb4db7a53": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Process Utility in High-Stakes Competition"
+  },
+  "37d225a11b3db128602961c8ab2caae9": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Valuing Winners: When and How to Correct for Selection Bias in Randomized Experi"
+  },
+  "38178e5cd290ab2d801bbce04d6c05be": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_learning_nonlinear_factor_models_with_unknown_mono_20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "Learning Nonlinear Factor Models with Unknown Monotone Links from Incomplete and Noisy Data"
+  },
+  "3fa0ef3cbbbd82b360d9a8e3b6f0cca8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Endogenous Quantile Regression with Measurement Error in Dependent Variable"
+  },
+  "4cd0d4b120c609b6fa52eaf01cf33c33": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_auditing_and_fixing_economic_validity_in_tabular_f_20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "Auditing and Fixing Economic Validity in Tabular Foundation Models for Discrete Choice"
+  },
+  "4e5f586d9d58b80febabfeb7d1be662a": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_multi_regime_markov_switching_models_with_time_var_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Multi-regime Markov-switching models with time-varying transition probabilities:"
+  },
+  "556d6e5a6b188a2e97c8ff3514e12ef8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Inference on Linear Regressions with Two-Way Unobserved Heterogeneity"
+  },
+  "59f598259632c52a6d2da4b32a76a76c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Testing Heteroskedasticity Under Measurement Error"
+  },
+  "5e5cd3f367f15c7010738926fb7ba7ac": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Asymptotic Variance Theory for Trimmed Least Squares and Trimmed Least Absolute "
+  },
+  "67ef13f72739f6aca137aec8558406e2": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_algorithm_or_creative_a_three_arm_experimental_des_20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "Algorithm or Creative? A Three-Arm Experimental Design for Decomposing Algorithmic Bias in Platform A/B Tests"
+  },
+  "6fc4a932144a971c866b8095f3e05c13": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "MSE-Optimal Difference-in-Differences Estimator"
+  },
+  "78515153e4c33915a0adb58c59541ba3": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Identification and Estimation of Semiparametric Multilayered Sample Selection Mo"
+  },
+  "7ddecd9da8608fa4fdeb1ea9f4222c8c": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Fixed-order PCA: Theory for Overestimated Factor Models"
+  },
+  "7f98e5fa94874ee9f59eb8bf601e438e": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Dynamic Evolution of Corporate Emissions Determinants"
+  },
+  "80dec58799f6758f65a4ab7187b61093": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Modeling Commuter Mobility in Stockholm: A Spatial Panel Approach Using Mobile P"
+  },
+  "852a053c9b367431eddf88c36311dbec": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Optimal Contextual Pricing under Agnostic Non-Lipschitz Demand"
+  },
+  "85e5fcf8b2320c489b735b0f6b4117f8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "The Agentic Economy: Humans, AI Agents, Robots, and the Measurable Transition to"
+  },
+  "8bcaad8d280951b27f9c9205fc4333be": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Multi-Dimensional Matching in Market Design"
+  },
+  "9437dc082e2dfae29663266728a68759": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_lgb_a_macroeconomic_forecasting_road_test_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "LGB+: A Macroeconomic Forecasting Road Test"
+  },
+  "960449911f312d54de5b5e94c5ae3268": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_rolling_origin_conformal_prediction_under_local_st_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Rolling-Origin Conformal Prediction under Local Stationarity and Weak Dependence"
+  },
+  "97073b971f1c92fdfc979b476590eec8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Sufficient conditions for a Heuristic Rating Estimation Method application"
+  },
+  "97bfdd8b3fcf3d74f3fd1e9d7c8e22c5": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_saga_a_sequence_adaptive_generative_architecture_f_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "SAGA: A Sequence-Adaptive Generative Architecture for Multi-Horizon Probabilisti"
+  },
+  "a7b1bb279d6e0ef7146f89829f1e622e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Parameterized 4-Qubit EWL Quantum Game Circuits with Dirac-Solow-Swan Hamiltonia"
+  },
+  "acf10c4c55dfcb6fa7539e76ecefd03b": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_partial_identification_of_causal_effects_that_vary_20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "Partial Identification of Causal Effects that Vary by Setting"
+  },
+  "ae176a11bd09be9eb1bb7537147f96c6": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "EnergyAgentBench: Benchmarking LLM Agents on Live Energy Infrastructure Data"
+  },
+  "b9e64e97f2e57be76984d51887646de2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Comment on Scientific production in the era of large language models"
+  },
+  "c5a643b19d6eca5f5528a98457ee92a6": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Partial Identification of the Valuation Distribution in Sequential English Aucti"
+  },
+  "c635c1981a6d9048813d111314efed2d": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_dynamic_consumer_demand_at_large_scale_20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "Dynamic Consumer Demand at Large Scale"
+  },
+  "d0936a1b0298571610a173d7aeb8d502": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Nowcasting Italian Municipal Income with Nightlights: A Deep Learning Approach"
+  },
+  "d5f21cc5504a51d575690048a88a7bb4": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_tweedies_formula_and_score_driven_updating_20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "Tweedie's Formula and Score-Driven Updating"
+  },
+  "d6dbc1b4655b847b77bbad30fab05636": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "A Grid-Rate Condition for Valid Uniform Inference"
+  },
+  "d77b329d3e5dadb5b32f9cb53bf2a254": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Designing Persuasive Experiments"
+  },
+  "dbce7cade93100715c7409cbfcc565c3": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_tweedie_s_formula_variance_functions_and_score_dri_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Tweedie's Formula, Variance Functions, and Score-Driven Updating"
+  },
+  "dcc8bdafd0c089ee9da544c1f9f0c31a": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_a_comparative_multi_hazard_risk_assessment_of_the__20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "A Comparative Multi-Hazard Risk Assessment of the US High-Voltage Transmission Network"
+  },
+  "e26b10da3f258deb9d85db33b0584861": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "arxiv_econ_em_self_normalized_tests_for_multistep_conditional_pr_20260523.md",
+    "source": "arxiv_econ_em",
+    "title": "Self-normalized tests for multistep conditional predictive ability"
+  },
+  "e5afdffcf8675441a589810568ff995f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Demographic Transition and the Dynamics of Income Distribution in Japan: A Bayes"
+  },
+  "edba64b8fb4551baa78fd43b8efda8a6": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "arxiv_econ_em_algometrics_forecasting_under_algorithmic_feedback_20260527.md",
+    "source": "arxiv_econ_em",
+    "title": "Algometrics: Forecasting Under Algorithmic Feedback"
+  },
+  "ee7295ed71b8f87792317db24ac019ba": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Covariate Balancing and Riesz Regression Should Be Guided by the Neyman Orthogon"
+  },
+  "eec3c630e4212596871ba68fa1f29162": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Causal EpiNets: Precision-corrected Bounds on Individual Treatment Effects using"
+  },
+  "f00146ebfc8f97a2e8507c5c2fff0e1f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Nonparametric Bayesian Policy Learning"
+  },
+  "f08e622edcc22e57b353d81c3dd8db69": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Identification and Estimation of Staggered Difference-in-Differences with Networ"
+  },
+  "f3f89ed0c8fa2b18aa879681f54c7cfc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "The fine structure of electricity price volatility"
+  },
+  "f9ab71b35fbfd54ccfc83148818a4395": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Policy Learning with Observational Data: The Case of Hepatitis C Treatment for H"
+  },
+  "fcda208e57d3294cf4ddebd514af7c54": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "arxiv_econ_em",
+    "title": "Scaling the Queue: Reinforcement Learning for Equitable Call Classification Capa"
+  }
+}

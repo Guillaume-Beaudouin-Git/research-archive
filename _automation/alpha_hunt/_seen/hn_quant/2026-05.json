@@ -1,0 +1,674 @@
+{
+  "037c288182738162310f8f6021fd477e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: X1 Carbon or MacBook Pro?"
+  },
+  "04c7529df0f097672cdc68120d3f9da4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "China Tightens Some Trading Restrictions for Domestic and Offshore Investors"
+  },
+  "0579bdad9f58b61a3eaa4feb2308a256": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: How to get started in quant trading?"
+  },
+  "0650e4e0487434aa298db1a48d6b5085": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Is this cloud/local boundary for trading infra reasonable?"
+  },
+  "075939bbdf128351373f2c9f6c8545ed": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Computational finance really works?"
+  },
+  "0a7bfa10a85f25caa74266c38e0543f9": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "How Hard Can Quant Trading Be? I Tried It to Find Out"
+  },
+  "0fbc01fab93954b3484730b6899dba54": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: My first dev project. Feedback?"
+  },
+  "11106caace4a3eeeb45adb9a4464d00c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Starting a small company with partners, what bootstrapping services can I use?"
+  },
+  "168b036d94a1d133328517aa9678a0eb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Quant trading economies of scale"
+  },
+  "1881088ce39e6821fc19f4025f6bd9d0": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "4 steps to learning retail algo trading"
+  },
+  "1889988ae55f49737bd77b8d07a8ddd5": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "hn_quant_launch_hn_promoted_yc_w21_search_and_feed_ranking__20260523.md",
+    "source": "hn_quant",
+    "title": "Launch HN: Promoted (YC W21) - Search and feed ranking for marketplaces"
+  },
+  "1a7a907ba0b605d6ada8e06a1b756cfb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Curated Interviews From Quants, Part 3"
+  },
+  "1cd902674e278b63f4f0cf886c32978f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Quant at Two Sigma Made Unauthorized Changes, Caused $620M in Gains and Losses"
+  },
+  "1f0e7e23e644284eea466c9428a88893": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Is KDB a sane choice for a datalake in 2024?"
+  },
+  "1f87743a63bac053624056fb803691a9": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Transitioning to consulting"
+  },
+  "20ef2fa3f3ccfc12968b4a7391e02313": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Stock trading game that spoofs Bloomberg Terminal"
+  },
+  "21470ad255a1bcb083b0ff384794779f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: I built a quantitative analysis tool to retail traders"
+  },
+  "23fd66321a733536eeff4bfd407e3e93": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Quant Strategies Used by a Wall Street Trader"
+  },
+  "2440497bae70a43ba2957993798c9e70": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Anyone want to start a prop fund?"
+  },
+  "2e448c18cc2c5c3982954ea39b76476c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Quant Trading Platform Quantopian Closes Down"
+  },
+  "2f436c72664033de5b14db2d0c1f098c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Epoch \u2013 build and backtest trading strategies with plain English"
+  },
+  "37d0e0ff1fb3bbf78c641a049c1573f1": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Curated Interviews From Quants: Algorithmic Trading and High Frequency Trading"
+  },
+  "383fb272dd4edb682cae0183d766aafc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Interns Are Making Up to $14,000 a Month at Indian Trading Firms"
+  },
+  "3a3085f425f96839fc798bb1b9e391ec": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Open-source market screener and backtester for algo traders"
+  },
+  "3fe6405d5503eca3061ef7370b350a4f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "How Alex GB earned millions for charity within years by working in quant trading"
+  },
+  "40c02b74445e336dacb0c0a77006ba30": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Algorithmic Trading and High Frequency Trading Interviews (Reddit's IAmA)"
+  },
+  "4162637aae9e3b118a80e467aa9ad84f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Buying vs. Renting a GPU-Based Deep Learning Machine for Quant Trading Research"
+  },
+  "4912c41b9ed842302258326f308124fc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: QuantDinger\u2013An open-source, local AI quantitative trading platform"
+  },
+  "4bceb3046aef0279ef069362d5b6e82a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Why don't quant hedge funds have hardware labs?"
+  },
+  "512806a3bdfe72b75e10bd28c2e22b2d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Trading strategies used in Wall Street"
+  },
+  "52c131e8fa4ea3a98d042ff51a34be95": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Quantopian Plans a Quant Hedge Fund"
+  },
+  "53e98857f46c58776171e80cead03227": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: stack recommendations for a lateral mover (2022)?"
+  },
+  "54f4219e946cb935b4d57ff84316c45c": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: WARN Firehose \u2013 Every US layoff notice in one searchable database"
+  },
+  "582a3d5d32ffec9b2116d0c368331e64": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Epsilab: Convert ideas into quant trading strategies in seconds"
+  },
+  "593d7aa4a9bda87d5808e782700a478b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "How do you reconstruct what a financial system observed at time T, years later?"
+  },
+  "6017f0f8f174d3acb2be58682954e1af": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Systematic Strategies and Quant Trading 2025"
+  },
+  "6188d6c02a263b1340b8e3ba46e43943": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Quant News \u2013 Quantitative trading research, news, blogs, and comments"
+  },
+  "62c354ab2c2365e6d64ddeb9f93ee05a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Quant Trading Tool with LLM (code gen)"
+  },
+  "6393093c72ee9e913b0034fd2c51bfb7": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Quant Trading Comes to Main Street"
+  },
+  "6630507bfb64741e47647354ceda9bca": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "\u201cI quit my job to focus on a highly profitable quantitative trading system\u201d"
+  },
+  "68cdefe5b767578fa8b9aebb1dd7c951": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: 7 months out from CS bachelor's degree. Advice on next steps?"
+  },
+  "69ea0a4a5fc315abdb7933327befd457": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "AI labs are coming for Wall Street's quants"
+  },
+  "6b8245bbf89fb2c845fba9c116b1ca2b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: C++26 Reflection for Python Algo Trading"
+  },
+  "6eeb180d62c0f56dc382576a1046a2c3": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "QuantCup: a quant trading themed programming contest"
+  },
+  "6f125d4024da2f2d9a7ff305e316cc74": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "How Jim Simons\u2019 Trading Strategies Made 66% a Year (Medallion Fund\u2019s Strategies)"
+  },
+  "7072188725b818edbcc08c519eec730b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Any algo/quant traders here? Is there a place for learning in public?"
+  },
+  "714be91675bdb1196a590b9e5de995da": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Curated Interviews From Quants"
+  },
+  "762b3e5d85526f5dffe70b98f8a7fe17": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: A good trading community to discuss infrastructure, strategies and quant"
+  },
+  "76c05653825d450c9bd2ae991249a166": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: How do you know people will like your work?"
+  },
+  "7c8e179528c6357ba72b96c8e14bf47c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Democratizing quant trading"
+  },
+  "869d432311b166de2ce12e7fb369d7f7": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Wall Street's Greatest Gambler: On Jeff Yaas, Quant Trading, ByteDance and Poker"
+  },
+  "8a552a80194d7f30e363128acfcc2497": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: QuantDinger \u2013 A local-first, open-source AI quant trading workspace"
+  },
+  "8ef26f4443becaeb667f6f090008b61a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: How do algotraders backtest"
+  },
+  "923262ffea5773d6fc0d68e061b7122f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Principles used in Wall Street trading algorithms"
+  },
+  "96c455872e50b5efec9be91f96c9e129": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Interview with a (self-taught) crypto quant about HFT trading in crypto"
+  },
+  "9a76be49a846b39079e2ade55aa2d3e4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Democratizing Derivatives Trading"
+  },
+  "a017e3afe912548db26e168e0f974459": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Automation in Quant Trading \u2013 Hudson River Trading [video]"
+  },
+  "a0ceb5a41ec95fc5112e3d2f9687cd12": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Bringing quant trading to a new market: Sports betting"
+  },
+  "a88f7876654e214a7e8dbfa94f6a3b74": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Low-level C++ for Quant/HFT"
+  },
+  "abcecaccc3fabd37474143566d4bf82b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Soviet Refugee Igor Tulchinsky Became a Hedge Fund Billionaire"
+  },
+  "accdb4d906f5e1eba857156d1387dc10": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Shockmarket: Quant trading startup circa 1999."
+  },
+  "b0494942526c2ddba69be83cec50ed93": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Any Day Traders on HN?"
+  },
+  "b230279741510546be6fa059b4657b0d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: RIMC \u2013 An Alpha-Drift Framework for Finite-Speed Learning Markets"
+  },
+  "b4f0c48ff321ce0ccb58b8c827587c15": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Turn \u2013 A compiled systems language for agentic computation"
+  },
+  "b5e39f0a9fca4a49831371545bf371f4": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "SQL access to crypto market data, not just JSON"
+  },
+  "b7c0cc7537d4c5cb8e8ece6b2098524e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: AI trading platform with 34% returns (3 months) \u2013 seeking acquisition"
+  },
+  "b7c48789e47ce46bee16eb71c3435c85": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Does the prestige of a PhD matter for getting a quant position?"
+  },
+  "b84b317f74aa04dd545e5e3c376e7567": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: I Gave Claude Code a Job as a Quant Researcher"
+  },
+  "b8627d810674a78351ea3db08de938dc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Erlang scores a marketing coup"
+  },
+  "b8fd29b0367c398f3d84f26d9f58624d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Kronos \u2013 Type-safe trading framework in Go with terminal UI"
+  },
+  "bbc6da710b3f7b5a72c9b32a789e6626": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask an Algo Dev \u2013 6 HRT quants answer common questions about their role [video]"
+  },
+  "bea592d344253a042abd0ede89164002": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Quant hedge fund trading strategy"
+  },
+  "c377cf8bd5b2d17af80f542f3a44b356": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: StrateQueue- Bridge backtest and live trading with microsecond latency"
+  },
+  "c5e2828bdb819451afacea4781decb7f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: An open-source AI Quant Agent trading live with my own $1000"
+  },
+  "c5f1cb815277f11b53176e4cd40a12df": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Trading Strategy built a data stack for crypto quant trading"
+  },
+  "c9ad997214f0095f830fa1f8c6db90a9": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: What career path should I take as a student about to graduate?"
+  },
+  "cac009d5d7158679913bac8a9285d29f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: FishSonar \u2013 Real-Time Crypto \"Fish\" Detector for Binance"
+  },
+  "cd435b3d698a30c35834220f15c00693": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Strix \u2013 Drone swarm orchestration using quant trading algorithms (Rust)"
+  },
+  "cd98911b2423e4d6d0f723c29ee88787": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: I built a simple quant scanner for mean-reversion setups (ZcoreAI)"
+  },
+  "d51d503bcb05e751db601f51f3d0793e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Rich Formula: Quant Trading (2015)"
+  },
+  "d65b4cd9f808b9a65481843cab756d5f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Run your own Hedge Fund in a Spreadsheet"
+  },
+  "d6b0afc0c7ddacae35be3a90affe719b": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Top Quant/Algotrading Githubs Automated"
+  },
+  "e0aa6e2d201e3ece4afb89a3e832e26e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Stock trading advisor with technical analysis, Quant invest and GenAI"
+  },
+  "e103336f598c21337822bd13b4c014c2": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Any developer who transitioned from Tech to Quant Trading?"
+  },
+  "e2fa9c9e12e5657b603c64916baec21a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "The Sci-Fi Quants Dominating Europe's Most Volatile Power Market"
+  },
+  "e863bb6e75e1c920c1aa08b076aac244": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Medallion fund: a remarkably successful quant trading firm built by scientists"
+  },
+  "e9d519f058e36474f1d1ba9bfe8880e8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: What are the best resources to learn quant trading?"
+  },
+  "ea0e0bc2b04e9eecf995e8e09fb0f87b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: iblncr, a cli tool to rebalance your Interactive Brokers portfolio"
+  },
+  "ea2d30e525ca65e3a76ee74ddf791dbf": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Math and Computer Wizards Now Billionaires Thanks to Quant Trading"
+  },
+  "ecf6030f1f25b6bbb49f402960536aca": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Goldman-Sachs using packet sniffing to game market?"
+  },
+  "ee28b92d849786616e20f65dbd325c6a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Building a real time quant trading engine on gCloud Dataflow and Apache Beam"
+  },
+  "f137db89807ec3dfb41c82e254d0abc1": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Ask HN: Are there any firms for UHNWI's that code bespoke quant trading algos?"
+  },
+  "f1c5121f08971d036f29f60aaaf010df": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: CryptoBob \u2013 a market intelligence API for crypto trading systems"
+  },
+  "f22f972c79709494282879b822b67c8b": {
+    "decision": "rejected_L2_not_accessible",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Show HN: Quant, the AI stock trading analyst"
+  },
+  "f66559ab21d21dcfc64eff481da589d0": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Chicago-Based Radix Trading Is One of Quant Firms Named in CFTC Binance Suit"
+  },
+  "f85e3acfd7714248e9809226fce56343": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_quant",
+    "title": "Billionaire Quant Is Turbocharging His Trading Models with GenAI"
+  }
+}

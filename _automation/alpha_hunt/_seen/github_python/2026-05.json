@@ -1,0 +1,429 @@
+{
+  "0e47a8c41a70ae2ccd6022fca8881bc7": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "anthropics/skills"
+  },
+  "10678ed899d72d7a7530164a1f132bdc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "Aider-AI/aider"
+  },
+  "13871eaa927748cd96a1771a65bd6dad": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "donnemartin/system-design-primer"
+  },
+  "223fc828eeac23105536b9c4dfde65cf": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "vllm-project/vllm"
+  },
+  "282451bebe8ed92b4f317435242f5f1c": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "Fincept-Corporation/FinceptTerminal"
+  },
+  "2a9a6797e4df34c60c0b3a0ad0615808": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "OpenPipe/ART"
+  },
+  "2f3f6869c9c3a9ab51520f58be6f1f24": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "yt-dlp/yt-dlp"
+  },
+  "326cd2af52e910c0c6055bbe1f80c36f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "st-tech/ppf-contact-solver"
+  },
+  "3927c026e1ffd48cba87f1a521862cb8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "mukul975/Anthropic-Cybersecurity-Skills"
+  },
+  "3f072f75325f387f04421d1c9f61af8a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "onyx-dot-app/onyx"
+  },
+  "437316fdf9234e748d7721bfcab74e96": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "NousResearch/hermes-agent"
+  },
+  "43ff83535bb05ec80757e6b6181bee4d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "Alishahryar1/free-claude-code"
+  },
+  "47655ccec7fd5e574e29cffda987b7c8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "elebumm/RedditVideoMakerBot"
+  },
+  "49416d56565905ceccc7df2498088f82": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "dograh-hq/dograh"
+  },
+  "5b903183701a09dbb4a92898ce77c774": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "666ghj/MiroFish"
+  },
+  "5d1e10fa0212ab6dbda40bc3ed459455": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "odoo/odoo"
+  },
+  "5d3598ae25c9e8e5a569ade0d38f8120": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "Datalux/Osintgram"
+  },
+  "5f888eb6d321099b6c7831119fcc69aa": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "bleachbit/bleachbit"
+  },
+  "60c8f3ddb9e00530de44fb636985bce2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "NVIDIA-NeMo/Megatron-Bridge"
+  },
+  "64b557df7aad20e238d0929288db290b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "modelscope/FunASR"
+  },
+  "65113234f9df6a2daaf25badc9f00323": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "unclecode/crawl4ai"
+  },
+  "6adce5e5f2f0c714dc49d55ba36731ea": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "francescopace/espectre"
+  },
+  "710ef576507560b17bbdb462022e0358": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "anthropics/claude-plugins-official"
+  },
+  "71321e6c34d4ef7f3cac320a7f0666eb": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "Fincept-Corporation/FinceptTerminal"
+  },
+  "742a50042b6cb31c1792ea279614c698": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "NVlabs/LongLive"
+  },
+  "7ab9d5b35661f840a9856a1157b9f4bd": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "crewAIInc/crewAI"
+  },
+  "7ae09290790a8cd88c78895da4a5b176": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "NVlabs/LongLive"
+  },
+  "7b4f55edcd7690e5f50390577d4f9e48": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "freqtrade/freqtrade-strategies"
+  },
+  "7c25233a5fb64a797673439a05e2668f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "Alishahryar1/free-claude-code"
+  },
+  "814044ba434f6bafbf4477b82b10c707": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "google-research/timesfm"
+  },
+  "8450678afa75f949cb73f0eff0d27287": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "yt-dlp/yt-dlp"
+  },
+  "85388ef6197f8f12b99a65b208b78196": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "cheahjs/free-llm-api-resources"
+  },
+  "891732c6812486f9cd19669688c02a87": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "anthropics/claude-plugins-official"
+  },
+  "8cedd7da9f71a3004ecac59dfdb88ce4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "odoo/odoo"
+  },
+  "8cf96ff55f4ddc9deed7ce2c88ee116d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "rohitg00/ai-engineering-from-scratch"
+  },
+  "94f8a84e7a52eb877ab157b801641e16": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "harvard-edge/cs249r_book"
+  },
+  "968fd8af92b944eccf558de03d7c6e7e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "databricks-solutions/ai-dev-kit"
+  },
+  "98937e6d277a5249131243c6a6ef55ba": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "pydantic/pydantic-ai"
+  },
+  "99f49db2c71b74aa023f993b00409456": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "NousResearch/hermes-agent"
+  },
+  "9e0eb74378790a5e5b231fcf193a605f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "sherlock-project/sherlock"
+  },
+  "a03e28f36a42b94ed81a988bf0abcbca": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "plastic-labs/honcho"
+  },
+  "a19783a3597ae86d44acb4f640beabb5": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "crewAIInc/crewAI"
+  },
+  "a4819608e9abeba1371eab1fadfeb244": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "rohitg00/ai-engineering-from-scratch"
+  },
+  "a8eacb9e66c9b7f3e0d046804d3565c3": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "OpenPipe/ART"
+  },
+  "b63be7e480160c54e63ffa3f42200977": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "mukul975/Anthropic-Cybersecurity-Skills"
+  },
+  "b6e6535a1d2366b2f4f11b0c82885c4b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "elder-plinius/OBLITERATUS"
+  },
+  "b83433b0a4534d9d8d436b360922621c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "plastic-labs/honcho"
+  },
+  "bde9fa2c80967065d608f25f4e82b441": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "anthropics/knowledge-work-plugins"
+  },
+  "c6959c2237d1878a1dce00ff999d8e5c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "OpenBB-finance/OpenBB"
+  },
+  "c76bee6fa8ea24a37dd495ad57fd521e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "sansan0/TrendRadar"
+  },
+  "cf87f0f0c08f11b6ed9cbe2a31cd29ce": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "zai-org/GLM-OCR"
+  },
+  "cfe23531fb13e4e4210561a4c99e766f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "shareAI-lab/learn-claude-code"
+  },
+  "d803bb6bb942618734f9db39b9ea551b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "pydantic/pydantic-ai"
+  },
+  "e07ce054df74ab5fb7bd486f3c059a7c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "shiyu-coder/Kronos"
+  },
+  "e4da41f1d5f96bff5ffbfac852c6d16b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "agentscope-ai/agentscope"
+  },
+  "f2697633a41e0993d462b5d220333536": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "p-e-w/heretic"
+  },
+  "f543b87352fe2ba4e11ee78db45222c2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "databricks-solutions/ai-dev-kit"
+  },
+  "f5f8e7810f5be13517567fa6cdcd5082": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "D4Vinci/Scrapling"
+  },
+  "f6ac07d0482f00ad5153a2578425542c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "paperless-ngx/paperless-ngx"
+  },
+  "f7e1e43e7cb9ffc76f4175fd23e6361b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "microsoft/agent-governance-toolkit"
+  },
+  "fee25c7e341d7a6e1ae837364f869cf2": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "github_python",
+    "title": "google-research/timesfm"
+  }
+}

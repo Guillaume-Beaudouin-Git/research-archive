@@ -1,0 +1,107 @@
+{
+  "383ca45d0af76b02eea517bbe4f0dfbc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantinsti",
+    "title": "QuantInsti in 2026: A Summary of our Contributions, Collaborations, Events & Upd"
+  },
+  "3edd0aa9e86d826804ebb66fc6d74fe1": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_integrating_ai_and_quantitative_trading_20260523.md",
+    "source": "quantinsti",
+    "title": "Integrating AI and Quantitative Trading"
+  },
+  "4dd1a3ca8ab99b22da993565c1f0fd4f": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_statistical_arbitrage_using_cointegrated_stock_pai_20260523.md",
+    "source": "quantinsti",
+    "title": "Statistical Arbitrage Using Cointegrated Stock Pairs in Indian Equity Market (20"
+  },
+  "78473e8d4218cd00021363d86e8c7dfe": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantinsti",
+    "title": "QuantInsti in 2025: A Summary of our Contributions, Collaborations, Events & Upd"
+  },
+  "7c16224e0c5ae706bdded8ee04a5a467": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_retrospective_simulation_for_trading_20260523.md",
+    "source": "quantinsti",
+    "title": "Retrospective Simulation for Trading"
+  },
+  "9584dbe8c4ce0d86dedc5b50e24748c0": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantinsti",
+    "title": "Simple and Multiple Linear Regression in Algorithmic Trading: A Practical Guide "
+  },
+  "9a892257fa2453b7f7378eba9c114a77": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_building_a_robust_portfolio_with_risk_parity_20260523.md",
+    "source": "quantinsti",
+    "title": "Building a Robust Portfolio with Risk Parity"
+  },
+  "a2739885f799eacf65281cfc8c000d2b": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantinsti",
+    "title": "Beginner's Guide to Machine Learning Classification in Python"
+  },
+  "aeeb40963afffc23cbb593639828a349": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantinsti",
+    "title": "Bayesian Statistics in Finance: A Trader's Guide to Smarter Decisions"
+  },
+  "bba905a83f36e96ebf02f837ba923b21": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_donchian_channels_how_to_turn_a_simple_idea_into_w_20260523.md",
+    "source": "quantinsti",
+    "title": "Donchian Channels: How to Turn a Simple Idea Into Working Strategies"
+  },
+  "c715ca7058da1ed2ef4311103e3b0c9f": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_market_regime_using_hidden_markov_model_20260523.md",
+    "source": "quantinsti",
+    "title": "Market Regime using Hidden Markov Model"
+  },
+  "d727feaac7d1b9fcfd633ad79ed6a7f0": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_epat_project_dynamic_capital_allocation_using_mark_20260523.md",
+    "source": "quantinsti",
+    "title": "[EPAT Project] Dynamic Capital Allocation using Market Breadth & Random Forest: "
+  },
+  "e349eb48ea1846ff2c44d64e756f2a5b": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantinsti_beyond_the_hype_what_independent_events_really_mea_20260523.md",
+    "source": "quantinsti",
+    "title": "Beyond the Hype: What \"Independent Events\" REALLY Mean for Your Trades"
+  },
+  "e9c533e4f9107ff54db50f87ea294319": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantinsti",
+    "title": "The Data Infrastructure Behind Algorithmic Trading: Understanding Financial Data"
+  },
+  "eceef3dad44cac30d57999a6a2712244": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantinsti",
+    "title": "Gold Price Prediction: Step By Step Guide Using Python Machine Learning"
+  }
+}
