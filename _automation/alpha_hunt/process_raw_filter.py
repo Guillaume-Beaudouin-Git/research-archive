@@ -1,9 +1,10 @@
 """
 Alpha Hunt – raw filter pipeline (filtering only, no md generation).
 
-Parses all _raw/* files, applies L0/L1/L2 filters, dedupes via _seen.json.
-For each accepted item, writes _staging/<hash>.json containing the raw data +
-filter results. The LLM in the routine takes over for markdown generation.
+Parses all _raw/* files, applies L0/L1/L2 filters, dedupes via
+_seen/<source>/<YYYY-MM>.json. For each accepted item, writes
+_staging/<hash>.json containing the raw data + filter results.
+The LLM in the routine takes over for markdown generation.
 """
 
 import json, glob, hashlib, re, os, sys
@@ -15,7 +16,7 @@ import urllib.error
 
 ROOT_DIR    = os.path.dirname(__file__)
 RAW_DIR     = os.path.join(ROOT_DIR, "_raw")
-SEEN_FILE   = os.path.join(ROOT_DIR, "_seen.json")
+SEEN_DIR    = os.path.join(ROOT_DIR, "_seen")
 STAGING_DIR = os.path.join(ROOT_DIR, "_staging")
 NOW         = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 NOW_SLUG    = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M")
@@ -36,15 +37,59 @@ def clean_html(s: str) -> str:
     s = re.sub(r"<[^>]+>", " ", s)
     return re.sub(r"\s+", " ", unescape(s)).strip()
 
-# ── _seen.json ────────────────────────────────────────────────────────────────
+# ── _seen/<source>/<YYYY-MM>.json ─────────────────────────────────────────────
 
-def load_seen():
-    if os.path.exists(SEEN_FILE):
-        with open(SEEN_FILE) as f:
-            d = json.load(f)
-        d.setdefault("items_seen", {})
-        return d
-    return {"last_run": None, "items_seen": {}}
+def load_seen() -> dict:
+    """Merge all _seen/<source>/<YYYY-MM>.json files into a single items_seen dict."""
+    items_seen: dict = {}
+    if not os.path.isdir(SEEN_DIR):
+        return {"last_run": None, "items_seen": items_seen}
+    for source_dir in sorted(os.scandir(SEEN_DIR), key=lambda e: e.name):
+        if not source_dir.is_dir():
+            continue
+        for entry in sorted(os.scandir(source_dir.path), key=lambda e: e.name):
+            if not entry.name.endswith(".json"):
+                continue
+            try:
+                with open(entry.path) as f:
+                    chunk: dict = json.load(f)
+                items_seen.update(chunk)
+            except Exception as e:
+                print(f"WARN load_seen {entry.path}: {e}", file=sys.stderr)
+    return {"last_run": None, "items_seen": items_seen}
+
+
+def save_seen_partitioned(items_seen: dict) -> None:
+    """Write items_seen back into _seen/<source>/<YYYY-MM>.json buckets.
+
+    Each entry is bucketed by (source, first_seen[:7]).  We do a
+    read-modify-write per file so concurrent routines don't clobber each
+    other, then replace atomically with os.replace.
+    """
+    buckets: dict[tuple[str, str], dict] = {}
+    for h, v in items_seen.items():
+        source = v.get("source", "unknown")
+        raw_date = v.get("first_seen", "")
+        ym = raw_date[:7] if len(raw_date) >= 7 else datetime.now(timezone.utc).strftime("%Y-%m")
+        buckets.setdefault((source, ym), {})[h] = v
+
+    for (source, ym), updates in buckets.items():
+        bucket_dir = os.path.join(SEEN_DIR, source)
+        os.makedirs(bucket_dir, exist_ok=True)
+        fpath = os.path.join(bucket_dir, f"{ym}.json")
+        # Read current on-disk state (another routine may have written since load)
+        existing: dict = {}
+        if os.path.exists(fpath):
+            try:
+                with open(fpath) as f:
+                    existing = json.load(f)
+            except Exception as e:
+                print(f"WARN save_seen read {fpath}: {e}", file=sys.stderr)
+        existing.update(updates)  # our updates win on collision
+        tmp = fpath + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(dict(sorted(existing.items())), f, indent=2, ensure_ascii=False)
+        os.replace(tmp, fpath)
 
 # ── parsers ───────────────────────────────────────────────────────────────────
 
@@ -319,19 +364,6 @@ def main():
     seen = load_seen()
     items_seen = seen.get("items_seen", {})
 
-    # Purge entries > 30 days
-    cutoff = datetime.now(timezone.utc).replace(tzinfo=None)
-    to_delete = []
-    for h, v in items_seen.items():
-        try:
-            first = datetime.strptime(v.get("first_seen", "2000-01-01 00:00"), "%Y-%m-%d %H:%M")
-            if (cutoff - first).days > 30:
-                to_delete.append(h)
-        except Exception:
-            pass
-    for h in to_delete:
-        del items_seen[h]
-
     # Collect items by source
     all_items = []
     source_stats = {}
@@ -410,11 +442,8 @@ def main():
             "promising_file": None,  # to be filled by LLM after md generation
         }
 
-    # Save _seen.json
-    seen["last_run"] = NOW
-    seen["items_seen"] = items_seen
-    with open(SEEN_FILE, "w") as f:
-        json.dump(seen, f, indent=2)
+    # Save partitioned _seen/<source>/<YYYY-MM>.json
+    save_seen_partitioned(items_seen)
 
     # Save stats
     stats_summary = {
