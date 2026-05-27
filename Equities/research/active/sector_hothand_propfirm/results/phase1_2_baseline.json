@@ -1,0 +1,31 @@
+{
+  "run_date": "2026-05-28",
+  "correction_vs_phase1": "no_timeout_absorbing_barriers_only",
+  "block_size": 78,
+  "analytical_p_pass_p1": 0.965,
+  "analytical_p_pass_p2": 0.9705,
+  "analytical_p_pass_both": 0.9365,
+  "min_days_p1": 0,
+  "min_days_p2": 0,
+  "safety_hits": 0,
+  "p_pass_p1_only": 0.9791,
+  "p_pass_p2_given_p1": 0.9825,
+  "p_pass_both": 0.962,
+  "ci95": [
+    0.9583,
+    0.9657
+  ],
+  "median_days_p1": 77,
+  "median_days_p2": 36,
+  "median_days_total": 129,
+  "fail_modes": {
+    "daily_p1": 0.0,
+    "maxloss_p1": 2.09,
+    "daily_p2": 0.0,
+    "maxloss_p2": 1.747
+  },
+  "sharpe_net_phase1": 2.0455,
+  "sharpe_deflated_DSR_phase1": 2.0116,
+  "t_stat_alpha_hac_phase1": 10.3766,
+  "wf_folds_pass_phase1": "5/5"
+}
