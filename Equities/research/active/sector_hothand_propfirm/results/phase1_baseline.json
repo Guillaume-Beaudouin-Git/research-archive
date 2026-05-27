@@ -1,0 +1,80 @@
+{
+  "run_date": "2026-05-28",
+  "backtest_start": "2002-01-01",
+  "backtest_end": "2026-05-27",
+  "T_days": 6138,
+  "sharpe_gross": 2.5193,
+  "sharpe_net": 2.0455,
+  "sharpe_deflated_DSR": 2.0116,
+  "max_drawdown": -0.1329,
+  "alpha_ann": 0.2523,
+  "t_stat_alpha_hac": 10.3766,
+  "hac_lag": 6,
+  "amtp_trials": 6,
+  "amtp_p_bonferroni": 0.0,
+  "sharpe_ci95_lo": 1.6383,
+  "sharpe_ci95_hi": 2.4553,
+  "wf_folds_pass": "5/5",
+  "wf_sharpe_oos": 2.3709,
+  "wf_fold_details": [
+    {
+      "fold": 5,
+      "train_end": "2016-05-25",
+      "test_start": "2016-05-26",
+      "test_end": "2018-05-25",
+      "sharpe_oos": 1.826,
+      "mdd_oos": -0.0848,
+      "t_hac": 2.609,
+      "pass": true
+    },
+    {
+      "fold": 4,
+      "train_end": "2018-05-25",
+      "test_start": "2018-05-29",
+      "test_end": "2020-05-26",
+      "sharpe_oos": 1.06,
+      "mdd_oos": -0.1329,
+      "t_hac": 1.381,
+      "pass": true
+    },
+    {
+      "fold": 3,
+      "train_end": "2020-05-25",
+      "test_start": "2020-05-26",
+      "test_end": "2022-05-26",
+      "sharpe_oos": 3.98,
+      "mdd_oos": -0.0841,
+      "t_hac": 5.648,
+      "pass": true
+    },
+    {
+      "fold": 2,
+      "train_end": "2022-05-25",
+      "test_start": "2022-05-26",
+      "test_end": "2024-05-24",
+      "sharpe_oos": 2.666,
+      "mdd_oos": -0.1067,
+      "t_hac": 3.572,
+      "pass": true
+    },
+    {
+      "fold": 1,
+      "train_end": "2024-05-25",
+      "test_start": "2024-05-28",
+      "test_end": "2026-05-26",
+      "sharpe_oos": 2.362,
+      "mdd_oos": -0.0842,
+      "t_hac": 3.201,
+      "pass": true
+    }
+  ],
+  "p_pass_p1": 0.0729,
+  "p_pass_p2_given_p1": 0.7051,
+  "p_pass_both": 0.0514,
+  "p_pass_ci95_lo": 0.0471,
+  "p_pass_ci95_hi": 0.0557,
+  "median_days_pass": 51,
+  "fail_daily_pct": 0.0,
+  "fail_maxloss_pct": 0.11,
+  "fail_timeout_pct": 92.6
+}
