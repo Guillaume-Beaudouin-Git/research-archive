@@ -1,0 +1,101 @@
+name: Auto-merge claude/* PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+
+    # Only run for claude/* branches
+    if: startsWith(github.head_ref, 'claude/')
+
+    steps:
+      - name: Skip if do-not-merge label is present
+        id: check-label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = context.payload.pull_request.labels.map(l => l.name);
+            if (labels.includes('do-not-merge')) {
+              core.setOutput('skip', 'true');
+              core.notice('Skipping: do-not-merge label present');
+            } else {
+              core.setOutput('skip', 'false');
+            }
+
+      - name: Checkout PR head
+        if: steps.check-label.outputs.skip == 'false'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git identity
+        if: steps.check-label.outputs.skip == 'false'
+        run: |
+          git config user.name  "claude-bot"
+          git config user.email "claude-bot@users.noreply.github.com"
+
+      - name: Rebase on origin/main
+        if: steps.check-label.outputs.skip == 'false'
+        id: rebase
+        continue-on-error: true
+        run: |
+          git fetch origin main
+          if git rebase origin/main; then
+            git push --force-with-lease origin HEAD:${{ github.head_ref }}
+            echo "rebase=ok" >> "$GITHUB_OUTPUT"
+          else
+            git rebase --abort
+            echo "rebase=conflict" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Squash-merge PR
+        if: steps.check-label.outputs.skip == 'false' && steps.rebase.outputs.rebase == 'ok'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              merge_method: 'squash',
+              commit_title: context.payload.pull_request.title,
+              commit_message: `Auto-merged from ${context.head_ref}\n\nPR #${context.payload.pull_request.number}`,
+            });
+
+      - name: Label conflict PR
+        if: steps.check-label.outputs.skip == 'false' && steps.rebase.outputs.rebase == 'conflict'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              labels: ['manual-review', 'rebase-conflict'],
+            });
+
+      - name: Notify via Telegram on conflict
+        if: >
+          steps.check-label.outputs.skip == 'false' &&
+          steps.rebase.outputs.rebase == 'conflict' &&
+          env.TELEGRAM_BOT_TOKEN != ''
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          PR_URL="${{ github.event.pull_request.html_url }}"
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          MESSAGE="⚠️ Rebase conflict on claude/* PR%0A${PR_TITLE}%0A${PR_URL}"
+          curl -s -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}&text=${MESSAGE}"
