@@ -1,0 +1,800 @@
+{
+  "0296c2a5713c9412fbbd3cca94769bde": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_i_paper_traded_22_popular_crypto_strategies_on_rea_20260523.md",
+    "source": "quantocracy",
+    "title": "I paper-traded 22 popular crypto strategies on real fees for 10 days. Here\u2019s the"
+  },
+  "02e64311ff90048dcebb5de38004fb3d": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_backtests_lie_building_a_stress_test_framework_for_20260523.md",
+    "source": "quantocracy",
+    "title": "Backtests Lie: Building a Stress-Test Framework for ML Trading Signals [Vertox Q"
+  },
+  "048f3fb74d22786010d1992cd973a395": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/24/2026"
+  },
+  "04ffe6f2b88f373f414541a9370656b0": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "An Index of Commodity Futures Returns Since 1871 [Quantpedia]"
+  },
+  "0916de776b2f6c8d24c3040b5be14dd0": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_how_to_manage_an_intraday_trend_trade_concretum_gr_20260523.md",
+    "source": "quantocracy",
+    "title": "How to Manage an Intraday Trend Trade [Concretum Group]"
+  },
+  "09cdd21bc496d88eb52fdea0927b9d36": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Almost Explicit Implied Volatility [Chase the Devil]"
+  },
+  "0ab0632748cead0e979e0b72d208dd3b": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_dual_momentum_allocation_between_physical_gold_and_20260523.md",
+    "source": "quantocracy",
+    "title": "Dual Momentum Allocation Between Physical Gold and Bitcoin (Digital Gold) [Quant"
+  },
+  "0dcbb11852bcef60eb56e8cbd60755dd": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Deep Learning for Volatility Surface Repair [Jonathan Kinlay]"
+  },
+  "0e011def39d00d2a573e4f13a0d9ce2b": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "How to Break a Financial Sentiment Model Without Changing What It Means [Tommi J"
+  },
+  "1550ea7d51d97fc62488f00df9f7dc89": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "A Day Is Now What a Decade Used to Be [Tommi Johnsen]"
+  },
+  "159f5a88655e3dcb0bd1dcb8604913cb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/17/2026"
+  },
+  "189c9887603cdee7ff8e00c13122603a": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_surfing_the_equity_curve_using_trend_following_to__20260523.md",
+    "source": "quantocracy",
+    "title": "\u201cSurfing the Equity Curve\u201d: Using Trend-Following to Switch Strategies On and Of"
+  },
+  "1ad1563744a35852f73aea783260f5eb": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "A Century Without Data: Reconstructing Emerging Markets Equity History [Quantped"
+  },
+  "1bd792dca1618c68237858e44b6047bf": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_where_risk_parity_hurts_a_58_year_audit_of_tails_a_20260523.md",
+    "source": "quantocracy",
+    "title": "Where Risk Parity Hurts: A 58-Year Audit of Tails and Drawdowns [Beyond Passive]"
+  },
+  "1e2decc458a5ae17e43f6d75af2461fa": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_i_paper_traded_22_popular_crypto_strategies_on_rea_20260523.md",
+    "source": "quantocracy",
+    "title": "I paper-traded 22 popular crypto strategies on real fees for 10 days. Here\u2019s the"
+  },
+  "22461b6ccc7ef67c9d1c6e7c9c96d029": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_tradelock_new_site_from_ex_quantocracy_contributor_20260523.md",
+    "source": "quantocracy",
+    "title": "TradeLock: New site from ex-Quantocracy contributor Sanzprophet \u2013 build independ"
+  },
+  "24e557673c9bf73276caf65477e1c51c": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523.md",
+    "source": "quantocracy",
+    "title": "Why Momentum Investing Has Been Struggling   And What Volatility Has to Do With "
+  },
+  "29a0db9da65406ceab4d9e84ebc4223d": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_bad_month_for_your_strategy_should_you_change_it_a_20260523.md",
+    "source": "quantocracy",
+    "title": "Bad Month for Your Strategy? Should You Change It? [Alvarez Quant Trading]"
+  },
+  "2a362d8c6fd041ec11f5678472ee9516": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/04/2026"
+  },
+  "2f730d603f7731dcbfa41d336f5cb813": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "quantocracy_when_everyone_trades_the_same_factor_playbook_alph_20260527.md",
+    "source": "quantocracy",
+    "title": "When Everyone Trades the Same Factor Playbook [Alpha Architect]"
+  },
+  "2f75f842cdfa63ccd971496f7ffcc407": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "The 100% Club. 2000 Tech vs 2026 AI [Alvarez Quant Trading]"
+  },
+  "32bfe57ddbe11db6a8a5b4dde3f12644": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_an_index_of_commodity_futures_returns_since_1871_q_20260523.md",
+    "source": "quantocracy",
+    "title": "An Index of Commodity Futures Returns Since 1871 [Quantpedia]"
+  },
+  "376fdfdd02ffb1aa1e3ed7046387fb05": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_overfitting_and_parameter_selection_in_trading_str_20260523.md",
+    "source": "quantocracy",
+    "title": "Overfitting and Parameter Selection in Trading Strategies [Relative Value Arbitr"
+  },
+  "39fc3e9cafe84808d04165b7f5e6be65": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_volatility_risk_premium_and_clustering_intraday_vs_20260523.md",
+    "source": "quantocracy",
+    "title": "Volatility Risk Premium and Clustering: Intraday vs Overnight Dynamics [Relative"
+  },
+  "3a10fb1dbe2988a41bb9b5364ae87ad5": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_the_currency_you_didn_t_choose_beyond_passive_20260523.md",
+    "source": "quantocracy",
+    "title": "The Currency You Didn   t Choose [Beyond Passive]"
+  },
+  "3a9cffd2c7391f59d815c8554c379f25": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Unsupervised Learning for Trading: K-Means, PCA & Python Examples [Quant Insti]"
+  },
+  "405b98b32f8638618bc3ced6c5f9dcef": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Nine Pounds of Ore for an Ounce of Gold [Tommi Johnsen]"
+  },
+  "4082f67abafe2011dc775a72f07d6053": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Designing State-of-the-Art Logging in Python [Hanguk Quant]"
+  },
+  "409a727a5e920fa45385bd498d6992a2": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_an_active_hedge_for_the_eur_investor_beyond_passiv_20260523.md",
+    "source": "quantocracy",
+    "title": "An Active Hedge for the EUR Investor [Beyond Passive]"
+  },
+  "422f8602b0ea1df635597bc681bdce3b": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_martyn_tinsley_beyond_the_backtest_algorithmic_adv_20260523.md",
+    "source": "quantocracy",
+    "title": "Martyn Tinsley \u2013 Beyond the BackTest [Algorithmic Advantage]"
+  },
+  "439a832f8a22de37af3dac1e45ae2698": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_an_active_hedge_for_the_eur_investor_beyond_passiv_20260523.md",
+    "source": "quantocracy",
+    "title": "An Active Hedge for the EUR Investor [Beyond Passive]"
+  },
+  "45b4fc068e5882da8a0a683e1038a2e8": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Research Review  | 24 April 2026 |  Prediction Markets [Capital Spectator]"
+  },
+  "47aa2d2f6047da04d80aa828b823adba": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_volatility_derivatives_and_vix_market_dynamics_rel_20260523.md",
+    "source": "quantocracy",
+    "title": "Volatility Derivatives and VIX Market Dynamics [Relative Value Arbitrage]"
+  },
+  "486f6451433d21e43defddbf3a6638c3": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Agentic Workflows for Alpha Research [Jonathan Kinlay]"
+  },
+  "4fefce547a99523b9a52776a7679bc04": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_volatility_risk_premium_and_clustering_intraday_vs_20260523.md",
+    "source": "quantocracy",
+    "title": "Volatility Risk Premium and Clustering: Intraday vs Overnight Dynamics [Relative"
+  },
+  "54d575139d94dc282f26f24c8087b07a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/10/2026"
+  },
+  "54f0e80330c1a4fe04ba578e4aa7df4a": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "The Attention Factor: The Link That Connects Crypto and Public Equity Markets [Q"
+  },
+  "596e08d5517a4c7659d98bbec703a2ce": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Reinforcement Learning for Optimal Execution [Jonathan Kinlay]"
+  },
+  "5f17d3d9d3023cd2252f20b34bb10b3d": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_when_big_gets_small_trading_the_lower_tier_of_larg_20260523.md",
+    "source": "quantocracy",
+    "title": "When Big Gets Small: Trading the Lower Tier of Large Caps and Upper Mid Caps [Qu"
+  },
+  "5f2d47a0c6b023590df14513122a3653": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_backtests_lie_building_a_stress_test_framework_for_20260523.md",
+    "source": "quantocracy",
+    "title": "Backtests Lie: Building a Stress-Test Framework for ML Trading Signals [Vertox Q"
+  },
+  "61e11a2ee8345030261357fc0f20ec11": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Designing State-of-the-Art Logging in Python [Hanguk Quant]"
+  },
+  "63b6c9aedd66365df5de7fbdba60dc38": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_for_the_love_of_the_game_robot_wealth_20260523.md",
+    "source": "quantocracy",
+    "title": "For The Love of The Game [Robot Wealth]"
+  },
+  "6487d86b170a6195090e570f02f1395b": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_selecting_taa_part1_based_on_recent_performance_20260523.md",
+    "source": "quantocracy",
+    "title": "Selecting TAA Strategies Based on Recent Performance (Part 1) [Allocate Smartly]"
+  },
+  "65833a70cb28d8985113f6ee0bb8e84d": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "The Effective Number of Tested Strategies [Vertox Quant]"
+  },
+  "6598e62b9a901c23fe4d51d0bde4f0b6": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_how_to_break_a_financial_sentiment_model_without_c_20260523.md",
+    "source": "quantocracy",
+    "title": "How to Break a Financial Sentiment Model Without Changing What It Means [Tommi J"
+  },
+  "6625578d7c4eb4221af01be7c1a77d52": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_the_100_club_2000_tech_vs_2026_ai_alvarez_quant_tr_20260523.md",
+    "source": "quantocracy",
+    "title": "The 100% Club. 2000 Tech vs 2026 AI [Alvarez Quant Trading]"
+  },
+  "67305d635bfab005d7fc5d5dad416fba": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523.md",
+    "source": "quantocracy",
+    "title": "Why Momentum Investing Has Been Struggling   And What Volatility Has to Do With "
+  },
+  "6aff5c66465c4a7302cd84b2883944fa": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/11/2026"
+  },
+  "6b9df83ac2a2bdef23290e653f91c515": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_almost_explicit_implied_volatility_chase_the_devil_20260523.md",
+    "source": "quantocracy",
+    "title": "Almost Explicit Implied Volatility [Chase the Devil]"
+  },
+  "6d81391a835ea062d2d70e367867dcfe": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 04/25/2026"
+  },
+  "6fce9963bc9c8e31ed7a00ea3a257d50": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_curve_trades_with_macroeconomic_signals_macrosyner_20260523.md",
+    "source": "quantocracy",
+    "title": "Curve trades with macroeconomic signals [Macrosynergy]"
+  },
+  "726849c033123dfb360f3c76a4dd23fa": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Nine Pounds of Ore for an Ounce of Gold [Tommi Johnsen]"
+  },
+  "727f77e2e1b13eade48b1b8b6d6cfca9": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_research_review_24_april_2026_prediction_markets_c_20260523.md",
+    "source": "quantocracy",
+    "title": "Research Review  | 24 April 2026 |  Prediction Markets [Capital Spectator]"
+  },
+  "7593b0af03f89f3cba912992018a5bdb": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Lazy Prices, Lazy Investors \u2013 and the 22% Alpha Hidden in 10-Ks That Nobody Read"
+  },
+  "75d74635d4e30d5022cfacdf261db5da": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_reinforcement_learning_for_optimal_execution_jonat_20260523.md",
+    "source": "quantocracy",
+    "title": "Reinforcement Learning for Optimal Execution [Jonathan Kinlay]"
+  },
+  "7a369779c4bfb9421ee8e09611acaa37": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_a_century_without_data_reconstructing_emerging_mar_20260523.md",
+    "source": "quantocracy",
+    "title": "A Century Without Data: Reconstructing Emerging Markets Equity History [Quantped"
+  },
+  "7b09cc5e75d5b0b1bce7cb50fc4da618": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_bad_month_for_your_strategy_should_you_change_it_a_20260523.md",
+    "source": "quantocracy",
+    "title": "Bad Month for Your Strategy? Should You Change It? [Alvarez Quant Trading]"
+  },
+  "7ba2396bd272bede5e81dc948cc0627e": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_surfing_the_equity_curve_using_trend_following_to__20260523.md",
+    "source": "quantocracy",
+    "title": "\u201cSurfing the Equity Curve\u201d: Using Trend-Following to Switch Strategies On and Of"
+  },
+  "7c4fab7ef499dd0a2223f746d542aecd": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_dual_momentum_allocation_between_physical_gold_and_20260523.md",
+    "source": "quantocracy",
+    "title": "Dual Momentum Allocation Between Physical Gold and Bitcoin (Digital Gold) [Quant"
+  },
+  "7fc07465828a18606da49c182180520d": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Sentiment is not one signal [Tommi Johnsen]"
+  },
+  "80c0dbd38c8aecd4531306f3b76be17d": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523.md",
+    "source": "quantocracy",
+    "title": "Rethinking Trend Following: Optimal Regime-Dependent Allocation [Alpha Architect"
+  },
+  "81e5afab65c48c954b1b7ecfb70c9f7c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/20/2026"
+  },
+  "82cbb12b0207e78ad92ede231560c0b8": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "For The Love of The Game [Robot Wealth]"
+  },
+  "85e794cf82d00cfc0626c19a0755fb61": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_market_effect_research_turn_of_the_month_effect_tr_20260523.md",
+    "source": "quantocracy",
+    "title": "Market Effect Research: Turn of the Month Effect [TradeQuantiX]"
+  },
+  "8826625c6e7b18fff723205cb3be7b94": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_lazy_prices_lazy_investors_and_the_22_alpha_hidden_20260523.md",
+    "source": "quantocracy",
+    "title": "Lazy Prices, Lazy Investors \u2013 and the 22% Alpha Hidden in 10-Ks That Nobody Read"
+  },
+  "89d3e4f5e5d84fb69f08a5f19db10dfe": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "The NAAIM Exposure Index: Incorporating Active Investment Mgr Sentiment into Ass"
+  },
+  "8bda9522b9bfb92d656c9a547f96e211": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "quantocracy_a_faster_monotone_implied_volatility_solver_chase_20260527.md",
+    "source": "quantocracy",
+    "title": "A Faster Monotone Implied Volatiltty Solver [Chase the Devil]"
+  },
+  "8c3b2894bbb101cd57b5f426c067c00b": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "A Historical Look at the Top 20 6-week $SPX Rallies Since 1950 [Quantifiable Edg"
+  },
+  "8e22b67a1e7db560693d65ce5e072f76": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_selecting_taa_strategies_based_on_recent_performan_20260523.md",
+    "source": "quantocracy",
+    "title": "Selecting TAA Strategies Based on Recent Performance (Part 1) [Allocate Smartly]"
+  },
+  "8eca161eb2ba38871e4d2e7a294ccf93": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_where_risk_parity_hurts_a_58_year_audit_of_tails_a_20260523.md",
+    "source": "quantocracy",
+    "title": "Where Risk Parity Hurts: A 58-Year Audit of Tails and Drawdowns [Beyond Passive]"
+  },
+  "95f554d8197c29ad340e4e1fd55ba4be": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_quantocracy_homepage_20260523.md",
+    "source": "quantocracy",
+    "title": "Quantocracy"
+  },
+  "96247c177fdcd718afdb6a2d8263e706": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_curve_trades_with_macroeconomic_signals_macrosyner_20260523.md",
+    "source": "quantocracy",
+    "title": "Curve trades with macroeconomic signals [Macrosynergy]"
+  },
+  "9888745c05ef79d9774fb219f7415ca9": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_new_contributor_modeling_asymmetric_volatility_wit_20260523.md",
+    "source": "quantocracy",
+    "title": "New Contributor: Modeling Asymmetric Volatility With EGARCH [Krzysztof Ozimek]"
+  },
+  "9a2646d2d7b109ec4e2a660cc9c86e20": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 04/22/2026"
+  },
+  "9dd7248775a47e0efb635f972dcf7e53": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_the_skip_month_mystery_what_last_month_s_returns_a_20260523.md",
+    "source": "quantocracy",
+    "title": "The Skip-Month Mystery: What Last Month   s Returns Are Really Telling You [Alph"
+  },
+  "9ffe8f72b6df28fe0fbe46748d82b954": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523.md",
+    "source": "quantocracy",
+    "title": "Rethinking Trend Following: Optimal Regime-Dependent Allocation [Alpha Architect"
+  },
+  "a06fb443316d4ff969a1491bebcd0c09": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_a_historical_look_at_the_top_20_6_week_spx_rallies_20260523.md",
+    "source": "quantocracy",
+    "title": "A Historical Look at the Top 20 6-week $SPX Rallies Since 1950 [Quantifiable Edg"
+  },
+  "a0e0117a88bf643b0d9bca6c0c085dba": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_martyn_tinsley_beyond_the_backtest_algorithmic_adv_20260523.md",
+    "source": "quantocracy",
+    "title": "Martyn Tinsley \u2013 Beyond the BackTest [Algorithmic Advantage]"
+  },
+  "a0e6dff52318a7c9d37b62859ea048aa": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "The Attention Factor: The Link That Connects Crypto and Public Equity Markets [Q"
+  },
+  "a21dc340f1a56ba9d32c2a7f26203576": {
+    "decision": "rejected_L2_not_accessible",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Revisiting Beyond 60/40: Five Decades of Risk-Weighted Allocation [Beyond Passiv"
+  },
+  "a2f154cae906ee82accf975d10c7fdde": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_new_contributor_modeling_asymmetric_volatility_wit_20260523.md",
+    "source": "quantocracy",
+    "title": "New Contributor: Modeling Asymmetric Volatility With EGARCH [Krzysztof Ozimek]"
+  },
+  "a3986c29911fa257c7f5a15f884d5409": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_volatility_derivatives_and_vix_market_dynamics_rel_20260523.md",
+    "source": "quantocracy",
+    "title": "Volatility Derivatives and VIX Market Dynamics [Relative Value Arbitrage]"
+  },
+  "a409cfedb1afd0d220883e2fb3eec7e1": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/03/2026"
+  },
+  "a583fdcb3ef1145f31cfa76773e64b4b": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_tradelock_new_site_from_ex_quantocracy_contributor_20260523.md",
+    "source": "quantocracy",
+    "title": "TradeLock: New site from ex-Quantocracy contributor Sanzprophet \u2013 build independ"
+  },
+  "a66d62eca1921b73152c5b92d4042a9e": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Market Effect Research: Turn of the Month Effect [TradeQuantiX]"
+  },
+  "ad2266f1e503dd3cef990a9e33a0d5ce": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_ai_forex_backtesting_with_llm_regime_labels_deepse_20260523.md",
+    "source": "quantocracy",
+    "title": "AI Forex Backtesting with LLM Regime Labels: DeepSeek vs KMeans in Python [Quant"
+  },
+  "adaf99f8ef975cdf7c272baac6201bfd": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "quantocracy_the_metamorphosis_robot_wealth_20260527.md",
+    "source": "quantocracy",
+    "title": "The Metamorphosis [Robot Wealth]"
+  },
+  "b2277632e4751cf4af7f7e434d9b1151": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_who_profits_from_prediction_markets_quantpedia_20260523.md",
+    "source": "quantocracy",
+    "title": "Who Profits from Prediction Markets? [Quantpedia]"
+  },
+  "b4be1472d91845899e9f8d4cfbf3d7a7": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_selecting_taa_part2_recent_sharpe_ratio_20260523.md",
+    "source": "quantocracy",
+    "title": "Selecting TAA Strategies Based on Recent Performance, Part 2: Recent Sharpe Rati"
+  },
+  "b56fcef4a9c8cd665a168a8eb9af4d1a": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_who_profits_from_prediction_markets_quantpedia_20260523.md",
+    "source": "quantocracy",
+    "title": "Who Profits from Prediction Markets? [Quantpedia]"
+  },
+  "b84c4c9a526ba3fdbf53b6083582d634": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "quantocracy_active_dual_momentum_gtaa_strategy_quantpedia_20260527.md",
+    "source": "quantocracy",
+    "title": "Active Dual Momentum GTAA Strategy [Quantpedia]"
+  },
+  "b85a7d8e563ae47d9f331b0fdaa3c94a": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_quant_mashup_homepage_20260523.md",
+    "source": "quantocracy",
+    "title": "Quant Mashup"
+  },
+  "b9e8e5737abb77c01cfbc175d2d45880": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_the_skip_month_mystery_what_last_month_s_returns_a_20260523.md",
+    "source": "quantocracy",
+    "title": "The Skip-Month Mystery: What Last Month   s Returns Are Really Telling You [Alph"
+  },
+  "bba14238207848c9696c4a8c08635c7c": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_a_day_is_now_what_a_decade_used_to_be_tommi_johnse_20260523.md",
+    "source": "quantocracy",
+    "title": "A Day Is Now What a Decade Used to Be [Tommi Johnsen]"
+  },
+  "c64e2f0d0d57fc33722cabb6367c58d4": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_overfitting_and_parameter_selection_in_trading_str_20260523.md",
+    "source": "quantocracy",
+    "title": "Overfitting and Parameter Selection in Trading Strategies [Relative Value Arbitr"
+  },
+  "c850acf51f5c086f05886c0021dcc09c": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Modeling with the NAAIM Exposure Index [Quantifiable Edges]"
+  },
+  "cef5c44f246678eeae6a8ec73ae83823": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_the_currency_you_didn_t_choose_beyond_passive_20260523.md",
+    "source": "quantocracy",
+    "title": "The Currency You Didn   t Choose [Beyond Passive]"
+  },
+  "d3a91e3bc876e3cc2d59dba561b715f0": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_sentiment_is_not_one_signal_tommi_johnsen_20260523.md",
+    "source": "quantocracy",
+    "title": "Sentiment is not one signal [Tommi Johnsen]"
+  },
+  "d69a3750b4914c3829333f5bb763755b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 04/29/2026"
+  },
+  "d6e6d79477bf6a21df5f8e20cba014a3": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_the_effective_number_of_tested_strategies_vertox_q_20260523.md",
+    "source": "quantocracy",
+    "title": "The Effective Number of Tested Strategies [Vertox Quant]"
+  },
+  "d73e969700d12ea3b6cf31cf2fa4242a": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_unsupervised_learning_for_trading_k_means_pca_pyth_20260523.md",
+    "source": "quantocracy",
+    "title": "Unsupervised Learning for Trading: K-Means, PCA & Python Examples [Quant Insti]"
+  },
+  "d7731e95ac654dac9c02a71b1abf20db": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_agentic_workflows_for_alpha_research_jonathan_kinl_20260523.md",
+    "source": "quantocracy",
+    "title": "Agentic Workflows for Alpha Research [Jonathan Kinlay]"
+  },
+  "dcbed8f179df44540d49ad40cb04b3c0": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/06/2026"
+  },
+  "df10119338995fead1047258a02c0740": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_deep_learning_for_volatility_surface_repair_jonath_20260523.md",
+    "source": "quantocracy",
+    "title": "Deep Learning for Volatility Surface Repair [Jonathan Kinlay]"
+  },
+  "e14d2862b472cdac4a2e19ee871c4bac": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_how_to_manage_an_intraday_trend_trade_concretum_gr_20260523.md",
+    "source": "quantocracy",
+    "title": "How to Manage an Intraday Trend Trade [Concretum Group]"
+  },
+  "e4c638506c62756be881e8a93116101e": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_the_naaim_exposure_index_incorporating_active_inv_20260523.md",
+    "source": "quantocracy",
+    "title": "The NAAIM Exposure Index: Incorporating Active Investment Mgr Sentiment into Asset Alloc"
+  },
+  "e84c5176fcb4f73d7bf902adffdee3bb": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "When Big Gets Small: Trading the Lower Tier of Large Caps and Upper Mid Caps [Qu"
+  },
+  "e891ca6bc2d068d60870f6a2f7f07668": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "A Strong Start to May Has Often Been Followed by a Short-Term Dip [Quantifiable "
+  },
+  "ed1d1c496a3f8ebaba0ad1d690a5c1d8": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_selecting_taa_strategies_based_on_recent_performan_20260523.md",
+    "source": "quantocracy",
+    "title": "Selecting TAA Strategies Based on Recent Performance, Part 2: Recent Sharpe Rati"
+  },
+  "ed54f90357cc793100177d5714bec079": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": "quantocracy_revisiting_beyond_60_40_five_decades_of_risk_weight_20260523.md",
+    "source": "quantocracy",
+    "title": "Revisiting Beyond 60/40: Five Decades of Risk-Weighted Allocation"
+  },
+  "ee0368dc9b71acd9597aae832b4e2099": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_a_strong_start_to_may_has_often_been_followed_by_a_20260523.md",
+    "source": "quantocracy",
+    "title": "A Strong Start to May Has Often Been Followed by a Short-Term Dip [Quantifiable "
+  },
+  "fa7f8813d45a174b7a2a90137d3dbdb5": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "quantocracy_ai_forex_backtesting_with_llm_regime_labels_deepse_20260523.md",
+    "source": "quantocracy",
+    "title": "AI Forex Backtesting with LLM Regime Labels: DeepSeek vs KMeans in Python [Quant"
+  },
+  "fe3fb2524af98f51464b75df79639c45": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "quantocracy",
+    "title": "Modeling with the NAAIM Exposure Index [Quantifiable Edges]"
+  },
+  "feaaab63c12b2b05f2da237d8a8396ed": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "quantocracy_identifying_stocks_to_fade_concretum_research_20260527.md",
+    "source": "quantocracy",
+    "title": "Identifying Stocks to Fade [Concretum Research]"
+  }
+}

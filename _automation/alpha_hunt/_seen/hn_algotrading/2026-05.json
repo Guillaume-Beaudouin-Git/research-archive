@@ -1,0 +1,1325 @@
+{
+  "03ddf3c2676dddcad5356d402797413a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: What if the universe itself runs on O(1) memory?"
+  },
+  "05f23ca3abe12a0eb87d918f721b0d8b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Quantopian wants to Turn Stock Trading Algorithmic"
+  },
+  "060668fe36f15237120742ddfc8434b2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Adventures in algorithmic trading on the Runescape Grand Exchange"
+  },
+  "09538c39f26a49643b2aabe8b15bb9b3": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Using Reinforcement Learning in the Algorithmic Trading Problem"
+  },
+  "0ae20801c45d5596df15505ba20a6ccd": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Composer: AI Algorithmic Trading"
+  },
+  "0b533a5b99f69c66c0cd21b1170f2f21": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "I Quit Algorithmic Trading to Do Web Startups (2010)"
+  },
+  "0d1a921f17d14970c8c45795edbc604d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Would you pay for an E2E Encrypted Git Hosting service?"
+  },
+  "0f2e824c1ee62666f3d81d594464665a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "OpenAlgo: Open-Source Algorithmic Trading Framework for Indian Markets"
+  },
+  "109b76dd80723debe0cb8168ed5fc4f2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "HSBC Demonstrates Worlds First Known Quantum Enabled Algorithmic Trading"
+  },
+  "11ff3ab59ad0fdbdc998cd0ee429f8eb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I Built Systems AGI \u2013 1600 Verticals, Self-Healing, Self-Evolving"
+  },
+  "12c2c9ed9dca22acf3577a959bad6380": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "FxCapKyn: A Study of Socially-Engineered Fraud"
+  },
+  "1304fe15be7a873f2e638c84742342aa": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "The Algorithmic Trading Podcast"
+  },
+  "13cf6f61edacfc35aa2b68f559e8a289": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: LeetCode vs. Scenario-Based Interview Questions \u2013 what's your take?"
+  },
+  "16466cf554e47dd7e6e6f789cc45f0ad": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Tell HN: Google bot suspended our startup's email with 0 human recourse"
+  },
+  "17800015a35cfcdb7b0d2ba9fc5c94a4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Comprehensive Comparison of Algorithmic Trading Platforms"
+  },
+  "1c987282010f41c58b9ec15474690259": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Various shape regularization algorithms"
+  },
+  "1cf0ea7cd042967514e505a4c54bb7bc": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Plexe \u2013 ML Models from a Prompt"
+  },
+  "1e0b2f28242b65ab688508da4d94295b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "I Built an Algorithmic Trading System in Rust. Here's What I Regret"
+  },
+  "28e7ae0d2e908083120094fb7c64ac75": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "O(1) memory, no-preprocessing reachability algorithm for 2D grids"
+  },
+  "2a69e0ceff0d051b669fb0b7cdba59c4": {
+    "decision": "accepted",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": "hn_algotrading_ask_hn_algorithmic_trading_for_hackers_20260523.md",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Algorithmic trading for hackers"
+  },
+  "2ace9ca880c66f3e19d06c425b692ed8": {
+    "decision": "accepted",
+    "first_seen": "2026-05-27 12:08 UTC",
+    "promising_file": "hn_algotrading_show_hn_i_built_a_toy_tpu_that_can_do_inference_an_20260527.md",
+    "source": "hn_algotrading",
+    "title": "Show HN: I built a toy TPU that can do inference and training on the XOR problem"
+  },
+  "2af6c907576dfa622910b70a5fb038dc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "I spent 18 months rebuilding my algorithmic trading platform in Rust"
+  },
+  "308319059976589fbfc962149848b323": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I Built Systems AGI \u2013 1600 Verticals, Self-Healing\\Self-Evolving"
+  },
+  "309d9fee885605e5035a44636643cbea": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: SlugMatch \u2013 Match Students to Residential Colleges"
+  },
+  "30ac893881dad419252c6df03f74d5eb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Prism \u2013 7 AI stories daily with credibility tags, no doomscrolling"
+  },
+  "30f1d8e92d02ca4a06f072bdeb8ed978": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Mapping Middle East kinetic events via automated OSINT and deduplication"
+  },
+  "3151bb56a9e91ee08d296db65eeaf620": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "I rebuilt my algorithmic trading platform in Rust. I have no regrets"
+  },
+  "31bdd0c68f03c7d7f8f05738bf844581": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "\"Fuck the algorithm\"?: What to learn from the UK's A-level grading fiasco (2020)"
+  },
+  "346413bca4f5d04a7b5aee73bdc733a6": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Gryphon: An open-source framework for algorithmic trading in cryptocurrency"
+  },
+  "35b9ec5bfb1fb0915cdaba2d0d6daa2d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: ZoneMapzone World Clock"
+  },
+  "37ee483c8ca115f26aec86972c1670da": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Botwell \u2013 A Framework for LLM Comparative Analysis Using AI Peer Review"
+  },
+  "38b9107cb8d40ea7de7daa445d1d3ac8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Nautilus, high-performance algorithmic trading platform, event-driven backtester"
+  },
+  "38befe55dc7604e3d0631b9d894e8e86": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Has anyone else had their Reddit account Kafka'd? How did you solve the issue?"
+  },
+  "3902fd3b6ef32bae49bb24371c2bd416": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Quantopian Brings Algorithmic Trading To The Masses"
+  },
+  "39aace2649169d24a5f302ff376fa6cb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic trading -- the positive side"
+  },
+  "3cfdb2684d60a4f943c00a81f895c180": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Sohri \u2013 Turn short stories into binge-able audio episodes"
+  },
+  "3e271d1257f3a3b513d2fff8cfd02419": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: SelecTube \u2013 Curated YouTube for Kids"
+  },
+  "3f949ec7a1b7900d98d85fb5ddaf5aa5": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: FocusStream \u2013 Learn from YouTube Without the Distractions"
+  },
+  "412e691857b3ecfb9659d163d9d1314e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "How AI Is Turning Average Posts into Viral Content"
+  },
+  "43b732de5a6083b01133fcdd7ade84e5": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: TrustBit \u2013 Building a URL shortener with Cloudflare's edge stack"
+  },
+  "461e5008f2f690b19950106900c1da01": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: One Good Thing \u2013 one thought a day, then asks you to close the app"
+  },
+  "482b3d5071d332d3d260037fdfb9cc06": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Epoch: No-Code Hub for Algorithmic Trading (Now with AI Assistance)"
+  },
+  "4833cca613e03b5a5ebb93dfa75474ab": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Case study: Algorithmic trading with Go"
+  },
+  "49465a815d3496fbdb84966a68d601e6": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading: A Practical Tale for Engineers"
+  },
+  "4960fef678b9111eef0bf9ef91b8b0db": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: How do people validate deep self-study in math or CS?"
+  },
+  "4bc505141c908a3bc6bd362810dcf6ed": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Why I Quit Algorithmic Trading to Do Web Startups "
+  },
+  "4c16186f2ec5ed32645d974525024b94": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I built an \"Agency Score\" to measure how much your phone controls you"
+  },
+  "4ca31c926e6bd1f2fe9c7dbf389c997a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Interesting Look at Algorithmic vs. Floor Trading"
+  },
+  "4dea18b5f493e668e07a92e5ecf9d44a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "AI-Powered Trading, Algorithmic Collusion, and Price Efficiency 2023 [U:2025]"
+  },
+  "4e075ae2737559f6aea9b55b798e6ebf": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Simple algorithmic trading in JavaScript"
+  },
+  "51326d37875d73ea65d797969c8224fa": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "How to Get a Job in Algorithmic Trading"
+  },
+  "<ACCOUNT_ID>a50afa7a06c7992dce7d355": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Replacing $50k manual forensic audits with a deterministic .py engine"
+  },
+  "513d8222626b0e0f3bae5788467de077": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "On latency, measurement, and optimization in algorithmic trading systems"
+  },
+  "51f67da94aabaa7431748462bc3eebc8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "HSBC announces successful use of quantum computers for bond trading"
+  },
+  "5339bf6dd3be93b4414844d3a29b1ac2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: DayLeet \u2013 A daily habit for sharpening whiteboard logic"
+  },
+  "<ACCOUNT_ID>f6d89de4966b40a9bd19ed4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading Using Logistic Regression"
+  },
+  "53adeb584ebaa6dd9ed88039fc9efa96": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I build a free feed reader that reimagines what is possible with RSS"
+  },
+  "567d6300d58438931ea4df59be060511": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: A platform for intentional human connections"
+  },
+  "58bbe07351529d4617cb218aee21c6c0": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Launch HN: Phind 3 (YC S22) \u2013 Every answer is a mini-app"
+  },
+  "5a3504599ab8f02256ccc4afd5dc15d4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I Dedicated 4 Years to Mastering Offline Password Cracking"
+  },
+  "5a36ccfeb20b6cd94024ce9285cf9137": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Built an algorithmic forensic accounting tool"
+  },
+  "5dbcb07f9bcfe11d237998bea0e0b1b9": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "GeneralGiist \u2013 A Global Forum Built for Real, Unfiltered Conversations"
+  },
+  "5f7cf8aad4aed6e4f519e106ac700618": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algonaut - Algorithmic stock trading platform in the cloud "
+  },
+  "6011514e88e4ab01dbb20e804c543fe0": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Fighting the War Against Expensive Reinforcement Learning"
+  },
+  "619a777bff7b74b72dfa0fba2b29ae10": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "I spent 5 years how to code .made real projects only to be called AI slop?"
+  },
+  "6459daa01acd8cc4c32ec98368de6ca6": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: FishSonar \u2013 Real-Time Crypto \"Fish\" Detector for Binance"
+  },
+  "64d98113fdc4f4b1c40522a3564bfba8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: How are you doing technical interviews in the age of Claude/ChatGPT?"
+  },
+  "653eb5a7d3cbd2dc2d8f28a733298701": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading: The Play-At-Home Version"
+  },
+  "65eb2336f34e037621c26de2c614d8d0": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Lean: Open source algorithmic trading engine"
+  },
+  "66d41795e2955a27e9a2dbb936c5d647": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Is algorithmic trading making markets less efficient & gaming the system?"
+  },
+  "6826293db3903df59cbb7bcd4142d375": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: 1999date \u2013 Dating Like It's 1999"
+  },
+  "6d25ef76f832c6f767852d1bd532be3a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Human vs. Computer in Rock Paper Scizzors"
+  },
+  "70cf979b204f0861be8c47544cda27bb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Launching no-code algorithmic trading platform"
+  },
+  "70f3d74e3a8a031722932599790d1a17": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Do I Stop Learning Coding? DSA?"
+  },
+  "7116688e8e0c22addd1bd047d86c6c09": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Jottings; Anti-social microblog for your thoughts"
+  },
+  "743872b7adfe953c582180b5cbac800e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I made a LLM trade Stocks"
+  },
+  "7769e3e8948554ecd42da5f2be51a946": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Review my new app platform Mu"
+  },
+  "780f8002a1ac948df53d0a1982d8fa1b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Staff Report on Algorithmic Trading in U.S. Capital Markets [pdf]"
+  },
+  "788b368e6cb9c61757b127b9de058e67": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Vehicle Speed Detection Algorithm"
+  },
+  "78b02106a65fe204a35c81d90067ed73": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic trading in less than 100 lines of Python code"
+  },
+  "79d0e3334f0d8c52773df51016d990df": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Everything is AI now \u2013 does this kill the excitment of software development?"
+  },
+  "7a861ed2457c958b198dd62dfadeccc8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Algo-Trading Software"
+  },
+  "7a98fc32fa5cff74deb448db5c0aaa4d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Arrow Algo \u2013 Algorithmic Trading Made Simple"
+  },
+  "7d3e0fde9dff4d607a98505f6c01773e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Should HN use a different time algorithm for post ranking?"
+  },
+  "7d6048e78817f5c92206cbae3eaabd7e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Found this newsletter: an algorithm finds trading \"Zones\""
+  },
+  "81c10a32a3020f3818528776e10954f3": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: The Slow AI Commons \u2013 here's why it might fail"
+  },
+  "81e2cea5927325816c6a01d3eab789c1": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Why I'm looking into algorithmic trading"
+  },
+  "84beafda29a78fa5587fb5ff288c24d1": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Interview for a Platform Engineer"
+  },
+  "851ce4a5b74ee96e76acdac7917658d6": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Museum of Handwritten Code (If, While, Binary Search, Merge Sort)"
+  },
+  "858d3baa9481b9c530b0394084da3144": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Developers cloned my student project in 2 weeks. Why?"
+  },
+  "86bfdd5e758d472841bd835f5daa8854": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Why do people trust ChatGPT with their money but not transparent algos?"
+  },
+  "879f2554ac<ACCOUNT_ID>d6ffdf8bd9b29": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: What books for algorithmic crypto trading can you recommend?"
+  },
+  "8994f08e395badec9145a8dbf9f97576": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "A Global Forum Built for Real, Unfiltered Conversations"
+  },
+  "89a912ffb3f274398e8860d2f93dddb4": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Algorithmic trading for everyone"
+  },
+  "8a6a4078f9e56abb13ca031baefaefec": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I built an AI-powered technical interview prep tool"
+  },
+  "8a8ac829e136f91d2b9b4f852591c993": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Failed launching my SaaS as a Student. Should I open source \"bad\" code?"
+  },
+  "8af50a58b30b2e11d7cd65bcb5ff588b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Is my new idea dumb?"
+  },
+  "8b28e234c3721cb266bd11e97ec3391c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "On Godel's Incompleteness Theorem"
+  },
+  "8b7ca915400beced0fd7e7825683ff1a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Value at Risk for Algorithmic Trading Risk Management \u2013 Part I"
+  },
+  "8c36e501d97a5bac4645ae2550bcc8c4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Trying new X algorithm powered by Grok 4 Mini"
+  },
+  "8cc154c43f0a75b8db25a3f8648cb943": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Trying to document my startup journey and share SaaS ideas on social media"
+  },
+  "8f0613cded69be450a16f1f99bcf08b5": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I built a forensic accounting engine for divorce"
+  },
+  "8f393a285c01c4adb800311d67af5dfb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Spot Trading in Cryptocurrency \u2013 An In-Depth Guide"
+  },
+  "90dfeba41bfbc835c4b832f5bf0af46b": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "How to identify algorithmic trading strategies"
+  },
+  "913ba4fb9b8d734652eead5673891f74": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: An LLM that's better at writing"
+  },
+  "93550a209d6dd1b90c7a210bac63a45b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: What is still hard to research in investment analysis?"
+  },
+  "948adbd9ec2d1c3454d401082665721c": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: What are the best resources for learning about algorithmic trading?"
+  },
+  "94e45faa3649e5f987867fd9d54f3d3c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: One, cross domain auto-researching knowledge graph Claude orchestrator"
+  },
+  "957e047fc05729b8b9bf2e975ba9a41c": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: State Algebra, new algebraic framework for logic, an alternative to BDD"
+  },
+  "98253ea887e840a99921e4975235f291": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: EgoExo Forge: Data and Utilities Needed for Ego and Exo Human Data"
+  },
+  "98d80c6a0ccfc25c0a56c1c7005600bd": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Index Wizard \u2013 Elevate Your Day Trading with Community-Enhanced Algo"
+  },
+  "9977239edd988829bf19c5af8b85639e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Subscribe to RSS Feeds on Kindle"
+  },
+  "99a9de633839ab4d5e671871147e2cf3": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "QuantConnect wants to open source its algorithmic trading engine"
+  },
+  "9a7d440dc595c57579de4aecad23b0aa": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: We used mathematics to solve the forex data availability problem"
+  },
+  "9a8f5aa4da6574d3490272d0b3aa725c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Tell HN: The proposed KIDS Act (HR 7757) effectively mandates biometric browsing"
+  },
+  "9b3522dce7035880ad0ce5ed432819d1": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Rd-TableBench \u2013 Accurately evaluating table extraction"
+  },
+  "9c03750b5c865ada8d84ad59111ee811": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading in Python Using Open Tools and Open Data"
+  },
+  "9dad24107132c0ce39043c15a2aac02a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: YapCards (iOS) \u2013 Voice-driven flashcards with AI feedback"
+  },
+  "9f070bee2f6870d7b193309e2477bf35": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Posted AI book on algorithms\u20135.3K views, zero sales. What now?"
+  },
+  "a2690fe1bc57259ed60264cc9f5ae575": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Solo trader built algo trading platform via AI \u2013 no dev experience"
+  },
+  "a2bd2b812574ca021151e52b88e41dd0": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "The right (or wrong) way of running an algorithmic trading group"
+  },
+  "a3316464ad6ba04a9bfc85cf2b33b9af": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Everdone CodeSecurity and CodePerformance"
+  },
+  "a475ccf84feb14598a4388eb08d078e5": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Is there a market for niche aesthetic AI generators?"
+  },
+  "a838f945025ae4603d6034ed55aba383": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: PutHouse \u2013 The AI Options Trader"
+  },
+  "ac46ef96455f719c3d8e15171993aef1": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: BillSpike \u2013 Root cause analysis for cloud cost spikes"
+  },
+  "b00158eb164c8bc7c3d6992055b6c6b4": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading of Futures via Machine Learning [pdf]"
+  },
+  "b1bbc9be6be63a586d3e4635751ceb3e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Risk Management in High Frequency Trading Business"
+  },
+  "b1db6983a9a6f411b78e8e344381299f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: FaultWall \u2013 Which tenant is killing your Postgres? Now you can find out"
+  },
+  "b2db8c59e7df07f381f2cf10b9132780": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Anyone making money through algorithmic trading?"
+  },
+  "b55220b9b1c4f27fc8b71c7e5a8e50ad": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Python For Finance: Algorithmic Trading"
+  },
+  "b8530765fe030facb8c8f88bd2897e18": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "AI Daily Driver \u2013 Privacy and Validity"
+  },
+  "bb926cfc98c320c5844a4803bcec5506": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Getting Started with Algorithmic Cryptocurrency Trading"
+  },
+  "bc004fbaada46875e6a3d88aa6939269": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "ASK HN: Any bootcamps for international student with experience"
+  },
+  "bc5e28b2ee18b8b97a6df6831ada515b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "AI: The Creativity Killer \u2013 Are We Trading Genius for Convenience?"
+  },
+  "bef9d035dcbedfa519e81f858827c319": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "A Two-Year Journey Rebuilding an Algorithmic Trading Platform in Rust"
+  },
+  "c01f21a5d1fc33b7b6e3d504562847ac": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I just built a tool to turn any photo into pixel art"
+  },
+  "c16f42de885360481f036be6ed415c12": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading is Not High Frequency Trading"
+  },
+  "c1da45fd84883f454559bbd6a5507917": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading with VectorBT and Lumibot"
+  },
+  "c255811e7dc3cb75c2bebd46bbb8a733": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Quantopian\u2019s algorithmic trading platform now accepts outside data sets"
+  },
+  "c3722267da965242ae3bfe4eb9d9b78b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "A bestiary of algorithmic trading strategies"
+  },
+  "c37737dfb13831a66b8517d7177fab90": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading: A Practitioner\u2019s Guide"
+  },
+  "c43ad26c1db2c9fb00fc51a8b7be1aff": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "The \u2018Final\u2019 Frontier of Algorithmic Trading"
+  },
+  "c5e9fd4ffd793141d9e11921d34a3c5f": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: SVG Fitter \u2013 Rust+WASM Vectorizer"
+  },
+  "ccc72faca323785a742eafd730e9dfcb": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "How to Build Your First Algorithmic Cryptocurrency Trading Bot in Python"
+  },
+  "cd877d49cc756797e460a9674634a1dc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Market Digest: Self-hosted market analysis and Telegram"
+  },
+  "ce8332b68e155060ce3e03858337351c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "I spent 18 months rebuilding my algorithmic trading platform in Rust"
+  },
+  "cfe3e1a164d516f64a942ac9d0109eac": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Optimizing LiteLLM with Rust \u2013 When Expectations Meet Reality"
+  },
+  "d2b62a8a2062e0758716982bd75f9d17": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: P-book \u2013 an interactive book for kids about recommendation algorithms"
+  },
+  "d36d24d25e25f06606c911bd8de4de5b": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Fast Random Library for C++17"
+  },
+  "d3d0a4a20b38b4bac81255e55866d30a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "How to Learn Algorithmic Trading"
+  },
+  "d61556dd5cf394b437f0991afd11bfea": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Cloud9Trader \u2013 Simple, powerful platform for algorithmic trading"
+  },
+  "d6e4382cb228c028d4ae4d4271a812dd": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Mastering Backtesting for Algorithmic Trading"
+  },
+  "d6f659337dd806799db56b6d73caef91": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "I rebuilt my algorithmic trading platform in Rust. I'm filled with regret"
+  },
+  "d73fc0ea5b1c811c147d0f911f09f728": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Zipline - algorithmic trading in open source Python"
+  },
+  "da7844714fd561e8c7e6430b884a17cd": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "SenseStream \u2013 Mood-based film discovery instead of genre browsing"
+  },
+  "dacf62af2b10e3e6d8f304108ce0a4cf": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Algorithmic Trading Platform"
+  },
+  "daf8af9b416120d9a9fadaab5ee558e0": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I built a forensic accounting tool for high-conflict litigation"
+  },
+  "dbc5fba2e6700454fc95fd2799fc70ed": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Spot Trading in Cryptocurrency \u2013 An In-Depth Guide"
+  },
+  "dc90d138bf6455733a32bc37f1d2325c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading MACD in Python"
+  },
+  "dc9ff8ee60c0f7fd41dccb286a34ff43": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: AI agentic, no-code platform for automated forex trading"
+  },
+  "df0a024fa1c7c53720d20f1c2347cc18": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "NautilusTrader: Open-source algorithmic trading platform"
+  },
+  "e1449acc9df711de5310816726178917": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Algorithmic Trading Marketplace"
+  },
+  "e4a9b426a3314a5b2e695a0e7bb829f9": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: The OASI 6 Engineering Structural Abundance via SMR and Modular"
+  },
+  "e6cb0db153a0922d4197b8bccc50c976": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Photo app that does just one thing \u2013 no stories/reels/algorithm"
+  },
+  "e728eb754ecc6ebc9759dfe3fcbc4e4a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Brainrot messed up my kid's attention span, so I built a tool to fix it"
+  },
+  "e73d3abbb17715825c6cd639116e061c": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Solance \u2013 Discover Music Through Friends"
+  },
+  "e74274f295d48704b11c103b763ff752": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading: The Play-at-Home Version"
+  },
+  "e8cad2d5d8961e68eb2484e8a65760f3": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Anyone making money through algorithmic trading?"
+  },
+  "eb5c8a1cd9768b0db2ec53a24ff10f2e": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Had enough \u2013 a need for a new beginning"
+  },
+  "ebae0f21b42c32bdd50fdfdcb8d35719": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Quantopian Emerges From Beta, Sets Out to Revolutionize Algorithmic Trading"
+  },
+  "ec0774ef1ac24088b4d2875b7e006c27": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "MACD Buy and Sell vs. SP500"
+  },
+  "ecc15580271fadd73d0ec6c8c89c1a20": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Algorithmic trading for everyone"
+  },
+  "eee3b9bd3a4cd44f5b32ea090a80c0bc": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Why most crypto AI trading bots fail: It's the data, not the algorithm"
+  },
+  "efa078bf6ee9124f4c45af039f9baf24": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Back End Engineer (Execution Systems) at Ather Digital"
+  },
+  "f041ba20758039d13fdbee13dad77491": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "No-Trust Protocol for Backtesting Systematic Trading Algorithms"
+  },
+  "f12a4c72e46be3e20a7946292d489c6d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I Built Economic Safety Mechanisms for AI"
+  },
+  "f2f9e88e46df4c67f2a16e6cce899eb7": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Teach Myself Algorithmic Trading?"
+  },
+  "f763968508a899b16998c05d8e84b431": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Strix \u2013 Drone swarm orchestration using quant trading algorithms (Rust)"
+  },
+  "f766a89312967aa8545d89322b1e35d2": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: What skills and projects should an unemployed software dev focus on?"
+  },
+  "f97cd9ed4e7a0ff428357e71da917844": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Micro \u2013 apps without ads, algorithms or tracking"
+  },
+  "facd15f59b8c24d4205d26b93045cdf9": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Grizzly Bulls: Market timing signals via proprietary algorithmic trading models"
+  },
+  "fb52e0da25dd2a4ae232637cf7208fb8": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "LLMs and Algorithmic Trading"
+  },
+  "fc8361f766992a792078c7401c9b6c1e": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Meepr \u2013 A Quiet Social Network"
+  },
+  "fcfdeff92e88825dca0b06744e4f008d": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: MemKit \u2013- The spaced-repetition flashcard app I've always wanted"
+  },
+  "fde2a69ce82a52208aeff29d82a11957": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: Qantify \u2013 GPU-Accelerated Trading Library with Advanced Math and AutoML"
+  },
+  "fe7970680f86025948d77f692d0ee49a": {
+    "decision": "rejected_L1_no_signal",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: I was tired of ROS2, so I rewrote it in Rust"
+  },
+  "fe97d637ffcd360a04e974d5f0482c34": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-27 12:08",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Show HN: YouTube Time Machine \u2013 browser extension to find forgotten videos"
+  },
+  "ffbb44d5433d7eb0731795b339bd8d7a": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 18:12",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Selecting a Database for an Algorithmic Trading System"
+  },
+  "fff7393ab378152062e8118a6715fb32": {
+    "decision": "rejected_L0",
+    "first_seen": "2026-05-23 19:32",
+    "promising_file": null,
+    "source": "hn_algotrading",
+    "title": "Ask HN: Why do people trust ChatGPT with their money but not transparent algos?"
+  }
+}
