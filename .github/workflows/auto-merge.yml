@@ -58,19 +58,39 @@ jobs:
             echo "rebase=conflict" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Squash-merge PR
+      - name: Enable auto-merge on PR
         if: steps.check-label.outputs.skip == 'false' && steps.rebase.outputs.rebase == 'ok'
+        continue-on-error: true
         uses: actions/github-script@v7
         with:
           script: |
-            await github.rest.pulls.merge({
-              owner: context.repo.owner,
-              repo:  context.repo.repo,
-              pull_number: context.payload.pull_request.number,
-              merge_method: 'squash',
-              commit_title: context.payload.pull_request.title,
-              commit_message: `Auto-merged from ${context.head_ref}\n\nPR #${context.payload.pull_request.number}`,
-            });
+            const prNodeId = context.payload.pull_request.node_id;
+            try {
+              const result = await github.graphql(`
+                mutation EnableAutoMerge($prId: ID!) {
+                  enablePullRequestAutoMerge(input: {
+                    pullRequestId: $prId,
+                    mergeMethod: SQUASH
+                  }) {
+                    pullRequest {
+                      id
+                      autoMergeRequest { enabledAt }
+                    }
+                  }
+                }
+              `, { prId: prNodeId });
+              const enabledAt = result.enablePullRequestAutoMerge.pullRequest.autoMergeRequest.enabledAt;
+              core.notice(`Auto-merge enabled at ${enabledAt}`);
+            } catch (err) {
+              if (err.message && err.message.includes('auto merge is not allowed')) {
+                core.error(
+                  'Auto-merge is disabled at the repo level. ' +
+                  'Enable it at Settings → General → Pull Requests → Allow auto-merge.'
+                );
+              } else {
+                core.error(`enablePullRequestAutoMerge failed: ${err.message}`);
+              }
+            }
 
       - name: Label conflict PR
         if: steps.check-label.outputs.skip == 'false' && steps.rebase.outputs.rebase == 'conflict'
