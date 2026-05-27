@@ -2946,7 +2946,903 @@
       "title": "OpenPipe/ART",
       "decision": "rejected_L0",
       "promising_file": null
+    },
+    "a88f7876654e214a7e8dbfa94f6a3b74": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_quant",
+      "title": "Ask HN: Low-level C++ for Quant/HFT",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "fde2a69ce82a52208aeff29d82a11957": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Qantify \u2013 GPU-Accelerated Trading Library with Advanced Math and AutoML",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9a7d440dc595c57579de4aecad23b0aa": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: We used mathematics to solve the forex data availability problem",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3f949ec7a1b7900d98d85fb5ddaf5aa5": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: FocusStream \u2013 Learn from YouTube Without the Distractions",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "109b76dd80723debe0cb8168ed5fc4f2": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "HSBC Demonstrates Worlds First Known Quantum Enabled Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "51f67da94aabaa7431748462bc3eebc8": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "HSBC announces successful use of quantum computers for bond trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f2f9e88e46df4c67f2a16e6cce899eb7": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Teach Myself Algorithmic Trading?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "dc9ff8ee60c0f7fd41dccb286a34ff43": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: AI agentic, no-code platform for automated forex trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "4dea18b5f493e668e07a92e5ecf9d44a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "AI-Powered Trading, Algorithmic Collusion, and Price Efficiency 2023 [U:2025]",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "fb52e0da25dd2a4ae232637cf7208fb8": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "LLMs and Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8b28e234c3721cb266bd11e97ec3391c": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "On Godel's Incompleteness Theorem",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "17800015a35cfcdb7b0d2ba9fc5c94a4": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Comprehensive Comparison of Algorithmic Trading Platforms",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0ae20801c45d5596df15505ba20a6ccd": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Composer: AI Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "1cf0ea7cd042967514e505a4c54bb7bc": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Plexe \u2013 ML Models from a Prompt",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "b8530765fe030facb8c8f88bd2897e18": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "AI Daily Driver \u2013 Privacy and Validity",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "482b3d5071d332d3d260037fdfb9cc06": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Epoch: No-Code Hub for Algorithmic Trading (Now with AI Assistance)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "4ca31c926e6bd1f2fe9c7dbf389c997a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Interesting Look at Algorithmic vs. Floor Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "93550a209d6dd1b90c7a210bac63a45b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: What is still hard to research in investment analysis?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "bef9d035dcbedfa519e81f858827c319": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "A Two-Year Journey Rebuilding an Algorithmic Trading Platform in Rust",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3151bb56a9e91ee08d296db65eeaf620": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "I rebuilt my algorithmic trading platform in Rust. I have no regrets",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e1449acc9df711de5310816726178917": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Algorithmic Trading Marketplace",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "fe7970680f86025948d77f692d0ee49a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: I was tired of ROS2, so I rewrote it in Rust",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "81c10a32a3020f3818528776e10954f3": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: The Slow AI Commons \u2013 here's why it might fail",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "567d6300d58438931ea4df59be060511": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: A platform for intentional human connections",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "957e047fc05729b8b9bf2e975ba9a41c": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: State Algebra, new algebraic framework for logic, an alternative to BDD",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "3e271d1257f3a3b513d2fff8cfd02419": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: SelecTube \u2013 Curated YouTube for Kids",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "43b732de5a6083b01133fcdd7ade84e5": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: TrustBit \u2013 Building a URL shortener with Cloudflare's edge stack",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f12a4c72e46be3e20a7946292d489c6d": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: I Built Economic Safety Mechanisms for AI",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6826293db3903df59cbb7bcd4142d375": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: 1999date \u2013 Dating Like It's 1999",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "2ace9ca880c66f3e19d06c425b692ed8": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "hn_algotrading",
+      "title": "Show HN: I built a toy TPU that can do inference and training on the XOR problem",
+      "decision": "accepted",
+      "promising_file": "hn_algotrading_show_hn_i_built_a_toy_tpu_that_can_do_inference_an_20260527.md"
+    },
+    "ce8332b68e155060ce3e03858337351c": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "I spent 18 months rebuilding my algorithmic trading platform in Rust",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "facd15f59b8c24d4205d26b93045cdf9": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Grizzly Bulls: Market timing signals via proprietary algorithmic trading models",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "13cf6f61edacfc35aa2b68f559e8a289": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: LeetCode vs. Scenario-Based Interview Questions \u2013 what's your take?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "81e2cea5927325816c6a01d3eab789c1": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Why I'm looking into algorithmic trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0f2e824c1ee62666f3d81d594464665a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "OpenAlgo: Open-Source Algorithmic Trading Framework for Indian Markets",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "38befe55dc7604e3d0631b9d894e8e86": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Has anyone else had their Reddit account Kafka'd? How did you solve the issue?",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "1e0b2f28242b65ab688508da4d94295b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "I Built an Algorithmic Trading System in Rust. Here's What I Regret",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7a98fc32fa5cff74deb448db5c0aaa4d": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Arrow Algo \u2013 Algorithmic Trading Made Simple",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b1bbc9be6be63a586d3e4635751ceb3e": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Risk Management in High Frequency Trading Business",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d6e4382cb228c028d4ae4d4271a812dd": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Mastering Backtesting for Algorithmic Trading",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ec0774ef1ac24088b4d2875b7e006c27": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "MACD Buy and Sell vs. SP500",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "bc004fbaada46875e6a3d88aa6939269": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "ASK HN: Any bootcamps for international student with experience",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "dc90d138bf6455733a32bc37f1d2325c": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Trading MACD in Python",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "efa078bf6ee9124f4c45af039f9baf24": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Back End Engineer (Execution Systems) at Ather Digital",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ccc72faca323785a742eafd730e9dfcb": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "How to Build Your First Algorithmic Cryptocurrency Trading Bot in Python",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "ac46ef96455f719c3d8e15171993aef1": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: BillSpike \u2013 Root cause analysis for cloud cost spikes",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "eb5c8a1cd9768b0db2ec53a24ff10f2e": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Had enough \u2013 a need for a new beginning",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "bc5e28b2ee18b8b97a6df6831ada515b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "AI: The Creativity Killer \u2013 Are We Trading Genius for Convenience?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6459daa01acd8cc4c32ec98368de6ca6": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: FishSonar \u2013 Real-Time Crypto \"Fish\" Detector for Binance",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "31bdd0c68f03c7d7f8f05738bf844581": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "\"Fuck the algorithm\"?: What to learn from the UK's A-level grading fiasco (2020)",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "03ddf3c2676dddcad5356d402797413a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: What if the universe itself runs on O(1) memory?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "37ee483c8ca115f26aec86972c1670da": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Botwell \u2013 A Framework for LLM Comparative Analysis Using AI Peer Review",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9b3522dce7035880ad0ce5ed432819d1": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Rd-TableBench \u2013 Accurately evaluating table extraction",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6d25ef76f832c6f767852d1bd532be3a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Human vs. Computer in Rock Paper Scizzors",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "309d9fee885605e5035a44636643cbea": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: SlugMatch \u2013 Match Students to Residential Colleges",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8af50a58b30b2e11d7cd65bcb5ff588b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Is my new idea dumb?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "84beafda29a78fa5587fb5ff288c24d1": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Interview for a Platform Engineer",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3cfdb2684d60a4f943c00a81f895c180": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Sohri \u2013 Turn short stories into binge-able audio episodes",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8f393a285c01c4adb800311d67af5dfb": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Spot Trading in Cryptocurrency \u2013 An In-Depth Guide",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0d1a921f17d14970c8c45795edbc604d": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Would you pay for an E2E Encrypted Git Hosting service?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "dbc5fba2e6700454fc95fd2799fc70ed": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Algorithmic Spot Trading in Cryptocurrency \u2013 An In-Depth Guide",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7d3e0fde9dff4d607a98505f6c01773e": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Should HN use a different time algorithm for post ranking?",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "eee3b9bd3a4cd44f5b32ea090a80c0bc": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Why most crypto AI trading bots fail: It's the data, not the algorithm",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "d36d24d25e25f06606c911bd8de4de5b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Fast Random Library for C++17",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8cc154c43f0a75b8db25a3f8648cb943": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Trying to document my startup journey and share SaaS ideas on social media",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9dad24107132c0ce39043c15a2aac02a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: YapCards (iOS) \u2013 Voice-driven flashcards with AI feedback",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "fe97d637ffcd360a04e974d5f0482c34": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: YouTube Time Machine \u2013 browser extension to find forgotten videos",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7a861ed2457c958b198dd62dfadeccc8": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Algo-Trading Software",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "28e7ae0d2e908083120094fb7c64ac75": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "O(1) memory, no-preprocessing reachability algorithm for 2D grids",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7d6048e78817f5c92206cbae3eaabd7e": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Found this newsletter: an algorithm finds trading \"Zones\"",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "8c36e501d97a5bac4645ae2550bcc8c4": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Trying new X algorithm powered by Grok 4 Mini",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c01f21a5d1fc33b7b6e3d504562847ac": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: I just built a tool to turn any photo into pixel art",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "98253ea887e840a99921e4975235f291": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: EgoExo Forge: Data and Utilities Needed for Ego and Exo Human Data",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "788b368e6cb9c61757b127b9de058e67": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Ask HN: Vehicle Speed Detection Algorithm",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "98d80c6a0ccfc25c0a56c1c7005600bd": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: Index Wizard \u2013 Elevate Your Day Trading with Community-Enhanced Algo",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "743872b7adfe953c582180b5cbac800e": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: I made a LLM trade Stocks",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "fcfdeff92e88825dca0b06744e4f008d": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "hn_algotrading",
+      "title": "Show HN: MemKit \u2013- The spaced-repetition flashcard app I've always wanted",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "adaf99f8ef975cdf7c272baac6201bfd": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "quantocracy",
+      "title": "The Metamorphosis [Robot Wealth]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_the_metamorphosis_robot_wealth_20260527.md"
+    },
+    "b84c4c9a526ba3fdbf53b6083582d634": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "quantocracy",
+      "title": "Active Dual Momentum GTAA Strategy [Quantpedia]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_active_dual_momentum_gtaa_strategy_quantpedia_20260527.md"
+    },
+    "feaaab63c12b2b05f2da237d8a8396ed": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "quantocracy",
+      "title": "Identifying Stocks to Fade [Concretum Research]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_identifying_stocks_to_fade_concretum_research_20260527.md"
+    },
+    "8bda9522b9bfb92d656c9a547f96e211": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "quantocracy",
+      "title": "A Faster Monotone Implied Volatiltty Solver [Chase the Devil]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_a_faster_monotone_implied_volatility_solver_chase_20260527.md"
+    },
+    "2f730d603f7731dcbfa41d336f5cb813": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "quantocracy",
+      "title": "When Everyone Trades the Same Factor Playbook [Alpha Architect]",
+      "decision": "accepted",
+      "promising_file": "quantocracy_when_everyone_trades_the_same_factor_playbook_alph_20260527.md"
+    },
+    "048f3fb74d22786010d1992cd973a395": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "quantocracy",
+      "title": "Recent Quant Links from Quantocracy as of 05/24/2026",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c7f9314c3f174ea44c09bb334217ed75": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "quantpedia",
+      "title": "Quantpedia Awards 2026 \u2013 Winners Announcement",
+      "decision": "accepted",
+      "promising_file": "quantpedia_quantpedia_awards_2026_winners_announcement_20260527.md"
+    },
+    "bde9fa2c80967065d608f25f4e82b441": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "anthropics/knowledge-work-plugins",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e07ce054df74ab5fb7bd486f3c059a7c": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "shiyu-coder/Kronos",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5b903183701a09dbb4a92898ce77c774": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "666ghj/MiroFish",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f5f8e7810f5be13517567fa6cdcd5082": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "D4Vinci/Scrapling",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "3f072f75325f387f04421d1c9f61af8a": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "onyx-dot-app/onyx",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "85388ef6197f8f12b99a65b208b78196": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "cheahjs/free-llm-api-resources",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5f888eb6d321099b6c7831119fcc69aa": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "bleachbit/bleachbit",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "10678ed899d72d7a7530164a1f132bdc": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "Aider-AI/aider",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "b6e6535a1d2366b2f4f11b0c82885c4b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "elder-plinius/OBLITERATUS",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f6ac07d0482f00ad5153a2578425542c": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "paperless-ngx/paperless-ngx",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f7e1e43e7cb9ffc76f4175fd23e6361b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "microsoft/agent-governance-toolkit",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "326cd2af52e910c0c6055bbe1f80c36f": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "st-tech/ppf-contact-solver",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c76bee6fa8ea24a37dd495ad57fd521e": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "sansan0/TrendRadar",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "5d3598ae25c9e8e5a569ade0d38f8120": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "Datalux/Osintgram",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "c6959c2237d1878a1dce00ff999d8e5c": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "OpenBB-finance/OpenBB",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "7b4f55edcd7690e5f50390577d4f9e48": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "freqtrade/freqtrade-strategies",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "13871eaa927748cd96a1771a65bd6dad": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "donnemartin/system-design-primer",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "f2697633a41e0993d462b5d220333536": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "p-e-w/heretic",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "94f8a84e7a52eb877ab157b801641e16": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "harvard-edge/cs249r_book",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "cfe23531fb13e4e4210561a4c99e766f": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "shareAI-lab/learn-claude-code",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "49416d56565905ceccc7df2498088f82": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "dograh-hq/dograh",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "9e0eb74378790a5e5b231fcf193a605f": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "sherlock-project/sherlock",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "47655ccec7fd5e574e29cffda987b7c8": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "elebumm/RedditVideoMakerBot",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "6adce5e5f2f0c714dc49d55ba36731ea": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "francescopace/espectre",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "64b557df7aad20e238d0929288db290b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "modelscope/FunASR",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "223fc828eeac23105536b9c4dfde65cf": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "vllm-project/vllm",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "e4da41f1d5f96bff5ffbfac852c6d16b": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "agentscope-ai/agentscope",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "60c8f3ddb9e00530de44fb636985bce2": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "NVIDIA-NeMo/Megatron-Bridge",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "0e47a8c41a70ae2ccd6022fca8881bc7": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "anthropics/skills",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "cf87f0f0c08f11b6ed9cbe2a31cd29ce": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "zai-org/GLM-OCR",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "65113234f9df6a2daaf25badc9f00323": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "github_python",
+      "title": "unclecode/crawl4ai",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "67ef13f72739f6aca137aec8558406e2": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "Algorithm or Creative? A Three-Arm Experimental Design for Decomposing Algorithmic Bias in Platform A/B Tests",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_algorithm_or_creative_a_three_arm_experimental_des_20260527.md"
+    },
+    "c635c1981a6d9048813d111314efed2d": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "Dynamic Consumer Demand at Large Scale",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_dynamic_consumer_demand_at_large_scale_20260527.md"
+    },
+    "36eb4464d6ddd04eab21cf2bb4db7a53": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "arxiv_econ_em",
+      "title": "Process Utility in High-Stakes Competition",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "dcc8bdafd0c089ee9da544c1f9f0c31a": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "A Comparative Multi-Hazard Risk Assessment of the US High-Voltage Transmission Network",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_a_comparative_multi_hazard_risk_assessment_of_the__20260527.md"
+    },
+    "7f98e5fa94874ee9f59eb8bf601e438e": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "arxiv_econ_em",
+      "title": "Dynamic Evolution of Corporate Emissions Determinants",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "80dec58799f6758f65a4ab7187b61093": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "arxiv_econ_em",
+      "title": "Modeling Commuter Mobility in Stockholm: A Spatial Panel Approach Using Mobile P",
+      "decision": "rejected_L1_no_signal",
+      "promising_file": null
+    },
+    "8bcaad8d280951b27f9c9205fc4333be": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "arxiv_econ_em",
+      "title": "Multi-Dimensional Matching in Market Design",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "78515153e4c33915a0adb58c59541ba3": {
+      "first_seen": "2026-05-27 12:08",
+      "source": "arxiv_econ_em",
+      "title": "Identification and Estimation of Semiparametric Multilayered Sample Selection Mo",
+      "decision": "rejected_L0",
+      "promising_file": null
+    },
+    "acf10c4c55dfcb6fa7539e76ecefd03b": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "Partial Identification of Causal Effects that Vary by Setting",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_partial_identification_of_causal_effects_that_vary_20260527.md"
+    },
+    "edba64b8fb4551baa78fd43b8efda8a6": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "Algometrics: Forecasting Under Algorithmic Feedback",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_algometrics_forecasting_under_algorithmic_feedback_20260527.md"
+    },
+    "4cd0d4b120c609b6fa52eaf01cf33c33": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "Auditing and Fixing Economic Validity in Tabular Foundation Models for Discrete Choice",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_auditing_and_fixing_economic_validity_in_tabular_f_20260527.md"
+    },
+    "38178e5cd290ab2d801bbce04d6c05be": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "Learning Nonlinear Factor Models with Unknown Monotone Links from Incomplete and Noisy Data",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_learning_nonlinear_factor_models_with_unknown_mono_20260527.md"
+    },
+    "d5f21cc5504a51d575690048a88a7bb4": {
+      "first_seen": "2026-05-27 12:08 UTC",
+      "source": "arxiv_econ_em",
+      "title": "Tweedie's Formula and Score-Driven Updating",
+      "decision": "accepted",
+      "promising_file": "arxiv_econ_em_tweedies_formula_and_score_driven_updating_20260527.md"
     }
   },
-  "last_run": "2026-05-23 19:32 UTC"
+  "last_run": "2026-05-27 12:08 UTC"
 }
