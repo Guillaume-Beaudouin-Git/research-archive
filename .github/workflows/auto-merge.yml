@@ -82,7 +82,7 @@ jobs:
               const enabledAt = result.enablePullRequestAutoMerge.pullRequest.autoMergeRequest.enabledAt;
               core.notice(`Auto-merge enabled at ${enabledAt}`);
             } catch (err) {
-              if (err.message && err.message.includes('auto merge is not allowed')) {
+              if (err.message && err.message.toLowerCase().includes('auto merge is not allowed')) {
                 core.error(
                   'Auto-merge is disabled at the repo level. ' +
                   'Enable it at Settings → General → Pull Requests → Allow auto-merge.'
