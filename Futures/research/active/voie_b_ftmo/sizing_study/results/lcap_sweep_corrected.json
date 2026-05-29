@@ -1,0 +1,410 @@
+{
+  "signal_T": 4267,
+  "block_size": 65,
+  "vol_q15": 0.047428,
+  "n_paths": 10000,
+  "families": [
+    "A_1.0",
+    "A_1.3",
+    "A_1.5",
+    "A_1.7",
+    "A_2.0"
+  ],
+  "sweep_results": {
+    "A_1.0": {
+      "family": "A_1.0",
+      "p_pass": 0.8162,
+      "p_pass_lo": 0.8086,
+      "p_pass_hi": 0.8238,
+      "p_bust": 0.0021,
+      "p_undecided": 0.1817,
+      "p1_pass_rate": 0.9426,
+      "eq_p5": 1.0042,
+      "med_days": 142.0,
+      "p90_days": 220.0,
+      "pct_undecided": 18.2,
+      "shock_survival": {
+        "j5_m2": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m3": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m4": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m2": {
+          "n_reached": 9945,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m3": {
+          "n_reached": 9945,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m4": {
+          "n_reached": 9945,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m2": {
+          "n_reached": 9781,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m3": {
+          "n_reached": 9781,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m4": {
+          "n_reached": 9781,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        }
+      }
+    },
+    "A_1.3": {
+      "family": "A_1.3",
+      "p_pass": 0.8609,
+      "p_pass_lo": 0.8541,
+      "p_pass_hi": 0.8677,
+      "p_bust": 0.0089,
+      "p_undecided": 0.1302,
+      "p1_pass_rate": 0.9535,
+      "eq_p5": 1.0052,
+      "med_days": 131.0,
+      "p90_days": 214.0,
+      "pct_undecided": 13.0,
+      "shock_survival": {
+        "j5_m2": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m3": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m4": {
+          "n_reached": 10000,
+          "n_imm_bust": 4300,
+          "p_surv_cond": 0.57,
+          "p_surv": 0.57,
+          "p_bust": 0.43
+        },
+        "j20_m2": {
+          "n_reached": 9941,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m3": {
+          "n_reached": 9941,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m4": {
+          "n_reached": 9941,
+          "n_imm_bust": 4391,
+          "p_surv_cond": 0.5583,
+          "p_surv": 0.5609,
+          "p_bust": 0.4391
+        },
+        "j40_m2": {
+          "n_reached": 9744,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m3": {
+          "n_reached": 9744,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m4": {
+          "n_reached": 9744,
+          "n_imm_bust": 4450,
+          "p_surv_cond": 0.5433,
+          "p_surv": 0.555,
+          "p_bust": 0.445
+        }
+      }
+    },
+    "A_1.5": {
+      "family": "A_1.5",
+      "p_pass": 0.8738,
+      "p_pass_lo": 0.8673,
+      "p_pass_hi": 0.8803,
+      "p_bust": 0.0094,
+      "p_undecided": 0.1168,
+      "p1_pass_rate": 0.9586,
+      "eq_p5": 1.007,
+      "med_days": 127.0,
+      "p90_days": 210.0,
+      "pct_undecided": 11.7,
+      "shock_survival": {
+        "j5_m2": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m3": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m4": {
+          "n_reached": 10000,
+          "n_imm_bust": 4300,
+          "p_surv_cond": 0.57,
+          "p_surv": 0.57,
+          "p_bust": 0.43
+        },
+        "j20_m2": {
+          "n_reached": 9941,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m3": {
+          "n_reached": 9941,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m4": {
+          "n_reached": 9941,
+          "n_imm_bust": 4395,
+          "p_surv_cond": 0.5579,
+          "p_surv": 0.5605,
+          "p_bust": 0.4395
+        },
+        "j40_m2": {
+          "n_reached": 9703,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m3": {
+          "n_reached": 9703,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m4": {
+          "n_reached": 9703,
+          "n_imm_bust": 4506,
+          "p_surv_cond": 0.5356,
+          "p_surv": 0.5494,
+          "p_bust": 0.4506
+        }
+      }
+    },
+    "A_1.7": {
+      "family": "A_1.7",
+      "p_pass": 0.8802,
+      "p_pass_lo": 0.8738,
+      "p_pass_hi": 0.8866,
+      "p_bust": 0.0099,
+      "p_undecided": 0.1099,
+      "p1_pass_rate": 0.96,
+      "eq_p5": 1.0078,
+      "med_days": 125.0,
+      "p90_days": 209.0,
+      "pct_undecided": 11.0,
+      "shock_survival": {
+        "j5_m2": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m3": {
+          "n_reached": 10000,
+          "n_imm_bust": 1575,
+          "p_surv_cond": 0.8425,
+          "p_surv": 0.8425,
+          "p_bust": 0.1575
+        },
+        "j5_m4": {
+          "n_reached": 10000,
+          "n_imm_bust": 4300,
+          "p_surv_cond": 0.57,
+          "p_surv": 0.57,
+          "p_bust": 0.43
+        },
+        "j20_m2": {
+          "n_reached": 9941,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m3": {
+          "n_reached": 9941,
+          "n_imm_bust": 1558,
+          "p_surv_cond": 0.8433,
+          "p_surv": 0.8442,
+          "p_bust": 0.1558
+        },
+        "j20_m4": {
+          "n_reached": 9941,
+          "n_imm_bust": 4392,
+          "p_surv_cond": 0.5582,
+          "p_surv": 0.5608,
+          "p_bust": 0.4392
+        },
+        "j40_m2": {
+          "n_reached": 9686,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m3": {
+          "n_reached": 9686,
+          "n_imm_bust": 1673,
+          "p_surv_cond": 0.8273,
+          "p_surv": 0.8327,
+          "p_bust": 0.1673
+        },
+        "j40_m4": {
+          "n_reached": 9686,
+          "n_imm_bust": 4499,
+          "p_surv_cond": 0.5355,
+          "p_surv": 0.5501,
+          "p_bust": 0.4499
+        }
+      }
+    },
+    "A_2.0": {
+      "family": "A_2.0",
+      "p_pass": 0.8842,
+      "p_pass_lo": 0.8779,
+      "p_pass_hi": 0.8905,
+      "p_bust": 0.0099,
+      "p_undecided": 0.1059,
+      "p1_pass_rate": 0.9605,
+      "eq_p5": 1.008,
+      "med_days": 124.0,
+      "p90_days": 208.0,
+      "pct_undecided": 10.6,
+      "shock_survival": {
+        "j5_m2": {
+          "n_reached": 10000,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j5_m3": {
+          "n_reached": 10000,
+          "n_imm_bust": 1602,
+          "p_surv_cond": 0.8398,
+          "p_surv": 0.8398,
+          "p_bust": 0.1602
+        },
+        "j5_m4": {
+          "n_reached": 10000,
+          "n_imm_bust": 4300,
+          "p_surv_cond": 0.57,
+          "p_surv": 0.57,
+          "p_bust": 0.43
+        },
+        "j20_m2": {
+          "n_reached": 9941,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j20_m3": {
+          "n_reached": 9941,
+          "n_imm_bust": 1633,
+          "p_surv_cond": 0.8357,
+          "p_surv": 0.8367,
+          "p_bust": 0.1633
+        },
+        "j20_m4": {
+          "n_reached": 9941,
+          "n_imm_bust": 4393,
+          "p_surv_cond": 0.5581,
+          "p_surv": 0.5607,
+          "p_bust": 0.4393
+        },
+        "j40_m2": {
+          "n_reached": 9686,
+          "n_imm_bust": 0,
+          "p_surv_cond": 1.0,
+          "p_surv": 1.0,
+          "p_bust": 0.0
+        },
+        "j40_m3": {
+          "n_reached": 9686,
+          "n_imm_bust": 1717,
+          "p_surv_cond": 0.8227,
+          "p_surv": 0.8283,
+          "p_bust": 0.1717
+        },
+        "j40_m4": {
+          "n_reached": 9686,
+          "n_imm_bust": 4492,
+          "p_surv_cond": 0.5362,
+          "p_surv": 0.5508,
+          "p_bust": 0.4492
+        }
+      }
+    }
+  },
+  "best_family": "A_2.0",
+  "best_p_pass_lo": 0.8779,
+  "gate_mag": -0.03,
+  "gate_prob": 0.5,
+  "barrier_audit_all_pass": true
+}
