@@ -1,17 +1,20 @@
 """
-parity_check.py — Compare MT5 Strategy Tester trades vs Python backtest.
+parity_check.py — Compare EA trades vs Python backtest (ftmo_voie_b.py).
 
-Usage:
-    python parity_check.py --mt5_csv <path_to_mt5_trades.csv>
+Two input formats are auto-detected:
 
-MT5 export format (Strategy Tester Results → Save As CSV):
-  Expected columns: Date, Time, Symbol, Type, Lots, Price, Profit
+  --mt5_csv  (Strategy Tester)  MT5 Results → Save As CSV
+             Expected columns: Date, Time, Symbol, Type, Lots, Price, Profit
+
+  --mt5_csv  (Live decision log)  VoieB_decisions.csv written by EA
+             Expected columns: datetime_utc, dst_h, gap_US500_bp … direction,
+             leverage, lots_US500 … decision
 
 Python reference: results/ftmo_voie_b_returns.csv (Date, ret)
 
-Gate:
+Gates:
   direction concordance ≥ 95%
-  sizing concordance    ≥ 90%
+  sizing concordance    ≥ 90% (lot correlation; tolerates MT5 rounding)
 """
 
 from __future__ import annotations
@@ -31,19 +34,56 @@ GATE_DIR_PCT  = 0.95
 GATE_SIZE_PCT = 0.90
 
 
+def _is_decision_log(df: pd.DataFrame) -> bool:
+    """Return True if CSV looks like VoieB_decisions.csv (EA live log)."""
+    return ("date_utc" in df.columns or "datetime_utc" in df.columns
+            or ("direction" in df.columns and "decision" in df.columns))
+
+
 def load_mt5_trades(csv_path: Path) -> pd.DataFrame:
     """
-    Parse MT5 Strategy Tester CSV export.
-    Returns one row per closed trade with: date, symbol, direction, lots.
+    Parse MT5 Strategy Tester CSV export OR EA decision log.
+    Returns one row per day with: date, direction, total_lots (US500 proxy).
     """
     df = pd.read_csv(csv_path, sep=None, engine="python")
     df.columns = [c.strip().lower() for c in df.columns]
-    # normalise
+
+    if _is_decision_log(df):
+        return _load_decision_log(df)
+
+    # ── MT5 Strategy Tester format ──
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     df = df.dropna(subset=["date"])
     df["direction"] = df["type"].str.lower().map({"buy": 1, "sell": -1}).fillna(0).astype(int)
     df["lots"]      = pd.to_numeric(df.get("lots", 0), errors="coerce").fillna(0)
     df = df[df["direction"] != 0]
+    return df
+
+
+def _load_decision_log(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Parse EA VoieB_decisions.csv (live / demo log).
+    Supports v1.20+ (date_utc, lots per symbol) and legacy (datetime_utc, lots_US500).
+    Keeps only rows where a signal fired (direction != 0).
+    """
+    date_col = next((c for c in ["date_utc", "datetime_utc", "date"] if c in df.columns), None)
+    df["date"] = pd.to_datetime(df[date_col], errors="coerce") if date_col else pd.NaT
+    df = df.dropna(subset=["date"])
+
+    if "direction" in df.columns:
+        df["direction"] = pd.to_numeric(df["direction"], errors="coerce").fillna(0).astype(int)
+    else:
+        df["direction"] = df["decision"].str.lower().map(
+            {"long": 1, "short": -1, "no-signal": 0}).fillna(0).astype(int)
+
+    # v1.20+: plain "lots" column; legacy: "lots_us500" or per-symbol columns
+    if "lots" in df.columns:
+        lots_col = "lots"
+    else:
+        lots_col = next((c for c in df.columns if "lots_us500" in c.lower()), None)
+    df["lots"] = pd.to_numeric(df[lots_col], errors="coerce").fillna(0) if lots_col else 0.0
+
+    df = df[df["direction"] != 0].copy()
     return df
 
 
