@@ -50,10 +50,12 @@ VOL_SCALAR_MIN: Final[float] = 0.1   # floor: 10% of nominal position
 VOL_SCALAR_MAX: Final[float] = 2.0   # ceiling: 200% of nominal position
 
 # ── Prop-firm guardrails ───────────────────────────────────────────────────────
-# These are hard limits enforced before every order in live trading.
-# Position size = min(vol_target_size, guardrail_allowed_size).
-MAX_DAILY_DRAWDOWN: Final[float] = 0.045  # 4.5% intraday DD triggers full flatten
-MAX_TOTAL_DRAWDOWN: Final[float] = 0.09   # 9% total DD from peak triggers full flatten
+# legacy HyroTrader/Breakout, non canonique (4.5/9 = 5/10 minus internal buffer).
+# Canonical reference: Portfolio/risk/propfirm_canonical.py (FTMO 5/10).
+# Consumed by sizing.py for CHALLENGE_MODE budget; NOT consumed by live runtime
+# (live runtime path: execution/__init__.py → equity_monitor.py).
+MAX_DAILY_DRAWDOWN: Final[float] = 0.045  # 4.5% — legacy HyroTrader
+MAX_TOTAL_DRAWDOWN: Final[float] = 0.09   # 9% — legacy HyroTrader
 DAILY_PROFIT_CAP_PCT: Final[float] = 0.0  # no cap — log daily P&L only
 
 # ── Stop-loss ──────────────────────────────────────────────────────────────────

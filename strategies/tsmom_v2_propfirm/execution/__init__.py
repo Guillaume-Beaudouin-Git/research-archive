@@ -42,6 +42,15 @@ _PROJECT_ROOT = _EXEC_DIR.parent.parent.parent   # Algo_claude/
 STATE_DB_PATH = str(_PROJECT_ROOT / "challenge_state.db")
 ORDERS_DB_PATH = str(_PROJECT_ROOT / "orders_log.db")
 
-# ── Guardrail limits (hard — never change) ─────────────────────────────────
-MAX_DAILY_DD: float = 0.028   # 2.8% daily drawdown triggers flatten
-MAX_TOTAL_DD: float = 0.055   # 5.5% total drawdown triggers flatten
+# ── Guardrail limits ────────────────────────────────────────────────────────
+# legacy Propr, non canonique (Propr 3%/6% minus 0.2/0.5 internal buffer).
+# Canonical reference: Portfolio/risk/propfirm_canonical.py (FTMO 5/10).
+# RUNTIME-ACTIVE: equity_monitor.py imports these at order-time. This is the
+# guardrail that gates live trades on Strategy A's Propr account. The values in
+# strategies/tsmom_v2_propfirm/config.py (4.5/9, HyroTrader) are NOT consumed
+# in this path — only by sizing.py CHALLENGE_MODE budget calculation.
+# Strategy A is FROZEN as of 2026-05-30 (Crypto/research/archived/_frozen/
+# strategy_a_propr_2026-05-30/FREEZE.md); these values stay for the cron weekly
+# Propr rebalance still installed on VPS, which is breached and inactive.
+MAX_DAILY_DD: float = 0.028   # 2.8% — legacy Propr
+MAX_TOTAL_DD: float = 0.055   # 5.5% — legacy Propr
