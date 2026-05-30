@@ -1,0 +1,102 @@
+name: Notify digest via Telegram
+
+# Triggers Telegram notification when a new feasibility digest markdown
+# is committed to main under _automation/feasibility/digests/.
+# Designed to chain after feasibility-digest routine PR auto-merges.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_automation/feasibility/digests/*.md'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # need previous commit for diff
+
+      - name: Find newest digest file added/modified
+        id: find
+        run: |
+          # List markdown files changed in the last push under digests/
+          changed=$(git diff --name-only HEAD~1 HEAD -- '_automation/feasibility/digests/*.md' | tail -1)
+          if [ -z "$changed" ]; then
+            echo "No digest changed in this push" >&2
+            exit 0
+          fi
+          echo "digest_path=$changed" >> "$GITHUB_OUTPUT"
+          echo "Found digest: $changed"
+
+      - name: Parse frontmatter and build message
+        if: steps.find.outputs.digest_path != ''
+        id: parse
+        env:
+          DIGEST_PATH: ${{ steps.find.outputs.digest_path }}
+        run: |
+          python3 << 'PYEOF' >> "$GITHUB_OUTPUT"
+          import os, re, sys
+          path = os.environ['DIGEST_PATH']
+          with open(path) as f:
+              text = f.read()
+
+          # Extract frontmatter
+          fm = {}
+          m = re.match(r'^---\s*\n(.*?)\n---', text, re.DOTALL)
+          if m:
+              for line in m.group(1).split('\n'):
+                  if ':' in line and not line.strip().startswith('-'):
+                      key, _, val = line.partition(':')
+                      fm[key.strip()] = val.strip()
+                  # Nested verdicts: capture "  pass: N" etc.
+                  nested = re.match(r'\s+(\w+):\s*(\d+)', line)
+                  if nested:
+                      fm[f"verdicts.{nested.group(1)}"] = nested.group(2)
+
+          date     = fm.get('date', 'unknown')
+          tested   = fm.get('tested_24h', '0')
+          npass    = fm.get('verdicts.pass', '0')
+          nfa      = fm.get('verdicts.fail_a', '0')
+          nfb      = fm.get('verdicts.fail_b', '0')
+          nfc      = fm.get('verdicts.fail_c', '0')
+          nrh      = fm.get('verdicts.requires_human', '0')
+          queue    = fm.get('queue_size', '0')
+
+          # Emoji per-state for scannability
+          pass_emoji = '🟢' if int(npass) > 0 else '⚪'
+          rh_emoji   = '🟡' if int(nrh) > 0 else '⚪'
+          queue_emoji = '🔴' if int(queue) >= 10 else ('🟠' if int(queue) >= 5 else '⚪')
+
+          # Multi-line message via %0A
+          parts = [
+              f"📊 Feasibility Digest — {date}",
+              f"",
+              f"Tested 24h: {tested}",
+              f"{pass_emoji} PASS: {npass}",
+              f"  FAIL_A: {nfa} | FAIL_B: {nfb} | FAIL_C: {nfc}",
+              f"{rh_emoji} REQUIRES_HUMAN: {nrh}",
+              f"{queue_emoji} Queue total: {queue}",
+              f"",
+              f"https://github.com/{os.environ.get('GITHUB_REPOSITORY','')}/blob/main/{path}",
+          ]
+          msg = '%0A'.join(parts)
+          print(f"message<<EOM")
+          print(msg)
+          print(f"EOM")
+          PYEOF
+
+      - name: Send Telegram notification
+        if: steps.find.outputs.digest_path != ''
+        env:
+          TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT:  ${{ secrets.TELEGRAM_CHAT_ID }}
+          MESSAGE: ${{ steps.parse.outputs.message }}
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
+            -d "chat_id=${CHAT}" \
+            -d "text=${MESSAGE}" \
+            -d "disable_web_page_preview=true"
