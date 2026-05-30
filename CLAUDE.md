@@ -195,6 +195,17 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
      Gaussian generator materially overestimates bust for SL-capped strategies — use calibrated
      trade-based generator. Tool: Portfolio/risk/trailing_dd_simulator.py +
      Futures/research/active/nq_intraday/sizing_analysis.py.
+L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distribution against a
+     SYMMETRIC barrier (target ≈ max DD), NOT by account size — the problem is scale-invariant
+     (verified: Strategy C plateaus ~44% p(pass) across $10k-$200k, account_sweep 2026-05-30).
+     Lumpy strategies (low win-rate, high win/loss ratio, e.g. C: WR 27.75%, 3.7×) are structurally
+     capped ~44-54% regardless of sizing — wrong tool for a symmetric-barrier challenge.
+     FTMO-SUITABLE profile = high DAILY Sharpe + win-rate >55% + win/loss ratio ≈1 + low kurtosis
+     + high trade frequency (edge must materialize in ≤40 trading days without variance dominating).
+     Momentum/trend families are inherently lumpy → poor propfirm fit. Mean-reversion / regular-
+     grind families fit better but face the L11/L12 cost-ceiling + left-tail kurtosis caps.
+     Note de numérotation : "L19" proposé en pré-registration entre en collision avec L19 existant
+     (NQ market impact) ; promu en L24 pour préserver les références.
 
 ## Methodology toolkit
 - **Significance**: HAC Newey-West (lag-6) t-stat, threshold t > 2.5 for IC feasibility
