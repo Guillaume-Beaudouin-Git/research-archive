@@ -1,0 +1,194 @@
+================================================================================
+LOT 7 — Crontab VPS proposed diff (PROPOSED ONLY — nothing pushed)
+================================================================================
+
+Date           : 2026-05-30
+Target host    : algo@<VPS_IP>
+Current state  : `ssh algo@VPS 'crontab -l'` (read 2026-05-30 via SSH)
+Pre-flight     : ~/projects/Algo_claude/.env must contain PROPR_API_KEY before
+                 applying section [C] below. User handles .env sync manually
+                 outside Claude per session brief.
+
+================================================================================
+SECTION [A] — Collision lundi 00:05 (APPLY-SAFE, but nothing pushed yet)
+================================================================================
+
+Problem (verified V1, V2 of _audit/verification_2026-05-30.md):
+  Two cron jobs start at exactly Monday 00:05 UTC:
+    (a) `5 0 * * *` — run_tsmom.sh, daily HL testnet, calls tsmom_live.py
+        which PLACES fills.
+    (b) `5 0 * * 1` — Monday-only Propr rebalance.
+  Both run concurrently every Monday → resource contention, possible state
+  race in challenge_state.db / state.json.
+
+Fix:
+  Move the Propr Monday job by 10 minutes to 00:15. The daily job at 00:05
+  takes ~30-60s typically; 00:15 gives a safe 9-min buffer.
+
+Diff for line currently at index 3 of `crontab -l`:
+
+  -5 0 * * 1 cd ~/projects/Algo_claude && source ~/venv/bin/activate && \
+  -  PROPR_API_KEY=<REDACTED:PROPR_LIVE_KEY> python -m \
+  -  strategies.tsmom_v2_propfirm.execution.run_rebalance \
+  -  >> logs/tsmom_v2_cron.log 2>&1
+  +15 0 * * 1 /home/algo/projects/Algo_claude/scripts/run_with_env.sh \
+  +  python -m strategies.tsmom_v2_propfirm.execution.run_rebalance \
+  +  >> ~/projects/Algo_claude/logs/tsmom_v2_cron.log 2>&1
+
+Side effect: secret moved out of crontab into .env (see SECTION [C]).
+[NE PAS APPLIQUER ce changement SEUL si .env VPS n'a pas PROPR_API_KEY synchronisé.]
+
+================================================================================
+SECTION [B] — Doublon watchdog (APPLY-SAFE, but nothing pushed yet)
+================================================================================
+
+Problem (verified V2 lines 40-41):
+  Two identical-or-near-identical lines exist:
+    `*/2 13-17 * * 1-5 /bin/bash …/watchdog_check.sh >> /tmp/watchdog_check.log 2>&1`
+    `*/2 13-17 * * 1-5 /bin/bash …/watchdog_check.sh`  (no redirect)
+  This runs the watchdog twice in parallel every 2 minutes during the trading
+  window. The second one has no log capture → unsupervised side process.
+
+Fix: keep only the first line (with redirection).
+
+Diff:
+
+  -*/2 13-17 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/Futures/live/strategy_c_live/watchdog_check.sh >> /tmp/watchdog_check.log 2>&1
+  -*/2 13-17 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/Futures/live/strategy_c_live/watchdog_check.sh
+  +*/2 13-17 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/Futures/live/strategy_c_live/watchdog_check.sh >> /tmp/watchdog_check.log 2>&1
+
+(This change is independent of .env. Safe to apply at any time.)
+
+================================================================================
+SECTION [C] — Migrate all inline-secret crons to source-.env via wrapper
+================================================================================
+[NE PAS APPLIQUER — .env VPS à synchroniser par utilisateur d'abord]
+
+Pre-flight requirement (manual user step, OUTSIDE Claude per session brief):
+  ssh algo@<VPS_IP> 'nano ~/projects/Algo_claude/.env'
+  Add these lines (paste current rotated values):
+    + PROPR_API_KEY=<paste-current-rotated-value>
+    + PROPR_API_URL=<paste-or-leave-blank>
+  (HYPERLIQUID_TESTNET_KEY, BINANCE_TESTNET_*, TELEGRAM_*, FRED_API_KEY are
+   already in VPS .env per security_cleanup S1 §29-34 audit.)
+  Then `ls -la ~/projects/Algo_claude/.env` should show mode 600 (rw owner only).
+
+Wrapper to install on VPS (copy from repo `scripts/run_with_env.sh`):
+  ssh algo@<VPS_IP> 'mkdir -p ~/projects/Algo_claude/scripts'
+  scp scripts/run_with_env.sh algo@<VPS_IP>:~/projects/Algo_claude/scripts/
+  ssh algo@<VPS_IP> 'chmod +x ~/projects/Algo_claude/scripts/run_with_env.sh'
+
+Diff (full crontab after sections A+B+C):
+
+  --- crontab.current (10 lines, 4 with inline secrets, 1 duplicate)
+  +++ crontab.proposed (10 lines, 0 with inline secrets, no duplicate)
+  @@ -1,10 +1,15 @@
+  -5 0 * * * /home/algo/run_tsmom.sh --live --private-key <REDACTED:HL_PRIVKEY> >> /home/algo/logs/tsmom.log 2>&1
+  +# Strategy A — daily HL testnet (Strategy A frozen 2026-05-30 but daily testnet
+  +#   continues to place fills; see Crypto/research/archived/_frozen/...)
+  +5 0 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh \
+  +    /home/algo/run_tsmom.sh --live --private-key "$HYPERLIQUID_TESTNET_KEY" \
+  +    >> /home/algo/logs/tsmom.log 2>&1
+
+   30 0 * * * /home/algo/run_monitor.sh >> /home/algo/logs/monitor.log 2>&1
+
+  -5 0 * * 1 cd ~/projects/Algo_claude && source ~/venv/bin/activate && PROPR_API_KEY=<REDACTED> python -m strategies.tsmom_v2_propfirm.execution.run_rebalance >> logs/tsmom_v2_cron.log 2>&1
+  +# Strategy A — weekly Propr rebalance (Monday 00:15, decollided from 00:05 daily)
+  +15 0 * * 1 /home/algo/projects/Algo_claude/scripts/run_with_env.sh \
+  +    python -m strategies.tsmom_v2_propfirm.execution.run_rebalance \
+  +    >> ~/projects/Algo_claude/logs/tsmom_v2_cron.log 2>&1
+
+  -30 8 * * * cd ~/projects/Algo_claude && source ~/venv/bin/activate && PROPR_API_KEY=<REDACTED> TELEGRAM_BOT_TOKEN=<REDACTED> TELEGRAM_CHAT_ID=<REDACTED> python -m strategies.tsmom_v2_propfirm.execution.daily_summary >> logs/tsmom_v2_cron.log 2>&1
+  +# Strategy A — daily Propr summary (08:30 UTC)
+  +30 8 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh \
+  +    python -m strategies.tsmom_v2_propfirm.execution.daily_summary \
+  +    >> ~/projects/Algo_claude/logs/tsmom_v2_cron.log 2>&1
+
+  -10 0,8,16 * * * cd ~/projects/Algo_claude && /bin/bash -c 'source ~/venv/bin/activate && source .env && /home/algo/run_delta_neutral.sh --live --bn-key $BINANCE_TESTNET_API_KEY --bn-secret $BINANCE_TESTNET_SECRET_KEY --hl-key $HYPERLIQUID_TESTNET_KEY' >> ~/logs/delta_neutral.log 2>&1
+  +# Strategy B — delta-neutral 8h (already used source-.env pattern; unify on wrapper)
+  +10 0,8,16 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh \
+  +    /home/algo/run_delta_neutral.sh --live \
+  +      --bn-key "$BINANCE_TESTNET_API_KEY" --bn-secret "$BINANCE_TESTNET_SECRET_KEY" \
+  +      --hl-key "$HYPERLIQUID_TESTNET_KEY" \
+  +    >> ~/logs/delta_neutral.log 2>&1
+
+  -*/2 13-17 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/Futures/live/strategy_c_live/watchdog_check.sh >> /tmp/watchdog_check.log 2>&1
+  -*/2 13-17 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/Futures/live/strategy_c_live/watchdog_check.sh
+  +# Strategy C — watchdog (deduplicated; no secrets needed)
+  +*/2 13-17 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/Futures/live/strategy_c_live/watchdog_check.sh >> /tmp/watchdog_check.log 2>&1
+
+  -30 6 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/scripts/fetch_arxiv.sh
+  -*/30 * * * * /bin/bash /home/algo/projects/Algo_claude/scripts/fetch_alpha_sources.sh
+  +# Automation — arxiv daily + alpha hunt 30min (no secrets)
+  +30 6 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/scripts/fetch_arxiv.sh \
+  +    >> ~/projects/Algo_claude/logs/arxiv_fetch.log 2>&1
+  +*/30 * * * * /bin/bash /home/algo/projects/Algo_claude/scripts/fetch_alpha_sources.sh \
+  +    >> ~/projects/Algo_claude/logs/alpha_hunt_fetch.log 2>&1
+
+   @reboot sleep 30 && /usr/bin/screen -dmS mt5 /home/algo/start_mt5.sh
+
+Notes on the diff:
+  - All `PROPR_API_KEY=...`, `--private-key <HEX>`, `TELEGRAM_*=...` inline
+    secrets are removed from `crontab -l`. They live in `.env` and are sourced
+    by `run_with_env.sh` before each command.
+  - `"$VAR"` quoting protects against accidental word-splitting if a value
+    contains whitespace.
+  - Trailing redirects standardize stderr+stdout to a per-job log file.
+  - Adding `>> ~/.../arxiv_fetch.log` for fetch_arxiv.sh fixes the silent-fail
+    bug (V2 line 42: log was absent for that job).
+  - The `@reboot` line is unchanged: it spawns MT5 in a detached screen which
+    reads its own .ini — no secret in the cron itself.
+
+================================================================================
+MIGRATION RUNBOOK (for USER to execute, NOT Claude)
+================================================================================
+
+Step 1 — Backup current crontab:
+  ssh algo@<VPS_IP> \
+    'crontab -l > ~/crontab.backup-pre-lot7-$(date +%Y%m%d).txt && \
+     echo "Backup saved to ~/crontab.backup-pre-lot7-$(date +%Y%m%d).txt"'
+
+Step 2 — Sync .env on VPS (manual edit, NOT scripted):
+  ssh algo@<VPS_IP> 'nano ~/projects/Algo_claude/.env'
+  # paste / verify: PROPR_API_KEY, PROPR_API_URL, plus existing TESTNET_*, TG, FRED
+  # confirm mode: ssh algo@VPS 'ls -la ~/projects/Algo_claude/.env' → -rw-------
+
+Step 3 — Install wrapper on VPS:
+  scp scripts/run_with_env.sh algo@<VPS_IP>:~/projects/Algo_claude/scripts/
+  ssh algo@<VPS_IP> 'chmod +x ~/projects/Algo_claude/scripts/run_with_env.sh'
+
+Step 4 — Smoke test the wrapper without touching cron yet:
+  ssh algo@<VPS_IP> \
+    '~/projects/Algo_claude/scripts/run_with_env.sh \
+       python -c "import os; print(\"PROPR_API_KEY present:\", bool(os.getenv(\"PROPR_API_KEY\")))"'
+  # expected: "PROPR_API_KEY present: True"  (without printing the value)
+
+Step 5 — Apply new crontab (interactive, paste-in-editor):
+  ssh algo@<VPS_IP> 'EDITOR=nano crontab -e'
+  # paste the proposed contents above (only the lines starting with `+`)
+
+Step 6 — Verify:
+  ssh algo@<VPS_IP> 'crontab -l | grep -cE "^(#|[0-9*])"'
+  # expected: 14 lines (8 jobs + comments)
+
+Step 7 — Trigger one job manually to confirm:
+  ssh algo@<VPS_IP> \
+    '~/projects/Algo_claude/scripts/run_with_env.sh \
+       python -m strategies.tsmom_v2_propfirm.execution.run_rebalance --dry-run 2>&1 | tail -10'
+
+Step 8 — Rotate keys AGAIN if not already done (Propr + HL + Telegram).
+        Old keys in the OLD crontab are still potentially logged in shell
+        history; they should be revoked even after the migration.
+
+================================================================================
+WHAT IS PUSHED TO VPS BY THIS LOT (today, 2026-05-30)
+================================================================================
+NOTHING.
+
+Local artifacts created:
+  - scripts/run_with_env.sh             (committed to repo, ready to scp)
+  - _audit/lot7_crontab_diff_2026-05-30.txt (this file)
+
+VPS state unchanged.
+
+================================================================================
