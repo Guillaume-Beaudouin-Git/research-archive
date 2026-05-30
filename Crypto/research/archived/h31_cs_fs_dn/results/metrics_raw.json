@@ -1,0 +1,17 @@
+{
+  "T_days": 856,
+  "ann_return": -0.2919,
+  "ann_vol": 0.3629,
+  "sharpe_raw": -0.8044,
+  "max_drawdown": -0.699,
+  "total_return": -0.5694,
+  "yearly_sharpe": {
+    "2024": -1.79,
+    "2025": 0.649,
+    "2026": -1.138
+  },
+  "funding_contrib": 0.051,
+  "total_cost_drag": 0.2339,
+  "avg_n_long": 20.3,
+  "avg_n_short": 20.2
+}
