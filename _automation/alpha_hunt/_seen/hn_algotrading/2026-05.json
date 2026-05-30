@@ -20,6 +20,13 @@
     "source": "hn_algotrading",
     "title": "Adventures in algorithmic trading on the Runescape Grand Exchange"
   },
+  "06e304f10372fcbf84e6a331590fbfa6": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "The First Data-Driven Platform That Makes Hosting Comparisons Fair",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "09538c39f26a49643b2aabe8b15bb9b3": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
@@ -67,7 +74,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: I Built Systems AGI \u2013 1600 Verticals, Self-Healing, Self-Evolving"
+    "title": "Show HN: I Built Systems AGI – 1600 Verticals, Self-Healing, Self-Evolving"
   },
   "12c2c9ed9dca22acf3577a959bad6380": {
     "decision": "rejected_L0",
@@ -83,12 +90,19 @@
     "source": "hn_algotrading",
     "title": "The Algorithmic Trading Podcast"
   },
+  "136de45a02437291c6e5e5bbf9281c76": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "C2PM(Color to Pixel Map)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "13cf6f61edacfc35aa2b68f559e8a289": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Ask HN: LeetCode vs. Scenario-Based Interview Questions \u2013 what's your take?"
+    "title": "Ask HN: LeetCode vs. Scenario-Based Interview Questions – what's your take?"
   },
   "16466cf554e47dd7e6e6f789cc45f0ad": {
     "decision": "rejected_L0",
@@ -116,7 +130,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Plexe \u2013 ML Models from a Prompt"
+    "title": "Show HN: Plexe – ML Models from a Prompt"
   },
   "1e0b2f28242b65ab688508da4d94295b": {
     "decision": "rejected_L0",
@@ -124,6 +138,20 @@
     "promising_file": null,
     "source": "hn_algotrading",
     "title": "I Built an Algorithmic Trading System in Rust. Here's What I Regret"
+  },
+  "1f0861be89adc57b62120b482a98f938": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Virtualflow – Automate Manual Data Extraction for SMEs",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "23acb1fc1382c53845936328d02cc030": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: MicroGPT in 243 Lines – Demystifying the LLM Black Box",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "28e7ae0d2e908083120094fb7c64ac75": {
     "decision": "rejected_L0",
@@ -153,26 +181,40 @@
     "source": "hn_algotrading",
     "title": "I spent 18 months rebuilding my algorithmic trading platform in Rust"
   },
+  "2b51268ba76a61880bbfc3f42dc04c46": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Sentiment Analysis in Algorithmic Cryptocurrency Trading Bot Platforms",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2d6d8e4c19b4ae5af2090a8966df2ac0": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: I tried coding theology – accidentally built AI accountability",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "308319059976589fbfc962149848b323": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: I Built Systems AGI \u2013 1600 Verticals, Self-Healing\\Self-Evolving"
+    "title": "Show HN: I Built Systems AGI – 1600 Verticals, Self-Healing\\Self-Evolving"
   },
   "309d9fee885605e5035a44636643cbea": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: SlugMatch \u2013 Match Students to Residential Colleges"
+    "title": "Show HN: SlugMatch – Match Students to Residential Colleges"
   },
   "30ac893881dad419252c6df03f74d5eb": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Prism \u2013 7 AI stories daily with credibility tags, no doomscrolling"
+    "title": "Show HN: Prism – 7 AI stories daily with credibility tags, no doomscrolling"
   },
   "30f1d8e92d02ca4a06f072bdeb8ed978": {
     "decision": "rejected_L0",
@@ -209,12 +251,19 @@
     "source": "hn_algotrading",
     "title": "Show HN: ZoneMapzone World Clock"
   },
+  "36670520b0ad02ae497a43e8f0843549": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: I built a non-algorithmic social network for just my family and friends",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "37ee483c8ca115f26aec86972c1670da": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Botwell \u2013 A Framework for LLM Comparative Analysis Using AI Peer Review"
+    "title": "Show HN: Botwell – A Framework for LLM Comparative Analysis Using AI Peer Review"
   },
   "38b9107cb8d40ea7de7daa445d1d3ac8": {
     "decision": "rejected_L0",
@@ -249,21 +298,21 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Sohri \u2013 Turn short stories into binge-able audio episodes"
+    "title": "Show HN: Sohri – Turn short stories into binge-able audio episodes"
   },
   "3e271d1257f3a3b513d2fff8cfd02419": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: SelecTube \u2013 Curated YouTube for Kids"
+    "title": "Show HN: SelecTube – Curated YouTube for Kids"
   },
   "3f949ec7a1b7900d98d85fb5ddaf5aa5": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: FocusStream \u2013 Learn from YouTube Without the Distractions"
+    "title": "Show HN: FocusStream – Learn from YouTube Without the Distractions"
   },
   "412e691857b3ecfb9659d163d9d1314e": {
     "decision": "rejected_L0",
@@ -272,19 +321,40 @@
     "source": "hn_algotrading",
     "title": "How AI Is Turning Average Posts into Viral Content"
   },
+  "41400e3f0405088f2322e498a3d912e6": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "BlackTape – open-source music discovery built on MusicBrainz and Discogs",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4263e44eac9e2f0192aef51405b05311": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: DevIndex – Ranking 50k GitHub developers using a static JSON file",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "43b732de5a6083b01133fcdd7ade84e5": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: TrustBit \u2013 Building a URL shortener with Cloudflare's edge stack"
+    "title": "Show HN: TrustBit – Building a URL shortener with Cloudflare's edge stack"
   },
   "461e5008f2f690b19950106900c1da01": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: One Good Thing \u2013 one thought a day, then asks you to close the app"
+    "title": "Show HN: One Good Thing – one thought a day, then asks you to close the app"
+  },
+  "47c35488392fdadb71ea8dc4d8f044a2": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "LLM Benchmark: Frontier models now statistically indistinguishable",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "482b3d5071d332d3d260037fdfb9cc06": {
     "decision": "rejected_L0",
@@ -382,7 +452,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: DayLeet \u2013 A daily habit for sharpening whiteboard logic"
+    "title": "Show HN: DayLeet – A daily habit for sharpening whiteboard logic"
   },
   "<ACCOUNT_ID>f6d89de4966b40a9bd19ed4": {
     "decision": "rejected_L0",
@@ -410,7 +480,7 @@
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Launch HN: Phind 3 (YC S22) \u2013 Every answer is a mini-app"
+    "title": "Launch HN: Phind 3 (YC S22) – Every answer is a mini-app"
   },
   "5a3504599ab8f02256ccc4afd5dc15d4": {
     "decision": "rejected_L0",
@@ -431,7 +501,7 @@
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "GeneralGiist \u2013 A Global Forum Built for Real, Unfiltered Conversations"
+    "title": "GeneralGiist – A Global Forum Built for Real, Unfiltered Conversations"
   },
   "5f7cf8aad4aed6e4f519e106ac700618": {
     "decision": "rejected_L0",
@@ -439,6 +509,13 @@
     "promising_file": null,
     "source": "hn_algotrading",
     "title": "Algonaut - Algorithmic stock trading platform in the cloud "
+  },
+  "5fa8db8e801910eff22c8649867391ce": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Using Residential Proxy to Overcome Captcha Barriers",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "6011514e88e4ab01dbb20e804c543fe0": {
     "decision": "rejected_L0",
@@ -459,7 +536,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: FishSonar \u2013 Real-Time Crypto \"Fish\" Detector for Binance"
+    "title": "Show HN: FishSonar – Real-Time Crypto \"Fish\" Detector for Binance"
   },
   "64d98113fdc4f4b1c40522a3564bfba8": {
     "decision": "rejected_L0",
@@ -494,7 +571,14 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: 1999date \u2013 Dating Like It's 1999"
+    "title": "Show HN: 1999date – Dating Like It's 1999"
+  },
+  "6bc0a214730d37600179dd9dab3452d9": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: I vibe coded a vibe marketing platform",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "6d25ef76f832c6f767852d1bd532be3a": {
     "decision": "rejected_L0",
@@ -502,6 +586,27 @@
     "promising_file": null,
     "source": "hn_algotrading",
     "title": "Ask HN: Human vs. Computer in Rock Paper Scizzors"
+  },
+  "6d8ad3935a632f501eef6903f02e44e0": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Part 1 - AI Chat Evaluation of the Formal Language in He Xin's PEPC System",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6f39a8cc7472798158cee9c83c7a0189": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Arte.tv: Madagascar – The People training AI algorithms [video]",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6fd8cbcaa6df6ea59c336fc494e2b33c": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Enabling cheap LCD HUDs – 0.015px calibration eliminates waveguide optics",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "70cf979b204f0861be8c47544cda27bb": {
     "decision": "rejected_L0",
@@ -531,12 +636,26 @@
     "source": "hn_algotrading",
     "title": "Show HN: I made a LLM trade Stocks"
   },
+  "763175176227eaeb827c9799ad172b85": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: FizzBee – Formal methods in Python",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7769e3e8948554ecd42da5f2be51a946": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
     "title": "Show HN: Review my new app platform Mu"
+  },
+  "77aa8a471076088d2d4544a472c4f1bd": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Any good resources to get started with Algorithmic trading",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "780f8002a1ac948df53d0a1982d8fa1b": {
     "decision": "rejected_L0",
@@ -564,7 +683,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Everything is AI now \u2013 does this kill the excitment of software development?"
+    "title": "Everything is AI now – does this kill the excitment of software development?"
   },
   "7a861ed2457c958b198dd62dfadeccc8": {
     "decision": "rejected_L0",
@@ -578,7 +697,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Arrow Algo \u2013 Algorithmic Trading Made Simple"
+    "title": "Arrow Algo – Algorithmic Trading Made Simple"
   },
   "7d3e0fde9dff4d607a98505f6c01773e": {
     "decision": "rejected_L0",
@@ -599,7 +718,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: The Slow AI Commons \u2013 here's why it might fail"
+    "title": "Show HN: The Slow AI Commons – here's why it might fail"
   },
   "81e2cea5927325816c6a01d3eab789c1": {
     "decision": "rejected_L0",
@@ -621,6 +740,13 @@
     "promising_file": null,
     "source": "hn_algotrading",
     "title": "Show HN: Museum of Handwritten Code (If, While, Binary Search, Merge Sort)"
+  },
+  "856ae05e85688c156e42dd21bf71c759": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Species.app – A visual spaced-repetition engine for taxonomy",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "858d3baa9481b9c530b0394084da3144": {
     "decision": "rejected_L0",
@@ -690,7 +816,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Value at Risk for Algorithmic Trading Risk Management \u2013 Part I"
+    "title": "Value at Risk for Algorithmic Trading Risk Management – Part I"
   },
   "8c36e501d97a5bac4645ae2550bcc8c4": {
     "decision": "rejected_L0",
@@ -718,7 +844,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Algorithmic Spot Trading in Cryptocurrency \u2013 An In-Depth Guide"
+    "title": "Algorithmic Spot Trading in Cryptocurrency – An In-Depth Guide"
   },
   "90dfeba41bfbc835c4b832f5bf0af46b": {
     "decision": "rejected_L1_no_signal",
@@ -769,12 +895,19 @@
     "source": "hn_algotrading",
     "title": "Show HN: EgoExo Forge: Data and Utilities Needed for Ego and Exo Human Data"
   },
+  "9884ba09e4e0d5a56a59fc6bd99f62d2": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Meta-algorithmic judicial reasoning engine",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "98d80c6a0ccfc25c0a56c1c7005600bd": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Index Wizard \u2013 Elevate Your Day Trading with Community-Enhanced Algo"
+    "title": "Show HN: Index Wizard – Elevate Your Day Trading with Community-Enhanced Algo"
   },
   "9977239edd988829bf19c5af8b85639e": {
     "decision": "rejected_L0",
@@ -782,6 +915,13 @@
     "promising_file": null,
     "source": "hn_algotrading",
     "title": "Show HN: Subscribe to RSS Feeds on Kindle"
+  },
+  "998d28b5321d5bb45397890cc8d7373f": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Open Notes – Community Notes-style context for Discord",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "99a9de633839ab4d5e671871147e2cf3": {
     "decision": "rejected_L0",
@@ -809,7 +949,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Rd-TableBench \u2013 Accurately evaluating table extraction"
+    "title": "Rd-TableBench – Accurately evaluating table extraction"
   },
   "9c03750b5c865ada8d84ad59111ee811": {
     "decision": "rejected_L0",
@@ -823,21 +963,21 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: YapCards (iOS) \u2013 Voice-driven flashcards with AI feedback"
+    "title": "Show HN: YapCards (iOS) – Voice-driven flashcards with AI feedback"
   },
   "9f070bee2f6870d7b193309e2477bf35": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Ask HN: Posted AI book on algorithms\u20135.3K views, zero sales. What now?"
+    "title": "Ask HN: Posted AI book on algorithms–5.3K views, zero sales. What now?"
   },
   "a2690fe1bc57259ed60264cc9f5ae575": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Solo trader built algo trading platform via AI \u2013 no dev experience"
+    "title": "Show HN: Solo trader built algo trading platform via AI – no dev experience"
   },
   "a2bd2b812574ca021151e52b88e41dd0": {
     "decision": "rejected_L0",
@@ -865,14 +1005,21 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: PutHouse \u2013 The AI Options Trader"
+    "title": "Show HN: PutHouse – The AI Options Trader"
+  },
+  "ab90e2a2c6f409751da7ebfd3c5b5476": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Four computational processes embedded in traditional mosaic",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "ac46ef96455f719c3d8e15171993aef1": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: BillSpike \u2013 Root cause analysis for cloud cost spikes"
+    "title": "Show HN: BillSpike – Root cause analysis for cloud cost spikes"
   },
   "b00158eb164c8bc7c3d6992055b6c6b4": {
     "decision": "rejected_L0",
@@ -893,7 +1040,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: FaultWall \u2013 Which tenant is killing your Postgres? Now you can find out"
+    "title": "Show HN: FaultWall – Which tenant is killing your Postgres? Now you can find out"
   },
   "b2db8c59e7df07f381f2cf10b9132780": {
     "decision": "rejected_L0",
@@ -914,7 +1061,14 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "AI Daily Driver \u2013 Privacy and Validity"
+    "title": "AI Daily Driver – Privacy and Validity"
+  },
+  "b894f292d67d6ff8d83aad9cea1cb273": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: MyRise Coach – AI-powered growth platform with 8 proven methodologies",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "bb926cfc98c320c5844a4803bcec5506": {
     "decision": "rejected_L0",
@@ -935,7 +1089,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "AI: The Creativity Killer \u2013 Are We Trading Genius for Convenience?"
+    "title": "AI: The Creativity Killer – Are We Trading Genius for Convenience?"
   },
   "bef9d035dcbedfa519e81f858827c319": {
     "decision": "rejected_L0",
@@ -970,7 +1124,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Quantopian\u2019s algorithmic trading platform now accepts outside data sets"
+    "title": "Quantopian’s algorithmic trading platform now accepts outside data sets"
   },
   "c3722267da965242ae3bfe4eb9d9b78b": {
     "decision": "rejected_L0",
@@ -984,21 +1138,28 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Algorithmic Trading: A Practitioner\u2019s Guide"
+    "title": "Algorithmic Trading: A Practitioner’s Guide"
   },
   "c43ad26c1db2c9fb00fc51a8b7be1aff": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "The \u2018Final\u2019 Frontier of Algorithmic Trading"
+    "title": "The ‘Final’ Frontier of Algorithmic Trading"
   },
   "c5e9fd4ffd793141d9e11921d34a3c5f": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: SVG Fitter \u2013 Rust+WASM Vectorizer"
+    "title": "Show HN: SVG Fitter – Rust+WASM Vectorizer"
+  },
+  "c83d9e38ef043a580d4c87072823e6d8": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: CareerCupid now (OkCupid for Jobs) now supports job listings",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "ccc72faca323785a742eafd730e9dfcb": {
     "decision": "rejected_L0",
@@ -1026,14 +1187,14 @@
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Optimizing LiteLLM with Rust \u2013 When Expectations Meet Reality"
+    "title": "Show HN: Optimizing LiteLLM with Rust – When Expectations Meet Reality"
   },
   "d2b62a8a2062e0758716982bd75f9d17": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: P-book \u2013 an interactive book for kids about recommendation algorithms"
+    "title": "Show HN: P-book – an interactive book for kids about recommendation algorithms"
   },
   "d36d24d25e25f06606c911bd8de4de5b": {
     "decision": "rejected_L0",
@@ -1049,12 +1210,19 @@
     "source": "hn_algotrading",
     "title": "How to Learn Algorithmic Trading"
   },
+  "d4a13b8604a0ba14ade5f4b5d20819a4": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: I built an app using Apple Watch's water and HR sensors to track baths",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d61556dd5cf394b437f0991afd11bfea": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Cloud9Trader \u2013 Simple, powerful platform for algorithmic trading"
+    "title": "Cloud9Trader – Simple, powerful platform for algorithmic trading"
   },
   "d6e4382cb228c028d4ae4d4271a812dd": {
     "decision": "rejected_L0",
@@ -1082,7 +1250,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "SenseStream \u2013 Mood-based film discovery instead of genre browsing"
+    "title": "SenseStream – Mood-based film discovery instead of genre browsing"
   },
   "dacf62af2b10e3e6d8f304108ce0a4cf": {
     "decision": "rejected_L0",
@@ -1103,7 +1271,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Algorithmic Spot Trading in Cryptocurrency \u2013 An In-Depth Guide"
+    "title": "Algorithmic Spot Trading in Cryptocurrency – An In-Depth Guide"
   },
   "dc90d138bf6455733a32bc37f1d2325c": {
     "decision": "rejected_L0",
@@ -1126,6 +1294,13 @@
     "source": "hn_algotrading",
     "title": "NautilusTrader: Open-source algorithmic trading platform"
   },
+  "e11736951524a7eda4a722c9868b144e": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Noema a declarative AI programming Lib",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e1449acc9df711de5310816726178917": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
@@ -1140,12 +1315,19 @@
     "source": "hn_algotrading",
     "title": "Show HN: The OASI 6 Engineering Structural Abundance via SMR and Modular"
   },
+  "e5856bb55fdaaff428ea13b7f3993fea": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Parascene – a platform for AI, algorithmic, and traditional art",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e6cb0db153a0922d4197b8bccc50c976": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Photo app that does just one thing \u2013 no stories/reels/algorithm"
+    "title": "Show HN: Photo app that does just one thing – no stories/reels/algorithm"
   },
   "e728eb754ecc6ebc9759dfe3fcbc4e4a": {
     "decision": "rejected_L0",
@@ -1159,7 +1341,7 @@
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Solance \u2013 Discover Music Through Friends"
+    "title": "Show HN: Solance – Discover Music Through Friends"
   },
   "e74274f295d48704b11c103b763ff752": {
     "decision": "rejected_L0",
@@ -1180,7 +1362,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Ask HN: Had enough \u2013 a need for a new beginning"
+    "title": "Ask HN: Had enough – a need for a new beginning"
   },
   "ebae0f21b42c32bdd50fdfdcb8d35719": {
     "decision": "rejected_L0",
@@ -1243,7 +1425,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Strix \u2013 Drone swarm orchestration using quant trading algorithms (Rust)"
+    "title": "Strix – Drone swarm orchestration using quant trading algorithms (Rust)"
   },
   "f766a89312967aa8545d89322b1e35d2": {
     "decision": "rejected_L0",
@@ -1257,7 +1439,14 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Micro \u2013 apps without ads, algorithms or tracking"
+    "title": "Show HN: Micro – apps without ads, algorithms or tracking"
+  },
+  "fa01602917b41daf469d36951c371af0": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_algotrading",
+    "title": "Launch HN: CommodityAI (YC W24) – Shipment management for commodity traders",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "facd15f59b8c24d4205d26b93045cdf9": {
     "decision": "rejected_L0",
@@ -1278,21 +1467,21 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Meepr \u2013 A Quiet Social Network"
+    "title": "Show HN: Meepr – A Quiet Social Network"
   },
   "fcfdeff92e88825dca0b06744e4f008d": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: MemKit \u2013- The spaced-repetition flashcard app I've always wanted"
+    "title": "Show HN: MemKit –- The spaced-repetition flashcard app I've always wanted"
   },
   "fde2a69ce82a52208aeff29d82a11957": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: Qantify \u2013 GPU-Accelerated Trading Library with Advanced Math and AutoML"
+    "title": "Show HN: Qantify – GPU-Accelerated Trading Library with Advanced Math and AutoML"
   },
   "fe7970680f86025948d77f692d0ee49a": {
     "decision": "rejected_L1_no_signal",
@@ -1306,7 +1495,7 @@
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "hn_algotrading",
-    "title": "Show HN: YouTube Time Machine \u2013 browser extension to find forgotten videos"
+    "title": "Show HN: YouTube Time Machine – browser extension to find forgotten videos"
   },
   "ffbb44d5433d7eb0731795b339bd8d7a": {
     "decision": "rejected_L0",

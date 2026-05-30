@@ -83,6 +83,13 @@
     "source": "arxiv_econ_em",
     "title": "Vibe Econometrics and the Analysis Contract"
   },
+  "2219890f49f83bfd048c12c0791f4457": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "arxiv_econ_em",
+    "title": "Graph Neural Networks for Generalized Mundlak Estimator under Network Confoundin",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2801d3b94bdb26540d84b3e7f026e549": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
@@ -195,6 +202,13 @@
     "source": "arxiv_econ_em",
     "title": "Asymptotic Variance Theory for Trimmed Least Squares and Trimmed Least Absolute "
   },
+  "66e7a0389014db90f0db1619be4e1afa": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "arxiv_econ_em",
+    "title": "IV regression with distribution-valued outcomes",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "67ef13f72739f6aca137aec8558406e2": {
     "decision": "accepted",
     "first_seen": "2026-05-27 12:08 UTC",
@@ -209,12 +223,26 @@
     "source": "arxiv_econ_em",
     "title": "MSE-Optimal Difference-in-Differences Estimator"
   },
+  "72b9af0a64b0e184a1d1ff773a4fb957": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "arxiv_econ_em",
+    "title": "Regime-Based Portfolio Allocation Using Hidden Markov Models and Reinforcement L",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_regime_based_portfolio_allocation_using_hidden_ma_20260530.md"
+  },
   "78515153e4c33915a0adb58c59541ba3": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "arxiv_econ_em",
     "title": "Identification and Estimation of Semiparametric Multilayered Sample Selection Mo"
+  },
+  "78e1e7531940cee18136251ab9c2cb6b": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "arxiv_econ_em",
+    "title": "Robust Inference for Dyadic Data with Dependent Ordered Nodes",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "7ddecd9da8608fa4fdeb1ea9f4222c8c": {
     "decision": "rejected_L1_no_signal",
@@ -355,6 +383,13 @@
     "promising_file": null,
     "source": "arxiv_econ_em",
     "title": "Designing Persuasive Experiments"
+  },
+  "d98491da1f0debb31c1659b82fba4a80": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "arxiv_econ_em",
+    "title": "Generalized Spectral Testing with Sample Splitting",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "dbce7cade93100715c7409cbfcc565c3": {
     "decision": "accepted",

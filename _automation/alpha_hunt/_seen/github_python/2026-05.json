@@ -1,4 +1,25 @@
 {
+  "034d427b16d49e9fb96fe66f847a0a57": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "opendatalab/MinerU",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "07786a74f6d1bf229850536c2510a476": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "streamlit/streamlit",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "08c6ad9bf1f3ffff4ef4fcbee7d91816": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "NVlabs/Eagle",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0e47a8c41a70ae2ccd6022fca8881bc7": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
@@ -20,6 +41,13 @@
     "source": "github_python",
     "title": "donnemartin/system-design-primer"
   },
+  "19acf6777ba85e3bd4d397388200fe9d": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "ai-boost/awesome-harness-engineering",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "223fc828eeac23105536b9c4dfde65cf": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
@@ -33,6 +61,13 @@
     "promising_file": null,
     "source": "github_python",
     "title": "Fincept-Corporation/FinceptTerminal"
+  },
+  "2877ab4f6dda70abe8d77f3b25b76c21": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "galilai-group/stable-worldmodel",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "2a9a6797e4df34c60c0b3a0ad0615808": {
     "decision": "rejected_L0",
@@ -97,6 +132,13 @@
     "source": "github_python",
     "title": "dograh-hq/dograh"
   },
+  "584a7be2efa331787c14f5d285706164": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "zakirkun/deep-eye",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5b903183701a09dbb4a92898ce77c774": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
@@ -146,12 +188,26 @@
     "source": "github_python",
     "title": "unclecode/crawl4ai"
   },
+  "695ccf585cbe3408f63567d0850f5f47": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "ariadng/metatrader-mcp-server",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6adce5e5f2f0c714dc49d55ba36731ea": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "github_python",
     "title": "francescopace/espectre"
+  },
+  "6e8ef1367edece3dbd46e3ce67f2f1f9": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "apurvsinghgautam/robin",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "710ef576507560b17bbdb462022e0358": {
     "decision": "rejected_L0",
@@ -202,12 +258,26 @@
     "source": "github_python",
     "title": "Alishahryar1/free-claude-code"
   },
+  "80df0a7a6226762141078b29a51355d2": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "ultralytics/ultralytics",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "814044ba434f6bafbf4477b82b10c707": {
     "decision": "rejected_L1_no_signal",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "github_python",
     "title": "google-research/timesfm"
+  },
+  "82dde4aeae2379a1ce2c6963f6fabb61": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "swisskyrepo/PayloadsAllTheThings",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "8450678afa75f949cb73f0eff0d27287": {
     "decision": "rejected_L0",
@@ -230,6 +300,13 @@
     "source": "github_python",
     "title": "anthropics/claude-plugins-official"
   },
+  "8c02d6fda33cc9b8ed0e733255f516b4": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "dreammis/social-auto-upload",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8cedd7da9f71a3004ecac59dfdb88ce4": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 19:32",
@@ -244,12 +321,26 @@
     "source": "github_python",
     "title": "rohitg00/ai-engineering-from-scratch"
   },
+  "917b12fa472907a612c2d86171eb8400": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "adithya-s-k/omniparse",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "94f8a84e7a52eb877ab157b801641e16": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "github_python",
     "title": "harvard-edge/cs249r_book"
+  },
+  "968afa765df9b9b778cc61b417ed5312": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "microsoft/RAMPART",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "968fd8af92b944eccf558de03d7c6e7e": {
     "decision": "rejected_L0",
@@ -279,6 +370,13 @@
     "source": "github_python",
     "title": "sherlock-project/sherlock"
   },
+  "9f61de1401f7714e13fb4bce4346dd7d": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "GH05TCREW/pentestagent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a03e28f36a42b94ed81a988bf0abcbca": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 19:32",
@@ -293,6 +391,13 @@
     "source": "github_python",
     "title": "crewAIInc/crewAI"
   },
+  "a24fa864bfc29df17951b41432846349": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "anthropics/financial-services",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a4819608e9abeba1371eab1fadfeb244": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
@@ -300,12 +405,26 @@
     "source": "github_python",
     "title": "rohitg00/ai-engineering-from-scratch"
   },
+  "a76e682fe11792f50f83d3ecc98731c3": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "OpenBMB/VoxCPM",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a8eacb9e66c9b7f3e0d046804d3565c3": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "github_python",
     "title": "OpenPipe/ART"
+  },
+  "b0ba3cd0bedd3afc1193afd5f3ba3225": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "apache/airflow",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "b63be7e480160c54e63ffa3f42200977": {
     "decision": "rejected_L0",
@@ -327,6 +446,13 @@
     "promising_file": null,
     "source": "github_python",
     "title": "plastic-labs/honcho"
+  },
+  "bda9c5c3f33fe8b6a76b3dfa8a6e94d8": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "fastapi/fastapi",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "bde9fa2c80967065d608f25f4e82b441": {
     "decision": "rejected_L0",
@@ -363,6 +489,20 @@
     "source": "github_python",
     "title": "shareAI-lab/learn-claude-code"
   },
+  "d110c0e6bb652c68586f318ce69b8cee": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "PaddlePaddle/PaddleOCR",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d79f83f74584160eed26ccc5a6af8106": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "OpenMOSS/MOSS-TTS",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d803bb6bb942618734f9db39b9ea551b": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
@@ -377,12 +517,26 @@
     "source": "github_python",
     "title": "shiyu-coder/Kronos"
   },
+  "e30e9ec3ccb8662368d3a2114f7aeaf0": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "anthropics/claude-code",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e4da41f1d5f96bff5ffbfac852c6d16b": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
     "promising_file": null,
     "source": "github_python",
     "title": "agentscope-ai/agentscope"
+  },
+  "ed74c408f866a00917379806c130fbc4": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "microsoft/markitdown",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "f2697633a41e0993d462b5d220333536": {
     "decision": "rejected_L0",
@@ -419,11 +573,25 @@
     "source": "github_python",
     "title": "microsoft/agent-governance-toolkit"
   },
+  "faed7dd128f09485974a81d214d8fff3": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "CodeBoarding/CodeBoarding",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "fee25c7e341d7a6e1ae837364f869cf2": {
     "decision": "rejected_L1_no_signal",
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "github_python",
     "title": "google-research/timesfm"
+  },
+  "ff81da27a5d3a1b8a39700ab73c70992": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "github_python",
+    "title": "harry0703/MoneyPrinterTurbo",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }

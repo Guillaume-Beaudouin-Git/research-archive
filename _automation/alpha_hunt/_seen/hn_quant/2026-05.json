@@ -144,7 +144,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: Epoch \u2013 build and backtest trading strategies with plain English"
+    "title": "Show HN: Epoch – build and backtest trading strategies with plain English"
   },
   "37d0e0ff1fb3bbf78c641a049c1573f1": {
     "decision": "rejected_L0",
@@ -159,6 +159,13 @@
     "promising_file": null,
     "source": "hn_quant",
     "title": "Interns Are Making Up to $14,000 a Month at Indian Trading Firms"
+  },
+  "392e6be4d562623ec238c972e3c7e62f": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_quant",
+    "title": "Show HN: Pushing a naive C++ web server implementation to 9k req/SEC",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "3a3085f425f96839fc798bb1b9e391ec": {
     "decision": "rejected_L0",
@@ -193,7 +200,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: QuantDinger\u2013An open-source, local AI quantitative trading platform"
+    "title": "Show HN: QuantDinger–An open-source, local AI quantitative trading platform"
   },
   "4bceb3046aef0279ef069362d5b6e82a": {
     "decision": "rejected_L0",
@@ -208,6 +215,13 @@
     "promising_file": null,
     "source": "hn_quant",
     "title": "Trading strategies used in Wall Street"
+  },
+  "529bfc803b4432971017356f11001eec": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_quant",
+    "title": "Ecosia is teaming up with Qwant to build a European search index",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "52c131e8fa4ea3a98d042ff51a34be95": {
     "decision": "rejected_L0",
@@ -228,7 +242,7 @@
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: WARN Firehose \u2013 Every US layoff notice in one searchable database"
+    "title": "Show HN: WARN Firehose – Every US layoff notice in one searchable database"
   },
   "582a3d5d32ffec9b2116d0c368331e64": {
     "decision": "rejected_L0",
@@ -256,7 +270,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: Quant News \u2013 Quantitative trading research, news, blogs, and comments"
+    "title": "Show HN: Quant News – Quantitative trading research, news, blogs, and comments"
   },
   "62c354ab2c2365e6d64ddeb9f93ee05a": {
     "decision": "rejected_L0",
@@ -277,7 +291,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "\u201cI quit my job to focus on a highly profitable quantitative trading system\u201d"
+    "title": "“I quit my job to focus on a highly profitable quantitative trading system”"
   },
   "68cdefe5b767578fa8b9aebb1dd7c951": {
     "decision": "rejected_L0",
@@ -312,7 +326,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "How Jim Simons\u2019 Trading Strategies Made 66% a Year (Medallion Fund\u2019s Strategies)"
+    "title": "How Jim Simons’ Trading Strategies Made 66% a Year (Medallion Fund’s Strategies)"
   },
   "7072188725b818edbcc08c519eec730b": {
     "decision": "rejected_L0",
@@ -349,6 +363,13 @@
     "source": "hn_quant",
     "title": "Democratizing quant trading"
   },
+  "83944b34b3012958cba9d24cd071aabb": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "hn_quant",
+    "title": "Show HN: Oxyde – Pydantic-native async ORM with a Rust core",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "869d432311b166de2ce12e7fb369d7f7": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
@@ -361,7 +382,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: QuantDinger \u2013 A local-first, open-source AI quant trading workspace"
+    "title": "Show HN: QuantDinger – A local-first, open-source AI quant trading workspace"
   },
   "8ef26f4443becaeb667f6f090008b61a": {
     "decision": "rejected_L0",
@@ -396,7 +417,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Automation in Quant Trading \u2013 Hudson River Trading [video]"
+    "title": "Automation in Quant Trading – Hudson River Trading [video]"
   },
   "a0ceb5a41ec95fc5112e3d2f9687cd12": {
     "decision": "rejected_L0",
@@ -438,14 +459,14 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: RIMC \u2013 An Alpha-Drift Framework for Finite-Speed Learning Markets"
+    "title": "Show HN: RIMC – An Alpha-Drift Framework for Finite-Speed Learning Markets"
   },
   "b4f0c48ff321ce0ccb58b8c827587c15": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 19:32",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: Turn \u2013 A compiled systems language for agentic computation"
+    "title": "Show HN: Turn – A compiled systems language for agentic computation"
   },
   "b5e39f0a9fca4a49831371545bf371f4": {
     "decision": "rejected_L1_no_signal",
@@ -459,7 +480,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: AI trading platform with 34% returns (3 months) \u2013 seeking acquisition"
+    "title": "Show HN: AI trading platform with 34% returns (3 months) – seeking acquisition"
   },
   "b7c48789e47ce46bee16eb71c3435c85": {
     "decision": "rejected_L1_no_signal",
@@ -487,14 +508,14 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: Kronos \u2013 Type-safe trading framework in Go with terminal UI"
+    "title": "Show HN: Kronos – Type-safe trading framework in Go with terminal UI"
   },
   "bbc6da710b3f7b5a72c9b32a789e6626": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Ask an Algo Dev \u2013 6 HRT quants answer common questions about their role [video]"
+    "title": "Ask an Algo Dev – 6 HRT quants answer common questions about their role [video]"
   },
   "bea592d344253a042abd0ede89164002": {
     "decision": "rejected_L0",
@@ -536,14 +557,14 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: FishSonar \u2013 Real-Time Crypto \"Fish\" Detector for Binance"
+    "title": "Show HN: FishSonar – Real-Time Crypto \"Fish\" Detector for Binance"
   },
   "cd435b3d698a30c35834220f15c00693": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Strix \u2013 Drone swarm orchestration using quant trading algorithms (Rust)"
+    "title": "Strix – Drone swarm orchestration using quant trading algorithms (Rust)"
   },
   "cd98911b2423e4d6d0f723c29ee88787": {
     "decision": "rejected_L0",
@@ -648,7 +669,7 @@
     "first_seen": "2026-05-23 18:12",
     "promising_file": null,
     "source": "hn_quant",
-    "title": "Show HN: CryptoBob \u2013 a market intelligence API for crypto trading systems"
+    "title": "Show HN: CryptoBob – a market intelligence API for crypto trading systems"
   },
   "f22f972c79709494282879b822b67c8b": {
     "decision": "rejected_L2_not_accessible",
