@@ -104,6 +104,20 @@
     "source": "quantocracy",
     "title": "I paper-traded 22 popular crypto strategies on real fees for 10 days. Here\u2019s the"
   },
+  "1e86fed9aee6d0622e8361653a2bd5ee": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/27/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1ebec61ac3e904fe45668c082e48f1f1": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "quantocracy",
+    "title": "Most of the insider trading alpha is gone by the time you see the filing: poof! ",
+    "decision": "accepted",
+    "promising_file": "quantocracy_most_of_the_insider_trading_alpha_is_gone_by_the_20260530.md"
+  },
   "22461b6ccc7ef67c9d1c6e7c9c96d029": {
     "decision": "accepted",
     "first_seen": "2026-05-23 18:12",
@@ -117,6 +131,13 @@
     "promising_file": "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523.md",
     "source": "quantocracy",
     "title": "Why Momentum Investing Has Been Struggling   And What Volatility Has to Do With "
+  },
+  "280c5d4a76ba0a5b863d52382bc284c7": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "quantocracy",
+    "title": "Martyn Tinsley \u2013 Walk Forward Correlation: A New Tool for Robust Strategy Design",
+    "decision": "accepted",
+    "promising_file": "quantocracy_martyn_tinsley_walk_forward_correlation_a_new_20260530.md"
   },
   "29a0db9da65406ceab4d9e84ebc4223d": {
     "decision": "accepted",
@@ -180,6 +201,13 @@
     "promising_file": null,
     "source": "quantocracy",
     "title": "Unsupervised Learning for Trading: K-Means, PCA & Python Examples [Quant Insti]"
+  },
+  "3be56435e13bb03d9d518ef75d3b495c": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "quantocracy",
+    "title": "Quantpedia Awards 2026     Winners Announcement [Quantpedia]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "405b98b32f8638618bc3ced6c5f9dcef": {
     "decision": "rejected_L1_no_signal",

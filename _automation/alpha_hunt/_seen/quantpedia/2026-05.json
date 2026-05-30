@@ -48,6 +48,13 @@
     "source": "quantpedia",
     "title": "Dual Momentum Allocation Between Physical Gold and Bitcoin (Digital Gold)"
   },
+  "af1e9a20024583d301d775e82f657e2b": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "quantpedia",
+    "title": "Building an AI Powered Quant Research Assistant with Quantpedia API",
+    "decision": "accepted",
+    "promising_file": "quantpedia_building_an_ai_powered_quant_research_assistant_w_20260530.md"
+  },
   "c6c9ce0eb2204c1ba114c4c1776242ad": {
     "decision": "accepted",
     "first_seen": "2026-05-23 18:12",
@@ -75,5 +82,19 @@
     "promising_file": "quantpedia_when_big_gets_small_trading_the_lower_tier_of_larg_20260523.md",
     "source": "quantpedia",
     "title": "When Big Gets Small: Trading the Lower Tier of Large Caps and Upper Mid Caps"
+  },
+  "eb5b81e5f44b30adec9498790b03d79b": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "quantpedia",
+    "title": "Quantpedia Premium Update \u2013 May 27th",
+    "decision": "accepted",
+    "promising_file": "quantpedia_quantpedia_premium_update_may_27th_20260530.md"
+  },
+  "ec45aefec16e10b8904c970589a6da5c": {
+    "first_seen": "2026-05-30 18:06",
+    "source": "quantpedia",
+    "title": "Quantpedia Days 2026 Bring Again 1+1 Special Offer",
+    "decision": "accepted",
+    "promising_file": "quantpedia_quantpedia_days_2026_bring_again_11_special_offe_20260530.md"
   }
 }
