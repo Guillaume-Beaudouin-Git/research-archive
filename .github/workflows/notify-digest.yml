@@ -71,7 +71,7 @@ jobs:
           rh_emoji   = '🟡' if int(nrh) > 0 else '⚪'
           queue_emoji = '🔴' if int(queue) >= 10 else ('🟠' if int(queue) >= 5 else '⚪')
 
-          # Multi-line message via %0A
+          # Multi-line message — real newlines, encoded by curl --data-urlencode
           parts = [
               f"📊 Feasibility Digest — {date}",
               f"",
@@ -83,7 +83,7 @@ jobs:
               f"",
               f"https://github.com/{os.environ.get('GITHUB_REPOSITORY','')}/blob/main/{path}",
           ]
-          msg = '%0A'.join(parts)
+          msg = '\n'.join(parts)
           print(f"message<<EOM")
           print(msg)
           print(f"EOM")
@@ -97,6 +97,6 @@ jobs:
           MESSAGE: ${{ steps.parse.outputs.message }}
         run: |
           curl -s -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
-            -d "chat_id=${CHAT}" \
-            -d "text=${MESSAGE}" \
-            -d "disable_web_page_preview=true"
+            --data-urlencode "chat_id=${CHAT}" \
+            --data-urlencode "text=${MESSAGE}" \
+            --data-urlencode "disable_web_page_preview=true"
