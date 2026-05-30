@@ -190,7 +190,9 @@ def tradeify_eval_90d(
     rng_gen:   Optional[np.random.Generator] = None,
 ) -> dict:
     """
-    Tradeify $50K eval: trailing DD=$2,000, target=$3,000, 90 trading days.
+    Tradeify $50K eval (legacy target): trailing DD=$1,000 (aligned to live 2026-05-25),
+    target=$3,000, 90 trading days. Note TV_INITIAL=50_000 inherited from propfirm_compat_v2
+    is the deprecated $50K target — live config is $25K. Re-run results after full refactor.
     Block bootstrap (L=sqrt(N)) × 10,000 paths.
     Returns p_pass_30d, p_pass_90d, mean_daily.
     """
