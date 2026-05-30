@@ -746,11 +746,11 @@ def section_ftmo_10k(tl: pd.DataFrame) -> tuple:
 # Tradeify Select Flex $50K — phase-aware simulation (added post-FTMO analysis)
 # ─────────────────────────────────────────────────────────────────────────────
 
-TV_INITIAL         = 50_000
-TV_TRAILING_DD     = 2_000    # EOD trailing from peak (pre-lock)
-TV_LOCK_BALANCE    = 52_100   # EOD balance → lock trigger (+ first payout)
-TV_LOCKED_FLOOR    = 50_100   # post-lock permanent floor
-TV_EVAL_TARGET     = 3_000    # Phase 1 target (6%)
+TV_INITIAL         = 50_000   # legacy Tradeify Select Flex $50K target (DEPRECATED — live config is $25K, see Futures/live/strategy_c_live/config.py)
+TV_TRAILING_DD     = 1_000    # aligned on live TRADEIFY_TRAILING_DD ($1,000 confirmed 2026-05-25); NOTE inconsistent with TV_INITIAL=50_000 above — full $25K refactor pending
+TV_LOCK_BALANCE    = 52_100   # legacy $50K lock trigger (DEPRECATED — live $25K uses 26_100)
+TV_LOCKED_FLOOR    = 50_100   # legacy $50K floor (DEPRECATED — live $25K uses 25_100)
+TV_EVAL_TARGET     = 3_000    # legacy $50K Phase 1 target 6% (DEPRECATED — live $25K target 1_500)
 TV_DAILY_LIMIT     = None     # No daily loss limit (Tradeify)
 TV_CONSISTENCY     = 0.40     # 40% rule during eval (largest day <= 40% of total profit)
 TV_MIN_WIN_DAY     = 150.0    # $150 min per winning day (for consistency check)
