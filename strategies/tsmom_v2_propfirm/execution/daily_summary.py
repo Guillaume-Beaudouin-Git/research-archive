@@ -186,11 +186,11 @@ def main() -> None:
     logger.info("Daily summary sent.")
 
     print(
-        "\nCron line for VPS deployment:\n"
-        "  30 8 * * * cd ~/projects/Algo_claude && source ~/venv/bin/activate && \\\n"
-        "  PROPR_API_KEY=pk_live_XXX python -m \\\n"
-        "  strategies.tsmom_v2_propfirm.execution.daily_summary \\\n"
-        "  >> logs/tsmom_v2_cron.log 2>&1"
+        "\nCron line for VPS deployment (PROPR_API_KEY + TELEGRAM_* must live in ~/projects/Algo_claude/.env, never inline):\n"
+        "  30 8 * * * cd ~/projects/Algo_claude && \\\n"
+        "    /bin/bash -c 'source ~/venv/bin/activate && source .env && \\\n"
+        "      python -m strategies.tsmom_v2_propfirm.execution.daily_summary' \\\n"
+        "    >> ~/projects/Algo_claude/logs/tsmom_v2_cron.log 2>&1"
     )
 
 

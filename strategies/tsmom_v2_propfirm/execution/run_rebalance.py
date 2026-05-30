@@ -130,12 +130,11 @@ def main() -> None:
 
     logger.info("Run complete.")
     logger.info(
-        "\nCron line for VPS deployment:\n"
-        "  5 0 * * 1 cd ~/Desktop/Algo_claude && "
-        'source "<HOME>/Desktop/Unholy returns/Python3.12.9/myenv/bin/activate" && '
-        "PROPR_API_KEY=pk_live_XXX python -m "
-        "strategies.tsmom_v2_propfirm.execution.run_rebalance "
-        ">> logs/tsmom_v2_cron.log 2>&1"
+        "\nCron line for VPS deployment (PROPR_API_KEY must live in ~/projects/Algo_claude/.env, never inline):\n"
+        "  15 0 * * 1 cd ~/projects/Algo_claude && \\\n"
+        "    /bin/bash -c 'source ~/venv/bin/activate && source .env && \\\n"
+        "      python -m strategies.tsmom_v2_propfirm.execution.run_rebalance' \\\n"
+        "    >> ~/projects/Algo_claude/logs/tsmom_v2_cron.log 2>&1"
     )
 
 

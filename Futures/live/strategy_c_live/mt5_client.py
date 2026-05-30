@@ -95,7 +95,7 @@ class MT5Client:
             ok = mt5.login(MT5_LOGIN, password=MT5_PASSWORD, server=MT5_SERVER)
             if not ok:
                 raise RuntimeError(
-                    f"mt5.login({MT5_LOGIN}) failed: {mt5.last_error()}"
+                    f"mt5.login(login=<redacted>) failed: {mt5.last_error()}"
                 )
         info = mt5.terminal_info()
         if info is None:
