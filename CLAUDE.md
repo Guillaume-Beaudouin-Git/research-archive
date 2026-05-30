@@ -24,18 +24,21 @@ Communique en français et en anglais.
 
 ## Live strategies snapshot
 
-### Strategy A — TSMOM v3 (PAUSED — Propr account breached)
+### Strategy A — TSMOM v3 (FROZEN 2026-05-30 — Propr gelé depuis 2026-05-11 ; HL testnet daily place encore des fills)
 - Signal: tanh(cumret_28d / (vol_28d × sqrt(28))).clip(lower=0), long-only
 - Vol: log returns, 28-bar window, sqrt(365) annualization — MUST match backtest
-- Assets: BTC, ETH, SOL | Rebalance: Monday 00:05 UTC
-- Validation: Sharpe 1.33 OOS, MaxDD -6.9%
-- VOL_TARGET_LIVE=0.18 | guardrails: MAX_DAILY_DD=2.8%, MAX_TOTAL_DD=5.5%
-- Status: NOT LIVE. VPS crons active (state tracking only). Awaiting new propfirm.
+- Assets: BTC, ETH, SOL | Rebalance: Monday 00:05 UTC (Propr) + daily 00:05 UTC (HL testnet)
+- Validation: Sharpe 1.33 OOS, MaxDD -6.9% (source: signal.py:13 docstring ; results.json formel INTROUVABLE)
+- VOL_TARGET_LIVE=0.18 | guardrails RUNTIME-ACTIVE: MAX_DAILY_DD=2.8%, MAX_TOTAL_DD=5.5% (Propr, execution/__init__.py:46-47)
+  Canonical default for new strategies: Portfolio/risk/propfirm_canonical.py (FTMO 5/10).
+  Note: config.py:55-56 défi MAX_DAILY_DRAWDOWN=4.5%, MAX_TOTAL_DRAWDOWN=9% (HyroTrader legacy, sizing.py CHALLENGE_MODE=False par défaut, non consommé en live).
+- Status: Propr Monday cron `5 0 * * 1 run_rebalance` installée mais sans fill depuis 2026-05-11 16:44 UTC (compte breach). HL testnet daily cron `5 0 * * *` continue de placer des fills (cf. logs/fills.csv 2026-05-28 SOL sell).
 - Structural ceiling: 39% Propr pass rate (β_crypto floor, 3% daily DD limit)
 - Apex alternative (EOD trailing, CME futures): analysis pending — see PropFirms/comparison.md
+- Frozen artifacts: `Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/` (copie code+state, originaux conservés)
 
 ### Strategy B — Delta-neutral carry (HL testnet LIVE since 2026-05-17)
-- Active pairs: TST + MEGA | Rebalance: every 8h (00:10, 08:10, 16:10 UTC)
+- Active pair au 2026-05-30: HMSTR seule (TST/MEGA historiques, flat). État volatile, ne pas figer dans CLAUDE.md — voir state.json VPS pour pair active courante. Rebalance: every 8h (00:10, 08:10, 16:10 UTC)
 - Backtest Sharpe: 4.10, MaxDD: -0.52% | Mainnet proxy Sharpe: 2.0 (per L14)
 - VIABLE_ASSETS: TST, MEGA, WLD, STX, WIF, BIO, TRUMP, HMSTR
 - MIN_VOL_USD=1_000_000 | CARRY_FLOOR_8H=0.0034/(30×3) | NOTIONAL_USD=50
@@ -83,8 +86,31 @@ Communique en français et en anglais.
 ## VPS
 - Hetzner CX22, <VPS_IP>, user algo
 - SSH: ssh -i ~/.ssh/hetzner_algo_claude algo@<VPS_IP>
-- Active crons: TSMOM state (25 0 * * 1), delta-neutral (10 0,8,16 * * *),
-  NQ paper (25 13 * * 1-5 summer UTC+2 | 25 14 winter UTC+1)
+- Crons réelles vérifiées 2026-05-30 (cf. _audit/verification_2026-05-30.md V2) :
+  - `5 0 * * *` — Strategy A daily HL testnet (`run_tsmom.sh --live --private-key <REDACTED>`) — places des fills
+  - `30 0 * * *` — Strategy A monitor wrapper (`run_monitor.sh`)
+  - `5 0 * * 1` — Strategy A weekly Propr rebalance (inline `PROPR_API_KEY=<REDACTED>`) — gelée 2026-05-11
+  - `30 8 * * *` — Strategy A daily Propr summary (inline `PROPR_API_KEY + TELEGRAM_*`)
+  - `10 0,8,16 * * *` — Strategy B delta-neutral (source .env pattern, propre)
+  - `*/2 13-17 * * 1-5` — Strategy C watchdog_check.sh (×2 lignes — DOUBLON, à dédupliquer)
+  - `30 6 * * 1-5` — `fetch_arxiv.sh` (sans redirection log, silent fail)
+  - `*/30 * * * *` — `fetch_alpha_sources.sh`
+  - `@reboot sleep 30 && screen -dmS mt5 start_mt5.sh`
+- Crons MANQUANTES vs ce qu'annonçait CLAUDE.md historique :
+  - aucune cron NQ paper `25 13 * * 1-5` / `25 14 * * 1-5` n'existe — Strategy C n'est pas automatisée (cohérent avec "execution not started").
+- Cleanup proposé non appliqué : voir `_audit/lot7_crontab_diff_2026-05-30.txt` + wrapper `scripts/run_with_env.sh`.
+
+## CI / GitHub Actions
+- `.github/workflows/auto-merge.yml` (170 lignes) : squash-merge automatique des PR `claude/*` après tous checks verts.
+- **Hard-fail paths** (PR est étiquetée `needs-human-review` au lieu d'être auto-mergée si les changements touchent) :
+  - `Futures/live/`
+  - `Portfolio/`
+  - `strategies/`
+  - `.github/`
+  - `*.mq5`
+- **Restriction `_automation/`-only** : si une PR contient des modifications HORS `_automation/`, elle n'est pas éligible.
+- Notification Telegram on failure (lignes 158-170).
+- Source vérité : _audit/verification_2026-05-30.md V12.
 
 ## Code style
 - Production-quality Python: typed, vectorized, pandas/numpy
@@ -131,6 +157,8 @@ L17. F&G velocity divergence = momentum proxy (wrong direction). Existing-holder
      sentiment branch CLOSED.
 L18. Wikipedia attention velocity = zero IC, momentum proxy direction. New-buyer
      attention branch CLOSED. Both Da et al. taxonomy pathways exhausted.
+     Artefacts archivés : `Crypto/research/archived/other/wav_h3/` (POSTMORTEM.md
+     + data/wiki/*.parquet 10+ tickers ADA/ALGO/AVAX/…).
 
 ### FX structural — registre L (à partir de L23)
 L23. Regulatory-window kill: when an edge depends on a fixing/auction window subsequently
@@ -196,7 +224,7 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
 - FRED: DTB3 (RF daily), interbank rates monthly
 - HL API constraint: no candle data before Nov 2022; gap Dec 2022–Dec 2023
 
-## Research history (n_tests = 322 global)
+## Research history (n_tests = 321 global — ledger canonique)
 <!-- Sequential global milestones (README §6.55 authoritative, confirmed line 1594):
      = 83  equities/ETF/options sub-total (README §10): includes crypto-era tests 1–53,
            FX carry 4, multi-asset 5+1, NQ ORB IVB 3, equities 14, options 1
@@ -209,24 +237,50 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
            and remaining crypto V2/V3 + options VRP phases
      IMPORTANT: sub-counts (83 equities, 159 crypto, 180 FX) overlap — the
      53 crypto-era equities count in both the equities 83 AND the crypto 159.
-     Do NOT add sub-counts; only the sequential milestones above are additive. -->
+     Do NOT add sub-counts; only the sequential milestones above are additive.
+     2026-05-30: tranché 321 (majoritaire, cohérent avec README §1 header).
+     h31_cs_fs_dn (test #160) déjà consommé, archivé 2026-05-30 (test FAIL). -->
 
 ### ✓ Validated and live/ready
 - Crypto TSMOM v3 (Strategy A, Sharpe 1.33 OOS)
 - Delta-neutral carry HL (Strategy B, proxy Sharpe 2.0)
 - NQ opening momentum iter_10 (Strategy C, Sharpe 1.52)
 
-### Active research (in progress)
+### Active research (in progress) — inventaire vérifié 2026-05-30
+
 - **Strategy D — D3+D5 portfolio** (Futures, propfirm-targeted, decorrelated to C):
   D3 (Opening range mid-fade 09:45-11:00, n_test=156, corr_C=-0.21) +
   D5 (Afternoon BB squeeze breakout 14:00-15:30, n_test=158, corr_C=-0.05).
   Both failed individually (Sharpe=-1.08/-1.32); portfolio combination + regime filter
   under study. Pre-registration in progress.
-  `Futures/research/active/nq_intraday/analysis/` | Budget: 3 mods, 0 consumed.
+  `Futures/research/active/nq_intraday/analysis/` (canonique signals)
+  Pré-registration : `Futures/research/active/strategy_d/hypotheses_preregistered.md`
+  Infra paper (non rangée, à trancher) : `Futures/research/active/strategy_d_nq/infra/`
+  Budget: 3 mods, 0 consumed.
 - **Commodities XS — Basis + TSMOM** (n≤279): S_TSMOM (Moskowitz 2012) + S_BASIS
   (Erb-Harvey 2006), 24 continuous contracts, monthly CS IC scan.
   Phase A (data fetch + roll validation) not yet complete.
   `Commodities/research/active/xs_basis_tsmom/`
+- **Voie B FTMO (Strategy A pivot)** — full study EA mq5 + slip_analysis + reconciliation.md.
+  `Futures/research/active/voie_b_ftmo/` (26 fichiers, dernière modif 2026-05-29 ;
+  results/slip_report.csv visible dans git status, à commiter ou ignorer).
+  [À CONFIRMER MANUELLEMENT] sous-jacent ciblé (mq5 = MT5 = quel symbole ?).
+- **sector_hothand_propfirm (Equities)** — phase 1 baseline + Monte Carlo.
+  `Equities/research/active/sector_hothand_propfirm/` (12 fichiers).
+  Métriques rapportées : t_HAC alpha=10.38, SR_net=2.05, DSR=2.01, WF 5/5, MDD -13.3%.
+  ⚠ t-stat 10 = drapeau rouge → audit obligatoire avant promotion (cf. _audit/sector_hothand_audit_2026-05-30.md).
+  Note MDD -13% > limite FTMO 10% → en l'état BREACH du challenge.
+- **CIP-EOQ (FX)** — covered-interest-parity end-of-quarter dislocation.
+  `Forex/research/active/cip_eoq/` (sigma_estimation_findings.md, validate_basis.py).
+- **ZN Baltussen (Futures)** — bond futures momentum.
+  `Futures/research/active/zn_baltussen/` (tests/, sigma_estimation/).
+- **NQ intraday VWAP (Strategy D iter_01)** — `Futures/research/active/nq_intraday_vwap/`
+  iter_01_summary.md verdict : "FAIL — INSUFFICIENT SAMPLE (N=19 over 3 years)".
+  n_tests=130 — convention de nommage à clarifier vs nq_intraday/.
+- **Token unlocks (Crypto)** — bootstrap seul, vide.
+  `Crypto/research/active/token_unlocks/_bootstrap_notes.md`.
+- **VRP short gamma (Crypto)** — bootstrap seul, vide.
+  `Crypto/research/active/vrp_short_gamma/_bootstrap_vrp_notes.md`.
 
 ### ✗ Archived — DO NOT re-propose without strong new evidence
 
@@ -276,7 +330,14 @@ L22. MC propfirm eval simulation mandatory before any propfirm purchase (Claude 
 - Equity indices_swing Sprint 1+2 (100 tests): IC 0.033-0.075, all fail backtest
   (best Sharpe 0.45 at futures cost, costs kill at ETF level)
 - NQ Pairs ES/NQ: EG p=0.28 (tech premium drift 2024-2026 destroys stationarity)
-- Network Momentum GMOM: universe too small (N<64), graph density=1.0 → FAIL
+- Network Momentum GMOM: universe too small (N<35 after quality filter), graph density=1.0 → FAIL
+  best variant E3 Sharpe=0.293. `Multi_Asset/research/archived/network_momentum/` (déplacé de active/ 2026-05-30).
+- jt_momentum_cs (Equities, J-T cross-sectional 70 stocks monthly):
+  sharpe=-0.026, max_dd=-0.58, ic_tstat=-0.49, gate=SKIP. `Equities/research/archived/jt_momentum_cs/`
+  (déplacé de passed/ 2026-05-30 — mal classé).
+- h31_cs_fs_dn (Crypto cross-sectional funding stack delta-neutral, test #160):
+  sharpe_raw=-0.80, wf=25%, all 3 gates FAIL. `Crypto/research/archived/h31_cs_fs_dn/`
+  (déplacé de active/ 2026-05-30 — FAIL net déjà mesuré).
 
 **Options (n=1)**
 - SPX VRP Angle C (VIX_z conditional): IC t=-0.144, wrong direction
