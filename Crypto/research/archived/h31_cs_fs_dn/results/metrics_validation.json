@@ -1,0 +1,25 @@
+{
+  "T_days": 856,
+  "sharpe_raw": -0.8044,
+  "max_drawdown": -0.699,
+  "t_hac_lag6": -1.1982,
+  "t_required_hlz": 6.2327,
+  "wf_sharpes": [
+    -1.904,
+    2.273,
+    -1.851,
+    -0.066
+  ],
+  "wf_positive": 1,
+  "wf_n_folds": 4,
+  "wf_pct": 25.0,
+  "dsr": 0.0,
+  "n_mod": 0,
+  "n_tests_hlz": 41,
+  "corr_vs_strat_a_btc_proxy": 0.0377,
+  "gates": {
+    "RESEARCH_PASS": false,
+    "PROPFIRM_PASS": false,
+    "AMTP_HLZ_PASS": false
+  }
+}
