@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "073169815bac391f48a47f91f264a342": {
+    "first_seen": "2026-05-31 12:06",
+    "source": "github_python",
+    "title": "emmabostian/developer-portfolios",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "07786a74f6d1bf229850536c2510a476": {
     "first_seen": "2026-05-30 18:06",
     "source": "github_python",
@@ -13,10 +20,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0867e447e4883dcad57ae7eeb4cf4c3b": {
+    "first_seen": "2026-05-31 12:06",
+    "source": "github_python",
+    "title": "jamwithai/production-agentic-rag-course",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "08c6ad9bf1f3ffff4ef4fcbee7d91816": {
     "first_seen": "2026-05-30 18:06",
     "source": "github_python",
     "title": "NVlabs/Eagle",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "0deaae07d916da1117d2e67e716d1812": {
+    "first_seen": "2026-05-31 12:06",
+    "source": "github_python",
+    "title": "Comfy-Org/ComfyUI",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -530,6 +551,13 @@
     "promising_file": null,
     "source": "github_python",
     "title": "agentscope-ai/agentscope"
+  },
+  "e678fb2654444d8f2d864907f995c2b7": {
+    "first_seen": "2026-05-31 12:06",
+    "source": "github_python",
+    "title": "nesquena/hermes-webui",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "ed74c408f866a00917379806c130fbc4": {
     "first_seen": "2026-05-30 18:06",
