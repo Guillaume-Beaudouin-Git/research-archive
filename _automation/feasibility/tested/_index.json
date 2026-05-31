@@ -775,6 +775,46 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_premium_update_may_27th_20260530_2026-05-30_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_how_to_build_a_reliable_algo_trading_infrastr_20260531.md",
+      "tested_date": "2026-05-31",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_how_to_build_a_reliable_algo_trading_infrastr_20_2026-05-31_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_the_sharpe_stability_ratio_of_trading_strateg_20260531.md",
+      "tested_date": "2026-05-31",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_sharpe_stability_ratio_of_trading_strateg_20_2026-05-31_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_trend_following_filters_part_10_alpha_architect_20260531.md",
+      "tested_date": "2026-05-31",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_trend_following_filters_part_10_alpha_architect__2026-05-31_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_when_short_sellers_create_overnight_alpha_20260531.md",
+      "tested_date": "2026-05-31",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_when_short_sellers_create_overnight_alpha_202605_2026-05-31_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_quantpedia_days_2026_bring_again_11_special_offe_20260530.md",
+      "tested_date": "2026-05-31",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_days_2026_bring_again_11_special_offe__2026-05-31_report.md",
+      "stopped_at": "A"
     }
   ]
 }
