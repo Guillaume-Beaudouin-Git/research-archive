@@ -13,6 +13,13 @@
     "source": "quantocracy",
     "title": "Backtests Lie: Building a Stress-Test Framework for ML Trading Signals [Vertox Q"
   },
+  "033987d3c84e8d443ce3aeb0f93678b2": {
+    "first_seen": "2026-05-31 08:07",
+    "source": "quantocracy",
+    "title": "How to Build a Reliable Algo Trading Infrastructure [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_how_to_build_a_reliable_algo_trading_infrastr_20260531.md"
+  },
   "048f3fb74d22786010d1992cd973a395": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-27 12:08",
@@ -75,6 +82,20 @@
     "promising_file": null,
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 05/17/2026"
+  },
+  "181a9c36c8e66eca868ab7294021bc20": {
+    "first_seen": "2026-05-31 08:07",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 05/30/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "18973917d2174345c860fd27880904c8": {
+    "first_seen": "2026-05-31 08:07",
+    "source": "quantocracy",
+    "title": "The Sharpe stability ratio of trading strategies [Macrosynergy]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_sharpe_stability_ratio_of_trading_strateg_20260531.md"
   },
   "189c9887603cdee7ff8e00c13122603a": {
     "decision": "accepted",
@@ -264,6 +285,13 @@
     "promising_file": null,
     "source": "quantocracy",
     "title": "Agentic Workflows for Alpha Research [Jonathan Kinlay]"
+  },
+  "4d816a6caa9e796a66e040d94efccff8": {
+    "first_seen": "2026-05-31 08:07",
+    "source": "quantocracy",
+    "title": "When Short Sellers Create Overnight Alpha [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_when_short_sellers_create_overnight_alpha_20260531.md"
   },
   "4fefce547a99523b9a52776a7679bc04": {
     "decision": "accepted",
@@ -587,6 +615,13 @@
     "source": "quantocracy",
     "title": "Revisiting Beyond 60/40: Five Decades of Risk-Weighted Allocation [Beyond Passiv"
   },
+  "a295e0caa370c02e384774d38bc0f0be": {
+    "first_seen": "2026-05-31 08:07",
+    "source": "quantocracy",
+    "title": "Trend-Following Filters     Part 10 [Alpha Architect]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_trend_following_filters_part_10_alpha_architect_20260531.md"
+  },
   "a2f154cae906ee82accf975d10c7fdde": {
     "decision": "accepted",
     "first_seen": "2026-05-23 18:12",
@@ -740,6 +775,13 @@
     "promising_file": "quantocracy_agentic_workflows_for_alpha_research_jonathan_kinl_20260523.md",
     "source": "quantocracy",
     "title": "Agentic Workflows for Alpha Research [Jonathan Kinlay]"
+  },
+  "d9465e1edd778b30c432607269b43f7a": {
+    "first_seen": "2026-05-31 08:07",
+    "source": "quantocracy",
+    "title": "Trend following (1/4): Replicating your own program [Beyond Passive]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "dcbed8f179df44540d49ad40cb04b3c0": {
     "decision": "rejected_L0",
