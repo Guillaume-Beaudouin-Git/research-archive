@@ -1,59 +1,62 @@
 {
-  "last_synthesis_week": "2026-W21",
+  "last_synthesis_week": "2026-W22",
   "themes_tracked": {
     "mnq_intraday_falsification": {
       "first_seen": "2026-W21",
       "last_seen": "2026-W21",
       "weeks_active": 1,
       "n_papers_total": 3,
-      "status": "emerging",
+      "status": "declining",
       "key_arxiv_ids": ["2605.04004", "2605.11423", "2605.17724"],
-      "note": "Three-paper cluster by Mesfin (same author, same 2021-2025 MNQ dataset). Progressive falsification: 14 signal families → VVG regime ID → ML architectures. All fail after costs under walk-forward. Single-author — needs independent replication."
+      "note": "Three-paper cluster by Mesfin (same author, 2021-2025 MNQ dataset). No new papers W22. DEEP_DIVE on 2605.04004 (2026-05-25_analysis.md) confirms REFERENCE_ONLY: Strategy C's multi-filter conjunction (VWAP + gap <1.2% + range ≥30pts) is absent from all 14 Mesfin families. Mesfin's best result gap-continuation T=3.23 has N=22 vs Strategy C N=346.",
+      "deep_dive_completed": ["2605.04004"]
     },
     "defi_carry_mechanics": {
       "first_seen": "2026-W21",
       "last_seen": "2026-W21",
       "weeks_active": 1,
       "n_papers_total": 3,
-      "status": "emerging",
+      "status": "declining",
       "key_arxiv_ids": ["2605.05089", "2605.06405", "2605.11263"],
-      "note": "Three papers on spot-perp delta-neutral carry (Krestenko, Le, Lorig). Realized performance predominantly driven by funding environment. HL funding follows OU-plus-jump dynamics. Exit asymmetry documented."
+      "note": "No new papers W22. DEEP_DIVE on 2605.05089 confirms TEST_LATER trigger: mainnet review ~2026-07-17 when notionnel >$5K. DeFi permissionless calibration doesn't transfer to HL centralized. Exit asymmetry real but negligible at $50 testnet.",
+      "deep_dive_completed": ["2605.05089"],
+      "test_later_trigger": "mainnet 60-day review ~2026-07-17"
     },
     "ml_portfolio_hac_robustness": {
       "first_seen": "2026-W21",
       "last_seen": "2026-W21",
       "weeks_active": 1,
       "n_papers_total": 2,
-      "status": "emerging",
+      "status": "declining",
       "key_arxiv_ids": ["2605.17307", "2605.19278"],
-      "note": "ML/RL fails to produce statistically significant excess returns under HAC-robust inference. Best forecast MSE != best portfolio Sharpe."
+      "note": "ML/RL fails HAC-robust inference across Nasdaq-100/Nikkei/Euro Stoxx. Best forecast MSE ≠ best Sharpe. No new papers W22."
     },
     "regime_conditional_trend_scaling": {
       "first_seen": "2026-W21",
       "last_seen": "2026-W21",
       "weeks_active": 1,
       "n_papers_total": 3,
-      "status": "emerging",
+      "status": "declining",
       "key_sources": [
         "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523",
         "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523",
         "arxiv:2605.14976"
       ],
-      "note": "Practitioner sources: optimal trend allocation is regime-dependent. Mozes vol-spike mechanism documents why Strategy A v3 MaxDD was breached. RegimeFilterHandler stub blocks automated testing."
+      "note": "No new papers W22. H002 vol-ratio scalar remains open pre-registration candidate for Strategy A v4 modification #1."
     },
     "backtest_integrity_multiple_testing": {
       "first_seen": "2026-W21",
       "last_seen": "2026-W21",
       "weeks_active": 1,
       "n_papers_total": 4,
-      "status": "emerging",
+      "status": "declining",
       "key_sources": [
         "quantocracy_backtests_lie_building_a_stress_test_framework_for_20260523",
         "quantocracy_the_effective_number_of_tested_strategies_vertox_q_20260523",
         "quantocracy_overfitting_and_parameter_selection_in_trading_str_20260523",
         "quantocracy_bad_month_for_your_strategy_should_you_change_it_a_20260523"
       ],
-      "note": "Effective-N AMTP correction critical: 274 raw tests, effective N likely 3-4 for correlated iteration series like Strategy C iter_1→iter_10."
+      "note": "No new papers W22. Effective-N AMTP recheck for Strategy C iter_1→iter_10 pending (W21 P1 not yet completed)."
     }
   },
   "open_hypotheses": [
@@ -96,6 +99,11 @@
     "first_run_week": "2026-W21",
     "requires_human_rate_week1": 0.84,
     "handlers_needed": ["StressTestHandler", "RegimeFilterHandler_complete", "ExitRuleHandler"],
-    "noise_items_to_filter": ["hn_quant_launch_hn_promoted_yc_w21", "quantocracy_quant_mashup_homepage", "quantocracy_quantocracy_homepage"]
+    "noise_items_to_filter": [
+      "hn_quant_launch_hn_promoted_yc_w21",
+      "quantocracy_quant_mashup_homepage",
+      "quantocracy_quantocracy_homepage"
+    ],
+    "w22_note": "Data drought. Alpha_hunt 2026-05-31: 0 retained (empty run). Arxiv cron 2026-05-25: fallback to 2026-05-22 feed (0 new papers vs W21). Pipeline operating correctly — sources dry, not a structural failure."
   }
 }
