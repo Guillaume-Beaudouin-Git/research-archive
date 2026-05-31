@@ -1,9 +1,9 @@
 {
-  "run_time": "2026-05-31 16:05 UTC",
+  "run_time": "2026-05-31 18:06 UTC",
   "accepted_count": 0,
   "by_source": {
     "hn_quant": {
-      "total": 99,
+      "total": 65,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
@@ -11,7 +11,7 @@
       "rej_l2": 0
     },
     "hn_algotrading": {
-      "total": 216,
+      "total": 172,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
