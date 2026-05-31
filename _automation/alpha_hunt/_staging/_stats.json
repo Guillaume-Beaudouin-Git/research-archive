@@ -1,6 +1,6 @@
 {
-  "run_time": "2026-05-31 08:06 UTC",
-  "accepted_count": 4,
+  "run_time": "2026-05-31 10:06 UTC",
+  "accepted_count": 0,
   "by_source": {
     "hn_quant": {
       "total": 99,
@@ -20,10 +20,10 @@
     },
     "quantocracy": {
       "total": 76,
-      "new": 6,
-      "accepted": 4,
-      "rej_l0": 1,
-      "rej_l1": 1,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
       "rej_l2": 0
     },
     "quantinsti": {
