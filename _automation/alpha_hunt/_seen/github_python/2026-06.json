@@ -1,0 +1,23 @@
+{
+  "6495dc0d4c744cb93a8837c27c6b780e": {
+    "first_seen": "2026-06-01 12:07",
+    "source": "github_python",
+    "title": "Z4nzu/hackingtool",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bbfccaeeca6db93785b3375fc8abc0de": {
+    "first_seen": "2026-06-01 12:07",
+    "source": "github_python",
+    "title": "freqtrade/freqtrade",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "da67f8c8258e07d7089ad4218f2f0726": {
+    "first_seen": "2026-06-01 12:07",
+    "source": "github_python",
+    "title": "TauricResearch/TradingAgents",
+    "decision": "rejected_L0",
+    "promising_file": null
+  }
+}
