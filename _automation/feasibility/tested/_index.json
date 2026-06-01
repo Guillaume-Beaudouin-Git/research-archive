@@ -815,6 +815,22 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_days_2026_bring_again_11_special_offe__2026-05-31_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md",
+      "tested_date": "2026-06-01",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_modeling_covariate_transition_for_efficient_es_2026-06-01_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260601.md",
+      "tested_date": "2026-06-01",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_option_pricing_under_stochastic_volatility_and_2026-06-01_report.md",
+      "stopped_at": "A"
     }
   ]
 }
