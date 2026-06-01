@@ -1,0 +1,58 @@
+{
+  "285b0bee741a80b573df135b2caa09ab": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "The Markup falsification Adaptative Set",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2fe8f1d769e202f56010d740395b204d": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "Rectified Linear Unit Regression",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5a1cf42de8da6ae0c316e5ada8c35e1f": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "Comparing Market Mechanism Efficiencies",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "95cb48b3fa5640eea51fcfcad7c1a558": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "A Lecture Note on Offline RL and IRL, Part II: Foundations of Inverse Reinforcem",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9de04dec60768f57b9a090b2aefc40f8": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md"
+  },
+  "e65b9cf2744e3ca9f4a5c2b36ef60320": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "Moment-Based Inference for Regression with Latent Dirichlet Covariates",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f3534a84140bc40d14c74759e1656431": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "Posterior and Likelihood Sensitivity in Bayesian Distributionally Robust Optimiz",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f947078aee6e6f1a0d75b6761746cafa": {
+    "first_seen": "2026-06-01 06:07",
+    "source": "arxiv_econ_em",
+    "title": "Option Pricing under Stochastic Volatility and Jumps:A PIDE Framework with Empir",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260601.md"
+  }
+}
