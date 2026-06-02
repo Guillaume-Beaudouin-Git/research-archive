@@ -1,8 +1,36 @@
 {
+  "2d60a4bd5957265294153c321a135170": {
+    "first_seen": "2026-06-02 14:06",
+    "source": "github_python",
+    "title": "awslabs/aidlc-workflows",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "31605c7632633f12b6ec8305aa3e1e16": {
+    "first_seen": "2026-06-02 14:06",
+    "source": "github_python",
+    "title": "datalab-to/surya",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "34a547fcb6cacad21e07c896e6bd64d6": {
+    "first_seen": "2026-06-02 14:06",
+    "source": "github_python",
+    "title": "Asabeneh/30-Days-Of-Python",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6495dc0d4c744cb93a8837c27c6b780e": {
     "first_seen": "2026-06-01 12:07",
     "source": "github_python",
     "title": "Z4nzu/hackingtool",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "75a241dfb57b73adcb9baaf331fad2d1": {
+    "first_seen": "2026-06-02 14:06",
+    "source": "github_python",
+    "title": "Open-LLM-VTuber/Open-LLM-VTuber",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -17,6 +45,13 @@
     "first_seen": "2026-06-01 12:07",
     "source": "github_python",
     "title": "TauricResearch/TradingAgents",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "de7af7bae8a3bbfbb608992a9a8ce68e": {
+    "first_seen": "2026-06-02 14:06",
+    "source": "github_python",
+    "title": "chopratejas/headroom",
     "decision": "rejected_L0",
     "promising_file": null
   }
