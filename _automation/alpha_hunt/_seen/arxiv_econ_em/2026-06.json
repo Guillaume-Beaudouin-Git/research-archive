@@ -1,4 +1,11 @@
 {
+  "208dbb613280558bdad4bfaed5939087": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Digital Maturity and Technical Efficiency in NHS Acute Trusts: Cross-Sectional E",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "285b0bee741a80b573df135b2caa09ab": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
@@ -13,11 +20,39 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3188101b3e5397e82ec48e2728a7e8e3": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Information and voting: Evidence from Peru's 2026 presidential election",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_information_and_voting_evidence_from_peru_s_2026_p_20260602.md"
+  },
   "5a1cf42de8da6ae0c316e5ada8c35e1f": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Comparing Market Mechanism Efficiencies",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "6f984bf50a6b7e68597fcb860dbab4a6": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Random Set Quantile Estimation of Partially Identified Discrete Response Models",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "734e948dbb0b979d7197abc7b4980989": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Data-Automated Policy Learning for Nonlinear Welfare",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7ff73efba593eb5f7b606b96347884c1": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Certificates without Electrons? Theory and Evidence on Impacts from AI-Driven Po",
+    "decision": "rejected_L2_not_accessible",
     "promising_file": null
   },
   "95cb48b3fa5640eea51fcfcad7c1a558": {
@@ -34,12 +69,40 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md"
   },
+  "d454af6664f8dee2123c5f8ea5551483": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "When Do Treatment Changes Identify Causal Effects?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e65b9cf2744e3ca9f4a5c2b36ef60320": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Moment-Based Inference for Regression with Latent Dirichlet Covariates",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "e9d88ceafa255ae354b1cdbdbc4c91e7": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Higher-Order Debiased Estimators for General Treatment Models",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_higher_order_debiased_estimators_for_general_treat_20260602.md"
+  },
+  "ef99ddf03957949a65276c699cbc7834": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Hashprice modulates the electricity demand response of Bitcoin miners",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "f00696e68f1a3087872bd5b1d47b6d5c": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Structural Change Detection in High-Dimensional Transformed Factor Models via Ca",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_structural_change_detection_in_high_dimensional_tr_20260602.md"
   },
   "f3534a84140bc40d14c74759e1656431": {
     "first_seen": "2026-06-01 06:07",

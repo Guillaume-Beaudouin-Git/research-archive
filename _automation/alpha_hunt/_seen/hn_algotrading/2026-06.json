@@ -12,5 +12,12 @@
     "title": "DemocraticDefenseAgainst Bot Armies/AI Detection+CitizenOversight(JuryDutyModel)",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "fd8a6ebd9ea0f59b3fd0c89a453929b4": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Glq LLM quantization using E8 lattice",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }

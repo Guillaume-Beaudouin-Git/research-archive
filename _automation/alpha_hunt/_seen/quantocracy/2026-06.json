@@ -1,0 +1,44 @@
+{
+  "0969bfa6574cfe091a35c1f429146376": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "quantocracy",
+    "title": "New Feature: Model Portfolio Withdrawal Rates [Allocate Smartly]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_new_feature_model_portfolio_withdrawal_rates_alloc_20260602.md"
+  },
+  "1964b7aa496ffb73bc15686ec8dc67f4": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/01/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "81a8316fbd7488a494b7f6c2a35d5a7d": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "quantocracy",
+    "title": "Institutions    return expectations across assets and time [Alpha Architect]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_institutions_return_expectations_across_assets_and_20260602.md"
+  },
+  "af114c59419865f3ca80f0ed42e345a2": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "quantocracy",
+    "title": "AI Overfitting in Trading Systems [Wisdom Trading]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_ai_overfitting_in_trading_systems_wisdom_trading_20260602.md"
+  },
+  "dacb858f11d59f8e825b2b0a832a6d78": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "quantocracy",
+    "title": "Market Effect Research: Holiday Seasonality – Part 2 [TradeQuantiX]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_market_effect_research_holiday_seasonality_part_2__20260602.md"
+  },
+  "e6808c16ea908a8464d10bf282ca4aa8": {
+    "first_seen": "2026-06-02 06:06",
+    "source": "quantocracy",
+    "title": "When Is a Mispricing Not a Mispricing? [Robot Wealth]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  }
+}
