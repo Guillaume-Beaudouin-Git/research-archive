@@ -1,8 +1,92 @@
 {
+  "1573d99cfd54cc76b28d46b4b77b7712": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Building an institutional-grade algorithmic trading platform in the cloud (2021)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1fe8edef17ee109eb20f439aeb1b494f": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Indicator Dash – Rank and compare to mitigate crypto market uncertainty",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "21ca639abdcdd2597f377b29c09a3ef9": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Infinite canvas notes in the non-Euclidean Poincaré disk",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "35b3438bbfb5acdc220353963490330f": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "The Algorithmic Trading Platform",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "37ddb87001f765b0fcda18a326a4afdb": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Plz take a dump on my FinTech business",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "39b06ecca9451ba7e049ebdb246363b7": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Phoenix, a no-loss brokerage for active individual investors",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "46faf75abef18087415ced49f6a3829c": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Resources regarding algorithmic trading and portfolio management",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5b435ad2dc12e15a57f18504cb619391": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Algorithmic trading ecosystem",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "644751c004537dbca1563ecddb009b7f": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Ask HN: How to get started in Algorithmic Trading as a developer?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "911e2d924e287fc1dd6f8a20b179b78b": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Should I Keep the Code?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a0aba1acd2afa1eb67b3425eb3545c30": {
     "first_seen": "2026-06-02 14:06",
     "source": "hn_algotrading",
     "title": "Ask HN: Industries to Work with Algorithms?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a9a2043669c1eb1a1486327bd230524b": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading Models – Machine Learning",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c750105a4fc0de6a569a1716e218fa80": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading Models – Breakouts",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -13,10 +97,38 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d1e4f38e21585634c800e73a5592fb9e": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Institutional equities algorithmic trading strategy",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "db5a20a7b9fd6a87a2b9b59430736c74": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Algorithmic Trading Models – Moving Averages",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e5b56da97064bc0ab46b851176fa4a6a": {
     "first_seen": "2026-06-01 10:06",
     "source": "hn_algotrading",
     "title": "DemocraticDefenseAgainst Bot Armies/AI Detection+CitizenOversight(JuryDutyModel)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f3e2c66ffff14014007870558467d14b": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Full Tech Stack at an Institutional Algorithmic Trading Firm (Proof Trading)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f59a21657c621bf238ce31935cd4d2d9": {
+    "first_seen": "2026-06-02 20:06",
+    "source": "hn_algotrading",
+    "title": "Selecting a Database for an Algorithmic Trading System",
     "decision": "rejected_L0",
     "promising_file": null
   },
