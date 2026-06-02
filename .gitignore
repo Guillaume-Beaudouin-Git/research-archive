@@ -33,6 +33,7 @@ data/delta_neutral/
 data/pairs_trading/
 data/raw/
 data/metadata/*.json
+data/GLBX-*/
 
 # Research cache — binary data, reproducible from API
 Crypto/research/active/_preflight/cache/
