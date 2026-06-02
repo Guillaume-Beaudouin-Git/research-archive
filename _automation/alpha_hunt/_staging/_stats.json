@@ -1,6 +1,6 @@
 {
-  "run_time": "2026-06-02 14:06 UTC",
-  "accepted_count": 0,
+  "run_time": "2026-06-02 16:06 UTC",
+  "accepted_count": 1,
   "by_source": {
     "hn_quant": {
       "total": 66,
@@ -12,9 +12,9 @@
     },
     "hn_algotrading": {
       "total": 170,
-      "new": 1,
+      "new": 0,
       "accepted": 0,
-      "rej_l0": 1,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     },
@@ -35,18 +35,18 @@
       "rej_l2": 0
     },
     "quantpedia": {
-      "total": 14,
-      "new": 0,
-      "accepted": 0,
+      "total": 15,
+      "new": 1,
+      "accepted": 1,
       "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     },
     "github_python": {
       "total": 68,
-      "new": 5,
+      "new": 0,
       "accepted": 0,
-      "rej_l0": 5,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     },
