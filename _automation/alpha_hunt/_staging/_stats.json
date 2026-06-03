@@ -1,5 +1,5 @@
 {
-  "run_time": "2026-06-03 10:05 UTC",
+  "run_time": "2026-06-03 12:06 UTC",
   "accepted_count": 0,
   "by_source": {
     "hn_quant": {
@@ -35,7 +35,7 @@
       "rej_l2": 0
     },
     "quantpedia": {
-      "total": 15,
+      "total": 14,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
@@ -43,7 +43,7 @@
       "rej_l2": 0
     },
     "github_python": {
-      "total": 69,
+      "total": 62,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
