@@ -1,4 +1,25 @@
 {
+  "030cd9f68dc82996ab632fa10c6996d6": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "github_python",
+    "title": "NVIDIA-NeMo/Gym",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1756df9f4c96b33bb370d2227e4c1dcd": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "github_python",
+    "title": "datawhalechina/hello-agents",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1bfe17dcbae0cdea5eac4e3449b683a3": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "github_python",
+    "title": "interviewstreet/hiring-agent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2d60a4bd5957265294153c321a135170": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -41,10 +62,38 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "792b8cfff075db827fd3fe57935cb182": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "github_python",
+    "title": "psf/black",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8745fc8b3b32b45d573b8e8ae8b49078": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "github_python",
+    "title": "EbookFoundation/free-programming-books",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bb2f89c7864bb567680f172d8a0bf54a": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "github_python",
+    "title": "public-apis/public-apis",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "bbfccaeeca6db93785b3375fc8abc0de": {
     "first_seen": "2026-06-01 12:07",
     "source": "github_python",
     "title": "freqtrade/freqtrade",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d3c07711391ae9669f4fde7a8abc5172": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "github_python",
+    "title": "0x4m4/hexstrike-ai",
     "decision": "rejected_L0",
     "promising_file": null
   },
