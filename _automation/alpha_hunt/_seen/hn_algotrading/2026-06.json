@@ -1,4 +1,11 @@
 {
+  "05ebeee104cf4ea5cbcfa81a6833b0a8": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "Why AGI Would Shape Humanity in the Shadows the Revelation Trap",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1573d99cfd54cc76b28d46b4b77b7712": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -24,6 +31,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Show HN: Infinite canvas notes in the non-Euclidean Poincaré disk",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "22d2b5859fa80e7a0f8425eb3283fd35": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Can I trust GitHub not to use my code for LLM training?",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -55,6 +69,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "491c63d23d5231a553a4226202281a70": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "The Quiet Normalization of Artificial Intelligence",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5b435ad2dc12e15a57f18504cb619391": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -67,6 +88,13 @@
     "source": "hn_algotrading",
     "title": "Ask HN: How to get started in Algorithmic Trading as a developer?",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7a15d52f183f0a24bbfcec8f4dfec855": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "MIT Non-AI License",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "911e2d924e287fc1dd6f8a20b179b78b": {
@@ -90,6 +118,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b11a2ff54fda336eecafef160842c8b6": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "Monocod",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c750105a4fc0de6a569a1716e218fa80": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -101,6 +136,13 @@
     "first_seen": "2026-06-01 06:07",
     "source": "hn_algotrading",
     "title": "Show HN: Sweep, Open-weights 1.5B model for next-edit autocomplete",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cd64e43a0243d908662f4f3ca39a62da": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Herniated disc made me build a back-safe kettlebell app",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -118,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "da9280f522c32103b39e35df4abdecfe": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "Native Pytorch distributed training backend for Apple Silicon",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "db5a20a7b9fd6a87a2b9b59430736c74": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -129,6 +178,13 @@
     "first_seen": "2026-06-01 10:06",
     "source": "hn_algotrading",
     "title": "DemocraticDefenseAgainst Bot Armies/AI Detection+CitizenOversight(JuryDutyModel)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "eab4e9e92b1b710f8c5323ad8b0990a9": {
+    "first_seen": "2026-06-03 18:06",
+    "source": "hn_algotrading",
+    "title": "Show HN: Mamba3-minimal – PyTorch implementation of Mamba-3",
     "decision": "rejected_L0",
     "promising_file": null
   },
