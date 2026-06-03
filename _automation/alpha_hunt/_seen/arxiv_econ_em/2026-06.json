@@ -27,10 +27,24 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_information_and_voting_evidence_from_peru_s_2026_p_20260602.md"
   },
+  "33237c666deef0569c88618daaf3389f": {
+    "first_seen": "2026-06-03 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Position: Prioritize Identifying Structure, Not Complex Models, for Scientific D",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_position_prioritize_identifying_structure_not_comp_20260603.md"
+  },
   "5a1cf42de8da6ae0c316e5ada8c35e1f": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Comparing Market Mechanism Efficiencies",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "603ba00291a6eee1359ac1e219c22524": {
+    "first_seen": "2026-06-03 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Recovering Direct Price Effects of Environmental Amenities in Housing Markets: R",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
@@ -73,6 +87,13 @@
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
     "title": "When Do Treatment Changes Identify Causal Effects?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e29eb449fe416d8b3d8c145e40cac23e": {
+    "first_seen": "2026-06-03 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Sparse Tree-Based Aggregation for Time Series Regressions",
     "decision": "rejected_L0",
     "promising_file": null
   },
