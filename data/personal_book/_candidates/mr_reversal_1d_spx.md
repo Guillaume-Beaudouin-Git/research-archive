@@ -30,7 +30,7 @@ Reversal court-terme : −sign(rendement SPX veille) joué sur le jour suivant. 
 
 ## Verdict actuel
 
-> **NON-DÉPLOYABLE** en l'état. Le délai+1 collapse implique que tout l'edge dépend de l'exécution close-print sub-seconde — pratiquement impossible en compte courtier retail. Avant promotion en `sleeves/`, exigence : **mesurer open→close au lieu de close→close** sur le même sample. Si l'edge survit en open→close, le sleeve devient déployable (entrée à l'open, sortie le close suivant).
+> **NON-DÉPLOYABLE, probablement artefact δ+1 (kill).** Le délai+1 collapse SR 0,57 → 0,08 est le signe classique d'un edge porté par le bid-ask bounce sur le close-print — pratiquement impossible à capturer en compte courtier retail. La re-mesure open→close est dans la liste de choses à faire pour confirmer, **mais le prior est que ça confirme le kill** (le même mécanisme bid-ask bounce qui crée l'edge daily-close serait absent open→close → SR proche de zéro, edge mort). La promotion en `sleeves/` exige une preuve, pas une espérance ; sans preuve, ce candidat est en pratique mort.
 
 ## Gate-0 FTMO
 
@@ -43,11 +43,12 @@ Reversal court-terme : −sign(rendement SPX veille) joué sur le jour suivant. 
 - corr ~0 avec tous les autres sleeves du merge (LONGVOL_VXX, VIXTERM, PREFOMC, TSMOM_PROXY).
 - Spec ultra-simple (1 jour de mémoire, daily) → robuste si l'edge survit l'exécution.
 
-## Conditions de promotion
+## Conditions de promotion (prior = ne se réalisera pas)
 
-1. **Mesurer open→close** sur 2000-2026 même définition. Si t>2 et SR>0,3 net coût, promouvoir en `sleeves/` (compte courtier US standard, ES futures pour coût minimal).
-2. Vérifier la stabilité par décennie post-2013 (décay à monitorer).
-3. Si open→close meurt aussi, marquer la lesson candidate : *« reversal SPX 1j = artefact close-print, edge non capturable retail »* et fermer définitivement.
+1. **Mesurer open→close** sur 2000-2026 même définition. Si t>2 et SR>0,3 net coût (peu probable), promouvoir en `sleeves/`.
+2. **Si open→close meurt aussi** (résultat attendu) → marquer la lesson candidate finale : *« reversal SPX 1j = artefact close-print bid-ask bounce, edge non capturable retail »* et archiver définitivement.
+
+Note : la re-mesure n'est pas urgente. Le candidat est traité comme suspendu/quasi-mort tant qu'aucune mesure open→close positive n'est produite. Ne PAS le déployer sur prior optimiste.
 
 ## Réconciliation archive
 
