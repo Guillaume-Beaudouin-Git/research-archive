@@ -903,6 +903,22 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_position_prioritize_identifying_structure_not__2026-06-03_report.md",
       "stopped_at": null
+    },
+    {
+      "source_md": "arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_value_a_20260604.md",
+      "tested_date": "2026-06-04",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_val_2026-06-04_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_scale_ordered_contagion_a_spectral_theory_of_heter_20260604.md",
+      "tested_date": "2026-06-04",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_scale_ordered_contagion_a_spectral_theory_of_h_2026-06-04_report.md",
+      "stopped_at": "A"
     }
   ]
 }
