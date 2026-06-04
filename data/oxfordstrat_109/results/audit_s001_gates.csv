@@ -1,0 +1,7 @@
+gate,verdict
+1 — Délai+1 / fill close,FAIL
+2 — Two-sided split,FAIL (long-bias / disguised beta on rising universe)
+3 — Cost stress ×1.5/×2,PASS (survives ×2.0)
+4 — DSR (N_trials=42),FAIL (DSR < 0 — observed SR below threshold)
+5 — OOS 2016-2026,FAIL (edge in train flips to negative OOS)
+6 — Bootstrap CI,FAIL (CI straddles 0 — not distinguishable from null)
