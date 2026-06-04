@@ -1,4 +1,18 @@
 {
+  "0ff717304b7b50b3e5271e86fb649b9f": {
+    "first_seen": "2026-06-04 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Hashprice moderates the electricity demand response of Bitcoin miners",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "1187246f64749b484691a10349d8de1f": {
+    "first_seen": "2026-06-04 06:06",
+    "source": "arxiv_econ_em",
+    "title": "ReSGA: A Large Tail Risk Model for Learning Value-at-Risk and Expected Shortfall",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_value_a_20260604.md"
+  },
   "208dbb613280558bdad4bfaed5939087": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
@@ -76,12 +90,26 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9b3eda75be41cbbc28f6aad8c53e14c2": {
+    "first_seen": "2026-06-04 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Scale-Ordered Contagion: A Spectral Theory of Heterogeneous Information Adaptati",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_scale_ordered_contagion_a_spectral_theory_of_heter_20260604.md"
+  },
   "9de04dec60768f57b9a090b2aefc40f8": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md"
+  },
+  "bd0678d1bb087f071196e61a93c8e071": {
+    "first_seen": "2026-06-04 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Robust Inference for Dyadic Data with Dependent Ordered Nodes",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "d454af6664f8dee2123c5f8ea5551483": {
     "first_seen": "2026-06-02 06:06",
@@ -129,6 +157,13 @@
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Posterior and Likelihood Sensitivity in Bayesian Distributionally Robust Optimiz",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f60d87fab6cf92edf97cd1281317eaff": {
+    "first_seen": "2026-06-04 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Sequential algorithm for structural estimations with equilibrium constraints",
     "decision": "rejected_L0",
     "promising_file": null
   },
