@@ -41,6 +41,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "25e3fb3386e5debaad35c84f36825423": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "hn_algotrading",
+    "title": "Against Tricky Questions for LLMs: A Case for Simple and Transparent Benchmarks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "35b3438bbfb5acdc220353963490330f": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -59,6 +66,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Show HN: Phoenix, a no-loss brokerage for active individual investors",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "41d15a1b5033fe862d656522b0403adf": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "hn_algotrading",
+    "title": "I don't think LLM's are making us stupider",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -122,6 +136,13 @@
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
     "title": "Monocod",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c242cbb63994f87bd07eeaa6620ef1ed": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "hn_algotrading",
+    "title": "Show HN: Color Palette Pro – A synthesizer-style color palette generator",
     "decision": "rejected_L0",
     "promising_file": null
   },

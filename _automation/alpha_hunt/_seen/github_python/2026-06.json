@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "64a332112b8a10ae498eb6fa7cf1979e": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "github_python",
+    "title": "github/spec-kit",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "75a241dfb57b73adcb9baaf331fad2d1": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -76,6 +83,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b3ed63c21186e63fc9ec6b4104571939": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "github_python",
+    "title": "mvanhorn/last30days-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b708b95a0a778458e7dc5cc48ba9557f": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "github_python",
+    "title": "jundot/omlx",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "bb2f89c7864bb567680f172d8a0bf54a": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
@@ -90,6 +111,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c986f0adeb76f2e2ad44e0aedc96e865": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "github_python",
+    "title": "unilabsim/UniLab",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d3c07711391ae9669f4fde7a8abc5172": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
@@ -101,6 +129,13 @@
     "first_seen": "2026-06-01 12:07",
     "source": "github_python",
     "title": "TauricResearch/TradingAgents",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dafc082d17bc49804a16c92829e917c9": {
+    "first_seen": "2026-06-04 12:07",
+    "source": "github_python",
+    "title": "AIDC-AI/Pixelle-Video",
     "decision": "rejected_L0",
     "promising_file": null
   },
