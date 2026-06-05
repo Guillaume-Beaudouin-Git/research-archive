@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "156532934825ec8ad990e797d6511358": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "github_python",
+    "title": "microsoft/agent-framework",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1756df9f4c96b33bb370d2227e4c1dcd": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
@@ -38,6 +45,27 @@
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
     "title": "Asabeneh/30-Days-Of-Python",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4ba18dd65d5f81a9c313434574f6d756": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "github_python",
+    "title": "unslothai/unsloth",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5249bcbab34c3f79df03891c24c4ff81": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "github_python",
+    "title": "microsoft/BitNet",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5ea105e01579257b040eb7309fb874cc": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "github_python",
+    "title": "vllm-project/vllm-omni",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -97,10 +125,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "baa508a9ae9510a7733c3981061b1b45": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "github_python",
+    "title": "ZhuLinsen/daily_stock_analysis",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "bb2f89c7864bb567680f172d8a0bf54a": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
     "title": "public-apis/public-apis",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bb2f9dd7f603285f590bfb8c2bebeb7f": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "github_python",
+    "title": "MemPalace/mempalace",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -115,6 +157,13 @@
     "first_seen": "2026-06-04 12:07",
     "source": "github_python",
     "title": "unilabsim/UniLab",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cee53483facff221507028137eb6236e": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "github_python",
+    "title": "Panniantong/Agent-Reach",
     "decision": "rejected_L0",
     "promising_file": null
   },
