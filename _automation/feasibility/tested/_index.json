@@ -919,6 +919,46 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_scale_ordered_contagion_a_spectral_theory_of_h_2026-06-04_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_forecasting_of_volatility_and_risk_premia_in_elect_20260605.md",
+      "tested_date": "2026-06-05",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_forecasting_of_volatility_and_risk_premia_in_e_2026-06-05_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_and_s_20260605.md",
+      "tested_date": "2026-06-05",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_a_2026-06-05_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_new_feature_return_contribution_analysis_allocate_20260605.md",
+      "tested_date": "2026-06-05",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_new_feature_return_contribution_analysis_allocat_2026-06-05_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_trend_following_2_4_sector_by_sector_replication_b_20260605.md",
+      "tested_date": "2026-06-05",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_trend_following_2_4_sector_by_sector_replication_2026-06-05_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_how_wise_is_the_crowd_in_prediction_ma_20260605.md",
+      "tested_date": "2026-06-05",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_how_wise_is_the_crowd_in_prediction_ma_20260605_2026-06-05_report.md",
+      "stopped_at": "A"
     }
   ]
 }
