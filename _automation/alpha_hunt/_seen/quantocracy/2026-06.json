@@ -13,6 +13,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "42a722a9e4c482a5611d2a87a81e2edf": {
+    "first_seen": "2026-06-05 06:06",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/04/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "706adf07ae4d3c37d494fab0523af5c5": {
+    "first_seen": "2026-06-05 06:06",
+    "source": "quantocracy",
+    "title": "New Feature: Return Contribution Analysis [Allocate Smartly]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_new_feature_return_contribution_analysis_allocate_20260605.md"
+  },
   "81a8316fbd7488a494b7f6c2a35d5a7d": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
@@ -20,12 +34,26 @@
     "decision": "accepted",
     "promising_file": "quantocracy_institutions_return_expectations_across_assets_and_20260602.md"
   },
+  "9a41c1c437077afaea6340d75e4fe002": {
+    "first_seen": "2026-06-05 06:06",
+    "source": "quantocracy",
+    "title": "Does Regression Still Work in Modern Markets? [Relative Value Arbitrage]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "af114c59419865f3ca80f0ed42e345a2": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
     "title": "AI Overfitting in Trading Systems [Wisdom Trading]",
     "decision": "accepted",
     "promising_file": "quantocracy_ai_overfitting_in_trading_systems_wisdom_trading_20260602.md"
+  },
+  "d5fb2380626ed721577b848cfc76cf28": {
+    "first_seen": "2026-06-05 06:06",
+    "source": "quantocracy",
+    "title": "The software side of replication [Implementing QuantLib]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "dacb858f11d59f8e825b2b0a832a6d78": {
     "first_seen": "2026-06-02 06:06",
@@ -40,5 +68,12 @@
     "title": "When Is a Mispricing Not a Mispricing? [Robot Wealth]",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
+  },
+  "e8c157020b9a7d0e19b20ae1115ccebe": {
+    "first_seen": "2026-06-05 06:06",
+    "source": "quantocracy",
+    "title": "Trend following (2/4): Sector-by-sector replication [Beyond Passive]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_trend_following_2_4_sector_by_sector_replication_b_20260605.md"
   }
 }
