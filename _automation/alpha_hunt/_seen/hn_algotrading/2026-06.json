@@ -111,6 +111,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "866f134788829fe92e3c1df4f2a0a6bf": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: Haven – Selfhost a private blog instead of using Facebook",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "911e2d924e287fc1dd6f8a20b179b78b": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -122,6 +129,13 @@
     "first_seen": "2026-06-02 14:06",
     "source": "hn_algotrading",
     "title": "Ask HN: Industries to Work with Algorithms?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a3186e31eca752dafdca1ab2384b3448": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: 1 min workouts for people who sit all day",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -213,6 +227,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Full Tech Stack at an Institutional Algorithmic Trading Firm (Proof Trading)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f587caa065ddf35c838c6d1d364cd5c7": {
+    "first_seen": "2026-06-05 12:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: Gaussographs – Gaussian Splat Photography",
     "decision": "rejected_L0",
     "promising_file": null
   },
