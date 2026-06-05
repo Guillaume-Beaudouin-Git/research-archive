@@ -34,6 +34,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "307bff30b0bb1953089f324c14417a95": {
+    "first_seen": "2026-06-05 08:03",
+    "source": "arxiv_econ_em",
+    "title": "Econstellar: An Open-Source AI-Augmented Research Engine for Computational Finan",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "3188101b3e5397e82ec48e2728a7e8e3": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
@@ -52,6 +59,13 @@
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Comparing Market Mechanism Efficiencies",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "5b126fce13c917aff4fc5fb656b66296": {
+    "first_seen": "2026-06-05 08:03",
+    "source": "arxiv_econ_em",
+    "title": "Insurance of Agentic AI",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
@@ -76,6 +90,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7f37e79958863187f22a16be2a211ad3": {
+    "first_seen": "2026-06-05 08:03",
+    "source": "arxiv_econ_em",
+    "title": "Finding Most Influential Sets",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "7ff73efba593eb5f7b606b96347884c1": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
@@ -97,12 +118,33 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_scale_ordered_contagion_a_spectral_theory_of_heter_20260604.md"
   },
+  "9bb7daf90d6f766c37becfea0367b356": {
+    "first_seen": "2026-06-05 08:03",
+    "source": "arxiv_econ_em",
+    "title": "Forecasting of volatility and risk premia in electricity markets",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_forecasting_of_volatility_and_risk_premia_in_elect_20260605.md"
+  },
   "9de04dec60768f57b9a090b2aefc40f8": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md"
+  },
+  "ae9fa41029091ffafde992e6415e6e44": {
+    "first_seen": "2026-06-05 08:03",
+    "source": "arxiv_econ_em",
+    "title": "When the Scaffold Stays On: AI, Practice Style, and Screening in Elite Skill For",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_and_s_20260605.md"
+  },
+  "b7a6b3703793cb4b1a2b73be64e5d592": {
+    "first_seen": "2026-06-05 08:03",
+    "source": "arxiv_econ_em",
+    "title": "Interdependent Hitting Times",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "bd0678d1bb087f071196e61a93c8e071": {
     "first_seen": "2026-06-04 06:06",

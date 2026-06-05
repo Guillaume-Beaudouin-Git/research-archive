@@ -1,5 +1,5 @@
 {
-  "run_time": "2026-06-05 06:06 UTC",
+  "run_time": "2026-06-05 08:02 UTC",
   "accepted_count": 2,
   "by_source": {
     "hn_quant": {
@@ -19,11 +19,11 @@
       "rej_l2": 0
     },
     "quantocracy": {
-      "total": 83,
-      "new": 5,
-      "accepted": 2,
-      "rej_l0": 1,
-      "rej_l1": 2,
+      "total": 79,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
       "rej_l2": 0
     },
     "quantinsti": {
@@ -51,11 +51,11 @@
       "rej_l2": 0
     },
     "arxiv_econ_em": {
-      "total": 77,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
+      "total": 83,
+      "new": 6,
+      "accepted": 2,
+      "rej_l0": 1,
+      "rej_l1": 3,
       "rej_l2": 0
     }
   }
