@@ -90,6 +90,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4d56daec3f88bb72a5c324f630773e67": {
+    "first_seen": "2026-06-05 18:03",
+    "source": "hn_algotrading",
+    "title": "Show HN: DSA Trainer, LeetCode practice with a hint ladder instead of spoilers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5b435ad2dc12e15a57f18504cb619391": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -122,6 +129,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Ask HN: Should I Keep the Code?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "97f98c7079ca024b172138751709ae53": {
+    "first_seen": "2026-06-05 18:03",
+    "source": "hn_algotrading",
+    "title": "Show HN: Micron: a high performance C++23 (re)implementation of Libc and the STL",
     "decision": "rejected_L0",
     "promising_file": null
   },
