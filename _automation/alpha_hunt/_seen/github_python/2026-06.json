@@ -104,10 +104,38 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7fef37dc3c95e75caf1b023eb36fec10": {
+    "first_seen": "2026-06-06 14:03",
+    "source": "github_python",
+    "title": "microsoft/VibeVoice",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8745fc8b3b32b45d573b8e8ae8b49078": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
     "title": "EbookFoundation/free-programming-books",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8897e38421d4825ceeea8021a8933cb2": {
+    "first_seen": "2026-06-06 14:03",
+    "source": "github_python",
+    "title": "Shubhamsaboo/awesome-llm-apps",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8ef3b822d292c5d78da7547a8a28762f": {
+    "first_seen": "2026-06-06 14:03",
+    "source": "github_python",
+    "title": "khoj-ai/khoj",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9b0742708bc1aabfcb9d10ac5123236c": {
+    "first_seen": "2026-06-06 14:03",
+    "source": "github_python",
+    "title": "ansible/ansible",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -153,6 +181,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c9454b8c5729216a805ce8628d9a59cf": {
+    "first_seen": "2026-06-06 14:03",
+    "source": "github_python",
+    "title": "openai/whisper",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c986f0adeb76f2e2ad44e0aedc96e865": {
     "first_seen": "2026-06-04 12:07",
     "source": "github_python",
@@ -192,6 +227,13 @@
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
     "title": "chopratejas/headroom",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e23e3b254c3550800daaaa85e68fb10f": {
+    "first_seen": "2026-06-06 14:03",
+    "source": "github_python",
+    "title": "IBM/mcp-context-forge",
     "decision": "rejected_L0",
     "promising_file": null
   }
