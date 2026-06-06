@@ -97,6 +97,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "56b656dd55d64afbb0f8ad6cad710bea": {
+    "first_seen": "2026-06-06 08:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: I created a RAW to HDRI stacker in (mostly) Common Lisp",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5b435ad2dc12e15a57f18504cb619391": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
