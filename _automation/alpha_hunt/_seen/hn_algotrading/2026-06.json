@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "14c973e763f826dc99dce5faf99e61a7": {
+    "first_seen": "2026-06-07 14:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: Symbolic Circuit Distillation: prove program to LLM circuit equivalence",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "1573d99cfd54cc76b28d46b4b77b7712": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -132,6 +139,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "86aa478a2929f96acf4f1ba0932d5acb": {
+    "first_seen": "2026-06-07 14:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: I rebuilt the \"similar movies/TV shows\" algorithm on TasteFinder",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8cd96991d828d9b10130e248011966ac": {
+    "first_seen": "2026-06-07 14:04",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Dean of studies at a French CS school – what should we teach?",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "911e2d924e287fc1dd6f8a20b179b78b": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -188,6 +209,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "caaa0fb2b3049485683a1402ef5ea3fb": {
+    "first_seen": "2026-06-07 14:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: Horizons – OSS agent execution engine",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ccb7f2eeac98f38dc265c46fbb1ddafd": {
     "first_seen": "2026-06-01 06:07",
     "source": "hn_algotrading",
@@ -199,6 +227,13 @@
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
     "title": "Show HN: Herniated disc made me build a back-safe kettlebell app",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d0cd16e09deecf918e0df1f258bd59e0": {
+    "first_seen": "2026-06-07 14:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: Contrapunk – Real-time counterpoint harmony from guitar input",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -237,6 +272,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e821fa7f636e209a912f523c42ba9148": {
+    "first_seen": "2026-06-07 14:04",
+    "source": "hn_algotrading",
+    "title": "Show HN: ComputerPoker.ai – Learn GTO tournament poker strategy vs. GTO bots",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "eab4e9e92b1b710f8c5323ad8b0990a9": {
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
@@ -262,6 +304,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Selecting a Database for an Algorithmic Trading System",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f9d83575d6e76cff3cc5a581c6dd00b3": {
+    "first_seen": "2026-06-07 14:04",
+    "source": "hn_algotrading",
+    "title": "US Navy signs deal with AI firm for training underwater drones",
     "decision": "rejected_L0",
     "promising_file": null
   },
