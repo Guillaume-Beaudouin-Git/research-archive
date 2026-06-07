@@ -34,6 +34,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_institutions_return_expectations_across_assets_and_20260602.md"
   },
+  "8e651225469902d36717cb181e7e1ed6": {
+    "first_seen": "2026-06-07 06:04",
+    "source": "quantocracy",
+    "title": "The crossword puzzle of fitting – why across and then down? [Investment Idiocy]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_crossword_puzzle_of_fitting_why_across_and_the_20260607.md"
+  },
   "9a41c1c437077afaea6340d75e4fe002": {
     "first_seen": "2026-06-05 06:06",
     "source": "quantocracy",
@@ -41,12 +48,26 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "9ab72930e42f83cb899dd70f4b98966c": {
+    "first_seen": "2026-06-07 06:04",
+    "source": "quantocracy",
+    "title": "The Non-Linear Costs of Trading [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_non_linear_costs_of_trading_concretum_group_20260607.md"
+  },
   "af114c59419865f3ca80f0ed42e345a2": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
     "title": "AI Overfitting in Trading Systems [Wisdom Trading]",
     "decision": "accepted",
     "promising_file": "quantocracy_ai_overfitting_in_trading_systems_wisdom_trading_20260602.md"
+  },
+  "d3489edc36d21a7cb66412cabef52fe9": {
+    "first_seen": "2026-06-07 06:04",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/06/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "d5fb2380626ed721577b848cfc76cf28": {
     "first_seen": "2026-06-05 06:06",
@@ -61,6 +82,20 @@
     "title": "Market Effect Research: Holiday Seasonality – Part 2 [TradeQuantiX]",
     "decision": "accepted",
     "promising_file": "quantocracy_market_effect_research_holiday_seasonality_part_2__20260602.md"
+  },
+  "dd2673ad8b9051c01b99b9f98318929f": {
+    "first_seen": "2026-06-07 06:04",
+    "source": "quantocracy",
+    "title": "Research Review | 5 June 2026 | Risk Management [Capital Spectator]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_research_review_5_june_2026_risk_management_capita_20260607.md"
+  },
+  "e0871785310c6cbdb2b21ee97e4fecd9": {
+    "first_seen": "2026-06-07 06:04",
+    "source": "quantocracy",
+    "title": "How Wise is the Crowd in Prediction Markets [Quantpedia]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "e6808c16ea908a8464d10bf282ca4aa8": {
     "first_seen": "2026-06-02 06:06",
