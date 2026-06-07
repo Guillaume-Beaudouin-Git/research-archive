@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "14f987de7f71596aefcc68ef79cd3324": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "RyanCodrai/turbovec",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "156532934825ec8ad990e797d6511358": {
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
@@ -20,10 +27,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "17f84d1d57290d2ac6a5149eaebb04c3": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "ashishpatel26/500-AI-Agents-Projects",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "1bfe17dcbae0cdea5eac4e3449b683a3": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
     "title": "interviewstreet/hiring-agent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1eedb05e5f6ddc9ecd93fa4ac6e7a91b": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "AstrBotDevs/AstrBot",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -83,6 +104,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6b8b48b22ab83ca249dc36aea5931cbe": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "SudoHopeX/KaliGPT",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "75a241dfb57b73adcb9baaf331fad2d1": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -125,6 +153,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8c9fb8e1d93cf31f7d30fa1b7f27cc83": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "HunxByts/GhostTrack",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8ef3b822d292c5d78da7547a8a28762f": {
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
@@ -136,6 +171,13 @@
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
     "title": "ansible/ansible",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9e3601489e4839116adab30c08e6b212": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "Free-TV/IPTV",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -178,6 +220,13 @@
     "first_seen": "2026-06-01 12:07",
     "source": "github_python",
     "title": "freqtrade/freqtrade",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c4b779a3c194f4274ae68f3787a0618b": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "moorcheh-ai/memanto",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -234,6 +283,20 @@
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
     "title": "IBM/mcp-context-forge",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "eab530ed4cad9d8f4721aca1ee2b24d3": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "luongnv89/claude-howto",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f1e6a54327ad9bcb35f2de4fed1a1459": {
+    "first_seen": "2026-06-07 12:05",
+    "source": "github_python",
+    "title": "roboflow/supervision",
     "decision": "rejected_L0",
     "promising_file": null
   }
