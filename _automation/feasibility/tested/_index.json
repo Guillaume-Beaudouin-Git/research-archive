@@ -959,6 +959,30 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/quantpedia_how_wise_is_the_crowd_in_prediction_ma_20260605_2026-06-05_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_the_non_linear_costs_of_trading_concretum_group_20260607.md",
+      "tested_date": "2026-06-07",
+      "handler": "ExitRuleHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_non_linear_costs_of_trading_concretum_group__2026-06-07_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_research_review_5_june_2026_risk_management_capita_20260607.md",
+      "tested_date": "2026-06-07",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_research_review_5_june_2026_risk_management_capi_2026-06-07_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_the_crossword_puzzle_of_fitting_why_across_and_the_20260607.md",
+      "tested_date": "2026-06-07",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_crossword_puzzle_of_fitting_why_across_and_t_2026-06-07_report.md",
+      "stopped_at": "A"
     }
   ]
 }
