@@ -34,6 +34,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "18734bbaf0a048f76ccd7539ae1bbad0": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "alistaitsacle/free-llm-api-keys",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1bfe17dcbae0cdea5eac4e3449b683a3": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
@@ -45,6 +52,13 @@
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
     "title": "AstrBotDevs/AstrBot",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "24a516ab6b6cc34c5228d2745118b5e1": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "langchain-ai/deepagents",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -104,10 +118,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "693a60bc5bcd5da12dfe79937630cf5d": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "google/skills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6b8b48b22ab83ca249dc36aea5931cbe": {
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
     "title": "SudoHopeX/KaliGPT",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "70f9840c967c0904cdcb2c1478f830c2": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "Imbad0202/academic-research-skills",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -132,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7a9f0a4518ea760c9f972c1c40db8ce2": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "magenta/magenta-realtime",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7fef37dc3c95e75caf1b023eb36fec10": {
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
@@ -143,6 +178,20 @@
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
     "title": "EbookFoundation/free-programming-books",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "878f91e8e2f5d24b3c0fbaba34e5e6bb": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "xerrors/Yuxi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "88294f1c6b3f3789237b164e648b5470": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "Andyyyy64/whichllm",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -220,6 +269,13 @@
     "first_seen": "2026-06-01 12:07",
     "source": "github_python",
     "title": "freqtrade/freqtrade",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bf72617ad48987e590d72ea693b873b3": {
+    "first_seen": "2026-06-08 12:06",
+    "source": "github_python",
+    "title": "marin-community/marin",
     "decision": "rejected_L0",
     "promising_file": null
   },
