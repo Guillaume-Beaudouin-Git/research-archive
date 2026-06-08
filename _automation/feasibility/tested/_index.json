@@ -983,6 +983,14 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantocracy_the_crossword_puzzle_of_fitting_why_across_and_t_2026-06-07_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_causalalpha_a_real_time_geopolitical_risk_index_fr_20260608.md",
+      "tested_date": "2026-06-08",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_causalalpha_a_real_time_geopolitical_risk_inde_2026-06-08_report.md",
+      "stopped_at": "A"
     }
   ]
 }
