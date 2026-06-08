@@ -202,6 +202,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b5b1d29489738a84a997a8d988141040": {
+    "first_seen": "2026-06-08 10:03",
+    "source": "hn_algotrading",
+    "title": "The rsync algorithm (1996) [pdf]",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c242cbb63994f87bd07eeaa6620ef1ed": {
     "first_seen": "2026-06-04 12:07",
     "source": "hn_algotrading",
