@@ -55,6 +55,20 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_position_prioritize_identifying_structure_not_comp_20260603.md"
   },
+  "3ec984f428760362034e91c70e62c650": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Consistent estimation in logit models using historical choices as practical cons",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5018556f4c326503e2b7d75ce9f16d70": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Finding Most Influential Sets",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "5a1cf42de8da6ae0c316e5ada8c35e1f": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
@@ -90,6 +104,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "77632461044e0a59c50395b4ff0f3448": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Statistical and Numerical Convergence in Stochastic Equilibrium",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7f37e79958863187f22a16be2a211ad3": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
@@ -102,6 +123,13 @@
     "source": "arxiv_econ_em",
     "title": "Certificates without Electrons? Theory and Evidence on Impacts from AI-Driven Po",
     "decision": "rejected_L2_not_accessible",
+    "promising_file": null
+  },
+  "84c4b30cb218ae3840d128d238e0f63e": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "TOPSIS-RAD: Ranking According to Desires",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "95cb48b3fa5640eea51fcfcad7c1a558": {
@@ -139,6 +167,20 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_and_s_20260605.md"
   },
+  "b3e478cd45b44faad752616bda572c6f": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Sequential algorithm for structural estimations with equilibrium constraints",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b6cd1fba18d92b18dbc6740be6aa604a": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "Online Pandora's Box for Contextual LLM Cascading",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b7a6b3703793cb4b1a2b73be64e5d592": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
@@ -166,6 +208,13 @@
     "title": "Sparse Tree-Based Aggregation for Time Series Regressions",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "e440c604a5eddd3fb728b1051eddb0c2": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "CausalAlpha: A Real-Time Geopolitical Risk Index from OSINT Channels for Causal ",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_causalalpha_a_real_time_geopolitical_risk_index_fr_20260608.md"
   },
   "e65b9cf2744e3ca9f4a5c2b36ef60320": {
     "first_seen": "2026-06-01 06:07",
@@ -215,5 +264,12 @@
     "title": "Option Pricing under Stochastic Volatility and Jumps:A PIDE Framework with Empir",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260601.md"
+  },
+  "fc7b297c2b60c1a68dd631a0dd4851a5": {
+    "first_seen": "2026-06-08 06:06",
+    "source": "arxiv_econ_em",
+    "title": "The Markup falsification Adaptative Set",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }
