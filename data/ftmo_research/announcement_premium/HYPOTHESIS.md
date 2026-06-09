@@ -146,14 +146,14 @@ A pass on K1–K5 with DSR ≤ 0.95 is reported as NO-GO (noise-floor).
   (`research/ftmo_candidate_funnel/funnel_lib.py::combined_pass_prob_empirical`).
   If any gate fails, MC is NOT run (no posthoc exploration).
 
-## 9. Outcome register (to fill AFTER results — empty at freeze)
+## 9. Outcome register (filled 2026-06-10 after results — see report.md)
 
 | Gate | Result | Value |
 |---|---|---|
-| K1 | — | — |
-| K2 | — | — |
-| K3 | — | — |
-| K4 | — | — |
-| K5 | — | — |
-| DSR | — | — |
-| Verdict | — | — |
+| K1 | FAIL | β = −3.15 bp, t_HAC = −0.28 (event mean +0.50 bp vs non-event +3.65 bp) |
+| K2 | FAIL | SR_net −0.399 vs scaled-B&H +0.056 |
+| K3 | FAIL | ≥2021 block t = −0.28 < 1.0 (blocks 1–2 empty: calendar floor + price hole) |
+| K4 | FAIL | net −2.97%/yr vs cost 3.46%/yr (gross +0.49%/yr; fails at 6/8/10 bps) |
+| K5 | FAIL | only positive type FOMC N=38 < 40; rest-β −9.9 bp ≤ 0 |
+| DSR | FAIL | 5.9e-09 (program N=101) / 2.5e-04 (within-study) |
+| Verdict | **NO-GO** | realized sample 2021-09-15→2026-06-05 (US500 2018→2021-09 price hole, report §6); registry 97→101; modifications 0/3 |

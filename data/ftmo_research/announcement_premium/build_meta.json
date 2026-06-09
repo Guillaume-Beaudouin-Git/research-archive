@@ -1,0 +1,44 @@
+{
+  "hypothesis_commit": "88cc29e",
+  "grid_full": [
+    "2012-01-18",
+    "2026-06-05"
+  ],
+  "sample": [
+    "2021-09-15",
+    "2026-06-05"
+  ],
+  "sample_days": 1218,
+  "event_days_pooled": 149,
+  "event_days_by_type": {
+    "FOMC": 38,
+    "CPI": 56,
+    "NFP": 56
+  },
+  "overlap_multi_type_days": 1,
+  "excluded_rows": 5,
+  "sanity": {
+    "event_days_per_year": 31.57,
+    "event_days_per_year_ok": true,
+    "trading_days_per_year": 258.05,
+    "trading_days_per_year_ok": true,
+    "cpi_nfp_utc_hours": [
+      12,
+      13
+    ],
+    "cpi_nfp_hours_ok": true,
+    "fomc_utc_hours": [
+      18,
+      19
+    ],
+    "fomc_hours_ok": true,
+    "grid_monotonic": true,
+    "events_on_nontrading_day": 0,
+    "released_while_closed_n": 2,
+    "max_nights_in_sample": 4,
+    "max_nights_ok": true,
+    "hole_rows_dropped": 1,
+    "unobservable_event_days_in_hole": 1
+  },
+  "sanity_all_ok": true
+}
