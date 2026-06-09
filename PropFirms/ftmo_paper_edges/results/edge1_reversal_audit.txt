@@ -1,0 +1,14 @@
+INTRADAY REVERSAL (book of 4 index CFDs) — cost stress, last-30min entry:
+  cost  0bp RT: full=+0.30 22-26=+0.44 OOS=+0.25 DSR@200=0.306
+  cost  3bp RT: full=-1.74 22-26=-1.49 OOS=-1.81 DSR@200=0.000
+  cost  5bp RT: full=-3.09 22-26=-2.78 OOS=-3.18 DSR@200=0.000
+  cost  8bp RT: full=-5.08 22-26=-4.69 OOS=-5.20 DSR@200=0.000
+  cost 12bp RT: full=-7.62 22-26=-7.16 OOS=-7.81 DSR@200=0.000
+
+Window robustness (cost 5bp): hold last N min into the close:
+  last 30min: full=-3.09 22-26=-2.78 OOS=-3.18
+  last 60min: full=-2.37 22-26=-2.15 OOS=-2.92
+  last 90min: full=-2.07 22-26=-1.94 OOS=-2.74
+
+per-sleeve (cost 5bp): US500=-3.02 US100=-2.60 US30=-2.87 GER40=-3.83
+per-year (cost 5bp): {2013: np.float64(nan), 2014: np.float64(-4.02), 2015: np.float64(-2.82), 2016: np.float64(-3.47), 2017: np.float64(-7.48), 2018: np.float64(-2.47), 2019: np.float64(-4.44), 2020: np.float64(-3.15), 2021: np.float64(-2.83), 2022: np.float64(-1.52), 2023: np.float64(-4.85), 2024: np.float64(-3.76), 2025: np.float64(-3.15), 2026: np.float64(-3.46)}

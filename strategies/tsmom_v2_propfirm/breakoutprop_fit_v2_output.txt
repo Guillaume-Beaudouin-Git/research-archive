@@ -1,0 +1,46 @@
+===============================================================================================
+BREAKOUTPROP FIT v2 — A WITH intraday stop-loss (live spec STOP_LOSS_VOL_MULT=2)
+===============================================================================================
+  2121 daily OHLC bars, 2020-08-11 → 2026-06-01
+
+Étape 1 — A profile WITH stop-loss (vol_target=0.18, stop_mult=2.0)
+-----------------------------------------------------------------------------------------------
+  Annualized: ret=24.95%, vol=32.32%, Sharpe=0.77
+  Max DD (compounded): -51.16%
+  Worst day: -20.72%
+  Daily P&L percentiles: p10=-0.99%, p5=-1.85%, p1=-4.10%
+  Daily std: 1.70%
+  Daily moves worse than -3%: 44 (2.07% of days)
+  Daily moves worse than -4%: 23 (1.08% of days)
+  Daily moves worse than -5%: 12 (0.57% of days)
+  Daily moves worse than -6%: 7 (0.33% of days)
+
+Étape 3 — De-lever sweep WITH stop-loss
+-----------------------------------------------------------------------------------------------
+ vol_target  ann_ret_pct  ann_vol_pct  sharpe  max_dd_pct  worst_day_pct  p99_loss_pct  p_funded_pct  p_p1_pct  p_bust_daily_pct  p_bust_total_pct  med_p1_ttp  med_p2_ttp
+       0.05         6.90        20.56    0.34      -39.93         -20.84         -2.20         35.27     53.10             43.30             21.40        97.0        44.0
+       0.08        10.88        22.93    0.47      -42.29         -20.76         -2.25         35.93     54.43             42.43             21.63        75.0        35.0
+       0.10        13.41        24.80    0.54      -44.09         -20.72         -2.62         36.13     53.90             40.67             23.20        65.0        30.0
+       0.13        17.40        27.39    0.64      -46.81         -20.72         -3.19         36.47     53.40             36.63             26.90        52.0        23.0
+       0.15        20.14        29.33    0.69      -48.58         -20.72         -3.58         33.90     51.33             40.53             25.57        44.0        18.0
+       0.18        24.95        32.32    0.77      -51.16         -20.72         -4.10         27.63     46.27             50.93             21.43        34.0        13.0
+       0.25        34.76        39.67    0.88      -57.02         -20.72         -5.23         26.77     42.80             55.27             17.97        25.0         6.0
+       0.35        45.45        50.02    0.91      -63.37         -20.72         -6.86         22.67     40.10             65.30             12.03        18.0         4.0
+
+Sensitivity to daily DD limit (vol_target=0.10, with stop-loss)
+-----------------------------------------------------------------------------------------------
+  daily_dd= 3.0% → p_funded= 32.7%  bust_d= 52.8%  bust_t= 14.5%
+  daily_dd= 4.0% → p_funded= 36.1%  bust_d= 40.7%  bust_t= 23.2%
+  daily_dd= 5.0% → p_funded= 40.4%  bust_d= 30.4%  bust_t= 29.2%
+  daily_dd= 6.0% → p_funded= 40.8%  bust_d= 25.5%  bust_t= 33.7%
+  daily_dd= 8.0% → p_funded= 41.3%  bust_d= 14.0%  bust_t= 44.7%
+  daily_dd=10.0% → p_funded= 41.3%  bust_d=  9.3%  bust_t= 49.4%
+
+Sensitivity to total DD limit (vol_target=0.10, with stop-loss, daily_dd=4%)
+-----------------------------------------------------------------------------------------------
+  total_dd= 5.0% → p_funded= 32.6%  bust_d= 36.6%  bust_t= 30.7%
+  total_dd= 6.0% → p_funded= 36.1%  bust_d= 40.7%  bust_t= 23.2%
+  total_dd= 8.0% → p_funded= 40.0%  bust_d= 46.7%  bust_t= 13.3%
+  total_dd=10.0% → p_funded= 42.3%  bust_d= 50.2%  bust_t=  7.5%
+  total_dd=12.0% → p_funded= 43.7%  bust_d= 52.6%  bust_t=  3.7%
+  total_dd=15.0% → p_funded= 44.4%  bust_d= 54.1%  bust_t=  1.5%

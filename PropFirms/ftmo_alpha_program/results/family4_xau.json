@@ -1,0 +1,72 @@
+{
+  "protocol": {
+    "IS": [
+      "2022-01-01",
+      "2024-12-31"
+    ],
+    "OOS_untouched": [
+      "2025-01-01",
+      "2026-05-29"
+    ],
+    "n_trials_dsr": 50,
+    "cross_feed": "UNAVAILABLE (no independent XAUUSD feed in repo) \u2014 per-year + untouched hold-out used instead"
+  },
+  "isolation_gross": {
+    "no_stop": {
+      "is_gross": -0.1166953732866558,
+      "oos_gross": -1.070762442020616,
+      "is_trade_wr": 0.5664451827242525,
+      "is_kurt": 4.657270729406367
+    },
+    "stop0.5": {
+      "is_gross": -0.3093841394570115,
+      "oos_gross": -0.5921283243318091,
+      "is_trade_wr": 0.5665529010238908,
+      "is_kurt": 4.34272138823055
+    },
+    "stop0.5+filter": {
+      "is_gross": -0.41485163365420447,
+      "oos_gross": -0.2458355719837844,
+      "is_trade_wr": 0.5805471124620061,
+      "is_kurt": 8.52545249155144
+    }
+  },
+  "canonical": {
+    "cost_ratio": -0.2686589741865078,
+    "gross_ann": -0.050124241215466235,
+    "cost_ann": 0.18657199658876497,
+    "kurtosis": 4.4702160144621015,
+    "tail_dd": {
+      "p_floor_excursion": 0.5058333333333334,
+      "p_peak_trough_dd": 0.6388333333333334,
+      "gate_pass": false
+    },
+    "is_sharpe": -1.4541928893346558,
+    "oos_sharpe": -1.22818717781751,
+    "per_year": {
+      "2022": -0.6,
+      "2023": -1.5,
+      "2024": -2.11,
+      "2025": -2.16,
+      "2026": 0.73
+    },
+    "dsr": {
+      "sharpe": -1.5770670763369359,
+      "sr_benchmark": 2.2763030934203483,
+      "dsr": 5.193699583075602e-13,
+      "skewness": -1.0983506017153557,
+      "excess_kurtosis": 4.414738749150443,
+      "n_obs": 778,
+      "passed": false
+    },
+    "ftmo_mc": {
+      "0.01": 0.049817986111111115,
+      "0.006": 0.010773527777777778
+    },
+    "n_trades_is": 586,
+    "trade_wr_is": 0.5665529010238908
+  },
+  "cost_failure": true,
+  "edge_failure": true,
+  "verdict": "NO-GO \u2014 EDGE FAILURE (terminal): gross Sharpe is negative at ZERO cost, with and without the stop, IS and on the untouched hold-out. The mechanism has no positive gross expectancy; the EAs' 90%+ WR is a grid-averaging artefact. A cheaper venue cannot rescue negative gross \u2014 this does NOT reopen the venue pivot."
+}

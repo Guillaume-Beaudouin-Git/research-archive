@@ -1,0 +1,231 @@
+{
+  "candidate_eurusd": {
+    "n_days": 778,
+    "mean_daily": 0.0004320296989955534,
+    "sigma_daily": 0.009684387625749972,
+    "daily_sharpe": 0.04461094657620093,
+    "ann_sharpe": 0.7081768223508962,
+    "ann_return": 0.10887148414687946,
+    "win_rate": 0.5012853470437018,
+    "avg_win": 0.006845282924393593,
+    "avg_loss": -0.007676122482549214,
+    "win_loss_ratio": 0.8917631186781556,
+    "excess_kurtosis": 3.448241783857293,
+    "skew": -0.476167229812284,
+    "max_dd": 0.32463650169736796,
+    "gross_ann_return": 0.1821783611951614,
+    "cost_ann_drag": 0.0733068770482819,
+    "avg_daily_turnover": 9.656508142486796
+  },
+  "book": {
+    "n_days": 781,
+    "mean_daily": -0.0002570683167764861,
+    "sigma_daily": 0.01,
+    "daily_sharpe": -0.02570683167764861,
+    "ann_sharpe": -0.4080833016867334,
+    "ann_return": -0.0647812158276745,
+    "win_rate": 0.49039692701664533,
+    "avg_win": 0.007007477632352795,
+    "avg_loss": -0.008714907216294731,
+    "win_loss_ratio": 0.8040794306163738,
+    "excess_kurtosis": 1.6700185988730318,
+    "skew": -0.4044844106284784,
+    "max_dd": 0.2946954124737669,
+    "gross_ann_return": -0.0647812158276745,
+    "cost_ann_drag": 0.0,
+    "avg_daily_turnover": 0.0
+  },
+  "book_weights": {
+    "EURUSD": 0.22284100342651594,
+    "GBPUSD": 0.3127093510507206,
+    "XAUUSD": 0.46444964552276335
+  },
+  "eurusd_suitability_gates": {
+    "win_rate>0.55": false,
+    "win_loss~1 (<1.5)": true,
+    "excess_kurt<3": false,
+    "daily_sharpe>=0.09": false
+  },
+  "walk_forward": [
+    {
+      "fold": 1,
+      "n_days": 130,
+      "start": "2022-01-03",
+      "end": "2022-07-01",
+      "ann_sharpe": -0.9040755076617292,
+      "ann_return": -0.10150916183437123
+    },
+    {
+      "fold": 2,
+      "n_days": 130,
+      "start": "2022-07-04",
+      "end": "2023-01-02",
+      "ann_sharpe": 2.9994462002935047,
+      "ann_return": 0.4879051572661187
+    },
+    {
+      "fold": 3,
+      "n_days": 130,
+      "start": "2023-01-03",
+      "end": "2023-07-03",
+      "ann_sharpe": -1.2416409883639146,
+      "ann_return": -0.16994149861347552
+    },
+    {
+      "fold": 4,
+      "n_days": 130,
+      "start": "2023-07-04",
+      "end": "2024-01-03",
+      "ann_sharpe": -1.510335565274199,
+      "ann_return": -0.2599363409034555
+    },
+    {
+      "fold": 5,
+      "n_days": 129,
+      "start": "2024-01-04",
+      "end": "2024-07-02",
+      "ann_sharpe": 2.2478166769451766,
+      "ann_return": 0.33346121605546514
+    },
+    {
+      "fold": 6,
+      "n_days": 129,
+      "start": "2024-07-03",
+      "end": "2024-12-31",
+      "ann_sharpe": 2.0751501658176985,
+      "ann_return": 0.3669624614433417
+    }
+  ],
+  "dsr": {
+    "sharpe": 0.5780827342799576,
+    "sr_benchmark": 2.0733923079499466,
+    "dsr": 0.0046361456175180666,
+    "skewness": -0.47433268275681545,
+    "excess_kurtosis": 3.4019293198776506,
+    "n_obs": 778,
+    "passed": false
+  },
+  "cost_markup_sensitivity": [
+    {
+      "markup": 1.0,
+      "eurusd_pips_rt": 0.2,
+      "gross_ann": 0.1821783611951614,
+      "cost_ann": 0.024435625682760635,
+      "ratio": 7.455440820723018,
+      "net_ann_sharpe": 1.0214604693679616
+    },
+    {
+      "markup": 1.5,
+      "eurusd_pips_rt": 0.3,
+      "gross_ann": 0.1821783611951614,
+      "cost_ann": 0.03665343852414095,
+      "ratio": 4.9702938804820125,
+      "net_ann_sharpe": 0.9434211815259267
+    },
+    {
+      "markup": 2.0,
+      "eurusd_pips_rt": 0.4,
+      "gross_ann": 0.1821783611951614,
+      "cost_ann": 0.04887125136552127,
+      "ratio": 3.727720410361509,
+      "net_ann_sharpe": 0.8651926600198377
+    },
+    {
+      "markup": 3.0,
+      "eurusd_pips_rt": 0.6,
+      "gross_ann": 0.1821783611951614,
+      "cost_ann": 0.0733068770482819,
+      "ratio": 2.4851469402410062,
+      "net_ann_sharpe": 0.7081768223508962
+    }
+  ],
+  "loss_cap_artifact": {
+    "eurusd_no_clip": 0.7081768223508962,
+    "eurusd_with_clip25bps": 1.3145877166303728
+  },
+  "ftmo_mc": [
+    {
+      "book": "EURUSD",
+      "sigma_d": 0.01,
+      "p_combined": 0.3926095694444445,
+      "ci95": [
+        0.3849043613191365,
+        0.4003147775697524
+      ],
+      "median_sessions": 106.0,
+      "tail_dd": 0.17716666666666667,
+      "tail_gate": false
+    },
+    {
+      "book": "EURUSD",
+      "sigma_d": 0.008,
+      "p_combined": 0.5798686875,
+      "ci95": [
+        0.5716417878055946,
+        0.5880955871944054
+      ],
+      "median_sessions": 171.0,
+      "tail_dd": 0.08883333333333333,
+      "tail_gate": true
+    },
+    {
+      "book": "EURUSD",
+      "sigma_d": 0.006,
+      "p_combined": 0.6599976388888888,
+      "ci95": [
+        0.651956812162178,
+        0.6680384656155997
+      ],
+      "median_sessions": 270.0,
+      "tail_dd": 0.022583333333333334,
+      "tail_gate": true
+    },
+    {
+      "book": "BOOK",
+      "sigma_d": 0.01,
+      "p_combined": 0.16696790972222222,
+      "ci95": [
+        0.1617413047766897,
+        0.17219451466775476
+      ],
+      "median_sessions": 125.0,
+      "tail_dd": 0.34025,
+      "tail_gate": false
+    },
+    {
+      "book": "BOOK",
+      "sigma_d": 0.008,
+      "p_combined": 0.1399911666666667,
+      "ci95": [
+        0.1352341659626019,
+        0.14474816737073148
+      ],
+      "median_sessions": 187.0,
+      "tail_dd": 0.22466666666666665,
+      "tail_gate": false
+    },
+    {
+      "book": "BOOK",
+      "sigma_d": 0.006,
+      "p_combined": 0.09357218749999999,
+      "ci95": [
+        0.0897966703859471,
+        0.09734770461405287
+      ],
+      "median_sessions": 316.0,
+      "tail_dd": 0.08283333333333333,
+      "tail_gate": true
+    }
+  ],
+  "required_sharpe_for_70pct": {
+    "0.01": 1.153,
+    "0.008": 0.923,
+    "0.006": 0.692,
+    "0.005": 0.577
+  },
+  "achieved": {
+    "EURUSD_ann_sharpe": 0.7081768223508962,
+    "book_ann_sharpe": -0.4080833016867334
+  },
+  "verdict": "NO-GO at pre-flight cost gate; combined P(pass) << 70% on honest returns."
+}

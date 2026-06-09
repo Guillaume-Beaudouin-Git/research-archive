@@ -211,6 +211,110 @@ Zero look-ahead: both signal and vol scalar use data through T-1 only.
 
 ---
 
+### Overnight Indices Drift — Midweek-Only (FTMO / Personal Book)
+
+**Status**: CONFIRMED-CLOSED for FTMO sprint ; conditional candidate for FTMO unlimited-time only ; NO-GO personal book.
+**Date reconciled**: 2026-06-03 ; see `data/overnight_research/overnight_verification_2026-06.md`
+**Specs reconciled**: dossier `data/ftmo_universe/OVERNIGHT_VERIFICATION_REPORT.md` + cross-doc `PropFirms/ftmo_alpha_program/README.md` (Family-5 NO-GO verdict, indépendant)
+**Economic mechanism hypothesis**: equity-index overnight risk premium (Cooper-Cliff-Gulen 2008, Lou-Polk-Skouras 2019 "Tug of War"). Midweek concentration (Tue+Wed open-day = Mon-night + Tue-night holds) consistent with cross-market academic data.
+**Signal**: long NQ at RTH close of day t−1, exit at RTH open of day t, held only when weekday(open) ∈ {Tue, Wed}. Two-sided NOT considered (long-only equity premium, structural).
+**Assets / universe**: NQ databento M1 2010-2026 (canonical) ; reproduced QQQ / ^NDX / SPY / ^GSPC via yfinance daily (G0 independent test).
+**Feasibility result**:
+- G0 (yfinance independent): QQQ ALL overnight = +4.69 bps, t_HAC6 = 4.20 ; midweek Wed +9.03 (t=3.57). Replicated on SPY/^GSPC/^NDX too.
+- G1 (NQ databento independent reconstruction): ALL overnight = +4.895 bps, t_HAC6 = 4.45 (vs dossier 4.90/4.04, exact match Tue +7.44, Wed +8.69).
+- G2 (swap unit cross-validated): US100.cash swap_long = −3.08 bps/nuit (1x), point_size=0.01 forcé par digits=2 ; cross-checked EURUSD (−1.11), XAUUSD (−2.93) → industry-consistent.
+- G2 net midweek invariant aux 2 conventions 3x : Tue +4.36 / Wed +5.61 bps/nuit. Toutes-nuits net ≈ +0.57 bps (marginal).
+- G3 (gap tail) : worst night midweek −6.26%, p1 −1.96%. Levier soutenable FTMO (sans MaxDD>10%) ≈ 0.5×.
+- G4 (3 conteneurs) : (a) sprint FTMO 2-step <2mo p(pass)<0.1% à L≤1× → NON-véhicule ; (b) unlimited-time L=0.75× p(funded)=82.4% bust 5.8% median 36 mois ; (c) personal book SR_net=0.68 invariant au levier, MaxDD historique −8.2% à L=0.5×.
+- G5 (réconciliation) : β=+0.33 corr=+0.57 vs NQ buy-hold → beta-proxy (L25 trigger) ; OOS≥2019=+6.66 vs IN<2019=+3.52, Welch t=0.85 → OOS hold ; mais **2023-2024 net négatif (−3.9 / −3.4 bps/an mid)** = soft regime drift.
+**Backtest result**: SR_net=0.68 (sous RESEARCH_PASS 0.7), AnnRet 2.49%/an à L=0.5×, MaxDD historique −8.21%, worst-month −2.26%. Comparé à A (SR 1.33), B (proxy 2.0), C (1.52→0.51) : clairement inférieur.
+**Cause of failure**:
+1. **Sprint FTMO** : variance par nuit (std 73 bps) × 2 nuits/sem × 42 jours ≠ atteinte de +10% sans breach DLL 5%. p(pass)<2mo virtuellement nul à leviers safe.
+2. **Personal book** : SR 0.68 < gate 0.7 ; β 0.33 corr 0.57 vs NQ → ~1/3 beta long-equity déguisé, alpha brut +1.07 bps/nuit (faible) ; dilution Sharpe portefeuille A+B (currently 2.24, D-gate >2.46).
+3. **Unlimited-time FTMO** : faisable à L=0.75× mais **median 3 ans grind** + tail-risk crash-from-highs (worst-night −6.26% sur 16 ans, un −10% sortie de distribution casse L=0.5×) + 2023-2024 régime négatif.
+4. **L25 confirmed beta-proxy** : edge fondamentalement equity-risk-premium, non-alpha indépendant. Cohérent indépendamment avec `PropFirms/ftmo_alpha_program/` Family-5 verdict NO-GO net.
+**Key lesson (banked as L36)**:
+- **L36 — Overnight equity premium = beta-proxy, not alpha** : Cooper-Cliff-Gulen 2008 effect is REAL (G0+G1 confirme +4.9 bps t=4.04 sur NQ 2010-2026) mais corr +0.57 et β +0.33 avec NQ full-day buy-hold sur le sous-ensemble midweek → c'est essentiellement de l'exposition beta long-equity reconditionnée. SR_net 0.68 est cohérent avec un "harvester" de prime de risque, pas un alpha. Pour un book qui héberge déjà du risk-equity (Strategy C NQ ORB, même family), l'ajouter c'est dupliquer la même exposition au pire moment (gap-down systémique). N'admettre ce type de signal qu'avec un β-hedge explicite (short SPY/NQ overnight balanced) ou comme paire long-short midweek vs autres jours.
+**Re-opening conditions** (low probability):
+1. Vérification mainnet du swap réel sur compte FTMO (capture MT5 specifications) confirmant point_size=0.01 et swap_3x_day Friday — déjà vérifié via `ftmo_specs_full.csv`, donc OK.
+2. β-hedge midweek (long NQ overnight + short équipondéré 1/3 NQ daily = neutralise β=0.33) → recalcule SR du résidu → si > 1.0, ré-examiner comme alpha sleeve indépendant.
+3. Régime 2023-2024 réversé sur 18+ mois (overnight midweek redevient consistently positif) AVEC β/corr stable.
+
+---
+
+### NQ ORB (V2+E7) — FTMO/Propfirm Path (Strategy C family)
+
+**Status**: CONFIRMED-CLOSED — DO NOT RE-OPEN absent hard new evidence  
+**Date reconciled**: 2026-06-03; see `data/ftmo_research/ORB_reconciliation_2026-06.md`  
+**Specs reconciled**: V2+E7 two-sided (doc4 `STRATEGY_DOSSIER_ORB.md`) + long-only filtré (doc3 `FTMO_Research_Report.pdf`) + decision report (`ORB_1step_improvement.md`) + MFFU audit (`ORB_feasibility_audit_2026-06.md`)  
+**Economic mechanism hypothesis**: Intraday opening-range breakout on NQ captures momentum/continuation from auction-imbalance, exit-engineered (E7 trail-to-BE) to shape the return distribution favorably under FTMO symmetric barrier.  
+**Signal**: V2 dust filter (OR ≥ 10 bps), entry on first 1-min break of OR_high/low after 09:30-10:00 ET, stop at opposite OR side (= 1R), E7 trail-to-BE after +1R, exit at RTH close. Cost 2 bps RT abstract.  
+**Assets / universe**: NQ futures (Databento 1-min, 2010-2026, 3992-4012 trades depending on ledger)  
+**Feasibility result (canonical ledger `nq_v2_trades.parquet`, pre-computed cost grid)**:
+- Baseline @ 1 bps: mean_R = +0.027 | @ 2 bps: +0.004 | @ 3 bps: -0.018 | @ 4 bps: -0.040
+- E7 lift = +0.015 R/trade vs baseline (doc4 canonical), so E7 @ 2 bps = +0.020 / E7 @ 3 bps = -0.003 / E7 @ 6 bps = -0.070
+- Sign-flip @ ~2.7 bps RT cost
+- DSR ≈ 0.70 (< 1.0 fail), doc4 §3.5 admits
+- p(funded) FTMO 2-step full sample = 33% (1% risk), bust 60%
+- Cherry-pick admis : "50.9% (2022-25), 93% (2026)" sub-windows  
+**Backtest result**: Full 16-year contiguous 2-step FTMO p(funded) = 32-34% flat across sizings; 60-67% bust rate. doc3 long-only filtré = 30% full / 44% recent regime. ORB_1step_improvement projection 48-52% killed at Gate 0 (no licorne firme géométrique en 1-step futures direct 2026-06, cf. ORB_feasibility_audit Gate 0) + Gate 1 (mean_R -0.024 @ 3 bps MFFU NQ direct).  
+**Cause of failure**: 
+1. **Cost-bound**: drift bascule sous zéro entre 2 et 3 bps RT cost. Real propfirm cost (MFFU NQ direct = $4.68 RT comm = 0.94 bps + slippage 09:30 ~2 bps = 3 bps; FTMO US100 CFD = 6-10 bps) → E7 NÉGATIF en réel.
+2. **Container-bound**: la "licorne" 1-step (static DD + cible≤DD + no daily + no consistency + futures direct) n'existe pas dans l'univers vérifié 2026-06 (Topstep/Apex/MFFU = trailing; Phidias/Traders Launch/Atlas = static mais ratio cible/DD défavorable 1.5-3×).
+3. **DP-ceiling**: doc3 prouve que DP-optimal sizing est le ceiling, pas un heuristic. 33% full sample est mathematical bound, pas tunable par money management.
+4. **Placebo finding**: ~80% du p(pass) sur container floor-taper + unlimited time vient de la math no-bust, pas du signal. Strategy C signal contribute ~0-15 pts marginal (doc4 §3.5 admis).
+5. **Regime-bound**: full-sample edge ≈ 0 (doc3 fig p.6: "SR 0.11, t=0.4 — positive only in 2021-2024"). 2022+ regime cherry-pick.
+6. **L10 violated 2.7×**: 8 mods empilées (V2+E7+filtre tendance+gap filter+DP+book+floor_taper+K5) vs max 3.  
+**Key lesson (banked as L34/L35)**: 
+- **L34**: Audit prop-firm honesty checklist = (a) 1 ledger canonique avec grille coûts pré-calculée, (b) cost model honnête au coût réel propfirm (futures direct ~3 bps, CFD ~6-10 bps), (c) spec gelée (E7 vs baseline explicit), (d) full-sample regime (pas de cherry-pick). Quand les 4 sont satisfaits, le "sign-flip" disparaît : différentes hypothèses, mêmes données.
+- **L35**: DP-optimal sizing = mathematical ceiling, pas heuristic. Pour ORB single-attempt FTMO 2-step <2mo : ceiling = 33% full sample. Money management n'est PAS le lever — l'edge est, et il est cost-bound.
+- **Container-math dominance**: ~80% du p(pass) sous floor-taper + unlimited time = math no-bust, pas signal. Pour les strategies à edge per-trade ~0 : l'engineering de barrière décide. Et la barrière favorable n'existe pas en propfirm 2026.  
+**Re-opening conditions (theoretical, near-zero probability in next 12 months)**:
+1. Firme 1-step futures direct + static DD + ratio cible≤DD + no daily + no consistency apparaît (n'existe pas 2026-06)
+2. Cost all-in propfirm ≤ 2 bps RT confirmé sur 60+ trades demo
+3. Edge démontré sur post-2026 out-of-sample (pas le 2022-2024 in-sample post-hoc)
+4. DSR > 1.0 sur mod-count L10-compliant (currently 0.70 with 8 mods)
+
+---
+
+### Trend book J1+G1 (USDJPY carry-aligned TSMOM + Gold TSMOM)
+
+**Status**: NOT-AN-ARTIFACT, DILUTIF-A-A+B, KEEP-AS-CV-ITEM
+**Date reconciled**: 2026-06-03; see `data/trend_research/trend_verification_2026-06.md`
+**Specs reconciled**: `data/ftmo_research/RAPPORT_replication_trend.md` (script `code/trend_replication.py`)
+**Economic mechanism hypothesis**: classique TSMOM Moskowitz 12-1 sur USDJPY filtré carry-aligned (J1) + TSMOM 12-1 sur Gold (G1), vol-targeté 10%/yr, equal-risk book. Suggestion implicite du rapport : edge "carry-aligned trend" orthogonal au beta carry-trade JPY.
+**Signal**: J1 = `sign(P_USDJPY[t-22]/P_USDJPY[t-252]-1) × {1 if sign(carry_US-JP)==sign(mom) else 0}`. G1 = `sign(P_GC[t-22]/P_GC[t-252]-1)`. Vol-target 10%, cap leverage 3×. Costs : 0.6 bp J1, 1.5 bp G1. Swap modélisé : J1 +carry/100/252, G1 -US_rate×0.9/100/252 sur long.
+**Assets / universe**: USDJPY (JPY=X Yahoo, 2000-2026), Gold (GC=F Yahoo). Carry proxy : ^IRX - taux directeur JP (0/0.25/0.5 BoJ 2024+).
+**Feasibility result (twin littéral du script)**: SR J1 +0.578 | SR G1 +0.664 | corr J-G +0.018 | SR book +0.698 (CI95 J1 [+0.18, +0.96] ; G1 [+0.25, +1.06]).
+**Backtest result (vérification falsifiante 6 gates indépendants)**:
+- G0 PASS (twin reproduit littéralement) + G0bis ALERTE : réplication INDÉP (log-ret, lag carry t-1) → J1 0.45 / G1 0.48 / book 0.47 → **edge fragile ±0.15 SR aux conventions d'impl**
+- G1 KILL : filtre carry-aligned cosmétique à **99.9%** (carry<0 sur 8/6857 jours) ; J1 ≡ TSMOM long-only (SR identique à 0.003 près) ; OLS J1 ~ buy & hold USDJPY vol-tgt + swap → **β=0.51, α=+2.11%/yr (t=1.98 naïve), R²=0.51** ⇒ J1 = ~70% beta carry-trade + ~30% timing TSMOM
+- G2 FLAG : swap modélisé apporte +0.175 SR à J1 (30% du SR) ; sensibilité ±50% donne book SR ∈ [0.49, 0.80] ; **swap jamais mesuré broker**
+- G3 conditionnel : daily skew -0.36 stable (rolling <0 82% du temps), CVaR1 daily -3.37% sur vol 10%, worst day -6.26% (2005-12-14) ; **mais skew MENSUEL POSITIF +0.31** ; top-10 worst days **0/10 dans 2008/2020/2022** (mythe "carry-crash structurel" contredit) ; kill switch -3% daily ajoute +0.10 SR (partie des pertes mesurable intraday, ≠ tout gap-overnight)
+- G4 PASS : délai+1 dégrade SR J1/G1/book de -0.12/-0.19/-0.22 → pas de leak résiduel
+- G5 DILUTIF : corr book vs Strategy A proxy ≈ 0 (daily +0.004, monthly -0.027) ; **MAIS** SR_port(A+B+book) = 2.31 vs SR(A+B) = 2.36 → gain **-1 à -2%** ; gate D requis 2.59 → **NOT QUALIFIED comme strategy D**
+**Cause of "failure to qualify"** :
+1. **Filtre carry cosmétique** (G1) → le SR vient du timing TSMOM long-only, pas d'un carry-edge orthogonal. Le rapport overpitch.
+2. **Edge fragile à l'implémentation** (G0bis) : simple vs log returns + lag carry t-1 vs t-2 → -0.15 SR ; un investor sceptique recalculerait différemment.
+3. **SR 0.58-0.70 trop faible vs A (SR 1.33) et B (SR 2.0)** : même décorrélé, ajouter un sleeve à SR 0.7 dilue un portefeuille à SR 2.4 quand les vols cibles sont égales.
+4. **Swap non mesuré** (G2) : 30% du SR de J1 vient d'une modélisation ^IRX/BoJ. Sur broker réel, swap typiquement shaved 25-50% → -0.05-0.10 SR sur J1.
+5. **Skew daily -0.36** (G3) : *spécifique* barrière FTMO ; sur personal book mensuel +0.31 = sain. Mais empêche le sleeve d'être utile sur prop firm.
+**Key lesson (banked as L37/L38/L39 candidates)**:
+- **L37** — *Filter sanity check* : pour tout sleeve avec filtre conditionnel (carry-aligned, regime-conditional, etc.), compter la fraction du temps où `sign(filtre) != signal_natif`. Si < 5%, le filtre est cosmétique ; appeler le sleeve par son nom réel (ici : TSMOM long-only USDJPY, pas "carry-aligned trend").
+- **L38** — *Beta-orthogonal test* : tout sleeve "structural premium" doit être régressé sur un buy & hold vol-targeté de l'asset primaire. Reporter (β, α HAC, R²). Si R² > 30%, **pas un edge orthogonal** — c'est du timing sur beta, le présenter comme tel.
+- **L39** — *Daily vs monthly skew dissociation* : sur trend/carry, daily skew peut être négatif et monthly skew positif simultanément. Daily skew importe sur barrière daily FTMO 5%, monthly skew importe sur personal book + monthly DD rules. Toujours reporter les deux.
+**Methodological wins (banked, real CV item)**:
+- Réplication propre d'un classique (TSMOM Moskowitz 12-1, formulation littérature non tunée, 6 gates falsifiants indépendants)
+- 2 bugs attrapés dans le rapport source : (a) look-ahead trailing-stop SR 2.05→0.32 ; (b) blowup numérique CTA (vol→0, MaxDD -2048%)
+- Décomposition honnête : filter cosmétique démasqué, swap modélisé non mesuré quantifié à 30% du SR, dilution portefeuille calculée
+- 0 jour live, pas de pivot opportuniste
+**Re-opening / re-deployment conditions**:
+1. Pour deployment personal book add-on : SR > 1.0 net après mesure swap démo 60+ jours (improbable, gap actuel 0.30 SR)
+2. Pour deployment sleeve secours (A gelé + B retardé) : vol cible 5%, worst month attendu ~-3% ; OK à activer si A reste breached et B mainnet > 2026-09
+3. Pour entrer comme strategy D propfirm : aucun chemin (NQ/ORB ne match pas FTMO ; book trend macro ne match pas non plus — symmetric barrier daily + skew daily -0.36 incompatibles)
+
+---
+
 ## Research Conclusions
 
 ### What Works on This Setup

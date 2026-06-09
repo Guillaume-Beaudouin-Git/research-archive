@@ -784,38 +784,6 @@
     "verdict": "WEAK"
   },
   {
-    "iteration": "iter_07_val_ES",
-    "n_tests": 118,
-    "description": "Cross-instrument ES opening momentum 5-min",
-    "n_trades": 47,
-    "win_rate": 0.6383,
-    "avg_trade_usd": 446.75,
-    "profit_factor": 5.8462,
-    "sharpe_daily_hac": 10.3207,
-    "max_dd_pct": -0.0318,
-    "max_dd_usd": -683.25,
-    "total_pnl": 20997.25,
-    "period_start": "2026-03-11",
-    "period_end": "2026-05-20",
-    "verdict": "EDGE"
-  },
-  {
-    "iteration": "iter_07_val_YM",
-    "n_tests": 119,
-    "description": "Cross-instrument YM opening momentum 5-min",
-    "n_trades": 46,
-    "win_rate": 0.7609,
-    "avg_trade_usd": 573.34,
-    "profit_factor": 10.956,
-    "sharpe_daily_hac": 14.4367,
-    "max_dd_pct": -0.0208,
-    "max_dd_usd": -548.0,
-    "total_pnl": 26373.5,
-    "period_start": "2026-03-11",
-    "period_end": "2026-05-20",
-    "verdict": "EDGE"
-  },
-  {
     "iteration": "iter_08_8a",
     "n_tests": 120,
     "n_trades": 567,
@@ -1255,5 +1223,49 @@
     "ic_rho": 0.04436703806962655,
     "ic_t": 0.24324780216563516,
     "notes": "Strategy D v2: D5"
+  },
+  {
+    "iteration": "iter_10_databento_rebaseline",
+    "n_tests": 149,
+    "description": "RE-BASELINE 2026-06-07: databento 2014-2026, slippage $29 RT (4-tick L19), account-% MaxDD, iter_07 purged",
+    "data_source": "databento_2010-2026",
+    "cost_rt_usd": 29.0,
+    "full_2014_2026": {
+      "n": 765,
+      "win": 24.4,
+      "avg": 47.4,
+      "PF": 1.15,
+      "Sharpe": 0.41,
+      "total": 36232.0,
+      "maxDD_usd": -13466.0,
+      "maxDD_pct_acct": -53.9,
+      "maxDD_pct_profit": -30.0
+    },
+    "kaggle_2022_2025": {
+      "n": 394,
+      "win": 22.3,
+      "avg": 64.5,
+      "PF": 1.2,
+      "Sharpe": 0.69,
+      "total": 25396.0,
+      "maxDD_usd": -10646.0,
+      "maxDD_pct_acct": -42.6,
+      "maxDD_pct_profit": -31.2
+    },
+    "pre_2022": {
+      "n": 371,
+      "win": 26.7,
+      "avg": 29.2,
+      "PF": 1.1,
+      "Sharpe": 0.23,
+      "total": 10836.0,
+      "maxDD_usd": -12905.0,
+      "maxDD_pct_acct": -51.6,
+      "maxDD_pct_profit": -59.3
+    },
+    "dsr_hurdle_sr0_ann": 0.81,
+    "dsr_prob": 0.068,
+    "note": "Replaces headline iter_10 (Kaggle SR 1.52, MaxDD -13.4% of-profit). Honest baseline weaker; LUMPY-UNFIT (L24).",
+    "verdict": "RESEARCH_FAIL_on_databento"
   }
 ]

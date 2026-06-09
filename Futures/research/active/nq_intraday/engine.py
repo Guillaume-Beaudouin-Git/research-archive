@@ -6,7 +6,8 @@ Shared infrastructure for all nq_intraday iterations.
 NQ CONTRACT SPECS:
   Point value : $20 / point
   Tick size   : 0.25 pts = $5
-  Cost        : $4.50 commission + 1-tick ($5) slippage = $9.50/side = $19 RT
+  Cost        : $4.50 commission + 2-tick ($10) slippage = $14.50/side = $29 RT
+                (L19 4-tick RT baseline; was $19/2-tick before 2026-06-07 audit)
   RTH         : 09:30-16:00 US/Eastern
 """
 
@@ -25,9 +26,11 @@ log = logging.getLogger(__name__)
 
 POINT_VALUE   = 20.0     # USD per NQ point
 TICK_SZ       = 0.25     # minimum tick
-COST_RT       = 19.0     # round-trip USD cost (commission + 1-tick slip each side)
+COST_RT       = 29.0     # round-trip USD cost: $9 commission + 4-tick ($20) slippage
+                         # (L19 baseline; was 19.0/2-tick before 2026-06-07 audit)
 RTH_START     = "09:30"
 RTH_END       = "16:00"
+ACCOUNT_SIZE  = 25_000.0  # propfirm account base for account-% drawdown (Tradeify Select Flex 25K)
 
 RESULTS_PATH  = Path(__file__).parent / "results.json"
 
@@ -220,8 +223,13 @@ class NQBacktestEngine:
 
         # Drawdown on cumulative P&L
         cum = daily_pnl.cumsum()
+        # LEGACY metric: drawdown as % of PEAK CUMULATIVE PROFIT (denominator = best-ever profit).
+        # UNDERSTATES account risk; NOT comparable to propfirm -10% account limits. (2026-06-07 audit)
         dd  = (cum - cum.cummax()) / max(cum.cummax().max(), 1.0)
-        max_dd = float(dd.min()) if len(dd) > 0 else np.nan
+        max_dd = float(dd.min())
+        # CORRECT metric: dollar drawdown and drawdown as % of the propfirm account (per 1 contract).
+        max_dd_usd      = float((cum - cum.cummax()).min())
+        max_dd_pct_acct = max_dd_usd / ACCOUNT_SIZE if len(dd) > 0 else np.nan
 
         # Pct time in market
         total_rth_bars = len(self.rth)
@@ -236,7 +244,9 @@ class NQBacktestEngine:
             "avg_loser_usd":   round(float(avg_l), 2),
             "profit_factor":   round(float(pf), 4) if np.isfinite(pf) else None,
             "sharpe_daily_hac":round(float(sharpe_d), 4) if np.isfinite(sharpe_d) else None,
-            "max_dd_pct":      round(float(max_dd), 4),
+            "max_dd_pct":      round(float(max_dd), 4),              # LEGACY: % of peak profit (misleading)
+            "max_dd_usd":      round(float(max_dd_usd), 2),          # $ drawdown (per 1 contract)
+            "max_dd_pct_account": round(float(max_dd_pct_acct), 4),  # % of $25k account (correct)
             "best_day_usd":    round(float(daily_pnl.max()), 2),
             "worst_day_usd":   round(float(daily_pnl.min()), 2),
             "pct_time_in_mkt": round(float(pct_in_mkt), 4),

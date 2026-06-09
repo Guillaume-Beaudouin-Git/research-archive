@@ -1,0 +1,108 @@
+{
+  "protocol": {
+    "IS": [
+      "2022-01-01",
+      "2024-12-31"
+    ],
+    "OOS_untouched": [
+      "2025-01-01",
+      "2026-05-29"
+    ],
+    "n_trials_dsr": 20
+  },
+  "cost_swap_sensitivity": {
+    "US100|1.0": {
+      "gross": 0.1450943632320346,
+      "cost": 0.10465587560269833,
+      "net_sharpe": 0.26847610142287837,
+      "ratio": 1.3863948143996383
+    },
+    "US100|2.0": {
+      "gross": 0.1450943632320346,
+      "cost": 0.14504295041215232,
+      "net_sharpe": 0.0003413363839648797,
+      "ratio": 1.0003544661752686
+    },
+    "US100|3.0": {
+      "gross": 0.1450943632320346,
+      "cost": 0.18543002522160626,
+      "net_sharpe": -0.2677499532673651,
+      "ratio": 0.7824750229022146
+    },
+    "US500|1.0": {
+      "gross": 0.12649698940075169,
+      "cost": 0.1485563568881428,
+      "net_sharpe": -0.1448413414673605,
+      "ratio": 0.8515084244829659
+    },
+    "US500|2.0": {
+      "gross": 0.12649698940075169,
+      "cost": 0.20147129767718677,
+      "net_sharpe": -0.49229929686028295,
+      "ratio": 0.6278660576427871
+    },
+    "US500|3.0": {
+      "gross": 0.12649698940075169,
+      "cost": 0.2543862384662307,
+      "net_sharpe": -0.8395436461680115,
+      "ratio": 0.49726349256720476
+    }
+  },
+  "canonical": {
+    "sym": "US100",
+    "gross_only_is": 0.8546157830441965,
+    "gross_only_oos": 1.7808429363084144,
+    "net_is_sharpe": 0.0003413363839648797,
+    "net_oos_sharpe": 0.6722589056906836,
+    "kurtosis_is": 3.15582113485617,
+    "win_rate_is": 0.44855305466237944,
+    "tail_dd": {
+      "p_floor_excursion": 0.17291666666666666,
+      "p_peak_trough_dd": 0.3705833333333333,
+      "gate_pass": false
+    },
+    "per_year": {
+      "2022": -0.07,
+      "2023": -0.3,
+      "2024": 0.32,
+      "2025": -0.0,
+      "2026": 1.67
+    },
+    "dsr": {
+      "sharpe": -0.13244125937585863,
+      "sr_benchmark": 1.9007079511811986,
+      "dsr": 0.000702305385886368,
+      "skewness": -0.16069973498335144,
+      "excess_kurtosis": 3.101213550834667,
+      "n_obs": 622,
+      "passed": false
+    },
+    "ftmo_mc": {
+      "0.01": {
+        "p": 0.28393640277777776,
+        "ci": [
+          0.2770764759296283,
+          0.2907963296259272
+        ],
+        "sessions": 164.0
+      },
+      "0.008": {
+        "p": 0.30397033333333334,
+        "ci": [
+          0.2968918632412146,
+          0.3110488034254521
+        ],
+        "sessions": 266.0
+      },
+      "0.006": {
+        "p": 0.227933875,
+        "ci": [
+          0.22167578236086885,
+          0.23419196763913117
+        ],
+        "sessions": 410.0
+      }
+    }
+  },
+  "verdict": "NO-GO net, but a DIFFERENT result. The overnight premium is the program's FIRST robust gross OOS edge (gross Sharpe IS 0.85 -> OOS 1.78, low kurtosis): the structural-premium prior is VALIDATED. But net of financing it is ~zero on a leveraged account (cost ratio ~1.0 at 2bps swap; P(pass) peaks ~30% = the zero-edge baseline), it is directional equity beta (per-year net sign-flips with the regime), and it carries an overnight-gap left tail (tail-DD 17%). CRUCIAL refinement of the venue pivot: the financing that eats the premium is NOT a retail-CFD tax \u2014 it is the cost of carry of leveraged overnight equity, embedded in the futures basis too (F=S*e^{(r-q)T}). So futures do NOT cleanly rescue it, unlike the HF-reversal case. The only venue that escapes it is holding the cash index unleveraged \u2014 which no propfirm challenge does."
+}

@@ -1,0 +1,9 @@
+{
+  "mt5_bars_per_day_by_year_csv": "results/mt5_us100_bars_per_day_by_year.csv",
+  "mt5_spread_by_hour_csv": "results/mt5_us100_spread_by_hour_rth.csv",
+  "mt5_spread_bps_csv": "results/mt5_us100_spread_bps.csv",
+  "mt5_vs_databento_corr_csv": "results/mt5_vs_databento_corr_by_year.csv",
+  "pre_2021_corr_signal_ret": NaN,
+  "post_2021_corr_signal_ret": -0.01754252862236839,
+  "us100_median_close_2024": 19023.75
+}

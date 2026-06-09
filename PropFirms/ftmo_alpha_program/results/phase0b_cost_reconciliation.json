@@ -1,0 +1,68 @@
+{
+  "EURUSD": {
+    "median_spread_points": 2.0,
+    "p95_spread_points": 25.0,
+    "median_price": 1.16503,
+    "rt_cost_price": 2e-05,
+    "rt_cost_native": 0.2,
+    "rt_cost_unit": "pip",
+    "rt_cost_bps_notional": 0.172,
+    "table3_low": 0.3,
+    "table3_high": 1.0
+  },
+  "US500": {
+    "median_spread_points": 55.0,
+    "p95_spread_points": 66.0,
+    "median_price": 6665.97,
+    "rt_cost_price": 0.55,
+    "rt_cost_native": 0.55,
+    "rt_cost_unit": "idx_pts",
+    "rt_cost_bps_notional": 0.825,
+    "table3_low": 0.5,
+    "table3_high": 2.0
+  },
+  "US100": {
+    "median_spread_points": 150.0,
+    "p95_spread_points": 210.0,
+    "median_price": 24609.55,
+    "rt_cost_price": 1.5,
+    "rt_cost_native": 1.5,
+    "rt_cost_unit": "idx_pts",
+    "rt_cost_bps_notional": 0.61,
+    "table3_low": 0.5,
+    "table3_high": 2.0
+  },
+  "XAUUSD": {
+    "median_spread_points": 27.0,
+    "p95_spread_points": 62.0,
+    "median_price": 4069.91,
+    "rt_cost_price": 0.27,
+    "rt_cost_native": 0.27,
+    "rt_cost_unit": "$",
+    "rt_cost_bps_notional": 0.663,
+    "table3_low": 0.15,
+    "table3_high": 0.3
+  },
+  "GER40": {
+    "median_spread_points": 189.0,
+    "p95_spread_points": 379.0,
+    "median_price": 24041.91,
+    "rt_cost_price": 1.8900000000000001,
+    "rt_cost_native": 1.89,
+    "rt_cost_unit": "idx_pts",
+    "rt_cost_bps_notional": 0.786,
+    "table3_low": 0.5,
+    "table3_high": 3.0
+  },
+  "US30": {
+    "median_spread_points": 218.0,
+    "p95_spread_points": 278.0,
+    "median_price": 46427.61,
+    "rt_cost_price": 2.18,
+    "rt_cost_native": 2.18,
+    "rt_cost_unit": "idx_pts",
+    "rt_cost_bps_notional": 0.47,
+    "table3_low": 0.5,
+    "table3_high": 3.0
+  }
+}

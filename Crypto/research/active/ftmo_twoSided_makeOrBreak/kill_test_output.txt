@@ -1,0 +1,48 @@
+==========================================================================================
+FTMO crypto-CFD two-sided TSMOM — kill-or-confirm (H1)
+==========================================================================================
+
+Data: 2017-11-09 → 2026-05-26 | N=3121 days | assets=['BTC', 'ETH']
+
+──────────────────────────────────────────────────────────────────────────────────────────
+Per-trade table by direction (BTC/ETH, two-sided H1) — swap=0 COUNTERFACTUAL
+──────────────────────────────────────────────────────────────────────────────────────────
+
+[markup=1.0 → BTC cost=8.8 bps, ETH cost=11.1 bps]
+asset   leg   N  gross_bps  cost_bps  net_bps  t_HAC6  L11_ratio
+  BTC  LONG 236      87.62      5.47    82.15    1.87       5.34
+  BTC SHORT 205      14.04      4.63     9.42    0.28       1.01
+  ETH  LONG 236      89.12      6.63    82.49    1.50       4.48
+  ETH SHORT 205      88.13      6.46    81.67    1.62       4.55
+
+[markup=2.0 → BTC cost=11.1 bps, ETH cost=15.8 bps]
+asset   leg   N  gross_bps  cost_bps  net_bps  t_HAC6  L11_ratio
+  BTC  LONG 236      87.62      6.91    80.71    1.84       4.23
+  BTC SHORT 205      14.04      5.84     8.20    0.24       0.80
+  ETH  LONG 236      89.12      9.40    79.73    1.45       3.16
+  ETH SHORT 205      88.13      9.15    78.97    1.56       3.21
+
+──────────────────────────────────────────────────────────────────────────────────────────
+Long-survivor check (b): H1 long-leg vs A long-only (markup=1, swap=0)
+──────────────────────────────────────────────────────────────────────────────────────────
+asset  leg  N_A_LO  gross_bps_A_LO  cost_bps_A_LO  net_bps_A_LO  t_HAC6_A_LO  L11_ratio_A_LO  N_H1_LongLeg  gross_bps_H1_LongLeg  cost_bps_H1_LongLeg  net_bps_H1_LongLeg  t_HAC6_H1_LongLeg  L11_ratio_H1_LongLeg
+  BTC LONG     236           87.62           5.47         82.15         1.87            5.34           236                 87.62                 5.47               82.15               1.87                  5.34
+  ETH LONG     236           89.12           6.63         82.49         1.50            4.48           236                 89.12                 6.63               82.49               1.50                  4.48
+
+──────────────────────────────────────────────────────────────────────────────────────────
+Delay sensitivity (L26): delay-1 (canonical) vs delay-0 (look-ahead)
+──────────────────────────────────────────────────────────────────────────────────────────
+            scenario asset   leg   N  gross_bps  cost_bps  net_bps  t_HAC6  L11_ratio
+ delay-1 (canonical)   BTC  LONG 236      87.62      5.47    82.15    1.87       5.34
+ delay-1 (canonical)   BTC SHORT 205      14.04      4.63     9.42    0.28       1.01
+ delay-1 (canonical)   ETH  LONG 236      89.12      6.63    82.49    1.50       4.48
+ delay-1 (canonical)   ETH SHORT 205      88.13      6.46    81.67    1.62       4.55
+delay-0 (look-ahead)   BTC  LONG 242      72.64      5.41    67.23    1.55       4.48
+delay-0 (look-ahead)   BTC SHORT 199      24.40      4.87    19.53    0.52       1.67
+delay-0 (look-ahead)   ETH  LONG 228     104.47      6.88    97.59    1.79       5.06
+delay-0 (look-ahead)   ETH SHORT 213      67.32      6.21    61.11    1.26       3.61
+
+──────────────────────────────────────────────────────────────────────────────────────────
+DSR on aggregate net Sharpe (H1, pooled BTC+ETH, markup=1, swap=0)
+──────────────────────────────────────────────────────────────────────────────────────────
+{'sharpe_weekly': np.float64(0.088), 'sharpe_ann': np.float64(0.9), 'dsr_prob': np.float64(0.961), 'n_trials_assumed': 3, 'T_weeks': 882, 'skew': np.float64(0.2), 'kurt': np.float64(6.44)}
