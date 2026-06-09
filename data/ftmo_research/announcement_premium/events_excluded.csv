@@ -1,0 +1,6 @@
+datetime_utc,currency,impact,event,country,indicator,importance_raw,actual,forecast,previous,source,id,ts_utc,type,exclusion_reason,announce_date,released_while_closed
+2020-03-03 15:00:00,USD,MED,Fed Interest Rate Decision,US,Interest Rate,0.0,1.25,,1.75,Federal Reserve,255818.0,2020-03-03 15:00:00+00:00,FOMC,unscheduled (emergency) FOMC decision,,
+2020-03-15 21:00:00,USD,MED,Fed Interest Rate Decision,US,Interest Rate,0.0,0.25,,1.25,Federal Reserve,255851.0,2020-03-15 21:00:00+00:00,FOMC,unscheduled (emergency) FOMC decision,,
+,,,Fed Interest Rate Decision,,,,,,,,,2018-01-31 19:00:00+00:00,FOMC,holding window spans data hole (unobservable),2021-09-14,True
+,,,Non Farm Payrolls,,,,,,,,,2018-01-05 13:30:00+00:00,NFP,holding window spans data hole (unobservable),2021-09-14,True
+,,,CPI,,,,,,,,,2021-01-13 13:30:00+00:00,CPI,holding window spans data hole (unobservable),2021-09-14,True

@@ -1,0 +1,148 @@
+{
+  "sample": [
+    "2021-09-15",
+    "2026-06-05"
+  ],
+  "n_days": 1218,
+  "years": 4.72,
+  "K1_pooled": {
+    "beta_bps": -3.1522437486253905,
+    "t_hac": -0.28408512789167095,
+    "p_raw": 0.7763451438710584,
+    "mean_event_bps": 0.4995810010519475,
+    "mean_nonevent_bps": 3.651824749677335,
+    "n_event": 149,
+    "n_total": 1218,
+    "p_sidak4": 0.9974978500709734
+  },
+  "per_type": {
+    "FOMC": {
+      "beta_bps": 16.45861804500188,
+      "t_hac": 0.850779027183946,
+      "p_raw": 0.3948921140902205,
+      "mean_event_bps": 20.110442794679273,
+      "mean_nonevent_bps": 3.651824749677335,
+      "n_event": 38,
+      "n_total": 1107,
+      "p_sidak4": 0.8659301105750522
+    },
+    "CPI": {
+      "beta_bps": 6.530016466424837,
+      "t_hac": 0.3445795508015048,
+      "p_raw": 0.7304104813802458,
+      "mean_event_bps": 10.181841216102127,
+      "mean_nonevent_bps": 3.651824749677335,
+      "n_event": 56,
+      "n_total": 1125,
+      "p_sidak4": 0.9947178343950013
+    },
+    "NFP": {
+      "beta_bps": -24.736120857229704,
+      "t_hac": -1.383735699779522,
+      "p_raw": 0.16643939806181884,
+      "mean_event_bps": -21.084296107552216,
+      "mean_nonevent_bps": 3.651824749677335,
+      "n_event": 56,
+      "n_total": 1125,
+      "p_sidak4": 0.5172206135950932
+    }
+  },
+  "K1_pass": false,
+  "K2": {
+    "w_bar": 0.1223,
+    "sr_strategy_net": -0.399,
+    "sr_benchmark_net": 0.056
+  },
+  "K2_pass": false,
+  "K3_blocks": {
+    "<=2015": {
+      "status": "EMPTY (no price+calendar overlap)",
+      "n_days": 0
+    },
+    "2016-2020": {
+      "status": "EMPTY (no price+calendar overlap)",
+      "n_days": 0
+    },
+    ">=2021": {
+      "beta_bps": -3.1522437486253905,
+      "t_hac": -0.28408512789167095,
+      "p_raw": 0.7763451438710584,
+      "mean_event_bps": 0.4995810010519475,
+      "mean_nonevent_bps": 3.651824749677335,
+      "n_event": 149,
+      "n_total": 1218,
+      "status": "evaluated"
+    }
+  },
+  "K3_pass": false,
+  "K4": {
+    "spread_8bps": {
+      "ann_net_pct": -2.97,
+      "ann_cost_pct": 3.46,
+      "ann_gross_pct": 0.49,
+      "pass": false
+    },
+    "spread_6bps": {
+      "ann_net_pct": -2.35,
+      "ann_cost_pct": 2.84,
+      "ann_gross_pct": 0.49,
+      "pass": false
+    },
+    "spread_10bps": {
+      "ann_net_pct": -3.59,
+      "ann_cost_pct": 4.08,
+      "ann_gross_pct": 0.49,
+      "pass": false
+    }
+  },
+  "K4_pass": false,
+  "K5": {
+    "contribution_sum_excess_bps": {
+      "FOMC": 764.2,
+      "CPI": 570.2,
+      "NFP": -1180.7
+    },
+    "dominant_type": "FOMC",
+    "n_dominant": 38,
+    "beta_rest_bps": -9.865872110407727,
+    "t_rest": -0.7279713474116327
+  },
+  "K5_pass": false,
+  "DSR_program": {
+    "sr_ann": -0.3993,
+    "sr0_ann": 2.1413,
+    "dsr": 5.861335852444196e-09,
+    "skew": -2.026,
+    "kurt_raw": 58.98,
+    "t_obs": 1218
+  },
+  "DSR_within_study": {
+    "sr_ann": -0.3993,
+    "sr0_ann": 1.1528,
+    "dsr": 0.0002464545728894701,
+    "skew": -2.026,
+    "kurt_raw": 58.98,
+    "t_obs": 1218
+  },
+  "DSR_pass": false,
+  "gates": {
+    "K1": false,
+    "K2": false,
+    "K3": false,
+    "K4": false,
+    "K5": false
+  },
+  "verdict": "NO-GO",
+  "n_trials_registry": {
+    "base": 97,
+    "this_study": 4,
+    "cumulative": 101
+  },
+  "context": {
+    "event_day_winrate": 0.517,
+    "mean_nights_event": 1.05,
+    "events_per_year": 31.6,
+    "ann_vol_event_days_pct": 21.3,
+    "mean_rf_bps_per_day": 1.47
+  }
+}
