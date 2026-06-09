@@ -34,7 +34,7 @@ Communique en français et en anglais.
   Note: config.py:55-56 défi MAX_DAILY_DRAWDOWN=4.5%, MAX_TOTAL_DRAWDOWN=9% (HyroTrader legacy, sizing.py CHALLENGE_MODE=False par défaut, non consommé en live).
 - Status: Propr Monday cron `5 0 * * 1 run_rebalance` installée mais sans fill depuis 2026-05-11 16:44 UTC (compte breach). HL testnet daily cron `5 0 * * *` continue de placer des fills (cf. logs/fills.csv 2026-05-28 SOL sell).
 - Structural ceiling: 39% Propr pass rate (β_crypto floor, 3% daily DD limit)
-- Apex alternative (EOD trailing, CME futures): analysis pending — see PropFirms/comparison.md
+- Apex alternative (EOD trailing, CME futures): [CADUC 2026-06-10 — propfirms retenus: FTMO + Propr] — see PropFirms/comparison.md
 - Frozen artifacts: `Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/` (copie code+state, originaux conservés)
 
 ### Strategy B — Delta-neutral carry (HL testnet LIVE since 2026-05-17)
@@ -45,25 +45,30 @@ Communique en français et en anglais.
 - Kill switch: checks STOP file on each run
 - Status: EXECUTION-VALIDATED, mainnet pending (~60-day live required, ~2026-07-17)
 
-### Strategy C — NQ Opening Momentum iter_10 (Tradeify $25K, paper NOT started)
+### Strategy C — NQ Opening Momentum iter_10 (Tradeify ANNULÉ 2026-06-10 — pas de véhicule propfirm)
 - Signal: direction of 09:30-09:45 ORB, entry at 09:46 ET
 - Filters: VWAP confirmation + gap < 1.2% + opening range ≥ 30pts + $400 SL cap
 - TP: 1.5R | SL: min(0.5R, 20pts) | Time stop: 12:30 ET
-- Backtest: Sharpe 1.52, MaxDD -13.4%, WF 78% (7/9), N=346
-- Sizing: risk-managed — see Futures/live/strategy_c_live/sizing_policy.md
-- Broker: Tradeify Select Flex $25K via Tradovate REST API
-- Propfirm config: PropFirms/tradeify/rules.md | Simulator: Portfolio/risk/trailing_dd_simulator.py
-- Tradeify constants: eval_DD=$1,000 funded_DD=$1,000 lock=$26,100 floor=$25,100  # confirmed 2026-05-25 DO NOT revert to $1,500/$26,600
-- VPS cron (été UTC+2): 25 13 * * 1-5 | (hiver UTC+1): 25 14 * * 1-5
-- Guardrail: GUARDRAIL_TRAILING_DD_USD — see sizing_policy.md and PropFirms/tradeify/rules.md
-- KNOWN GAP: verify VWAP 1-min granularity in Tradovate client before paper start
-- Status: BACKTEST-VALIDATED, Tradovate infra built, execution not started
+- Backtest HISTORIQUE (Kaggle 2022-2025, $19 RT): Sharpe 1.52, MaxDD -13.4%, WF 78% (7/9), N=346 — PÉRIMÉ
+- **RE-BASELINE 2026-06-07** (`iter_10_databento_rebaseline`, Databento 2014-2026, slippage $29 RT per L19):
+  Sharpe 0.41 full / 0.69 fenêtre Kaggle 2022-25, maxDD -53.9% acct, N=765 → **sous PROPFIRM_PASS**.
+  Source: `Futures/research/active/nq_intraday/results.json` (n_tests=149).
+- **Décision 2026-06-10: Tradeify ANNULÉ.** Propfirms retenus: FTMO (futures/CFD) + Propr (crypto).
+  FTMO ne supporte pas les futures CME (L22c) → C-sur-NQ n'a plus de véhicule propfirm.
+  Piste FTMO CFD distincte: `Futures/live/orb_floor_ftmo/` (voir DEPLOYMENT.md).
+- Infra conservée (réutilisable): `Futures/live/strategy_c_live/` (Tradovate client, signal_engine,
+  guardrails), sizing_policy.md, PropFirms/tradeify/rules.md.
+- [OBSOLÈTE 2026-06-10] Tradeify constants: eval_DD=$1,000 funded_DD=$1,000 lock=$26,100 floor=$25,100 (confirmé 2026-05-25)
+- [OBSOLÈTE] VPS cron paper `25 13/14 * * 1-5` — jamais installée (vérifié 2026-05-30)
+- Status: projet propfirm ANNULÉ (re-baseline sous gate + Tradeify abandonné). Code et backtests conservés.
 
 ## Portfolio context
 - Personal book: A (TSMOM, paused) + B (HL testnet, mainnet ~Jul 2026)
-- Propfirm book: C (NQ, Tradeify) + potential D (decorrelated to C)
+- Propfirm book (décision 2026-06-10): **FTMO uniquement (futures/CFD) + Propr (crypto)**.
+  Tradeify annulé; C-sur-NQ sans véhicule (L22c). Potential D: decorrelated, propfirm-targeted.
 - A+B+C theoretical: Sharpe 2.24, MaxDD -1.0% (ERC: A=10%, B=68%, C=22% at SR_B=2.0)
-- New strategy D gate: Sharpe(A+B+C+D) > 1.10 × 2.24 = 2.46 required
+  ⚠ caveat 2026-06-10: calculé avec SR_C=1.52 périmé — à recalculer avec le re-baseline (0.41/0.69).
+- New strategy D gate: Sharpe(A+B+C+D) > 1.10 × 2.24 = 2.46 required (même caveat)
 - Propfirms do NOT accept crypto/delta-neutral → A and B stay personal book
 
 ## Repo layout
@@ -77,6 +82,17 @@ Communique en français et en anglais.
   - `_automation/feasibility/`: 3-level gate orchestrator + 4 handlers (SkipMonth, ExitRule,
     RegimeFilter, Generic)
   - `_automation/arxiv/`: daily q-fin scan | `_automation/synthesis/`: weekly cross-paper
+- Data governance (audit 2026-06-10, `_audit/dedup_audit_2026-06-10.md`):
+  - `data/raw/` = sources immuables + manifest dans `data/metadata/` ; caches = régénérables, gitignorés.
+  - Une série = un fichier canonique. M1 FX/indices : `data/deep_history_utc/` (true UTC, 2007→2026-06,
+    MANIFEST.md). La recherche RÉFÉRENCE `data/`, ne copie jamais.
+  - Jamais de blobs data dans git (.gitignore : `alpha_hunt/_raw`, `deep_history_utc`, `m5_indices`,
+    `_cache_duka`, `data/*.txt`).
+  - Un subset (plage plus courte) se supprime après migration de ses consommateurs — SAUF provenance
+    d'une stratégie validée (ex : NQ Kaggle parquet = data de validation historique de C).
+  - Cleanup P0+P1 exécuté 2026-06-10 (tag `pre-cleanup-2026-06-10`, .git 2.1Go→52Mo via gc).
+    P2 NON exécuté (consolidation FTMO/mtf/audits + migration m5_indices→deep_history_utc) :
+    voir `_audit/cleanup_recap_2026-06-10.md` §3 et `scripts/cleanup_dedup_2026-06-10.sh`.
 
 ## Python envs
 - Research: /usr/bin/python3
@@ -95,6 +111,9 @@ Communique en français et en anglais.
   - `*/2 13-17 * * 1-5` — Strategy C watchdog_check.sh (×2 lignes — DOUBLON, à dédupliquer)
   - `30 6 * * 1-5` — `fetch_arxiv.sh` (sans redirection log, silent fail)
   - `*/30 * * * *` — `fetch_alpha_sources.sh`
+    NOTE 2026-06-10 : `_automation/alpha_hunt/_raw/` est désormais gitignoré (audit dédup — 990 Mo
+    de XML étaient commités). Vérifier que la routine alpha-hunt ne fait pas `git add -f`.
+    Dernier XML reçu localement : 2026-06-02 02:50 — flux possiblement interrompu, à vérifier sur VPS.
   - `@reboot sleep 30 && screen -dmS mt5 start_mt5.sh`
 - Crons MANQUANTES vs ce qu'annonçait CLAUDE.md historique :
   - aucune cron NQ paper `25 13 * * 1-5` / `25 14 * * 1-5` n'existe — Strategy C n'est pas automatisée (cohérent avec "execution not started").
@@ -227,7 +246,12 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
 ## Data sources
 - Crypto OHLCV: Binance daily klines (free, unlimited) + HL 4h/1h snapshots
 - Funding rates: Hyperliquid 8h, cached CSV in data/funding_carry/
-- NQ 1-min: Dataset_NQ_1min_2022_2025.csv (Kaggle, local only, gitignored)
+- NQ 1-min: `data/raw/NQ_1min_databento_2010-2026.parquet` (CANONIQUE, source GLBX dbn.zst) +
+  `data/raw/NQ_1min_2022-12-26_2025-12-11.parquet` (ex-Kaggle — provenance de la validation
+  historique de C, à conserver ; le CSV Kaggle d'origine n'existe plus)
+- FX/indices M1 canonique: `data/deep_history_utc/` (true UTC 2007→2026-06, spread calibré, MANIFEST.md).
+  ⚠ `data/panels/m5_indices/*_M1.csv` = ancien export MT5 (EET mislabelé UTC), subset 2022-2025 —
+  encore référencé par du code actif, suppression en P2 après migration.
 - Commodity futures: yfinance =F tickers (CL=F, GC=F, …) — continuous front-month
 - FX M5: Dukascopy bi5 custom decoder in `Forex/research/archived/strategy_e_fix_flow/data_setup.py`
   Cache: Forex/data/cache/dukascopy_m5/. DL speed: ~12min/pair-year, 4 threads.
@@ -255,7 +279,8 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
 ### ✓ Validated and live/ready
 - Crypto TSMOM v3 (Strategy A, Sharpe 1.33 OOS)
 - Delta-neutral carry HL (Strategy B, proxy Sharpe 2.0)
-- NQ opening momentum iter_10 (Strategy C, Sharpe 1.52)
+- NQ opening momentum iter_10 (Strategy C) — ⚠ re-baseline 2026-06-07 : Sharpe 0.41 ($29 RT,
+  Databento 2014-2026) ; le 1.52 historique (Kaggle, $19 RT) est périmé. Tradeify annulé 2026-06-10.
 
 ### Active research (in progress) — inventaire vérifié 2026-05-30
 
@@ -281,8 +306,12 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
   Métriques rapportées : t_HAC alpha=10.38, SR_net=2.05, DSR=2.01, WF 5/5, MDD -13.3%.
   ⚠ t-stat 10 = drapeau rouge → audit obligatoire avant promotion (cf. _audit/sector_hothand_audit_2026-05-30.md).
   Note MDD -13% > limite FTMO 10% → en l'état BREACH du challenge.
-- **CIP-EOQ (FX)** — covered-interest-parity end-of-quarter dislocation.
-  `Forex/research/active/cip_eoq/` (sigma_estimation_findings.md, validate_basis.py).
+- CIP-EOQ (FX) — **ARCHIVÉ** : `Forex/research/archived/cip_eoq/` (POSTMORTEM.md).
+  La copie `active/cip_eoq` était un doublon exact de l'archivé — supprimée au cleanup 2026-06-10.
+- **FX intraday deepdive (sub-60min FX/XAU/BTC)** — `research/fx_intraday_deepdive/` (emplacement
+  racine temporaire, déplacement vers `Forex/research/active/` prévu en P2). Suite de l'axe laissé
+  ouvert par le decision memo FTMO 2026-06-08 (`research/PROGRAM_DECISION_MEMO.md` : do-not-fund
+  sur free price data / 16 instruments / N≈100 ; sub-60min FX non testé).
 - **ZN Baltussen (Futures)** — bond futures momentum.
   `Futures/research/active/zn_baltussen/` (tests/, sigma_estimation/).
 - **NQ intraday VWAP (Strategy D iter_01)** — `Futures/research/active/nq_intraday_vwap/`
@@ -323,6 +352,8 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
   Alt binary TP/SL gate: ratio=2.565 < 3.0 at IC=0.05; passes at IC≥0.107 (win_rate≥55.3%) but
   no numerical lit backing available. See L11b. Dukascopy Pool(4) infra + news_events_2020_2025.csv
   reusable. `Forex/research/archived/strategy_f2_asian_breakout/POSTMORTEM.md`
+- CIP-EOQ (covered-interest-parity end-of-quarter dislocation): archivé avec POSTMORTEM —
+  `Forex/research/archived/cip_eoq/`. Doublon `active/` supprimé au cleanup 2026-06-10.
 
 **Equities/ETF/Futures**
 - D1 (Failed ORB fade, n_test=154): NQ fade when iter_10 signal fires then reverses 0.5R/30min.
@@ -362,8 +393,8 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
 ### Untested — requires paid data or new infra
 - Glassnode stablecoin mint/burn (~$500/mo) — only remaining crypto angle with
   theoretical zero TSMOM corr
-- Apex challenge analysis for Strategy A (EOD trailing, CME futures): expected pass rate
-  improvement over Propr — see PropFirms/comparison.md
+- Apex challenge analysis for Strategy A (EOD trailing, CME futures): [CADUC 2026-06-10 —
+  propfirms retenus: FTMO + Propr] — see PropFirms/comparison.md
 - Token unlock cliff shorts (TokenUnlocks.app, free)
 - HLP vault flow contrarian, Uniswap V3 LP rebalancing (HL API + The Graph, free)
 - GitHub commit velocity as dev proxy (GitHub REST API, free)
