@@ -1,0 +1,5 @@
+POST-FOMC DRIFT — verdict: NO-GO | passing H: none | deployable: False
+events listed 182 mapped 182 traded 75 flat 107 | IEF~-d(DGS10) corr 0.962
+H= 5 n= 75 | K1   +5.8bps t=+0.46 F | K2 hawk   +6.9 dove   +5.0 P | K3 pre2015:+22 2015-2021:+7 2022+:-15 F | K5 +7/-2/+13 F | K4corr -0.027 | DSR 0.023 | folds+ 2/5
+H=10 n= 75 | K1   +3.5bps t=+0.24 F | K2 hawk   -5.6 dove  +10.3 F | K3 pre2015:-2 2015-2021:+27 2022+:-3 F | K5 -8/-24/+42 F | K4corr -0.014 | DSR 0.011 | folds+ 1/5
+H=20 n= 74 | K1   -1.8bps t=-0.08 F | K2 hawk  -13.0 dove   +6.3 F | K3 pre2015:+8 2015-2021:+23 2022+:-30 F | K5 -25/-4/+24 P | K4corr +0.024 | DSR 0.005 | folds+ 2/5

@@ -1,0 +1,11 @@
+{
+ "DGS2": "treasury.gov (primary source; FRED unreachable)",
+ "DGS10": "treasury.gov (primary source; FRED unreachable)",
+ "DTB3": "treasury.gov (primary source; FRED unreachable)",
+ "target_changes": "federalreserve.gov openmarket.htm (primary source; FRED unreachable)",
+ "crosscheck_vs_repo_fred_parquet": {
+  "DGS2_maxabsdiff": 8.881784197001252e-16,
+  "DGS10_maxabsdiff": 8.881784197001252e-16,
+  "n_common_DGS2": 4099
+ }
+}
