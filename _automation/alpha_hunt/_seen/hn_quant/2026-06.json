@@ -1,8 +1,22 @@
 {
+  "67dca229708b0e00e3474ae59f08296e": {
+    "first_seen": "2026-06-09 16:04",
+    "source": "hn_quant",
+    "title": "Training Courses for Investment Banking, Hedge Fund, Private Equity, and Quants",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "bba35d4c980439d3493dd316143a4326": {
     "first_seen": "2026-06-03 18:06",
     "source": "hn_quant",
     "title": "20 Algo Trading Frameworks Reviewed and Compared",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d6d790be7c85bd6d6c6b66e57fffe1be": {
+    "first_seen": "2026-06-09 16:04",
+    "source": "hn_quant",
+    "title": "Stochastic-rs math finance/quant lib",
     "decision": "rejected_L0",
     "promising_file": null
   },
