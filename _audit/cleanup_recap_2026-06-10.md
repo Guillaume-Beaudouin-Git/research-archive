@@ -48,6 +48,14 @@ cip_eoq archived intact · NQ Kaggle parquet intact · `_frozen/` intact · `dee
 
 ## 2. À COLLER dans CLAUDE.md (lignes prêtes)
 
+> ✅ **APPLIQUÉ le 2026-06-10** (validation utilisateur) — sections a, b, c, d intégrées dans CLAUDE.md,
+> plus : pivot propfirm **Tradeify ANNULÉ → FTMO (futures/CFD) + Propr (crypto)** répercuté dans
+> Strategy C, Portfolio context, lignes Apex (caduc), Data sources (NQ Databento canonique,
+> deep_history_utc M1 canonique), registre FX archivé (cip_eoq). Section e (n_tests) laissée à
+> l'utilisateur. `_raw` conservé sur décision utilisateur (pipeline vérifié : fiches distillées
+> dans `promising/`, derniers runs 01-02/06 « empty » ; flux interrompu depuis le 2026-06-02 — à
+> vérifier sur le VPS). Lignes ci-dessous conservées pour référence.
+
 ### a) Section « Repo layout » — ajouter :
 ```
 - Data governance (audit 2026-06-10) :
