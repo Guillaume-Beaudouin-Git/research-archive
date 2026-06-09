@@ -67,3 +67,13 @@ tsmom_state_*.json
 Dataset_NQ_1min_2022_2025.csv
 Crypto/research/archived/*/data/
 Crypto/research/archived/*/*/data/
+
+# --- cleanup audit 2026-06-10 ---
+# raw scraper pulls (dédup logique dans _seen.json) — ne plus commiter
+_automation/alpha_hunt/_raw/
+# data blobs locaux (règle R3 : jamais de data dans git)
+data/deep_history_utc/
+data/deep_history_m1/_cache_duka/
+data/panels/m5_indices/
+data/*.txt
+Futures/research/active/ftmo_3strats_audit_2026-06/results/*.parquet
