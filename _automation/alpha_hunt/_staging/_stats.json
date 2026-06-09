@@ -1,6 +1,6 @@
 {
-  "run_time": "2026-06-09 06:04 UTC",
-  "accepted_count": 6,
+  "run_time": "2026-06-09 08:04 UTC",
+  "accepted_count": 0,
   "by_source": {
     "hn_quant": {
       "total": 63,
@@ -52,9 +52,9 @@
     },
     "arxiv_econ_em": {
       "total": 96,
-      "new": 15,
-      "accepted": 6,
-      "rej_l0": 9,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     }
