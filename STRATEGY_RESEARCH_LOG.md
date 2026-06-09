@@ -315,6 +315,22 @@ Zero look-ahead: both signal and vol scalar use data through T-1 only.
 
 ---
 
+### Backwardation Oil Long-Only (FTMO carry-conditioned beta timing) — NO-GO
+
+**Date:** 2026-06-10 · **Dossier:** `data/ftmo_research/backwardation_oil/` · **Pré-registration:** commit `41f034f` AVANT contact données · **Trials:** +3 (cumulative program N reconcilié 112 → 115)
+
+**Hypothèse testée** (résidu laissé ouvert par `commod_carry_makeorbreak.md`): long USOIL seulement quand la backwardation F1/F2 annualisée > 5% (hebdo, T-1→T), swap crédit FTMO réel (+36.55 pts/nuit mesuré = +15%/an au prix courant), long-only par construction (L32).
+
+**Verdict: NO-GO (pas même sleeve).** Sharpe net **−0.01** sur 2005–2024 (t_HAC −0.05, DSR ≈ 0, bootstrap CI [−0.40, +0.35]). Jambe prix −1.03%/an vs jambe swap +0.96%/an — le crédit collectable est intégralement dépensé en beta pétrole conditionné perdant. Insensible au markup (×0.5/×1.5/zéro) et au spread (×0.5/×2): SR ∈ [−0.05, +0.07].
+
+**Résultat le plus informatif — K1 tail test PASSE mais ne généralise pas**: la gate basis point-in-time (EIA F1/F2) sort en janvier 2020 AVANT le crash COVID (crash contango-led) ✅, mais reste longue dans Lehman sept-oct 2008 (−37%), juil-oct 2014 (−24%) et sept 2022 (−12%) — crashs **backwardation-led**. La backwardation culmine près des tops de prix; elle ne distingue pas la topologie du crash suivant. Tout le P&L positif net est 2021+ (+0.33) vs 2005–2020 (−0.36) → L31 confirmé sur la construction long-only.
+
+**Leçon candidate (raffinement L32, "L32b")**: le côté collectable du carry commodity CFD est un *crédit*, pas un *edge* — les deux côtés du carry CFD retail sont maintenant fermés (short uncollectable L32; long collectable-mais-net-zéro, cette étude). Ne pas re-proposer sans (a) courbe deferred payante post-2024-04 (EIA futures discontinué) ET (b) mécanisme pré-enregistré séparant ex-ante les crashs backwardation-led des contango-led (= nouvelle hypothèse, pas un rescue).
+
+**Méthodo banked**: basis dynamique reconstruite depuis EIA RCLC1/RCLC2 officiel (1985→2024-04, point-in-time, gratuit — la conclusion "requires paid data" de CARRY_FEASIBILITY.md était trop pessimiste pour le WTI historique); calibration markup sur courbe live 2026-06-09 (CLN26/CLQ26) = 7.05%/an, audit K5 signe/magnitude/Friday-3x propre; cross-validation Dukascopy corr 0.85-0.89.
+
+---
+
 ## Research Conclusions
 
 ### What Works on This Setup
