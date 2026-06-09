@@ -13,6 +13,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_value_a_20260604.md"
   },
+  "1f70f293d7901b8b83ffbfb41b255efa": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "A Synthetic Control Approach to Conditional Distributional Treatment Effects",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "208dbb613280558bdad4bfaed5939087": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
@@ -33,6 +40,13 @@
     "title": "Rectified Linear Unit Regression",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "3069e73dd4239a24a78945fe450a96b2": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Inference on the TSLS Estimand with Weak Instruments and Treatment Effect Hetero",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_inference_on_the_tsls_estimand_with_weak_instrume_20260609.md"
   },
   "307bff30b0bb1953089f324c14417a95": {
     "first_seen": "2026-06-05 08:03",
@@ -62,6 +76,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "41a36b797afd2d98b8c321130beeb769": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "When Do Markets Fully Process Public Information? Evidence from Real-Time Predic",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_when_do_markets_fully_process_public_information_20260609.md"
+  },
+  "47ef889e4850a1b850ed2460b6d19354": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Semiparametric Difference-in-Differences Estimation With Missing Not at Random D",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5018556f4c326503e2b7d75ce9f16d70": {
     "first_seen": "2026-06-08 06:06",
     "source": "arxiv_econ_em",
@@ -83,6 +111,20 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "5ead9bfb814ef8d184a70ba6b7f106b6": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Asymptotics of an Explosive Autoregression under Dependence",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5f0db21828111e1e16ec129fbfc9f18c": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Sharp Bounds and Inference in Sample Selection Models with Treatment Endogeneity",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "603ba00291a6eee1359ac1e219c22524": {
     "first_seen": "2026-06-03 06:06",
     "source": "arxiv_econ_em",
@@ -96,6 +138,13 @@
     "title": "Random Set Quantile Estimation of Partially Identified Discrete Response Models",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "71f2c6ce4060f2cb5d56799ad5995a57": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Regime-Switching Models for Disaggregated Data",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_regime_switching_models_for_disaggregated_data_20260609.md"
   },
   "734e948dbb0b979d7197abc7b4980989": {
     "first_seen": "2026-06-02 06:06",
@@ -111,6 +160,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "78b07276f5a13b60ff2859f62e83331c": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "A Structural Matrix Autoregressive Model for the Joint Dynamics of Volume, Volat",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_a_structural_matrix_autoregressive_model_for_the_20260609.md"
+  },
+  "79391ff60a15ea1d604fbd11f8fac5e0": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "AI-Assisted Variance Reduction in Randomized Experiments",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_ai_assisted_variance_reduction_in_randomized_expe_20260609.md"
+  },
   "7f37e79958863187f22a16be2a211ad3": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
@@ -125,10 +188,24 @@
     "decision": "rejected_L2_not_accessible",
     "promising_file": null
   },
+  "8478c750f8a92b2e070c86e3d4c224bf": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Interdependent Hitting Times",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "84c4b30cb218ae3840d128d238e0f63e": {
     "first_seen": "2026-06-08 06:06",
     "source": "arxiv_econ_em",
     "title": "TOPSIS-RAD: Ranking According to Desires",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "87d68490aed071abd000d7742c2c54a7": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "CP-factorization for high dimensional tensor time series and double projection i",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -202,6 +279,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d84e83c3d28253d2d372e12b726dd19c": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Adaptive Estimation of Aggregated Values of Conditional Linear Programs",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d9bebd816ef7d1978f1a8b3750a37afc": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Evaluating AI Investment Strategies",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_evaluating_ai_investment_strategies_20260609.md"
+  },
   "e29eb449fe416d8b3d8c145e40cac23e": {
     "first_seen": "2026-06-03 06:06",
     "source": "arxiv_econ_em",
@@ -229,6 +320,13 @@
     "title": "Higher-Order Debiased Estimators for General Treatment Models",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_higher_order_debiased_estimators_for_general_treat_20260602.md"
+  },
+  "eaf9204a7f23bbda6b0ef83d3e5c9bca": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Causality versus Serial Correlation: an Asymmetric Portmanteau Test",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "ef99ddf03957949a65276c699cbc7834": {
     "first_seen": "2026-06-02 06:06",
@@ -269,6 +367,13 @@
     "first_seen": "2026-06-08 06:06",
     "source": "arxiv_econ_em",
     "title": "The Markup falsification Adaptative Set",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fd45058675eba6b96a0152cd7e25be36": {
+    "first_seen": "2026-06-09 06:05",
+    "source": "arxiv_econ_em",
+    "title": "Lagrange multipliers in Maximum likelihood estimations and Least squares problem",
     "decision": "rejected_L0",
     "promising_file": null
   }
