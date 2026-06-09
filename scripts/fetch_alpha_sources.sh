@@ -1,7 +1,10 @@
 #!/bin/bash
-# Fetch multi-source alpha hunting raw data.
+# Fetch multi-source alpha hunting raw data, then distill on the VPS.
 # Runs every 30 min on VPS cron. Each source isolated (one fails, others continue).
-# Output: _automation/alpha_hunt/_raw/<source>_<timestamp>.<ext>
+# Raw pulls land in _automation/alpha_hunt/_raw/<source>_<timestamp>.<ext> and STAY
+# on the VPS (gitignored since 2026-06-10, purged >7d). Only the distilled outputs
+# (_seen/ + _staging/, via process_raw_filter.py) are committed and pushed; the cloud
+# routine consumes _staging/<hash>.json to generate promising/ markdown.
 
 set -uo pipefail  # NOT -e: we want partial failures to be non-fatal
 
@@ -116,21 +119,27 @@ fetch_source "arxiv_econ_em" \
   "https://export.arxiv.org/api/query?search_query=cat:econ.EM&sortBy=submittedDate&sortOrder=descending&max_results=50" \
   "$RAW_DIR/arxiv_econ_em_${TS}.xml"
 
-# === Cleanup old raw files (keep 7 days, alpha-hunt-collector reads recent only) ===
+# === Distill: _raw -> _seen/_staging (stdlib, dedup logique) — XMLs never leave the VPS ===
+python3 "$REPO_DIR/_automation/alpha_hunt/process_raw_filter.py" >> "$LOG_FILE" 2>&1 \
+  || log "WARN process_raw_filter.py failed"
+
+# === Cleanup old raw files (keep 7 days, VPS-local only) ===
 find "$RAW_DIR" -type f -mtime +7 -delete 2>/dev/null
 log "Cleaned files older than 7 days"
 
-# === Commit + push if anything new ===
-git add "$RAW_DIR"
-if git diff --cached --quiet; then
-  log "No new raw files, nothing to commit"
+# === Commit + push distilled outputs only (_seen + _staging) ===
+git add _automation/alpha_hunt/_seen _automation/alpha_hunt/_staging
+# Anti-churn: _stats.json changes on every run; skip the commit when it is the only change
+if [ -z "$(git diff --cached --name-only | grep -v '_staging/_stats.json')" ]; then
+  git restore --staged _automation/alpha_hunt/_staging/_stats.json 2>/dev/null
+  log "No new distilled items, nothing to commit"
 else
   N_FILES=$(git diff --cached --name-only | wc -l)
   git -c user.email="vps@algo-claude" -c user.name="VPS alpha hunter" \
-    commit -m "data: alpha hunt raw fetch ${TS} (${N_FILES} files)" >> "$LOG_FILE" 2>&1
-  
+    commit -m "alpha_hunt: distilled fetch ${TS} (${N_FILES} files)" >> "$LOG_FILE" 2>&1
+
   if git push origin main >> "$LOG_FILE" 2>&1; then
-    log "Pushed $N_FILES files"
+    log "Pushed $N_FILES distilled files"
   else
     log "WARN git push failed (will retry next run)"
   fi
