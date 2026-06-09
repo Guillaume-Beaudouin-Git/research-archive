@@ -1,0 +1,179 @@
+{
+  "protocol": {
+    "IS": [
+      "2022-01-01",
+      "2024-12-31"
+    ],
+    "OOS_untouched": [
+      "2025-01-01",
+      "2026-05-29"
+    ],
+    "n_trials_dsr": 50,
+    "selected_spike_mult": 1.25
+  },
+  "m0": {
+    "IS": {
+      "ann_sharpe": 0.7082,
+      "daily_sharpe": 0.0446,
+      "win_rate": 0.5013,
+      "win_loss": 0.8918,
+      "excess_kurt": 3.4482,
+      "gross_ann": 0.1822,
+      "cost_ann": 0.0733,
+      "cost_ratio": 2.4851,
+      "trade_t": 1.9338,
+      "trades_per_day": 1.3856,
+      "n_days": 778
+    },
+    "OOS": {
+      "ann_sharpe": -0.1176,
+      "daily_sharpe": -0.0074,
+      "win_rate": 0.4313,
+      "win_loss": 0.8344,
+      "excess_kurt": 2.6777,
+      "gross_ann": 0.0153,
+      "cost_ann": 0.0318,
+      "cost_ratio": 0.4813,
+      "trade_t": 0.1666,
+      "trades_per_day": 1.3654,
+      "n_days": 364
+    },
+    "Duka": {
+      "ann_sharpe": 0.1452,
+      "daily_sharpe": 0.0091,
+      "win_rate": 0.4661,
+      "win_loss": 0.9,
+      "excess_kurt": 2.3077,
+      "gross_ann": 0.0851,
+      "cost_ann": 0.0629,
+      "cost_ratio": 1.3524,
+      "trade_t": 1.1547,
+      "trades_per_day": 1.3163,
+      "n_days": 781
+    },
+    "per_year": {
+      "2022": 1.42,
+      "2023": -1.29,
+      "2024": 2.0,
+      "2025": -0.6,
+      "2026": 0.86
+    },
+    "dsr": {
+      "sharpe": 0.5781,
+      "sr_benchmark": 2.2763,
+      "dsr": 0.0016,
+      "skewness": -0.4743,
+      "excess_kurtosis": 3.4019,
+      "n_obs": 778,
+      "passed": false
+    }
+  },
+  "m1_is_scan": {
+    "1.0": {
+      "ann_sharpe": 0.3408,
+      "daily_sharpe": 0.0215,
+      "win_rate": 0.329,
+      "win_loss": 1.2504,
+      "excess_kurt": 7.6696,
+      "gross_ann": 0.106,
+      "cost_ann": 0.0529,
+      "cost_ratio": 2.0017,
+      "trade_t": 0.8263,
+      "trades_per_day": 0.7674,
+      "n_days": 778
+    },
+    "1.25": {
+      "ann_sharpe": 0.4912,
+      "daily_sharpe": 0.0309,
+      "win_rate": 0.2699,
+      "win_loss": 1.4835,
+      "excess_kurt": 9.701,
+      "gross_ann": 0.1205,
+      "cost_ann": 0.0449,
+      "cost_ratio": 2.6849,
+      "trade_t": 1.2079,
+      "trades_per_day": 0.5874,
+      "n_days": 778
+    },
+    "1.5": {
+      "ann_sharpe": 0.4065,
+      "daily_sharpe": 0.0256,
+      "win_rate": 0.2134,
+      "win_loss": 1.539,
+      "excess_kurt": 12.2347,
+      "gross_ann": 0.0963,
+      "cost_ann": 0.0359,
+      "cost_ratio": 2.681,
+      "trade_t": 1.0458,
+      "trades_per_day": 0.428,
+      "n_days": 778
+    },
+    "2.0": {
+      "ann_sharpe": -0.2016,
+      "daily_sharpe": -0.0127,
+      "win_rate": 0.1105,
+      "win_loss": 1.6632,
+      "excess_kurt": 16.3485,
+      "gross_ann": -0.0062,
+      "cost_ann": 0.0229,
+      "cost_ratio": -0.2702,
+      "trade_t": -0.302,
+      "trades_per_day": 0.2301,
+      "n_days": 778
+    }
+  },
+  "m1": {
+    "IS": {
+      "ann_sharpe": 0.4912,
+      "daily_sharpe": 0.0309,
+      "win_rate": 0.2699,
+      "win_loss": 1.4835,
+      "excess_kurt": 9.701,
+      "gross_ann": 0.1205,
+      "cost_ann": 0.0449,
+      "cost_ratio": 2.6849,
+      "trade_t": 1.2079,
+      "trades_per_day": 0.5874,
+      "n_days": 778
+    },
+    "OOS": {
+      "ann_sharpe": -0.272,
+      "daily_sharpe": -0.0171,
+      "win_rate": 0.2198,
+      "win_loss": 1.2517,
+      "excess_kurt": 17.2404,
+      "gross_ann": -0.0223,
+      "cost_ann": 0.0167,
+      "cost_ratio": -1.3355,
+      "trade_t": -0.2416,
+      "trades_per_day": 0.5357,
+      "n_days": 364
+    },
+    "Duka": {
+      "ann_sharpe": 0.5509,
+      "daily_sharpe": 0.0347,
+      "win_rate": 0.2676,
+      "win_loss": 1.2518,
+      "excess_kurt": 6.4585,
+      "gross_ann": 0.1242,
+      "cost_ann": 0.0388,
+      "cost_ratio": 3.2017,
+      "trade_t": 0.9316,
+      "trades_per_day": 0.5608,
+      "n_days": 781
+    },
+    "dsr": {
+      "sharpe": 0.3612,
+      "sr_benchmark": 2.2763,
+      "dsr": 0.0004,
+      "skewness": -0.6498,
+      "excess_kurtosis": 9.5986,
+      "n_obs": 778,
+      "passed": false
+    }
+  },
+  "verdict": {
+    "oos_improved": false,
+    "oos_cost_gate_pass": false
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "protocol": {
+    "IS": [
+      "2022-01-01",
+      "2024-12-31"
+    ],
+    "OOS_untouched": [
+      "2025-01-01",
+      "2026-05-29"
+    ],
+    "n_trials_dsr": 25
+  },
+  "reversion_is_gross_sharpe": -0.8200039476109199,
+  "candidate": {
+    "gross_is": 1.3323673474518376,
+    "gross_oos": 0.7998113284824168,
+    "net_is": 0.7860809311491063,
+    "net_oos": 0.59346077419843,
+    "per_trade_t": 2.1352213763189254,
+    "win_rate": 0.2515964240102171,
+    "win_loss": 2.171305650887913,
+    "kurtosis": 10.449894714088076,
+    "cost_ratio_is": 2.451559013833598,
+    "per_year": {
+      "2022": -0.24,
+      "2023": 0.74,
+      "2024": 1.72,
+      "2025": 0.18,
+      "2026": 1.5
+    },
+    "tail_dd": {
+      "p_floor_excursion": 0.09833333333333333,
+      "p_peak_trough_dd": 0.28358333333333335,
+      "gate_pass": true
+    },
+    "dsr": {
+      "sharpe": 0.6616923411065186,
+      "sr_benchmark": 1.9971498874673592,
+      "dsr": 0.007020407361542669,
+      "skewness": 2.0907200573427915,
+      "excess_kurtosis": 10.341487736748663,
+      "n_obs": 783,
+      "passed": false
+    },
+    "bear_2022": {
+      "ann_sharpe": -0.23596934404640457,
+      "max_dd": 0.10921676498796071
+    },
+    "ftmo_mc_floor_sensitivity": {
+      "0.05": {
+        "is": 0.8274833055555555,
+        "oos": 0.4650786666666667
+      },
+      "0.03": {
+        "is": 0.8274833055555555,
+        "oos": 0.4650786666666667
+      },
+      "0.02": {
+        "is": 0.5238041180555556,
+        "oos": 0.2550743888888889
+      }
+    }
+  },
+  "verdict": "NO-GO under realistic crypto rules \u2014 but the program's FIRST real net-positive edge. BTCUSD intraday momentum reproduces exactly and SURVIVES the untouched hold-out at the Sharpe level (gross OOS 0.80, net OOS 0.59, per-trade t 2.14; look-ahead-free, independently verified). Two honest corrections defeat the FTMO claim: (1) read on the HOLD-OUT, P(pass) at the Standard 5% floor is only 47% (the 70% was in-sample); (2) FTMO applies a REDUCED daily-loss limit to crypto \u2014 at a realistic 3%/2% floor the hold-out P(pass) collapses to 47%/26% because this lumpy book's losing days cluster at -2..-4%. And it is long-bull-biased: the 2022 bear ran a 11% drawdown (>10% \u2192 would have breached). The positive-skew-helps mechanism (empirical>Gaussian) is real but insufficient. Net: this CORROBORATES L24 \u2014 lumpy momentum is not a reliable symmetric-barrier passer; the 'promising' first read was an in-sample + too-loose-floor artifact, caught by independent verification."
+}

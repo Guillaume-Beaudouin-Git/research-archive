@@ -1,0 +1,11 @@
+strategy,family,IS_sharpe,OOS_sharpe,OOS_annret%,turnover/yr,min_gate
+CS-momentum 1d,1 directional/XS,-0.86,-1.68,-38.4,551.6,fail
+CS-momentum 3d,1 directional/XS,-0.03,-0.83,-18.6,320.4,fail
+CS-momentum 7d,1 directional/XS,0.81,0.02,0.4,213.3,PASS
+CS-momentum 21d,1 directional/XS,0.82,1.15,27.4,122.0,PASS
+CS-reversal 8h,1 directional/XS,-4.21,-4.32,-93.3,1672.6,fail
+CS-reversal 1d,1 directional/XS,-2.84,-2.44,-55.6,551.6,fail
+Funding-carry 8h,2 carry,-2.04,-5.05,-75.8,882.1,fail
+Funding-carry 1d,2 carry,-0.88,-0.9,-13.3,352.0,fail
+Funding-mom 1d,2 carry,-1.99,-3.89,-52.4,610.4,fail
+Funding-mom 3d,2 carry,-0.95,-3.35,-45.4,467.9,fail

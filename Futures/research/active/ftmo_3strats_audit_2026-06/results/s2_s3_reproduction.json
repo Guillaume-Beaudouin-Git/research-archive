@@ -1,0 +1,55 @@
+{
+  "mt5_timezone": "GMT+3 server-time (label `utc` misleading); corrected by -3h to true UTC",
+  "spread_us100_at_11ET_median_pts": 80.0,
+  "spread_us100_at_11ET_median_bps_RT": 0.9459563322908108,
+  "mt5_vs_databento_corr_signal_year_by_year": [
+    {
+      "year": 2021,
+      "n": 256,
+      "corr_signal": 0.7958028276165374,
+      "corr_session": 0.9351933468435351
+    },
+    {
+      "year": 2022,
+      "n": 258,
+      "corr_signal": 0.8692644457024254,
+      "corr_session": 0.9594003560438584
+    },
+    {
+      "year": 2023,
+      "n": 257,
+      "corr_signal": 0.8109055835375609,
+      "corr_session": 0.9337122750692032
+    },
+    {
+      "year": 2024,
+      "n": 259,
+      "corr_signal": 0.831276649681981,
+      "corr_session": 0.9342459947146915
+    },
+    {
+      "year": 2025,
+      "n": 257,
+      "corr_signal": 0.763729228075501,
+      "corr_session": 0.961429114080133
+    },
+    {
+      "year": 2026,
+      "n": 104,
+      "corr_signal": 0.6212079924065109,
+      "corr_session": 0.8385303494474803
+    }
+  ],
+  "s2_sharpe_x1_x2_x3": {
+    "gross": 0.04668782876911331,
+    "x1": -0.7052956778837272,
+    "x2": -1.457279184536568,
+    "x3": -2.209262691189409
+  },
+  "s3_sharpe_x1_x2_x3": {
+    "gross": 0.601768877487115,
+    "x1": 0.3494090285206308,
+    "x2": 0.09704917955414626,
+    "x3": -0.1553106694123383
+  }
+}

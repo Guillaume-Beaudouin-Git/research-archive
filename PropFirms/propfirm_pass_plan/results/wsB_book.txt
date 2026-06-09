@@ -1,0 +1,21 @@
+Index intraday-reversion sleeves (true-UTC), full / OOS Sharpe:
+  US30   full=-0.47 OOS=-0.52
+  US500  full=-0.42 OOS=+0.99
+  US100  full=-0.43 OOS=+1.26
+  GER40  full=-0.17 OOS=-0.64
+
+  pairwise corr:
+       US30  US500  US100  GER40
+US30   1.00   0.53   0.33   0.12
+US500  0.53   1.00   0.70   0.15
+US100  0.33   0.70   1.00   0.09
+GER40  0.12   0.15   0.09   1.00
+
+INDEX-MR BOOK: full Sharpe=-0.53 OOS=+0.39 kurt=7.3
+  per-year: {2022: np.float64(-0.41), 2023: np.float64(-1.38), 2024: np.float64(-1.21), 2025: np.float64(0.59), 2026: np.float64(-0.2)}
+  DSR @N=200: 0.001  @N=500: 0.001
+
+END-TO-END: honest book through firm barriers (outer-resample 90% CI):
+  FTMO_2step                 p(pass<=3mo) median=0.119 90%CI=[0.071, 0.176] -> below 0.50
+  Gen_1step_static_loose     p(pass<=3mo) median=0.376 90%CI=[0.307, 0.451] -> below 0.50
+  Instant_1step_generous     p(pass<=3mo) median=0.430 90%CI=[0.356, 0.498] -> below 0.50

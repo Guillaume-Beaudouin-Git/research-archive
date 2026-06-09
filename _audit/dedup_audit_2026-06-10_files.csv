@@ -1,0 +1,170 @@
+categorie,fichier_redondant,canonique,taille_mb,phase,note
+EXACT_DUPLICATE_BULK,_automation/alpha_hunt/_raw/* (~530 identiques / 2481),_seen.json (dédup logique),990.0,P1,git rm --cached + gitignore + purge >7j + patch scraper
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/figures/basis_3sources_overlay.png,Forex/research/archived/cip_eoq/sigma_estimation/figures/basis_3sources_overlay.png,0.26,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/raw/yf_BTC-USD_1d_86d234a91f.parquet,data/raw/yf_BTC-USD_1d_e788137a58.parquet,0.204,P1,supprimer (identique MD5)
+SUBSET_XAUUSD_1d,data/oxfordstrat_109/real_data/XAUUSD_real_m1daily.parquet,research/ftmo_candidate_funnel/cache/XAUUSD_daily.parquet,0.2,P1,subset pur
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/figures/rate_diff_detrended.png,Forex/research/archived/cip_eoq/sigma_estimation/figures/rate_diff_detrended.png,0.183,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/code/results/s076_A1_decorrelation.png,data/oxfordstrat_109/results/s076_A1_decorrelation.png,0.143,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/figures/trade_window_pnl_hist.png,Forex/research/archived/cip_eoq/sigma_estimation/figures/trade_window_pnl_hist.png,0.13,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/ftmo_universe/ftmo_orb_1step/results/figs/figW1_pass.png,data/ftmo_universe/intraday_orb_study/figs/figW1_pass.png,0.1,P1,supprimer (identique MD5)
+SUBSET_USDCHF_1d,data/raw/yf_USDCHF=X_1d_7a47cd6a07.parquet,research/ftmo_candidate_funnel/cache/USDCHF_daily.parquet,0.1,P1,subset pur
+SUBSET_GBPUSD_1d,data/raw/yf_GBPUSD=X_1d_611ba6dabc.parquet,research/ftmo_candidate_funnel/cache/GBPUSD_daily.parquet,0.1,P1,subset pur
+SUBSET_NZDUSD_1d,data/raw/yf_NZDUSD=X_1d_19b5241956.parquet,research/ftmo_candidate_funnel/cache/NZDUSD_daily.parquet,0.1,P1,subset pur
+SUBSET_USDJPY_1d,data/raw/yf_USDJPY=X_1d_b0106225ba.parquet,research/ftmo_candidate_funnel/cache/USDJPY_daily.parquet,0.1,P1,subset pur
+SUBSET_AUDUSD_1d,data/raw/yf_AUDUSD=X_1d_cb78cf7ec0.parquet,research/ftmo_candidate_funnel/cache/AUDUSD_daily.parquet,0.1,P1,subset pur
+SUBSET_USDCAD_1d,data/raw/yf_USDCAD=X_1d_1a1ede3909.parquet,research/ftmo_candidate_funnel/cache/USDCAD_daily.parquet,0.1,P1,subset pur
+SUBSET_EURUSD_1d,data/raw/yf_EURUSD=X_1d_79140aa3cf.parquet,research/ftmo_candidate_funnel/cache/EURUSD_daily.parquet,0.1,P1,subset pur
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/figures/sigma_sensitivity_heatmap.png,Forex/research/archived/cip_eoq/sigma_estimation/figures/sigma_sensitivity_heatmap.png,0.096,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/data/merged_basis.parquet,Forex/research/archived/cip_eoq/sigma_estimation/data/merged_basis.parquet,0.078,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/data/synthetic_basis_daily.parquet,Forex/research/archived/cip_eoq/sigma_estimation/data/synthetic_basis_daily.parquet,0.077,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/ftmo_universe/ftmo_orb_1step/results/figs/figDP_policy.png,data/ftmo_universe/intraday_orb_study/figs/figDP_policy.png,0.073,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/ftmo_universe/ftmo_orb_1step/results/figs/fig1_regime.png,data/ftmo_universe/intraday_orb_study/figs/fig1_regime.png,0.045,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/data/news_events_2020_2025.csv,Forex/research/archived/strategy_f2_asian_breakout/news_events_2020_2025.csv,0.035,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/analyze_trade_window.py,Forex/research/archived/cip_eoq/sigma_estimation/analyze_trade_window.py,0.023,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/fetch_basis.py,Forex/research/archived/cip_eoq/sigma_estimation/fetch_basis.py,0.021,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/validate_basis.py,Forex/research/archived/cip_eoq/sigma_estimation/validate_basis.py,0.018,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/archived/strategy_d_modified_carry/ic_feasibility.py,Forex/research/archived/strategy_d_modified_carry_v2/ic_feasibility.py,0.017,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/sigma_estimation_findings.md,Forex/research/archived/cip_eoq/sigma_estimation/sigma_estimation_findings.md,0.011,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/archived/strategy_d_modified_carry/hypothesis.md,Forex/research/archived/strategy_d_modified_carry_v2/hypothesis.md,0.008,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/archived/strategy_d_modified_carry/literature_scan.md,Forex/research/archived/strategy_d_modified_carry_v2/literature_scan.md,0.008,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/archived/strategy_d_modified_carry/report.md,Forex/research/archived/strategy_d_modified_carry_v2/report.md,0.007,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/data/trade_outcomes.csv,Forex/research/archived/cip_eoq/sigma_estimation/data/trade_outcomes.csv,0.005,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/archived/strategy_d_modified_carry/signal.py,Forex/research/archived/strategy_d_modified_carry_v2/signal.py,0.005,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/ftmo_universe/ftmo_orb_1step/src/dp_sizing.py,data/ftmo_universe/intraday_orb_study/code/dp_sizing.py,0.005,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/ftmo_universe/ftmo_orb_1step/src/ftmo_sim.py,data/ftmo_universe/intraday_orb_study/code/ftmo_sim.py,0.004,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/validation_log.md,Forex/research/archived/cip_eoq/sigma_estimation/validation_log.md,0.003,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/active/cip_eoq/sigma_estimation/data/xeurbi_daily.parquet,Forex/research/archived/cip_eoq/sigma_estimation/data/xeurbi_daily.parquet,0.002,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/archived/strategy_d_modified_carry/results.json,Forex/research/archived/strategy_d_modified_carry_v2/results.json,0.002,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Claude Vault/.obsidian/core-plugins.json,graphify-out/.obsidian/core-plugins.json,0.001,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s003_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s009_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s011_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s014_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s015_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s020_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s021_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s023_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s024_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s025_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s026_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s029_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s030_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s033_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s038_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s045_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s046_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s049_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s050_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s051_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s052_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s053_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s058_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s062_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s069_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s072_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s074_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s075_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s080_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s087_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s088_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s091_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s092_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s095_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s097_gates.csv,data/oxfordstrat_109/results/s101_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s001_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s004_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s005_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s010_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s016_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s017_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s018_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s019_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s027_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s031_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s040_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s047_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s048_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s054_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s055_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s059_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s066_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s068_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s070_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s086_gates.csv,data/oxfordstrat_109/results/s098_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s007_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s032_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s039_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s041_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s042_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s081_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s082_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s083_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s084_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s085_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s089_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s090_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s099_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s100_gates.csv,data/oxfordstrat_109/results/s104_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s006_gates.csv,data/oxfordstrat_109/results/s073_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s022_gates.csv,data/oxfordstrat_109/results/s073_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s060_gates.csv,data/oxfordstrat_109/results/s073_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s064_gates.csv,data/oxfordstrat_109/results/s073_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s012_gates.csv,data/oxfordstrat_109/results/s043_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s013_gates.csv,data/oxfordstrat_109/results/s043_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s035_gates.csv,data/oxfordstrat_109/results/s043_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s036_gates.csv,data/oxfordstrat_109/results/s043_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/code/results/s076_A1_blend_CommoditySeason.csv,data/oxfordstrat_109/results/s076_A1_blend_CommoditySeason.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/code/results/s076_A1_blend_TSMOM_deployed.csv,data/oxfordstrat_109/results/s076_A1_blend_TSMOM_deployed.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/code/results/s076_A1_blend_TSMOM_P1.csv,data/oxfordstrat_109/results/s076_A1_blend_TSMOM_P1.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/code/results/s076_A1_corr.csv,data/oxfordstrat_109/results/s076_A1_corr.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/_parked_drafts/gsv_sensitivity.csv,data/oxfordstrat_109/results/s037_sensitivity_expectancy.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/_parked_drafts/gsv_gates.csv,data/oxfordstrat_109/results/s067_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s002_gates.csv,data/oxfordstrat_109/results/s067_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s037_gates.csv,data/oxfordstrat_109/results/s067_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s061_gates.csv,data/oxfordstrat_109/results/s067_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s076_gates.csv,data/oxfordstrat_109/results/s079_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s077_gates.csv,data/oxfordstrat_109/results/s079_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s078_gates.csv,data/oxfordstrat_109/results/s079_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s008_gates.csv,data/oxfordstrat_109/results/s065_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/oxfordstrat_109/results/s034_gates.csv,data/oxfordstrat_109/results/s096_gates.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,data/ftmo_research/NQ_overnight_metrics/p_pass_by_week_0.5x.csv,data/ftmo_research/NQ_overnight_metrics/p_pass_by_week_0.75x.csv,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,_automation/arxiv/_seen.json,_automation/arxiv/_seen/2026-05.json,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Forex/research/archived/strategy_d_modified_carry/__init__.py,Forex/research/archived/strategy_d_modified_carry_v2/__init__.py,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Claude Vault/.obsidian/app.json,graphify-out/.obsidian/appearance.json,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,Claude Vault/.obsidian/appearance.json,graphify-out/.obsidian/appearance.json,0.0,P1,supprimer (identique MD5)
+EXACT_DUPLICATE,graphify-out/.obsidian/app.json,graphify-out/.obsidian/appearance.json,0.0,P1,supprimer (identique MD5)
+CACHE_REGENERABLE_BULK,"Forex/data/cache/dukascopy_m5/* (M5 2018-2026, sans spread)",data/deep_history_utc/*_M1.csv (resample M5),255.0,P2,régénérable depuis M1 canonique; consommateurs = stratégies archivées uniquement
+SUBSET_US30_1min,data/panels/m5_indices/US30_M1.csv,data/deep_history_utc/US30_M1.csv,195.8,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_USDJPY_1min,data/panels/m5_indices/USDJPY_M1.csv,data/deep_history_utc/USDJPY_M1.csv,188.2,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_USDCAD_1min,data/panels/m5_indices/USDCAD_M1.csv,data/deep_history_utc/USDCAD_M1.csv,166.3,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_AUDUSD_1min,data/panels/m5_indices/AUDUSD_M1.csv,data/deep_history_utc/AUDUSD_M1.csv,166.2,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_US100_1min,data/panels/m5_indices/US100_M1.csv,data/deep_history_utc/US100_M1.csv,129.0,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_US500_1min,data/panels/m5_indices/US500_M1.csv,data/deep_history_utc/US500_M1.csv,118.7,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_GER40_1min,data/panels/m5_indices/GER40_M1.csv,data/deep_history_utc/GER40_M1.csv,116.6,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_EURJPY_1min,data/panels/m5_indices/EURJPY_M1.csv,data/deep_history_utc/EURJPY_M1.csv,81.0,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_AUDJPY_1min,data/panels/m5_indices/AUDJPY_M1.csv,data/deep_history_utc/AUDJPY_M1.csv,78.4,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_GBPUSD_1min,data/panels/m5_indices/GBPUSD_M1.csv,data/deep_history_utc/GBPUSD_M1.csv,78.0,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_EURGBP_1min,data/panels/m5_indices/EURGBP_M1.csv,data/deep_history_utc/EURGBP_M1.csv,77.9,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_NZDUSD_1min,data/panels/m5_indices/NZDUSD_M1.csv,data/deep_history_utc/NZDUSD_M1.csv,77.8,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SUBSET_USDCHF_1min,data/panels/m5_indices/USDCHF_M1.csv,data/deep_history_utc/USDCHF_M1.csv,77.6,P2,migrer consommateurs actifs (tz EET->UTC) avant suppression
+SOURCE_BRUTE_BULK,"data/deep_history_m1/_cache_duka/* (M1/an, 2.2 Go)",data/deep_history_utc (build final),2200.0,ARCHIVE_EXT,"source brute du build — archiver sur disque externe, pas de suppression sèche"
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/backtest_v2.py,strategies/tsmom_v2_propfirm/backtest_v2.py,0.058,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/challenge_simulator.py,strategies/tsmom_v2_propfirm/challenge_simulator.py,0.051,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/breakout_simulator.py,strategies/tsmom_v2_propfirm/breakout_simulator.py,0.037,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/vol_spike_filter.py,strategies/tsmom_v2_propfirm/vol_spike_filter.py,0.034,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v3/backtest.py,strategies/tsmom_v3/backtest.py,0.032,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/challenge_optimizer.py,strategies/tsmom_v2_propfirm/challenge_optimizer.py,0.028,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/execution/propr_sdk.py,strategies/tsmom_v2_propfirm/execution/propr_sdk.py,0.024,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/challenge_state.db,challenge_state.db,0.02,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_live.py,tsmom_live.py,0.016,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/execution/discover_api.py,strategies/tsmom_v2_propfirm/execution/discover_api.py,0.014,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/execution/order_executor.py,strategies/tsmom_v2_propfirm/execution/order_executor.py,0.011,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/execution/tests/test_execution.py,strategies/tsmom_v2_propfirm/execution/tests/test_execution.py,0.01,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/execution/rebalance.py,strategies/tsmom_v2_propfirm/execution/rebalance.py,0.009,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/sizing.py,strategies/tsmom_v2_propfirm/sizing.py,0.007,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/execution/equity_monitor.py,strategies/tsmom_v2_propfirm/execution/equity_monitor.py,0.006,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v3/signal.py,strategies/tsmom_v3/signal.py,0.006,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/README.md,strategies/tsmom_v2_propfirm/README.md,0.005,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/execution/guardrail_loop.py,strategies/tsmom_v2_propfirm/execution/guardrail_loop.py,0.004,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/signal.py,strategies/tsmom_v2_propfirm/signal.py,0.004,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer
+FROZEN_INTENTIONNEL,Crypto/research/archived/_frozen/strategy_a_propr_2026-05-30/tsmom_v2_propfirm/__init__.py,strategies/tsmom_v2_propfirm/__init__.py,0.001,KEEP,copie de gel volontaire (CLAUDE.md) — ne pas supprimer

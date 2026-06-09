@@ -1,0 +1,55 @@
+===============================================================================================
+KILLER 4 — Décomposition réversion vs drift relatif BTC/ETH
+===============================================================================================
+
+--- FULL 2018-2026 (n=73644) ---
+  BTC return: +430.1%, ETH return: +171.7%
+  Relative diff (BTC - ETH): +258.4pts
+  Static OLS beta: 0.803
+  Kalman beta: 1.411 → 0.609 (Δ = -0.802)
+  Spread (static OLS) start: -0.3159, end: +0.5490
+  Spread total delta: +0.8649
+  Spread linear drift: +0.5889
+  Spread oscillation amplitude (std): 0.3901
+  → drift/osc ratio = 1.51 > 1.0 → DRIFT DOMINANT (= harvested beta, not reversion)
+
+--- PRE-Park 2018-2021 (n=34943) ---
+  BTC return: +241.6%, ETH return: +405.2%
+  Relative diff (BTC - ETH): -163.6pts
+  Static OLS beta: 0.684
+  Kalman beta: 1.411 → 0.639 (Δ = -0.772)
+  Spread (static OLS) start: -0.2165, end: -0.0963
+  Spread total delta: +0.1203
+  Spread linear drift: +0.7313
+  Spread oscillation amplitude (std): 0.3320
+  → drift/osc ratio = 2.20 > 1.0 → DRIFT DOMINANT (= harvested beta, not reversion)
+
+--- PARK Jan2022-Oct2024 (n=24839) ---
+  BTC return: +50.7%, ETH return: -32.4%
+  Relative diff (BTC - ETH): +83.0pts
+  Static OLS beta: 1.212
+  Kalman beta: 1.288 → 0.807 (Δ = -0.482)
+  Spread (static OLS) start: -0.3964, end: +0.4870
+  Spread total delta: +0.8834
+  Spread linear drift: +0.4263
+  Spread oscillation amplitude (std): 0.1674
+  → drift/osc ratio = 2.55 > 1.0 → DRIFT DOMINANT (= harvested beta, not reversion)
+
+--- POST-Park Nov2024+ (n=13862) ---
+  BTC return: +2.2%, ETH return: -21.7%
+  Relative diff (BTC - ETH): +23.9pts
+  Static OLS beta: 0.441
+  Kalman beta: 1.402 → 0.775 (Δ = -0.627)
+  Spread (static OLS) start: -0.2337, end: -0.1042
+  Spread total delta: +0.1295
+  Spread linear drift: -0.1648
+  Spread oscillation amplitude (std): 0.1136
+  → drift/osc ratio = 1.45 > 1.0 → DRIFT DOMINANT (= harvested beta, not reversion)
+
+===============================================================================================
+Verdict Killer 4
+===============================================================================================
+
+If the Park window has dominant drift (BTC overperformed/underperformed ETH structurally),
+then the '2.23 Sharpe' was actually a beta harvest in market-neutral costume,
+not real mean reversion. Look at the ret_diff_pct + spread_delta over the Park window.

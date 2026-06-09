@@ -1,0 +1,16 @@
+ZERO-EDGE baseline p(pass<=3mo) per firm (Sharpe 0, kurt 4) — shows barrier asymmetry:
+  FTMO_2step                 zero-edge=0.215 @L3
+  FTMO_1step                 zero-edge=0.230 @L3
+  The5ers_1step(5%DD)        zero-edge=0.401 @L2.5
+  FundedNext_1step           zero-edge=0.209 @L2
+  Gen_1step_static_loose     zero-edge=0.518 @L4
+  Gen_1step_static_8         zero-edge=0.517 @L4
+  Gen_2step_no_daily         zero-edge=0.325 @L4
+  Topstep_futures(trail)     zero-edge=0.323 @L2.5
+  Instant_1step_generous     zero-edge=0.576 @L4
+
+MODEST GRIND (Sharpe 0.6, kurt 4) — 12-seed 90% CI on key firms:
+  FTMO_2step                 median=0.291 90%CI=[0.255, 0.316]  -> below 0.50
+  The5ers_1step(5%DD)        median=0.467 90%CI=[0.449, 0.488]  -> below 0.50
+  Gen_1step_static_loose     median=0.589 90%CI=[0.565, 0.601]  -> CLEARS 0.50
+  Instant_1step_generous     median=0.642 90%CI=[0.626, 0.660]  -> CLEARS 0.50

@@ -1,0 +1,2 @@
+date_utc,symbol,direction,lots,gap_bps,slip_entry_bps,slip_exit_bps,slip_rt_bps,spread_signal_bps,exit_reason,pnl_points,pnl_account_pct
+2026-05-28,US500.cash,1,1.0,20.1,1.0,0.9979044007584074,1.9979044007584075,0.8,scheduled,9.5,0.002
