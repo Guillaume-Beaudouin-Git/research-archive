@@ -83,6 +83,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3be2beb576bdfa022cf2eb6fe043b4bb": {
+    "first_seen": "2026-06-09 12:05",
+    "source": "github_python",
+    "title": "anthropics/claude-code-security-review",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4ba18dd65d5f81a9c313434574f6d756": {
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
@@ -143,6 +150,13 @@
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
     "title": "Open-LLM-VTuber/Open-LLM-VTuber",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "75db8a83bc2d9c5c112f10e5d3c76e93": {
+    "first_seen": "2026-06-09 12:05",
+    "source": "github_python",
+    "title": "wanshuiyin/Auto-claude-code-research-in-sleep",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -279,6 +293,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c1654447bc70105597f38260b3e02859": {
+    "first_seen": "2026-06-09 12:05",
+    "source": "github_python",
+    "title": "maziyarpanahi/openmed",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c4b779a3c194f4274ae68f3787a0618b": {
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
@@ -339,6 +360,13 @@
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
     "title": "IBM/mcp-context-forge",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e859f0429314f748eddc41bbafe3cc79": {
+    "first_seen": "2026-06-09 12:05",
+    "source": "github_python",
+    "title": "jianchang512/pyvideotrans",
     "decision": "rejected_L0",
     "promising_file": null
   },
