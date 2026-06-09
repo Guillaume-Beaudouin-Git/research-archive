@@ -1,0 +1,130 @@
+{
+  "frozen_commit": "41f034f",
+  "run_date": "2026-06-10",
+  "calibration": {
+    "curve_date": "2026-06-09",
+    "wti_f1": 88.81999969482422,
+    "wti_f2": 87.22000122070312,
+    "b_ann_now_usoil": 0.22013278400293945,
+    "p_usoil_now": 88.88999938964844,
+    "swap_long_ann_now_usoil": 0.14967038014795309,
+    "markup_ann_usoil": 0.07046240385498637,
+    "markup_floored_usoil": false,
+    "b_ann_now_ukoil": 0.3894146093988038,
+    "t0_ukoil": "2026-05-22",
+    "swap_long_ann_now_ukoil": 0.09709947760385139,
+    "markup_ann_ukoil": 0.2923151317949524,
+    "markup_floored_ukoil": false,
+    "markup_usoil_alt_2024_04": 0.0
+  },
+  "usoil_primary": {
+    "name": "USOIL_primary",
+    "sample": [
+      "2005-01-04",
+      "2024-04-12"
+    ],
+    "n_days": 4848,
+    "time_in_market": 0.1705858085808581,
+    "n_round_trips": 27.5,
+    "sr_net": -0.011240172399241055,
+    "hac_t": -0.05087030066513596,
+    "ann_ret": -0.0016674259795211135,
+    "max_dd_additive": -0.7075079596692457,
+    "sr_bench_always_long": -0.07780732178523214,
+    "ann_ret_bench": -0.03239845516300597,
+    "ann_ret_bench_tim_scaled": -0.0055267166707520495,
+    "swap_contrib_ann": 0.009593504180209433,
+    "spread_drag_ann": 0.001000618811881188,
+    "delta_sr_vs_beta": 0.06656714938599109,
+    "regime_diff_daily": 0.0004078916891835746,
+    "regime_diff_t": 0.48921782377823664,
+    "k1_long_days": 0,
+    "k1_window_days": 62,
+    "era_pnl": {
+      "pre2014": -0.19310573567183587,
+      "2014_2020": -0.16850769311719027,
+      "2021_2023": 0.23198399559404345,
+      "2024plus": 0.09755133339848113
+    },
+    "share_2021_2023": -7.2318496751900705,
+    "pre2014_inregime_pnl": -0.18960573567183586,
+    "pre2014_inregime_days": 185
+  },
+  "ukoil_secondary": {
+    "name": "UKOIL_secondary",
+    "sample": [
+      "2007-07-31",
+      "2026-05-22"
+    ],
+    "n_days": 4682,
+    "time_in_market": 0.29602733874412646,
+    "n_round_trips": 104.5,
+    "sr_net": -0.26855415519516557,
+    "hac_t": -1.204735659242965,
+    "ann_ret": -0.05514548064028456,
+    "max_dd_additive": -1.6305039769839864,
+    "sr_bench_always_long": -0.6770303208470911,
+    "ann_ret_bench": -0.25766344626588367,
+    "ann_ret_bench_tim_scaled": -0.07627542428972976,
+    "swap_contrib_ann": -0.03659163285356644,
+    "spread_drag_ann": 0.003937163605296881,
+    "delta_sr_vs_beta": 0.40847616565192557,
+    "regime_diff_daily": 0.0030801742169070225,
+    "regime_diff_t": 4.218048529095974,
+    "k1_long_days": 10,
+    "k1_window_days": 62,
+    "era_pnl": {
+      "pre2014": -0.3223909943603343,
+      "2014_2020": -0.562962199327933,
+      "2021_2023": -0.15475296790854298,
+      "2024plus": 0.015538144303903989
+    },
+    "share_2021_2023": 0.15104216147350405,
+    "pre2014_inregime_pnl": -0.30839099436033435,
+    "pre2014_inregime_days": 298
+  },
+  "sleeve_50_50": {
+    "name": "sleeve_50_50",
+    "sample": [
+      "2007-07-31",
+      "2024-04-12"
+    ],
+    "sr_net": -0.18154954524459355,
+    "hac_t": -0.7549623964149095,
+    "ann_ret": -0.02600759143489405,
+    "max_dd_additive": -0.8663232800750296
+  },
+  "sensitivity_sr_usoil": {
+    "markup_x0.5": 0.027831752899879034,
+    "markup_x1.5": -0.05029922362706031,
+    "markup_calib_2024-04": 0.06691523009216319,
+    "spread_x0.5": -0.007867762636391995,
+    "spread_x2": -0.017984285674824414
+  },
+  "gates": {
+    "K1_flat_feb_apr_2020": true,
+    "K2_delta_sr_ge_0.20": false,
+    "K3_sr_ge_0.5_standalone": false,
+    "K3_sr_ge_0.3_sleeve": false,
+    "K4_single_episode_flag": true,
+    "K5_swap_audit": {
+      "swap_long_bps_night_specs_convention": 4.111823630438272,
+      "swap_long_bps_night_model_at_calib": 4.100558360217892,
+      "rel_diff": 0.005486978774650288,
+      "sign_long_credit_in_backwardation": true,
+      "median_nights_full_week": 7.0,
+      "pass": true
+    }
+  },
+  "dsr_probabilistic_usoil": {
+    "N3": 0.000660549873493831,
+    "N5": 3.888539024483277e-06,
+    "N111": 5.4680291472091275e-22
+  },
+  "bootstrap_sr_usoil": {
+    "q05": -0.39564637765305566,
+    "q50": -0.0008534829820013303,
+    "q95": 0.35312375047804145
+  },
+  "verdict_primary": "NO-GO (not even sleeve)"
+}
