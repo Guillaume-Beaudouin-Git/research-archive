@@ -1,0 +1,23 @@
+{
+  "wti_f1": {
+    "ticker": "CLN26.NYM",
+    "date": "2026-06-09",
+    "close": 88.81999969482422
+  },
+  "wti_f2": {
+    "ticker": "CLQ26.NYM",
+    "date": "2026-06-09",
+    "close": 87.22000122070312
+  },
+  "wti_front_cont": {
+    "ticker": "CL=F",
+    "date": "2026-06-09",
+    "close": 88.88999938964844
+  },
+  "brent_front_cont": {
+    "ticker": "BZ=F",
+    "date": "2026-06-09",
+    "close": 92.12999725341797
+  },
+  "wti_basis_ann_now": 0.22013278400293945
+}
