@@ -991,6 +991,62 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_causalalpha_a_real_time_geopolitical_risk_inde_2026-06-08_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_a_structural_matrix_autoregressive_model_for_the_20260609.md",
+      "tested_date": "2026-06-09",
+      "handler": "ExitRuleHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_a_structural_matrix_autoregressive_model_for_t_2026-06-09_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_inference_on_the_tsls_estimand_with_weak_instrume_20260609.md",
+      "tested_date": "2026-06-09",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_inference_on_the_tsls_estimand_with_weak_instr_2026-06-09_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_regime_switching_models_for_disaggregated_data_20260609.md",
+      "tested_date": "2026-06-09",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_regime_switching_models_for_disaggregated_data_2026-06-09_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_when_do_markets_fully_process_public_information_20260609.md",
+      "tested_date": "2026-06-09",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_when_do_markets_fully_process_public_informati_2026-06-09_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_reconstructing_a_century_of_us_corporate_bonds_20260609.md",
+      "tested_date": "2026-06-09",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_reconstructing_a_century_of_us_corporate_bonds_20_2026-06-09_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_ai_assisted_variance_reduction_in_randomized_expe_20260609.md",
+      "tested_date": "2026-06-09",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_ai_assisted_variance_reduction_in_randomized_e_2026-06-09_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_evaluating_ai_investment_strategies_20260609.md",
+      "tested_date": "2026-06-09",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_evaluating_ai_investment_strategies_20260609_2026-06-09_report.md",
+      "stopped_at": "A"
     }
   ]
 }
