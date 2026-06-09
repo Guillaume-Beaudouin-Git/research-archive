@@ -104,6 +104,15 @@ L'entrée backwardation_oil (session parallèle, commit `0594005`) annonce « pr
 
 ## 3. Reste à faire (NON exécuté — sur ton GO)
 
+> ✅ **P2 PARTIEL exécuté le 2026-06-10** (session parallèle encore active → pas de déplacements) :
+> `Forex/data/cache/dukascopy_m5/` supprimé (255 Mo) · `_raw` purgé intégralement après traitement
+> du backlog (`process_raw_filter.py` : 1 nouveau, 0 accepté — _automation 993 Mo → 2,4 Mo) ·
+> checklist de migration m5_indices écrite : `_audit/m5_indices_migration_checklist_2026-06-10.md`
+> (à retenir : `BTCUSD_M1.csv` + `binance/` à EXCLURE de la suppression ; **fix_reversal = seul vrai
+> bloquant, sensible tz EET→UTC**) · `_cache_duka` (2,2 Go) CONSERVÉ : source brute d'un build vieux
+> de 2 jours qui a connu 2 bugs silencieux pendant sa construction — assurance de rebuild, à
+> réévaluer quand deep_history_utc aura été consommé sans incident par plusieurs études.
+
 **P2** (½ journée) : migration des 5 consommateurs de `m5_indices` vers `deep_history_utc` (attention tz EET→UTC) puis suppression des M1 FX dupliqués (1,7 Go) + panels dérivés (~140 Mo) · suppression `dukascopy_m5` (255 Mo) · archive externe `_cache_duka` (2,2 Go) · consolidation FTMO → `PropFirms/ftmo/program_2026-06/` · mtf → `Multi_Asset/research/archived/` · `audit/`+`audit-fetch-B/` → `_audit/` · `docs/`+`readme` → archive · oxfordstrat hors de `data/` · `nq_intraday_vwap` → archived. Script : `scripts/cleanup_dedup_2026-06-10.sh p2` (P2_CONFIRM=1 requis).
 
 **P3** (session dédiée, coordonnée VPS) : déplacement des fichiers live racine (`tsmom_live.py`…) vers `strategies/` + mise à jour crons · unification des 3 implémentations du signal TSMOM + test live==backtest. ~~filter-repo~~ plus nécessaire (gc a suffi).

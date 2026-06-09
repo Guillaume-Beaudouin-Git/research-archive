@@ -254,7 +254,8 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
   encore référencé par du code actif, suppression en P2 après migration.
 - Commodity futures: yfinance =F tickers (CL=F, GC=F, …) — continuous front-month
 - FX M5: Dukascopy bi5 custom decoder in `Forex/research/archived/strategy_e_fix_flow/data_setup.py`
-  Cache: Forex/data/cache/dukascopy_m5/. DL speed: ~12min/pair-year, 4 threads.
+  + `Forex/data/dukascopy_downloader_m5.py`. DL speed: ~12min/pair-year, 4 threads.
+  Cache dukascopy_m5 SUPPRIMÉ 2026-06-10 (P2 partiel) — régénérable, ou resampler deep_history_utc M1.
 - Equities: yfinance + Tiingo (limited free tier)
 - FRED: DTB3 (RF daily), interbank rates monthly
 - HL API constraint: no candle data before Nov 2022; gap Dec 2022–Dec 2023
