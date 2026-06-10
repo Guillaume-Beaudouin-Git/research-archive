@@ -1,0 +1,220 @@
+[
+ {
+  "id": "2605.30943",
+  "title": "Inspectable Neural Markov Models for Non-Stationary Time Series",
+  "summary": "Modeling non-stationary stochastic systems requires balancing the representational capacity of deep learning with the structural transparency of classical probabilistic models. Markov transition matrices provide such a framework, but traditional frequency-based estimation collapses at high resolutions due to data sparsity. We propose a hybrid approach that parameterizes the manifold of stochastic matrices through a neural network, enabling estimation of time-inhomogeneous Markov chains in sparse-data regimes, and use financial markets as a testbed to investigate the Markov state variable as a critical inductive bias. We show that conditioning on realized volatility produces a more internally consistent Markovian structure than return-based states, achieving a $5.6\\%$ reduction in Chapman-Kolmogorov discrepancy and superior held-out likelihood in 9 of 10 assets. Unlike black-box sequence models, our approach generates explicit matrices amenable to direct geometric analysis, surfacing structural findings such as the universal homogenization of transition probabilities under high-volatility regimes.",
+  "authors": [
+   "Jan Rovirosa",
+   "Jesse Schmolze"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "stat.ML"
+  ],
+  "published": "2026-05-29T07:29:35Z",
+  "updated": "2026-05-29T07:29:35Z"
+ },
+ {
+  "id": "2605.30643",
+  "title": "Quality-Adjusted Hit-Ratio Targeting in Corporate Bond Market Making",
+  "summary": "Hit ratio is a common service metric for electronic corporate bond market making, but raw hit-ratio targets can be economically misleading when client flow has heterogeneous adverse-selection content. This paper extends a stochastic-control framework for OTC bond RFQ market making with hit-ratio constraints by replacing raw hit ratio with a residual-quality-adjusted hit ratio. The key modelling distinction is that adverse post-trade markouts are first decomposed into observable credit factors, carry/rolldown, issuer-relative-value effects, index or ETF demand effects, and residual adverse selection. Only the residual component is treated as client-flow toxicity. The resulting control problem remains tractable: after dualizing the quality-hit-ratio penalty, the HJB retains separable Hamiltonians, and the dual variable is the solution of an exact one-dimensional nonlinear fixed point for each targeted tier. Under a quadratic value-function approximation, optimal quotes decompose into a riskless spread, inventory skew, credit-alpha skew, residual-toxicity charge, and quality-hit-ratio subsidy. Synthetic multi-bond simulations with nonlinear dual solves illustrate that raw hit-ratio targeting can subsidize residual-toxic flow, while residual-quality targeting reallocates service toward low-residual-toxicity flow and improves the attained service/economics frontier. A final reduced-form extension studies inventory-recycling value through risk-aware style-aligned client-flow wareho",
+  "authors": [
+   "Bouna Niang"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "q-fin.RM"
+  ],
+  "published": "2026-05-28T22:56:12Z",
+  "updated": "2026-05-28T22:56:12Z"
+ },
+ {
+  "id": "2605.30562",
+  "title": "Option Pricing under Stochastic Volatility and Jumps:A PIDE Framework with Empirical Evidence",
+  "summary": "We develop a partial integro-differential equation (PIDE) framework for option pricing under joint stochastic volatility and jump dynamics, and evaluate its empirical content using the S&P500 index option contracts across three maturities. The framework is derived from the infinitesimal generator of an affine Lévy-type process and implemented via finite-difference discretization with FFT-based treatment of the nonlocal jump operator. Calibration via GMM reveals that stochastic volatility accounts for the dominant share of pricing improvement, where relative to Black-Scholes, the Heston specification reduces implied-volatility RMSE by 39%. Jump augmentation via either Merton or CGMY specifications yields marginal improvements concentrated at short maturities and in the deep out-of-the-money region. The calibrated CGMY activity index supports a compound-Poisson structure, consistent with high-frequency evidence on S&P500 index returns.",
+  "authors": [
+   "Abigail Anokyewaa Mensah",
+   "Ayush Jha",
+   "Hongwei Mei",
+   "Rui Wang",
+   "Svetlozar T. Rachev",
+   "Frank J. Fabozzi"
+  ],
+  "categories": [
+   "q-fin.PR",
+   "econ.EM",
+   "q-fin.MF"
+  ],
+  "published": "2026-05-28T20:49:17Z",
+  "updated": "2026-05-28T20:49:17Z"
+ },
+ {
+  "id": "2605.30464",
+  "title": "Distributional Portfolio Optimization (DPO): A Unified Framework for Distributions over Weights, Returns, and Parameters",
+  "summary": "Classical portfolio optimization treats expected returns, covariances, and allocations as deterministic. Modern practice replaces at least one by a distribution: a posterior over parameters, a law of future returns, a stochastic allocation policy, or a distributional-robustness set. We call distributional portfolio optimization (DPO) the unified framework in which weights, returns, and parameters are all modeled as probability measures, organized around the joint coupling Gamma_theta(dw,dr) and its marginal triple (W,R,P). The contribution is synthetic and structural: we organize Bayesian, robust, chance-constrained, stochastic-allocation, and distributional reinforcement-learning portfolio methods through this coupling and prove boundary results connecting them, including a portfolio specialization of Wasserstein-CVaR duality, a static no-randomization theorem, a Bayesian credible-radius calibration of Wasserstein DRO, a Gaussian-isotropic second-order conservatism bound, a conditional two-sided rate W_1 = Theta(n^{-(1+alpha)/2}) governed by the local boundary Holder exponent alpha in [0,1], and a risk-shifted distributional Bellman contraction. A controlled experiment shows that across factor models at K in {10,25,50}, the credible-radius rule lands within 3-7 bp of the oracle out-of-sample tail risk and beats a 24-month validation-tuned radius while spending no validation data. On a K=25 DJIA backtest, equal-weight, no-view Black-Litterman, and Ledoit-Wolf shrinkage attain",
+  "authors": [
+   "Miquel Noguer i Alonso"
+  ],
+  "categories": [
+   "q-fin.PM"
+  ],
+  "published": "2026-05-28T18:38:56Z",
+  "updated": "2026-05-28T18:38:56Z"
+ },
+ {
+  "id": "2605.30442",
+  "title": "When market boundaries weaken: Network reconfiguration and regime-dependent cross-asset spillovers",
+  "summary": "Cryptocurrencies are increasingly adopted as investment assets, making their interactions with traditional financial markets central to cross-asset diversification and systemic risk. This paper studies the integration of cryptocurrencies, fiat currencies, and S&P500 equities using a balanced panel of 381 assets from October 2017 to February 2024. We combine rolling correlation networks, consensus-based community detection, market-specific and system-wide Turbulence Indices, and VAR-based connectedness analysis to examine how market stress, network topology, and shock transmission co-evolve across regimes. The results show that cross-asset integration is episodic. In normal periods, the three asset classes remain relatively segmented, whereas under stress, local clustering increases, modular separation weakens, and communities become more compositionally mixed across asset classes. Connectedness analysis further shows that regime shifts alter the structure of transmission rather than simply increasing spillover magnitudes. In high-turbulence states, fiat-market turbulence becomes the main propagation channel, while network clustering and modularity become more involved in forecast-uncertainty transmission. These findings support the interpretation of network topology as an emergent, state-dependent amplification channel rather than a persistent exogenous driver of turbulence. The results highlight the need for regime-aware risk monitoring, since full-sample connectedness estim",
+  "authors": [
+   "Ruixue Jing",
+   "Luis Enrique Correa Rocha"
+  ],
+  "categories": [
+   "physics.pop-ph",
+   "q-fin.TR"
+  ],
+  "published": "2026-05-28T18:13:32Z",
+  "updated": "2026-05-28T18:13:32Z"
+ },
+ {
+  "id": "2605.30068",
+  "title": "Functional integration by parts formulae for stochastic Volterra processes",
+  "summary": "We investigate integration by parts (IBP) formulae for stochastic Volterra equations and we establish the smoothing effect of the expectation. Due to the inherent path-dependent dynamics of this class of processes, standard Bismut--Elworthy--Li (BEL) formulae and lifting procedures fail to produce representations for directional derivatives with respect to the initial curve. We exhibit a new type of fractional IBP for these derivatives which, by means of the Riemann--Liouville fractional derivative, interpolates between the standard chain rule and a pure BEL formula with Cameron--Martin path directions. Our assumptions describe precisely the trade-off between the direction's and the test function's regularities. Crucially, we reveal that more roughness leads to more smoothing: for a power-law kernel with Hurst parameter $H\\in(0,1/2)$, we show that the expectation is differentiable along constant directions provided that the test function has Hölder continuity $β>2H$. The proof of the formula relies on a careful analysis of the conditional expectation's temporal regularity and on the well-posedness of its Riemann--Liouville derivative. We complement these results with a BEL formula along all square integrable directions whenever the noise is additive, a second order BEL formula and an application to forward and rough volatility models. In the latter case, the derivative is interpreted as the sensitivity with respect to the whole initial forward variance curve.",
+  "authors": [
+   "Alexandre Pannier"
+  ],
+  "categories": [
+   "math.PR",
+   "q-fin.RM"
+  ],
+  "published": "2026-05-28T15:15:30Z",
+  "updated": "2026-05-28T15:15:30Z"
+ },
+ {
+  "id": "2605.29689",
+  "title": "Beyond TVL: An Explainable Risk Scoring Framework for Tokenized Real-World Assets",
+  "summary": "Tokenized real-world assets (RWAs) are often evaluated through headline indicators such as total value locked (TVL) or on-chain asset value. However, a large asset base does not necessarily imply low risk, since tokenized assets may remain illiquid, weakly traded, or highly concentrated among a small number of holders. Using public data from RWA.xyz, this paper develops an empirical and explainable risk scoring framework for tokenized RWA markets. The framework evaluates three dimensions of risk: liquidity risk $L$, concentration risk $C$, and market-quality risk $M$. These risk dimensions are constructed from observable indicators, including turnover, holder distribution, active-address activity, transfer frequency, and network concentration measured through Herfindahl indices. The analysis shows that several RWA tokens with substantial on-chain value exhibit high empirical risk because they combine limited transfer activity, low turnover, and concentrated ownership structures. In contrast, assets with broader participation and stronger on-chain activity display lower liquidity and concentration risk, even when their headline asset values are smaller. The findings demonstrate that TVL alone can obscure important risks in tokenized asset markets. By providing a transparent and data-driven risk scoring approach, this paper contributes to the empirical assessment of RWA liquidity and offers a practical basis for comparing tokenized assets beyond headline valuation metrics.",
+  "authors": [
+   "Rischan Mafrur",
+   " Khadijah"
+  ],
+  "categories": [
+   "cs.CE",
+   "q-fin.CP"
+  ],
+  "published": "2026-05-28T09:51:59Z",
+  "updated": "2026-05-28T09:51:59Z"
+ },
+ {
+  "id": "2605.29541",
+  "title": "Change-point estimation for Weibull time series with copula-based Markov models",
+  "summary": "We study offline change-point estimation for time series data exhibiting nonlinear serial dependence. To address this problem, we propose a copula-based Markov chain model with Weibull marginal distributions, which is suitable for modeling nonnegative data such as event times and volatility measures. Nonlinear dependence is incorporated through the Clayton and Joe copulas, allowing the model to capture asymmetric lower-tail and upper-tail dependence structures, respectively. We derive the corresponding likelihood function and estimate the change point and model parameters using maximum likelihood estimation implemented through the Newton--Raphson algorithm. Confidence intervals are constructed via a parametric bootstrap Monte Carlo procedure. Extensive numerical studies are conducted to evaluate the finite-sample performance and robustness of the proposed method under different dependence structures and copula misspecification scenarios. The results demonstrate that the proposed estimators perform well in terms of RMSE and relative error, particularly for the estimation of the change point. An empirical application to the VIX index during the COVID-19 pandemic further illustrates the practical usefulness of the proposed approach in detecting structural changes in both the marginal distributions and serial dependence structure.",
+  "authors": [
+   "Li-Hsien Sun",
+   "Zong-Yuan Huang",
+   "Yi-Ling Huang",
+   "Chi-Yang Chiu",
+   "Ning Ning"
+  ],
+  "categories": [
+   "stat.ME",
+   "q-fin.ST"
+  ],
+  "published": "2026-05-28T07:55:36Z",
+  "updated": "2026-05-28T07:55:36Z"
+ },
+ {
+  "id": "2605.29413",
+  "title": "From Classical Optimization to Bayesian Integration: A Comprehensive Analysis of Systematic Portfolio Management",
+  "summary": "This paper compares a series of contemporary portfolio construction approaches by employing ten U.S. stocks (TSLA, WMT, BAC, GS, LLY, MRK, GOOG, META, AAPL and XOM) in a time frame from September 2023 to December 2025. The paper explores both basic mean-variance optimization, constrained optimization, Fama French five factor regression modeling, Monte Carlo simulation, and the Black-Litterman model to determine how constraints to a solution, risk factors to a strategy, simulated approximations, and specific market views may all impact the outcome of portfolio allocation, performance and stability. Overall, the results show that standard optimization may result in highly concentrated portfolios, while constrained optimization leads to changes in portfolio allocations by altering the efficient frontier, five factor regression models suggest that a basic investment style of defensive large value and profitability exposure, Monte Carlo approximation is a viable technique to arrive at mean-variance optimal portfolios provided the simulations are high enough especially under a box constraint, the Black Litterman portfolio approach produces more economically intuitive allocations and greater stability compared to standard mean-variance optimization as the approach balances equilibrium returns with investor views.",
+  "authors": [
+   "Ajay Kumar Verma",
+   "Shravya Barkam"
+  ],
+  "categories": [
+   "q-fin.PM",
+   "q-fin.MF",
+   "q-fin.RM",
+   "q-fin.ST",
+   "stat.AP"
+  ],
+  "published": "2026-05-28T06:02:21Z",
+  "updated": "2026-05-28T06:02:21Z"
+ },
+ {
+  "id": "2605.29376",
+  "title": "Three-Currency HJM for Brazilian Credit Markets",
+  "summary": "This paper develops a three-currency Heath-Jarrow-Morton framework in which corporate credit is treated as a separate economy, connected to the nominal and real economies through synthetic inflation and credit exchange rates. The framework produces a testable identity. Under joint no-arbitrage, the credit spread of an issuer expressed over the inflation-rateindexed risk-free curve equals the same issuer's credit spread expressed over the nominalrate-indexed risk-free curve plus the model-implied breakeven inflation forward at the same maturity. The identity holds within any single calibration of the framework. It is empirically falsifiable across two parallel corporate-bond segments of the same market, in a segmented market the two segments may price different corporate credit economies, and the gap between their implied corporate forwards measures the failure of the shared-credit-economy assumption. Applied to Brazilian debenture markets, the framework delivers a sharp empirical finding. Fifteen large issuers placed paper in both the CDI-indexed general-purpose segment and the IPCA-indexed infrastructure segment between January 2021 and February 2026. The within-issuer triangle residual at the 3-year tenor averages 640 basis points, with crosssectional standard deviation of 26 basis points across the 15 issuer means, and remains stable through both the 2021-2023 BCB tightening cycle and the 2024-2026 easing phase. A retail post-tax indifference benchmark anchored on Lei 12.4",
+  "authors": [
+   "Raphael Coelho"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "q-fin.GN"
+  ],
+  "published": "2026-05-28T05:23:22Z",
+  "updated": "2026-05-28T05:23:22Z"
+ },
+ {
+  "id": "2605.29102",
+  "title": "Implying Volatility: How Fast Can We Go?",
+  "summary": "FlashIV is a low-latency Black--Scholes implied-volatility solver for production use. It normalises each input to an out-of-the-money price and solves a tail-stable erfcx/log-price residual. The hot path combines a cheap Li/asymptotic seed with a fixed, branch-light Householder refinement and guarded boundary handling. Across regular and stressed benchmarks, FlashIV stays close to the expanded Jäckel reference price while running materially faster than a normalised Java port of Jäckel's \\emph{Let's Be Rational}. FlashIV+ adds an optional Jäckel--Newton correction for applications that need tighter agreement with that reference price, trading latency for reference-price alignment.",
+  "authors": [
+   "Fabien Le Floc'h",
+   "Jherek Healy"
+  ],
+  "categories": [
+   "q-fin.CP"
+  ],
+  "published": "2026-05-27T21:03:43Z",
+  "updated": "2026-05-27T21:03:43Z"
+ },
+ {
+  "id": "2605.30363",
+  "title": "Enhancing Regime Shift Detection Using Unstructured Data: A Study on the Treasury Market",
+  "summary": "Regime shifts in financial markets reorganise the joint dynamics of asset prices and macro variables, breaking any single-regime calibration. They are nonetheless difficult to detect reliably because the data signal is noisy and heavily multicollinear, while the contemporaneous text that announces them is unstructured. Standard regime shift detection methods rely solely on structured time-series data and ignore policy communications, even though these texts often signal shifts before they materialise in observed prices. We propose a text-enhanced regime shift detection pipeline that combines large language model (LLM) reasoning over central-bank communications with statistical validation on multivariate financial time series. The framework is detector-agnostic: text-proposed candidates are validated using a bootstrap likelihood-ratio test on a vector autoregression (VAR), while data-driven candidates from arbitrary regime detectors are ratified through a lenient LLM text check. We evaluate the framework on 2010-2024 FOMC minutes paired with a 14-variable U.S. Treasury and macroeconomic panel, using four interchangeable data-driven detectors. The proposed pipeline achieves F1 = 0.82 against a verified anchor list of monetary-policy regime shifts, with same-day modal detection latency and consistently stronger performance than pure data-driven baselines. The results demonstrate that combining unstructured policy text with statistical structural-break detection improves the robu",
+  "authors": [
+   "Mingxuan Yi",
+   "Vidal Mehra",
+   "Jing Chen",
+   "John Cartlidge"
+  ],
+  "categories": [
+   "q-fin.CP",
+   "cs.AI",
+   "cs.LG",
+   "q-fin.ST"
+  ],
+  "published": "2026-05-17T15:24:53Z",
+  "updated": "2026-05-17T15:24:53Z"
+ },
+ {
+  "id": "2605.28853",
+  "title": "Financially Guided Deep Portfolio Optimization",
+  "summary": "Portfolio optimization in real-world financial markets is notoriously difficult due to non-stationarity, noisy data, and high transaction costs. Standard predict-then-optimize methods first forecast returns and then solve for weights, compounding prediction errors and often failing under regime shifts. We propose an end-to-end framework that directly optimizes differentiable surrogates of key financial metrics - Sharpe ratio, Omega ratio, Conditional Value-at-Risk (CVaR), and Risk Parity - allowing neural networks to learn portfolio weights via backpropagation. Our expanding-window walk-forward procedure, applied to 50 S&P 500 stocks from 2007 to 2023, incorporates realistic bid-ask spread costs and rebalances quarterly. On the challenging out-of-sample test period (2022-2023), the best model - an AttentionLSTM with the Omega-CVaR-RiskParity loss - achieves an annualized Sharpe of 0.29 and a total compounded return of +7.86%, while the S&P 500 delivers -4.52% total return and an annualized Sharpe of -0.02. This outperforms the S&P 500 by 12.38 percentage points (a relative improvement of over 270%), while keeping tail risk (CVaR) nearly unchanged. The framework consistently outperforms the equal-weight portfolio, S&P 500, and traditional methods (MVP, HRP, NCO), demonstrating that embedding financial objectives directly into model training yields robust, economically meaningful outperformance even in adverse market conditions.",
+  "authors": [
+   "Rahul Fernandes",
+   "Travis Desell"
+  ],
+  "categories": [
+   "q-fin.PM",
+   "cs.LG"
+  ],
+  "published": "2026-05-16T22:30:15Z",
+  "updated": "2026-05-16T22:30:15Z"
+ },
+ {
+  "id": "2605.28850",
+  "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+  "summary": "We study behavioral alignment and representation dynamics of large language model (LLM) agents in financial decision environments. Using TradeArena, an auditable trading-agent testbed with risk reports, execution simulation, memory, and replayable trajectories, we analyze how rationales, positions, and interventions evolve under market stress. We find measurable pre-failure signatures: planning embeddings drift from normal-state centroids, fused plan-risk representations separate normal from pre-drawdown states, and manifold diagnostics show effective-rank contraction before failures. To address small-sample and embedding-choice concerns, we use 80 rolling failure anchors across eight LLM trajectories and show that contraction persists across hash, LSA, Transformer, and white-box hidden-state probes. Stress tests with CoT-free target weights, lexical controls, OHLCV noise, and false-audit reports indicate that rationale-level contraction can vanish without rationales, while intent-space contraction may remain; lexical diversity does not collapse; and fused signatures remain informative under noise. We also find that structured risk feedback can act as an external alignment signal without fine-tuning, but not as a universal performance enhancer: true audit feedback improves calibration for some models, return and drawdown for others, and reveals cases where hidden or placebo feedback has higher short-horizon return but weaker alignment diagnostics. Finally, a 51-stock intraday",
+  "authors": [
+   "Weicheng Xue"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.CP"
+  ],
+  "published": "2026-05-16T16:53:34Z",
+  "updated": "2026-05-16T16:53:34Z"
+ }
+]

@@ -37,8 +37,17 @@ fi
 
 URL="https://export.arxiv.org/api/query?search_query=cat:q-fin.ST+OR+cat:q-fin.PM+OR+cat:q-fin.TR+OR+cat:q-fin.RM+OR+cat:q-fin.MF+OR+cat:q-fin.CP&sortBy=submittedDate&sortOrder=descending&max_results=100"
 
-if ! curl -fsSL --max-time 60 "$URL" > "$OUT_FILE"; then
-  log "ERROR: arxiv fetch failed"
+fetch_ok=0
+for attempt in 1 2 3; do
+  if curl -fsSL --max-time 60 "$URL" > "$OUT_FILE"; then
+    fetch_ok=1
+    break
+  fi
+  log "WARN: arxiv fetch attempt $attempt failed (API slow/429/maintenance window)"
+  sleep 60
+done
+if [ "$fetch_ok" -ne 1 ]; then
+  log "ERROR: arxiv fetch failed after 3 attempts"
   rm -f "$OUT_FILE"
   exit 1
 fi

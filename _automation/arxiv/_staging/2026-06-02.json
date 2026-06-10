@@ -1,0 +1,167 @@
+[
+ {
+  "id": "2606.01979",
+  "title": "A Simple Hierarchical Causality Primer",
+  "summary": "We provide a brief primer for the idea behind formalising hierarchical causality in the context of complex systems. Here actors are not simply agents. Actors instantiate causation classes. Agents implement local dynamics in given levels or organisation in a given system. Hierarchical causality then describes how actor-level roles constrain, select, and organise agent-level behaviour across levels. The system then necessarily requires three additional structures. First, causation classes to abstract a given form of causal influence that an actor instantiates. Second, aggregation operators to move across the levels. Third, discrete event-time maps are required because the system comprises events, and the relation between local event counts and any global clock must be specified. Our formulation here is purposefully simple and discrete.",
+  "authors": [
+   "Tim Gebbie"
+  ],
+  "categories": [
+   "cs.MA",
+   "math.OC",
+   "q-fin.CP"
+  ],
+  "published": "2026-06-01T09:41:31Z",
+  "updated": "2026-06-01T09:41:31Z"
+ },
+ {
+  "id": "2606.01575",
+  "title": "Boom, Bubble, or Buildout? A Multi-Method Evaluation of Whether Artificial Intelligence Is in an Ongoing Financial Bubble",
+  "summary": "The rapid expansion of artificial intelligence (AI) investment has revived a recurrent question in financial economics: are AI-related assets experiencing a bubble, or is the market capitaliz- ing a durable general-purpose technology? This paper develops a hybrid review and diagnostic framework for evaluating whether AI is in an ongoing financial bubble as of May 2026. The analysis begins from asset-pricing foundations in state prices, stochastic discount factors, martingale valuation, and pricing kernels, then connects these foundations to rational bubbles, behavioral bubbles, technology manias, and modern econometric bubble-detection methods. Current evidence shows both genuine fundamentals and bubble-like fragilities. On the fundamental side, realized revenue growth, enterprise adoption, and productivity evidence support a nontrivial share of AI valuations. On the fragile side, capital expenditure has accelerated faster than observed monetization in some layers, private- market valuations are concentrated in a small number of firms, and investor narratives often capitalize future productivity gains before they have appeared in cash flows. The paper proposes a five-pillar diagnostic framework that combines fundamental valuation, residual-exuberance tests, SADF/GSADF explosive-root procedures, LPPL/HLPPL price-pattern diagnostics, sen- timent and issuance measures, and capex-payback analysis. The central conclusion is that AI is best understood as a real technological revolu",
+  "authors": [
+   "Qianan Wang",
+   "Zen Chen"
+  ],
+  "categories": [
+   "q-fin.MF"
+  ],
+  "published": "2026-06-01T02:22:40Z",
+  "updated": "2026-06-01T02:22:40Z"
+ },
+ {
+  "id": "2606.01477",
+  "title": "Avellaneda-Stoikov and Cartea-Jaimungal as One Framework: A Forced Uniqueness Theorem for Inventory Market Making",
+  "summary": "In inventory market making, the running-penalty coefficient $φ$ of the Cartea-Jaimungal framework and the risk-aversion parameter $γ$ of the Avellaneda-Stoikov framework are typically treated as independent free parameters, calibrated separately. We show that they are in fact not independent. A small set of axioms on the market maker's dynamic preference functional, namely cash-additivity, normalization, concavity, strong dynamic consistency, and law-invariance, forces the preference functional to be the entropic certainty-equivalent on liquidation-adjusted terminal wealth, parametrized by a single positive scalar $γ$. The Avellaneda-Stoikov framework is the unique representative of this axiom class. The Cartea-Jaimungal framework is its second-order Taylor expansion in inventory magnitude, with the running coefficient forced to $φ= γσ^2/2$ and (under a mild regularity condition on the liquidation cost) the terminal coefficient forced to $α= \\frac{1}{2}L''(0)$. The two frameworks, typically presented as competing alternatives with the choice between them driven by tractability, are different manifestations of a single underlying object. The forced relation is invertible, $γ= 2φ/σ^2$, giving a consistency cross-check on independently calibrated desk parameters.",
+  "authors": [
+   "Frank M. V. Feys"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "q-fin.RM",
+   "q-fin.TR"
+  ],
+  "published": "2026-05-31T22:32:48Z",
+  "updated": "2026-05-31T22:32:48Z"
+ },
+ {
+  "id": "2606.01356",
+  "title": "A Formally Verified Library of Mathematical Finance in Lean 4",
+  "summary": "We describe a library of mathematical finance built in the Lean 4 proof assistant, on top of Mathlib and the BrownianMotion package. It is broad: more than two hundred sorry-free theorems across eleven areas, from the measure-theoretic foundations of continuous-time stochastic calculus through derivative pricing to applied risk, portfolio, and fixed-income theory, and, to our knowledge, the most comprehensive machine-checked development of mathematical finance to date. Breadth is the setting, not the point. Two things make it more than a catalogue. It reaches into the continuous theory far enough to construct the L2 Itô integral as a bounded linear isometry and to derive, rather than assume, the risk-neutral pricing measure. And it audits its own faithfulness: every result is classified by how its Lean statement relates to the mathematics it claims, and a build-enforced gate pins the axioms each proof actually uses, so a reader can see precisely what has been proved and what has only been proved under added hypotheses. We close with a candid finding: a formal base over classical financial mathematics yields certified unification of known results rather than new financial theory. The contribution is therefore methodological and infrastructural, reusable verified foundations for mathematical finance, together with the faithfulness audit.",
+  "authors": [
+   "Raphael Coelho"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "q-fin.CP"
+  ],
+  "published": "2026-05-31T17:27:29Z",
+  "updated": "2026-05-31T17:27:29Z"
+ },
+ {
+  "id": "2606.01274",
+  "title": "Strategic Users in a Priority Queue with Bulk Service on Blockchains",
+  "summary": "This paper analyzes transaction fees on blockchains by considering that they form a priority queue and users play a queueing game. Using an M/G^K/1 priority queue model, we provide new insights into the dynamics governing transaction fees and their impact on user behavior. We derive semi-closed form expressions for steady-state quantities and extend the relationship between user delay costs and transaction fees to general block generation times. We apply the model to the Bitcoin network and simulate user responses under various scenarios. Cross-chain analysis across Bitcoin, Dogecoin, and Litecoin reveals similarities in normalized cost structures.",
+  "authors": [
+   "Donghwa Seo",
+   "Kyoung-Kuk Kim"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "cs.CR"
+  ],
+  "published": "2026-05-31T14:57:23Z",
+  "updated": "2026-05-31T14:57:23Z"
+ },
+ {
+  "id": "2606.01131",
+  "title": "Tokenized but Illiquid? Evidence from Real-World Asset Markets",
+  "summary": "Real-world asset tokenization is often presented as a mechanism for improving the liquidity of traditionally illiquid assets. However, on-chain representation and secondary-market liquidity are distinct outcomes. This paper examines whether tokenized real-world assets exhibit meaningful observed liquidity and identifies the token characteristics associated with higher market activity. Using token-level data from RWA.xyz and supplemental contract-level observations from Etherscan, the study constructs an Ethereum-based monthly panel of non-stablecoin real-world assets across three prominent categories: U.S. Treasury-backed tokens, gold-backed commodity tokens, and private-credit-related tokens. Liquidity is measured using turnover, active addresses, and an active-month indicator. The empirical design combines descriptive statistics, non-parametric group tests, and exploratory panel regressions suited to short and sparse token histories. The results show substantial heterogeneity across asset categories. Gold-backed tokens exhibit broader holder bases and more persistent on-chain activity than many Treasury and private-credit-related products, while outstanding asset value alone does not reliably predict observed liquidity. The paper contributes to the literature by developing a clearer empirical measurement framework for real-world-asset liquidity and showing that tokenization and liquidity should be analyzed as distinct outcomes.",
+  "authors": [
+   "Rischan Mafrur"
+  ],
+  "categories": [
+   "cs.CE",
+   "q-fin.CP"
+  ],
+  "published": "2026-05-31T10:05:25Z",
+  "updated": "2026-05-31T10:05:25Z"
+ },
+ {
+  "id": "2606.01122",
+  "title": "A Per-Component Diagnostic Protocol for Neural HJB-PIDE Solvers under Control-Dependent Lévy Jumps",
+  "summary": "We propose a five-step diagnostic protocol for residual-trained neural HJB-PIDE solvers with control-dependent Lévy jumps, targeting a general failure mode of neural PDE methods: a learned solution can match headline scalar diagnostics while miscomputing an operator inside its training loss. The protocol pairs each neural solve with at least one from-scratch independent reference, decomposes the Hamiltonian into drift, diffusion, compensator, and nonlocal-integral components across a u-grid, and compares the value function and its low-order derivatives over a (t,x) grid before any argmax comparison. Applied to a standard CRRA-Merton-Variance-Gamma benchmark, it isolates a missing 1/2-mixture factor in the neural method's importance-proposal density that scaled the nonlocal integral by exactly half - a textbook signature of a constant proposal scale error, invisible to longer training, grid refinement, and truncation sweeps. With the bug corrected, four references - two finite-difference solvers with disjoint discretizations, the neural solver, and a semi-analytic scalar baseline obtained from CRRA homogeneity - agree on the optimal control to within ~2%. The constant-coefficient CRRA benchmark collapses by homogeneity to a scalar maximization, so the scalar baseline is the efficient method here; the contribution is the protocol, applicable in principle to non-homogeneous and higher-dimensional settings where neural HJB-PIDE solvers are genuinely needed. The episode is a concr",
+  "authors": [
+   "R. Drissi"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.CP"
+  ],
+  "published": "2026-05-31T09:44:28Z",
+  "updated": "2026-05-31T09:44:28Z"
+ },
+ {
+  "id": "2606.00800",
+  "title": "Multiplicative Langevin Process for Volatilities Produces Observed Q-Variance Regularities",
+  "summary": "Q-variance (so-called) posits a statistical relationship $\\mathbf{E}(σ^2 | z) = σ_0^2 + \\tfrac{1}{2}z^2$ between an asset's volatility $σ^2$, as observed in a time interval $T$, and its (suitably scaled) return $z$ in the same interval. We here show that this relationship is {\\em exactly equivalent} to to positing an Inverse Gamma probability distribution for $σ^2$ itself. We then show that such a distribution is exactly generated by a multiplicative Langevin process with an arbitrary, settable coherence time $τ_c$, so that very nearly the same Q-variance relationship will hold for all $T \\ll τ_c$.",
+  "authors": [
+   "William H. Press",
+   "Alex Dannenberg"
+  ],
+  "categories": [
+   "q-fin.PR",
+   "q-fin.ST"
+  ],
+  "published": "2026-05-30T16:37:09Z",
+  "updated": "2026-05-30T16:37:09Z"
+ },
+ {
+  "id": "2606.00143",
+  "title": "Regime-Adaptive Continual Learning for Portfolio Management",
+  "summary": "Financial markets are inherently non-stationary, exhibiting frequent regime shifts and structural changes that render traditional Portfolio Management (PM) approaches ineffective. Existing remedies, such as rolling-window retraining and naive online fine-tuning, are hindered by high computational costs and insufficient knowledge utilization, respectively, resulting in low returns and limited adaptability. Continual learning (CL) offers a promising paradigm by enabling trading agents to accumulate and transfer knowledge across sequential tasks. In this paper, we propose \\textbf{Re}gime-aware \\textbf{C}ontinual \\textbf{A}daptive \\textbf{P}ortfolio management (\\textbf{ReCAP}), a novel framework that integrates CL into PM to address the challenges of dynamic financial environments. ReCAP employs an adaptive regime detection module to segment historical market data into variable-length regimes, enabling regime-specific learning of policy vectors and the construction of a policy library. During continual trading, a regime-gate module adaptively combines policy vectors from the library based on the current market state, facilitating rapid adaptation to newly detected regimes. Only the regime-gate and the current regime's policy vector are continually updated to preserve useful knowledge effectively. Extensive experiments on five real-world datasets demonstrate that ReCAP consistently outperforms popular baselines, achieving superior returns in long-term investment horizons and rapid",
+  "authors": [
+   "Chaofan Pan",
+   "Lingfei Ren",
+   "Linbo Xiong",
+   "Yonghao Li",
+   "Wei Wei",
+   "Xin Yang"
+  ],
+  "categories": [
+   "q-fin.PM",
+   "cs.AI"
+  ],
+  "published": "2026-05-29T02:24:45Z",
+  "updated": "2026-05-29T02:24:45Z"
+ },
+ {
+  "id": "2606.00061",
+  "title": "Reflexivity as Prompt: Does Awareness of Self-Reinforcing Market Dynamics Improve LLMs as Financial Market Forecasters?",
+  "summary": "We study how frontier large language models (LLMs) behave as financial forecasters during boom-bust market cycles when made progressively aware of Soros's theory of reflexivity. Standard AI-assisted forecasting treats the market as an exogenous system. Reflexivity theory holds otherwise: prices shape fundamentals, and every forecaster is a participative agent in the loop it analyzes. We evaluate three frontier models - GPT5, Claude Sonnet 4.6, and Gemini 3 Pro - under four accumulating zero-shot conditions across two historically distinct episodes: the dot-com bubble (1996-2001) and the global financial crisis (2004-2009). The primary metric is directional forecasting accuracy; we also report the Sharpe ratio of an implied long/cash strategy to capture the risk-adjusted economic value of the forecasts. All inputs are anonymized and normalized to guard against memorization. We find that conditions incorporating reflexivity awareness improve forecasting accuracy differently across models and context windows, revealing that the same theoretical awareness can produce qualitatively different forecasting behavior across frontier LLMs.",
+  "authors": [
+   "Eugene Park"
+  ],
+  "categories": [
+   "q-fin.ST",
+   "q-fin.TR"
+  ],
+  "published": "2026-05-19T18:10:07Z",
+  "updated": "2026-05-19T18:10:07Z"
+ },
+ {
+  "id": "2606.00060",
+  "title": "Machine Learning-Based Bitcoin Trading Under Transaction Costs: Evidence From Walk-Forward Forecasting",
+  "summary": "This paper investigates whether machine learning forecasts of hourly BTC-USDT returns can be converted into economically meaningful trading performance after transaction costs. Using approximately 70,000 hourly observations from 2018-2026, XGBoost, LSTM, and iTransformer are evaluated in a 27-fold walk-forward protocol. All three models produce positive gross trading performance in selected configurations, but naive sign-based strategies fail once transaction costs of ten basis points are imposed. A cost-aware execution filter, which prevents trades only when the forecast magnitude exceeds a transaction-cost-based threshold, sharply reduces turnover and restores profitability in selected configurations. The strongest long-only XGBoost strategy produces annualised returns above 65% with a Sharpe ratio above one. Additional tests show that technical indicators improve performance in selected cases, EGARCH-derived features do not provide uniformly robust gains, and XGBoost is descriptively stronger than the neural alternatives, although bootstrap evidence does not support formal statistical dominance. Loss-function and model-selection effects are secondary and statistically fragile. The results show that the main obstacle in hourly cryptocurrency trading is not only weak predictability, but also the way forecasts are converted into trades.",
+  "authors": [
+   "Andrei Bysik",
+   "Robert Ślepaczuk"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "cs.CE",
+   "cs.LG"
+  ],
+  "published": "2026-05-19T14:30:49Z",
+  "updated": "2026-05-19T14:30:49Z"
+ }
+]
