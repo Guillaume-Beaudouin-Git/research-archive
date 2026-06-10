@@ -1,0 +1,52 @@
+{
+  "verdict": "NULL \u2014 J1 stays",
+  "best": null,
+  "decisions": [
+    {
+      "arm": "A_raw",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": 2.7662337662337664,
+      "dp": -0.015151515151515152
+    },
+    {
+      "arm": "A_iso",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": -0.8441558441558441,
+      "dp": -0.010822510822510822
+    },
+    {
+      "arm": "B_raw",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": 1.0389610389610389,
+      "dp": 0.0
+    },
+    {
+      "arm": "C_raw",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": -87.57142857142857,
+      "dp": -0.07575757575757576
+    },
+    {
+      "arm": "C_iso",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": -97.79220779220779,
+      "dp": -0.0735930735930736
+    }
+  ],
+  "VAL": 1422.0
+}

@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "605f4a426da3eac4f5a2644bca774a07f1e5f754",
+  "commit_subject": "ftmo v2.2 contractual re-run — ORB challenge-OFF + micro-ORB day-counter (one frozen change)",
+  "pinned_at": "2026-06-10T21:00+02:00",
+  "sha256": {
+    "v22/engine_v22.py": "948cd1056927018650e2148087c01a02ed2891ec599f92745dd49f13fc3545eb",
+    "v22/config_v22.py": "2cf5bd4f93c2e27176548c05c8c6ef0d40ea7d87d189ec7f57fd3b902d9af997",
+    "audit_v2_independent/cleanroom/engine.py": "40d5bba53e187445e703ec277da84cd41f29f0101b103e073f468ee361d1afd1",
+    "cache/sim_m5_repaired.parquet": "d0b9d02dc2aee66f87e5baa6a5c4688fa6241434fd2f484a375d4a4b1b31f2ca"
+  },
+  "canonical_table": "v22/tables/v22_challenge_91.csv",
+  "anchors": {"p_IS": 0.906, "p_OOS": 0.834, "p_pooled": 0.870, "attempts": 3.24,
+              "micro_poses": 9248, "backstop": 50},
+  "ev_convention": {"VAL": 1422.0, "FEE": 96.0,
+                    "source": "PORTFOLIOS_v2.2.md — VAL re-derived $96 + 0.8 x $1,658"}
+}
