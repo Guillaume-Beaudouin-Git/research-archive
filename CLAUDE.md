@@ -76,6 +76,10 @@ Communique en français et en anglais.
 - NQ live: `Futures/live/strategy_c_live/` (config, tradovate_client, signal_engine, guardrails)
 - Active research: `<AssetClass>/research/active/`
 - Archived research: `<AssetClass>/research/archived/`
+- Programmes propfirm (clos): `PropFirms/<firm>/program_<date>/` — le programme FTMO 10k juin 2026
+  (memo + funnel v1/v2 + portfolio_audit + survivors_book + ftmo_research + alpha_program + …)
+  est consolidé dans `PropFirms/ftmo/program_2026-06/` (P2 2026-06-10 ; anciens chemins
+  `research/`, `data/ftmo_research/`, `PropFirms/ftmo_*` — citations historiques non réécrites).
 - Portfolio state: `Portfolio/state/portfolio_state.py`
 - Automation:
   - `_automation/alpha_hunt/`: scraper pipeline, `promising/` items staged for feasibility
@@ -90,9 +94,13 @@ Communique en français et en anglais.
     `_cache_duka`, `data/*.txt`).
   - Un subset (plage plus courte) se supprime après migration de ses consommateurs — SAUF provenance
     d'une stratégie validée (ex : NQ Kaggle parquet = data de validation historique de C).
-  - Cleanup P0+P1 exécuté 2026-06-10 (tag `pre-cleanup-2026-06-10`, .git 2.1Go→52Mo via gc).
-    P2 NON exécuté (consolidation FTMO/mtf/audits + migration m5_indices→deep_history_utc) :
-    voir `_audit/cleanup_recap_2026-06-10.md` §3 et `scripts/cleanup_dedup_2026-06-10.sh`.
+  - Cleanup P0+P1+P2 exécutés 2026-06-10 (tag `pre-cleanup-2026-06-10`, .git 2.1Go→~65Mo).
+    P2 : 13 M1 m5_indices supprimés (vérifiés ⊂ deep_history POST-réparation des trous US500/US100/
+    GER40), consolidations FTMO/mtf/audits/docs/oxfordstrat. CONSERVÉS sans superset : US2000_M1.csv,
+    panels parquet EET (`*_m1_panel.parquet`), binance/. Détail : `_audit/cleanup_recap_2026-06-10.md`.
+  - deep_history_utc RÉPARÉ 2026-06-10 (trous 2018-2021 US500/US100/GER40 backfillés Dukascopy,
+    seams 4/4 PASS ≤1.3bps, MANIFEST machine-généré). Originaux : `*_M1.csv.pre_repair_backup`
+    (~1.1Go, à conserver — reproductibilité announcement_premium).
 
 ## Python envs
 - Research: /usr/bin/python3
@@ -110,10 +118,11 @@ Communique en français et en anglais.
   - `10 0,8,16 * * *` — Strategy B delta-neutral (source .env pattern, propre)
   - `*/2 13-17 * * 1-5` — Strategy C watchdog_check.sh (×2 lignes — DOUBLON, à dédupliquer)
   - `30 6 * * 1-5` — `fetch_arxiv.sh` (sans redirection log, silent fail)
-  - `*/30 * * * *` — `fetch_alpha_sources.sh`
-    NOTE 2026-06-10 : `_automation/alpha_hunt/_raw/` est désormais gitignoré (audit dédup — 990 Mo
-    de XML étaient commités). Vérifier que la routine alpha-hunt ne fait pas `git add -f`.
-    Dernier XML reçu localement : 2026-06-02 02:50 — flux possiblement interrompu, à vérifier sur VPS.
+  - `*/30 * * * *` — `fetch_alpha_sources.sh` — PATCHÉ 2026-06-10 : distillation sur le VPS
+    (process_raw_filter.py après fetch), push limité à `_seen/` + `_staging/` (anti-churn _stats.json),
+    XML VPS-local purge >7j. La chaîne n'a JAMAIS été en panne (le "dernier XML 02/06" = repo local
+    pas pullé). Reddit ×3 en 429 chronique (UA bloqué). Log : `logs/alpha_hunt_fetch.log` (VPS).
+    TODO : `fetch_arxiv.sh` pousse encore du raw XML (`_automation/arxiv/_raw/`, 1/j) — même patch applicable.
   - `@reboot sleep 30 && screen -dmS mt5 start_mt5.sh`
 - Crons MANQUANTES vs ce qu'annonçait CLAUDE.md historique :
   - aucune cron NQ paper `25 13 * * 1-5` / `25 14 * * 1-5` n'existe — Strategy C n'est pas automatisée (cohérent avec "execution not started").
@@ -249,9 +258,11 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
 - NQ 1-min: `data/raw/NQ_1min_databento_2010-2026.parquet` (CANONIQUE, source GLBX dbn.zst) +
   `data/raw/NQ_1min_2022-12-26_2025-12-11.parquet` (ex-Kaggle — provenance de la validation
   historique de C, à conserver ; le CSV Kaggle d'origine n'existe plus)
-- FX/indices M1 canonique: `data/deep_history_utc/` (true UTC 2007→2026-06, spread calibré, MANIFEST.md).
-  ⚠ `data/panels/m5_indices/*_M1.csv` = ancien export MT5 (EET mislabelé UTC), subset 2022-2025 —
-  encore référencé par du code actif, suppression en P2 après migration.
+- FX/indices M1 canonique: `data/deep_history_utc/` (true UTC 2007→2026-06, spread calibré,
+  MANIFEST machine-généré, trous 2018-2021 réparés 2026-06-10).
+  m5_indices (P2 fait) : 13 M1 EET supprimés ; restent `US2000_M1.csv` (pas de superset),
+  `binance/` (crypto M1), panels parquet EET (`*_m1_panel.parquet`, consommés par code actif —
+  migration tz à prévoir, cf. `_audit/m5_indices_migration_checklist_2026-06-10.md`).
 - Commodity futures: yfinance =F tickers (CL=F, GC=F, …) — continuous front-month
 - FX M5: Dukascopy bi5 custom decoder in `Forex/research/archived/strategy_e_fix_flow/data_setup.py`
   + `Forex/data/dukascopy_downloader_m5.py`. DL speed: ~12min/pair-year, 4 threads.
@@ -292,7 +303,7 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
   under study. Pre-registration in progress.
   `Futures/research/active/nq_intraday/analysis/` (canonique signals)
   Pré-registration : `Futures/research/active/strategy_d/hypotheses_preregistered.md`
-  Infra paper (non rangée, à trancher) : `Futures/research/active/strategy_d_nq/infra/`
+  Infra paper fusionnée (P2 2026-06-10) : `Futures/research/active/strategy_d/infra/` (ex strategy_d_nq).
   Budget: 3 mods, 0 consumed.
 - **Commodities XS — Basis + TSMOM** (n≤279): S_TSMOM (Moskowitz 2012) + S_BASIS
   (Erb-Harvey 2006), 24 continuous contracts, monthly CS IC scan.
@@ -309,15 +320,14 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
   Note MDD -13% > limite FTMO 10% → en l'état BREACH du challenge.
 - CIP-EOQ (FX) — **ARCHIVÉ** : `Forex/research/archived/cip_eoq/` (POSTMORTEM.md).
   La copie `active/cip_eoq` était un doublon exact de l'archivé — supprimée au cleanup 2026-06-10.
-- **FX intraday deepdive (sub-60min FX/XAU/BTC)** — `research/fx_intraday_deepdive/` (emplacement
-  racine temporaire, déplacement vers `Forex/research/active/` prévu en P2). Suite de l'axe laissé
-  ouvert par le decision memo FTMO 2026-06-08 (`research/PROGRAM_DECISION_MEMO.md` : do-not-fund
-  sur free price data / 16 instruments / N≈100 ; sub-60min FX non testé).
+- **FX intraday deepdive (sub-60min FX/XAU/BTC)** — `Forex/research/active/fx_intraday_deepdive/`
+  (déplacé en P2 depuis research/, cache intact, chemins exécutables relatifs ✓). Suite de l'axe
+  laissé ouvert par le decision memo FTMO 2026-06-08 (`PropFirms/ftmo/program_2026-06/
+  PROGRAM_DECISION_MEMO.md` : do-not-fund sur free price data / 16 instruments / N≈100).
 - **ZN Baltussen (Futures)** — bond futures momentum.
   `Futures/research/active/zn_baltussen/` (tests/, sigma_estimation/).
-- **NQ intraday VWAP (Strategy D iter_01)** — `Futures/research/active/nq_intraday_vwap/`
-  iter_01_summary.md verdict : "FAIL — INSUFFICIENT SAMPLE (N=19 over 3 years)".
-  n_tests=130 — convention de nommage à clarifier vs nq_intraday/.
+- NQ intraday VWAP (Strategy D iter_01) — **ARCHIVÉ en P2** : `Futures/research/archived/nq_intraday_vwap/`
+  (verdict "FAIL — INSUFFICIENT SAMPLE, N=19 over 3 years", n_tests=130).
 - **Token unlocks (Crypto)** — bootstrap seul, vide.
   `Crypto/research/active/token_unlocks/_bootstrap_notes.md`.
 - **VRP short gamma (Crypto)** — bootstrap seul, vide.
