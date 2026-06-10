@@ -18,6 +18,16 @@ log() {
 
 log "=== Fetch start for $DATE ==="
 
+# Serialize repo git operations across fetch crons. 2026-06-09 postmortem: arxiv
+# (30 6) and alpha_hunt (*/30) both pulled at 06:30:01 → polluted FETCH_HEAD →
+# 'fatal: Cannot rebase onto multiple branches', chain dead since. Shared lock
+# with fetch_alpha_sources.sh.
+exec 9>"$HOME/.algo_git.lock"
+if ! flock -w 180 9; then
+  log "ERROR: git lock timeout (another fetch cron holds it)"
+  exit 1
+fi
+
 cd "$REPO_DIR"
 
 if ! git pull --rebase --autostash origin main >> "$LOG_FILE" 2>&1; then
@@ -43,14 +53,21 @@ fi
 
 log "Fetched OK: $SIZE bytes, $ENTRIES entries"
 
-git add "$OUT_FILE"
+# Distill: XML → _staging/<date>.json (new entries only — cloud routine owns _seen)
+python3 "$REPO_DIR/_automation/arxiv/process_arxiv_raw.py" >> "$LOG_FILE" 2>&1 \
+  || log "WARN process_arxiv_raw.py failed"
+
+# Raw XMLs stay VPS-local (gitignored since 2026-06-10), purge old ones
+find "$RAW_DIR" -name '*.xml' -mtime +7 -delete 2>/dev/null || true
+
+git add _automation/arxiv/_staging
 if git diff --cached --quiet; then
-  log "No changes to commit"
+  log "No new distilled entries, nothing to commit"
   exit 0
 fi
 
 git -c user.email="vps@algo-claude" -c user.name="VPS arxiv fetcher" \
-  commit -m "data: arxiv q-fin raw fetch ${DATE} (${ENTRIES} entries)" >> "$LOG_FILE" 2>&1
+  commit -m "data: arxiv distilled fetch ${DATE}" >> "$LOG_FILE" 2>&1
 
 if git push origin main >> "$LOG_FILE" 2>&1; then
   log "Pushed to GitHub successfully"
