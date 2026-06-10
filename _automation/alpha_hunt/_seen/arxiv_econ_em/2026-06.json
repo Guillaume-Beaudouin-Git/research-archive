@@ -376,5 +376,12 @@
     "title": "Lagrange multipliers in Maximum likelihood estimations and Least squares problem",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "fec9f094b7c0c8a7e40f830f1df441d0": {
+    "first_seen": "2026-06-10 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Failure Modes of Deep Multi-Agent RL in Asynchronous Pricing: Reproducible Trigg",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   }
 }
