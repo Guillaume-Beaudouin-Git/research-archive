@@ -1,10 +1,10 @@
 fix,subset,N,gross_bps,net_bps,gross_t,net_t,gross_SR,net_SR
-london,ALL,2171,0.45,-1.78,1.35,-5.27,0.46,-1.82
-london,EOM (last 3 b-days),303,1.42,-0.81,1.6,-0.91,1.45,-0.83
-london,QoQ-EOM (Mar/Jun/Sep/Dec last 3),99,0.85,-1.38,0.53,-0.86,0.82,-1.32
-ecb,ALL,2164,0.19,-2.04,0.96,-10.39,0.32,-3.45
-ecb,EOM (last 3 b-days),303,0.77,-1.46,1.37,-2.6,1.23,-2.34
-ecb,QoQ-EOM (Mar/Jun/Sep/Dec last 3),99,-0.07,-2.3,-0.1,-3.04,-0.12,-3.72
-tokyo,ALL,2133,0.03,-5.56,0.2,-41.24,0.07,-15.13
-tokyo,EOM (last 3 b-days),303,0.34,-5.25,1.4,-21.66,1.19,-18.46
-tokyo,QoQ-EOM (Mar/Jun/Sep/Dec last 3),99,0.5,-5.09,1.29,-13.18,1.83,-18.64
+london,ALL,5022,0.05,-2.43,0.28,-12.69,0.06,-2.89
+london,EOM (last 3 b-days),702,-0.27,-2.75,-0.52,-5.25,-0.3,-3.01
+london,QoQ-EOM (Mar/Jun/Sep/Dec last 3),234,0.18,-2.3,0.24,-3.05,0.2,-2.55
+ecb,ALL,5023,-0.03,-2.51,-0.1,-8.95,-0.02,-1.99
+ecb,EOM (last 3 b-days),702,-0.17,-2.65,-0.23,-3.56,-0.15,-2.35
+ecb,QoQ-EOM (Mar/Jun/Sep/Dec last 3),234,-0.61,-3.09,-0.58,-2.94,-0.66,-3.32
+tokyo,ALL,4994,0.19,-2.73,1.54,-22.39,0.34,-4.91
+tokyo,EOM (last 3 b-days),702,-0.17,-3.09,-0.55,-9.84,-0.3,-5.47
+tokyo,QoQ-EOM (Mar/Jun/Sep/Dec last 3),234,-0.21,-3.13,-0.49,-7.36,-0.39,-5.88
