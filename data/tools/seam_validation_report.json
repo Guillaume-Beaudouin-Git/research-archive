@@ -1,0 +1,200 @@
+[
+  {
+    "symbol": "US500",
+    "dense_mt5_start": "2021-09-14 00:00:00",
+    "overlap_by_shift_min": {
+      "-60": {
+        "n_days": 531,
+        "median_bps": 6.784,
+        "mean_bps": 10.037,
+        "max_bps": 100.302
+      },
+      "0": {
+        "n_days": 531,
+        "median_bps": 1.122,
+        "mean_bps": 2.832,
+        "max_bps": 34.97
+      },
+      "60": {
+        "n_days": 493,
+        "median_bps": 6.104,
+        "mean_bps": 9.503,
+        "max_bps": 82.107
+      }
+    },
+    "gate_median_bps": 1.122,
+    "tz_shift_signature": false,
+    "assembled_rows": 4034473,
+    "monotonic": true,
+    "duplicate_timestamps": 0,
+    "seam": {
+      "boundary": "2021-09-14 00:00:00",
+      "step_bps": 8.6,
+      "gap_minutes": 1.0
+    },
+    "bars_per_day_around_seam": {
+      "2021-09-07": 1264,
+      "2021-09-08": 1282,
+      "2021-09-09": 1308,
+      "2021-09-10": 1165,
+      "2021-09-12": 112,
+      "2021-09-13": 1307,
+      "2021-09-14": 1155,
+      "2021-09-15": 1311,
+      "2021-09-16": 1317,
+      "2021-09-17": 1239,
+      "2021-09-19": 120,
+      "2021-09-20": 1365,
+      "2021-09-21": 1364
+    },
+    "status": "PASS"
+  },
+  {
+    "symbol": "US100",
+    "dense_mt5_start": "2021-09-14 00:00:00",
+    "overlap_by_shift_min": {
+      "-60": {
+        "n_days": 531,
+        "median_bps": 8.708,
+        "mean_bps": 12.697,
+        "max_bps": 100.372
+      },
+      "0": {
+        "n_days": 531,
+        "median_bps": 0.885,
+        "mean_bps": 2.416,
+        "max_bps": 37.902
+      },
+      "60": {
+        "n_days": 493,
+        "median_bps": 7.389,
+        "mean_bps": 12.29,
+        "max_bps": 117.937
+      }
+    },
+    "gate_median_bps": 0.885,
+    "tz_shift_signature": false,
+    "assembled_rows": 4081738,
+    "monotonic": true,
+    "duplicate_timestamps": 0,
+    "seam": {
+      "boundary": "2021-09-14 00:00:00",
+      "step_bps": 10.37,
+      "gap_minutes": 1.0
+    },
+    "bars_per_day_around_seam": {
+      "2021-09-07": 1335,
+      "2021-09-08": 1335,
+      "2021-09-09": 1335,
+      "2021-09-10": 1215,
+      "2021-09-12": 120,
+      "2021-09-13": 1335,
+      "2021-09-14": 979,
+      "2021-09-15": 1365,
+      "2021-09-16": 1365,
+      "2021-09-17": 1250,
+      "2021-09-19": 120,
+      "2021-09-20": 1365,
+      "2021-09-21": 1365
+    },
+    "status": "PASS"
+  },
+  {
+    "symbol": "GER40",
+    "dense_mt5_start": "2021-12-28 00:00:00",
+    "overlap_by_shift_min": {
+      "-60": {
+        "n_days": 428,
+        "median_bps": 8.154,
+        "mean_bps": 12.004,
+        "max_bps": 151.044
+      },
+      "0": {
+        "n_days": 428,
+        "median_bps": 1.295,
+        "mean_bps": 2.331,
+        "max_bps": 41.779
+      },
+      "60": {
+        "n_days": 394,
+        "median_bps": 4.817,
+        "mean_bps": 6.563,
+        "max_bps": 52.507
+      }
+    },
+    "gate_median_bps": 1.295,
+    "tz_shift_signature": false,
+    "assembled_rows": 3840291,
+    "monotonic": true,
+    "duplicate_timestamps": 0,
+    "seam": {
+      "boundary": "2021-12-28 00:00:00",
+      "step_bps": 14.21,
+      "gap_minutes": 2.0
+    },
+    "bars_per_day_around_seam": {
+      "2021-12-21": 1314,
+      "2021-12-22": 1278,
+      "2021-12-23": 1186,
+      "2021-12-26": 58,
+      "2021-12-27": 1218,
+      "2021-12-28": 569,
+      "2021-12-29": 1282,
+      "2021-12-30": 1229,
+      "2021-12-31": 1248,
+      "2022-01-03": 1266,
+      "2022-01-04": 1301
+    },
+    "status": "PASS"
+  },
+  {
+    "symbol": "EURGBP",
+    "dense_mt5_start": "2021-12-15 00:00:00",
+    "overlap_by_shift_min": {
+      "-60": {
+        "n_days": 461,
+        "median_bps": 2.22,
+        "mean_bps": 3.125,
+        "max_bps": 27.739
+      },
+      "0": {
+        "n_days": 461,
+        "median_bps": 0.362,
+        "mean_bps": 0.687,
+        "max_bps": 11.868
+      },
+      "60": {
+        "n_days": 461,
+        "median_bps": 2.041,
+        "mean_bps": 2.952,
+        "max_bps": 30.606
+      }
+    },
+    "gate_median_bps": 0.362,
+    "tz_shift_signature": false,
+    "assembled_rows": 7259257,
+    "monotonic": true,
+    "duplicate_timestamps": 0,
+    "seam": {
+      "boundary": "2021-12-15 00:00:00",
+      "step_bps": 0.94,
+      "gap_minutes": 1.0
+    },
+    "bars_per_day_around_seam": {
+      "2021-12-08": 1440,
+      "2021-12-09": 1436,
+      "2021-12-10": 1320,
+      "2021-12-12": 113,
+      "2021-12-13": 1430,
+      "2021-12-14": 1432,
+      "2021-12-15": 1439,
+      "2021-12-16": 1440,
+      "2021-12-17": 1320,
+      "2021-12-19": 120,
+      "2021-12-20": 1440,
+      "2021-12-21": 1440,
+      "2021-12-22": 1439
+    },
+    "status": "PASS"
+  }
+]
