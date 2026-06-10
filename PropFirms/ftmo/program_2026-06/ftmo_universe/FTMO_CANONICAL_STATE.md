@@ -181,6 +181,26 @@ frais (interdit par la charte) ou un autre container.**
   objectif à chaque changement de mandat.
 
 
+### NOTE DE RÉOUVERTURE FORMELLE v2.1 (2026-06-10 — appliquée depuis CANONICAL_AMENDMENT_PENDING.md, bloquée à l'origine par dossier non monté ; exigée par le contre-audit équipe v2.1, point 6)
+
+Le verdict « CONFIRMÉ-CLOS, ne pas rouvrir sans preuve dure (§6) » a été levé dans ce cycle sous :
+(a) **mandat MD explicite** (portefeuille multi-sleeves, horloges 6→3 mois, ML autorisé) ;
+(b) **condition de réouverture #2 partiellement satisfaite PAR MESURE** : spread US100 à l'auction
+mesuré 0.5 bps (518 jours M1), puis swaps/marges validés au terminal MT5 démo (modèle ±10%) —
+le démo-60-trades reste un gate de déploiement, re-spécifié v2.1 : slippage ACTIF sur fills
+16:00-16:30 Paris, ≥60 trades, logs commitées ;
+(c) **changement d'objet** : v2.1 établit que le headline challenge ne repose PAS sur l'ORB
+(compteur de jours ; P&L = −2.6 pts ; deadlock min-trading-days patché par token-trade) mais sur
+l'overnight (+12.1 pts d'ablation iso-reste) + le séquencement variance/retries.
+
+Les conditions #3 (OOS post-2026) et #4 (DSR>1 au niveau challenge) restent NON satisfaites au
+sens strict — statut canonique : **« OUVERT SOUS CONDITIONS, v2.1 »**, pas « prouvé ».
+Chiffres contractuels v2.1 (mono-stack, regen_all.py) : challenge pooled **84.8%** (IS 86.7 /
+OOS 83.0), valeur funded **$1,204**, **EV +$699/campagne** ; plancher pessimiste si ORB mort au
+coût réel : ~87% (token) / extraction $1,262 / **EV +$295**. Caveat ouvert : DSR 0.29 de la
+sélection midweek overnight (grille 40 cellules) — sensibilité all-nights à trancher avant
+signature. Conforme : réconciliation > régénération.
+
 ### Amendement v2.2 (2026-06-10, soir) — RÉOUVERTURE DOCUMENTÉE : audit BLOCKED + re-run contractuel
 
 - **Audit indépendant clean-room du rapport v2.0** (`data/ftmo_portfolio/audit_v2_independent/`,
@@ -209,3 +229,20 @@ frais (interdit par la charte) ou un autre container.**
 - Gates live inchangés (audit) : test swap overnight EN COURS ; démo 3 semaines ; EA MT5 +
   réconciliation ; budget 4+ fees ; clause 7.3. **Le statut opérationnel reste : OUVERT
   conditionnel aux gates live — aucun lancement avant leur passage.**
+
+### Amendement v2.2-résidus (2026-06-10, clôture) — §9 RAPPORT_MESURE re-scopé + branches exactes
+
+- **§9 du RAPPORT_MESURE_us100_execution_cost_v1 AMENDÉ** (fichier hôte hors repo — amendement
+  canonique : `data/ftmo_portfolio/v22/AMENDEMENT_RAPPORT_MESURE_s9.md`, à insérer verbatim à la
+  synchro) : **branche kill (>1.5 bps → ORB off) RETIRÉE**, re-scopée par 605f4a4 — l'ORB ne peut
+  plus tuer le challenge (insensible par construction, ancres non-régression en garde). Le verdict
+  N=60 = valeur d'`ORB_RT_BPS` + re-run section funded ; EV rapportée à la valeur mesurée. Aucun
+  ré-ancrage avant N=60 (règle pré-enregistrée maintenue, era = défaut jusqu'au 15/06).
+- **Branches N=60 re-calculées EXACTES sur ledger** (ftmo_research/ monté — le rerun pendant de
+  PORTFOLIOS.md est fait ; approximation équipe validée à +0.3%) : 0.61 bps → funded OOS $2,897,
+  EV +$1,125 ; 1.0 → $2,807, +$1,063 ; 1.5 → $2,578, +$965 ; era → $2,632, +$926 ; ORB-mort →
+  $1,262, ≈ +$295-310. **L'EV est positive sur tout le domaine de mesure.**
+- vm sweep v2.2 vérifié (résidu #1 du contre-audit) : provenance fraîche confirmée (colonne micro,
+  n=462) ; granularité complétée vm13 86.2 / vm15 87.7 → **plateau lisse autour de vm14 (87.0)**,
+  voisins ±2-4 vm à −2.4/−3.2 pts, TOUS les deltas appariés CI95 ⊃ 0 — pas de knife-edge, pas de
+  chiffre hérité.
