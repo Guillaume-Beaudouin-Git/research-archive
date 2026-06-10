@@ -78,3 +78,9 @@ régénéré dans ce run — rien d'hérité des documents v2.0/v2.1. CIs = bloc
 
 *Tables : v22/tables/*.csv. Reproduction : `python3 run_battery.py` puis
 `python3 run_pathboot.py` (lecture seule hors v22/).*
+
+**Spec exécutable (gel EA)** : `spec_v22.yaml`, GÉNÉRÉ depuis `config_v22.py` par
+`make_spec_yaml.py` (byte-identique, sha256 en ancre #19 — ne jamais éditer à la main).
+Baseline épinglée : `605f4a42…` + `4e1bac5c…` (remplace toute référence baseline v2.1).
+Le compteur de jours de l'EA = la règle MICRO-ORB du yaml (sémantique 605f4a4), pas un
+token arbitraire ; le backstop no-signal y est spécifié séparément (incidence sim 50/13k).

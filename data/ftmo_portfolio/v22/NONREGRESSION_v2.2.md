@@ -23,6 +23,7 @@ stack gelé ; /usr/bin/python3. Toute future modification doit re-passer CE fich
 | 17 | borne théorique compteur | micro-ORB coûte ≤ 2 pts vs token idéal (87.0 vs 88.3) | Δ ∈ [0 ; 2.5] |
 
 | 18 | branches ORB_RT_BPS (rerun exact ledger) | 0.61→OOS $2,897 EV +$1,125 ; 1.0→$2,807 +$1,063 ; 1.5→$2,578 +$965 ; off→$1,262 +$295-310 | ±10% ; EV > 0 sur tout le domaine |
+| 19 | `make_spec_yaml.py` | spec_v22.yaml régénéré BYTE-IDENTIQUE, sha256 `dd6ab12680208c4e71ea34f83c254e9246e93e2c55d257ebad8e800b70c500ac` ; drift-check configs PASS | toute divergence = la spec a bougé sans re-gel → STOP ; ne JAMAIS éditer le yaml à la main |
 
 **Procédure ORB_RT_BPS (verdict démo N=60, §9 RAPPORT_MESURE amendé — branche kill RETIRÉE,
 cf. AMENDEMENT_RAPPORT_MESURE_s9.md)** : éditer `config_v22.py:ORB_RT_BPS` (float bps all-in
