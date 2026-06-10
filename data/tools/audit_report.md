@@ -1,6 +1,6 @@
 # Bar-density audit — `data/deep_history_utc`
 
-**Generated:** 2026-06-10 00:54 by `/usr/bin/python3 data/tools/audit_bar_density.py` (read-only).
+**Generated:** 2026-06-10 02:12 by `/usr/bin/python3 data/tools/audit_bar_density.py` (read-only).
 **Rule:** flag day if bars < 50% of instrument median (over weekdays with ≥1 bar); contiguous flagged runs classified (a) holiday / (b) floor / (d) structural segment / **(c) ANOMALY**.
 **Known by design:** US2000 absent from estate (Dukascopy floor 2018-08-08 > MT5 start 2018-01-23 — backfill impossible, class (b)).
 
@@ -8,25 +8,25 @@
 
 | instrument | coverage | median bars/d | flagged days | (c) anomaly windows | worst anomaly |
 |---|---|--:|--:|--:|---|
-| GER40 | 2013-09-30→2026-06-05 | 1151 | 898 | 58 | 2019-12-30→2021-12-28 (522 wd, 8.5 b/d) |
 | OJUICE | 2017-10-20→2026-06-05 | 240 | 149 | 52 | 2024-05-29→2024-06-03 (4 wd, 72.0 b/d) |
 | XAGUSD | 2003-08-08→2026-06-05 | 1320 | 463 | 43 | 2004-12-14→2005-01-03 (15 wd, 458.1 b/d) |
 | UKOIL | 2010-12-02→2026-06-05 | 1233 | 251 | 37 | 2011-10-19→2012-01-19 (67 wd, 6.3 b/d) |
 | USOIL | 2013-01-01→2026-06-05 | 1315 | 101 | 32 | 2014-06-09→2014-06-16 (6 wd, 232.5 b/d) |
 | SUGAR | 2017-10-02→2026-06-05 | 492 | 106 | 21 | 2017-11-15→2017-11-16 (2 wd, 0.0 b/d) |
-| US500 | 2012-01-16→2026-06-05 | 841 | 1344 | 20 | 2018-01-01→2021-09-13 (966 wd, 4.5 b/d) |
+| US500 | 2012-01-16→2026-06-05 | 1233 | 444 | 19 | 2013-04-22→2013-05-09 (14 wd, 391.4 b/d) |
 | COCOA | 2017-10-20→2026-06-05 | 476 | 132 | 12 | 2018-03-14→2018-05-07 (39 wd, 4.6 b/d) |
 | COFFEE | 2017-12-04→2026-06-05 | 535 | 97 | 12 | 2018-02-05→2018-02-05 (1 wd, 207.0 b/d) |
 | COPPER | 2012-03-02→2026-06-07 | 1228 | 72 | 11 | 2012-07-16→2012-07-16 (1 wd, 572.0 b/d) |
 | AUDUSD | 2007-01-01→2026-06-05 | 1439 | 42 | 9 | 2007-10-18→2007-10-19 (2 wd, 650.5 b/d) |
-| US100 | 2013-01-01→2026-06-05 | 898 | 1119 | 7 | 2018-01-01→2021-09-13 (966 wd, 4.5 b/d) |
+| GER40 | 2013-09-30→2026-06-05 | 1272 | 94 | 7 | 2014-01-27→2014-02-06 (9 wd, 510.9 b/d) |
 | COTTON | 2017-10-20→2026-06-05 | 826 | 117 | 6 | 2019-02-28→2019-03-04 (3 wd, 1.7 b/d) |
+| US100 | 2013-01-01→2026-06-05 | 1328 | 198 | 6 | 2014-01-27→2014-02-07 (10 wd, 325.8 b/d) |
 | SOYBEAN | 2017-12-01→2026-06-05 | 867 | 143 | 5 | 2018-02-02→2018-02-05 (2 wd, 391.0 b/d) |
 | US30 | 2013-09-30→2026-06-05 | 1318 | 92 | 5 | 2014-01-27→2014-02-07 (10 wd, 337.1 b/d) |
 | DIESEL | 2017-12-26→2026-06-05 | 1144 | 37 | 3 | 2018-04-12→2018-04-17 (4 wd, 58.8 b/d) |
-| EURGBP | 2007-01-01→2026-06-05 | 1440 | 26 | 1 | 2018-01-04→2018-01-08 (3 wd, 0.0 b/d) |
 | NGAS | 2012-09-02→2026-06-05 | 1041 | 54 | 1 | 2016-10-19→2016-10-19 (1 wd, 371.0 b/d) |
 | AUDJPY | 2007-01-01→2026-06-05 | 1440 | 21 | 0 | — |
+| EURGBP | 2007-01-01→2026-06-05 | 1440 | 22 | 0 | — |
 | EURJPY | 2007-01-01→2026-06-05 | 1440 | 21 | 0 | — |
 | EURUSD | 2007-01-01→2026-06-05 | 1440 | 21 | 0 | — |
 | GBPUSD | 2007-01-01→2026-06-05 | 1440 | 21 | 0 | — |
@@ -209,17 +209,15 @@ yearly median bars/day: 2017: 1132, 2018: 1195, 2019: 1194, 2020: 1193, 2021: 10
 
 ## EURGBP
 
-rows 7,252,687 · coverage 2007-01-01 → 2026-06-05 · median 1440 bars/day · threshold 720.0 · flagged 26 days
+rows 7,259,257 · coverage 2007-01-01 → 2026-06-05 · median 1440 bars/day · threshold 720.0 · flagged 22 days
 
 yearly median bars/day: 2007: 1440, 2008: 1440, 2009: 1440, 2010: 1440, 2011: 1440, 2012: 1440, 2013: 1439, 2014: 1439, 2015: 1440, 2016: 1440, 2017: 1440, 2018: 1440, 2019: 1438, 2020: 1436, 2021: 1429, 2022: 1439, 2023: 1438, 2024: 1439, 2025: 1433, 2026: 1432
 
 | window | weekdays | zero | mean bars | class | note |
 |---|--:|--:|--:|---|---|
-| 2018-01-01 → 2018-01-02 | 2 | 2 | 0.0 | (a) holiday | 1/2 days on holiday calendar |
-| 2018-01-04 → 2018-01-08 | 3 | 3 | 0.0 | (c) ANOMALY | hole (zero/stray bars) |
 | 2020-01-01 → 2020-01-02 | 2 | 1 | 59.0 | (a) holiday | 1/2 days on holiday calendar |
 
-(+19 single-day holiday/floor flags not listed)
+(+20 single-day holiday/floor flags not listed)
 
 ## EURJPY
 
@@ -250,13 +248,14 @@ yearly median bars/day: 2007: 1440, 2008: 1440, 2009: 1440, 2010: 1440, 2011: 14
 
 ## GER40
 
-rows 2,834,721 · coverage 2013-09-30 → 2026-06-05 · median 1151 bars/day · threshold 575.5 · flagged 898 days
+rows 3,840,291 · coverage 2013-09-30 → 2026-06-05 · median 1272 bars/day · threshold 636.0 · flagged 94 days
 
-yearly median bars/day: 2013: 1260, 2014: 1317, 2015: 841, 2016: 840, 2017: 839, 2018: 1118, 2019: 1, 2020: 1, 2021: 23, 2022: 1342, 2023: 1348, 2024: 1344, 2025: 1354, 2026: 1360
+yearly median bars/day: 2013: 1260, 2014: 1317, 2015: 841, 2016: 840, 2017: 839, 2018: 1172, 2019: 1266, 2020: 1315, 2021: 1296, 2022: 1342, 2023: 1348, 2024: 1344, 2025: 1354, 2026: 1360
 
 | window | weekdays | zero | mean bars | class | note |
 |---|--:|--:|--:|---|---|
 | 2013-09-30 → 2013-10-16 | 13 | 0 | 354.8 | (b) floor | start-of-history ramp |
+| 2013-10-21 → 2013-10-21 | 1 | 0 | 580.0 | (c) ANOMALY | low density, unexplained |
 | 2013-12-24 → 2013-12-26 | 3 | 0 | 99.7 | (a) holiday | 3/3 days on holiday calendar |
 | 2013-12-31 → 2014-01-01 | 2 | 0 | 98.5 | (a) holiday | 2/2 days on holiday calendar |
 | 2014-01-27 → 2014-02-06 | 9 | 0 | 510.9 | (c) ANOMALY | low density, unexplained |
@@ -270,60 +269,12 @@ yearly median bars/day: 2013: 1260, 2014: 1317, 2015: 841, 2016: 840, 2017: 839,
 | 2016-10-03 → 2016-10-03 | 1 | 1 | 0.0 | (c) ANOMALY | hole (zero/stray bars) |
 | 2017-04-14 → 2017-04-17 | 2 | 2 | 0.0 | (a) holiday | 2/2 days on holiday calendar |
 | 2017-10-03 → 2017-10-03 | 1 | 1 | 0.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2018-01-01 → 2018-03-28 | 63 | 12 | 0.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2018-03-30 → 2018-05-31 | 45 | 9 | 1.4 | (c) ANOMALY | hole (zero/stray bars) |
+| 2018-03-30 → 2018-04-02 | 2 | 2 | 0.0 | (a) holiday | 2/2 days on holiday calendar |
 | 2018-10-03 → 2018-10-03 | 1 | 0 | 76.0 | (c) ANOMALY | low density, unexplained |
-| 2018-12-17 → 2018-12-20 | 4 | 0 | 15.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2018-12-24 → 2018-12-27 | 4 | 2 | 15.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2018-12-31 → 2019-01-03 | 4 | 1 | 15.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-01-07 → 2019-01-10 | 4 | 0 | 14.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-01-14 → 2019-01-17 | 4 | 0 | 14.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-01-21 → 2019-01-24 | 4 | 0 | 13.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-01-28 → 2019-01-31 | 4 | 0 | 15.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-02-04 → 2019-02-07 | 4 | 0 | 15.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-02-11 → 2019-02-14 | 4 | 0 | 14.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-02-18 → 2019-02-21 | 4 | 0 | 13.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-02-25 → 2019-02-27 | 3 | 0 | 15.7 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-03-05 → 2019-03-07 | 3 | 0 | 11.3 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-03-11 → 2019-03-14 | 4 | 0 | 8.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-03-18 → 2019-03-21 | 4 | 0 | 13.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-03-25 → 2019-03-28 | 4 | 0 | 13.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-04-01 → 2019-04-04 | 4 | 0 | 12.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-04-08 → 2019-04-11 | 4 | 0 | 11.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-04-15 → 2019-04-17 | 3 | 0 | 9.3 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-04-23 → 2019-04-25 | 3 | 0 | 15.3 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-04-29 → 2019-05-02 | 4 | 1 | 9.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-05-06 → 2019-05-09 | 4 | 0 | 14.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-05-13 → 2019-05-16 | 4 | 0 | 11.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-05-20 → 2019-05-23 | 4 | 0 | 13.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-05-27 → 2019-05-30 | 4 | 0 | 12.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-06-03 → 2019-06-06 | 4 | 0 | 14.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-06-10 → 2019-06-13 | 4 | 0 | 12.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-06-17 → 2019-06-20 | 4 | 0 | 13.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-06-24 → 2019-06-27 | 4 | 0 | 8.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-07-01 → 2019-07-04 | 4 | 0 | 6.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-07-08 → 2019-07-11 | 4 | 0 | 9.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-07-15 → 2019-07-18 | 4 | 0 | 13.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-07-22 → 2019-07-25 | 4 | 0 | 8.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-07-29 → 2019-08-01 | 4 | 0 | 15.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-08-05 → 2019-08-08 | 4 | 0 | 15.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-09-12 → 2019-09-12 | 1 | 0 | 31.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-09-16 → 2019-09-19 | 4 | 0 | 10.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-09-23 → 2019-09-26 | 4 | 0 | 12.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-09-30 → 2019-10-03 | 4 | 0 | 11.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-10-07 → 2019-10-10 | 4 | 0 | 15.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-10-14 → 2019-10-17 | 4 | 0 | 12.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-10-21 → 2019-10-24 | 4 | 0 | 12.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-10-28 → 2019-10-31 | 4 | 0 | 9.2 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-11-04 → 2019-11-07 | 4 | 0 | 12.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-11-11 → 2019-11-14 | 4 | 0 | 10.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-11-18 → 2019-11-21 | 4 | 0 | 10.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-11-25 → 2019-11-28 | 4 | 0 | 8.8 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-12-02 → 2019-12-05 | 4 | 0 | 9.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-12-09 → 2019-12-12 | 4 | 0 | 15.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-12-16 → 2019-12-19 | 4 | 0 | 10.0 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-12-23 → 2019-12-26 | 4 | 0 | 8.5 | (c) ANOMALY | hole (zero/stray bars) |
-| 2019-12-30 → 2021-12-28 | 522 | 78 | 8.5 | (c) ANOMALY | hole (zero/stray bars) |
+| 2018-12-24 → 2018-12-26 | 3 | 3 | 0.0 | (a) holiday | 3/3 days on holiday calendar |
+| 2018-12-31 → 2019-01-01 | 2 | 1 | 23.0 | (a) holiday | 2/2 days on holiday calendar |
+| 2019-12-24 → 2019-12-26 | 3 | 0 | 405.0 | (a) holiday | 3/3 days on holiday calendar |
+| 2021-12-28 → 2021-12-28 | 1 | 0 | 569.0 | (c) ANOMALY | low density, unexplained |
 | 2022-04-15 → 2022-04-18 | 2 | 2 | 0.0 | (a) holiday | 2/2 days on holiday calendar |
 | 2023-04-07 → 2023-04-10 | 2 | 2 | 0.0 | (a) holiday | 2/2 days on holiday calendar |
 | 2023-12-25 → 2023-12-26 | 2 | 2 | 0.0 | (a) holiday | 2/2 days on holiday calendar |
@@ -331,7 +282,7 @@ yearly median bars/day: 2013: 1260, 2014: 1317, 2015: 841, 2016: 840, 2017: 839,
 | 2025-12-24 → 2025-12-26 | 3 | 3 | 0.0 | (a) holiday | 3/3 days on holiday calendar |
 | 2025-12-31 → 2026-01-01 | 2 | 1 | 28.5 | (a) holiday | 2/2 days on holiday calendar |
 
-(+16 single-day holiday/floor flags not listed)
+(+23 single-day holiday/floor flags not listed)
 
 ## NGAS
 
@@ -575,23 +526,27 @@ yearly median bars/day: 2010: 1115, 2011: 1160, 2012: 1274, 2013: 970, 2014: 117
 
 ## US100
 
-rows 2,856,407 · coverage 2013-01-01 → 2026-06-05 · median 898 bars/day · threshold 449.0 · flagged 1119 days
+rows 4,081,738 · coverage 2013-01-01 → 2026-06-05 · median 1328 bars/day · threshold 664.0 · flagged 198 days
 
-yearly median bars/day: 2013: 1038, 2014: 1300, 2015: 841, 2016: 841, 2017: 833, 2018: 1, 2019: 1, 2020: 1, 2021: 23, 2022: 1365, 2023: 1365, 2024: 1365, 2025: 1365, 2026: 1365
+yearly median bars/day: 2013: 1038, 2014: 1300, 2015: 841, 2016: 841, 2017: 833, 2018: 1326, 2019: 1335, 2020: 1335, 2021: 1335, 2022: 1365, 2023: 1365, 2024: 1365, 2025: 1365, 2026: 1365
 
 | window | weekdays | zero | mean bars | class | note |
 |---|--:|--:|--:|---|---|
-| 2013-01-01 → 2013-03-05 | 46 | 2 | 360.0 | (b) floor | start-of-history ramp |
-| 2013-03-07 → 2013-05-21 | 54 | 6 | 327.3 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
+| 2013-01-01 → 2013-05-22 | 102 | 8 | 345.0 | (b) floor | start-of-history ramp |
 | 2013-05-24 → 2013-05-24 | 1 | 0 | 225.0 | (c) ANOMALY | low density, unexplained |
+| 2013-06-03 → 2013-06-03 | 1 | 0 | 495.0 | (c) ANOMALY | low density, unexplained |
 | 2013-08-26 → 2013-08-26 | 1 | 0 | 296.0 | (c) ANOMALY | low density, unexplained |
-| 2013-09-30 → 2013-10-16 | 13 | 1 | 174.4 | (c) ANOMALY | low density, unexplained |
-| 2013-10-18 → 2013-10-18 | 1 | 0 | 340.0 | (c) ANOMALY | low density, unexplained |
-| 2013-10-24 → 2013-10-25 | 2 | 0 | 123.5 | (c) ANOMALY | low density, unexplained |
-| 2014-01-27 → 2014-02-06 | 9 | 0 | 309.6 | (c) ANOMALY | low density, unexplained |
-| 2018-01-01 → 2021-09-13 | 966 | 167 | 4.5 | (c) ANOMALY | hole (zero/stray bars) |
+| 2013-09-30 → 2013-10-25 | 20 | 1 | 248.2 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
+| 2014-01-27 → 2014-02-07 | 10 | 0 | 325.8 | (c) ANOMALY | low density, unexplained |
+| 2014-08-01 → 2014-08-01 | 1 | 0 | 494.0 | (c) ANOMALY | low density, unexplained |
+| 2015-11-26 → 2015-11-27 | 2 | 0 | 644.0 | (a) holiday | 2/2 days on holiday calendar |
+| 2015-12-24 → 2015-12-25 | 2 | 1 | 328.5 | (a) holiday | 2/2 days on holiday calendar |
+| 2015-12-31 → 2016-01-01 | 2 | 1 | 329.0 | (a) holiday | 2/2 days on holiday calendar |
+| 2016-11-24 → 2016-11-25 | 2 | 0 | 646.0 | (a) holiday | 2/2 days on holiday calendar |
+| 2017-07-03 → 2017-07-04 | 2 | 0 | 614.0 | (a) holiday | 1/2 days on holiday calendar |
+| 2020-03-16 → 2020-03-16 | 1 | 0 | 509.0 | (c) ANOMALY | low density, unexplained |
 
-(+26 single-day holiday/floor flags not listed)
+(+51 single-day holiday/floor flags not listed)
 
 ## US30
 
@@ -616,41 +571,45 @@ yearly median bars/day: 2013: 1278, 2014: 1303, 2015: 841, 2016: 841, 2017: 835,
 
 ## US500
 
-rows 2,883,793 · coverage 2012-01-16 → 2026-06-05 · median 841 bars/day · threshold 420.5 · flagged 1344 days
+rows 4,034,473 · coverage 2012-01-16 → 2026-06-05 · median 1233 bars/day · threshold 616.5 · flagged 444 days
 
-yearly median bars/day: 2012: 395, 2013: 1012, 2014: 1217, 2015: 841, 2016: 841, 2017: 761, 2018: 1, 2019: 1, 2020: 1, 2021: 23, 2022: 1362, 2023: 1314, 2024: 1322, 2025: 1359, 2026: 1364
+yearly median bars/day: 2012: 395, 2013: 1012, 2014: 1217, 2015: 841, 2016: 841, 2017: 761, 2018: 1105, 2019: 1199, 2020: 1316, 2021: 1307, 2022: 1362, 2023: 1314, 2024: 1322, 2025: 1359, 2026: 1364
 
 | window | weekdays | zero | mean bars | class | note |
 |---|--:|--:|--:|---|---|
-| 2012-01-23 → 2012-02-17 | 20 | 0 | 393.0 | (b) floor | start-of-history ramp |
-| 2012-02-21 → 2012-04-02 | 30 | 1 | 378.0 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
-| 2012-04-04 → 2012-05-25 | 38 | 0 | 384.8 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
-| 2012-05-29 → 2012-06-05 | 6 | 0 | 396.2 | (c) ANOMALY | low density, unexplained |
-| 2012-06-07 → 2012-07-03 | 19 | 0 | 387.4 | (c) ANOMALY | low density, unexplained |
-| 2012-07-05 → 2012-08-17 | 32 | 0 | 388.9 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
-| 2012-08-21 → 2012-08-31 | 9 | 0 | 394.6 | (c) ANOMALY | low density, unexplained |
-| 2012-09-04 → 2012-09-05 | 2 | 0 | 395.5 | (c) ANOMALY | low density, unexplained |
-| 2012-09-10 → 2012-10-26 | 35 | 0 | 393.8 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
-| 2012-10-31 → 2012-11-16 | 13 | 0 | 391.7 | (c) ANOMALY | low density, unexplained |
-| 2012-11-20 → 2013-01-17 | 43 | 0 | 362.5 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
-| 2013-01-23 → 2013-02-18 | 19 | 0 | 384.4 | (c) ANOMALY | low density, unexplained |
-| 2013-02-20 → 2013-03-05 | 10 | 0 | 369.0 | (c) ANOMALY | low density, unexplained |
-| 2013-03-07 → 2013-04-05 | 22 | 2 | 357.3 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
-| 2013-04-09 → 2013-04-18 | 8 | 0 | 290.4 | (c) ANOMALY | low density, unexplained |
+| 2012-01-23 → 2012-06-05 | 97 | 1 | 387.9 | (b) floor | start-of-history ramp |
+| 2012-06-07 → 2012-09-05 | 65 | 0 | 395.3 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
+| 2012-09-10 → 2012-11-16 | 50 | 0 | 396.5 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
+| 2012-11-20 → 2013-01-21 | 45 | 0 | 365.0 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
+| 2013-01-23 → 2013-04-18 | 62 | 2 | 367.8 | (d) structural | sustained lower-bar regime with real sessions (source segment) |
 | 2013-04-22 → 2013-05-09 | 14 | 0 | 391.4 | (c) ANOMALY | low density, unexplained |
-| 2013-05-13 → 2013-05-15 | 3 | 0 | 394.0 | (c) ANOMALY | low density, unexplained |
-| 2013-05-17 → 2013-05-17 | 1 | 0 | 110.0 | (c) ANOMALY | low density, unexplained |
-| 2013-05-22 → 2013-05-22 | 1 | 0 | 416.0 | (c) ANOMALY | low density, unexplained |
+| 2013-05-13 → 2013-05-22 | 8 | 0 | 427.4 | (c) ANOMALY | low density, unexplained |
 | 2013-05-24 → 2013-05-24 | 1 | 0 | 224.0 | (c) ANOMALY | low density, unexplained |
+| 2013-06-03 → 2013-06-03 | 1 | 0 | 496.0 | (c) ANOMALY | low density, unexplained |
 | 2013-08-26 → 2013-08-26 | 1 | 0 | 303.0 | (c) ANOMALY | low density, unexplained |
 | 2013-09-30 → 2013-10-01 | 2 | 0 | 288.0 | (c) ANOMALY | low density, unexplained |
 | 2013-10-03 → 2013-10-14 | 8 | 1 | 306.1 | (c) ANOMALY | low density, unexplained |
-| 2013-10-18 → 2013-10-18 | 1 | 0 | 333.0 | (c) ANOMALY | low density, unexplained |
-| 2013-10-24 → 2013-10-24 | 1 | 0 | 245.0 | (c) ANOMALY | low density, unexplained |
+| 2013-10-17 → 2013-10-24 | 6 | 0 | 441.7 | (c) ANOMALY | low density, unexplained |
 | 2014-01-23 → 2014-02-05 | 10 | 0 | 375.0 | (c) ANOMALY | low density, unexplained |
-| 2018-01-01 → 2021-09-13 | 966 | 167 | 4.5 | (c) ANOMALY | hole (zero/stray bars) |
+| 2014-02-07 → 2014-02-07 | 1 | 0 | 467.0 | (c) ANOMALY | low density, unexplained |
+| 2014-08-01 → 2014-08-01 | 1 | 0 | 493.0 | (c) ANOMALY | low density, unexplained |
+| 2014-12-24 → 2014-12-26 | 3 | 1 | 306.0 | (a) holiday | 3/3 days on holiday calendar |
+| 2014-12-31 → 2015-01-01 | 2 | 1 | 268.5 | (a) holiday | 2/2 days on holiday calendar |
+| 2015-12-31 → 2016-01-01 | 2 | 1 | 299.0 | (a) holiday | 2/2 days on holiday calendar |
+| 2017-07-03 → 2017-07-04 | 2 | 0 | 510.5 | (a) holiday | 1/2 days on holiday calendar |
+| 2017-08-07 → 2017-08-07 | 1 | 0 | 506.0 | (c) ANOMALY | low density, unexplained |
+| 2017-10-04 → 2017-10-05 | 2 | 0 | 580.5 | (c) ANOMALY | low density, unexplained |
+| 2017-10-09 → 2017-10-09 | 1 | 0 | 607.0 | (c) ANOMALY | low density, unexplained |
+| 2017-10-11 → 2017-10-12 | 2 | 0 | 554.0 | (c) ANOMALY | low density, unexplained |
+| 2017-10-18 → 2017-10-18 | 1 | 0 | 608.0 | (c) ANOMALY | low density, unexplained |
+| 2017-10-31 → 2017-10-31 | 1 | 0 | 570.0 | (c) ANOMALY | low density, unexplained |
+| 2017-11-23 → 2017-11-24 | 2 | 0 | 568.0 | (a) holiday | 2/2 days on holiday calendar |
+| 2017-12-25 → 2017-12-26 | 2 | 1 | 270.5 | (a) holiday | 2/2 days on holiday calendar |
+| 2017-12-28 → 2017-12-28 | 1 | 0 | 581.0 | (c) ANOMALY | low density, unexplained |
+| 2019-12-24 → 2019-12-25 | 2 | 0 | 305.0 | (a) holiday | 2/2 days on holiday calendar |
+| 2020-03-16 → 2020-03-16 | 1 | 0 | 510.0 | (c) ANOMALY | low density, unexplained |
 
-(+29 single-day holiday/floor flags not listed)
+(+47 single-day holiday/floor flags not listed)
 
 ## USDCAD
 

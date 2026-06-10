@@ -72,7 +72,9 @@ Crypto/research/archived/*/*/data/
 # raw scraper pulls (dédup logique dans _seen.json) — ne plus commiter
 _automation/alpha_hunt/_raw/
 # data blobs locaux (règle R3 : jamais de data dans git)
-data/deep_history_utc/
+# deep_history_utc: blobs ignorés, mais le MANIFEST machine-généré reste tracké
+data/deep_history_utc/*
+!data/deep_history_utc/MANIFEST*.md
 data/deep_history_m1/_cache_duka/
 data/panels/m5_indices/
 data/*.txt
