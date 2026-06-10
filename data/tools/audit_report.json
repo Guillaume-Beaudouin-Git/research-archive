@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-10 00:54:52.454299",
+  "generated": "2026-06-10 02:12:24.692367",
   "dir": "<HOME>/Desktop/Algo_claude/data/deep_history_utc",
   "rule": "day flagged if bars < 0.5 * median_nonzero",
   "results": [
@@ -4025,15 +4025,15 @@
     {
       "instrument": "EURGBP",
       "file": "EURGBP_M1.csv",
-      "rows": 7252687,
+      "rows": 7259257,
       "coverage": [
         "2007-01-01",
         "2026-06-05"
       ],
-      "trading_days_nonzero": 5062,
+      "trading_days_nonzero": 5067,
       "median_bars_per_day": 1440,
       "flag_threshold": 720.0,
-      "flagged_days": 26,
+      "flagged_days": 22,
       "yearly_median_bars": {
         "2007": 1440,
         "2008": 1440,
@@ -4131,21 +4131,12 @@
         },
         {
           "start": "2018-01-01",
-          "end": "2018-01-02",
-          "weekdays": 2,
-          "zero_days": 2,
-          "mean_bars": 0.0,
+          "end": "2018-01-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 117.0,
           "klass": "(a) holiday",
-          "note": "1/2 days on holiday calendar"
-        },
-        {
-          "start": "2018-01-04",
-          "end": "2018-01-08",
-          "weekdays": 3,
-          "zero_days": 3,
-          "mean_bars": 0.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "note": "1/1 days on holiday calendar"
         },
         {
           "start": "2018-12-25",
@@ -4256,7 +4247,7 @@
           "note": "1/1 days on holiday calendar"
         }
       ],
-      "n_anomaly_windows": 1
+      "n_anomaly_windows": 0
     },
     {
       "instrument": "EURJPY",
@@ -4942,25 +4933,25 @@
     {
       "instrument": "GER40",
       "file": "GER40_M1.csv",
-      "rows": 2834721,
+      "rows": 3840291,
       "coverage": [
         "2013-09-30",
         "2026-06-05"
       ],
-      "trading_days_nonzero": 3165,
-      "median_bars_per_day": 1151,
-      "flag_threshold": 575.5,
-      "flagged_days": 898,
+      "trading_days_nonzero": 3257,
+      "median_bars_per_day": 1272,
+      "flag_threshold": 636.0,
+      "flagged_days": 94,
       "yearly_median_bars": {
         "2013": 1260,
         "2014": 1317,
         "2015": 841,
         "2016": 840,
         "2017": 839,
-        "2018": 1118,
-        "2019": 1,
-        "2020": 1,
-        "2021": 23,
+        "2018": 1172,
+        "2019": 1266,
+        "2020": 1315,
+        "2021": 1296,
         "2022": 1342,
         "2023": 1348,
         "2024": 1344,
@@ -4976,6 +4967,15 @@
           "mean_bars": 354.8,
           "klass": "(b) floor",
           "note": "start-of-history ramp"
+        },
+        {
+          "start": "2013-10-21",
+          "end": "2013-10-21",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 580.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
         },
         {
           "start": "2013-12-24",
@@ -5048,6 +5048,15 @@
           "mean_bars": 0.0,
           "klass": "(a) holiday",
           "note": "2/2 days on holiday calendar"
+        },
+        {
+          "start": "2015-05-25",
+          "end": "2015-05-25",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 630.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
         },
         {
           "start": "2015-12-24",
@@ -5141,21 +5150,21 @@
         },
         {
           "start": "2018-01-01",
-          "end": "2018-03-28",
-          "weekdays": 63,
-          "zero_days": 12,
-          "mean_bars": 0.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "end": "2018-01-01",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
         },
         {
           "start": "2018-03-30",
-          "end": "2018-05-31",
-          "weekdays": 45,
-          "zero_days": 9,
-          "mean_bars": 1.4,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "end": "2018-04-02",
+          "weekdays": 2,
+          "zero_days": 2,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
         },
         {
           "start": "2018-10-03",
@@ -5167,166 +5176,22 @@
           "note": "low density, unexplained"
         },
         {
-          "start": "2018-12-17",
-          "end": "2018-12-20",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 15.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
           "start": "2018-12-24",
-          "end": "2018-12-27",
-          "weekdays": 4,
-          "zero_days": 2,
-          "mean_bars": 15.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "end": "2018-12-26",
+          "weekdays": 3,
+          "zero_days": 3,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "3/3 days on holiday calendar"
         },
         {
           "start": "2018-12-31",
-          "end": "2019-01-03",
-          "weekdays": 4,
+          "end": "2019-01-01",
+          "weekdays": 2,
           "zero_days": 1,
-          "mean_bars": 15.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-01-07",
-          "end": "2019-01-10",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 14.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-01-14",
-          "end": "2019-01-17",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 14.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-01-21",
-          "end": "2019-01-24",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 13.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-01-28",
-          "end": "2019-01-31",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 15.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-02-04",
-          "end": "2019-02-07",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 15.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-02-11",
-          "end": "2019-02-14",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 14.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-02-18",
-          "end": "2019-02-21",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 13.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-02-25",
-          "end": "2019-02-27",
-          "weekdays": 3,
-          "zero_days": 0,
-          "mean_bars": 15.7,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-03-05",
-          "end": "2019-03-07",
-          "weekdays": 3,
-          "zero_days": 0,
-          "mean_bars": 11.3,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-03-11",
-          "end": "2019-03-14",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 8.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-03-18",
-          "end": "2019-03-21",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 13.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-03-25",
-          "end": "2019-03-28",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 13.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-04-01",
-          "end": "2019-04-04",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 12.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-04-08",
-          "end": "2019-04-11",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 11.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-04-15",
-          "end": "2019-04-17",
-          "weekdays": 3,
-          "zero_days": 0,
-          "mean_bars": 9.3,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "mean_bars": 23.0,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
         },
         {
           "start": "2019-04-19",
@@ -5338,310 +5203,76 @@
           "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2019-04-23",
-          "end": "2019-04-25",
+          "start": "2019-12-24",
+          "end": "2019-12-26",
           "weekdays": 3,
           "zero_days": 0,
-          "mean_bars": 15.3,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "mean_bars": 405.0,
+          "klass": "(a) holiday",
+          "note": "3/3 days on holiday calendar"
         },
         {
-          "start": "2019-04-29",
-          "end": "2019-05-02",
-          "weekdays": 4,
-          "zero_days": 1,
-          "mean_bars": 9.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-05-06",
-          "end": "2019-05-09",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 14.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-05-13",
-          "end": "2019-05-16",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 11.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-05-20",
-          "end": "2019-05-23",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 13.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-05-27",
-          "end": "2019-05-30",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 12.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-06-03",
-          "end": "2019-06-06",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 14.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-06-10",
-          "end": "2019-06-13",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 12.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-06-17",
-          "end": "2019-06-20",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 13.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-06-24",
-          "end": "2019-06-27",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 8.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-07-01",
-          "end": "2019-07-04",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 6.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-07-08",
-          "end": "2019-07-11",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 9.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-07-15",
-          "end": "2019-07-18",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 13.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-07-22",
-          "end": "2019-07-25",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 8.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-07-29",
-          "end": "2019-08-01",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 15.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-08-05",
-          "end": "2019-08-08",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 15.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-09-12",
-          "end": "2019-09-12",
+          "start": "2020-01-01",
+          "end": "2020-01-01",
           "weekdays": 1,
           "zero_days": 0,
-          "mean_bars": 31.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "mean_bars": 52.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2019-09-16",
-          "end": "2019-09-19",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 10.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-09-23",
-          "end": "2019-09-26",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 12.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-09-30",
-          "end": "2019-10-03",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 11.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-10-07",
-          "end": "2019-10-10",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 15.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-10-14",
-          "end": "2019-10-17",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 12.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-10-21",
-          "end": "2019-10-24",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 12.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-10-28",
-          "end": "2019-10-31",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 9.2,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-11-04",
-          "end": "2019-11-07",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 12.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-11-11",
-          "end": "2019-11-14",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 10.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-11-18",
-          "end": "2019-11-21",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 10.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-11-25",
-          "end": "2019-11-28",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 8.8,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-12-02",
-          "end": "2019-12-05",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 9.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-12-09",
-          "end": "2019-12-12",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 15.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-12-16",
-          "end": "2019-12-19",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 10.0,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-12-23",
-          "end": "2019-12-26",
-          "weekdays": 4,
-          "zero_days": 0,
-          "mean_bars": 8.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2019-12-30",
-          "end": "2021-12-28",
-          "weekdays": 522,
-          "zero_days": 78,
-          "mean_bars": 8.5,
-          "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
-        },
-        {
-          "start": "2021-12-31",
-          "end": "2021-12-31",
+          "start": "2020-04-10",
+          "end": "2020-04-10",
           "weekdays": 1,
           "zero_days": 1,
           "mean_bars": 0.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2020-12-25",
+          "end": "2020-12-25",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2021-01-01",
+          "end": "2021-01-01",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2021-04-02",
+          "end": "2021-04-02",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2021-12-24",
+          "end": "2021-12-24",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2021-12-28",
+          "end": "2021-12-28",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 569.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
         },
         {
           "start": "2022-04-15",
@@ -5779,7 +5410,7 @@
           "note": "1/1 days on holiday calendar"
         }
       ],
-      "n_anomaly_windows": 58
+      "n_anomaly_windows": 7
     },
     {
       "instrument": "NGAS",
@@ -9997,25 +9628,25 @@
     {
       "instrument": "US100",
       "file": "US100_M1.csv",
-      "rows": 2856407,
+      "rows": 4081738,
       "coverage": [
         "2013-01-01",
         "2026-06-05"
       ],
-      "trading_days_nonzero": 3311,
-      "median_bars_per_day": 898,
-      "flag_threshold": 449.0,
-      "flagged_days": 1119,
+      "trading_days_nonzero": 3472,
+      "median_bars_per_day": 1328,
+      "flag_threshold": 664.0,
+      "flagged_days": 198,
       "yearly_median_bars": {
         "2013": 1038,
         "2014": 1300,
         "2015": 841,
         "2016": 841,
         "2017": 833,
-        "2018": 1,
-        "2019": 1,
-        "2020": 1,
-        "2021": 23,
+        "2018": 1326,
+        "2019": 1335,
+        "2020": 1335,
+        "2021": 1335,
         "2022": 1365,
         "2023": 1365,
         "2024": 1365,
@@ -10025,21 +9656,12 @@
       "windows": [
         {
           "start": "2013-01-01",
-          "end": "2013-03-05",
-          "weekdays": 46,
-          "zero_days": 2,
-          "mean_bars": 360.0,
+          "end": "2013-05-22",
+          "weekdays": 102,
+          "zero_days": 8,
+          "mean_bars": 345.0,
           "klass": "(b) floor",
           "note": "start-of-history ramp"
-        },
-        {
-          "start": "2013-03-07",
-          "end": "2013-05-21",
-          "weekdays": 54,
-          "zero_days": 6,
-          "mean_bars": 327.3,
-          "klass": "(d) structural",
-          "note": "sustained lower-bar regime with real sessions (source segment)"
         },
         {
           "start": "2013-05-24",
@@ -10047,6 +9669,15 @@
           "weekdays": 1,
           "zero_days": 0,
           "mean_bars": 225.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2013-06-03",
+          "end": "2013-06-03",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 495.0,
           "klass": "(c) ANOMALY",
           "note": "low density, unexplained"
         },
@@ -10060,31 +9691,22 @@
           "note": "low density, unexplained"
         },
         {
-          "start": "2013-09-30",
-          "end": "2013-10-16",
-          "weekdays": 13,
-          "zero_days": 1,
-          "mean_bars": 174.4,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2013-10-18",
-          "end": "2013-10-18",
+          "start": "2013-09-02",
+          "end": "2013-09-02",
           "weekdays": 1,
           "zero_days": 0,
-          "mean_bars": 340.0,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
+          "mean_bars": 597.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2013-10-24",
+          "start": "2013-09-30",
           "end": "2013-10-25",
-          "weekdays": 2,
-          "zero_days": 0,
-          "mean_bars": 123.5,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
+          "weekdays": 20,
+          "zero_days": 1,
+          "mean_bars": 248.2,
+          "klass": "(d) structural",
+          "note": "sustained lower-bar regime with real sessions (source segment)"
         },
         {
           "start": "2013-12-25",
@@ -10106,10 +9728,10 @@
         },
         {
           "start": "2014-01-27",
-          "end": "2014-02-06",
-          "weekdays": 9,
+          "end": "2014-02-07",
+          "weekdays": 10,
           "zero_days": 0,
-          "mean_bars": 309.6,
+          "mean_bars": 325.8,
           "klass": "(c) ANOMALY",
           "note": "low density, unexplained"
         },
@@ -10121,6 +9743,24 @@
           "mean_bars": 0.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2014-07-04",
+          "end": "2014-07-04",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 589.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2014-08-01",
+          "end": "2014-08-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 494.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
         },
         {
           "start": "2014-12-25",
@@ -10150,20 +9790,74 @@
           "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2015-12-25",
-          "end": "2015-12-25",
+          "start": "2015-05-25",
+          "end": "2015-05-25",
           "weekdays": 1,
-          "zero_days": 1,
-          "mean_bars": 0.0,
+          "zero_days": 0,
+          "mean_bars": 640.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2016-01-01",
-          "end": "2016-01-01",
+          "start": "2015-07-03",
+          "end": "2015-07-03",
           "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 646.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2015-09-07",
+          "end": "2015-09-07",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 630.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2015-11-26",
+          "end": "2015-11-27",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 644.0,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
+        },
+        {
+          "start": "2015-12-24",
+          "end": "2015-12-25",
+          "weekdays": 2,
           "zero_days": 1,
-          "mean_bars": 0.0,
+          "mean_bars": 328.5,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
+        },
+        {
+          "start": "2015-12-31",
+          "end": "2016-01-01",
+          "weekdays": 2,
+          "zero_days": 1,
+          "mean_bars": 329.0,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
+        },
+        {
+          "start": "2016-01-18",
+          "end": "2016-01-18",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 661.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2016-02-15",
+          "end": "2016-02-15",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 658.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
@@ -10175,6 +9869,42 @@
           "mean_bars": 0.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2016-05-30",
+          "end": "2016-05-30",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 640.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2016-07-04",
+          "end": "2016-07-04",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 646.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2016-09-05",
+          "end": "2016-09-05",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 631.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2016-11-24",
+          "end": "2016-11-25",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 646.0,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
         },
         {
           "start": "2016-12-26",
@@ -10195,11 +9925,65 @@
           "note": "1/1 days on holiday calendar"
         },
         {
+          "start": "2017-01-16",
+          "end": "2017-01-16",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 630.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2017-02-20",
+          "end": "2017-02-20",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 631.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
           "start": "2017-04-14",
           "end": "2017-04-14",
           "weekdays": 1,
           "zero_days": 1,
           "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2017-05-29",
+          "end": "2017-05-29",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 574.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2017-07-03",
+          "end": "2017-07-04",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 614.0,
+          "klass": "(a) holiday",
+          "note": "1/2 days on holiday calendar"
+        },
+        {
+          "start": "2017-09-04",
+          "end": "2017-09-04",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 618.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2017-11-23",
+          "end": "2017-11-23",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 622.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
@@ -10214,12 +9998,120 @@
         },
         {
           "start": "2018-01-01",
-          "end": "2021-09-13",
-          "weekdays": 966,
-          "zero_days": 167,
-          "mean_bars": 4.5,
+          "end": "2018-01-01",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2018-01-15",
+          "end": "2018-01-15",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 650.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2018-02-19",
+          "end": "2018-02-19",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 650.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2018-03-30",
+          "end": "2018-03-30",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2018-12-25",
+          "end": "2018-12-25",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 60.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2019-01-01",
+          "end": "2019-01-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 60.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2019-04-19",
+          "end": "2019-04-19",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2019-12-25",
+          "end": "2019-12-25",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 59.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2020-01-01",
+          "end": "2020-01-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 60.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2020-03-16",
+          "end": "2020-03-16",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 509.0,
           "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2020-04-10",
+          "end": "2020-04-10",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2020-12-25",
+          "end": "2020-12-25",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2021-01-01",
+          "end": "2021-01-01",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
         },
         {
           "start": "2021-12-24",
@@ -10271,7 +10163,7 @@
           "end": "2024-01-01",
           "weekdays": 1,
           "zero_days": 0,
-          "mean_bars": 55.0,
+          "mean_bars": 60.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
@@ -10339,7 +10231,7 @@
           "note": "1/1 days on holiday calendar"
         }
       ],
-      "n_anomaly_windows": 7
+      "n_anomaly_windows": 6
     },
     {
       "instrument": "US30",
@@ -10916,15 +10808,15 @@
     {
       "instrument": "US500",
       "file": "US500_M1.csv",
-      "rows": 2883793,
+      "rows": 4034473,
       "coverage": [
         "2012-01-16",
         "2026-06-05"
       ],
-      "trading_days_nonzero": 3568,
-      "median_bars_per_day": 841,
-      "flag_threshold": 420.5,
-      "flagged_days": 1344,
+      "trading_days_nonzero": 3729,
+      "median_bars_per_day": 1233,
+      "flag_threshold": 616.5,
+      "flagged_days": 444,
       "yearly_median_bars": {
         "2012": 395,
         "2013": 1012,
@@ -10932,10 +10824,10 @@
         "2015": 841,
         "2016": 841,
         "2017": 761,
-        "2018": 1,
-        "2019": 1,
-        "2020": 1,
-        "2021": 23,
+        "2018": 1105,
+        "2019": 1199,
+        "2020": 1316,
+        "2021": 1307,
         "2022": 1362,
         "2023": 1314,
         "2024": 1322,
@@ -10963,147 +10855,48 @@
         },
         {
           "start": "2012-01-23",
-          "end": "2012-02-17",
-          "weekdays": 20,
-          "zero_days": 0,
-          "mean_bars": 393.0,
+          "end": "2012-06-05",
+          "weekdays": 97,
+          "zero_days": 1,
+          "mean_bars": 387.9,
           "klass": "(b) floor",
           "note": "start-of-history ramp"
         },
         {
-          "start": "2012-02-21",
-          "end": "2012-04-02",
-          "weekdays": 30,
-          "zero_days": 1,
-          "mean_bars": 378.0,
-          "klass": "(d) structural",
-          "note": "sustained lower-bar regime with real sessions (source segment)"
-        },
-        {
-          "start": "2012-04-04",
-          "end": "2012-05-25",
-          "weekdays": 38,
-          "zero_days": 0,
-          "mean_bars": 384.8,
-          "klass": "(d) structural",
-          "note": "sustained lower-bar regime with real sessions (source segment)"
-        },
-        {
-          "start": "2012-05-29",
-          "end": "2012-06-05",
-          "weekdays": 6,
-          "zero_days": 0,
-          "mean_bars": 396.2,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
           "start": "2012-06-07",
-          "end": "2012-07-03",
-          "weekdays": 19,
+          "end": "2012-09-05",
+          "weekdays": 65,
           "zero_days": 0,
-          "mean_bars": 387.4,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2012-07-05",
-          "end": "2012-08-17",
-          "weekdays": 32,
-          "zero_days": 0,
-          "mean_bars": 388.9,
+          "mean_bars": 395.3,
           "klass": "(d) structural",
           "note": "sustained lower-bar regime with real sessions (source segment)"
-        },
-        {
-          "start": "2012-08-21",
-          "end": "2012-08-31",
-          "weekdays": 9,
-          "zero_days": 0,
-          "mean_bars": 394.6,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2012-09-04",
-          "end": "2012-09-05",
-          "weekdays": 2,
-          "zero_days": 0,
-          "mean_bars": 395.5,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
         },
         {
           "start": "2012-09-10",
-          "end": "2012-10-26",
-          "weekdays": 35,
+          "end": "2012-11-16",
+          "weekdays": 50,
           "zero_days": 0,
-          "mean_bars": 393.8,
+          "mean_bars": 396.5,
           "klass": "(d) structural",
           "note": "sustained lower-bar regime with real sessions (source segment)"
-        },
-        {
-          "start": "2012-10-31",
-          "end": "2012-11-16",
-          "weekdays": 13,
-          "zero_days": 0,
-          "mean_bars": 391.7,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
         },
         {
           "start": "2012-11-20",
-          "end": "2013-01-17",
-          "weekdays": 43,
+          "end": "2013-01-21",
+          "weekdays": 45,
           "zero_days": 0,
-          "mean_bars": 362.5,
+          "mean_bars": 365.0,
           "klass": "(d) structural",
           "note": "sustained lower-bar regime with real sessions (source segment)"
-        },
-        {
-          "start": "2013-01-21",
-          "end": "2013-01-21",
-          "weekdays": 1,
-          "zero_days": 0,
-          "mean_bars": 245.0,
-          "klass": "(a) holiday",
-          "note": "1/1 days on holiday calendar"
         },
         {
           "start": "2013-01-23",
-          "end": "2013-02-18",
-          "weekdays": 19,
-          "zero_days": 0,
-          "mean_bars": 384.4,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2013-02-20",
-          "end": "2013-03-05",
-          "weekdays": 10,
-          "zero_days": 0,
-          "mean_bars": 369.0,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2013-03-07",
-          "end": "2013-04-05",
-          "weekdays": 22,
+          "end": "2013-04-18",
+          "weekdays": 62,
           "zero_days": 2,
-          "mean_bars": 357.3,
+          "mean_bars": 367.8,
           "klass": "(d) structural",
           "note": "sustained lower-bar regime with real sessions (source segment)"
-        },
-        {
-          "start": "2013-04-09",
-          "end": "2013-04-18",
-          "weekdays": 8,
-          "zero_days": 0,
-          "mean_bars": 290.4,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
         },
         {
           "start": "2013-04-22",
@@ -11116,28 +10909,10 @@
         },
         {
           "start": "2013-05-13",
-          "end": "2013-05-15",
-          "weekdays": 3,
-          "zero_days": 0,
-          "mean_bars": 394.0,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2013-05-17",
-          "end": "2013-05-17",
-          "weekdays": 1,
-          "zero_days": 0,
-          "mean_bars": 110.0,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2013-05-22",
           "end": "2013-05-22",
-          "weekdays": 1,
+          "weekdays": 8,
           "zero_days": 0,
-          "mean_bars": 416.0,
+          "mean_bars": 427.4,
           "klass": "(c) ANOMALY",
           "note": "low density, unexplained"
         },
@@ -11151,6 +10926,15 @@
           "note": "low density, unexplained"
         },
         {
+          "start": "2013-06-03",
+          "end": "2013-06-03",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 496.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
           "start": "2013-08-26",
           "end": "2013-08-26",
           "weekdays": 1,
@@ -11158,6 +10942,15 @@
           "mean_bars": 303.0,
           "klass": "(c) ANOMALY",
           "note": "low density, unexplained"
+        },
+        {
+          "start": "2013-09-02",
+          "end": "2013-09-02",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 602.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
         },
         {
           "start": "2013-09-30",
@@ -11178,20 +10971,11 @@
           "note": "low density, unexplained"
         },
         {
-          "start": "2013-10-18",
-          "end": "2013-10-18",
-          "weekdays": 1,
-          "zero_days": 0,
-          "mean_bars": 333.0,
-          "klass": "(c) ANOMALY",
-          "note": "low density, unexplained"
-        },
-        {
-          "start": "2013-10-24",
+          "start": "2013-10-17",
           "end": "2013-10-24",
-          "weekdays": 1,
+          "weekdays": 6,
           "zero_days": 0,
-          "mean_bars": 245.0,
+          "mean_bars": 441.7,
           "klass": "(c) ANOMALY",
           "note": "low density, unexplained"
         },
@@ -11223,6 +11007,15 @@
           "note": "low density, unexplained"
         },
         {
+          "start": "2014-02-07",
+          "end": "2014-02-07",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 467.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
           "start": "2014-04-18",
           "end": "2014-04-18",
           "weekdays": 1,
@@ -11232,22 +11025,58 @@
           "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2014-12-25",
-          "end": "2014-12-25",
+          "start": "2014-07-04",
+          "end": "2014-07-04",
           "weekdays": 1,
-          "zero_days": 1,
-          "mean_bars": 0.0,
+          "zero_days": 0,
+          "mean_bars": 575.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2015-01-01",
-          "end": "2015-01-01",
+          "start": "2014-08-01",
+          "end": "2014-08-01",
           "weekdays": 1,
-          "zero_days": 1,
-          "mean_bars": 0.0,
+          "zero_days": 0,
+          "mean_bars": 493.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2014-09-01",
+          "end": "2014-09-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 555.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2014-11-27",
+          "end": "2014-11-27",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 520.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2014-12-24",
+          "end": "2014-12-26",
+          "weekdays": 3,
+          "zero_days": 1,
+          "mean_bars": 306.0,
+          "klass": "(a) holiday",
+          "note": "3/3 days on holiday calendar"
+        },
+        {
+          "start": "2014-12-31",
+          "end": "2015-01-01",
+          "weekdays": 2,
+          "zero_days": 1,
+          "mean_bars": 268.5,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
         },
         {
           "start": "2015-04-03",
@@ -11255,6 +11084,15 @@
           "weekdays": 1,
           "zero_days": 0,
           "mean_bars": 287.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2015-11-26",
+          "end": "2015-11-26",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 598.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
@@ -11268,13 +11106,13 @@
           "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2016-01-01",
+          "start": "2015-12-31",
           "end": "2016-01-01",
-          "weekdays": 1,
+          "weekdays": 2,
           "zero_days": 1,
-          "mean_bars": 0.0,
+          "mean_bars": 299.0,
           "klass": "(a) holiday",
-          "note": "1/1 days on holiday calendar"
+          "note": "2/2 days on holiday calendar"
         },
         {
           "start": "2016-03-25",
@@ -11282,6 +11120,15 @@
           "weekdays": 1,
           "zero_days": 1,
           "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2016-05-30",
+          "end": "2016-05-30",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 591.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
@@ -11313,6 +11160,15 @@
           "note": "1/1 days on holiday calendar"
         },
         {
+          "start": "2017-05-01",
+          "end": "2017-05-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 594.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
           "start": "2017-05-29",
           "end": "2017-05-29",
           "weekdays": 1,
@@ -11322,8 +11178,116 @@
           "note": "1/1 days on holiday calendar"
         },
         {
+          "start": "2017-06-05",
+          "end": "2017-06-05",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 585.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2017-07-03",
+          "end": "2017-07-04",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 510.5,
+          "klass": "(a) holiday",
+          "note": "1/2 days on holiday calendar"
+        },
+        {
+          "start": "2017-08-07",
+          "end": "2017-08-07",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 506.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2017-09-04",
+          "end": "2017-09-04",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 482.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2017-10-04",
+          "end": "2017-10-05",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 580.5,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2017-10-09",
+          "end": "2017-10-09",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 607.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2017-10-11",
+          "end": "2017-10-12",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 554.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2017-10-18",
+          "end": "2017-10-18",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 608.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2017-10-31",
+          "end": "2017-10-31",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 570.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2017-11-23",
+          "end": "2017-11-24",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 568.0,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
+        },
+        {
           "start": "2017-12-25",
-          "end": "2017-12-25",
+          "end": "2017-12-26",
+          "weekdays": 2,
+          "zero_days": 1,
+          "mean_bars": 270.5,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
+        },
+        {
+          "start": "2017-12-28",
+          "end": "2017-12-28",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 581.0,
+          "klass": "(c) ANOMALY",
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2018-01-01",
+          "end": "2018-01-01",
           "weekdays": 1,
           "zero_days": 1,
           "mean_bars": 0.0,
@@ -11331,13 +11295,121 @@
           "note": "1/1 days on holiday calendar"
         },
         {
-          "start": "2018-01-01",
-          "end": "2021-09-13",
-          "weekdays": 966,
-          "zero_days": 167,
-          "mean_bars": 4.5,
+          "start": "2018-01-15",
+          "end": "2018-01-15",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 610.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2018-02-19",
+          "end": "2018-02-19",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 586.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2018-03-30",
+          "end": "2018-03-30",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2018-12-25",
+          "end": "2018-12-25",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 60.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2019-01-01",
+          "end": "2019-01-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 50.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2019-04-19",
+          "end": "2019-04-19",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2019-12-24",
+          "end": "2019-12-25",
+          "weekdays": 2,
+          "zero_days": 0,
+          "mean_bars": 305.0,
+          "klass": "(a) holiday",
+          "note": "2/2 days on holiday calendar"
+        },
+        {
+          "start": "2020-01-01",
+          "end": "2020-01-01",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 56.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2020-03-16",
+          "end": "2020-03-16",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 510.0,
           "klass": "(c) ANOMALY",
-          "note": "hole (zero/stray bars)"
+          "note": "low density, unexplained"
+        },
+        {
+          "start": "2020-04-10",
+          "end": "2020-04-10",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2020-12-25",
+          "end": "2020-12-25",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2021-01-01",
+          "end": "2021-01-01",
+          "weekdays": 1,
+          "zero_days": 1,
+          "mean_bars": 0.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
+          "start": "2021-04-02",
+          "end": "2021-04-02",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 473.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
         },
         {
           "start": "2021-12-24",
@@ -11376,6 +11448,15 @@
           "note": "1/1 days on holiday calendar"
         },
         {
+          "start": "2023-04-07",
+          "end": "2023-04-07",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 555.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
           "start": "2023-12-25",
           "end": "2023-12-25",
           "weekdays": 1,
@@ -11389,7 +11470,7 @@
           "end": "2024-01-01",
           "weekdays": 1,
           "zero_days": 0,
-          "mean_bars": 43.0,
+          "mean_bars": 48.0,
           "klass": "(a) holiday",
           "note": "1/1 days on holiday calendar"
         },
@@ -11430,6 +11511,15 @@
           "note": "1/1 days on holiday calendar"
         },
         {
+          "start": "2025-11-28",
+          "end": "2025-11-28",
+          "weekdays": 1,
+          "zero_days": 0,
+          "mean_bars": 443.0,
+          "klass": "(a) holiday",
+          "note": "1/1 days on holiday calendar"
+        },
+        {
           "start": "2025-12-25",
           "end": "2025-12-25",
           "weekdays": 1,
@@ -11448,7 +11538,7 @@
           "note": "1/1 days on holiday calendar"
         }
       ],
-      "n_anomaly_windows": 20
+      "n_anomaly_windows": 19
     },
     {
       "instrument": "USDCAD",
