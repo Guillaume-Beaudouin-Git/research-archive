@@ -240,6 +240,122 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
      Note de numérotation : "L19" proposé en pré-registration entre en collision avec L19 existant
      (NQ market impact) ; promu en L24 pour préserver les références.
 
+### CFD/FTMO execution & structure — registre L (L25-L36, gravé 2026-06-10, réconciliation)
+L25. Two-sided test: a real directional edge is positive on BOTH legs. Every FTMO directional family
+     tested was long-leg-only = equity/carry up-drift = beta. Mandatory gate on any directional claim.
+     (Origin: FTMO_decision_memo 2026-06-02.)
+L26. Delay-1 / same-bar discipline: overlapping-window and same-bar-fill screens inflate intraday
+     edges; validate with non-overlapping trades + a 1-bar execution-delay test (decisive). Any
+     timestamp ambiguity resolves to the NEXT bar. (FTMO_decision_memo 2026-06-02.)
+L27. Market-neutral *by construction* ≠ two-sided *in spread*: a cointegrated spread inherits a
+     relative drift, so stat-arb still fails L25. The beta trap survives hedging. (Statarb arc 06-02.)
+L28. A market-neutral CFD pair pays 2× broker markup in financing (benchmark cancels across legs)
+     ≈ 1.5 bps/night in every rate era → fatal to weeks-to-revert spreads. (Statarb arc 06-02.)
+L29. Half-life-matched holding is necessary but not sufficient: fixing the exit removes a confound
+     so the true "no" can be seen; it does not manufacture EV. (Statarb arc 06-02.)
+L30. Swap-sign rule (Dédale, codified ftmo_swaps.py): real FTMO swaps are ASYMMETRIC (pay more than
+     fair on the costly side, receive less on the carry side). Never hold the negative-swap side
+     overnight; long-premium and short-positive-swap cannot be collected together. Decisive: US100
+     long −3.31 bps/night ⇒ overnight harvester 82%→31%. Measured capture: US100.cash long −662.4 /
+     short +28.58 (asymmetric, units broker-quoted). (FTMO_decision_memo 2026-06-02.)
+L31. Carry / short-term-reversal alpha-decay: edges real *in their regime* (JPY carry 2022-24, US-idx
+     STR pre-2013, EURGBP 2022-23) decay out of it; OOS / post-regime split is MANDATORY before citing
+     any carry or reversal edge; unwind tails (−15/−20%) breach the 10% floor. (FTMO_decision_memo
+     06-02; confirmed backwardation_oil, announcement_premium, session_G sign-flips.)
+L32. Retail-CFD commodity carry is one-sided-uncollectable: the short-contango leg needed for most of
+     history costs −46+ bps/month in swap — "collect the roll" is structurally unavailable to retail.
+     (commod_carry thread; confirmed CARRY_FEASIBILITY 2026-06-09.)
+L32b. The collectable side is a credit, not an edge: long-only oil gated on real backwardation nets
+     ≈0 over 19y (+0.96%/yr swap credit cancelled by −1.03%/yr conditioned price beta); basis gating
+     protects only contango-led crashes, rides backwardation-led ones (2008/2014/2022). Both CFD
+     carry sides closed. (backwardation_oil 2026-06-10, registry T109.)
+L33. The real instrument's COST STRUCTURE, not the signal, decides whether a barrier-exploit lives:
+     a 2-bps backtest does not transfer to a 6-10 bps CFD; ORB mean_R sign-flips between 2 and 3 bps
+     RT; swap is charged on HELD NOTIONAL per leg, both directions. Measure the book-level cost,
+     never assume. (ETAT_CANONIQUE §7 2026-06-03; session_F held-notional clause 06-04.)
+L33b. Spread is the intraday-flat executioner: in zero-swap (intraday-flat) structures the binding
+     cost becomes the spread — Gao time-of-day ≈0 gross → −3 bps net (t −6) at a conservative 3 bps
+     RT. An intraday-flat signal needs >3 bps gross to exist. (session_G 2026-06-04; cited "L33-bis".)
+L34. Flow-anchored FX is institutional-tier only: the only gross survivor at the fix/session level
+     (Ranaldo segmentation, two-sided, t=3.55, gross 2.07 bps/d) dies solely on the retail cost tier
+     (needs <~1 bp RT/leg vs measured 2.48). Pre-2015-reform fix magnitudes stay non-tradable (L23).
+     Reformulated 2026-06-10 WITHOUT the asymmetry clause (tz artifact). (fix_reversal 06-02 →
+     true-UTC re-validation 06-10.)
+L35. DP-optimal sizing is the CEILING of every sizing policy, not a heuristic: ORB single-attempt
+     FTMO 2-step ceiling = 33% full-sample. Money management is not the lever — the edge is.
+     (ORB_reconciliation 2026-06.)
+L36. Aggregate overnight carry pre-kills every held premium on FTMO: book-level all-in carry
+     (~6.75%/yr swap + ~1.25% commission) ≈ the entire multi-asset trend premium (~8%/yr) → net
+     Sharpe 0.0; the killer is the AGGREGATE multi-leg carry (low-vol large-notional legs dominate),
+     not the scary single-instrument rate. Carry-immune escapes only: intraday-flat (then L33b binds)
+     or prime ≫ carry (precious-Q1 class). (session_F 2026-06-04; numbered by session_G usage.)
+
+### Trend/book & FX intraday — registre L (L37-L44)
+L37. Filter sanity check: for any conditionally-filtered sleeve, count the fraction of time
+     sign(filter) ≠ native signal. If <5%, the filter is cosmetic — name the sleeve by what it really
+     is (J1 = TSMOM long-only USDJPY, not "carry-aligned trend"). (trend arc, STRATEGY_RESEARCH_LOG 06-06.)
+L38. Beta-orthogonal test: regress any "structural premium" sleeve on a vol-targeted buy-and-hold of
+     its primary asset; report (β, α HAC, R²). R² > 30% ⇒ not an orthogonal edge — it is timing on
+     beta, present it as such. (trend arc 06-06.)
+L39. Daily vs monthly skew dissociation: on trend/carry, daily skew can be negative while monthly
+     skew is positive. Daily skew binds on the FTMO 5% daily barrier; monthly skew binds on the
+     personal book. Always report both. (trend arc 06-06.)
+L40-L41. RÉSERVÉS — top10-rigorous arc (2026-06); originating report not in repo (session memory
+     only). Do NOT reassign; engrave when the report lands.
+L42. Pre-FOMC drift is real on equity indices (confirmed on 8 instruments, top10 arc) and post-event
+     REVERSAL is the wrong direction — post-event momentum continues (25/142 AMTP-significant
+     negative-reversal cells). [Origin report not in repo; engraved from citing artifacts:
+     paper_triage/PAPER_TRIAGE.md, fx_intraday PRE_REGISTRATION §H2.]
+L43. Retail FX intraday-flat microstructure is cost-dead across reversal, drift, and seasonality:
+     exploitable gross is sub-bps vs ~2-5 bps CFD RT (2007-2026, 10 majors, true-UTC, 3 orthogonal
+     angles). Generalizes L34 from fix windows to the whole retail FX intraday-flat space. Pre-flight:
+     gross_per_trade / cost_p95 ≥ 1.5 or dead — best observed 0.36. (fx_intraday SYNTHESIS 2026-06-10.)
+L44. The mechanism-driven cross-sectional contrast is the cheap decisive IC falsifier: split the
+     universe by where the mechanism should/shouldn't apply and pre-register the contrast pool —
+     a weak pooled t became a clean verdict (European t 2.11 vs Asia-native −0.57: signal real,
+     death = cost). (fx_intraday SYNTHESIS 2026-06-10.)
+
+### Renumérotés & nouveaux — réconciliation 2026-06-10 (L45-L50)
+L45. Crypto-CFD TSMOM two-sided is structurally infeasible on FTMO (3-axis kill): short leg not
+     significant even at swap=0 counterfactual (BTC t 0.28, N=205); the long leg of any two-sided
+     crypto TSMOM ≡ Strategy A long-only (clip ⇒ L11 β-long in disguise); 7-night holds × FTMO crypto
+     swap ≈ 19 bps/trade eats the rest. Weekly-crypto-momentum class CLOSED on CFD; non-CFD execution
+     (Propr) or intraday-flat only. (ftmo_twoSided_makeOrBreak POSTMORTEM §5 — cited there as "L33
+     candidate", renumbered.)
+L46. Propfirm honesty checklist: one canonical ledger + measured real cost + frozen spec +
+     full-sample regime. When all four are present, sign-flips between reports disappear — every
+     historical ORB sign-flip was a cost-hypothesis difference on the same ledger. (ETAT_CANONIQUE §7
+     + ORB_reconciliation — cited there as "L34 (proposé)", renumbered.)
+L47. Annualize by √(obs/an), not √252: a once-a-week edge annualizes in √52 — using √252 inflates
+     Sharpe ×2.2 (Monday-sleeve case). (ETAT_CANONIQUE annexe 2026-06-03 — the "phantom L36";
+     never previously engraved.)
+L48. Registry-check-must-sweep-consolidated-paths: a Phase-0 sweep that greps only historical paths
+     (data/ftmo_research/…) after a consolidation returns false "file deleted" and nearly downgrades
+     a STOP into a caveat. Sweep BOTH old cited paths AND the consolidated program dirs AND
+     data/skew_research/session_* AND funnel CSVs before any Phase-0 verdict. Every avoided trial at
+     high N protects the DSR of all future candidates. (session_H 2026-06-10.)
+L49. Unlock-drift-is-short-alt-beta: a calendar-event claim on a structurally bleeding universe must
+     clear a MATCHED PLACEBO CALENDAR, not just significance/decay/DSR gates — the unlock short shows
+     net +337 bps/event, t 2.90, N=578, undecayed, DSR 0.94, and sits BELOW the placebo median of
+     random vol-matched days on the same tokens (p95 +539). Flat dose-response + zero insider
+     gradient + linear event-time escalator complete the falsification. Family: L11; same signature
+     as announcement_premium "drift accrues off-event". (session_I 2026-06-10.)
+L50. Funding-extremes-confirm-momentum-across-exchange-and-cycle: README §6.35 (HL, z-score, 2023-26)
+     replicated independently (Binance, trailing-1y percentile, 2020-26, 13 perps, 2,195 events) —
+     extreme-high funding precedes CONTINUATION (+20/+30/+113 bps at 8h/24h/72h; +239 @72h in
+     2020-21). The funding-contrarian family is closed at the exchange-perp tier; funding-percentile
+     carry-sizing overlays have no IC foundation. (session_I 2026-06-10.)
+
+### Aliases historiques (citations dans les artefacts ≠ numéro gravé — artefacts JAMAIS réécrits)
+| Cité comme | Où | Gravé comme |
+|---|---|---|
+| "L33 candidate" (crypto-CFD TSMOM kill) | `Crypto/research/active/ftmo_twoSided_makeOrBreak/POSTMORTEM.md` §5 | **L45** |
+| "L34 (proposé)" (honesty checklist) | `ftmo_research/_FTMO_ETAT_CANONIQUE.md` §7, `ORB_reconciliation_2026-06.md` | **L46** |
+| "L36 existant (√52)" (phantom — jamais gravé) | `FTMO_LOG_overnight_candidate.md` NB, `_FTMO_ETAT_CANONIQUE.md` annexe | **L47** |
+| "L33-bis" | `data/skew_research/session_G_intraday_flat/` | **L33b** |
+| "L16" | jamais gravé (2 candidats flottants non ratifiés ; g1 audit : « L16 n'existe pas ») | vacant — ne pas réattribuer |
+| L40/L41 | top10 arc, rapport hors-repo | réservés |
+
 ## Methodology toolkit
 - **Significance**: HAC Newey-West (lag-6) t-stat, threshold t > 2.5 for IC feasibility
 - **Multiple testing**: AMTP when n_tests > 1; DSR (Bailey-LdP) for n_mod > 5
@@ -448,3 +564,11 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
 - Strategy C canonical live infra: Futures/live/strategy_c_live/ (NOT strategy_c_paper/).
 - strategy_c_paper/: ONLY pre-existing log infra (log_trade.py, paper_trade_log.csv).
 - For new asset classes, check Research history before assuming nothing was tested.
+- **Phase-0 / lesson sweeps (L48)**: grep BOTH the historical cited paths (`data/ftmo_research/`,
+  `research/`, `data/oxfordstrat_109/` — non réécrits) AND the consolidated dirs
+  (`PropFirms/ftmo/program_2026-06/**`) AND `data/skew_research/session_*` AND funnel CSVs.
+  The L-registry above (L11-L50) is the constitution; session reports may cite aliases — see the
+  aliases table. Lesson minting in sessions = NAMED candidates only; numbers are engraved here
+  at reconciliation (no number minting inside a session).
+- **Session close (obligatoire)**: `python3 tools/check_register_integrity.py` (fail-loud: cited
+  paths exist + git-tracked, N chain monotonic) — fix findings BEFORE the closing commit.
