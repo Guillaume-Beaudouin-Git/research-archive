@@ -188,6 +188,13 @@
     "decision": "rejected_L2_not_accessible",
     "promising_file": null
   },
+  "80467e5872cb1b5a032c3091e0196641": {
+    "first_seen": "2026-06-10 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Panel Data Estimation of Individual Demand in Markets with Many Consumers",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "8478c750f8a92b2e070c86e3d4c224bf": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
