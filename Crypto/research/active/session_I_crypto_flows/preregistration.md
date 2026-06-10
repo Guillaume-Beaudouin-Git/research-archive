@@ -114,3 +114,29 @@ under this directory only; raw fetched data in `cache/` (gitignored, regenerable
 ---
 
 # RESULTS (appended after execution — never above this line)
+
+*Appended 2026-06-10 after execution. Full detail: `report.md`, `i1_results.json`, `i3_results.json`.*
+
+- **I-1: NO-GO — killed by K2 (placebo) and K3 (dose-response).** 578 events / 73 symbols
+  (2020-09→2026-05). Gross short drift +369.7 bps/event (HAC t 3.12); cost gate passed trivially
+  (median all-in cost 4.6 bps incl. a +13.4 bps median funding CREDIT to the short — the crowded-short
+  trap did not materialize; only 33% of events had negative funding). Net +336.8 bps (t 2.90, K1 pass),
+  2024+ subsample +382 (K4 pass), concentration OK (K5 pass), DSR 0.94 (K6 pass) — **but the 1000
+  vol-matched placebo calendars produce a higher mean on random days (placebo median ≈ +410, p95
+  +538.6 > real +336.8 → K2 KILL: disguised unconditional short-alt drift), and dose-response is flat
+  (Spearman ρ=0.048, p=0.248 → K3 KILL: supply mechanism falsified).** Category contrast confirms:
+  insiders/privateSale +367.8 (n=453) vs other +376.5 (n=125) — no insider gradient. Event-time
+  profile: linear −1700 bps escalator over −30..+30d, no kink at the unlock.
+- **I-2: STOP(data)** — see `i2_data_memo.md` (no free ≥3y hourly L/S liquidation source; Coinalyze
+  key = recommended $0 path). Not pre-registered, +0 trials.
+- **I-3: FAIL all horizons → gate not passed.** 2,195 extreme-funding events (999 high / 1,196 low),
+  13 symbols, 2020-2026. High-tail (P>97.5) forward returns are POSITIVE (continuation): +20.0 bps @8h
+  (t 1.34), +29.9 @24h, +113.2 @72h (t 1.60) — wrong sign for the contrarian short everywhere, worst in
+  the 2020-21 trap regime (+239 bps @72h). Low-tail (P<2.5) right-signed at 24h (+38.7, t 1.58) but
+  sub-threshold and sign-flipped in 2022 (−12.6 @72h). No horizon passes both-sides + sign-stability.
+  Replicates README §6.35 (momentum proxy) on Binance 2020-2026 with the percentile spec.
+- **I-4: VOID** (gate failed; frozen overlay map never run, +0 trials). The queued directional
+  funding-contrarian candidate is dead (by §6.35 prior + this replication).
+- **F-1: STOP(prior)** — `vrp_deribit/DECISION.md` (costs 200% of gross, 0/13 WF folds). +0 trials.
+
+**Registry: 115 → 117** (+2: I-1, I-3). No survivors → no paper-trade spec issued.
