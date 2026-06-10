@@ -111,10 +111,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "59771ef0df9d9988177530b5e8cf8bda": {
+    "first_seen": "2026-06-10 11:00",
+    "source": "github_python",
+    "title": "davila7/claude-code-templates",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5ea105e01579257b040eb7309fb874cc": {
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
     "title": "vllm-project/vllm-omni",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5f43428ed43d5dd9251246ac108c813c": {
+    "first_seen": "2026-06-10 11:00",
+    "source": "github_python",
+    "title": "Sumanth077/Hands-On-AI-Engineering",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -143,6 +157,13 @@
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
     "title": "SudoHopeX/KaliGPT",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6fb095f5049aaf63d9c940a22699f631": {
+    "first_seen": "2026-06-10 11:00",
+    "source": "github_python",
+    "title": "soxoj/maigret",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -237,6 +258,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "901b1a36c0c491b6fc51d06a35e35206": {
+    "first_seen": "2026-06-10 11:00",
+    "source": "github_python",
+    "title": "FareedKhan-dev/train-llm-from-scratch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9b0742708bc1aabfcb9d10ac5123236c": {
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
@@ -255,6 +283,13 @@
     "first_seen": "2026-06-04 12:07",
     "source": "github_python",
     "title": "mvanhorn/last30days-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b49c736811fb407e684a73814d5b24a3": {
+    "first_seen": "2026-06-10 11:00",
+    "source": "github_python",
+    "title": "comet-ml/opik",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -328,6 +363,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "cce45068546f7dcaab608990294fec39": {
+    "first_seen": "2026-06-10 11:00",
+    "source": "github_python",
+    "title": "ml-explore/mlx-examples",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "cee53483facff221507028137eb6236e": {
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
@@ -339,6 +381,13 @@
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
     "title": "0x4m4/hexstrike-ai",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d80905bf87c7b66fbe05fac5c2547b5d": {
+    "first_seen": "2026-06-10 11:00",
+    "source": "github_python",
+    "title": "BerriAI/litellm",
     "decision": "rejected_L0",
     "promising_file": null
   },
