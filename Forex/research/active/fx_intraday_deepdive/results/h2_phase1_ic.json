@@ -1,0 +1,67 @@
+{
+  "n_release_minutes": 1058,
+  "per_pair": {
+    "EURUSD": {
+      "n": 1036,
+      "per_yr": 127.9,
+      "corr_imp_cont": 0.0645,
+      "hac_t": 1.071,
+      "spearman": 0.0075,
+      "gross_bps": 0.218,
+      "cost_bps": 2.384,
+      "gross_sharpe": 0.273,
+      "net_sharpe": -2.709,
+      "gross_t": 0.577
+    },
+    "GBPUSD": {
+      "n": 1034,
+      "per_yr": 127.7,
+      "corr_imp_cont": 0.0622,
+      "hac_t": 1.18,
+      "spearman": 0.0375,
+      "gross_bps": 0.18,
+      "cost_bps": 2.813,
+      "gross_sharpe": 0.21,
+      "net_sharpe": -3.061,
+      "gross_t": 0.414
+    },
+    "USDJPY": {
+      "n": 1034,
+      "per_yr": 127.7,
+      "corr_imp_cont": 0.0129,
+      "hac_t": 0.256,
+      "spearman": -0.0135,
+      "gross_bps": -0.183,
+      "cost_bps": 2.567,
+      "gross_sharpe": -0.226,
+      "net_sharpe": -3.374,
+      "gross_t": -0.445
+    }
+  },
+  "pooled": {
+    "port_gross_sharpe": 0.092,
+    "port_gross_hac_t": 0.189,
+    "port_n": 1036
+  },
+  "direction_split": {
+    "cont_up_bps": -0.12,
+    "cont_up_t": -0.352,
+    "n_up": 1596,
+    "cont_dn_bps": 0.276,
+    "cont_dn_t": 0.802,
+    "n_dn": 1504
+  },
+  "L34_preflight": {
+    "gross_bps": 0.072,
+    "cost_bps": 2.588,
+    "ratio": 0.028,
+    "bar": 1.5,
+    "pass_": false
+  },
+  "GATE": {
+    "port_hac_t": 0.189,
+    "sign_continuation": true,
+    "F1_pass": false,
+    "GATE_PASS": false
+  }
+}

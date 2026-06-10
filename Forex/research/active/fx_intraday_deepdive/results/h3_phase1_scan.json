@@ -1,0 +1,40 @@
+{
+  "n_cells": 100,
+  "N_cumulative": 240,
+  "sleeve_net_sharpe": -4.268,
+  "noise_floor_sharpe": 0.631,
+  "sleeve_beats_floor": false,
+  "sleeve_DSR_P": 0.0,
+  "sleeve_p_funded": 0.0002,
+  "best_gross_cell": {
+    "pair": "EURJPY",
+    "sess": "ny",
+    "dow": 2,
+    "gross_t": 3.28,
+    "gross_bps": 3.698,
+    "net_bps": -0.021,
+    "n": 1007
+  },
+  "n_cells_grosst_gt_2p5": 2,
+  "n_cells_grosst_gt_3": 1,
+  "expected_max_t_100cells": 2.53,
+  "n_cells_net_positive": 3,
+  "cells_grosst_gt_2p5": [
+    {
+      "pair": "EURUSD",
+      "sess": "london",
+      "dow": 4,
+      "gross_t": -2.53,
+      "gross_bps": -3.528,
+      "net_bps": 1.94
+    },
+    {
+      "pair": "EURJPY",
+      "sess": "ny",
+      "dow": 2,
+      "gross_t": 3.28,
+      "gross_bps": 3.698,
+      "net_bps": -0.021
+    }
+  ]
+}

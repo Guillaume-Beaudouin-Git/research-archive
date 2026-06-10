@@ -80,3 +80,6 @@ data/panels/m5_indices/
 data/*.txt
 Futures/research/active/ftmo_3strats_audit_2026-06/results/*.parquet
 _automation/arxiv/_raw/
+
+# cache programme actif fx_intraday (régénérable depuis deep_history_utc)
+Forex/research/active/fx_intraday_deepdive/cache/

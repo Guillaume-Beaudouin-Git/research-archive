@@ -1,0 +1,13 @@
+{
+  "cell": "a23_e15 (best gross/cost ratio), primary European pool, delay+1",
+  "N_cumulative": 127,
+  "T_days": 5028,
+  "full_sharpe_gross": 0.1,
+  "full_sharpe_net": -1.983,
+  "noise_floor_sharpe_at_N": 0.585,
+  "gross_beats_floor": false,
+  "DSR_gross_at_N": 0.0,
+  "DSR_net_at_N": 0.0,
+  "p_funded_net": 0.0306,
+  "note": "Gross is un-tradeable; net is the only honest number. Net Sharpe<0 -> DSR~0, p(pass)~floor."
+}
