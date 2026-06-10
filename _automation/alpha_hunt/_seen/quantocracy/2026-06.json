@@ -1,4 +1,11 @@
 {
+  "05922aa034e40b796739e88e0895f95e": {
+    "first_seen": "2026-06-10 06:00",
+    "source": "quantocracy",
+    "title": "Reconstructing a Century of U.S. Corporate Bonds [Quantpedia]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0969bfa6574cfe091a35c1f429146376": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
@@ -13,11 +20,32 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1e4381c1a892f4f6f8d1f4063a60203a": {
+    "first_seen": "2026-06-10 06:00",
+    "source": "quantocracy",
+    "title": "Resourcing a Triangulated Stat Arb Operation as a Solo Trader [Robot Wealth]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "32dbb08d10acf1c4b5c0ce59d2113062": {
+    "first_seen": "2026-06-10 06:00",
+    "source": "quantocracy",
+    "title": "UFC – Ultimate Fitting Championships [Investment Idiocy]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "42a722a9e4c482a5611d2a87a81e2edf": {
     "first_seen": "2026-06-05 06:06",
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 06/04/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4f119bb96ee2a7fccdcf868ee9823bdc": {
+    "first_seen": "2026-06-10 06:00",
+    "source": "quantocracy",
+    "title": "Forecasting statistical estimates when data gets real [Investment Idiocy]",
+    "decision": "accepted",
     "promising_file": null
   },
   "706adf07ae4d3c37d494fab0523af5c5": {
@@ -55,12 +83,26 @@
     "decision": "accepted",
     "promising_file": "quantocracy_the_non_linear_costs_of_trading_concretum_group_20260607.md"
   },
+  "a48f4d1119ad06cf378526f05ca6252f": {
+    "first_seen": "2026-06-10 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/09/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "af114c59419865f3ca80f0ed42e345a2": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
     "title": "AI Overfitting in Trading Systems [Wisdom Trading]",
     "decision": "accepted",
     "promising_file": "quantocracy_ai_overfitting_in_trading_systems_wisdom_trading_20260602.md"
+  },
+  "c4de23ec69921ec63a6bb930b2c61a6f": {
+    "first_seen": "2026-06-10 06:00",
+    "source": "quantocracy",
+    "title": "What Trend Following Actually Adds to a Risk-Premia Core [Beyond Passive]",
+    "decision": "accepted",
+    "promising_file": null
   },
   "d3489edc36d21a7cb66412cabef52fe9": {
     "first_seen": "2026-06-07 06:04",
@@ -110,5 +152,12 @@
     "title": "Trend following (2/4): Sector-by-sector replication [Beyond Passive]",
     "decision": "accepted",
     "promising_file": "quantocracy_trend_following_2_4_sector_by_sector_replication_b_20260605.md"
+  },
+  "f5e991834dbbac8eb8f5b61a60384f3b": {
+    "first_seen": "2026-06-10 06:00",
+    "source": "quantocracy",
+    "title": "When the insiders and the news disagree: a first look at the cross-signal [Tommi",
+    "decision": "accepted",
+    "promising_file": null
   }
 }
