@@ -1,0 +1,199 @@
+meta:
+  version: v2.2
+  spec_date: '2026-06-10'
+  baseline_commits:
+    v22_contract: 605f4a426da3eac4f5a2644bca774a07f1e5f754
+    v22_residuals: 4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539
+  supersedes: v2.1 — toute référence baseline v2.1 est remplacée par ce pin
+  generated_from: config_v22.py via make_spec_yaml.py (do not hand-edit)
+  nonregression: NONREGRESSION_v2.2.md (ancres 1-19)
+  amendments:
+  - 'AMENDEMENT_RAPPORT_MESURE_s9.md (§9: branche kill retirée)'
+account:
+  vendor: FTMO
+  type: 2-step Swing (achat Swing irréversible)
+  size_usd: 10000.0
+  rules:
+    daily_loss: equity >= balance@00:00 Europe/Prague - 5% du capital initial (M5-checked)
+    max_loss: equity >= 90% du capital initial (floor statique 9000)
+    targets:
+      phase1: 0.1
+      phase2: 0.05
+      basis: BALANCE positions closes
+    min_trading_days: 4
+    time_limit: null
+    inter_phase_gap_bdays: 3
+    retry_gap_bdays: 2
+  mission_wall_days: 91
+challenge:
+  config:
+    vm: 14.0
+    p2_mult: 1.2
+    on_w: 0.6
+    orb_risk: 0.0
+    micro_orb: true
+    breaker: 0.3
+    taper: 0.02
+    glide: 0.5
+    pace: 1
+    pace_k: 1.0
+    ab_buf: 0.02
+    ab_days: 5
+    margin_cap: 0.6
+    quantize: true
+    fix_deadlock: true
+  schedule_cet:
+    ger40_exit: 09:00
+    us100_exit: '15:30'
+    ger40_entry_if_on: '17:35'
+    rebalance_and_us100_entry: '22:05'
+  sleeves:
+    gold_trend:
+      instrument: XAUUSD
+      signal: TSMOM blend sign{60,120,250} sur total return carry-ajusté (swap long), dead-zone |s|<0.34
+      vol_target_inst: 0.1
+      inst_cap: 5.0
+      portfolio_vol_layers: port vol-target 10% (60d) + vol-derisk min(1, 0.10/vol20d)
+      equity_gate: 'eq > MA100(eq) ? 1.0 : 0.4 (shift 1) — composant v2.0 documenté par audit C15'
+      leg_cap_pre_vm: 1.5
+    j1:
+      instrument: USDJPY
+      signal: 12-1 momentum (p[t-21]/p[t-252]-1 > 0) long-only
+      vol_target_inst: 0.1
+      inst_cap: 5.0
+      leg_cap_pre_vm: 1.5
+    overnight_midweek:
+      instruments:
+      - US100
+      - GER40
+      side: long
+      nights_held: lundi + mardi
+      sessions_cet:
+        US100: 15:30-22:00
+        GER40: 09:00-17:30
+      weight_per_leg: 0.6
+    orb:
+      challenge_pnl_sleeve: false
+      note: ORB OFF comme sleeve P&L dans le challenge (le changement v2.2)
+  micro_orb_day_counter:
+    is_the_day_counter: true
+    note: le compteur de jours EST le micro-ORB — l'EA implémente CETTE règle, pas un token arbitraire
+    instrument: US100.cash
+    size_lots: 0.01
+    entry: breakout ORB V2 canonique, premier bar 5-min post-OR (OR 15:30-16:00), fills 16:05-16:10 Paris
+    exits: 'V2+E7: stop = côté opposé de l''OR (1R); trail-to-BE après +1R; time-stop close RTH 22:00'
+    condition: posté seulement si AUCUN autre trade ouvert à 21:30 CET — flag `opened` live (sémantique
+      605f4a4)
+    pnl_modeled: true
+    risk_usd_per_trade: 0.01 lot x OR_range points (~$0.2-2.0)
+    backstop_no_signal: 'si aucun signal ORB ce jour ET rien d''ouvert ET min-days non atteint ET balance
+      >= cible: ouvrir/fermer 0.01 lot US100 (incidence sim: 50 / 13068 jours-tentatives)'
+  risk_engine:
+    vol_multiplier: 14.0
+    p2_multiplier: 1.2
+    breaker: flatten M5 si room < 30% du budget daily restant
+    taper_floor: 0.02
+    glide: x0.5 si progression > 80% de la cible
+    pacing: x clip(1 + retard_sur_glide, 0.8, 2.0)
+    abandon: equity < floor + 2% pendant 5 jours -> relancer
+    margin_cap:
+      cap_of_equity: 0.6
+      rates:
+        XAUUSD: 0.02
+        USDJPY: 0.01
+        US100: 0.02
+        GER40: 0.02
+      action: scaling proportionnel toutes jambes (micro-ORB hors cap)
+    quantization_lots: 0.01
+    weekend: positions tenues
+    daily_realize: false
+funded:
+  config:
+    vm: 1.0
+    on_w: 0.35
+    orb_risk: 0.0025
+    micro_orb: false
+    breaker: 0.3
+    taper: 0.02
+    glide: 1.0
+    pace: 0
+    margin_cap: 0.6
+    quantize: true
+    target: 10.0
+  orb:
+    'on': true
+    risk_per_trade: 0.0025
+    cost_param: ORB_RT_BPS
+  ORB_RT_BPS:
+    value: era
+    note: 'era = défaut jusqu''au verdict N=60 du 2026-06-15 (règle pré-enregistrée: aucun ré-ancrage
+      avant N=60)'
+    verdict_procedure: mesure all-in RT (N=60 fills actifs 16:00-16:30) -> config_v22.py:ORB_RT_BPS =
+      valeur -> re-run section funded SEULE -> EV à la valeur mesurée; branche kill RETIRÉE (AMENDEMENT_RAPPORT_MESURE_s9)
+    branches_exactes_ledger:
+      0.61_bps:
+        funded_oos_2y: 2897
+        ev_campagne: 1125
+      1.0_bps:
+        funded_oos_2y: 2807
+        ev_campagne: 1063
+      1.5_bps:
+        funded_oos_2y: 2578
+        ev_campagne: 965
+      era_defaut:
+        funded_oos_2y: 2632
+        ev_campagne: 926
+      orb_off:
+        funded_oos_2y: 1262
+        ev_campagne: 295
+  switch_trigger: 'au FUNDING (P2 validée, compte funded livré) — même événement que vm 14->1.0: vm 14->1.0,
+    on_w 0.6->0.35, ORB ON (0.25% taper), micro-ORB OFF, pace/glide/abandon OFF'
+  withdrawals:
+    every_trading_days: 14
+    amount: balance - 10000 si positif
+    split_trader: 0.8
+    fee_refund: 1er payout
+  horizon_trading_days: 504
+cost_anchors:
+  rt_bps_legs:
+    XAUUSD: 1.84
+    USDJPY: 1.36
+    US100: 2.2
+    GER40: 2.2
+  swap_bps_per_night_measured:
+    US100_long: -2.241
+    GER40_long: -1.607
+    GER40_short: -0.199
+    XAUUSD_long: -2.06
+    USDJPY_long: 0.184
+  triple_days:
+    indices: vendredi
+    metaux_fx: mercredi
+  sources:
+  - outputs/phase0_rt_cost_bps.csv
+  - cache/panel_swapL.parquet
+  - cache/orb_e7_Rera.parquet (era ledger)
+contractual_anchors_v22:
+  challenge_pooled: 0.87
+  challenge_ci95:
+  - 0.823
+  - 0.916
+  challenge_is: 0.906
+  challenge_oos: 0.834
+  n_eff: 174
+  attempts_mean: 3.24
+  funded_value_usd: 1422
+  ev_campaign_usd: 926
+  cdf:
+    30d: 0.416
+    61d: 0.703
+    91d: 0.87
+    182d: 0.989
+    270d: 1.0
+  details: NONREGRESSION_v2.2.md
+live_gates_unchanged:
+- test swap overnight (±20% sinon STOP)
+- 'démo >=3 semaines: fills ACTIFS 16:00-16:30, >=60 trades (gate ORB_RT_BPS funded)'
+- EA MT5 (cette spec) + réconciliation quotidienne fills/swaps/spreads
+- budget 4+ fees (~$400)
+- clause 7.3 — décision comité
