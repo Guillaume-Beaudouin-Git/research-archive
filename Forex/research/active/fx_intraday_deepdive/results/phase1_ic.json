@@ -1,0 +1,193 @@
+{
+  "spec": {
+    "asian_start_hh": 23,
+    "open_hh": 7,
+    "exit_hh": 12,
+    "delay_bars": 1,
+    "signal": "x=-asian_ret/sigma60_lagged",
+    "target": "fwd_ret 07:00->12:00 UTC"
+  },
+  "primary_per_pair": {
+    "EURUSD": {
+      "n": 5028,
+      "per_yr": 259.9,
+      "corr_asian_fwd": -0.0418,
+      "hac_t": 1.89,
+      "pearson": 0.0312,
+      "spearman": 0.0267,
+      "gross_sharpe": 0.435,
+      "net_sharpe": -0.416,
+      "gross_bps_per_trade": 0.796,
+      "cost_bps_per_trade": 1.557,
+      "cost_p95_bps": 2.999,
+      "gross_t": 1.925
+    },
+    "GBPUSD": {
+      "n": 5027,
+      "per_yr": 259.9,
+      "corr_asian_fwd": -0.0139,
+      "hac_t": 1.842,
+      "pearson": 0.0268,
+      "spearman": 0.0245,
+      "gross_sharpe": 0.33,
+      "net_sharpe": -0.769,
+      "gross_bps_per_trade": 0.697,
+      "cost_bps_per_trade": 2.321,
+      "cost_p95_bps": 4.157,
+      "gross_t": 1.507
+    },
+    "EURGBP": {
+      "n": 5022,
+      "per_yr": 259.6,
+      "corr_asian_fwd": -0.0274,
+      "hac_t": 1.868,
+      "pearson": 0.0291,
+      "spearman": 0.0136,
+      "gross_sharpe": 0.005,
+      "net_sharpe": -2.615,
+      "gross_bps_per_trade": 0.01,
+      "cost_bps_per_trade": 5.224,
+      "cost_p95_bps": 8.276,
+      "gross_t": 0.024
+    },
+    "USDCHF": {
+      "n": 5027,
+      "per_yr": 259.9,
+      "corr_asian_fwd": -0.0239,
+      "hac_t": 0.997,
+      "pearson": 0.0172,
+      "spearman": 0.0222,
+      "gross_sharpe": 0.332,
+      "net_sharpe": -1.646,
+      "gross_bps_per_trade": 0.815,
+      "cost_bps_per_trade": 4.866,
+      "cost_p95_bps": 7.753,
+      "gross_t": 1.458
+    },
+    "USDCAD": {
+      "n": 5026,
+      "per_yr": 259.8,
+      "corr_asian_fwd": 0.0025,
+      "hac_t": 0.307,
+      "pearson": 0.0048,
+      "spearman": 0.0186,
+      "gross_sharpe": 0.326,
+      "net_sharpe": -1.459,
+      "gross_bps_per_trade": 0.502,
+      "cost_bps_per_trade": 2.758,
+      "cost_p95_bps": 5.4,
+      "gross_t": 1.505
+    }
+  },
+  "contrast_per_pair": {
+    "USDJPY": {
+      "n": 5027,
+      "per_yr": 259.9,
+      "corr_asian_fwd": 0.0134,
+      "hac_t": -0.649,
+      "pearson": -0.0174,
+      "spearman": -0.0163,
+      "gross_sharpe": -0.446,
+      "net_sharpe": -1.814,
+      "gross_bps_per_trade": -0.775,
+      "cost_bps_per_trade": 2.383,
+      "cost_p95_bps": 4.799,
+      "gross_t": -2.008
+    },
+    "EURJPY": {
+      "n": 5027,
+      "per_yr": 259.9,
+      "corr_asian_fwd": -0.0034,
+      "hac_t": -0.388,
+      "pearson": -0.0073,
+      "spearman": 0.0028,
+      "gross_sharpe": 0.05,
+      "net_sharpe": -1.323,
+      "gross_bps_per_trade": 0.116,
+      "cost_bps_per_trade": 3.172,
+      "cost_p95_bps": 5.714,
+      "gross_t": 0.222
+    },
+    "AUDJPY": {
+      "n": 5027,
+      "per_yr": 259.9,
+      "corr_asian_fwd": 0.0312,
+      "hac_t": -0.882,
+      "pearson": -0.0189,
+      "spearman": 0.0027,
+      "gross_sharpe": -0.191,
+      "net_sharpe": -2.579,
+      "gross_bps_per_trade": -0.507,
+      "cost_bps_per_trade": 6.394,
+      "cost_p95_bps": 13.311,
+      "gross_t": -0.859
+    },
+    "AUDUSD": {
+      "n": 5016,
+      "per_yr": 259.3,
+      "corr_asian_fwd": 0.0094,
+      "hac_t": 0.257,
+      "pearson": 0.0048,
+      "spearman": 0.0109,
+      "gross_sharpe": 0.031,
+      "net_sharpe": -1.758,
+      "gross_bps_per_trade": 0.066,
+      "cost_bps_per_trade": 3.868,
+      "cost_p95_bps": 8.005,
+      "gross_t": 0.138
+    },
+    "NZDUSD": {
+      "n": 5025,
+      "per_yr": 259.7,
+      "corr_asian_fwd": -0.0125,
+      "hac_t": 0.819,
+      "pearson": 0.0144,
+      "spearman": -0.0038,
+      "gross_sharpe": 0.067,
+      "net_sharpe": -3.292,
+      "gross_bps_per_trade": 0.153,
+      "cost_bps_per_trade": 7.675,
+      "cost_p95_bps": 17.252,
+      "gross_t": 0.309
+    }
+  },
+  "primary_pooled": {
+    "stacked_slope": 6e-05,
+    "stacked_hac_t": 3.061,
+    "stacked_n": 25130,
+    "port_gross_sharpe": 0.476,
+    "port_gross_hac_t": 2.113,
+    "port_n_days": 5028
+  },
+  "contrast_pooled": {
+    "stacked_slope": -2e-05,
+    "stacked_hac_t": -0.553,
+    "stacked_n": 25122,
+    "port_gross_sharpe": -0.124,
+    "port_gross_hac_t": -0.569,
+    "port_n_days": 5027
+  },
+  "primary_direction_split": {
+    "fade_up_bps": 0.933,
+    "fade_up_t": 3.329,
+    "n_up": 13010,
+    "fade_dn_bps": 0.17,
+    "fade_dn_t": 0.633,
+    "n_dn": 12043
+  },
+  "L34_preflight": {
+    "gross_bps": 0.564,
+    "cost_p95_bps": 5.717,
+    "ratio": 0.099,
+    "bar": 1.5,
+    "pass_": false
+  },
+  "GATE": {
+    "pooled_hac_t": 3.061,
+    "port_hac_t": 2.113,
+    "sign_reversal": true,
+    "F1_pass": false,
+    "F2_primary_gt_contrast": true,
+    "GATE_PASS": false
+  }
+}
