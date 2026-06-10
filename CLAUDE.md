@@ -277,6 +277,19 @@ L24. Propfirm pass-probability is driven by the SHAPE of the daily-return distri
 - HL API constraint: no candle data before Nov 2022; gap Dec 2022–Dec 2023
 
 ## Research history (n_tests = 321 global — ledger canonique)
+<!-- Convention n_tests (2026-06-10) : DEUX registres.
+  (1) GLOBAL = 321 — ledger historique canonique, FIGÉ 2026-05-30 (ce fichier).
+  (2) PROGRAMME (depuis 2026-06) : chaque programme/étude tient un compteur cumulatif
+      LOCAL nommé — ex: fx_intraday_deepdive N_ledger 108→240, backwardation_oil
+      « program N 112→115 », ftmo_candidate_funnel 97→103 — avec la règle d'incrément
+      du N_ledger (toute CONFIGURATION backtestée compte ; data-validation pure ne
+      compte pas ; « if swapping it could have been the winner, it counts »).
+      Les corrections multi-tests (AMTP/DSR) d'une étude utilisent le compteur de
+      SON programme, pas le global.
+  Jonction : global_courant = 321 + Σ deltas des programmes post-2026-05-30
+  (non-overlapping par construction — tout test post-05-30 passe par UN registre
+  programme). Réconcilier à la CLÔTURE de chaque programme en ajoutant son delta ici.
+  Ne JAMAIS additionner les sous-totaux pré-2026-05-30 (overlap, cf. note ci-dessous). -->
 <!-- Sequential global milestones (README §6.55 authoritative, confirmed line 1594):
      = 83  equities/ETF/options sub-total (README §10): includes crypto-era tests 1–53,
            FX carry 4, multi-asset 5+1, NQ ORB IVB 3, equities 14, options 1
