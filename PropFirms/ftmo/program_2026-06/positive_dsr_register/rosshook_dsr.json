@@ -1,0 +1,57 @@
+{
+  "series": "research/s076_replication/results/mtm_deployable.csv :: ret",
+  "engine": "dsr.py (repo root) deflated_sharpe_ratio \u2014 Bailey-LdP probabilistic DSR in [0,1]",
+  "convention": "PPY=252; rf=0 PRIMARY (0.5%-risk strategy P&L, matches replication Sharpe 0.44); rf=0.02 caveat (default; sizing-confounded). N=1 -> SR*=0 (pre-specified single test); N=108 std_sr_trials=0.845 (program noise SE) + std_sr=1.0 (dsr.py default).",
+  "full": {
+    "window": "full 2007-2026",
+    "T_obs": 5866,
+    "rf0": {
+      "sharpe_ann": 0.4395,
+      "skew": 0.4821,
+      "excess_kurtosis": 45.37,
+      "DSR_N1": 0.9832,
+      "SRstar_N1": 0.0,
+      "DSR_N108_std0.845": 0.0,
+      "SRstar_N108_std0.845": 2.161,
+      "DSR_N108_std1.0": 0.0,
+      "SRstar_N108_std1.0": 2.558
+    },
+    "rf0.02": {
+      "sharpe_ann": -0.7182,
+      "skew": 0.4821,
+      "excess_kurtosis": 45.37,
+      "DSR_N1": 0.0004,
+      "SRstar_N1": 0.0,
+      "DSR_N108_std0.845": 0.0,
+      "SRstar_N108_std0.845": 2.161,
+      "DSR_N108_std1.0": 0.0,
+      "SRstar_N108_std1.0": 2.558
+    }
+  },
+  "oos_2016": {
+    "window": "OOS >=2016",
+    "T_obs": 3501,
+    "rf0": {
+      "sharpe_ann": 0.555,
+      "skew": 0.3885,
+      "excess_kurtosis": 36.14,
+      "DSR_N1": 0.9808,
+      "SRstar_N1": 0.0,
+      "DSR_N108_std0.845": 0.0,
+      "SRstar_N108_std0.845": 2.161,
+      "DSR_N108_std1.0": 0.0,
+      "SRstar_N108_std1.0": 2.558
+    },
+    "rf0.02": {
+      "sharpe_ann": -0.4208,
+      "skew": 0.3885,
+      "excess_kurtosis": 36.14,
+      "DSR_N1": 0.0599,
+      "SRstar_N1": 0.0,
+      "DSR_N108_std0.845": 0.0,
+      "SRstar_N108_std0.845": 2.161,
+      "DSR_N108_std1.0": 0.0,
+      "SRstar_N108_std1.0": 2.558
+    }
+  }
+}
