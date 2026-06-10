@@ -61,7 +61,7 @@ régénéré dans ce run — rien d'hérité des documents v2.0/v2.1. CIs = bloc
 | Swap ×1.5 / Spread ×2 | 86.4% / 77.9% | pas de falaise |
 | Marge pré-cap | p50 21% / p99 79% / max 116% ; cap mord 5.6% | ≈ v2.1 ✓ |
 | Gap weekend ×1.5 / ×2 (rule-check) | 84.9% / 85.1% | −2 pts, borné |
-| vm sweep 10/12/16/18 | 84.2 / 83.8 / 84.4 / 84.6 | pas de knife-edge (CIs ±5) |
+| vm sweep 10/12/**13/15**/16/18 | 84.2 / 83.8 / **86.2 / 87.7** / 84.4 / 84.6 | plateau lisse autour de vm14 (87.0) ; deltas appariés vs vm14 TOUS CI95 ⊃ 0 (ex. vm12 −3.2 [−9.3;+2.8]) — provenance vérifiée (runs v2.2 frais, colonne micro), vm13/15 = diagnostic post-résidu |
 
 ### Notes de lecture (honnêteté)
 1. Le micro-ORB coûte **−1.3 pt** vs le compteur $1 idéalisé (87.0 vs 88.3 backstop-only,
