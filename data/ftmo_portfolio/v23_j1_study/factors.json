@@ -1,0 +1,8 @@
+{
+  "FACT_A": 1.1291609749053884,
+  "FACT_C": 1.1842419666904516,
+  "formula": "std(book)/std(book - removed_component), v2.2 baseline day records",
+  "FACT_B": "measured post B_raw: std(book_base)/std(book_B_raw); |FACT_B-1|<=0.01 => B_iso == B_raw (pre-registered)",
+  "FACT_B_measured": 0.9903330448174978,
+  "B_iso_distinct_run": false
+}
