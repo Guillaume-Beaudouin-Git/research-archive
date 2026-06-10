@@ -216,6 +216,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b8e948140f8b844418789ddc8d6806fd": {
+    "first_seen": "2026-06-10 02:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: Create Your Own TV Channel",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c242cbb63994f87bd07eeaa6620ef1ed": {
     "first_seen": "2026-06-04 12:07",
     "source": "hn_algotrading",
@@ -283,6 +290,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Algorithmic Trading Models – Moving Averages",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e16a3016a4fac60e6bc63d5212f121bc": {
+    "first_seen": "2026-06-10 02:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: Story Jam, a music composition tool for Storytellers",
     "decision": "rejected_L0",
     "promising_file": null
   },
