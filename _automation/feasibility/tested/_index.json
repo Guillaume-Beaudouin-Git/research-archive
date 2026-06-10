@@ -1047,6 +1047,62 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_evaluating_ai_investment_strategies_20260609_2026-06-09_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_reconstructing_a_century_of_us_corporate_bonds_20260610.md",
+      "tested_date": "2026-06-10",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_reconstructing_a_century_of_us_corporate_bonds_2_2026-06-10_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_resourcing_a_triangulated_stat_arb_operation_solo_20260610.md",
+      "tested_date": "2026-06-10",
+      "handler": "ExitRuleHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_resourcing_a_triangulated_stat_arb_operation_sol_2026-06-10_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_ufc_ultimate_fitting_championships_investment_idio_20260610.md",
+      "tested_date": "2026-06-10",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_ufc_ultimate_fitting_championships_investment_id_2026-06-10_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_when_insiders_and_news_disagree_cross_signal_20260610.md",
+      "tested_date": "2026-06-10",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_when_insiders_and_news_disagree_cross_signal_202_2026-06-10_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_quantpedia_premium_update_june_10th_20260610.md",
+      "tested_date": "2026-06-10",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_premium_update_june_10th_20260610_2026-06-10_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_forecasting_statistical_estimates_when_data_gets_r_20260610.md",
+      "tested_date": "2026-06-10",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_forecasting_statistical_estimates_when_data_gets_2026-06-10_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_what_trend_following_actually_adds_to_risk_premia_20260610.md",
+      "tested_date": "2026-06-10",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_what_trend_following_actually_adds_to_risk_premi_2026-06-10_report.md",
+      "stopped_at": "A"
     }
   ]
 }
