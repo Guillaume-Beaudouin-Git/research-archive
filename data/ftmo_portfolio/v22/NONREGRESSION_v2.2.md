@@ -24,6 +24,7 @@ stack gelé ; /usr/bin/python3. Toute future modification doit re-passer CE fich
 
 | 18 | branches ORB_RT_BPS (rerun exact ledger) | 0.61→OOS $2,897 EV +$1,125 ; 1.0→$2,807 +$1,063 ; 1.5→$2,578 +$965 ; off→$1,262 +$295-310 | ±10% ; EV > 0 sur tout le domaine |
 | 19 | `make_spec_yaml.py` | spec_v22.yaml régénéré BYTE-IDENTIQUE, sha256 `dd6ab12680208c4e71ea34f83c254e9246e93e2c55d257ebad8e800b70c500ac` ; drift-check configs PASS | toute divergence = la spec a bougé sans re-gel → STOP ; ne JAMAIS éditer le yaml à la main |
+| 20 | `ea/brain.py --check` + `ea/make_spec_mqh.py` | brain: spec OK + pins 605f4a4/4e1bac5/87b6cd4 présents + REJET d'un yaml altéré (test négatif vérifié) ; mqh régénéré BYTE-IDENTIQUE sha256 `1d83454602560c09b44a668ce55b0e0293f970c61b39ee9ff3ff2a437a28cbf5` ; EA OnInit logge `SPEC OK v2.2 sha dd6ab1268020…` | brain doit REFUSER tout écart ; mqh jamais édité à la main ; EA sans le fichier Files = refuse de trader |
 
 **Procédure ORB_RT_BPS (verdict démo N=60, §9 RAPPORT_MESURE amendé — branche kill RETIRÉE,
 cf. AMENDEMENT_RAPPORT_MESURE_s9.md)** : éditer `config_v22.py:ORB_RT_BPS` (float bps all-in
