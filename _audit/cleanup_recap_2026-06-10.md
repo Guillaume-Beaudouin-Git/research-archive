@@ -104,7 +104,26 @@ L'entrée backwardation_oil (session parallèle, commit `0594005`) annonce « pr
 
 ## 3. Reste à faire (NON exécuté — sur ton GO)
 
-> ✅ **P2 PARTIEL exécuté le 2026-06-10** (session parallèle encore active → pas de déplacements) :
+> ✅✅ **P2 COMPLET exécuté le 2026-06-10 (soir)**, après la réparation deep_history_utc (T1-T6
+> de la session data — pré-requis qui s'est révélé CRITIQUE : avant réparation, deep_history avait
+> des trous 2018-2021 exactement là où m5_indices avait des données réelles ; supprimer avant
+> aurait perdu du contenu). Exécuté : 13 M1 m5_indices supprimés (1,55 Go, chaque fichier vérifié
+> ⊂ deep_history post-réparation) + panels dérivés m1_close/m5_* ; consolidation FTMO →
+> `PropFirms/ftmo/program_2026-06/` (research/ démantelé, data/ftmo_research+ftmo_universe,
+> ftmo_3strats, 4 dossiers PropFirms, top10_test) ; fx_intraday_deepdive → `Forex/research/active/`
+> (chemins exécutables relatifs, vérifiés) ; mtf → `Multi_Asset/research/archived/mtf_a1_tsmom/`
+> (+README mapping) ; audit/+audit-fetch-B → `_audit/2026-06_instrument_schema/` ; docs/strategy_*
+> → `docs/archive/2026-04/` ; readme → `docs/archive/legacy_crypto_readme.md` ; oxfordstrat_109 →
+> `Multi_Asset/research/archived/oxfordstrat_109_audit/` (.git imbriqué retiré) ; nq_intraday_vwap
+> → archived ; strategy_d_nq fusionné dans strategy_d/infra. CONSERVÉS (pas de superset) :
+> US2000_M1.csv, BTCUSD/EURUSD/GER40/XAUUSD *_m1_panel.parquet (EET, code actif), binance/,
+> sample60d_*, *_M5.csv, exporters mq5. Refs actives corrigées (docstrings fx_intraday,
+> pairs_btceth_D) ; citations historiques des postmortems non réécrites (mapping ci-dessus).
+> NOTE : EURUSD_M1.csv n'existait plus dans m5_indices — fix_reversal référence un fichier
+> absent (lecture probable du parquet panel) → sa migration vers deep_history_utc reste à faire
+> par son owner (checklist).
+>
+> ✅ **P2 PARTIEL exécuté le 2026-06-10 (après-midi)** (session parallèle encore active → pas de déplacements) :
 > `Forex/data/cache/dukascopy_m5/` supprimé (255 Mo) · `_raw` purgé intégralement après traitement
 > du backlog (`process_raw_filter.py` : 1 nouveau, 0 accepté — _automation 993 Mo → 2,4 Mo) ·
 > checklist de migration m5_indices écrite : `_audit/m5_indices_migration_checklist_2026-06-10.md`

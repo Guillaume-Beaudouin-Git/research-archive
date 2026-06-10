@@ -2,7 +2,13 @@
 
 **Objectif** : supprimer les 14 `data/panels/m5_indices/{FX,indices}_M1.csv` (1,7 Go, EET mislabelé UTC,
 2022-2025) au profit de `data/deep_history_utc/` (true UTC, 2007→2026-06, spread calibré).
-**Statut** : préparé le 2026-06-10 (P2 partiel). Suppression NON faite — bloquée par fix_reversal.
+**Statut** : ✅ EXÉCUTÉ le 2026-06-10 soir (P2 complet) — 13 M1 supprimés après vérification
+fichier-par-fichier ⊂ deep_history_utc POST-réparation T1-T6. Conservés : US2000_M1.csv (pas de
+superset), `*_m1_panel.parquet` EET (code actif), binance/, *_M5.csv, samples, exporters.
+Découverte : EURUSD_M1.csv et BTCUSD_M1.csv n'existaient déjà plus (remplacés par les parquet
+panels) — fix_reversal cite un CSV absent. RESTE À FAIRE (owner fix_reversal) : migrer vers
+deep_history_utc/EURUSD_M1.csv avec l'audit tz ci-dessous ; puis trancher le sort des parquet
+panels EET (même logique tz).
 
 ## Par consommateur (grep vérifié 2026-06-10)
 

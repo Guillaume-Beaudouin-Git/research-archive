@@ -3,7 +3,7 @@ validation_D.py — Validate Strategy D (BTC/ETH pairs cointégration + Kalman).
 
 Source: Park (IJSRA 2026), claimed Sharpe 2.23 on Jan 2022 - Oct 2024.
 
-Apply the 4 stat-arb killers from data/ftmo_research/statarb_deepdive_ftmo.md:
+Apply the 4 stat-arb killers from PropFirms/ftmo/program_2026-06/ftmo_research/statarb_deepdive_ftmo.md:
   1. Cointegration OOS — does the relation hold OUTSIDE the Park window?
   2. Half-life OU — intraday-tradeable or multi-day (funding applies)?
   3. Funding two legs — the 2x structural drag, the most probable killer.
