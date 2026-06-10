@@ -1,0 +1,188 @@
+{
+  "meta": {
+    "data_source": "data/panels/m5_indices/EURUSD_M1.csv",
+    "first_bar": "2018-01-02 00:00:00+00:00",
+    "last_bar": "2026-05-29 01:55:00+00:00",
+    "n_rows": 3132491,
+    "point_size_EURUSD": 1e-05,
+    "commission_usd_per_lot_RT": 5.0,
+    "lot_notional_EUR": 100000,
+    "commission_bps_RT_at_1.13": 0.442
+  },
+  "unconditional": {
+    "label": "ALL_BARS",
+    "N": 2110160,
+    "med_pts": 3,
+    "p75_pts": 8,
+    "p90_pts": 9,
+    "p95_pts": 13,
+    "p99_pts": 40,
+    "med_bps_RT": 0.265,
+    "p75_bps_RT": 0.708,
+    "p90_bps_RT": 0.796,
+    "p95_bps_RT": 1.15,
+    "p99_bps_RT": 3.54
+  },
+  "fix_windows": {
+    "Tokyo_09:55_JST": {
+      "label": "Tokyo_09:55_JST",
+      "N": 21686,
+      "med_pts": 17,
+      "p75_pts": 26,
+      "p90_pts": 37,
+      "p95_pts": 46,
+      "p99_pts": 63,
+      "med_bps_RT": 1.504,
+      "p75_bps_RT": 2.301,
+      "p90_bps_RT": 3.274,
+      "p95_bps_RT": 4.071,
+      "p99_bps_RT": 5.575
+    },
+    "ECB_14:15_CET_winter": {
+      "label": "ECB_14:15_CET_winter",
+      "N": 5272,
+      "med_pts": 2,
+      "p75_pts": 4,
+      "p90_pts": 8,
+      "p95_pts": 8,
+      "p99_pts": 9,
+      "med_bps_RT": 0.177,
+      "p75_bps_RT": 0.354,
+      "p90_bps_RT": 0.708,
+      "p95_bps_RT": 0.708,
+      "p99_bps_RT": 0.796
+    },
+    "ECB_14:15_CEST_summer": {
+      "label": "ECB_14:15_CEST_summer",
+      "N": 7419,
+      "med_pts": 3,
+      "p75_pts": 8,
+      "p90_pts": 8,
+      "p95_pts": 9,
+      "p99_pts": 11,
+      "med_bps_RT": 0.265,
+      "p75_bps_RT": 0.708,
+      "p90_bps_RT": 0.708,
+      "p95_bps_RT": 0.796,
+      "p99_bps_RT": 0.973
+    },
+    "London_16:00_GMT": {
+      "label": "London_16:00_GMT",
+      "N": 4766,
+      "med_pts": 2,
+      "p75_pts": 4,
+      "p90_pts": 8,
+      "p95_pts": 8,
+      "p99_pts": 9,
+      "med_bps_RT": 0.177,
+      "p75_bps_RT": 0.354,
+      "p90_bps_RT": 0.708,
+      "p95_bps_RT": 0.708,
+      "p99_bps_RT": 0.796
+    },
+    "London_16:00_BST": {
+      "label": "London_16:00_BST",
+      "N": 12298,
+      "med_pts": 2,
+      "p75_pts": 8,
+      "p90_pts": 8,
+      "p95_pts": 8,
+      "p99_pts": 11,
+      "med_bps_RT": 0.177,
+      "p75_bps_RT": 0.708,
+      "p90_bps_RT": 0.708,
+      "p95_bps_RT": 0.708,
+      "p99_bps_RT": 0.973
+    }
+  },
+  "session_windows": {
+    "Asian_thin_00-07": {
+      "label": "Asian_thin_00-07",
+      "N": 755684,
+      "med_pts": 4,
+      "p75_pts": 8,
+      "p90_pts": 17,
+      "p95_pts": 29,
+      "p99_pts": 55,
+      "med_bps_RT": 0.354,
+      "p75_bps_RT": 0.708,
+      "p90_bps_RT": 1.504,
+      "p95_bps_RT": 2.566,
+      "p99_bps_RT": 4.867
+    },
+    "London_open_07-08": {
+      "label": "London_open_07-08",
+      "N": 83639,
+      "med_pts": 3,
+      "p75_pts": 5,
+      "p90_pts": 8,
+      "p95_pts": 9,
+      "p99_pts": 12,
+      "med_bps_RT": 0.265,
+      "p75_bps_RT": 0.442,
+      "p90_bps_RT": 0.708,
+      "p95_bps_RT": 0.796,
+      "p99_bps_RT": 1.062
+    },
+    "NY_open_13-14_winter": {
+      "label": "NY_open_13-14_winter",
+      "N": 31528,
+      "med_pts": 2,
+      "p75_pts": 4,
+      "p90_pts": 8,
+      "p95_pts": 8,
+      "p99_pts": 10,
+      "med_bps_RT": 0.177,
+      "p75_bps_RT": 0.354,
+      "p90_bps_RT": 0.708,
+      "p95_bps_RT": 0.708,
+      "p99_bps_RT": 0.885
+    },
+    "NY_open_12-13_summer": {
+      "label": "NY_open_12-13_summer",
+      "N": 44529,
+      "med_pts": 3,
+      "p75_pts": 8,
+      "p90_pts": 8,
+      "p95_pts": 9,
+      "p99_pts": 11,
+      "med_bps_RT": 0.265,
+      "p75_bps_RT": 0.708,
+      "p90_bps_RT": 0.708,
+      "p95_bps_RT": 0.796,
+      "p99_bps_RT": 0.973
+    }
+  },
+  "slippage_atr_05x_londonfix_bps": 1.075,
+  "slippage_note": "0.5 \u00d7 median ATR_M1(20) inside London fix window, in bps. Used as adverse slippage stress for fix-entry strategies.",
+  "cost_stack_RT_bps": {
+    "London_fix_p95": {
+      "spread": 0.708,
+      "comm": 0.442,
+      "slip": 1.08,
+      "total_markup1": 2.23,
+      "total_markup2": 2.93
+    },
+    "Tokyo_fix_p95": {
+      "spread": 4.071,
+      "comm": 0.442,
+      "slip": 1.08,
+      "total_markup1": 5.59,
+      "total_markup2": 9.66
+    },
+    "ECB_fix_p95_winter": {
+      "spread": 0.708,
+      "comm": 0.442,
+      "slip": 1.08,
+      "total_markup1": 2.23,
+      "total_markup2": 2.93
+    },
+    "Asian_thin_p95": {
+      "spread": 2.566,
+      "comm": 0.442,
+      "slip": 1.08,
+      "total_markup1": 4.08,
+      "total_markup2": 6.65
+    }
+  }
+}

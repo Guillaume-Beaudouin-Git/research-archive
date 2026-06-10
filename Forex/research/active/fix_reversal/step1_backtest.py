@@ -51,7 +51,7 @@ import pandas as pd
 import statsmodels.api as sm
 
 REPO = Path(__file__).resolve().parents[4]
-PANEL = REPO / "data/panels/m5_indices/EURUSD_M1.csv"
+PANEL = REPO / "data/deep_history_utc/EURUSD_M1.csv"
 OUTDIR = Path(__file__).resolve().parent
 
 JST = ZoneInfo("Asia/Tokyo")

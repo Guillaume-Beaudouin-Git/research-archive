@@ -24,7 +24,9 @@ References
 ----------
 - FTMO MT5 spread points → bps: 1 point = 1e-5 (EURUSD, 5 decimals).
 - FTMO FX commission: $2.5 / lot / side = $5 RT (ftmo_specs.csv).
-- FTMO MT5 panel: data/panels/m5_indices/EURUSD_M1.csv (2018-2026).
+- Data: data/deep_history_utc/EURUSD_M1.csv (TRUE UTC, 2007-2026, calibrated spread).
+  Migrated 2026-06-10 from m5_indices/EURUSD_M1.csv (EET mislabeled UTC) — see
+  FIX_REVERSAL_TZ_MIGRATION.md. Pre-migration results: *.pre_tz_migration.*.
 - Cost markup 1.0 (feed-raw) AND 2.0 (retail-vs-feed, L23b).
 """
 from __future__ import annotations
@@ -36,7 +38,7 @@ import numpy as np
 import pandas as pd
 
 REPO = Path(__file__).resolve().parents[4]
-PANEL = REPO / "data/panels/m5_indices/EURUSD_M1.csv"
+PANEL = REPO / "data/deep_history_utc/EURUSD_M1.csv"
 OUTDIR = Path(__file__).resolve().parent
 
 POINT = 1e-5                # EURUSD decimals=5

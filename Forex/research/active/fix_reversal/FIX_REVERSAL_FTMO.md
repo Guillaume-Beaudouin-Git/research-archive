@@ -1,5 +1,13 @@
 # Fix-reversal FX (flow-anchored) — make-or-break sur coûts FTMO MT5 réels
 
+> ⚠️ **INVALIDÉ 2026-06-10 (audit tz)** — la source `m5_indices/EURUSD_M1.csv` était en EET/EEST
+> broker mislabelé UTC : toutes les fenêtres de fix de ce rapport étaient décalées de 2-3 h
+> (le « Tokyo fix wide » §1 = spike de rollover broker ; le « levier EOM » §2 et l'« émergence
+> 2023-2026 » = artefacts tz ; l'« asymétrie L25 » §3 disparaît sur vraies heures).
+> Re-run 2026-06-10 sur `deep_history_utc` (TRUE UTC, 2007-2026) : **NO-GO confirmé**, bases
+> valides — voir `FIX_REVERSAL_TZ_MIGRATION.md`. Tableaux ci-dessous = état EET-era, conservés
+> pour l'historique. Anciens outputs : `*.pre_tz_migration.{json,csv}`.
+
 **Status:** NO-GO (kill empirique au coût net FTMO)
 **Date:** 2026-06-02
 **Univers:** EURUSD spot, FTMO MT5 panel (`data/panels/m5_indices/EURUSD_M1.csv`), 2018-01-02 → 2026-05-29, 3 132 491 M1 bars.
