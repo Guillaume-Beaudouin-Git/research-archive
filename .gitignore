@@ -79,3 +79,4 @@ data/deep_history_m1/_cache_duka/
 data/panels/m5_indices/
 data/*.txt
 Futures/research/active/ftmo_3strats_audit_2026-06/results/*.parquet
+_automation/arxiv/_raw/

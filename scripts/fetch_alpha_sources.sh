@@ -45,6 +45,14 @@ fetch_source() {
   fi
 }
 
+# Shared git lock with fetch_arxiv.sh — 2026-06-09 race postmortem (concurrent
+# pulls at 06:30:01 polluted FETCH_HEAD). Lock held for the whole run.
+exec 9>"$HOME/.algo_git.lock"
+if ! flock -w 180 9; then
+  log "ERROR: git lock timeout (another fetch cron holds it)"
+  exit 1
+fi
+
 cd "$REPO_DIR" || { log "FATAL cd failed"; exit 1; }
 # Load secrets from .env (FRED_API_KEY, etc.)
 if [ -f "$REPO_DIR/.env" ]; then
