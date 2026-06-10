@@ -66,9 +66,14 @@ Communique en français et en anglais.
 - Personal book: A (TSMOM, paused) + B (HL testnet, mainnet ~Jul 2026)
 - Propfirm book (décision 2026-06-10): **FTMO uniquement (futures/CFD) + Propr (crypto)**.
   Tradeify annulé; C-sur-NQ sans véhicule (L22c). Potential D: decorrelated, propfirm-targeted.
-- A+B+C theoretical: Sharpe 2.24, MaxDD -1.0% (ERC: A=10%, B=68%, C=22% at SR_B=2.0)
-  ⚠ caveat 2026-06-10: calculé avec SR_C=1.52 périmé — à recalculer avec le re-baseline (0.41/0.69).
-- New strategy D gate: Sharpe(A+B+C+D) > 1.10 × 2.24 = 2.46 required (même caveat)
+- **Book de référence = A+B (recalc 2026-06-10)** : SR analytique **2.31** (ERC risk-units 50/50 ;
+  SR_A=1.33, SR_B=2.0 proxy L14, ρ_AB=0.039 full-sample). Sensibilité A+B+C au re-baseline C :
+  SR_C=0.41 → 2.08 | 0.69 → 2.24 → **C dilutif sur tout l'intervalle** (breakeven ERC : SR_C≈0.81)
+  → C hors book personnel aussi. L'ancien « 2.24, MaxDD -1.0% (10/68/22) » est caduc : méthodo
+  série avec B-backtest SR 9.64, L14-inadmissible (le 2.238→2.238 est une coïncidence fortuite).
+  MaxDD book : à mesurer sur ≥60 j live B mainnet (série B backtest 92% zéros, solveur ERC série
+  dégénère). Détail : `_audit/portfolio_recalc_2026-06-10.md`.
+- New strategy D gate: Sharpe(book+D) > 1.10 × 2.31 = **2.54** required
 - Propfirms do NOT accept crypto/delta-neutral → A and B stay personal book
 
 ## Repo layout
