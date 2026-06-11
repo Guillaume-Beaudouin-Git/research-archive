@@ -1,0 +1,94 @@
+{
+ "read_date": "2026-06-10",
+ "source": "FTMO-Demo Standard",
+ "challenge_base": 87.01,
+ "challenge_swaps": 85.93,
+ "challenge_recost": 84.63,
+ "delta_pt": -2.38,
+ "att_recost": 3.32,
+ "gate_G2": "FAIL",
+ "margin": [
+  {
+   "tag": "policy",
+   "n": 8805,
+   "p50": 0.20987304470679086,
+   "p99": 0.783249268205991,
+   "p999": 1.0115223068225723,
+   "mx": 1.2111646822883746,
+   "bind": 0.05485519591141397,
+   "p_pass": 84.63203463203463,
+   "att": 3.324675324675325
+  },
+  {
+   "tag": "standard",
+   "n": 9429,
+   "p50": 0.22051783171090567,
+   "p99": 1.0416,
+   "p999": 1.4621497562238317,
+   "mx": 1.5620055453919763,
+   "bind": 0.10096510764662213,
+   "p_pass": 84.84848484848484,
+   "att": 3.3722943722943723
+  },
+  {
+   "tag": "swing",
+   "n": 18695,
+   "p50": 0.686834477492694,
+   "p99": 3.9462117376891293,
+   "p999": 5.111502564102603,
+   "mx": 5.932125005943783,
+   "bind": 0.5602032629045199,
+   "p_pass": 71.42857142857143,
+   "att": 2.9913419913419914
+  }
+ ],
+ "funded_IS": 731.0,
+ "funded_OOS": 2623.0,
+ "funded_IS_swingm": 731.0,
+ "funded_OOS_swingm": 2623.0,
+ "VAL": 1438.0,
+ "EV": 898.0,
+ "baseline_anchors": {
+  "funded_IS": 684,
+  "funded_OOS": 2632,
+  "VAL": 1422,
+  "EV": 926
+ },
+ "challenge_comm_only": 85.28,
+ "att_comm_only": 3.28,
+ "funded_IS_comm_only": 683.0,
+ "funded_OOS_comm_only": 2529.0,
+ "VAL_comm_only": 1381.0,
+ "EV_comm_only": 863.0,
+ "gate_G2_diagnostic": "comm = co\u00fbt r\u00e9el omis du baseline (JPY 0.5 bps RT, XAU 0.14) ; swap forward-projection = convention diagnostic, panel historique conserv\u00e9 au contractuel",
+ "paired_deltas": {
+  "comm_only": {
+   "delta_pt": -1.73,
+   "ci95": [
+    -5.84,
+    1.95
+   ]
+  },
+  "swaps_fwd": {
+   "delta_pt": -1.08,
+   "ci95": [
+    -4.33,
+    2.38
+   ]
+  },
+  "swaps_comm": {
+   "delta_pt": -2.38,
+   "ci95": [
+    -7.14,
+    1.95
+   ]
+  },
+  "swing_margin": {
+   "delta_pt": -15.58,
+   "ci95": [
+    -24.24,
+    -7.14
+   ]
+  }
+ }
+}

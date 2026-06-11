@@ -19,7 +19,8 @@ sys.path.insert(0, str(V22))
 import config_v22 as C22
 
 SPEC_PATH = V22 / "spec_v22.yaml"
-PIN_SHA256 = "dd6ab12680208c4e71ea34f83c254e9246e93e2c55d257ebad8e800b70c500ac"
+# v2.2.1 recost (data-only) — ancien pin v2.2: dd6ab12680208c4e71ea34f83c254e9246e93e2c
+PIN_SHA256 = "56fbdde78a2e5c4365e8e0f5bbda06d3697a198beccbcbf2dd02deea0eb27928"
 PIN_COMMITS = {
     "v22_contract": "605f4a426da3eac4f5a2644bca774a07f1e5f754",
     "v22_residuals": "4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539",

@@ -3,8 +3,10 @@
 Deterministic output (no timestamps, insertion-ordered) so regeneration is
 byte-identical — non-regression anchor #19. Every numeric parameter is READ
 from config_v22 / engine constants / canonical cost artifacts, never retyped.
+v2.2.1: + bloc measured_specs (ancres datées) + résultats recost lus depuis
+recost/summary.json (artefact gelé du run, jamais retapé).
 """
-import sys, hashlib, subprocess
+import json, sys, hashlib, subprocess
 from pathlib import Path
 import pandas as pd
 import yaml
@@ -14,6 +16,9 @@ sys.path.insert(0, str(HERE))
 import config_v22 as C22
 import engine_v22 as V
 E = V.E
+
+RECOST_SUMMARY = json.loads((HERE / "recost" / "summary.json").read_text())
+LEGS4 = ("XAUUSD", "USDJPY", "US100", "GER40")
 
 BASELINE_COMMITS = {
     "v22_contract": "605f4a426da3eac4f5a2644bca774a07f1e5f754",
@@ -34,13 +39,15 @@ sS = pd.read_parquet(E.CACHE / "panel_swapS.parquet")
 
 spec = {
     "meta": {
-        "version": "v2.2",
+        "version": "v2.2.1",
+        "policy_version": "v2.2 (recost v2.2.1 = data-only, policy inchangée — pré-enregistré)",
         "spec_date": "2026-06-10",
         "baseline_commits": BASELINE_COMMITS,
         "supersedes": "v2.1 — toute référence baseline v2.1 est remplacée par ce pin",
         "generated_from": "config_v22.py via make_spec_yaml.py (do not hand-edit)",
-        "nonregression": "NONREGRESSION_v2.2.md (ancres 1-19)",
-        "amendments": ["AMENDEMENT_RAPPORT_MESURE_s9.md (§9: branche kill retirée)"],
+        "nonregression": "NONREGRESSION_v2.2.md (ancres 1-21, révision v2.2.1)",
+        "amendments": ["AMENDEMENT_RAPPORT_MESURE_s9.md (§9: branche kill retirée; "
+                       "gate 2 = PASS v2.2.1 — mécanique swap 4/4 au centime, ancres re-datées)"],
     },
     "account": {
         "vendor": "FTMO", "type": "2-step Swing (achat Swing irréversible)",
@@ -141,16 +148,88 @@ spec = {
     "cost_anchors": {
         "rt_bps_legs": {s: round(float(rt[s]), 2)
                         for s in ("XAUUSD", "USDJPY", "US100", "GER40")},
+        "rt_bps_legs_allin": {s: round(float(rt[s]) + C22.comm_rt_bps(s), 2)
+                              for s in LEGS4},
         "swap_bps_per_night_measured": {
-            "US100_long": round(float(sL["US100"].dropna().iloc[-1]), 3),
-            "GER40_long": round(float(sL["GER40"].dropna().iloc[-1]), 3),
-            "GER40_short": round(float(sS["GER40"].dropna().iloc[-1]), 3),
-            "XAUUSD_long": round(float(sL["XAUUSD"].dropna().iloc[-1]), 3),
-            "USDJPY_long": round(float(sL["USDJPY"].dropna().iloc[-1]), 3),
-        },
+            f"{s}_{sd}": round(C22.swap_bps(s, sd), 3)
+            for s in LEGS4 for sd in ("long", "short")},
+        "swap_anchor_basis": (f"points mesurés {C22.SPECS_READ_DATE} -> bps aux prix "
+                              f"panel {C22.REF_PX_DATE} (voir measured_specs)"),
         "triple_days": {"indices": "vendredi", "metaux_fx": "mercredi"},
-        "sources": ["outputs/phase0_rt_cost_bps.csv", "cache/panel_swapL.parquet",
+        "sources": ["outputs/phase0_rt_cost_bps.csv",
+                    "specs MT5 FTMO 2026-06-10 (measured_specs)",
                     "cache/orb_e7_Rera.parquet (era ledger)"],
+    },
+    "measured_specs": {
+        "read_date": C22.SPECS_READ_DATE,
+        "source": C22.SPECS_SOURCE,
+        "role": ("bornes de sanité DATÉES — l'EA lit les specs live (swap pts, "
+                 "rollover3days, marge) à l'init + au rebalance et ALERTE hors borne ; "
+                 "brain/reconcile comparent facturé vs spec-du-jour vs modèle"),
+        "swap_type": "points (valeur d'un point = contract_size x 10^-digits, devise de cote)",
+        "validation": ("nuit 10->11/06 (mercredi x3 métaux/FX): 4/4 facturés reconstruits "
+                       "au centime — XAU 0.01=-1.97$, JPY 0.1=+0.18$, US100 0.1=-0.64$, "
+                       "GER40 0.1=-0.394€=-0.45$ (USD compte @EURUSD 1.152)"),
+        "symbols": {
+            s: dict(C22.MEASURED_SPECS[s],
+                    swap_long_bps_ref=round(C22.swap_bps(s, "long"), 4),
+                    swap_short_bps_ref=round(C22.swap_bps(s, "short"), 4),
+                    comm_rt_bps=round(C22.comm_rt_bps(s), 4))
+            for s in LEGS4},
+        "triple_dow_python": {s: C22.MEASURED_SPECS[s]["triple_dow"] for s in LEGS4},
+        "ref_px": dict(C22.REF_PX, date=C22.REF_PX_DATE),
+        "ger40_note": C22.GER40_NOTE,
+        "bounds_rel": {"swap": C22.SANITY_BOUND_SWAP_REL,
+                       "margin": C22.SANITY_BOUND_MARGIN_REL},
+        "margin_rates": {
+            "policy_engine_v22": dict(C22.MARGIN_RATES_POLICY,
+                                      note="cap 60% du moteur — POLICY, inchangée"),
+            "standard_measured": {k: round(v, 6)
+                                  for k, v in C22.MARGIN_RATES_STANDARD.items()},
+            "swing_official": {k: round(v, 6)
+                               for k, v in C22.MARGIN_RATES_SWING.items()},
+            "swing_status": C22.SWING_MARGIN_STATUS,
+        },
+    },
+    "recost_v221": {
+        "type": "data-only (pré-enregistré) — signal/vm/budgets/policy INCHANGÉS",
+        "gates": {
+            "G0_swap_mechanics": "PASS — 4/4 facturés au centime",
+            "G1_repro_baseline": "PASS — challenge 87.01 exact",
+            "G2_challenge_drift": ("RÉSOLU — pooled bouge (comm -1.73, swaps fwd -1.08) "
+                                   "mais deltas appariés CI95 ⊃ 0 (méthode vm-sweep "
+                                   "4e1bac5) = jitter de chemin non significatif ; "
+                                   "challenge contractuel INCHANGÉ"),
+        },
+        "paired_deltas_pt_ci95": RECOST_SUMMARY["paired_deltas"],
+        "challenge_contractual": RECOST_SUMMARY["challenge_base"],
+        "challenge_comm_only_pathrealized": RECOST_SUMMARY["challenge_comm_only"],
+        "funded_comm_only": {
+            "IS": RECOST_SUMMARY["funded_IS_comm_only"],
+            "OOS": RECOST_SUMMARY["funded_OOS_comm_only"],
+            "VAL": RECOST_SUMMARY["VAL_comm_only"],
+            "EV": RECOST_SUMMARY["EV_comm_only"],
+            "vs_v22": "OOS 2632->2529 (-103, drag commissions) ; EV +926->+863",
+        },
+        "headline_margin_swing": {
+            "verdict": "LE TERME MATÉRIEL — si levier Swing serveur = officiel, vm14 non exécutable tel quel",
+            "delta_p_pass_pt": RECOST_SUMMARY["paired_deltas"]["swing_margin"]["delta_pt"],
+            "ci95": RECOST_SUMMARY["paired_deltas"]["swing_margin"]["ci95"],
+            "margin_distribution": {m["tag"]: dict(p50=round(m["p50"], 3),
+                                                   p99=round(m["p99"], 3),
+                                                   p999=round(m["p999"], 3),
+                                                   bind=round(m["bind"], 3),
+                                                   p_pass=round(m["p_pass"], 2))
+                                    for m in RECOST_SUMMARY["margin"]},
+            "funded_insensible": "vm1: extraction identique sous marge swing (jamais bindé)",
+            "action": ("GATE DÉPLOIEMENT: lire OrderCalcMargin sur le serveur Swing "
+                       "AVANT challenge ; si rates ~ swing_official -> décision comité "
+                       "(la grille de lots vm14 est de-levée x0.3-0.5 par le cap 60%)"),
+        },
+        "swaps_forward_projection": ("diagnostic seulement — projeter les bps d'aujourd'hui "
+                                     "sur 2013-2026 pénalise l'ère ZIRP (IS -3.0) ; le panel "
+                                     "swap HISTORIQUE reste la donnée contractuelle"),
+        "details": "recost/summary.json + recost/tables/*.csv + RECOST_v2.2.1.md",
     },
     "contractual_anchors_v22": {
         "challenge_pooled": 0.870, "challenge_ci95": [0.823, 0.916],

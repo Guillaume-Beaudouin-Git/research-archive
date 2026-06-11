@@ -46,3 +46,62 @@ FUNDED_WINDOWS = (("IS", "2013-10-01", "2017-12-31"), ("OOS", "2020-01-02", "202
 FUNDED_STEP = 12
 FUNDED_WD_EVERY = 14         # trading days (conservative vs official bi-weekly)
 FUNDED_HORIZON = 504
+
+# ===================== v2.2.1 RE-COST — ancres MESURÉES (data-only) =========
+# Specs MT5 FTMO lues le 2026-06-10 (compte démo STANDARD, type swap = points).
+# Mécanique validée empiriquement nuit 10->11/06 (mercredi x3) : 4/4 au centime
+# (XAU 0.01=-$1.97 ; JPY 0.1=+$0.18 ; US100 0.1=-$0.64 ; GER40 0.1=-€0.394=-$0.45
+# en USD compte @EURUSD 1.152). AUCUN paramètre de policy modifié (signal, vm,
+# budgets, caps, margin_cap du moteur inchangés) — pré-enregistrement v2.2.1.
+SPECS_READ_DATE = "2026-06-10"
+SPECS_SOURCE = "FTMO-Demo Standard"
+MEASURED_SPECS = {
+    "XAUUSD": dict(swap_long_pts=-65.68, swap_short_pts=-14.53, triple_dow=2,
+                   contract=100, digits=2, comm_side_frac=0.0000070,
+                   comm_side_usd_lot=0.0),
+    "USDJPY": dict(swap_long_pts=0.96, swap_short_pts=-20.30, triple_dow=2,
+                   contract=100000, digits=3, comm_side_frac=0.0,
+                   comm_side_usd_lot=2.5),
+    "US100": dict(swap_long_pts=-637.16, swap_short_pts=27.49, triple_dow=4,
+                  contract=1, digits=2, comm_side_frac=0.0, comm_side_usd_lot=0.0),
+    "GER40": dict(swap_long_pts=-393.88, swap_short_pts=-48.68, triple_dow=4,
+                  contract=1, digits=2, comm_side_frac=0.0, comm_side_usd_lot=0.0),
+}
+GER40_NOTE = "quote EUR — profit/swap convertis EUR->USD au taux marché (pas de commission)"
+REF_PX_DATE = "2026-06-05"   # derniers closes panel (conversion pts->bps)
+REF_PX = {"XAUUSD": 4326.70, "USDJPY": 160.28, "US100": 29973.57,
+          "GER40": 25184.89, "EURUSD": 1.152}
+# Marge par classe : policy v2.2 (moteur, INCHANGÉE) vs mesurée Standard vs Swing
+MARGIN_RATES_POLICY = {"XAUUSD": 0.02, "USDJPY": 0.01, "US100": 0.02, "GER40": 0.02}
+MARGIN_RATES_STANDARD = {"XAUUSD": 1 / 30, "USDJPY": 1 / 100,
+                         "US100": 1 / 50, "GER40": 1 / 50}
+MARGIN_RATES_SWING = {"XAUUSD": 1 / 9, "USDJPY": 1 / 30,
+                      "US100": 1 / 15, "GER40": 1 / 15}
+SWING_MARGIN_STATUS = ("levier Swing officiel FTMO (forex 1:30, indices 1:15, "
+                       "métaux 1:9) — À CONFIRMER sur specs serveur Swing au déploiement")
+SANITY_BOUND_SWAP_REL = 0.25   # |pts live - ancre|/|ancre| max avant alerte
+SANITY_BOUND_MARGIN_REL = 0.25
+
+
+def point_value_quote(sym):
+    """Valeur d'un point en devise de cote, par lot = contract x 10^-digits."""
+    s = MEASURED_SPECS[sym]
+    return s["contract"] * 10.0 ** (-s["digits"])
+
+
+def swap_bps(sym, side, px=None):
+    """bps/nuit du notionnel (fx-free): pts x 10^-digits / prix x 1e4."""
+    s = MEASURED_SPECS[sym]
+    px = REF_PX[sym] if px is None else px
+    pts = s["swap_long_pts"] if side == "long" else s["swap_short_pts"]
+    return pts * 10.0 ** (-s["digits"]) / px * 1e4
+
+
+def comm_rt_bps(sym):
+    """Commission aller-retour en bps du notionnel (constante par construction:
+    % du notionnel pour XAU, $/lot sur notionnel base-USD fixe pour USDJPY)."""
+    s = MEASURED_SPECS[sym]
+    rt = 2.0 * s["comm_side_frac"] * 1e4
+    if s["comm_side_usd_lot"] > 0.0:           # USDJPY: $/lot sur 100k$ base
+        rt += 2.0 * s["comm_side_usd_lot"] / s["contract"] * 1e4
+    return rt

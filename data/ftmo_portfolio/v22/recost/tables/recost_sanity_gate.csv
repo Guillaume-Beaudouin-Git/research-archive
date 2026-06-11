@@ -1,0 +1,5 @@
+symbol,lots,mult,billed_usd,reconstructed_usd,ok
+XAUUSD,0.01,3,-1.97,-1.9704,True
+USDJPY,0.1,3,0.18,0.1797,True
+US100,0.1,1,-0.64,-0.6372,True
+GER40,0.1,1,-0.45,-0.4537,True

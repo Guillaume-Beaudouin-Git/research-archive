@@ -24,10 +24,26 @@ acct = spec["account"]
 
 def f(x): return f"{float(x):g}"
 
+# ---- v2.2.1: bornes de sanité DATÉES depuis measured_specs (data-only) ----
+ms = spec["measured_specs"]
+LEGS4 = ("XAUUSD", "USDJPY", "US100", "GER40")
+sanity_lines = []
+for s in LEGS4:
+    m = ms["symbols"][s]
+    mql_dow = (int(m["triple_dow"]) + 1) % 7        # python lun=0 -> MQL5 dim=0
+    sanity_lines += [
+        f"#define ANCHOR_SWL_{s}     ({m['swap_long_pts']:g})",
+        f"#define ANCHOR_SWS_{s}     ({m['swap_short_pts']:g})",
+        f"#define ANCHOR_R3D_{s}     {mql_dow}   // ENUM_DAY_OF_WEEK",
+        f"#define MARGIN_STD_{s}     {ms['margin_rates']['standard_measured'][s]:.6f}",
+        f"#define MARGIN_SWING_{s}   {ms['margin_rates']['swing_official'][s]:.6f}",
+    ]
+SANITY_BLOCK = "\n".join(sanity_lines)
+
 mqh = f"""//+------------------------------------------------------------------+
 //| spec_v22.mqh — GÉNÉRÉ depuis spec_v22.yaml par make_spec_mqh.py  |
 //| NE PAS ÉDITER À LA MAIN (ancre #20: régénération byte-identique). |
-//| Pins: 605f4a4 + 4e1bac5 + 87b6cd4 ; yaml sha dd6ab126…            |
+//| Pins: 605f4a4 + 4e1bac5 + 87b6cd4 ; yaml sha {brain.PIN_SHA256[:8]}…            |
 //+------------------------------------------------------------------+
 #define SPEC_VERSION        "{spec['meta']['version']}"
 #define SPEC_SHA256         "{brain.PIN_SHA256}"
@@ -101,6 +117,17 @@ mqh = f"""//+------------------------------------------------------------------+
 #define GOLD_VOL_TARGET     {f(g['vol_target_inst'])}
 #define J1_SIGNAL           "12-1 momentum LO (p[t-21]/p[t-252]-1 > 0)"
 #define ON_NIGHTS           "Mon,Tue"
+
+// ---- v2.2.1 bornes de sanité DATÉES (specs mesurées, source compte Standard) ----
+// L'EA lit SYMBOL_SWAP_LONG/SHORT, SYMBOL_SWAP_ROLLOVER3DAYS et la marge live
+// (OrderCalcMargin) à l'init + au rebalance ; hors borne -> ALERTE (state).
+// Marge SWING officielle (fx 1:30, indices 1:15, métaux 1:9) À CONFIRMER sur
+// les specs du serveur Swing au déploiement — gate bloquant (recost_v221).
+#define SANITY_READ_DATE    "{ms['read_date']}"
+#define SANITY_SOURCE       "{ms['source']}"
+#define SANITY_SWAP_REL     {f(ms['bounds_rel']['swap'])}
+#define SANITY_MARGIN_REL   {f(ms['bounds_rel']['margin'])}
+{SANITY_BLOCK}
 
 //+------------------------------------------------------------------+
 //| Assert d'init: MQL5/Files/spec_v22.sha256 doit == SPEC_SHA256.    |

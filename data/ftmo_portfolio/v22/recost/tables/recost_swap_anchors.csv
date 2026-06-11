@@ -1,0 +1,9 @@
+symbol,side,pts,bps_measured,bps_old_anchor,triple_dow
+XAUUSD,long,-65.68,-1.518,-2.06,2
+XAUUSD,short,-14.53,-0.3358,-0.34,2
+USDJPY,long,0.96,0.0599,0.1841,2
+USDJPY,short,-20.3,-1.2665,-1.4936,2
+US100,long,-637.16,-2.1257,-2.2406,4
+US100,short,27.49,0.0917,0.0967,4
+GER40,long,-393.88,-1.564,-1.6071,4
+GER40,short,-48.68,-0.1933,-0.1986,4

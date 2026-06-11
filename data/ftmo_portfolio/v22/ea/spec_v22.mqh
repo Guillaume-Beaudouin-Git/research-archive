@@ -1,10 +1,10 @@
 //+------------------------------------------------------------------+
 //| spec_v22.mqh — GÉNÉRÉ depuis spec_v22.yaml par make_spec_mqh.py  |
 //| NE PAS ÉDITER À LA MAIN (ancre #20: régénération byte-identique). |
-//| Pins: 605f4a4 + 4e1bac5 + 87b6cd4 ; yaml sha dd6ab126…            |
+//| Pins: 605f4a4 + 4e1bac5 + 87b6cd4 ; yaml sha 56fbdde7…            |
 //+------------------------------------------------------------------+
-#define SPEC_VERSION        "v2.2"
-#define SPEC_SHA256         "dd6ab12680208c4e71ea34f83c254e9246e93e2c55d257ebad8e800b70c500ac"
+#define SPEC_VERSION        "v2.2.1"
+#define SPEC_SHA256         "56fbdde78a2e5c4365e8e0f5bbda06d3697a198beccbcbf2dd02deea0eb27928"
 #define SPEC_PIN_CONTRACT   "605f4a426da3eac4f5a2644bca774a07f1e5f754"
 #define SPEC_PIN_RESIDUALS  "4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539"
 #define SPEC_PIN_YAML       "87b6cd4080e2b1c9e666c6b9dd15680ce29a7e1e"
@@ -75,6 +75,36 @@
 #define GOLD_VOL_TARGET     0.1
 #define J1_SIGNAL           "12-1 momentum LO (p[t-21]/p[t-252]-1 > 0)"
 #define ON_NIGHTS           "Mon,Tue"
+
+// ---- v2.2.1 bornes de sanité DATÉES (specs mesurées, source compte Standard) ----
+// L'EA lit SYMBOL_SWAP_LONG/SHORT, SYMBOL_SWAP_ROLLOVER3DAYS et la marge live
+// (OrderCalcMargin) à l'init + au rebalance ; hors borne -> ALERTE (state).
+// Marge SWING officielle (fx 1:30, indices 1:15, métaux 1:9) À CONFIRMER sur
+// les specs du serveur Swing au déploiement — gate bloquant (recost_v221).
+#define SANITY_READ_DATE    "2026-06-10"
+#define SANITY_SOURCE       "FTMO-Demo Standard"
+#define SANITY_SWAP_REL     0.25
+#define SANITY_MARGIN_REL   0.25
+#define ANCHOR_SWL_XAUUSD     (-65.68)
+#define ANCHOR_SWS_XAUUSD     (-14.53)
+#define ANCHOR_R3D_XAUUSD     3   // ENUM_DAY_OF_WEEK
+#define MARGIN_STD_XAUUSD     0.033333
+#define MARGIN_SWING_XAUUSD   0.111111
+#define ANCHOR_SWL_USDJPY     (0.96)
+#define ANCHOR_SWS_USDJPY     (-20.3)
+#define ANCHOR_R3D_USDJPY     3   // ENUM_DAY_OF_WEEK
+#define MARGIN_STD_USDJPY     0.010000
+#define MARGIN_SWING_USDJPY   0.033333
+#define ANCHOR_SWL_US100     (-637.16)
+#define ANCHOR_SWS_US100     (27.49)
+#define ANCHOR_R3D_US100     5   // ENUM_DAY_OF_WEEK
+#define MARGIN_STD_US100     0.020000
+#define MARGIN_SWING_US100   0.066667
+#define ANCHOR_SWL_GER40     (-393.88)
+#define ANCHOR_SWS_GER40     (-48.68)
+#define ANCHOR_R3D_GER40     5   // ENUM_DAY_OF_WEEK
+#define MARGIN_STD_GER40     0.020000
+#define MARGIN_SWING_GER40   0.066667
 
 //+------------------------------------------------------------------+
 //| Assert d'init: MQL5/Files/spec_v22.sha256 doit == SPEC_SHA256.    |

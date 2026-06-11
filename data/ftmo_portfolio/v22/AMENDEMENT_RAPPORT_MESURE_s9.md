@@ -44,3 +44,15 @@ L'approximation de l'équipe est validée à +0.3% — leurs branches pré-calcu
   variante stop-order si verdict 1.0-1.5) ; asymétrie de venue démo/funded.
 - Cohérence audit : la requalification « session 1 auction −3.34 = hors-sujet » converge avec
   le finding d'audit C21 (fills réels 16:05-16:10, l'auction n'est pas le timestamp d'entrée).
+
+## §10 — GATE 2 (mécanique swap) : **PASS** (v2.2.1 re-cost, 2026-06-11)
+Ce qui avait échoué au gate « swap overnight ±20% » n'était PAS la mécanique mais des **ancres
+périmées** : bps figés alors que les prix ont bougé (XAU 3190→4327 dilue −2.06→−1.52 bps à
+points constants ; JPY +0.184→+0.06). Re-mesure specs 10/06 (type points partout) + validation
+empirique nuit 10→11/06 (mercredi ×3) : **4/4 facturés reconstruits au centime** — XAU 0.01
+−$1.97, JPY 0.1 +$0.18, US100 0.1 −$0.64, GER40 0.1 −€0.394 = −$0.45 (USD compte, EURUSD
+1.152). Formule gravée : `bps/nuit = pts × 10^-digits / prix × 1e4` (fx-free) ; `$ = pts ×
+tick_value × lots × mult`. Calendrier ×3 PAR SYMBOLE (XAU+JPY mercredi, indices vendredi).
+**La branche STOP du gate est refermée** ; le modèle live (ftmo_live) lit désormais les specs
+serveur à l'init + au rebalance et alerte hors bornes datées (`spec_v22.yaml: measured_specs`).
+Détail : `RECOST_v2.2.1.md` + `recost/tables/recost_sanity_gate.csv`.

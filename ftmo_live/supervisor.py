@@ -1,0 +1,393 @@
+#!/usr/bin/env python3
+"""supervisor.py — heartbeat 60 s sur state.json + alertes + 2 rapports quotidiens.
+
+Alertes temps réel (cooldown persisté runtime/alerts_state.json) :
+  breaker déclenché | room daily < 1.5% init | marge > 50% | reject/ordre non
+  confirmé | heartbeat > 3 min | écart swap facturé/modèle > 20% | kill-file |
+  targets KO à 22:00+ | mode mismatch EA/spec | zombie >= 5 j | brain ERROR/stale.
+
+Rapports (cron, --report) :
+  08:30 Paris : jour J/phase/jours tradés, equity + % cible, rooms, PnL nuit +
+    swaps facturés vs modèle, positions + marge/cap, breaker/pacing/taper,
+    programme du jour (rebalance, micro-ORB armé, triple-day, jour ON).
+  22:20 Paris : PnL jour, fills + slip, deltas de rebalance, coûts + swaps dus,
+    % cible + compteur jours, Δ réconciliation x/3, fees campagne + budget.
+
+Usage: supervisor.py --daemon | --report morning|evening | --add-fee N LABEL | --test-alert
+"""
+import argparse
+import json
+import sys
+import time
+from datetime import datetime
+from pathlib import Path
+from typing import Optional
+
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import tg  # noqa: E402
+from lib import LEGS, RUNTIME  # noqa: E402
+from lib import invariants as inv  # noqa: E402
+from lib import spec, statefiles, swaps  # noqa: E402
+
+HEARTBEAT_MAX_S = 180
+ROOM_DAILY_ALERT_FRAC = 0.015
+MARGIN_ALERT_PCT = 50.0
+BRAIN_STALE_H = 25.0
+CAMPAIGN_BUDGET_USD = 400.0   # yaml live_gates: « budget 4+ fees (~$400) »
+
+ALERTS_STATE = RUNTIME / "alerts_state.json"
+SOD_DIR = RUNTIME / "sod"
+SNAP_PATH = RUNTIME / "snapshots.json"
+CAMPAIGN = RUNTIME / "campaign.json"
+
+
+def _leg_of(symbol: str) -> Optional[str]:
+    for l in LEGS:
+        if str(symbol).startswith(l):
+            return l
+    return None
+
+
+def _load(path: Path, default):
+    out = statefiles.read_json(path)
+    return out if out is not None else default
+
+
+def _initial() -> float:
+    return spec.account_size()
+
+
+# ------------------------------------------------------------------ alertes
+def _cooldown_ok(key: str, minutes: float, now: datetime) -> bool:
+    st = _load(ALERTS_STATE, {})
+    last = st.get(key)
+    if last and (now - statefiles.parse_ts(last)).total_seconds() < minutes * 60:
+        return False
+    st[key] = statefiles.fmt_ts(now)
+    statefiles.atomic_write_json(ALERTS_STATE, st)
+    return True
+
+
+def _alert(key: str, minutes: float, text: str, now: datetime) -> None:
+    if _cooldown_ok(key, minutes, now):
+        tg.send(f"🚨 FTMO live — {text}")
+
+
+def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
+    """Évalue toutes les conditions ; envoie (cooldown) ; retourne les clefs actives."""
+    now = now or statefiles.now_paris().replace(tzinfo=None)
+    day = str(now.date())
+    init = _initial()
+    fired = []
+
+    state = statefiles.read_state(files_dir)
+    if state is None:
+        fired.append("state_missing")
+        _alert("state_missing", 15, "state.json ABSENT — EA down ?", now)
+    else:
+        age = statefiles.state_age_s(state, now)
+        if age > HEARTBEAT_MAX_S:
+            fired.append("heartbeat")
+            _alert("heartbeat", 15, f"heartbeat perdu {age:.0f}s > {HEARTBEAT_MAX_S}s", now)
+        if int(state.get("breaker_fired_today", 0)):
+            fired.append("breaker")
+            _alert(f"breaker_{day}", 24 * 60,
+                   f"BREAKER déclenché — flatten M5, room daily épuisée "
+                   f"(equity ${state.get('equity', 0):,.0f})", now)
+        room = float(state.get("room_daily_usd", 1e9))
+        if room < ROOM_DAILY_ALERT_FRAC * init:
+            fired.append("room_daily")
+            _alert("room_daily", 30,
+                   f"room daily ${room:,.0f} < {ROOM_DAILY_ALERT_FRAC:.1%} init — "
+                   f"breaker à ${float(state.get('breaker_line', 0)):,.0f}", now)
+        margin = float(state.get("margin_used_pct_equity", 0))
+        if margin > MARGIN_ALERT_PCT:
+            fired.append("margin")
+            _alert("margin", 30, f"marge {margin:.0f}% > {MARGIN_ALERT_PCT:.0f}% equity", now)
+        err = str(state.get("last_error", "") or "")
+        if err:
+            fired.append("reject")
+            _alert(f"reject_{hash(err) & 0xffff}", 60, f"EA erreur/reject: {err}", now)
+        if int(state.get("pending_unconfirmed", 0)) > 0:
+            fired.append("pending")
+            _alert("pending", 15,
+                   f"{state['pending_unconfirmed']} ordre(s) non confirmé(s) "
+                   f"(latence serveur 2-19 s dépassée)", now)
+        if int(state.get("kill", 0)):
+            fired.append("kill")
+            _alert(f"kill_{day}", 12 * 60, "kill-file FLAT actif — EA désarmé", now)
+        if int(state.get("mode_mismatch", 0)):
+            fired.append("mode_mismatch")
+            _alert("mode_mismatch", 60,
+                   "MODE MISMATCH targets.json vs spec_v22.mqh/InpPhase — vérifier", now)
+        if now.hour >= 22 and str(state.get("targets_status", "OK")) != "OK":
+            fired.append("targets")
+            _alert(f"targets_{day}", 60,
+                   f"targets.json {state.get('targets_status')} au rebalance — "
+                   "gestion seule, aucun risque nouveau", now)
+        if int(state.get("abandon_zombie_days", 0)) >= 5:
+            fired.append("abandon")
+            _alert(f"abandon_{day}", 24 * 60,
+                   "ABANDON sim atteint (5 j EOD < floor+2%) — décision humaine: "
+                   "relancer la tentative (règle v2.2)", now)
+        wd = float(state.get("wd_due_usd", 0))
+        if wd > 0:
+            fired.append("wd_due")
+            _alert(f"wd_{day}", 24 * 60,
+                   f"FUNDED: retrait dû ${wd:,.0f} (wd14) — demander le payout", now)
+        if int(state.get("spec_bounds_breach", 0)):
+            fired.append("spec_bounds")
+            _alert("spec_bounds", 12 * 60,
+                   "SPECS LIVE HORS BORNES datées (swap/triple/marge) — dérive "
+                   f"dealer ou écart Standard/Swing: {state.get('spec_bounds_detail', '')}",
+                   now)
+
+    bs = statefiles.read_brain_status()
+    if bs is None or bs.get("status") != "OK" or \
+            (now - statefiles.parse_ts(bs["ts_paris"])).total_seconds() > BRAIN_STALE_H * 3600:
+        detail = "absent" if bs is None else \
+            (bs.get("status") if bs.get("status") != "OK" else "stale >25h")
+        fired.append("brain")
+        _alert("brain", 60, f"brain_status {detail} — targets non régénérés "
+                            f"({(bs or {}).get('error', '')})", now)
+
+    drift = swap_drift_last_night(files_dir, now)
+    if drift and drift.get("gate_breach"):
+        fired.append("swap_drift")
+        _alert(f"swap_{day}", 24 * 60,
+               f"SWAP DRIFT {drift['total_drift_pct']:+.0f}% > ±20% "
+               f"(facturé ${drift['total_billed']:+.2f} vs modèle "
+               f"${drift['total_model']:+.2f}) — gate live yaml: STOP si confirmé", now)
+    return fired
+
+
+def swap_drift_last_night(files_dir: Path, now: datetime) -> Optional[dict]:
+    """billed_vs_model sur la dernière nuit présente dans swaps_billed.csv."""
+    df = statefiles.read_swaps_billed(files_dir)
+    if not len(df):
+        return None
+    last = sorted(df["date_paris"].astype(str).unique())[-1]
+    rows = df[df["date_paris"].astype(str) == last]
+    billed, modeled = {}, {}
+    for _, r in rows.iterrows():
+        leg = _leg_of(r["symbol"])
+        if leg is None:
+            continue
+        billed[leg] = billed.get(leg, 0.0) + float(r["swap_usd"])
+        bps, _ = swaps.anchor_bps(leg, "long" if float(r.get("notional_usd", 0)) >= 0
+                                  else "short")
+        if bps is not None:
+            mult = swaps.night_multiplier(leg, pd.Timestamp(last))
+            modeled[leg] = modeled.get(leg, 0.0) + abs(
+                float(r.get("notional_usd", 0))) * bps / 1e4 * mult
+    if not billed:
+        return None
+    out = swaps.billed_vs_model(billed, modeled)
+    out["night"] = last
+    return out
+
+
+# ------------------------------------------------------------------ rapports
+def _fmt_positions(state: dict) -> str:
+    rows = []
+    for p in (state or {}).get("positions", []):
+        side = "+" if int(p.get("dir", 1)) > 0 else "−"
+        rows.append(f"{p.get('leg', p.get('symbol'))} {side}{abs(float(p['lots'])):g} "
+                    f"lots (${abs(float(p['notional_usd'])) / 1e3:,.1f}k)")
+    return " | ".join(rows) if rows else "flat"
+
+
+def _campaign() -> dict:
+    return _load(CAMPAIGN, dict(fees=[], total=0.0))
+
+
+def build_morning(state: dict, files_dir: Path, now: datetime) -> str:
+    init = _initial()
+    sp = spec.load()
+    wall = spec.wall_days(sp)
+    eq = float(state.get("equity", 0))
+    target_eq = float(state.get("target_equity", 0))
+    att = state.get("attempt_start", "?")
+    day_n = (now.date() - pd.Timestamp(att).date()).days + 1 if att != "?" else "?"
+    prog = (eq / init - 1) / max(target_eq / init - 1, 1e-9) * 100 if target_eq else 0.0
+    snaps = _load(SNAP_PATH, {})
+    ev = snaps.get("evening", {})
+    pnl_night = eq - float(ev["equity"]) if ev.get("equity") else None
+    drift = swap_drift_last_night(files_dir, now)
+    gov = state.get("governor", {})
+    on_day = now.weekday() in (0, 1)
+    trip = [l for l in LEGS if swaps.night_multiplier(l, pd.Timestamp(now.date())) == 3]
+    micro_armed = inv.micro_armed(on_day, bool(int(state.get("micro_enabled", 1))),
+                                  False)
+    lines = [
+        f"🌅 FTMO {state.get('phase', '?')} — J{day_n}/{wall} — {now.date()}",
+        f"Jours tradés {state.get('open_days', '?')}/{state.get('min_days', 4)} | "
+        f"tentative {att}",
+        f"Equity ${eq:,.0f} ({(eq / init - 1) * 100:+.2f}% init) — cible "
+        f"${target_eq:,.0f} ({prog:.0f}%)",
+        f"Rooms: daily ${float(state.get('room_daily_usd', 0)):,.0f} | "
+        f"floor ${eq - inv.static_floor(init):,.0f} | "
+        f"breaker ${float(state.get('breaker_line', 0)):,.0f}",
+    ]
+    if pnl_night is not None:
+        lines.append(f"Nuit: PnL ${pnl_night:+,.0f}")
+    if drift:
+        lines.append(f"Swaps {drift['night']}: facturé ${drift['total_billed']:+.2f} "
+                     f"vs modèle ${drift['total_model']:+.2f} "
+                     f"({drift['total_drift_pct'] if drift['total_drift_pct'] is not None else '?'}%)"
+                     + (" ⚠ GATE ±20%" if drift.get("gate_breach") else ""))
+    lines += [
+        f"Positions: {_fmt_positions(state)} | marge "
+        f"{float(state.get('margin_used_pct_equity', 0)):.0f}%/60%",
+        f"Gouverneur: taper {gov.get('taper', '?')} glide {gov.get('glide', '?')} "
+        f"pace {gov.get('pace', '?')} | breaker armé | "
+        f"zombie {state.get('abandon_zombie_days', 0)}/5",
+        "Programme: rebalance 22:05"
+        + (" | GER40 17:35 + US100 22:05 (jour ON)" if on_day else "")
+        + (" | micro-ORB armable 16:00" if micro_armed else " | micro-ORB OFF (jour ON)"
+           if int(state.get("micro_enabled", 1)) else "")
+        + (f" | triple-swap ce soir: {','.join(trip)}" if trip else "")
+        + (" | weekend tenu dès ce soir" if now.weekday() == 4 else ""),
+    ]
+    if int(state.get("kill", 0)):
+        lines.append("⛔ KILL-FILE ACTIF")
+    return "\n".join(lines)
+
+
+def build_evening(state: dict, files_dir: Path, now: datetime) -> str:
+    init = _initial()
+    day = str(now.date())
+    eq = float(state.get("equity", 0))
+    anchor = float(state.get("anchor_balance", init))
+    pnl_day = eq - anchor
+    fills = statefiles.read_fills(files_dir, day)
+    targets = statefiles.read_json(files_dir / "targets.json") or {}
+    target_eq = float(state.get("target_equity", 0))
+    prog = (eq / init - 1) / max(target_eq / init - 1, 1e-9) * 100 if target_eq else 0.0
+    slip = pd.to_numeric(fills["slip_bps"], errors="coerce").dropna() if len(fills) else []
+    reb = fills[fills["reason"] == "rebalance"] if len(fills) else fills
+    deltas = []
+    for _, r in (reb.iterrows() if len(reb) else []):
+        sgn = "+" if str(r["side"]).upper() == "BUY" else "−"
+        deltas.append(f"{_leg_of(r['symbol']) or r['symbol']} {sgn}{float(r['lots']):g}")
+    cost_est = None
+    if len(fills):
+        f2 = fills.dropna(subset=["slip_bps"])
+        if len(f2):
+            cost_est = float((pd.to_numeric(f2["slip_bps"]) / 1e4 *
+                              pd.to_numeric(f2["lots"], errors="coerce").fillna(0) *
+                              pd.to_numeric(f2["fill_price"], errors="coerce").fillna(0)
+                              ).abs().sum())
+    pos_now = {p["leg"]: float(p["notional_usd"]) * (1 if int(p["dir"]) > 0 else -1)
+               for p in state.get("positions", []) if p.get("leg") in LEGS}
+    swdue = swaps.forecast_night(pos_now, pd.Timestamp(day))
+    rec = _last_reconcile()
+    camp = _campaign()
+    lines = [
+        f"🌙 FTMO {state.get('phase', '?')} — {day} 22:20",
+        f"PnL jour ${pnl_day:+,.0f} ({pnl_day / init * 100:+.2f}%) | equity ${eq:,.0f} "
+        f"— {prog:.0f}% cible | jours {state.get('open_days', '?')}/"
+        f"{state.get('min_days', 4)}",
+        f"Trades: {len(fills)} fills"
+        + (f" | slip méd {float(pd.Series(slip).median()):+.1f} bps" if len(slip) else "")
+        + (f" | rejets: {state.get('last_error')}" if state.get("last_error") else ""),
+        "Rebalance Δ: " + (" | ".join(deltas) if deltas else "aucun"),
+        (f"Coûts jour est. ${cost_est:,.2f} | " if cost_est is not None else "")
+        + f"swaps dus cette nuit ${swdue['total_usd']:+,.2f}",
+        f"Réconciliation: Δ inexpliqué {rec.get('consec', 0)}/3"
+        + (f" | dernier ${rec.get('residual', 0):+,.2f} ({rec.get('date')})"
+           if rec.get("date") else " | pas encore de run"),
+        f"Campagne: fees ${camp['total']:,.0f} / budget ${CAMPAIGN_BUDGET_USD:,.0f} "
+        f"(reste ${CAMPAIGN_BUDGET_USD - camp['total']:,.0f})",
+    ]
+    if str(state.get("targets_status", "OK")) != "OK":
+        lines.append(f"⚠ targets.json: {state.get('targets_status')}")
+    if not targets:
+        lines.append("⚠ targets.json absent")
+    return "\n".join(lines)
+
+
+def _last_reconcile() -> dict:
+    p = RUNTIME / "reconcile_log.csv"
+    if not p.exists():
+        return {}
+    df = pd.read_csv(p)
+    if not len(df):
+        return {}
+    r = df.iloc[-1]
+    return dict(date=str(r.get("date")), residual=float(r.get("residual_usd", 0)),
+                consec=int(r.get("consec_unexplained", 0)))
+
+
+def _snapshot(kind: str, state: dict, now: datetime) -> None:
+    snaps = _load(SNAP_PATH, {})
+    snaps[kind] = dict(ts=statefiles.fmt_ts(now), equity=float(state.get("equity", 0)),
+                       balance=float(state.get("balance", 0)))
+    statefiles.atomic_write_json(SNAP_PATH, snaps)
+
+
+def _archive_sod(state: dict, now: datetime) -> None:
+    SOD_DIR.mkdir(parents=True, exist_ok=True)
+    p = SOD_DIR / f"state_{now.date()}.json"
+    if not p.exists():
+        statefiles.atomic_write_json(p, state)
+
+
+def daemon() -> None:
+    files_dir = statefiles.mt5_files_dir()
+    tok = __import__("os").environ.get("TELEGRAM_BOT_TOKEN", "")
+    if __import__("os").environ.get("FTMO_LIVE_TG_DISABLED") != "1":
+        tg.check_token(tok)
+    print(f"supervisor démarré — files={files_dir}")
+    while True:
+        try:
+            now = statefiles.now_paris().replace(tzinfo=None)
+            state = statefiles.read_state(files_dir)
+            if state is not None:
+                _archive_sod(state, now)
+            evaluate_alerts(files_dir, now)
+        except Exception as e:
+            print(f"[supervisor] {e!r}", flush=True)
+        time.sleep(60)
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--daemon", action="store_true")
+    ap.add_argument("--report", choices=["morning", "evening"])
+    ap.add_argument("--add-fee", nargs=2, metavar=("USD", "LABEL"))
+    ap.add_argument("--test-alert", action="store_true")
+    a = ap.parse_args(argv)
+    if a.add_fee:
+        camp = _campaign()
+        camp["fees"].append(dict(usd=float(a.add_fee[0]), label=a.add_fee[1],
+                                 ts=statefiles.fmt_ts(statefiles.now_paris()
+                                                      .replace(tzinfo=None))))
+        camp["total"] = sum(f["usd"] for f in camp["fees"])
+        statefiles.atomic_write_json(CAMPAIGN, camp)
+        print(f"fee ajouté — total ${camp['total']:,.0f}")
+        return 0
+    if a.test_alert:
+        tg.send("✅ FTMO live — test alerte supervisor")
+        return 0
+    if a.report:
+        files_dir = statefiles.mt5_files_dir()
+        now = statefiles.now_paris().replace(tzinfo=None)
+        state = statefiles.read_state(files_dir)
+        if state is None:
+            tg.send(f"🚨 FTMO live — rapport {a.report}: state.json ABSENT")
+            return 1
+        txt = build_morning(state, files_dir, now) if a.report == "morning" \
+            else build_evening(state, files_dir, now)
+        tg.send(txt)
+        _snapshot(a.report, state, now)
+        return 0
+    if a.daemon:
+        daemon()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

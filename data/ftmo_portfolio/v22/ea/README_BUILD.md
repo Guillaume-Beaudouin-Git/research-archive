@@ -1,17 +1,17 @@
 # BUILD EA v2.2 — contrat de spec (amendement au brief, 2026-06-10)
 
-**Spec = `v22/spec_v22.yaml` @ 87b6cd4 (sha `dd6ab126…`). Rien n'est régénéré ni retapé ici.**
+**Spec = `v22/spec_v22.yaml` @ 87b6cd4 (sha `56fbdde7…` (v2.2.1)). Rien n'est régénéré ni retapé ici.**
 Pins baseline : `605f4a4` (contrat v2.2) + `4e1bac5` (résidus) + `87b6cd4` (gel yaml).
 
 ## Chaîne zéro-constante-manuelle (l'ancre #19 étendue au live = ancre #20)
 ```
-config_v22.py ──make_spec_yaml.py──▶ spec_v22.yaml (sha dd6ab126…, ancre #19)
+config_v22.py ──make_spec_yaml.py──▶ spec_v22.yaml (sha 56fbdde7…, ancre #19)
                                           │
                brain.py.load() ◀──────────┤  (pin sha + drift-check vs config_v22 + pins commits)
                                           │
               make_spec_mqh.py ◀──────────┘
                  │            └──▶ spec_v22.sha256  → à déposer dans MQL5/Files/
-                 └──▶ spec_v22.mqh (constantes EA + SPEC_SHA256 embarqué, sha 1d834546…, ancre #20)
+                 └──▶ spec_v22.mqh (constantes EA + SPEC_SHA256 embarqué, sha 2fc65503…, ancre #20)
                           │
                 EA OnInit() → SpecHashOK() : lit MQL5/Files/spec_v22.sha256,
                 refuse de trader si absent/différent de l'embarqué.
@@ -41,5 +41,5 @@ config_v22.py ──make_spec_yaml.py──▶ spec_v22.yaml (sha dd6ab126…, a
 
 ## Vérifications
 - `python3 brain.py --check` → spec OK + pins présents.
-- `python3 make_spec_mqh.py` ×2 → sha mqh identique (`1d834546…`).
-- EA : compiler avec spec_v22.mqh ; OnInit doit logger `SPEC OK v2.2 sha dd6ab1268020…`.
+- `python3 make_spec_mqh.py` ×2 → sha mqh identique (`2fc65503…`).
+- EA : compiler avec spec_v22.mqh ; OnInit doit logger `SPEC OK v2.2.1 sha 56fbdde78a2e…`.

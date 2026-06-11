@@ -1,0 +1,9 @@
+leg,fase,turnover_usd_jour,comm_usd_jour
+XAUUSD,funded_vm1,385.0,0.003
+USDJPY,funded_vm1,292.0,0.007
+US100,funded_vm1,1339.0,0.0
+GER40,funded_vm1,1336.0,0.0
+XAUUSD,challenge_vm14,0.0,0.0
+USDJPY,challenge_vm14,49333.0,1.233
+US100,challenge_vm14,12656.0,0.0
+GER40,challenge_vm14,15408.0,0.0

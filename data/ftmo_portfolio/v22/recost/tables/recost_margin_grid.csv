@@ -1,0 +1,4 @@
+set,need_pct_eq,cap_pct,scale_if_capped
+policy,65.9,60.0,0.91
+standard,75.3,60.0,0.797
+swing,250.9,60.0,0.239
