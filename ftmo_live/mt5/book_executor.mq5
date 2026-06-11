@@ -41,7 +41,7 @@
 //| m5_today.json + snapshot EOD (22:58) — audit trail intégral.       |
 //+------------------------------------------------------------------+
 #property strict
-#property version "1.00"
+#property version "1.01"
 #include "spec_v22.mqh"
 
 // ---- inputs opérationnels (AUCUNE constante de spec ici) ----
@@ -201,12 +201,43 @@ double OrbTaper0()
 //+------------------------------------------------------------------+
 //| Symboles / conversions                                             |
 //+------------------------------------------------------------------+
+// Fallback OBLIGATOIRE (lecture serveur Swing 2026-06-11: SYMBOL_TRADE_TICK_VALUE
+// = 0 sur les 4 jambes). Sémantique = yaml measured_specs.swap_type: « valeur
+// d'un point = contract_size x 10^-digits, DEVISE DE COTE » -> par unité de prix
+// = contract_size, converti devise de cote -> devise du compte (même arithmétique
+// que la validation swap du yaml: JPY /px, GER40 EUR xEURUSD).
+double UsdPerUnitFallback(string sym)
+  {
+   double cs=SymbolInfoDouble(sym, SYMBOL_TRADE_CONTRACT_SIZE);
+   if(cs<=0) return 0.0;
+   string ccy=SymbolInfoString(sym, SYMBOL_CURRENCY_PROFIT);
+   string acc=AccountInfoString(ACCOUNT_CURRENCY);
+   if(ccy==acc || ccy=="") return cs;
+   if(SymbolInfoString(sym, SYMBOL_CURRENCY_BASE)==acc)
+     {                                   // ex USDJPY: cote JPY -> /prix du symbole
+      double px=MidPrice(sym);
+      return px>0 ? cs/px : 0.0;
+     }
+   string direct=ccy+acc;                // ex GER40 cote EUR -> EURUSD
+   if(SymbolSelect(direct, true))
+     {
+      double fx=MidPrice(direct);
+      if(fx>0) return cs*fx;
+     }
+   string inverse=acc+ccy;
+   if(SymbolSelect(inverse, true))
+     {
+      double fx=MidPrice(inverse);
+      if(fx>0) return cs/fx;
+     }
+   return 0.0;
+  }
 double UsdPerUnit(string sym)            // $ par unité de prix par lot (fx incl.)
   {
    double tv=SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_VALUE);
    double ts=SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_SIZE);
-   if(tv<=0 || ts<=0) return 0.0;
-   return tv/ts;
+   if(tv>0 && ts>0) return tv/ts;
+   return UsdPerUnitFallback(sym);
   }
 double UsdPerLot(string sym, double price) { return price*UsdPerUnit(sym); }
 double MidPrice(string sym)
@@ -382,6 +413,43 @@ double MarginRateEff(int k)
   {
    if(g_live_mrate[k]>0) return g_live_mrate[k];
    return MathMax(g_mrate_swing[k], g_mrate[k]);
+  }
+
+// diagnostic init (tick_value=0 serveur Swing) — trace live vs FALLBACK par jambe
+bool DiagUsdPerUnit()
+  {
+   bool ok=true;
+   for(int k=0;k<N_LEGS;k++)
+     {
+      string sym=g_sym[k];
+      double tv=SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_VALUE);
+      double ts=SymbolInfoDouble(sym, SYMBOL_TRADE_TICK_SIZE);
+      double upp=UsdPerUnit(sym);
+      Print(StringFormat("UPU %s: tick_value=%.6f tick_size=%.6f contract=%.2f "
+            "point=%.5f ccy=%s -> usd_per_unit=%.6f (%s)",
+            sym, tv, ts, SymbolInfoDouble(sym, SYMBOL_TRADE_CONTRACT_SIZE),
+            SymbolInfoDouble(sym, SYMBOL_POINT),
+            SymbolInfoString(sym, SYMBOL_CURRENCY_PROFIT), upp,
+            (tv>0 && ts>0) ? "live" : "FALLBACK"));
+      if(upp<=0)
+        {
+         ok=false;
+         SetError("UsdPerUnit<=0 "+sym+" — aucun armement tant que non résolu");
+        }
+     }
+   return ok;
+  }
+
+// assert pré-armement: refus d'ouvrir du risque dimensionné si UsdPerUnit<=0
+bool ArmAssertUPU(string where)
+  {
+   for(int k=0;k<N_LEGS;k++)
+      if(UsdPerUnit(g_sym[k])<=0)
+        {
+         SetError(StringFormat("ARM REFUSÉ %s: UsdPerUnit<=0 %s", where, g_sym[k]));
+         return false;
+        }
+   return true;
   }
 
 //+------------------------------------------------------------------+
@@ -834,7 +902,7 @@ void CapQuantizeTrade(double &tgt[], double eq, string reason, bool &trade_mask[
       if(!trade_mask[k]) continue;
       double px=MidPrice(g_sym[k]);
       double one=UsdPerLot(g_sym[k], px);
-      if(one<=0) continue;
+      if(one<=0) { SetError("CapQuantize skip "+g_sym[k]+": UsdPerLot<=0"); continue; }
       double lots=QuantLots(g_sym[k], tgt[k]/one);
       double cap=LegLotCap(k, eq);
       if(cap>0 && MathAbs(lots)>cap) lots=(lots>0?cap:-cap);
@@ -884,6 +952,7 @@ void Do1600Arm()
      {
       double risk=FU_ORB_RISK*ACCOUNT_SIZE_USD*OrbTaper0();
       double upp=UsdPerUnit(g_micro_sym);
+      if(upp<=0) SetError("funded ORB skip: UsdPerUnit<=0 "+g_micro_sym);
       double lots=0.0;
       if(upp>0 && g_or_hi>g_or_lo)
          lots=MathFloor(risk/((g_or_hi-g_or_lo)*upp)/LOT_STEP)*LOT_STEP;
@@ -924,6 +993,7 @@ void Do1735()                       // GER40 on (jour ON) — gouverneur live
    TargetsValidate();
    if(g_targets_status!="OK")
      { SetError("17:35 GER40 skip: targets "+g_targets_status); return; }
+   if(!ArmAssertUPU("17:35")) return;
    double eq=AccountInfoDouble(ACCOUNT_EQUITY);
    double tgt[N_LEGS];
    bool mask[N_LEGS];
@@ -988,6 +1058,7 @@ void Do2205Rebalance()
       SetError("22:05 rebalance SKIP: targets "+g_targets_status+" — gestion seule");
       return;
      }
+   if(!ArmAssertUPU("22:05")) return;
    double eq=AccountInfoDouble(ACCOUNT_EQUITY);
    double sc=Scale(eq);
    double tgt[N_LEGS];
@@ -1381,6 +1452,7 @@ int OnInit()
         { Print("Symbole introuvable: ", g_sym[k]); return INIT_FAILED; }
    InitAnchors();
    ReadLiveSpecs();                  // v2.2.1: specs live + bornes dès l'init
+   DiagUsdPerUnit();                 // tick_value=0 serveur Swing -> trace fallback
    LoadState();
    if(g_anchor_date=="")
      {
