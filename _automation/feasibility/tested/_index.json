@@ -1103,6 +1103,22 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantocracy_what_trend_following_actually_adds_to_risk_premi_2026-06-10_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_rbreak_an_r_package_for_estimating_structural_br_20260611.md",
+      "tested_date": "2026-06-11",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_rbreak_an_r_package_for_estimating_structural__2026-06-11_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_quantpedia_in_may_2026_20260611.md",
+      "tested_date": "2026-06-11",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_in_may_2026_20260611_2026-06-11_report.md",
+      "stopped_at": "A"
     }
   ]
 }
