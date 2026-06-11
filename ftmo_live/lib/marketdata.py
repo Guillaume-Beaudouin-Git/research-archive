@@ -22,6 +22,7 @@ import pandas as pd
 from . import PKG, LEGS
 from . import spec as S
 from . import swaps as SW
+from .statefiles import read_text_tolerant
 
 FROZEN_CACHE = PKG / "cache"
 EXPORT_MAX_AGE_H = 6.0
@@ -39,7 +40,7 @@ def load_export(path: Path, now: Optional[datetime] = None,
     """market_export.json de l'EA. MarketDataError si absent/stale/incomplet."""
     if not path.exists():
         raise MarketDataError(f"export EA absent: {path}")
-    exp = json.loads(path.read_text())
+    exp = json.loads(read_text_tolerant(path))
     gen = datetime.strptime(exp["generated_at_paris"], "%Y.%m.%d %H:%M:%S")
     now = now or datetime.now()
     age_h = (now - gen).total_seconds() / 3600.0
