@@ -1,0 +1,14 @@
+{
+  "hash": "ae40c16c730689b4bb01b0fc835d7713",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.12261v1",
+  "title": "Rbreak: An R Package for Estimating Structural Breaks under Linear Restrictions with Application to Linear Model Tree",
+  "url": "http://arxiv.org/abs/2606.12261v1",
+  "description": "The package \\texttt{rbreak} implements methods for detecting structural breaks and estimating break locations for linear multiple regression models under general linear restrictions on the coefficient vector. Restrictions can be within regimes, across regimes, or both, and are supported in two forms: an affine parameterization (Form A: \\texttt{delta = S*theta + s}) and explicit linear constraints (Form B: \\texttt{R*delta = r}). It provides break date estimation with confidence interval, a restricted sup-F test for the null of no structural change, simulation of critical values by Monte Carlo, and a bootstrap restart procedure to reduce the risk of convergence to spurious local optima. It also implements a generalized regression tree (linear model tree) procedure where each leaf contains a linear regression rather than a local average. This note explains the methods and illustrates them with applications.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-11 02:30 UTC"
+}
