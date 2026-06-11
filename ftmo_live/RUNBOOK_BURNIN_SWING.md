@@ -96,6 +96,20 @@ pré-enregistré = NULL, arm A reste) ; le clip dynamique + l'enforcement au tau
 - Supervisor daemon démarré : `screen -dmS ftmo_supervisor … supervisor.py --daemon`.
 - Kill-file observation : `touch "…/MQL5/Files/FLAT"`.
 
+### Crons — note fuseau 2026-06-12 (le bloc `CRON_TZ` ci-dessus est PÉRIMÉ)
+
+Le cron du VPS est vixie (paquet Ubuntu `cron` 3.0pl1) : **`CRON_TZ` est IGNORÉ** —
+traité comme simple variable d'env exportée aux jobs, jamais comme re-fuseautage.
+La crontab réelle est donc écrite en **UTC** (TZ système du VPS) :
+brain `50 19`, reconcile `0 21`, morning `30 6`, evening `20 20`
+(= 21:50 / 23:00 / 08:30 / 22:20 Paris en heure d'été).
+
+**Seam DST 25/10/2026** (fin de l'heure d'été en Europe, Paris passe à UTC+1) :
+décaler les **4 lignes ftmo de +1 h UTC** — brain `50 20`, reconcile `0 22`,
+morning `30 7`, evening `20 21` — pour conserver les horaires Paris.
+La ligne `@reboot` n'est pas concernée. Snapshot de référence :
+`infra/crontab_vps_2026-06-12.txt` (capture `crontab -l`, aucun secret inline).
+
 ## Recompilation future
 
 Chemin SANS espaces obligatoire (le quoting wine casse sur « Program Files ») :
