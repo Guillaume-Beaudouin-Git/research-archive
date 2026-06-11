@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-06-09",
+  "last_run": "2026-06-10",
   "processed_promising": {
     "quantocracy_the_skip_month_mystery_what_last_month_s_returns_a_20260523.md": {
       "verdict": "FAIL_A",
@@ -520,6 +520,34 @@
     "arxiv_econ_em_evaluating_ai_investment_strategies_20260609.md": {
       "verdict": "FAIL_A",
       "report": "_automation/feasibility/tested/arxiv_econ_em_evaluating_ai_investment_strategies_20260609_2026-06-09_report.md"
+    },
+    "quantocracy_reconstructing_a_century_of_us_corporate_bonds_20260610.md": {
+      "verdict": "REQUIRES_HUMAN",
+      "report": "_automation/feasibility/tested/quantocracy_reconstructing_a_century_of_us_corporate_bonds_2_2026-06-10_report.md"
+    },
+    "quantocracy_resourcing_a_triangulated_stat_arb_operation_solo_20260610.md": {
+      "verdict": "REQUIRES_HUMAN",
+      "report": "_automation/feasibility/tested/quantocracy_resourcing_a_triangulated_stat_arb_operation_sol_2026-06-10_report.md"
+    },
+    "quantocracy_ufc_ultimate_fitting_championships_investment_idio_20260610.md": {
+      "verdict": "FAIL_A",
+      "report": "_automation/feasibility/tested/quantocracy_ufc_ultimate_fitting_championships_investment_id_2026-06-10_report.md"
+    },
+    "quantocracy_when_insiders_and_news_disagree_cross_signal_20260610.md": {
+      "verdict": "REQUIRES_HUMAN",
+      "report": "_automation/feasibility/tested/quantocracy_when_insiders_and_news_disagree_cross_signal_202_2026-06-10_report.md"
+    },
+    "quantpedia_quantpedia_premium_update_june_10th_20260610.md": {
+      "verdict": "FAIL_A",
+      "report": "_automation/feasibility/tested/quantpedia_quantpedia_premium_update_june_10th_20260610_2026-06-10_report.md"
+    },
+    "quantocracy_forecasting_statistical_estimates_when_data_gets_r_20260610.md": {
+      "verdict": "FAIL_A",
+      "report": "_automation/feasibility/tested/quantocracy_forecasting_statistical_estimates_when_data_gets_2026-06-10_report.md"
+    },
+    "quantocracy_what_trend_following_actually_adds_to_risk_premia_20260610.md": {
+      "verdict": "FAIL_A",
+      "report": "_automation/feasibility/tested/quantocracy_what_trend_following_actually_adds_to_risk_premi_2026-06-10_report.md"
     }
   }
 }

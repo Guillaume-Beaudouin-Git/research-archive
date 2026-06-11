@@ -41,6 +41,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "30335990910f577927b5683c2a8a2a93": {
+    "first_seen": "2026-06-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Pivotal and identification-robust nonparametric inference in linear IV models",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3069e73dd4239a24a78945fe450a96b2": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
@@ -139,6 +146,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "71264d29bd7e07a0766f4b7ae0c04312": {
+    "first_seen": "2026-06-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Assumption-Lean Shrinkage and Model Averaging for Spatial Parameters",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "71f2c6ce4060f2cb5d56799ad5995a57": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
@@ -216,6 +230,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9563ad78d6c0952ac8b4727303d5a9cd": {
+    "first_seen": "2026-06-11 01:30",
+    "source": "arxiv_econ_em",
+    "title": "What is the Long-Term Value of Reliability?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "95cb48b3fa5640eea51fcfcad7c1a558": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
@@ -243,6 +264,13 @@
     "title": "Modeling Covariate Transition for Efficient Estimation of Longitudinal Treatment",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md"
+  },
+  "ae40c16c730689b4bb01b0fc835d7713": {
+    "first_seen": "2026-06-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Rbreak: An R Package for Estimating Structural Breaks under Linear Restrictions ",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_rbreak_an_r_package_for_estimating_structural_br_20260611.md"
   },
   "ae9fa41029091ffafde992e6415e6e44": {
     "first_seen": "2026-06-05 08:03",
@@ -299,6 +327,13 @@
     "title": "Evaluating AI Investment Strategies",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_evaluating_ai_investment_strategies_20260609.md"
+  },
+  "da71abad9b2a1fa336c57655d864998f": {
+    "first_seen": "2026-06-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Threshold Regression for Fixed-T Panel Data with Interactive Fixed Effects",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "e29eb449fe416d8b3d8c145e40cac23e": {
     "first_seen": "2026-06-03 06:06",
