@@ -8,7 +8,7 @@ import importlib.util
 from functools import lru_cache
 from typing import Optional
 
-from . import EA_DIR, PIN_MQH_SHA256
+from . import EA_DIR, PIN_MQH_SHA256, REPO
 
 _LOADER_PATH = EA_DIR / "brain.py"
 
@@ -19,6 +19,9 @@ def loader():
     spec = importlib.util.spec_from_file_location("v22ea_brain", _LOADER_PATH)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
+    # shim déploiement: REPO est hardcodé chemin Mac dans le loader gelé —
+    # repointé vers la racine réelle (no-op sur le Mac, requis sur le VPS)
+    mod.REPO = REPO
     return mod
 
 
