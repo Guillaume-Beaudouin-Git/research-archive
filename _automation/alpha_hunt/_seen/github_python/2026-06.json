@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0a046690b5e4a095de09f62ea2244bef": {
+    "first_seen": "2026-06-11 11:00",
+    "source": "github_python",
+    "title": "zulip/zulip",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "129a2874563b6abb459b7a0cf5108d1d": {
     "first_seen": "2026-06-10 05:00",
     "source": "github_python",
@@ -69,6 +76,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "28b7e0fac1fbb854a9a881d5745193ec": {
+    "first_seen": "2026-06-11 11:00",
+    "source": "github_python",
+    "title": "mlflow/mlflow",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2d60a4bd5957265294153c321a135170": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -90,10 +104,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "382d6c15e7c0228e8d4e8c0f9f4e23ae": {
+    "first_seen": "2026-06-11 11:00",
+    "source": "github_python",
+    "title": "hexo-ai/sia",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3be2beb576bdfa022cf2eb6fe043b4bb": {
     "first_seen": "2026-06-09 12:05",
     "source": "github_python",
     "title": "anthropics/claude-code-security-review",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3da637cf19300e983e7131ab5b372da7": {
+    "first_seen": "2026-06-11 11:00",
+    "source": "github_python",
+    "title": "anthropics/claude-agent-sdk-python",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -279,6 +307,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9ff98decd80bae9828b048ba31af1406": {
+    "first_seen": "2026-06-11 11:00",
+    "source": "github_python",
+    "title": "karpathy/autoresearch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b3ed63c21186e63fc9ec6b4104571939": {
     "first_seen": "2026-06-04 12:07",
     "source": "github_python",
@@ -424,6 +459,13 @@
     "source": "github_python",
     "title": "jianchang512/pyvideotrans",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e89a1c7a434ac8d856a7c7c5aefaf77e": {
+    "first_seen": "2026-06-11 11:00",
+    "source": "github_python",
+    "title": "LLMQuant/quant-mind",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "eab530ed4cad9d8f4721aca1ee2b24d3": {
