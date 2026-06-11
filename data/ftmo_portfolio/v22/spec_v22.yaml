@@ -1,14 +1,16 @@
 meta:
-  version: v2.2
+  version: v2.2.1
+  policy_version: v2.2 (recost v2.2.1 = data-only, policy inchangée — pré-enregistré)
   spec_date: '2026-06-10'
   baseline_commits:
     v22_contract: 605f4a426da3eac4f5a2644bca774a07f1e5f754
     v22_residuals: 4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539
   supersedes: v2.1 — toute référence baseline v2.1 est remplacée par ce pin
   generated_from: config_v22.py via make_spec_yaml.py (do not hand-edit)
-  nonregression: NONREGRESSION_v2.2.md (ancres 1-19)
+  nonregression: NONREGRESSION_v2.2.md (ancres 1-21, révision v2.2.1)
   amendments:
-  - 'AMENDEMENT_RAPPORT_MESURE_s9.md (§9: branche kill retirée)'
+  - 'AMENDEMENT_RAPPORT_MESURE_s9.md (§9: branche kill retirée; gate 2 = PASS v2.2.1 — mécanique swap
+    4/4 au centime, ancres re-datées)'
 account:
   vendor: FTMO
   type: 2-step Swing (achat Swing irréversible)
@@ -160,19 +162,181 @@ cost_anchors:
     USDJPY: 1.36
     US100: 2.2
     GER40: 2.2
+  rt_bps_legs_allin:
+    XAUUSD: 1.98
+    USDJPY: 1.86
+    US100: 2.2
+    GER40: 2.2
   swap_bps_per_night_measured:
-    US100_long: -2.241
-    GER40_long: -1.607
-    GER40_short: -0.199
-    XAUUSD_long: -2.06
-    USDJPY_long: 0.184
+    XAUUSD_long: -1.518
+    XAUUSD_short: -0.336
+    USDJPY_long: 0.06
+    USDJPY_short: -1.267
+    US100_long: -2.126
+    US100_short: 0.092
+    GER40_long: -1.564
+    GER40_short: -0.193
+  swap_anchor_basis: points mesurés 2026-06-10 -> bps aux prix panel 2026-06-05 (voir measured_specs)
   triple_days:
     indices: vendredi
     metaux_fx: mercredi
   sources:
   - outputs/phase0_rt_cost_bps.csv
-  - cache/panel_swapL.parquet
+  - specs MT5 FTMO 2026-06-10 (measured_specs)
   - cache/orb_e7_Rera.parquet (era ledger)
+measured_specs:
+  read_date: '2026-06-10'
+  source: FTMO-Demo Standard
+  role: bornes de sanité DATÉES — l'EA lit les specs live (swap pts, rollover3days, marge) à l'init +
+    au rebalance et ALERTE hors borne ; brain/reconcile comparent facturé vs spec-du-jour vs modèle
+  swap_type: points (valeur d'un point = contract_size x 10^-digits, devise de cote)
+  validation: 'nuit 10->11/06 (mercredi x3 métaux/FX): 4/4 facturés reconstruits au centime — XAU 0.01=-1.97$,
+    JPY 0.1=+0.18$, US100 0.1=-0.64$, GER40 0.1=-0.394€=-0.45$ (USD compte @EURUSD 1.152)'
+  symbols:
+    XAUUSD:
+      swap_long_pts: -65.68
+      swap_short_pts: -14.53
+      triple_dow: 2
+      contract: 100
+      digits: 2
+      comm_side_frac: 7.0e-06
+      comm_side_usd_lot: 0.0
+      swap_long_bps_ref: -1.518
+      swap_short_bps_ref: -0.3358
+      comm_rt_bps: 0.14
+    USDJPY:
+      swap_long_pts: 0.96
+      swap_short_pts: -20.3
+      triple_dow: 2
+      contract: 100000
+      digits: 3
+      comm_side_frac: 0.0
+      comm_side_usd_lot: 2.5
+      swap_long_bps_ref: 0.0599
+      swap_short_bps_ref: -1.2665
+      comm_rt_bps: 0.5
+    US100:
+      swap_long_pts: -637.16
+      swap_short_pts: 27.49
+      triple_dow: 4
+      contract: 1
+      digits: 2
+      comm_side_frac: 0.0
+      comm_side_usd_lot: 0.0
+      swap_long_bps_ref: -2.1257
+      swap_short_bps_ref: 0.0917
+      comm_rt_bps: 0.0
+    GER40:
+      swap_long_pts: -393.88
+      swap_short_pts: -48.68
+      triple_dow: 4
+      contract: 1
+      digits: 2
+      comm_side_frac: 0.0
+      comm_side_usd_lot: 0.0
+      swap_long_bps_ref: -1.564
+      swap_short_bps_ref: -0.1933
+      comm_rt_bps: 0.0
+  triple_dow_python:
+    XAUUSD: 2
+    USDJPY: 2
+    US100: 4
+    GER40: 4
+  ref_px:
+    XAUUSD: 4326.7
+    USDJPY: 160.28
+    US100: 29973.57
+    GER40: 25184.89
+    EURUSD: 1.152
+    date: '2026-06-05'
+  ger40_note: quote EUR — profit/swap convertis EUR->USD au taux marché (pas de commission)
+  bounds_rel:
+    swap: 0.25
+    margin: 0.25
+  margin_rates:
+    policy_engine_v22:
+      XAUUSD: 0.02
+      USDJPY: 0.01
+      US100: 0.02
+      GER40: 0.02
+      note: cap 60% du moteur — POLICY, inchangée
+    standard_measured:
+      XAUUSD: 0.033333
+      USDJPY: 0.01
+      US100: 0.02
+      GER40: 0.02
+    swing_official:
+      XAUUSD: 0.111111
+      USDJPY: 0.033333
+      US100: 0.066667
+      GER40: 0.066667
+    swing_status: levier Swing officiel FTMO (forex 1:30, indices 1:15, métaux 1:9) — À CONFIRMER sur
+      specs serveur Swing au déploiement
+recost_v221:
+  type: data-only (pré-enregistré) — signal/vm/budgets/policy INCHANGÉS
+  gates:
+    G0_swap_mechanics: PASS — 4/4 facturés au centime
+    G1_repro_baseline: PASS — challenge 87.01 exact
+    G2_challenge_drift: RÉSOLU — pooled bouge (comm -1.73, swaps fwd -1.08) mais deltas appariés CI95
+      ⊃ 0 (méthode vm-sweep 4e1bac5) = jitter de chemin non significatif ; challenge contractuel INCHANGÉ
+  paired_deltas_pt_ci95:
+    comm_only:
+      delta_pt: -1.73
+      ci95:
+      - -5.84
+      - 1.95
+    swaps_fwd:
+      delta_pt: -1.08
+      ci95:
+      - -4.33
+      - 2.38
+    swaps_comm:
+      delta_pt: -2.38
+      ci95:
+      - -7.14
+      - 1.95
+    swing_margin:
+      delta_pt: -15.58
+      ci95: &id001
+      - -24.24
+      - -7.14
+  challenge_contractual: 87.01
+  challenge_comm_only_pathrealized: 85.28
+  funded_comm_only:
+    IS: 683.0
+    OOS: 2529.0
+    VAL: 1381.0
+    EV: 863.0
+    vs_v22: OOS 2632->2529 (-103, drag commissions) ; EV +926->+863
+  headline_margin_swing:
+    verdict: LE TERME MATÉRIEL — si levier Swing serveur = officiel, vm14 non exécutable tel quel
+    delta_p_pass_pt: -15.58
+    ci95: *id001
+    margin_distribution:
+      policy:
+        p50: 0.21
+        p99: 0.783
+        p999: 1.012
+        bind: 0.055
+        p_pass: 84.63
+      standard:
+        p50: 0.221
+        p99: 1.042
+        p999: 1.462
+        bind: 0.101
+        p_pass: 84.85
+      swing:
+        p50: 0.687
+        p99: 3.946
+        p999: 5.112
+        bind: 0.56
+        p_pass: 71.43
+    funded_insensible: 'vm1: extraction identique sous marge swing (jamais bindé)'
+    action: 'GATE DÉPLOIEMENT: lire OrderCalcMargin sur le serveur Swing AVANT challenge ; si rates ~
+      swing_official -> décision comité (la grille de lots vm14 est de-levée x0.3-0.5 par le cap 60%)'
+  swaps_forward_projection: diagnostic seulement — projeter les bps d'aujourd'hui sur 2013-2026 pénalise
+    l'ère ZIRP (IS -3.0) ; le panel swap HISTORIQUE reste la donnée contractuelle
+  details: recost/summary.json + recost/tables/*.csv + RECOST_v2.2.1.md
 contractual_anchors_v22:
   challenge_pooled: 0.87
   challenge_ci95:

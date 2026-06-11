@@ -1,0 +1,7 @@
+# sha256 de tokens Telegram compromis — tg.py REFUSE de démarrer si
+# sha256(TELEGRAM_BOT_TOKEN) figure ici. Un hash par ligne, # = commentaire.
+# Ajouter l'ancien token compromis (rotation 2026-05-30, cf.
+# _audit/security_cleanup_2026-05-30.md) :
+#   python3 -c "import hashlib,getpass;print(hashlib.sha256(getpass.getpass('old token: ').encode()).hexdigest())" >> ftmo_live/config/token_blocklist.sha256
+# Le token dummy publié dans .env.example historique (committé) :
+63323d0f5ff6f1cd5f222514f5072f041daa489e13678ce6cb883396da25daf7
