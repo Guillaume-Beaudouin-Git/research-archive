@@ -1,0 +1,30 @@
+SHELL=/bin/bash
+
+# Crontab fusion LOT7 (2026-05-30) + decisions 2026-06-10. Regle : aucun secret inline, tout via scripts/run_with_env.sh
+
+# --- Strategy B delta-neutral HL testnet — EN PAUSE MIGRATION WALLET 2026-06-10, decommenter apres bascule .env (HL neuf + Binance regen) ---
+#10 0,8,16 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh /home/algo/run_delta_neutral.sh --live --bn-key "$BINANCE_TESTNET_API_KEY" --bn-secret "$BINANCE_TESTNET_SECRET_KEY" --hl-key "$HYPERLIQUID_TESTNET_KEY" >> /home/algo/logs/delta_neutral.log 2>&1
+
+# --- Monitor lecture seule ---
+30 0 * * * /home/algo/run_monitor.sh >> /home/algo/logs/monitor.log 2>&1
+
+# --- Automation recherche (aucun secret) ---
+30 6 * * 1-5 /bin/bash /home/algo/projects/Algo_claude/scripts/fetch_arxiv.sh >> /home/algo/projects/Algo_claude/logs/arxiv_fetch_cron.log 2>&1
+*/30 * * * * /bin/bash /home/algo/projects/Algo_claude/scripts/fetch_alpha_sources.sh >> /home/algo/projects/Algo_claude/logs/alpha_hunt_fetch.log 2>&1
+
+# --- MT5 persistant ---
+@reboot sleep 30 && /usr/bin/screen -dmS mt5 /home/algo/start_mt5.sh
+
+# --- Strategy A — COUPEE 2026-06-10 (Propr a revoquer, cle HL refuitee, pausee depuis breach Propr). Reactivation = decision explicite. Lignes LOT7 pour reference : ---
+#5 0 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh /home/algo/run_tsmom.sh --live --private-key "$HYPERLIQUID_TESTNET_KEY" >> /home/algo/logs/tsmom.log 2>&1
+#15 0 * * 1 /home/algo/projects/Algo_claude/scripts/run_with_env.sh python -m strategies.tsmom_v2_propfirm.execution.run_rebalance >> /home/algo/projects/Algo_claude/logs/tsmom_v2_cron.log 2>&1
+#30 8 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh python -m strategies.tsmom_v2_propfirm.execution.daily_summary >> /home/algo/projects/Algo_claude/logs/tsmom_v2_cron.log 2>&1
+
+# --- Strategy C watchdog : retire (pile archivee ; dedup LOT7 §B sans objet, lignes deja absentes au 2026-06-10) ---
+
+# ftmo_live : horaires en UTC car vixie cron ignore CRON_TZ. Paris = UTC+2 ete. Seam DST 25/10/2026 : brain 19h50 vers 20h50, reconcile 21h vers 22h, morning 6h30 vers 7h30, evening 20h20 vers 21h20.
+@reboot sleep 60 && /usr/bin/screen -dmS ftmo_supervisor /home/algo/projects/Algo_claude/scripts/run_with_env.sh python3 /home/algo/projects/Algo_claude/ftmo_live/supervisor.py --daemon
+50 19 * * 1-5 /home/algo/projects/Algo_claude/scripts/run_with_env.sh python3 /home/algo/projects/Algo_claude/ftmo_live/brain.py >> /home/algo/logs/ftmo_brain.log 2>&1
+0 21 * * 1-5 /home/algo/projects/Algo_claude/scripts/run_with_env.sh python3 /home/algo/projects/Algo_claude/ftmo_live/reconcile.py >> /home/algo/logs/ftmo_reconcile.log 2>&1
+30 6 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh python3 /home/algo/projects/Algo_claude/ftmo_live/supervisor.py --report morning >> /home/algo/logs/ftmo_supervisor.log 2>&1
+20 20 * * * /home/algo/projects/Algo_claude/scripts/run_with_env.sh python3 /home/algo/projects/Algo_claude/ftmo_live/supervisor.py --report evening >> /home/algo/logs/ftmo_supervisor.log 2>&1
