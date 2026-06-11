@@ -9,6 +9,7 @@
 - FLAT          (humain/superviseur) : kill-file -> flatten + disable.
 """
 import csv
+import io
 import json
 import os
 import tempfile
@@ -69,11 +70,23 @@ def atomic_write_json(path: Path, payload: dict) -> None:
         raise
 
 
+def read_text_tolerant(path: Path) -> str:
+    """Lecture tolérante des fichiers MQL5/Files : l'EA (FileOpen FILE_ANSI sous
+    Wine) écrit en CP1252 — ex. 0x97 «—», 0xe9 «é» — alors que les écrivains
+    Python émettent de l'UTF-8. UTF-8 strict d'abord, repli cp1252
+    errors="replace" : aucun octet ne doit faire planter un lecteur."""
+    raw = path.read_bytes()
+    try:
+        return raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return raw.decode("cp1252", errors="replace")
+
+
 def read_json(path: Path) -> Optional[dict]:
     if not path.exists():
         return None
     try:
-        return json.loads(path.read_text())
+        return json.loads(read_text_tolerant(path))
     except (json.JSONDecodeError, OSError):
         return None
 
@@ -132,7 +145,7 @@ def read_fills(files_dir: Path, date_paris: Optional[str] = None) -> pd.DataFram
     p = files_dir / "fills.csv"
     if not p.exists():
         return pd.DataFrame(columns=FILLS_COLUMNS)
-    df = pd.read_csv(p)
+    df = pd.read_csv(io.StringIO(read_text_tolerant(p)))
     if date_paris is not None and len(df):
         # l'EA horodate "YYYY.MM.DD HH:MM:SS" ; date_paris arrive en "YYYY-MM-DD"
         days = df["ts_paris"].astype(str).str[:10].str.replace(".", "-", regex=False)
@@ -144,7 +157,7 @@ def read_swaps_billed(files_dir: Path, date_paris: Optional[str] = None) -> pd.D
     p = files_dir / "swaps_billed.csv"
     if not p.exists():
         return pd.DataFrame(columns=SWAPS_COLUMNS)
-    df = pd.read_csv(p)
+    df = pd.read_csv(io.StringIO(read_text_tolerant(p)))
     if date_paris is not None and len(df):
         df = df[df["date_paris"].astype(str) == date_paris]
     return df

@@ -3,12 +3,13 @@ anti-token-compromis de tg.py."""
 import hashlib
 import json
 import re
+from datetime import datetime
 
 import pandas as pd
 import pytest
 
 import tg
-from lib import statefiles
+from lib import marketdata, statefiles
 
 
 def _mode_params():
@@ -81,6 +82,35 @@ def test_csv_roundtrip(tmp_path):
     statefiles.append_csv(p, statefiles.FILLS_COLUMNS, row)
     df = pd.read_csv(p)
     assert len(df) == 2 and df["slip_bps"].iloc[0] == 0.9
+
+
+def test_ea_files_ansi_cp1252_tolerated(tmp_path):
+    """L'EA écrit MQL5/Files en ANSI/CP1252 sous Wine (0x97 «—», 0xe9 «é») :
+    aucun lecteur de fichiers EA ne doit lever UnicodeDecodeError
+    (crash supervisor --report du 2026-06-12, state.json octet 0x97)."""
+    st_p = tmp_path / "state.json"
+    st_p.write_bytes(b'{"ts_paris": "2026.06.12 08:30:00",\n'
+                     b'"last_error": "kill-file FLAT \x97 EA d\xe9sarm\xe9"}\n')
+    st = statefiles.read_json(st_p)
+    assert st["last_error"] == "kill-file FLAT — EA désarmé"
+
+    f_p = tmp_path / "fills.csv"
+    f_p.write_bytes(
+        b"ts_server,ts_paris,phase,reason,symbol,side,lots,req_price,fill_price,"
+        b"slip_bps,latency_ms,order_ticket,deal_ticket,position_id,magic,comment\n"
+        b"x,2026.06.12 22:05:11,1,rebalance,XAUUSD,BUY,0.13,3301.2,3301.5,0.9,"
+        b"4000,1,2,3,220500,d\xe9sarm\xe9 \x97\n")
+    fills = statefiles.read_fills(tmp_path, "2026-06-12")
+    assert len(fills) == 1
+    assert fills["comment"].iloc[0] == "désarmé —"
+
+    exp_p = tmp_path / "market_export.json"
+    exp_p.write_bytes(b'{"generated_at_paris": "2026.06.12 21:45:00",\n'
+                      b'"note": "\x97\xe9",\n'
+                      b'"symbols": {"XAUUSD": {}, "USDJPY": {}, '
+                      b'"US100": {}, "GER40": {}}}\n')
+    exp = marketdata.load_export(exp_p, now=datetime(2026, 6, 12, 21, 50))
+    assert exp["note"] == "—é"
 
 
 def test_state_age(files_dir):
