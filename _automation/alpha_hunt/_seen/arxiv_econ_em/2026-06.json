@@ -13,6 +13,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_value_a_20260604.md"
   },
+  "1286db32f5f60a306a0a4066a5e26929": {
+    "first_seen": "2026-06-12 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Semiparametric and Nonparametric Fixed Effects Panel Data Models with",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1f70f293d7901b8b83ffbfb41b255efa": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
@@ -75,6 +82,13 @@
     "title": "Position: Prioritize Identifying Structure, Not Complex Models, for Scientific D",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_position_prioritize_identifying_structure_not_comp_20260603.md"
+  },
+  "33b1b20c8df128a542e58639db8d681f": {
+    "first_seen": "2026-06-12 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Sovereign Stress Avalanches and Network Amplification in Latin America",
+    "decision": "accepted",
+    "promising_file": null
   },
   "3ec984f428760362034e91c70e62c650": {
     "first_seen": "2026-06-08 06:06",
@@ -404,6 +418,13 @@
     "title": "Option Pricing under Stochastic Volatility and Jumps:A PIDE Framework with Empir",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260601.md"
+  },
+  "fc60a97fc97964a391c0c832b971fda5": {
+    "first_seen": "2026-06-12 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Prediction-Powered Causal Inference by Automatic Debiased Machine Learning and S",
+    "decision": "accepted",
+    "promising_file": null
   },
   "fc7b297c2b60c1a68dd631a0dd4851a5": {
     "first_seen": "2026-06-08 06:06",
