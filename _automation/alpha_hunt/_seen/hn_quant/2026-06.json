@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "af90b0632bd3a89f63fca1d4a27b065f": {
+    "first_seen": "2026-06-12 01:00",
+    "source": "hn_quant",
+    "title": "Ask HN: How to get a job at Jane St., Two Sigma, etc.?",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "bba35d4c980439d3493dd316143a4326": {
     "first_seen": "2026-06-03 18:06",
     "source": "hn_quant",
