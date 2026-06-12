@@ -1119,6 +1119,22 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_in_may_2026_20260611_2026-06-11_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_prediction_powered_causal_inference_by_automatic_20260612.md",
+      "tested_date": "2026-06-12",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_prediction_powered_causal_inference_by_automat_2026-06-12_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_sovereign_stress_avalanches_and_network_amplificat_20260612.md",
+      "tested_date": "2026-06-12",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_sovereign_stress_avalanches_and_network_amplif_2026-06-12_report.md",
+      "stopped_at": "A"
     }
   ]
 }
