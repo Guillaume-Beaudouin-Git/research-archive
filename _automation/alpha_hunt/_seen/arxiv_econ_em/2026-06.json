@@ -69,6 +69,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "30c34a21484c7ae056b2c2e6a51bdb04": {
+    "first_seen": "2026-06-12 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Semiparametric Local Projections",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3188101b3e5397e82ec48e2728a7e8e3": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
@@ -234,6 +241,13 @@
     "first_seen": "2026-06-08 06:06",
     "source": "arxiv_econ_em",
     "title": "TOPSIS-RAD: Ranking According to Desires",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "851b2d9a509dbde822b06dc3ffda7210": {
+    "first_seen": "2026-06-12 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum",
     "decision": "rejected_L0",
     "promising_file": null
   },
