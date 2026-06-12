@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0afb220728108aaf761ece7ed6e7192c": {
+    "first_seen": "2026-06-12 20:30",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Is Knuth's TAOCP worth the time and effort?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "14c973e763f826dc99dce5faf99e61a7": {
     "first_seen": "2026-06-07 14:04",
     "source": "hn_algotrading",
@@ -52,6 +59,13 @@
     "first_seen": "2026-06-04 12:07",
     "source": "hn_algotrading",
     "title": "Against Tricky Questions for LLMs: A Case for Simple and Transparent Benchmarks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "296ffe0c29eec7ff79cf9862fd185777": {
+    "first_seen": "2026-06-12 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Manob: A social media plaform without algorithm, ads, or data-tracking",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -290,6 +304,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Algorithmic Trading Models – Moving Averages",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "de16be87fcb428f35bafe1b4fbf2e7d7": {
+    "first_seen": "2026-06-12 00:30",
+    "source": "hn_algotrading",
+    "title": "Ask HN: What do you need to know to be good at the Unix Command Line?",
     "decision": "rejected_L0",
     "promising_file": null
   },
