@@ -66,6 +66,31 @@ def test_heartbeat_lost(files_dir, runtime_isolated):
     assert "heartbeat" in supervisor.evaluate_alerts(files_dir, now=now)
 
 
+def test_heartbeat_dormant_market_closed(files_dir, runtime_isolated):
+    """State figé à la clôture vendredi, évalué samedi : silence structurel —
+    pas d'alerte heartbeat hors session (et contenu évalué une seule fois)."""
+    _write_state(files_dir, _state(ts_paris="2026.06.12 22:54:59"))
+    statefiles.atomic_write_json(runtime_isolated / "brain_status.json",
+                                 dict(status="OK", ts_paris="2026.06.13 09:00:00"))
+    now = statefiles.parse_ts("2026.06.13 10:00:00")   # samedi 10:00 Paris
+    fired = supervisor.evaluate_alerts(files_dir, now=now)
+    assert "heartbeat" not in fired
+
+
+def test_content_alerts_skip_on_stale_mtime(files_dir, runtime_isolated):
+    """Contenu (kill, …) : tiré une fois sur state frais, skip silencieux tant
+    que le mtime n'avance pas (même cooldown expiré), re-tiré après réécriture."""
+    statefiles.atomic_write_json(runtime_isolated / "brain_status.json",
+                                 dict(status="OK", ts_paris="2026.06.13 09:00:00"))
+    _write_state(files_dir, _state(kill=1, ts_paris="2026.06.13 09:59:30"))
+    t1 = statefiles.parse_ts("2026.06.13 10:00:00")    # samedi : session fermée
+    assert "kill" in supervisor.evaluate_alerts(files_dir, now=t1)
+    t2 = statefiles.parse_ts("2026.06.13 23:30:00")    # cooldown kill (12 h) expiré
+    assert supervisor.evaluate_alerts(files_dir, now=t2) == []
+    _write_state(files_dir, _state(kill=1, ts_paris="2026.06.13 09:59:30"))
+    assert "kill" in supervisor.evaluate_alerts(files_dir, now=t2)
+
+
 def test_brain_error_alert(files_dir, runtime_isolated):
     _write_state(files_dir, _state())
     statefiles.atomic_write_json(runtime_isolated / "brain_status.json", dict(
@@ -100,3 +125,4 @@ def test_reports_render(files_dir, runtime_isolated):
     e = supervisor.build_evening(st, files_dir, now)
     assert "FTMO P1" in m and "Rooms" in m and "Programme" in m
     assert "PnL jour" in e and "Campagne" in e and "Réconciliation" in e
+    assert "State:" in m and "State:" in e   # âge du state (dormant si marché fermé)

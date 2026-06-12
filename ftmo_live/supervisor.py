@@ -6,6 +6,12 @@ Alertes temps réel (cooldown persisté runtime/alerts_state.json) :
   confirmé | heartbeat > 3 min | écart swap facturé/modèle > 20% | kill-file |
   targets KO à 22:00+ | mode mismatch EA/spec | zombie >= 5 j | brain ERROR/stale.
 
+Market-aware (2026-06-13) : le heartbeat EA est tick-dépendant (WriteState
+throttle M1 sur TimeCurrent, mq5:1291) — il se tait STRUCTURELLEMENT marché
+fermé. L'alerte heartbeat n'est évaluée qu'en session (lib/market_hours) ; les
+alertes de CONTENU ne sont ré-évaluées que si state.json a un mtime postérieur
+à la dernière évaluation (un state figé ne re-tire jamais en boucle).
+
 Rapports (cron, --report) :
   08:30 Paris : jour J/phase/jours tradés, equity + % cible, rooms, PnL nuit +
     swaps facturés vs modèle, positions + marge/cap, breaker/pacing/taper,
@@ -19,7 +25,7 @@ import argparse
 import json
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -29,7 +35,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import tg  # noqa: E402
 from lib import LEGS, RUNTIME  # noqa: E402
 from lib import invariants as inv  # noqa: E402
-from lib import spec, statefiles, swaps  # noqa: E402
+from lib import market_hours, spec, statefiles, swaps  # noqa: E402
 
 HEARTBEAT_MAX_S = 180
 ROOM_DAILY_ALERT_FRAC = 0.015
@@ -59,6 +65,19 @@ def _initial() -> float:
     return spec.account_size()
 
 
+def _now_utc(now_paris_naive: datetime) -> datetime:
+    return now_paris_naive.replace(tzinfo=statefiles.PARIS).astimezone(timezone.utc)
+
+
+def _state_freshness(state: dict, now: datetime) -> str:
+    """Âge du state + contexte session (le heartbeat EA est tick-dépendant)."""
+    age_s = statefiles.state_age_s(state, now)
+    if not market_hours.fx_session_open(_now_utc(now)):
+        return (f"State: vieux de {age_s / 3600.0:.1f} h — marché fermé "
+                "(heartbeat dormant)")
+    return f"State: âge {age_s:.0f} s"
+
+
 # ------------------------------------------------------------------ alertes
 def _cooldown_ok(key: str, minutes: float, now: datetime) -> bool:
     st = _load(ALERTS_STATE, {})
@@ -76,8 +95,16 @@ def _alert(key: str, minutes: float, text: str, now: datetime) -> None:
 
 
 def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
-    """Évalue toutes les conditions ; envoie (cooldown) ; retourne les clefs actives."""
+    """Évalue toutes les conditions ; envoie (cooldown) ; retourne les clefs actives.
+
+    Heartbeat : évalué seulement si la session forex est ouverte (hors session le
+    silence est structurel — WriteState throttlé sur l'horloge des ticks).
+    Alertes de contenu (tout ce qui relit state.json + brain + swaps) : évaluées
+    seulement si state.json a un mtime postérieur à la dernière évaluation
+    (_last_state_mtime dans alerts_state.json) — skip silencieux sinon.
+    """
     now = now or statefiles.now_paris().replace(tzinfo=None)
+    session_open = market_hours.fx_session_open(_now_utc(now))
     day = str(now.date())
     init = _initial()
     fired = []
@@ -86,63 +113,72 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
     if state is None:
         fired.append("state_missing")
         _alert("state_missing", 15, "state.json ABSENT — EA down ?", now)
-    else:
-        age = statefiles.state_age_s(state, now)
-        if age > HEARTBEAT_MAX_S:
-            fired.append("heartbeat")
-            _alert("heartbeat", 15, f"heartbeat perdu {age:.0f}s > {HEARTBEAT_MAX_S}s", now)
-        if int(state.get("breaker_fired_today", 0)):
-            fired.append("breaker")
-            _alert(f"breaker_{day}", 24 * 60,
-                   f"BREAKER déclenché — flatten M5, room daily épuisée "
-                   f"(equity ${state.get('equity', 0):,.0f})", now)
-        room = float(state.get("room_daily_usd", 1e9))
-        if room < ROOM_DAILY_ALERT_FRAC * init:
-            fired.append("room_daily")
-            _alert("room_daily", 30,
-                   f"room daily ${room:,.0f} < {ROOM_DAILY_ALERT_FRAC:.1%} init — "
-                   f"breaker à ${float(state.get('breaker_line', 0)):,.0f}", now)
-        margin = float(state.get("margin_used_pct_equity", 0))
-        if margin > MARGIN_ALERT_PCT:
-            fired.append("margin")
-            _alert("margin", 30, f"marge {margin:.0f}% > {MARGIN_ALERT_PCT:.0f}% equity", now)
-        err = str(state.get("last_error", "") or "")
-        if err:
-            fired.append("reject")
-            _alert(f"reject_{hash(err) & 0xffff}", 60, f"EA erreur/reject: {err}", now)
-        if int(state.get("pending_unconfirmed", 0)) > 0:
-            fired.append("pending")
-            _alert("pending", 15,
-                   f"{state['pending_unconfirmed']} ordre(s) non confirmé(s) "
-                   f"(latence serveur 2-19 s dépassée)", now)
-        if int(state.get("kill", 0)):
-            fired.append("kill")
-            _alert(f"kill_{day}", 12 * 60, "kill-file FLAT actif — EA désarmé", now)
-        if int(state.get("mode_mismatch", 0)):
-            fired.append("mode_mismatch")
-            _alert("mode_mismatch", 60,
-                   "MODE MISMATCH targets.json vs spec_v22.mqh/InpPhase — vérifier", now)
-        if now.hour >= 22 and str(state.get("targets_status", "OK")) != "OK":
-            fired.append("targets")
-            _alert(f"targets_{day}", 60,
-                   f"targets.json {state.get('targets_status')} au rebalance — "
-                   "gestion seule, aucun risque nouveau", now)
-        if int(state.get("abandon_zombie_days", 0)) >= 5:
-            fired.append("abandon")
-            _alert(f"abandon_{day}", 24 * 60,
-                   "ABANDON sim atteint (5 j EOD < floor+2%) — décision humaine: "
-                   "relancer la tentative (règle v2.2)", now)
-        wd = float(state.get("wd_due_usd", 0))
-        if wd > 0:
-            fired.append("wd_due")
-            _alert(f"wd_{day}", 24 * 60,
-                   f"FUNDED: retrait dû ${wd:,.0f} (wd14) — demander le payout", now)
-        if int(state.get("spec_bounds_breach", 0)):
-            fired.append("spec_bounds")
-            _alert("spec_bounds", 12 * 60,
-                   "SPECS LIVE HORS BORNES datées (swap/triple/marge) — dérive "
-                   f"dealer ou écart Standard/Swing: {state.get('spec_bounds_detail', '')}",
-                   now)
+        return fired
+
+    age = statefiles.state_age_s(state, now)
+    if session_open and age > HEARTBEAT_MAX_S:
+        fired.append("heartbeat")
+        _alert("heartbeat", 15, f"heartbeat perdu {age:.0f}s > {HEARTBEAT_MAX_S}s", now)
+
+    try:
+        mtime = (files_dir / "state.json").stat().st_mtime
+    except OSError:
+        return fired
+    if mtime <= float(_load(ALERTS_STATE, {}).get("_last_state_mtime", 0.0)):
+        return fired   # state inchangé (marché fermé / EA figé) : skip silencieux
+
+    if int(state.get("breaker_fired_today", 0)):
+        fired.append("breaker")
+        _alert(f"breaker_{day}", 24 * 60,
+               f"BREAKER déclenché — flatten M5, room daily épuisée "
+               f"(equity ${state.get('equity', 0):,.0f})", now)
+    room = float(state.get("room_daily_usd", 1e9))
+    if room < ROOM_DAILY_ALERT_FRAC * init:
+        fired.append("room_daily")
+        _alert("room_daily", 30,
+               f"room daily ${room:,.0f} < {ROOM_DAILY_ALERT_FRAC:.1%} init — "
+               f"breaker à ${float(state.get('breaker_line', 0)):,.0f}", now)
+    margin = float(state.get("margin_used_pct_equity", 0))
+    if margin > MARGIN_ALERT_PCT:
+        fired.append("margin")
+        _alert("margin", 30, f"marge {margin:.0f}% > {MARGIN_ALERT_PCT:.0f}% equity", now)
+    err = str(state.get("last_error", "") or "")
+    if err:
+        fired.append("reject")
+        _alert(f"reject_{hash(err) & 0xffff}", 60, f"EA erreur/reject: {err}", now)
+    if int(state.get("pending_unconfirmed", 0)) > 0:
+        fired.append("pending")
+        _alert("pending", 15,
+               f"{state['pending_unconfirmed']} ordre(s) non confirmé(s) "
+               f"(latence serveur 2-19 s dépassée)", now)
+    if int(state.get("kill", 0)):
+        fired.append("kill")
+        _alert(f"kill_{day}", 12 * 60, "kill-file FLAT actif — EA désarmé", now)
+    if int(state.get("mode_mismatch", 0)):
+        fired.append("mode_mismatch")
+        _alert("mode_mismatch", 60,
+               "MODE MISMATCH targets.json vs spec_v22.mqh/InpPhase — vérifier", now)
+    if now.hour >= 22 and str(state.get("targets_status", "OK")) != "OK":
+        fired.append("targets")
+        _alert(f"targets_{day}", 60,
+               f"targets.json {state.get('targets_status')} au rebalance — "
+               "gestion seule, aucun risque nouveau", now)
+    if int(state.get("abandon_zombie_days", 0)) >= 5:
+        fired.append("abandon")
+        _alert(f"abandon_{day}", 24 * 60,
+               "ABANDON sim atteint (5 j EOD < floor+2%) — décision humaine: "
+               "relancer la tentative (règle v2.2)", now)
+    wd = float(state.get("wd_due_usd", 0))
+    if wd > 0:
+        fired.append("wd_due")
+        _alert(f"wd_{day}", 24 * 60,
+               f"FUNDED: retrait dû ${wd:,.0f} (wd14) — demander le payout", now)
+    if int(state.get("spec_bounds_breach", 0)):
+        fired.append("spec_bounds")
+        _alert("spec_bounds", 12 * 60,
+               "SPECS LIVE HORS BORNES datées (swap/triple/marge) — dérive "
+               f"dealer ou écart Standard/Swing: {state.get('spec_bounds_detail', '')}",
+               now)
 
     bs = statefiles.read_brain_status()
     if bs is None or bs.get("status") != "OK" or \
@@ -160,6 +196,10 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
                f"SWAP DRIFT {drift['total_drift_pct']:+.0f}% > ±20% "
                f"(facturé ${drift['total_billed']:+.2f} vs modèle "
                f"${drift['total_model']:+.2f}) — gate live yaml: STOP si confirmé", now)
+
+    st = _load(ALERTS_STATE, {})
+    st["_last_state_mtime"] = mtime
+    statefiles.atomic_write_json(ALERTS_STATE, st)
     return fired
 
 
@@ -250,6 +290,7 @@ def build_morning(state: dict, files_dir: Path, now: datetime) -> str:
            if int(state.get("micro_enabled", 1)) else "")
         + (f" | triple-swap ce soir: {','.join(trip)}" if trip else "")
         + (" | weekend tenu dès ce soir" if now.weekday() == 4 else ""),
+        _state_freshness(state, now),
     ]
     if int(state.get("kill", 0)):
         lines.append("⛔ KILL-FILE ACTIF")
@@ -301,6 +342,7 @@ def build_evening(state: dict, files_dir: Path, now: datetime) -> str:
            if rec.get("date") else " | pas encore de run"),
         f"Campagne: fees ${camp['total']:,.0f} / budget ${CAMPAIGN_BUDGET_USD:,.0f} "
         f"(reste ${CAMPAIGN_BUDGET_USD - camp['total']:,.0f})",
+        _state_freshness(state, now),
     ]
     if str(state.get("targets_status", "OK")) != "OK":
         lines.append(f"⚠ targets.json: {state.get('targets_status')}")
