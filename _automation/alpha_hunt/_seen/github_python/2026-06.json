@@ -83,6 +83,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2b0300fedb9d03dde0b6183e698e1e17": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "music-assistant/server",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2d60a4bd5957265294153c321a135170": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -104,6 +111,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "36c6db0bf24166a46f3193474c985a0e": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "browser-use/browser-use",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "382d6c15e7c0228e8d4e8c0f9f4e23ae": {
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
@@ -122,6 +136,13 @@
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
     "title": "anthropics/claude-agent-sdk-python",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "49b7eba96880ac94793b885bebd9929b": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "NVIDIA-NeMo/NeMo",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -160,6 +181,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "60a3d34b0f4927cd1b97237c8961f164": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "DrewThomasson/ebook2audiobook",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6495dc0d4c744cb93a8837c27c6b780e": {
     "first_seen": "2026-06-01 12:07",
     "source": "github_python",
@@ -171,6 +199,13 @@
     "first_seen": "2026-06-04 12:07",
     "source": "github_python",
     "title": "github/spec-kit",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "68e2bdb28bb6593da211ddf3c1446c23": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "shuvonsec/claude-bug-bounty",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -202,6 +237,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "71034dcf7daa6785249eb3cdef3f1f21": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "LMCache/LMCache",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "75a241dfb57b73adcb9baaf331fad2d1": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -227,6 +269,13 @@
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
     "title": "psf/black",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7a06041a87705c2118394f2428d801f7": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "frappe/frappe",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -272,6 +321,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "892525b3148bfae2798993f75baf1437": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "ml-explore/mlx-lm",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8c9fb8e1d93cf31f7d30fa1b7f27cc83": {
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
@@ -293,6 +349,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "97204030bb9106e0a5f03b3c6c3fadf8": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "modelscope/ms-swift",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9b0742708bc1aabfcb9d10ac5123236c": {
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
@@ -311,6 +374,13 @@
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
     "title": "karpathy/autoresearch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ace91c48a4540a58471780e6b1e84ab0": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "basicmachines-co/basic-memory",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -339,6 +409,13 @@
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
     "title": "ZhuLinsen/daily_stock_analysis",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bb29ced37a06facaa84d8d83d759ec49": {
+    "first_seen": "2026-06-12 13:30",
+    "source": "github_python",
+    "title": "langchain-ai/langchain",
     "decision": "rejected_L0",
     "promising_file": null
   },
