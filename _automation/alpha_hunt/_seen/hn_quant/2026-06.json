@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9753f550dd1940389fc170d4344a4aeb": {
+    "first_seen": "2026-06-13 17:30",
+    "source": "hn_quant",
+    "title": "Show HN: Exploratory Policy – a policy simulation playground for complex systems",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "af90b0632bd3a89f63fca1d4a27b065f": {
     "first_seen": "2026-06-12 01:00",
     "source": "hn_quant",
@@ -24,6 +31,13 @@
     "first_seen": "2026-06-09 16:04",
     "source": "hn_quant",
     "title": "Stochastic-rs math finance/quant lib",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f9c2b58db244f27733ffc3af351bcd7c": {
+    "first_seen": "2026-06-13 17:30",
+    "source": "hn_quant",
+    "title": "The Financial World Is Being Rewritten. Africa Is Leading the Charge",
     "decision": "rejected_L0",
     "promising_file": null
   },
