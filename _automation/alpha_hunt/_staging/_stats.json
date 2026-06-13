@@ -1,12 +1,5 @@
 {
-  "run_time": "2026-06-13 06:03 UTC",
+  "run_time": "2026-06-13 08:03 UTC",
   "accepted_count": 0,
-  "md_generated_this_run": 2,
-  "items_processed_from_staging": 2,
-  "by_source": {
-    "quantocracy": {
-      "staging_items": 2,
-      "md_generated": 2
-    }
-  }
+  "by_source": {}
 }
