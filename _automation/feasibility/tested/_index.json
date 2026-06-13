@@ -1135,6 +1135,22 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_sovereign_stress_avalanches_and_network_amplif_2026-06-12_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_i_audited_30_years_of_spy_candlesticks_and_the_var_20260613.md",
+      "tested_date": "2026-06-13",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantocracy_i_audited_30_years_of_spy_candlesticks_and_the_v_2026-06-13_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_the_right_way_to_use_ai_in_trading_this_week_algori_20260613.md",
+      "tested_date": "2026-06-13",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_the_right_way_to_use_ai_in_trading_this_week_alg_2026-06-13_report.md",
+      "stopped_at": "A"
     }
   ]
 }
