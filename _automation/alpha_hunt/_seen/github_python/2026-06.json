@@ -132,6 +132,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3c9b8f9ff53bdf31eab3947e0f865bd3": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "scikit-learn/scikit-learn",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3da637cf19300e983e7131ab5b372da7": {
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
@@ -258,6 +265,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "76025ba108add0def138c0af95f8b4a5": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "tirth8205/code-review-graph",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "77c2cc66fd11cd0490ae1db91fecea7c": {
     "first_seen": "2026-06-03 06:06",
     "source": "github_python",
@@ -290,6 +304,13 @@
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
     "title": "microsoft/VibeVoice",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "815fc9a46a0ac3549097848d6ad197a6": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "skypilot-org/skypilot",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -349,6 +370,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "94b5e24b42b739bc0e9c9606baa1cc6b": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "NVIDIA/physicsnemo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "97204030bb9106e0a5f03b3c6c3fadf8": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -374,6 +402,13 @@
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
     "title": "karpathy/autoresearch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a1ea7ff890a23520ebd9642006d7ef5e": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "Azure/azure-cli",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -517,6 +552,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "db54feeadc794d6d6a2635439c5b888a": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "andrewyng/aisuite",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "de7af7bae8a3bbfbb608992a9a8ce68e": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -538,6 +580,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e8754e81e7e99a114bb70f48931eb0dd": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "reflex-dev/reflex",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e89a1c7a434ac8d856a7c7c5aefaf77e": {
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
@@ -556,6 +605,13 @@
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
     "title": "roboflow/supervision",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fa3f1b142ebcf69a24c3064863cd09eb": {
+    "first_seen": "2026-06-13 11:00",
+    "source": "github_python",
+    "title": "py-pdf/pypdf",
     "decision": "rejected_L0",
     "promising_file": null
   }
