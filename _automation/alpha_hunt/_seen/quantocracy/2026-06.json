@@ -90,12 +90,26 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a823a358832c8367d58f13b768574b74": {
+    "first_seen": "2026-06-13 06:00",
+    "source": "quantocracy",
+    "title": "The Right Way to Use AI in Trading (This Week) [Algorithmic Advantage]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "af114c59419865f3ca80f0ed42e345a2": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
     "title": "AI Overfitting in Trading Systems [Wisdom Trading]",
     "decision": "accepted",
     "promising_file": "quantocracy_ai_overfitting_in_trading_systems_wisdom_trading_20260602.md"
+  },
+  "af951e4ef3366c42037a23ce8c3d2bb8": {
+    "first_seen": "2026-06-13 06:00",
+    "source": "quantocracy",
+    "title": "Fast Option Pricing using Fourier Transform [Vertox Quant]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "c4de23ec69921ec63a6bb930b2c61a6f": {
     "first_seen": "2026-06-10 06:00",
@@ -152,6 +166,20 @@
     "title": "Trend following (2/4): Sector-by-sector replication [Beyond Passive]",
     "decision": "accepted",
     "promising_file": "quantocracy_trend_following_2_4_sector_by_sector_replication_b_20260605.md"
+  },
+  "e9d28f50e566fdf434d809ab9838cc17": {
+    "first_seen": "2026-06-13 06:00",
+    "source": "quantocracy",
+    "title": "I Audited 30 Years of SPY Candlesticks and the Variance Risk Premium [Peter Olay",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "f494172b691abac94cae27cbebee62a1": {
+    "first_seen": "2026-06-13 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/12/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "f5e991834dbbac8eb8f5b61a60384f3b": {
     "first_seen": "2026-06-10 06:00",
