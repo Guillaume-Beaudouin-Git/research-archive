@@ -110,6 +110,50 @@ morning `30 7`, evening `20 21` — pour conserver les horaires Paris.
 La ligne `@reboot` n'est pas concernée. Snapshot de référence :
 `infra/crontab_vps_2026-06-12.txt` (capture `crontab -l`, aucun secret inline).
 
+### Leçons exploitation 2026-06-13 (nuit du 12 au 13)
+
+**Heartbeat : silences structurels (calendrier).** Toutes les horloges Paris de
+l'EA dérivent de `TimeCurrent()` (mq5:129) = heure du dernier tick du Market
+Watch ; `WriteState` est throttlé M1 dessus (mq5:1291) et il n'existe AUCUN
+`OnTick`. state.json se FIGE donc dès que plus rien ne tick : du vendredi
+~20:55 UTC été (dernier tick USDJPY 23:54:59 serveur, observé 2026-06-12
+20:54:59.551 UTC) à la reprise dimanche ~21:55 UTC — plus fériés de place.
+Lun-jeu : ticks FX en continu la nuit (observé 02:11 serveur). Les écritures
+FORCÉES (OnInit, SetError, fills, `WriteState(true)`) passent même marché
+fermé — un EA qui se (re)charge écrit state.json : c'est le critère de vie du
+watchdog. Conséquence : toute alerte de fraîcheur est gatée par
+`lib/market_hours.py` (fenêtre conservatrice dim 22:05 → ven 20:50 UTC été,
++1 h au seam DST 25/10/2026, table datée à étendre avant 2027-03-28).
+
+**Vendredi : EOD 22:58 structurellement impossible.** `hm=ParisHM()`
+(tick-clock) gèle à 22:54 Paris < 2258 → `Do2145Export` (21:45) passe, mais
+`Do2258EOD` (m5_today.json + bloc eod du state) ne tire JAMAIS le vendredi —
+armé ou pas (FLAT bloque en plus avant la grille, mq5:1475-1486). Le reconcile
+du vendredi 23:00 Paris (`RuntimeError: snapshot EOD 22:58 absent`) échouera
+TOUS les vendredis tant que l'EA reste gelé. Correctif possible côté Python
+uniquement (tolérance vendredi dans reconcile.py) — PROPOSÉ, non appliqué.
+
+**pkill -f auto-suicide (motifs immunisés).** `pkill -f <motif>` matche la
+cmdline de TOUT processus — y compris le shell appelant si le motif y figure
+EN CLAIR (ssh `bash -c`, labels echo, messages TG). Immuniser l'argument de
+pkill (`[t]erminal64`) ne suffit pas : aucune occurrence en clair ne doit
+exister dans la cmdline appelante — le banc de test du 12/06 23:55 UTC a tué
+sa propre session ssh via un simple label `echo "kill -9 terminal64"`. Règle :
+motif bracketé PARTOUT + labels assainis (« t64 »).
+
+**Profil MT5 écrit seulement à la sortie propre.** Après un kill -9, MT5
+recharge le dernier profil SAUVÉ (sortie propre antérieure) — potentiellement
+obsolète : EA absent/étranger (observé 2026-06-12 ~23:25 UTC). Test de survie
+OBLIGATOIRE après tout re-attach : kill -9 + relance + vérifier l'INIT
+book_executor (state.json réécrit / ligne INIT au log). Le watchdog vérifie
+exactement cela à chaque relance (CRITIQUE « restart KO » sinon).
+
+**Watchdog MT5** : `ftmo_live/watchdog_mt5.sh`, cron `*/3` (UTC), market-aware,
+anti-boucle 2 restarts/h, vérif post-restart 120 s (mtime state ≥ T0 OU ligne
+INIT fraîche MQL5/logs UTF-16LE). Test réel 12/06 23:55 UTC marché fermé :
+résurrection 125 s, EA INIT à T0+24 s, TG ⚠️/✅ reçus. Snapshot crontab à
+jour : `infra/crontab_vps_2026-06-13.txt`.
+
 ## Recompilation future
 
 Chemin SANS espaces obligatoire (le quoting wine casse sur « Program Files ») :
