@@ -153,6 +153,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6ad441da41a7e1648526873e76a7252e": {
+    "first_seen": "2026-06-13 19:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: I made a generative online drum machine with ClojureScript",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "7a15d52f183f0a24bbfcec8f4dfec855": {
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
