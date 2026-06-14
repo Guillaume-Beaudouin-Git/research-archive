@@ -34,6 +34,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "16a85d9aca1afa9ad8d9d75662f1dffc": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "home-assistant/core",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1756df9f4c96b33bb370d2227e4c1dcd": {
     "first_seen": "2026-06-03 18:06",
     "source": "github_python",
@@ -52,6 +59,13 @@
     "first_seen": "2026-06-08 12:06",
     "source": "github_python",
     "title": "alistaitsacle/free-llm-api-keys",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "19f20e294d3f0014bf23cfd16288fd8f": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "OpenHands/OpenHands",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -101,6 +115,13 @@
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
     "title": "datalab-to/surya",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "31f0c96fabddd4ebbb0ca40b63c78e39": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "openinterpreter/openinterpreter",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -391,6 +412,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9d2cb04d18817f1686b178a7a36e401d": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "numpy/numpy",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9e3601489e4839116adab30c08e6b212": {
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
@@ -430,6 +458,13 @@
     "first_seen": "2026-06-10 11:00",
     "source": "github_python",
     "title": "comet-ml/opik",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b4bf9146cf90e7dcb73f3b795b938556": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "frappe/erpnext",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -496,6 +531,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c6145bc06e3fb6a55af308c8b97e9858": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "pytest-dev/pytest",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c9454b8c5729216a805ce8628d9a59cf": {
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
@@ -507,6 +549,13 @@
     "first_seen": "2026-06-04 12:07",
     "source": "github_python",
     "title": "unilabsim/UniLab",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cb01e8754093d5d8edefdb709fb805e0": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "Ar9av/obsidian-wiki",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -605,6 +654,13 @@
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
     "title": "roboflow/supervision",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f696ba7b2e621573dc4732aadab15f9d": {
+    "first_seen": "2026-06-14 11:00",
+    "source": "github_python",
+    "title": "AUTOMATIC1111/stable-diffusion-webui",
     "decision": "rejected_L0",
     "promising_file": null
   },
