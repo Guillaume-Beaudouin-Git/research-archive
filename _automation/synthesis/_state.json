@@ -1,5 +1,5 @@
 {
-  "last_synthesis_week": "2026-W23",
+  "last_synthesis_week": "2026-W24",
   "themes_tracked": {
     "mnq_intraday_falsification": {
       "first_seen": "2026-W21",
@@ -7,10 +7,11 @@
       "weeks_active": 1,
       "n_papers_total": 3,
       "status": "declining",
-      "weeks_declining": 2,
+      "weeks_declining": 3,
       "key_arxiv_ids": ["2605.04004", "2605.11423", "2605.17724"],
-      "note": "Three-paper cluster by Mesfin (same author, 2021-2025 MNQ dataset). DEEP_DIVE on 2605.04004 (2026-05-25_analysis.md) confirms REFERENCE_ONLY: Strategy C's multi-filter conjunction (VWAP + gap <1.2% + range ≥30pts) is absent from all 14 Mesfin families. Mesfin's best result gap-continuation T=3.23 has N=22 vs Strategy C N=346. No new papers W22 or W23.",
-      "deep_dive_completed": ["2605.04004"]
+      "note": "Three-paper cluster by Mesfin (same author, 2021-2025 MNQ dataset). DEEP_DIVE on 2605.04004 (2026-05-25_analysis.md) confirms REFERENCE_ONLY: Strategy C's multi-filter conjunction (VWAP + gap <1.2% + range ≥30pts) is absent from all 14 Mesfin families. Mesfin's best result gap-continuation T=3.23 has N=22 vs Strategy C N=346. No new papers W22, W23, or W24. Strategy C propfirm vehicle cancelled 2026-06-10 — this theme is doubly inert.",
+      "deep_dive_completed": ["2605.04004"],
+      "saturated_at": "2026-W25"
     },
     "defi_carry_mechanics": {
       "first_seen": "2026-W21",
@@ -18,11 +19,12 @@
       "weeks_active": 1,
       "n_papers_total": 3,
       "status": "declining",
-      "weeks_declining": 2,
+      "weeks_declining": 3,
       "key_arxiv_ids": ["2605.05089", "2605.06405", "2605.11263"],
-      "note": "No new papers W22 or W23. DEEP_DIVE on 2605.05089 confirms TEST_LATER trigger: mainnet review ~2026-07-17 when notionnel >$5K. DeFi permissionless calibration doesn't transfer to HL centralized. Exit asymmetry real but negligible at $50 testnet.",
+      "note": "No new papers W22, W23, or W24. DEEP_DIVE on 2605.05089 confirms TEST_LATER trigger: mainnet review ~2026-07-17 when notionnel >$5K. DeFi permissionless calibration doesn't transfer to HL centralized. Exit asymmetry real but negligible at $50 testnet.",
       "deep_dive_completed": ["2605.05089"],
-      "test_later_trigger": "mainnet 60-day review ~2026-07-17"
+      "test_later_trigger": "mainnet 60-day review ~2026-07-17",
+      "saturated_at": "2026-W25"
     },
     "ml_portfolio_hac_robustness": {
       "first_seen": "2026-W21",
@@ -30,9 +32,10 @@
       "weeks_active": 1,
       "n_papers_total": 2,
       "status": "declining",
-      "weeks_declining": 2,
+      "weeks_declining": 3,
       "key_arxiv_ids": ["2605.17307", "2605.19278"],
-      "note": "ML/RL fails HAC-robust inference across Nasdaq-100/Nikkei/Euro Stoxx. Best forecast MSE ≠ best Sharpe. No new papers W22 or W23. W23 DRL paper (2606.04574) insufficient to extend this theme — different question (strategy development vs HAC inference)."
+      "note": "ML/RL fails HAC-robust inference across Nasdaq-100/Nikkei/Euro Stoxx. Best forecast MSE ≠ best Sharpe. No new papers W22, W23, or W24. Lowest paper count of all W21 themes — SATURATED threshold hit at W25.",
+      "saturated_at": "2026-W25"
     },
     "regime_conditional_trend_scaling": {
       "first_seen": "2026-W21",
@@ -40,14 +43,15 @@
       "weeks_active": 1,
       "n_papers_total": 3,
       "status": "declining",
-      "weeks_declining": 2,
+      "weeks_declining": 3,
       "key_sources": [
         "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523",
         "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523",
         "arxiv:2605.14976"
       ],
-      "note": "No new papers W22 or W23. H002 vol-ratio scalar remains pre-registration candidate for Strategy A v4 modification #1. Thematically adjacent to T6 (regime_detection_markov, W23 EMERGING) — consider merging if both active in W24.",
-      "adjacency_note": "T6 covers regime *detection* tooling (HMM/Markov); T4 covers regime *application* (scaling). Same framework, different layer."
+      "note": "No new papers W22, W23, or W24. Thematically converging with T7 (regime_conditioned_vol_forecasting, W24 EMERGING) — both concern regime-dependent adjustments to momentum strategies. If T7 reaches CONSOLIDATING in W25-W26, merge T4 into a unified 'regime framework' theme. H002 vol-ratio scalar remains pre-registration candidate for Strategy A modification #1.",
+      "adjacency_note": "T4 covers regime *application* (scaling); T7 covers regime-conditioned vol *forecasting* as the input. Same framework, complementary layers.",
+      "saturated_at": "2026-W25"
     },
     "backtest_integrity_multiple_testing": {
       "first_seen": "2026-W21",
@@ -55,25 +59,50 @@
       "weeks_active": 1,
       "n_papers_total": 4,
       "status": "declining",
-      "weeks_declining": 2,
+      "weeks_declining": 3,
       "key_sources": [
         "quantocracy_backtests_lie_building_a_stress_test_framework_for_20260523",
         "quantocracy_the_effective_number_of_tested_strategies_vertox_q_20260523",
         "quantocracy_overfitting_and_parameter_selection_in_trading_str_20260523",
         "quantocracy_bad_month_for_your_strategy_should_you_change_it_a_20260523"
       ],
-      "note": "No new papers W22 or W23. Effective-N AMTP recheck for Strategy C iter_1→iter_10 pending (W21 P1 not yet completed). W23 post-selection Sharpe paper (2606.01650) is singleton in this theme space — James-Stein estimator complements Bailey-LdP DSR but doesn't extend the theme cluster."
+      "note": "No new papers W22, W23, or W24. Effective-N AMTP recheck for Strategy C iter_1→iter_10 no longer prioritized (Strategy C propfirm vehicle cancelled 2026-06-10). W23 post-selection Sharpe paper (2606.01650) was a singleton complement — did not extend this theme cluster.",
+      "saturated_at": "2026-W25"
     },
     "regime_detection_markov": {
       "first_seen": "2026-W23",
       "last_seen": "2026-W23",
       "weeks_active": 1,
       "n_papers_total": 2,
+      "status": "declining",
+      "weeks_declining": 1,
+      "key_arxiv_ids": ["2605.27848", "2605.30943"],
+      "note": "W24 papers 2606.06190 and 2606.09478 apply regime methods for vol forecasting (now tracked as T7) rather than advancing detection tooling. T6 is the foundational detection layer; T7 is the application layer. H002 mechanism support: 2605.30943 confirms vol-conditioned Markov transitions are more stable (homogeneous in high-vol regimes). If T7 consolidates in W25, consider folding T6 into a unified 'regime_framework' entry."
+    },
+    "regime_conditioned_vol_forecasting": {
+      "first_seen": "2026-W24",
+      "last_seen": "2026-W24",
+      "weeks_active": 1,
+      "n_papers_total": 2,
       "status": "emerging",
       "weeks_declining": 0,
-      "key_arxiv_ids": ["2605.27848", "2605.30943"],
-      "note": "Two independent papers converge on vol-conditioned Markov regime detection. 2605.27848: 3-state HMM (low/transitional/high-vol) on SPY/TLT/GLD, BIC selects 3 states, outperforms passive in 30% OOS — single split, no walk-forward. 2605.30943: conditioning on realized vol (vs returns) reduces Chapman-Kolmogorov discordance 5.6%; high-vol regimes converge to homogeneous transitions (regime persists). Combined: vol is the right conditioning variable, high-vol regimes are sticky. Directly validates H002 mechanism. Status EMERGING — 2 papers from different authors but one has methodological gaps (single split, no Sharpe reported). Third independent paper with walk-forward needed for CONSOLIDATING.",
-      "h002_support": "2605.30943 provides statistical confirmation that vol-conditioned transitions are more stable — this is the mechanism behind H002's clamp(vol_28d/vol_5d, 0.5, 2.0)"
+      "key_arxiv_ids": ["2606.06190", "2606.09478"],
+      "note": "Two independent papers use Markov-switching to condition vol forecasting: 2606.06190 (MS-GARCH triple-scale EUR/USD, TVTP stress indicators) + 2606.09478 (HARQ + MS-GJR-GARCH → XGBoost WF OOS on CSI 300). Both outperform single-state GARCH OOS. DEEP_DIVE on 2606.06190 → REFERENCE_ONLY (no numeric metrics, EUR/USD only). This is the application layer above T6 (regime detection). Provides third corroboration cluster for H002 mechanism: vol-conditioning improves vol estimation, consistent with T4 (W21) and T6 (W23). Skeptic: 2606.06190 metrics unquantified; 2606.09478 on CSI 300 HFT equity, universe gap is large. Third independent paper with walk-forward needed for CONSOLIDATING.",
+      "adjacency_to_t4": "T4 (regime-conditional trend scaling, W21) covers position scaling based on regime; T7 covers vol forecasting improvement via regime conditioning. If both active W25+, merge into 'regime_framework'."
+    },
+    "execution_cost_sqrt_impact": {
+      "first_seen": "2026-W24",
+      "last_seen": "2026-W24",
+      "weeks_active": 1,
+      "n_papers_total": 2,
+      "status": "emerging",
+      "weeks_declining": 0,
+      "key_arxiv_ids": ["2606.07059", "2606.13419"],
+      "note": "Two complementary papers: 2606.07059 derives sqrt-law impact from first principles (diffusivity constraint — realized and counterfactual price both diffusive); most propagator models fail this test; linear impact only under strong info coupling. 2606.13419 provides per-action synchronicity test for self-impact detection at N~50 fills. Combined: sqrt law is the right model AND is now early-detectable. Directly relevant to L19 (NQ slippage model) and Strategy B mainnet sizing. Operational implication: apply synchronicity test to logs/fills.csv (testnet HMSTR fills) before mainnet; check sqrt-law impact ceiling for planned mainnet notional vs ADV. Skeptic: 2606.07059 is theoretical; 2606.13419 is on equity LOB microstructure which differs from HL perpetual matching engine. Two papers = EMERGING.",
+      "operational_actions": [
+        "Apply 2606.13419 synchronicity test to logs/fills.csv (N~70 fills available, Strategy B testnet)",
+        "Compute sqrt-law impact ceiling for mainnet notional candidates on HMSTR/SOL ADV before 2026-07-17 launch"
+      ]
     }
   },
   "open_hypotheses": [
@@ -83,11 +112,11 @@
       "description": "Funding rate mean-reversion speed (OU theta) on HL perpetuals predicts carry quality: high theta (fast reversion) → noisy carry, reduce Strategy B position size; low theta (persistent regime) → sticky carry, hold or increase.",
       "status": "open",
       "linked_strategy": "B",
-      "data_required": "HL 8h funding rates BTC/ETH/SOL (data/funding_carry/, ~7 months from Oct 2025)",
+      "data_required": "HL 8h funding rates BTC/ETH/SOL (data/funding_carry/, ~8 months from Oct 2025)",
       "cost_to_test": "LOW",
       "conflict_with_archived": "none",
       "origin_arxiv": ["2605.06405"],
-      "priority_note": "Scheduled for combined IC feasibility session with H003 (W23 P2). Method: AR(1) theta = 1-phi_hat, rolling 30-day window, Spearman IC HAC lag-6."
+      "priority_note": "Scheduled for combined IC feasibility session with H003 (W24 P1). Method: AR(1) theta = 1-phi_hat, rolling 30-day window, Spearman IC HAC lag-6. Mainnet launch ~2026-07-17 (~5 weeks) creates urgency."
     },
     {
       "id": "H002",
@@ -103,9 +132,13 @@
         "quantocracy_why_momentum_investing_has_been_struggling_and_wha_20260523",
         "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523"
       ],
-      "additional_support_w23": ["2605.30943"],
-      "w23_note": "2605.30943 (Neural Markov W23) provides statistical confirmation: conditioning on realized vol reduces regime estimation error; high-vol regimes are sticky (homogeneous transitions). This is the theoretical basis for why vol_5d/vol_28d expansion correctly identifies transitional (not stable) regimes. Elevated from open to pre-registration candidate for Strategy A v4 modification #1. Cite T4 (W21) + T6/2605.30943 (W23) in pre-registration document.",
-      "elevation_status": "pre-registration candidate"
+      "additional_support": {
+        "w23": ["2605.30943 — vol-conditioned regime homogeneity confirms vol_5d/vol_28d as transitional-regime proxy"],
+        "w24": ["2606.09478 (T7) — regime-conditioned vol forecasting outperforms single-scale GARCH in strict WF OOS"]
+      },
+      "elevation_status": "pre-registration candidate — 3-source evidence base across 4 weeks (T4 W21, T6/2605.30943 W23, T7/2606.09478 W24). Pre-registration document can be drafted.",
+      "w24_note": "H004 (HAR vol, new W24) is a prerequisite check: if RMSE(vol_HAR) / RMSE(vol_28d) < 0.95, use vol_HAR as denominator in H002 ratio instead of vol_28d. Run H004 IC feasibility first (~2h), then finalize H002 pre-registration denominator choice.",
+      "denominator_pending": "Resolve via H004 IC feasibility before writing pre-registration"
     },
     {
       "id": "H003",
@@ -115,14 +148,30 @@
       "linked_strategy": "B",
       "data_required": {
         "available": ["HL 8h funding rates BTC/ETH/SOL (data/funding_carry/, Oct 2025 onwards)", "VIX daily via yfinance ^VIX"],
-        "gap": "Only ~7 months of HL funding data. VIX>25 events in window: estimated 2-4. N_events may be <10 (underpowered)."
+        "gap": "~8 months of HL funding data. VIX>25 events in window: estimated 2-5. N_events may be <10 (underpowered)."
       },
       "cost_to_test": "LOW",
       "conflict_with_archived": "none — archived 'Macro overlay' (CLAUDE.md ✗) refers to directional alpha overlays on TSMOM (L17/L18 sentiment proxies). H003 is a risk gate (kill-switch) on delta-neutral carry, not a directional overlay.",
       "origin_arxiv": ["2605.30442"],
       "economic_mechanism": "Fiat turbulence (VIX-correlated) is the primary stress propagation channel (2605.30442) — precedes crypto repricing. During risk-off, institutional leveraged long demand collapses on crypto perps 12-24h before spot reprices, compressing funding rates. VIX>25 identifies onset of this sequence. Kill-switch: reduce Strategy B 50% or exit fully when VIX closes >25; re-enter when VIX <20 on close.",
       "caveat": "If N_events <10 in available data window, skip IC test and defer to 2026-10-01 (12+ months HL data). Note VIX>25 as manual monitoring threshold in the interim.",
-      "priority_note": "Scheduled for combined IC feasibility session with H001 (W23 P2). Mainnet go-live ~2026-07-17 creates urgency."
+      "priority_note": "Scheduled for combined IC feasibility session with H001 (W24 P1). Mainnet go-live ~2026-07-17 creates urgency (~5 weeks)."
+    },
+    {
+      "id": "H004",
+      "raised_week": "2026-W24",
+      "description": "Replacing Strategy A's 28-bar rolling std with a HAR(1,5,22) heterogeneous autoregressive vol estimator improves vol targeting accuracy and reduces crash-regime over-sizing, because BTC/ETH/SOL realized vol exhibits long memory (Hurst H > 0.5) that a single-scale window cannot capture.",
+      "status": "open",
+      "linked_strategy": "A",
+      "data_required": "BTC/ETH/SOL daily returns (Binance klines, already in Strategy A pipeline). No new data fetch required.",
+      "cost_to_test": "LOW",
+      "conflict_with_archived": "none — Strategy A's 28-bar window is canonical but no alternative vol estimator has been tested or archived. HAR-TSMOM not in archived research history.",
+      "origin_arxiv": ["2606.11962"],
+      "origin_themes": ["T7 (2606.06190 + 2606.09478) — regime-conditioned vol forecasting outperforms single-scale GARCH"],
+      "economic_mechanism": "BTC/ETH/SOL realized vol has long memory (Hurst H ~0.6-0.8). HAR(1,5,22) decomposes vol into daily/weekly/monthly components, providing earlier detection of vol expansion via weekly and monthly components already trending upward. The 28-bar rolling window lags because it is dominated by recent low-vol observations. This lag contributed to over-sizing just before the 2026-05-11 propfirm breach.",
+      "interaction_with_h002": "H004 resolves the base vol question before H002 pre-registration. If RMSE(vol_HAR) / RMSE(vol_28d) < 0.95: H002 pre-registration uses vol_HAR as base (position = tanh_signal × clamp(vol_5d / vol_HAR, 0.5, 2.0)). If ≥0.95: close H004, H002 proceeds with vol_28d unchanged.",
+      "success_criterion": "RMSE improvement ≥5% on holdout 2024-2026 → incorporate. <5% → close.",
+      "priority_note": "W24 P2. ~2h. Run before H002 pre-registration. Strategy A has 0 modifications consumed of 3 allowed."
     }
   ],
   "methodology_flags": [
@@ -140,9 +189,10 @@
     "noise_items_to_filter": [
       "hn_quant_launch_hn_promoted_yc_w21",
       "quantocracy_quant_mashup_homepage",
-      "quantocracy_quantocracy_homepage"
+      "quantocracy_homepage"
     ],
     "w22_note": "Data drought. Alpha_hunt 2026-05-31: 0 retained (empty run). Arxiv cron 2026-05-25: fallback to 2026-05-22 feed (0 new papers vs W21). Pipeline operating correctly — sources dry, not a structural failure.",
-    "w23_note": "arxiv API returned HTTP 403 on 2026-06-04 and 2026-06-05 from cloud environment. Scans for those days fell back to web search (~15% coverage vs 100-paper normal scan). VPS cron fetch_arxiv.sh not running in cloud — expected. 7 papers retained Mon-Fri, 2 DEEP_DIVE. No TEST_NOW/TEST_LATER decisions. Pipeline coverage gap acknowledged; no structural fix available without VPS XML cache."
+    "w23_note": "arxiv API returned HTTP 403 on 2026-06-04 and 2026-06-05 from cloud environment. Scans for those days fell back to web search (~15% coverage vs 100-paper normal scan). VPS cron fetch_arxiv.sh not running in cloud — expected. 7 papers retained Mon-Fri, 2 DEEP_DIVE. No TEST_NOW/TEST_LATER decisions. Pipeline coverage gap acknowledged.",
+    "w24_note": "arxiv API 403 from cloud confirmed all week. VPS fetch_arxiv.sh at 06:30 UTC pushes XML to _staging/ — cloud reads from staging (Mon, Thu, Fri) + WebSearch fallback (Tue-Wed). 8 papers retained, 1 DEEP_DIVE (REFERENCE_ONLY), 0 TEST_NOW. Backlog pending access: 2506.08573 (funding rate design, Strategy B applicable) + 2605.17117 (Berry Phase regime detection, Strategy D applicable). No structural pipeline failure. Strategy C removed from active monitoring (propfirm vehicle cancelled 2026-06-10)."
   }
 }
