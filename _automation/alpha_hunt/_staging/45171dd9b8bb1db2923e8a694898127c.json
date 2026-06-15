@@ -1,0 +1,14 @@
+{
+  "hash": "45171dd9b8bb1db2923e8a694898127c",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/dual-vs-single-momentum-in-commodities-enhancing-risk-adjusted-returns-through-absolute-trend-filtering/",
+  "title": "Dual vs. Single Momentum in Commodities: Enhancing Risk-Adjusted Returns through Absolute Trend Filtering",
+  "url": "https://quantpedia.com/dual-vs-single-momentum-in-commodities-enhancing-risk-adjusted-returns-through-absolute-trend-filtering/",
+  "description": "Commodities represent a vital but highly volatile asset class, characterized by pronounced cyclicality, lack of yield, and susceptibility to severe macroeconomic drawdowns. While cross-sectional (relative) momentum is a well-documented anomaly, its application in commodities often forces portfolios to hold the \"least declining\" assets during broad-based bear markets, resulting in unacceptable tail-risk. This study empirically evaluates the efficacy of a Dual Momentum framework—combining relative strength ranking with an absolute time-series trend filter—applied to a diversified suite of commodity sector ETFs (DBA, DBB, DBE, DBP) from 2007 to 2026. We demonstrate that while pure relative momentum exhibits high parameter sensitivity and inconsistent benchmark outperformance, the inclusion of an absolute momentum filter structurally mitigates drawdowns and universally outperforms a static, equally weighted benchmark across all tested parameter combinations. The findings suggest that Dual Momentum provides a robust, parameter-agnostic framework for portfolio managers seeking tactical commodity exposure with superior risk-adjusted return profiles. The post Dual vs. Single Momentum in Commodities: Enhancing Risk-Adjusted Returns through Absolute Trend Filtering first appeared on QuantPedia .",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-06-15 15:00 UTC"
+}
