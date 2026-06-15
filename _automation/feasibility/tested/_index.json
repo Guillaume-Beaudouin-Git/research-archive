@@ -1151,6 +1151,30 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantocracy_the_right_way_to_use_ai_in_trading_this_week_alg_2026-06-13_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_forecasting_with_bayesian_panel_vector_autoregr_20260615.md",
+      "tested_date": "2026-06-15",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_forecasting_with_bayesian_panel_vector_autoreg_2026-06-15_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_granular_instrumental_variables_estimation_and_20260615.md",
+      "tested_date": "2026-06-15",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_granular_instrumental_variables_estimation_and_2026-06-15_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_dual_vs_single_momentum_in_commodities_enhanci_20260615.md",
+      "tested_date": "2026-06-15",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantpedia_dual_vs_single_momentum_in_commodities_enhanci_20_2026-06-15_report.md",
+      "stopped_at": "A"
     }
   ]
 }
