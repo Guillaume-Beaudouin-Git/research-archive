@@ -1,0 +1,14 @@
+{
+  "hash": "9be405ff3bc5213b30d8739feadfd024",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.14143v1",
+  "title": "Forecasting with Bayesian Panel Vector Autoregressions Using the R Package bpvars",
+  "url": "http://arxiv.org/abs/2606.14143v1",
+  "description": "The R package bpvars was designed to forecast employment, unemployment, and labour market participation rates of 189 countries. However, it is generally applicable to dynamic panel data due to the flexibility of its modelling framework and robust coding. It includes a family of Bayesian hierarchical panel Vector Autoregressions (VARs) that are characterised by: (i) country-specific VAR models (ii) with their parameters' priors centred around their global counterparts, and (iii) featuring flexible multi-level hierarchical prior distributions (iv) with many variants of well-established in the literature benchmark choices, and (v) four alternative specifications including groupping of country-specific or global parameters. A~distinguishing feature is its implementation of missing observation treatment based on a model-coherent Bayesian approach. These models are accompanied by Bayesian prediction, offering a wide range of possible specifications that aim to increase forecasting precision and comply with various reporting standards. We also implement pseudo-out-of-sample recursive forecasting for evaluating point and density forecast performance. The package implements model specification, estimation, and forecasting routines, facilitating simple workflows and reproducibility, including estimation and forecasting results summaries and visualisations. It achieves extraordinary computational speed thanks to the employment of frontier econometric and numerical techniques, as well as algorithms written in C++.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-06-15 01:30 UTC"
+}
