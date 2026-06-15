@@ -118,6 +118,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "48924b2aeedd4a7c2d333b3f08305168": {
+    "first_seen": "2026-06-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "The Generalized Fisher Transformation: Finite-Sample Properties and Inference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5018556f4c326503e2b7d75ce9f16d70": {
     "first_seen": "2026-06-08 06:06",
     "source": "arxiv_econ_em",
@@ -209,6 +216,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_ai_assisted_variance_reduction_in_randomized_expe_20260609.md"
   },
+  "79d4b25a82e4f6235dec7aa231440f0e": {
+    "first_seen": "2026-06-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Reliable Panel Regression: A Default Workflow for Slow-Moving, Mismeasured Varia",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7f37e79958863187f22a16be2a211ad3": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
@@ -286,6 +300,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_forecasting_of_volatility_and_risk_premia_in_elect_20260605.md"
   },
+  "9be405ff3bc5213b30d8739feadfd024": {
+    "first_seen": "2026-06-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Forecasting with Bayesian Panel Vector Autoregressions Using the R Package bpvar",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "9de04dec60768f57b9a090b2aefc40f8": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
@@ -333,6 +354,20 @@
     "source": "arxiv_econ_em",
     "title": "Robust Inference for Dyadic Data with Dependent Ordered Nodes",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c30d11b370d1ce5c39decc9b9ef280f9": {
+    "first_seen": "2026-06-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d30d6d25bd91c08ac0e4afbb640dc080": {
+    "first_seen": "2026-06-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Granular Instrumental Variables: Estimation and Inference",
+    "decision": "accepted",
     "promising_file": null
   },
   "d454af6664f8dee2123c5f8ea5551483": {

@@ -1,0 +1,14 @@
+{
+  "hash": "d30d6d25bd91c08ac0e4afbb640dc080",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.14057v1",
+  "title": "Granular Instrumental Variables: Estimation and Inference",
+  "url": "http://arxiv.org/abs/2606.14057v1",
+  "description": "We develop an estimation and inference framework for granular instrumental variables (GIVs) in models with latent aggregate shocks. Our key insight is that valid GIVs are characterized by the orthogonal complement of the factor-loading space. This characterization yields a feasible procedure for constructing GIVs when factor loadings are unknown and does not require a large cross-sectional dimension. We provide practical procedures for inference and specification testing, and apply the framework to estimate the aggregate equity market multiplier. Our empirical results reveal substantial heterogeneity in equity demand elasticities across investor sectors and may provide nuanced support for the inelastic-markets hypothesis.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-06-15 01:30 UTC"
+}
