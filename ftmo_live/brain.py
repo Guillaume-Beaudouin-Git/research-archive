@@ -82,14 +82,17 @@ def run(dry_run: bool = False, as_of: str = None, equity: float = None,
         audit["data"] = marketdata.build_live_cache(export, target_date, cache)
         # v2.2.1 — specs live (EA) vs ancres datées du yaml (immunisation dérive)
         live = {}
-        for leg, sp in export.get("symbols", {}).items():
+        # #incident-2026-06-15 : NE PAS réutiliser `sp` (la spec chargée l.66)
+        # comme variable de boucle — le clobber faisait planter account_size(sp)
+        # à la l.110 (KeyError 'account' sur le dict de la dernière jambe).
+        for leg, smd in export.get("symbols", {}).items():
             if leg in LEGS:
-                r3d = sp.get("swap_r3d")
+                r3d = smd.get("swap_r3d")
                 live[leg] = dict(
-                    swap_long_pts=sp.get("swap_long"),
-                    swap_short_pts=sp.get("swap_short"),
+                    swap_long_pts=smd.get("swap_long"),
+                    swap_short_pts=smd.get("swap_short"),
                     rollover3days_dow_py=None if r3d is None else (int(r3d) + 6) % 7,
-                    margin_rate=sp.get("margin_rate_live"))
+                    margin_rate=smd.get("margin_rate_live"))
         breaches = swaps.check_live_bounds(live)
         audit["live_spec_bounds"] = breaches if breaches else "OK"
         if now.hour < OFF_SCHEDULE_BEFORE_H:
