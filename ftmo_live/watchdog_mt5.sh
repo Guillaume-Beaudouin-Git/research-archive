@@ -9,8 +9,16 @@
 # (WriteState throttlé M1 sur TimeCurrent, book_executor.mq5:1291).
 #
 # --force : court-circuite calendrier + seuil d'âge (test à froid marché fermé).
+#   ⚠ --force SAUTE l'appel session_state — ne teste donc PAS le chemin de session
+#   (le test 2026-06-12 --force a masqué ce chemin ; pour l'exercer : kill no-force
+#   en session ouverte).
 #
 # Garde-fous :
+#  - heartbeat-DU-watchdog (beat → $ALIVE_F) écrit à chaque run : le supervisor
+#    alerte si périmé en session (le superviseur surveille le gardien) ;
+#  - session_state renvoie 0/1/2 : une ERREUR INTERNE (rc=2 : venv/chemin/import)
+#    n'est JAMAIS confondue avec « marché fermé » → Telegram BRUYANT + fail-safe
+#    OUVERT (un garde ne meurt pas en silence) ;
 #  - pkill motif IMMUNISÉ '[t]erminal64' — ne matche jamais sa propre cmdline
 #    (leçon pkill -f auto-suicide, RUNBOOK 2026-06-13) ;
 #  - anti-boucle : max 2 restarts/h (fichier compteur) → alerte CRITIQUE
@@ -24,8 +32,10 @@ set -u
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG="${WATCHDOG_LOG:-/home/algo/logs/ftmo_watchdog.log}"
+ALIVE_F="${FTMO_WATCHDOG_ALIVE:-/home/algo/logs/watchdog_alive}"
 RESTARTS_F=/home/algo/logs/.ftmo_watchdog_restarts
 CRIT_F=/home/algo/logs/.ftmo_watchdog_crit
+ERR_F=/home/algo/logs/.ftmo_watchdog_err
 START_SH=/home/algo/start_mt5.sh
 STALE_S=240
 WAIT_S=120
@@ -38,17 +48,42 @@ ts() { date -u '+%Y-%m-%d %H:%M:%S UTC'; }
 log() { echo "$(ts) $*" >> "$LOG"; }
 tgmsg() { python3 "$SCRIPT_DIR/tg.py" "$1" >> "$LOG" 2>&1 || log "TG ÉCHEC: $1"; }
 
+# heartbeat-DU-watchdog : timestamp réécrit à CHAQUE run utile (après validation
+# de l'env), même marché fermé. Le supervisor alerte si ce fichier est périmé EN
+# SESSION (méta-surveillance : le superviseur surveille le gardien). Volontairement
+# APRÈS le check FTMO_LIVE_MT5_FILES : un watchdog mal configuré laisse son
+# heartbeat se périmer (→ alerte) au lieu d'écrire un battement trompeur.
+beat() { echo "$(date -u '+%s %Y-%m-%dT%H:%M:%SZ') $*" > "$ALIVE_F" 2>/dev/null \
+    || log "ALIVE write KO: $ALIVE_F"; }
+
+# Un garde ne meurt jamais en silence : toute erreur interne (import/venv/chemin
+# du check de session…) → Telegram BRUYANT, cooldown 1 h (anti-spam) + log.
+err_internal() {
+    log "ERREUR INTERNE: $*"
+    if [ $(( $(date +%s) - $(stat -c %Y "$ERR_F" 2>/dev/null || echo 0) )) -gt 3600 ]; then
+        touch "$ERR_F"
+        tgmsg "🚨🚨 FTMO MT5 watchdog — ERREUR INTERNE — garde inopérant : $*"
+    fi
+}
+
 : "${FTMO_LIVE_MT5_FILES:?FTMO_LIVE_MT5_FILES manquant — lancer via run_with_env.sh}"
 STATE="$FTMO_LIVE_MT5_FILES/state.json"
 MT5_ROOT="$(dirname "$(dirname "$FTMO_LIVE_MT5_FILES")")"
 
-session_open() {
+# 0 = session OUVERTE, 1 = FERMÉE, 2 = ERREUR INTERNE (trace sur stderr → log).
+# market_hours.fx_session_open = SOURCE DE VÉRITÉ unique (identique au supervisor).
+session_state() {
     python3 - "$SCRIPT_DIR" <<'PY'
-import sys
+import sys, traceback
 sys.path.insert(0, sys.argv[1])
-from datetime import datetime, timezone
-from lib.market_hours import fx_session_open
-sys.exit(0 if fx_session_open(datetime.now(timezone.utc)) else 1)
+try:
+    from datetime import datetime, timezone
+    from lib.market_hours import fx_session_open
+    rc = 0 if fx_session_open(datetime.now(timezone.utc)) else 1
+except Exception:
+    traceback.print_exc()
+    rc = 2
+sys.exit(rc)
 PY
 }
 
@@ -63,8 +98,14 @@ init_count() {
 state_age() { echo $(( $(date +%s) - $(stat -c %Y "$STATE" 2>/dev/null || echo 0) )); }
 
 AGE=$(state_age)
+beat "run age=${AGE}s force=$FORCE"          # preuve de vie du watchdog (chaque run)
 if [ "$FORCE" -eq 0 ]; then
-    session_open || exit 0                  # marché fermé : silence total
+    session_state; SS=$?
+    case "$SS" in
+        1) exit 0 ;;                         # marché fermé : no-op silencieux (normal)
+        0) : ;;                              # marché ouvert : on poursuit
+        *) err_internal "check de session rc=$SS (venv/chemin/market_hours) — FAIL-SAFE: marché supposé OUVERT" ;;
+    esac
     [ "$AGE" -le "$STALE_S" ] && exit 0     # heartbeat frais : rien à faire
 fi
 

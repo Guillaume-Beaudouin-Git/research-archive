@@ -39,6 +39,11 @@ def runtime_isolated(tmp_path, monkeypatch):
                 monkeypatch.setattr(m, "SOD_DIR", rt / "sod")
                 monkeypatch.setattr(m, "SNAP_PATH", rt / "snapshots.json")
                 monkeypatch.setattr(m, "CAMPAIGN", rt / "campaign.json")
+                # heartbeat watchdog FRAIS par défaut (méta-surveillance) ; les
+                # tests dédiés le rendent périmé/absent explicitement
+                alive = rt / "watchdog_alive"
+                alive.write_text("fixture")
+                monkeypatch.setattr(m, "WATCHDOG_ALIVE", alive)
             if modname == "reconcile":
                 monkeypatch.setattr(m, "LOG", rt / "reconcile_log.csv")
                 monkeypatch.setattr(m, "EOD_DIR", rt / "eod")

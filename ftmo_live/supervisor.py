@@ -23,6 +23,7 @@ Usage: supervisor.py --daemon | --report morning|evening | --add-fee N LABEL | -
 """
 import argparse
 import json
+import os
 import sys
 import time
 from datetime import datetime, timezone
@@ -38,6 +39,12 @@ from lib import invariants as inv  # noqa: E402
 from lib import market_hours, spec, statefiles, swaps  # noqa: E402
 
 HEARTBEAT_MAX_S = 180
+# Méta-surveillance du watchdog MT5 : il réécrit ~/logs/watchdog_alive à chaque run
+# (cron */3). Périmé > 10 min EN SESSION = garde inopérant → alerte (le superviseur
+# surveille le gardien). Chemin partagé via env FTMO_WATCHDOG_ALIVE (idem watchdog).
+WATCHDOG_ALIVE = Path(os.environ.get("FTMO_WATCHDOG_ALIVE",
+                                     "/home/algo/logs/watchdog_alive"))
+WATCHDOG_ALIVE_MAX_S = 600
 ROOM_DAILY_ALERT_FRAC = 0.015
 MARGIN_ALERT_PCT = 50.0
 BRAIN_STALE_H = 25.0
@@ -67,6 +74,19 @@ def _initial() -> float:
 
 def _now_utc(now_paris_naive: datetime) -> datetime:
     return now_paris_naive.replace(tzinfo=statefiles.PARIS).astimezone(timezone.utc)
+
+
+def _watchdog_stale(now: datetime) -> bool:
+    """True si le heartbeat du watchdog MT5 (watchdog_alive) est absent ou périmé.
+
+    `now` est Paris-naïf ; comparé au mtime (epoch UTC) du fichier réécrit à chaque
+    run du cron */3. Absent = watchdog jamais lancé / cron muet → True.
+    """
+    try:
+        mtime = WATCHDOG_ALIVE.stat().st_mtime
+    except OSError:
+        return True
+    return (_now_utc(now).timestamp() - mtime) > WATCHDOG_ALIVE_MAX_S
 
 
 def _state_freshness(state: dict, now: datetime) -> str:
@@ -119,6 +139,15 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
     if session_open and age > HEARTBEAT_MAX_S:
         fired.append("heartbeat")
         _alert("heartbeat", 15, f"heartbeat perdu {age:.0f}s > {HEARTBEAT_MAX_S}s", now)
+
+    # Méta-surveillance du gardien : évaluée AVANT le mtime-gate (comme heartbeat),
+    # donc jamais masquée par un state figé. EA mort + watchdog mort = double panne.
+    if session_open and _watchdog_stale(now):
+        fired.append("watchdog_dead")
+        _alert("watchdog_dead", 15,
+               "WATCHDOG MT5 INOPÉRANT — heartbeat watchdog absent/périmé "
+               f"(> {WATCHDOG_ALIVE_MAX_S}s) en session : MT5 sans filet de relance "
+               "— vérifier le cron */3 (ftmo_watchdog) et run_with_env", now)
 
     try:
         mtime = (files_dir / "state.json").stat().st_mtime
@@ -379,8 +408,8 @@ def _archive_sod(state: dict, now: datetime) -> None:
 
 def daemon() -> None:
     files_dir = statefiles.mt5_files_dir()
-    tok = __import__("os").environ.get("TELEGRAM_BOT_TOKEN", "")
-    if __import__("os").environ.get("FTMO_LIVE_TG_DISABLED") != "1":
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+    if os.environ.get("FTMO_LIVE_TG_DISABLED") != "1":
         tg.check_token(tok)
     print(f"supervisor démarré — files={files_dir}")
     while True:

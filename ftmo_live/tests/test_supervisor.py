@@ -1,4 +1,7 @@
 """Alertes supervisor (conditions de la mission) + rapports non-crash."""
+import os
+from datetime import timezone
+
 import pandas as pd
 import pytest
 
@@ -75,6 +78,65 @@ def test_heartbeat_dormant_market_closed(files_dir, runtime_isolated):
     now = statefiles.parse_ts("2026.06.13 10:00:00")   # samedi 10:00 Paris
     fired = supervisor.evaluate_alerts(files_dir, now=now)
     assert "heartbeat" not in fired
+
+
+def test_heartbeat_not_masked_by_mtime_gate(files_dir, runtime_isolated):
+    """MISSION 4 — reproduit le week-end : EA mort, state.json FIGÉ (mtime n'avance
+    plus). Le mtime-gate (anti-spam contenu) ne doit JAMAIS masquer l'alerte
+    heartbeat en session ouverte. Heartbeat est évalué AVANT le gate."""
+    _write_state(files_dir, _state(ts_paris="2026.06.11 09:50:00"))   # jeudi, gelé
+    _brain_ok(runtime_isolated)
+    now1 = statefiles.parse_ts("2026.06.11 10:00:00")                 # session ouverte
+    assert "heartbeat" in supervisor.evaluate_alerts(files_dir, now=now1)
+    # 2e passage SANS réécrire le state → mtime inchangé → gate contenu fermé.
+    now2 = statefiles.parse_ts("2026.06.11 10:20:00")
+    f2 = supervisor.evaluate_alerts(files_dir, now=now2)
+    assert "heartbeat" in f2, "RÉGRESSION Mission 4 : heartbeat masqué par le mtime-gate"
+
+
+def _set_watchdog(monkeypatch, path, age_s, now_paris):
+    """Pose un fichier watchdog_alive d'âge `age_s` (relatif à now_paris) ou absent."""
+    if age_s is None:
+        monkeypatch.setattr(supervisor, "WATCHDOG_ALIVE", path)   # n'existe pas
+        return
+    path.write_text("beat")
+    epoch = now_paris.replace(tzinfo=statefiles.PARIS).astimezone(timezone.utc).timestamp()
+    os.utime(path, (epoch - age_s, epoch - age_s))
+    monkeypatch.setattr(supervisor, "WATCHDOG_ALIVE", path)
+
+
+def test_watchdog_dead_stale_in_session(files_dir, runtime_isolated, monkeypatch, tmp_path):
+    """Méta-surveillance : heartbeat watchdog périmé (20 min) en session → alerte."""
+    now = statefiles.parse_ts("2026.06.11 10:00:00")                  # jeudi, ouvert
+    _write_state(files_dir, _state(ts_paris="2026.06.11 09:59:30"))   # EA frais
+    _brain_ok(runtime_isolated)
+    _set_watchdog(monkeypatch, tmp_path / "wa", 1200, now)
+    assert "watchdog_dead" in supervisor.evaluate_alerts(files_dir, now=now)
+
+
+def test_watchdog_dead_missing_in_session(files_dir, runtime_isolated, monkeypatch, tmp_path):
+    """watchdog_alive absent = watchdog jamais lancé / cron muet → alerte en session."""
+    now = statefiles.parse_ts("2026.06.11 10:00:00")
+    _write_state(files_dir, _state(ts_paris="2026.06.11 09:59:30"))
+    _brain_ok(runtime_isolated)
+    _set_watchdog(monkeypatch, tmp_path / "absent_wa", None, now)
+    assert "watchdog_dead" in supervisor.evaluate_alerts(files_dir, now=now)
+
+
+def test_watchdog_alive_fresh_no_alert(files_dir, runtime_isolated, monkeypatch, tmp_path):
+    now = statefiles.parse_ts("2026.06.11 10:00:00")
+    _write_state(files_dir, _state(ts_paris="2026.06.11 09:59:30"))
+    _brain_ok(runtime_isolated)
+    _set_watchdog(monkeypatch, tmp_path / "wa", 60, now)              # 1 min : frais
+    assert "watchdog_dead" not in supervisor.evaluate_alerts(files_dir, now=now)
+
+
+def test_watchdog_dead_silent_out_of_session(files_dir, runtime_isolated, monkeypatch, tmp_path):
+    """Hors session : même watchdog absent ne déclenche pas (no-op marché fermé)."""
+    now = statefiles.parse_ts("2026.06.13 10:00:00")                  # samedi : fermé
+    _write_state(files_dir, _state(ts_paris="2026.06.12 22:54:59"))
+    _set_watchdog(monkeypatch, tmp_path / "absent_wa", None, now)
+    assert "watchdog_dead" not in supervisor.evaluate_alerts(files_dir, now=now)
 
 
 def test_content_alerts_skip_on_stale_mtime(files_dir, runtime_isolated):
