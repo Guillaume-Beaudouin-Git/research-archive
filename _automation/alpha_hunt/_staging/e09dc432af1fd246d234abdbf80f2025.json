@@ -1,0 +1,14 @@
+{
+  "hash": "e09dc432af1fd246d234abdbf80f2025",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.14887v1",
+  "title": "Estimating Sloppy Directions via KDE: The Case of Kirman's Ants",
+  "url": "http://arxiv.org/abs/2606.14887v1",
+  "description": "Models whose predictions depend on only a handful of well-constrained parameter combinations, termed sloppy models, are ubiquitous in nonlinear stochastic systems. The information-geometric approach to sloppiness advocates using the symmetrized Kullback--Leibler divergence and its associated Hessian, the Fisher Information Matrix (FIM), as the natural loss function. However, prior applications have relied on analytically known or parametrically fitted distributions. In practice, for general agent-based or stochastic models the distribution must be estimated from simulation data. I demonstrate, using Kirman's ant recruitment model as a worked example, that a standard kernel density estimate (KDE) converges to the analytical FIM eigenvectors and eigenvalues with simulation budgets accessible in practice. I derive the analytical Hessian in closed form, show numerical convergence of the KDE-based estimate as a function of simulation data, and demonstrate how the stiff direction enables efficient phase exploration across the model's unimodal and bimodal regimes.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-16 02:30 UTC"
+}

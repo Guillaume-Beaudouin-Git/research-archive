@@ -1,0 +1,14 @@
+{
+  "hash": "2c53a9fbba753bc23713723c50f0dd43",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.16773v1",
+  "title": "Generative Predictive Distributions for Time Series",
+  "url": "http://arxiv.org/abs/2606.16773v1",
+  "description": "We propose a flexible framework for modeling the predictive distributions of nonlinear, possibly multivariate time series. Our approach expresses a general predictive distribution in an appropriate generative representation that is based on a folklore result from measure theoretic probability. This representation provides a direct simulation-based approximation to the predictive distribution, enabling straightforward computation of forecasts for the conditional mean and variance, fan charts, value at risk, expected shortfall, joint tail risks, and other quantities of interest. We estimate this generative representation using a version of conditional generative adversarial networks and provide a formal statistical analysis of estimation under weak temporal dependence. Specifically, estimation is expressed as a particular minimax problem and we establish consistency of its approximate solutions in Hausdorff distance. The empirical relevance of the approach is illustrated using applications to equity returns, realized variance, and realized covariances. The proposed method is also computationally manageable, with estimation in our applications taking approximately one minute on a standard laptop.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-16 02:30 UTC"
+}
