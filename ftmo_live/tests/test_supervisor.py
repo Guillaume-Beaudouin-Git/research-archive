@@ -62,6 +62,32 @@ def test_alert_conditions(files_dir, runtime_isolated, mutation, expected):
     assert expected in fired
 
 
+def test_disarm_notice_not_reject_when_armed(files_dir, runtime_isolated):
+    """MISSION 1 — last_error porte la notice de désarmement PÉRIMÉE mais kill==0
+    (EA réarmé : l'EA ne vide pas g_last_error au réarmement). Pas de faux 'reject'
+    toutes les ~60 min, et pas d'alerte 'kill' non plus (kill==0)."""
+    _write_state(files_dir, _state(kill=0, last_error="kill-file FLAT — EA désarmé"))
+    _brain_ok(runtime_isolated)
+    fired = supervisor.evaluate_alerts(files_dir)
+    assert "reject" not in fired
+    assert "kill" not in fired
+
+
+def test_disarm_notice_alerts_when_disarmed(files_dir, runtime_isolated):
+    """kill==1 (réellement désarmé MAINTENANT) : l'alerte de désarmement (kill) tire."""
+    _write_state(files_dir, _state(kill=1, last_error="kill-file FLAT — EA désarmé"))
+    _brain_ok(runtime_isolated)
+    fired = supervisor.evaluate_alerts(files_dir)
+    assert "kill" in fired
+
+
+def test_real_reject_not_masked_when_armed(files_dir, runtime_isolated):
+    """Un vrai reject d'ordre (kill==0) ne doit JAMAIS être masqué par le garde."""
+    _write_state(files_dir, _state(kill=0, last_error="OrderSend XAUUSD ret=10006 rejected"))
+    _brain_ok(runtime_isolated)
+    assert "reject" in supervisor.evaluate_alerts(files_dir)
+
+
 def test_heartbeat_lost(files_dir, runtime_isolated):
     _write_state(files_dir, _state(ts_paris="2026.06.11 10:00:00"))
     _brain_ok(runtime_isolated)

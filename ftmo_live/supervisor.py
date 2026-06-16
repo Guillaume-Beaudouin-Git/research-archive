@@ -172,7 +172,15 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
         fired.append("margin")
         _alert("margin", 30, f"marge {margin:.0f}% > {MARGIN_ALERT_PCT:.0f}% equity", now)
     err = str(state.get("last_error", "") or "")
-    if err:
+    # « kill-file FLAT — EA désarmé » (book_executor.mq5:1481) est une NOTICE de
+    # désarmement, pas un reject d'ordre : l'EA ne vide PAS g_last_error au réarmement
+    # (mq5:1487 remet g_killed=false sans toucher g_last_error) → champ « dernière erreur
+    # connue », pas « erreur courante ». Réarmé (kill==0), cette notice est PÉRIMÉE : ne
+    # pas la crier, sinon faux positif toutes les ~60 min. L'état désarmé COURANT est déjà
+    # signalé par l'alerte `kill` (kill==1). Les vrais rejects (OrderSend/stop/fill/BREAKER
+    # /pendings…) ne contiennent pas « kill-file FLAT » → passent toujours, kill==0 ou non.
+    disarm_notice = "kill-file FLAT" in err
+    if err and not (disarm_notice and not int(state.get("kill", 0))):
         fired.append("reject")
         _alert(f"reject_{hash(err) & 0xffff}", 60, f"EA erreur/reject: {err}", now)
     if int(state.get("pending_unconfirmed", 0)) > 0:
