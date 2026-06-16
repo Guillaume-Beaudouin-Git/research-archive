@@ -97,6 +97,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2a0a6fa06615960861e61b7fa5b3e3ce": {
+    "first_seen": "2026-06-16 12:00",
+    "source": "github_python",
+    "title": "mouredev/roadmap-retos-programacion",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2b0300fedb9d03dde0b6183e698e1e17": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -174,6 +181,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "49e6cdb0d1edb5be88513ffd313244ac": {
+    "first_seen": "2026-06-16 12:00",
+    "source": "github_python",
+    "title": "microsoft/fara",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4a84fc883ed57ab77cd89914d44c4b33": {
     "first_seen": "2026-06-15 11:00",
     "source": "github_python",
@@ -227,6 +241,13 @@
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
     "title": "DrewThomasson/ebook2audiobook",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "63c8a105b1bb34616fedde623fec1d61": {
+    "first_seen": "2026-06-16 12:00",
+    "source": "github_python",
+    "title": "python/cpython",
     "decision": "rejected_L0",
     "promising_file": null
   },
