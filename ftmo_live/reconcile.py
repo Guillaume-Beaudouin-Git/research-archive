@@ -72,6 +72,65 @@ def _sod(files_dir: Path, day: str) -> dict:
                        "(supervisor --daemon doit tourner)")
 
 
+def _friday_degraded_reconcile(state: dict, files_dir: Path, day: str, eod: dict,
+                               alert: bool) -> dict:
+    """Réconciliation DÉGRADÉE du vendredi — voir le branchement dans run().
+
+    Sans m5_today (co-gé par Do2258EOD, donc absent le vendredi), le modèle (replay) n'a
+    pas de chemin de prix → la décomposition Δ signal/coût/timing/micro est IMPOSSIBLE. On
+    enregistre seulement le PnL réel de clôture (equity broker @22:54, déjà markée) pour la
+    piste d'audit ; le gate « 3 jours inexpliqués » n'est PAS évalué (consec PRÉSERVÉ : un
+    jour sans information ne casse ni n'étend une série inexpliquée).
+
+    Garde anti-masquage : on ne dégrade QUE si (a) c'est un vendredi ET (b) la clôture a été
+    réellement atteinte — state figé le jour J, après le rebalance 22:05 (ts >= 22:30 Paris,
+    proche du gel ~22:54). Lun-jeu, ou EA mort tôt un vendredi → vraie absence d'EOD → on
+    relève le RuntimeError d'origine (comportement inchangé, pas de masquage).
+
+    Swap : la fenêtre du jour exclut le swap de CETTE nuit (posté ~23:00 = minuit serveur,
+    APRÈS 22:54 comme après 22:58) ; sa vérification (×3 indices le vendredi) reste au
+    superviseur (swap_drift_last_night, hors fenêtre) — le fallback 22:54 vs 22:58 ne
+    déplace pas la frontière swap, il est swap-neutre.
+    """
+    absent = RuntimeError(f"snapshot EOD 22:58 absent pour {day} "
+                          f"(eod.date={eod.get('date')}) — EA down avant 22:58 ?")
+    if pd.Timestamp(day).dayofweek != 4:            # 4 = vendredi
+        raise absent
+    try:
+        ts = statefiles.parse_ts(state["ts_paris"])
+    except (KeyError, ValueError, TypeError):
+        raise absent
+    if str(ts.date()) != day or (ts.hour, ts.minute) < (22, 30):
+        raise absent
+    eq_close = state.get("equity")
+    if eq_close is None:
+        raise absent
+
+    sod = _sod(files_dir, day)
+    anchor = float(sod.get("anchor_balance", sod.get("balance")))
+    pnl_real = float(eq_close) - anchor
+    fills = statefiles.read_fills(files_dir, day)
+    msg = (f"reconcile {day} (vendredi) DÉGRADÉ : snapshot EOD 22:58 absent par "
+           f"construction (clôture forex 22:54, Do2258EOD non atteint) — fallback sur état "
+           f"de clôture ({state['ts_paris']}, equity ${float(eq_close):,.2f}). Modèle/Δ non "
+           f"rejoués (m5_today absent) ; PnL réel ${pnl_real:+.2f} enregistré, gate STOP non "
+           f"évalué ce jour.")
+    print(msg)
+
+    prev = pd.read_csv(LOG) if LOG.exists() else pd.DataFrame(columns=LOG_COLUMNS)
+    consec = (int(prev.iloc[-1]["consec_unexplained"])
+              if len(prev) and str(prev.iloc[-1]["date"]) != day else 0)
+    row = dict(date=day, pnl_real=round(pnl_real, 2), pnl_model="", delta_total="",
+               d_signal="", d_cost="", d_timing="", d_micro="", residual_usd=0.0,
+               tol_usd="", unexplained=0, consec_unexplained=consec, stop_recommended=0,
+               n_fills=int(len(fills)), detail_path="friday_degraded")
+    statefiles.append_csv(LOG, LOG_COLUMNS, row)
+    if alert:
+        tg.send(f"🟦 FTMO live — {msg} Swap nuit (×3 indices) vérifié séparément par le "
+                f"superviseur. Reprise lundi.")
+    return row
+
+
 def run(day: str = None, alert: bool = True) -> dict:
     files_dir = statefiles.mt5_files_dir()
     now = statefiles.now_paris().replace(tzinfo=None)
@@ -80,8 +139,13 @@ def run(day: str = None, alert: bool = True) -> dict:
     state = statefiles.read_state(files_dir) or {}
     eod = state.get("eod") or {}
     if str(eod.get("date")) != day:
-        raise RuntimeError(f"snapshot EOD 22:58 absent pour {day} "
-                           f"(eod.date={eod.get('date')}) — EA down avant 22:58 ?")
+        # Snapshot EOD 22:58 absent. Le VENDREDI c'est STRUCTUREL : le forex ferme
+        # ~22:54:59 Paris → plus de ticks → TimeCurrent() gèle → la grille EA
+        # (book_executor.mq5:1517, hm>=2258) n'atteint jamais 22:58 → Do2258EOD ne
+        # s'exécute PAS → ni le bloc state.eod NI m5_today.json (tous deux écrits par
+        # Do2258EOD, mq5:1228-1229). Réconciliation dégradée (PnL réel seul) ; lun-jeu ou
+        # vendredi sans clôture atteinte → vraie absence, on lève. Voir le helper.
+        return _friday_degraded_reconcile(state, files_dir, day, eod, alert)
     m5 = statefiles.read_json(files_dir / "m5_today.json") or {}
     if str(m5.get("date")) != day:
         raise RuntimeError(f"m5_today.json absent/périmé pour {day}")
