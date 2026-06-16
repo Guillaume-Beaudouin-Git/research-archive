@@ -1,4 +1,11 @@
 {
+  "074c9a61d3c4ad2b5cdd675d1bdae312": {
+    "first_seen": "2026-06-16 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Limit theorems of Azadkia-Chatterjee's conditional graph correlation",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0ff717304b7b50b3e5271e86fb649b9f": {
     "first_seen": "2026-06-04 06:06",
     "source": "arxiv_econ_em",
@@ -193,6 +200,13 @@
     "source": "arxiv_econ_em",
     "title": "Data-Automated Policy Learning for Nonlinear Welfare",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "737ce885ed135d794e76cf052a43dbbe": {
+    "first_seen": "2026-06-16 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Demand for a New Product",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "77632461044e0a59c50395b4ff0f3448": {
@@ -411,6 +425,13 @@
     "title": "CausalAlpha: A Real-Time Geopolitical Risk Index from OSINT Channels for Causal ",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_causalalpha_a_real_time_geopolitical_risk_index_fr_20260608.md"
+  },
+  "e57b66396e6b5a131d5bc8c4816abcf1": {
+    "first_seen": "2026-06-16 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Discrete Choice and Competitive Reactions: End-to-End Simulation with the R Pack",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "e65b9cf2744e3ca9f4a5c2b36ef60320": {
     "first_seen": "2026-06-01 06:07",
