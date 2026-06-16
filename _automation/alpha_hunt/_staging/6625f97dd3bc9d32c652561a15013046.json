@@ -1,0 +1,14 @@
+{
+  "hash": "6625f97dd3bc9d32c652561a15013046",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.16708v1",
+  "title": "Risks and Uncertainty in Monetary Policy",
+  "url": "http://arxiv.org/abs/2606.16708v1",
+  "description": "Central banks monitor macroeconomic risk through two traditions: scenario analysis, regularly used since the mid-1990s, and distributional forecasting, practiced since the late 1960s. The two are complementary but separate: scenarios provide narratives without probabilities, while predictive distributions provide probabilities with limited economic interpretation. Treating baseline forecasts and scenarios as conditional predictive densities, and distributional forecasts as reference predictive distributions, places both within a common framework and clarifies their roles. The Scenario Synthesis assigns weights to scenarios consistent with the reference distribution, offering a practical and reproducible tool for risk assessment and policy deliberation under deep uncertainty.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-16 02:30 UTC"
+}

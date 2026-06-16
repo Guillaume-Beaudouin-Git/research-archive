@@ -20,6 +20,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_value_a_20260604.md"
   },
+  "11e13b7d9e217a3e38381e00c06cd100": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Agentomics: Economic Foundations for the Valuation, Attribution, and Pricing of ",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "1286db32f5f60a306a0a4066a5e26929": {
     "first_seen": "2026-06-12 02:00",
     "source": "arxiv_econ_em",
@@ -41,11 +48,25 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "25ad961d2058d861cd6e4c2394d2338e": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Semiparametric Dynamic Logit Model with Endogenous Networks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "285b0bee741a80b573df135b2caa09ab": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "The Markup falsification Adaptative Set",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2c53a9fbba753bc23713723c50f0dd43": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Generative Predictive Distributions for Time Series",
+    "decision": "accepted",
     "promising_file": null
   },
   "2fe8f1d769e202f56010d740395b204d": {
@@ -111,6 +132,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "408b957e3dc639b7e572d866fc45a044": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Identification and Inference for Algorithmic Frontiers with Selective Labels",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "41a36b797afd2d98b8c321130beeb769": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
@@ -129,6 +157,13 @@
     "first_seen": "2026-06-15 01:30",
     "source": "arxiv_econ_em",
     "title": "The Generalized Fisher Transformation: Finite-Sample Properties and Inference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4a266cbb07147a4d15913fb2afa7fa13": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Partial Identification from LLM Prompts",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -174,6 +209,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "6625f97dd3bc9d32c652561a15013046": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Risks and Uncertainty in Monetary Policy",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "6f984bf50a6b7e68597fcb860dbab4a6": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
@@ -207,6 +249,13 @@
     "source": "arxiv_econ_em",
     "title": "Estimating Demand for a New Product",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "7654fb73ae3fdb4a137713fe3caf6e2a": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Assumption-Lean Shrinkage and Model Averaging for Spatial Parameters",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "77632461044e0a59c50395b4ff0f3448": {
@@ -328,6 +377,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md"
   },
+  "a9878ed2fae135b1b81a5efc753e16c3": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Decision Theory for the Archetype Discovery Problem",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ae40c16c730689b4bb01b0fc835d7713": {
     "first_seen": "2026-06-11 02:30",
     "source": "arxiv_econ_em",
@@ -412,6 +468,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e09dc432af1fd246d234abdbf80f2025": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Sloppy Directions via KDE: The Case of Kirman's Ants",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "e29eb449fe416d8b3d8c145e40cac23e": {
     "first_seen": "2026-06-03 06:06",
     "source": "arxiv_econ_em",
@@ -452,6 +515,13 @@
     "source": "arxiv_econ_em",
     "title": "Causality versus Serial Correlation: an Asymmetric Portmanteau Test",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ebdb28a865f6f820c43b0924692865c2": {
+    "first_seen": "2026-06-16 02:30",
+    "source": "arxiv_econ_em",
+    "title": "To Combine or Not? Consolidating Horizontal Acquisitions in Multi-sided Market",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "ef99ddf03957949a65276c699cbc7834": {
