@@ -13,6 +13,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_new_feature_model_portfolio_withdrawal_rates_alloc_20260602.md"
   },
+  "0f89180ffe5c02d1da66f09a45561759": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "The Sharpe Ratio of Pure Noise [Quantt]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "1964b7aa496ffb73bc15686ec8dc67f4": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
@@ -34,11 +41,32 @@
     "decision": "accepted",
     "promising_file": "quantocracy_ufc_ultimate_fitting_championships_investment_idio_20260610.md"
   },
+  "3d81a22ce7bf83300dc290880a991b4d": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "Automating a Volatility Strategy With Python and Interactive Brokers [Concretum ",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "42a722a9e4c482a5611d2a87a81e2edf": {
     "first_seen": "2026-06-05 06:06",
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 06/04/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4963d7204cf0a33fa37e8b59c45b9ba5": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "The Factor Zoo Has Hundreds of Animals     But Only a Handful of Species [Alpha ",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "4d7ed8ac18e67c6e6c43fbbc5ba9db7d": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "Feature selection: Filter-based methods [Trading the Breaking]",
+    "decision": "accepted",
     "promising_file": null
   },
   "4f119bb96ee2a7fccdcf868ee9823bdc": {
@@ -47,6 +75,20 @@
     "title": "Forecasting statistical estimates when data gets real [Investment Idiocy]",
     "decision": "accepted",
     "promising_file": "quantocracy_forecasting_statistical_estimates_when_data_gets_r_20260610.md"
+  },
+  "5bac288020f567e781d736a10a44cc67": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/16/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6efa545a99f79a7f127432a45438a9a3": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "A Hidden Trade Around SpaceX IPO? [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": null
   },
   "706adf07ae4d3c37d494fab0523af5c5": {
     "first_seen": "2026-06-05 06:06",
@@ -62,12 +104,26 @@
     "decision": "accepted",
     "promising_file": "quantocracy_institutions_return_expectations_across_assets_and_20260602.md"
   },
+  "892b4f933cfe77fc5642e1d69cec9fc0": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "Why System Validation Matters More Than Ever [Relative Value Arbitrage]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "8e651225469902d36717cb181e7e1ed6": {
     "first_seen": "2026-06-07 06:04",
     "source": "quantocracy",
     "title": "The crossword puzzle of fitting – why across and then down? [Investment Idiocy]",
     "decision": "accepted",
     "promising_file": "quantocracy_the_crossword_puzzle_of_fitting_why_across_and_the_20260607.md"
+  },
+  "92ce6ada86708702ee29adaaec85c2c4": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "A Common Sense Guide to Volatility Trading [Quant Galore]",
+    "decision": "accepted",
+    "promising_file": null
   },
   "9a41c1c437077afaea6340d75e4fe002": {
     "first_seen": "2026-06-05 06:06",
@@ -109,6 +165,13 @@
     "source": "quantocracy",
     "title": "Fast Option Pricing using Fourier Transform [Vertox Quant]",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "b45e40b4c4ac01329d34e20c5293ef3a": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "FIFA* (*Fitting and Forecasting Actual data) Portfolio Optimisation competition ",
+    "decision": "accepted",
     "promising_file": null
   },
   "c4de23ec69921ec63a6bb930b2c61a6f": {
@@ -153,6 +216,20 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "e30835edcb0f5d07f2bdb7042993b9f2": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "Market Effect Research: Turnaround Tuesday Effect [TradeQuantiX]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "e64f72d8882fd0dc89c43e890723fb91": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "Dividend Timing and Global Dividend Premium [Alpha Architect]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "e6808c16ea908a8464d10bf282ca4aa8": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
@@ -187,5 +264,12 @@
     "title": "When the insiders and the news disagree: a first look at the cross-signal [Tommi",
     "decision": "accepted",
     "promising_file": "quantocracy_when_insiders_and_news_disagree_cross_signal_20260610.md"
+  },
+  "fac8c4a30e00ab1996f9790d7f3433cb": {
+    "first_seen": "2026-06-17 06:00",
+    "source": "quantocracy",
+    "title": "Dual vs. Single Momentum in Commodities: Enhancing Risk-Adjusted Returns [Quantp",
+    "decision": "accepted",
+    "promising_file": null
   }
 }
