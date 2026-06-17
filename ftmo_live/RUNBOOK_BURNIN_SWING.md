@@ -73,6 +73,43 @@ pré-enregistré = NULL, arm A reste) ; le clip dynamique + l'enforcement au tau
    2 rapports corrects. Puis bascule challenge = changement de login + ré-attach
    (`InpAttemptStart` = jour 1).
 
+## Armement propre — verrou `g_flat_today` (incident 2026-06-16)
+
+**Le piège.** `touch FLAT` désarme ET appelle `FlattenAll` qui pose `g_flat_today=true`
+(mq5:683). Ce verrou n'est purgé QUE par `DayRollover`, au passage **00:00 Paris**
+(mq5:1107). De plus `OnTimer` fait `if(FileIsExist("FLAT")) … return;` (mq5:1475-1486)
+**avant** le `DayRollover` et avant la grille de créneaux : tant que FLAT est là, **pas
+de rollover**. Conséquence : **`rm FLAT` en cours de journée NE ré-arme PAS proprement**
+— `kill` repasse à 0 mais `g_flat_today` reste collé, donc `Do1735` (`||g_flat_today`,
+mq5:992) et `Do2205Rebalance` (`if(g_flat_today)return`, mq5:1055) court-circuitent **en
+silence** jusqu'au prochain minuit Paris. Le restart serveur 21:00 UTC ne sauve pas : à
+l'`OnInit`, `LoadState` recharge `flat_today=1` si l'`anchor_date` du jour est inchangé
+(mq5:1410,1414). Le 2026-06-16 : compte armé propre à 00:00 Paris, FLAT ré-apparu à 02:09
+Paris (00:09 UTC), verrou collé → **GER40 17:35 + rebalance 22:05 sautés, zéro perte mais
+zéro trade**. MT5 était vivant et connecté toute la journée (faux soupçon « MT5 absent »).
+
+**Procédure d'armement propre (ordre strict) :**
+1. `rm "…/MQL5/Files/FLAT"` **avant 15:30 Paris**.
+2. Vérifier dans `state.json` : **`kill=0` ET `flat_today=0`** (et `opened_today=0` en
+   début de journée). Les deux à 0 = armé proprement, les créneaux tireront.
+3. **Si `flat_today=1` alors que `kill=0`** → verrou collé. Deux sorties :
+   - **attendre le rollover 00:00 Paris** (purge automatique `g_flat_today`) — la journée
+     courante est perdue, mais le lendemain trade ; **ou**
+   - **hors créneaux** (jamais 15:30-21:00 UTC) : `rm ea_state.json` puis restart MT5
+     (watchdog ou `start_mt5.sh`) → `LoadState` no-op, globals à false, `OnInit` re-ancre
+     le jour → `flat_today=0`. ⚠ ré-initialise aussi `anchor_balance`/`open_days`/zombie :
+     n'utiliser qu'en burn-in early (equity 10000, open_days 0).
+4. **Ne jamais `touch FLAT`** une fois en mode armé (le `touch FLAT` du §4 = OBSERVATION
+   uniquement, à retirer définitivement avant d'armer).
+
+**Filet (déployé 2026-06-16).** `supervisor.py` lève l'alerte Telegram **`flat_latched`**
+si `kill==0 && flat_today==1 && opened_today==0 && breaker==0` en session — exactement
+l'état limbo de l'incident — évaluée avant le mtime-gate (jamais masquée par un state figé).
+
+**NB jour ON.** Seuls **lun+mar** sont des jours ON (`IsONDay`, mq5:138) : GER40 17:35 et
+US100 ne tradent QUE ces jours-là. Mer-ven : seul le rebalance 22:05 (XAUUSD+USDJPY,
+US100=0) + micro-ORB 16:00. Ne pas conclure « raté » si pas de GER40/US100 un mer-ven.
+
 ## Infra VPS posée par la session (2026-06-11)
 
 - `.env` : `FTMO_LIVE_MT5_FILES="/home/algo/.wine/drive_c/Program Files/FTMO Global Markets
