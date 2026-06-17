@@ -90,6 +90,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "250a731de26135311b65df9e133452c8": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "alexzhang13/rlm",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "28b7e0fac1fbb854a9a881d5745193ec": {
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
@@ -174,6 +181,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3eb505b87fd1528ce1389cd34c1014be": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "calesthio/OpenMontage",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3f7137e41661fa7260948cb49cca84d3": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "fastapi/typer",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "49b7eba96880ac94793b885bebd9929b": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -244,6 +265,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "627db994136af968df8917b005479fc1": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "521xueweihan/HelloGitHub",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "63c8a105b1bb34616fedde623fec1d61": {
     "first_seen": "2026-06-16 12:00",
     "source": "github_python",
@@ -307,6 +335,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7351dc56acacd8e2add29da8e7b7ba8d": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "fivetran/great_expectations",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "75a241dfb57b73adcb9baaf331fad2d1": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -360,6 +395,13 @@
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
     "title": "microsoft/VibeVoice",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8025f7692b42ae4150508f66128f14d2": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "goldmansachs/gs-quant",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -601,6 +643,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "cb2d9d06bd4781f39e298570d12a571f": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "roboflow/rf-detr",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "cce45068546f7dcaab608990294fec39": {
     "first_seen": "2026-06-10 11:00",
     "source": "github_python",
@@ -612,6 +661,13 @@
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
     "title": "Panniantong/Agent-Reach",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d26f5364ca45b5259c6cd9a5f7baa0d5": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "microsoft/RD-Agent",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -647,6 +703,13 @@
     "first_seen": "2026-06-13 11:00",
     "source": "github_python",
     "title": "andrewyng/aisuite",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dbe45c85602d07ff7727734a8ea88a17": {
+    "first_seen": "2026-06-17 11:30",
+    "source": "github_python",
+    "title": "infiniflow/ragflow",
     "decision": "rejected_L0",
     "promising_file": null
   },
