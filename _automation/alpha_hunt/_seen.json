@@ -14,5 +14,49 @@
   "e09dc432af1fd246d234abdbf80f2025": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_estimating_sloppy_directions_via_kde_the_case_of_k_20260616.md"
+  },
+  "0f89180ffe5c02d1da66f09a45561759": {
+    "promising_file": "quantocracy_sharpe_ratio_of_pure_noise_20260617.md",
+    "decision": "accepted"
+  },
+  "3d81a22ce7bf83300dc290880a991b4d": {
+    "promising_file": "quantocracy_automating_volatility_strategy_python_ib_20260617.md",
+    "decision": "accepted"
+  },
+  "4963d7204cf0a33fa37e8b59c45b9ba5": {
+    "promising_file": "quantocracy_factor_zoo_hundreds_animals_handful_species_20260617.md",
+    "decision": "accepted"
+  },
+  "4d7ed8ac18e67c6e6c43fbbc5ba9db7d": {
+    "promising_file": "quantocracy_feature_selection_filter_based_methods_20260617.md",
+    "decision": "accepted"
+  },
+  "6efa545a99f79a7f127432a45438a9a3": {
+    "promising_file": "quantocracy_hidden_trade_around_spacex_ipo_20260617.md",
+    "decision": "accepted"
+  },
+  "892b4f933cfe77fc5642e1d69cec9fc0": {
+    "promising_file": "quantocracy_why_system_validation_matters_more_than_ever_20260617.md",
+    "decision": "accepted"
+  },
+  "92ce6ada86708702ee29adaaec85c2c4": {
+    "promising_file": "quantocracy_common_sense_guide_to_volatility_trading_20260617.md",
+    "decision": "accepted"
+  },
+  "b45e40b4c4ac01329d34e20c5293ef3a": {
+    "promising_file": "quantocracy_fifa_portfolio_optimisation_competition_real_returns_20260617.md",
+    "decision": "accepted"
+  },
+  "e30835edcb0f5d07f2bdb7042993b9f2": {
+    "promising_file": "quantocracy_market_effect_turnaround_tuesday_effect_20260617.md",
+    "decision": "accepted"
+  },
+  "e64f72d8882fd0dc89c43e890723fb91": {
+    "promising_file": "quantocracy_dividend_timing_global_dividend_premium_20260617.md",
+    "decision": "accepted"
+  },
+  "fac8c4a30e00ab1996f9790d7f3433cb": {
+    "promising_file": "quantocracy_dual_vs_single_momentum_commodities_20260617.md",
+    "decision": "accepted"
   }
 }
