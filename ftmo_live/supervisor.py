@@ -149,6 +149,24 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
                f"(> {WATCHDOG_ALIVE_MAX_S}s) en session : MT5 sans filet de relance "
                "— vérifier le cron */3 (ftmo_watchdog) et run_with_env", now)
 
+    # Armé-mais-flat-verrouillé : kill==0 (FLAT retiré) mais g_flat_today resté COLLÉ.
+    # Le verrou n'est purgé QUE par DayRollover à 00:00 Paris (mq5:1107) ; retirer FLAT en
+    # cours de journée ne le purge pas → tous les créneaux du jour court-circuitent en
+    # silence (Do1735 `||g_flat_today`, Do2205 `if(g_flat_today)return`, mq5:992/1055).
+    # opened_today==0 exclut le target-lock/EOD légitime (qui ouvre d'abord) ; breaker a son
+    # alerte dédiée. Évalué AVANT le mtime-gate (comme heartbeat) : un state latché FIGÉ
+    # alerte toujours. Trou d'observabilité du non-trade du 2026-06-16 (FLAT ré-apparu 02:09
+    # Paris → verrou collé toute la journée armée). Voir RUNBOOK §Armement propre.
+    if session_open and not int(state.get("kill", 0)) \
+            and int(state.get("flat_today", 0)) \
+            and not int(state.get("opened_today", 0)) \
+            and not int(state.get("breaker_fired_today", 0)):
+        fired.append("flat_latched")
+        _alert("flat_latched", 60,
+               "EA ARMÉ (kill=0) mais flat_today=1 COLLÉ — les créneaux du jour seront "
+               "SAUTÉS (verrou g_flat_today non purgé jusqu'au rollover 00:00 Paris). "
+               "Ré-armer proprement : voir RUNBOOK §Armement propre", now)
+
     try:
         mtime = (files_dir / "state.json").stat().st_mtime
     except OSError:

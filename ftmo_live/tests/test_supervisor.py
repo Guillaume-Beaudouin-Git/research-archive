@@ -165,6 +165,59 @@ def test_watchdog_dead_silent_out_of_session(files_dir, runtime_isolated, monkey
     assert "watchdog_dead" not in supervisor.evaluate_alerts(files_dir, now=now)
 
 
+def test_flat_latched_alerts_when_armed(files_dir, runtime_isolated):
+    """INCIDENT 2026-06-16 — FLAT retiré (kill=0) mais flat_today resté COLLÉ (verrou
+    g_flat_today purgé seulement au rollover 00:00 Paris) → tous les créneaux du jour
+    sautés en silence. Doit alerter en session."""
+    now = statefiles.parse_ts("2026.06.11 10:00:00")                  # jeudi : ouvert
+    _write_state(files_dir, _state(kill=0, flat_today=1, opened_today=0,
+                                   breaker_fired_today=0, ts_paris="2026.06.11 09:59:30"))
+    _brain_ok(runtime_isolated)
+    assert "flat_latched" in supervisor.evaluate_alerts(files_dir, now=now)
+
+
+def test_flat_latched_silent_when_opened(files_dir, runtime_isolated):
+    """flat_today=1 APRÈS un trade (target-lock/EOD légitime, opened_today=1) : pas
+    d'alerte verrou — ce n'est pas le bug du kill-flat collé."""
+    now = statefiles.parse_ts("2026.06.11 10:00:00")
+    _write_state(files_dir, _state(kill=0, flat_today=1, opened_today=1,
+                                   ts_paris="2026.06.11 09:59:30"))
+    _brain_ok(runtime_isolated)
+    assert "flat_latched" not in supervisor.evaluate_alerts(files_dir, now=now)
+
+
+def test_flat_latched_silent_when_killed(files_dir, runtime_isolated):
+    """kill=1 (FLAT présent) : l'alerte 'kill' couvre déjà — pas de double 'flat_latched'."""
+    now = statefiles.parse_ts("2026.06.11 10:00:00")
+    _write_state(files_dir, _state(kill=1, flat_today=1, opened_today=0,
+                                   ts_paris="2026.06.11 09:59:30"))
+    _brain_ok(runtime_isolated)
+    fired = supervisor.evaluate_alerts(files_dir, now=now)
+    assert "flat_latched" not in fired
+    assert "kill" in fired
+
+
+def test_flat_latched_silent_out_of_session(files_dir, runtime_isolated):
+    """Hors session : aucun créneau ne tirerait → silence (no-op marché fermé)."""
+    now = statefiles.parse_ts("2026.06.13 10:00:00")                  # samedi : fermé
+    _write_state(files_dir, _state(kill=0, flat_today=1, opened_today=0,
+                                   ts_paris="2026.06.12 22:54:59"))
+    assert "flat_latched" not in supervisor.evaluate_alerts(files_dir, now=now)
+
+
+def test_flat_latched_not_masked_by_mtime_gate(files_dir, runtime_isolated):
+    """Évalué AVANT le mtime-gate (comme heartbeat) : un state latché FIGÉ (mtime
+    inchangé) re-tire au 2e passage — jamais masqué par l'anti-spam de contenu."""
+    _write_state(files_dir, _state(kill=0, flat_today=1, opened_today=0,
+                                   ts_paris="2026.06.11 09:59:30"))
+    _brain_ok(runtime_isolated)
+    now1 = statefiles.parse_ts("2026.06.11 10:00:00")
+    assert "flat_latched" in supervisor.evaluate_alerts(files_dir, now=now1)
+    now2 = statefiles.parse_ts("2026.06.11 10:20:00")                 # state non réécrit
+    assert "flat_latched" in supervisor.evaluate_alerts(files_dir, now=now2), \
+        "RÉGRESSION : flat_latched masqué par le mtime-gate"
+
+
 def test_content_alerts_skip_on_stale_mtime(files_dir, runtime_isolated):
     """Contenu (kill, …) : tiré une fois sur state frais, skip silencieux tant
     que le mtime n'avance pas (même cooldown expiré), re-tiré après réécriture."""
