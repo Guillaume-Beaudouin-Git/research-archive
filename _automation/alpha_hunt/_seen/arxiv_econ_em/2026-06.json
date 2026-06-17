@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "20be6da5cf12521e80e30a602cb0f8ad": {
+    "first_seen": "2026-06-17 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Beyond Parallel Trends in Staggered Difference-in-Differences: Identification un",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "25ad961d2058d861cd6e4c2394d2338e": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
@@ -405,6 +412,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b42cf331a9286ae6b923bef8f63b38f2": {
+    "first_seen": "2026-06-17 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Bayesian Poisson-Randomized Gamma Tensor Factorization with Application to Inter",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b6cd1fba18d92b18dbc6740be6aa604a": {
     "first_seen": "2026-06-08 06:06",
     "source": "arxiv_econ_em",
@@ -430,6 +444,13 @@
     "first_seen": "2026-06-15 01:30",
     "source": "arxiv_econ_em",
     "title": "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c6016565dd6b6e06d6417690f383311e": {
+    "first_seen": "2026-06-17 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Partial Identification of Spatial Production Networks",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -500,6 +521,13 @@
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Moment-Based Inference for Regression with Latent Dirichlet Covariates",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e933ee39d14cfc9ac16032725b14146f": {
+    "first_seen": "2026-06-17 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Statistical Foundations of LLM-based A/B Testing: A Surrogacy Framework for Huma",
     "decision": "rejected_L0",
     "promising_file": null
   },
