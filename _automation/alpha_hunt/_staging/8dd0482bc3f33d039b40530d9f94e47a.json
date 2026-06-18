@@ -1,0 +1,14 @@
+{
+  "hash": "8dd0482bc3f33d039b40530d9f94e47a",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.19318v1",
+  "title": "Fitting Accumulated Stock Returns with Tempered Skew t-Distribution",
+  "url": "http://arxiv.org/abs/2606.19318v1",
+  "description": "We analyze distributions of historic S&P500 multi-day returns, for the number of days of accumulation from 20 to 120. With the increase of the number of days of accumulation, we observe clear tempering of power-law tails toward a seemingly finite value. To explain this phenomenon, we employ a model that produces a \"capped Inverse Gamma\" stationary (steady-state) distribution for stochastic volatility which, in turn, produces a \"tempered Student-t\" distribution for returns. We then employ Jones-Faddy-like symmetry breaking mechanism that produces a \"tempered Skew-t\" distribution. This distribution provides rather good fits to the distributions of accumulated multi-day S&P500 returns, which exhibit symmetry breaking between gains and losses -- as reflected by positive mean and negative skew. Tempered Skew-t fits are also consistent with near perfect linear dependence on the number of days of accumulation of the mean values and, even more so, of the variances (mean squared realized volatility) of the distributions.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-18 02:00 UTC"
+}
