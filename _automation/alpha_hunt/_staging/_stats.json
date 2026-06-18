@@ -1,6 +1,6 @@
 {
-  "run_time": "2026-06-18 02:00 UTC",
-  "accepted_count": 3,
+  "run_time": "2026-06-18 03:00 UTC",
+  "accepted_count": 0,
   "by_source": {
     "hn_quant": {
       "total": 66,
@@ -11,10 +11,10 @@
       "rej_l2": 0
     },
     "hn_algotrading": {
-      "total": 174,
-      "new": 0,
+      "total": 172,
+      "new": 1,
       "accepted": 0,
-      "rej_l0": 0,
+      "rej_l0": 1,
       "rej_l1": 0,
       "rej_l2": 0
     },
@@ -51,10 +51,10 @@
       "rej_l2": 0
     },
     "arxiv_econ_em": {
-      "total": 88,
-      "new": 5,
-      "accepted": 3,
-      "rej_l0": 2,
+      "total": 87,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     }
