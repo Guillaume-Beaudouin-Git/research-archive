@@ -27,6 +27,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1cb8ee3b7f6490dd92f71b49ba6a9bae": {
+    "first_seen": "2026-06-18 05:30",
+    "source": "quantocracy",
+    "title": "Honey I shrunk the weights (instead of the inputs!) [Investment Idiocy]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "1e4381c1a892f4f6f8d1f4063a60203a": {
     "first_seen": "2026-06-10 06:00",
     "source": "quantocracy",
@@ -53,6 +60,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 06/04/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "43c49f6ba0976ce255bc57bb1d223a64": {
+    "first_seen": "2026-06-18 05:30",
+    "source": "quantocracy",
+    "title": "Value-at-Risk Estimation: Improved Estimates with the Harrell-Davis Quantile Est",
+    "decision": "accepted",
     "promising_file": null
   },
   "4963d7204cf0a33fa37e8b59c45b9ba5": {
@@ -181,6 +195,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_what_trend_following_actually_adds_to_risk_premia_20260610.md"
   },
+  "cbf7674d67edfc7252f8b14f8ab9bada": {
+    "first_seen": "2026-06-18 05:30",
+    "source": "quantocracy",
+    "title": "Testing an AI-Assisted Research Workflow for Multi-Asset Pullback Strategy Disco",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "d3489edc36d21a7cb66412cabef52fe9": {
     "first_seen": "2026-06-07 06:04",
     "source": "quantocracy",
@@ -250,6 +271,13 @@
     "title": "I Audited 30 Years of SPY Candlesticks and the Variance Risk Premium [Peter Olay",
     "decision": "accepted",
     "promising_file": "quantocracy_i_audited_30_years_of_spy_candlesticks_and_the_var_20260613.md"
+  },
+  "eafc887b64ca2508e9aa2060a7dff983": {
+    "first_seen": "2026-06-18 05:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/17/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "f494172b691abac94cae27cbebee62a1": {
     "first_seen": "2026-06-13 06:00",
