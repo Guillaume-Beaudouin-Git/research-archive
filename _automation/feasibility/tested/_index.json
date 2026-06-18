@@ -1303,6 +1303,62 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantocracy_sharpe_ratio_of_pure_noise_20260617_2026-06-17_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_fitting_accumulated_stock_returns_with_tempered_sk_20260618.md",
+      "tested_date": "2026-06-18",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_fitting_accumulated_stock_returns_with_tempere_2026-06-18_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_tracking_brazils_real_neutral_rate_a_multi_block_20260618.md",
+      "tested_date": "2026-06-18",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_tracking_brazils_real_neutral_rate_a_multi_blo_2026-06-18_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "github_python_microsoft_qlib_20260618.md",
+      "tested_date": "2026-06-18",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/github_python_microsoft_qlib_20260618_2026-06-18_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_honey_i_shrunk_the_weights_instead_of_the_inputs_20260618.md",
+      "tested_date": "2026-06-18",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_honey_i_shrunk_the_weights_instead_of_the_inputs_2026-06-18_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_value_at_risk_estimation_improved_estimates_with_20260618.md",
+      "tested_date": "2026-06-18",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_value_at_risk_estimation_improved_estimates_with_2026-06-18_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_causal_forecasting_in_panel_data_a_two_way_synthe_20260618.md",
+      "tested_date": "2026-06-18",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_causal_forecasting_in_panel_data_a_two_way_syn_2026-06-18_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantocracy_testing_an_ai_assisted_research_workflow_for_mult_20260618.md",
+      "tested_date": "2026-06-18",
+      "handler": "SkipMonthHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/quantocracy_testing_an_ai_assisted_research_workflow_for_mul_2026-06-18_report.md",
+      "stopped_at": "A"
     }
   ]
 }
