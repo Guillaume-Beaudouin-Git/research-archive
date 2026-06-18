@@ -13,10 +13,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "11f8804759098e84d7e47d9f02d7b88f": {
+    "first_seen": "2026-06-18 12:00",
+    "source": "github_python",
+    "title": "K-Dense-AI/scientific-agent-skills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "129a2874563b6abb459b7a0cf5108d1d": {
     "first_seen": "2026-06-10 05:00",
     "source": "github_python",
     "title": "NVIDIA/SkillSpector",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "12ab95c0957c82740f01369aa04175b9": {
+    "first_seen": "2026-06-18 12:00",
+    "source": "github_python",
+    "title": "LibreTranslate/LibreTranslate",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -216,6 +230,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4aa5e9539d18cca40c5155638d4db62f": {
+    "first_seen": "2026-06-18 12:00",
+    "source": "github_python",
+    "title": "openai/skills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4ba18dd65d5f81a9c313434574f6d756": {
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
@@ -293,11 +314,25 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "64ba14b61b0bdadc8f927647cbfc9125": {
+    "first_seen": "2026-06-18 12:00",
+    "source": "github_python",
+    "title": "livekit/agents",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "68e2bdb28bb6593da211ddf3c1446c23": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
     "title": "shuvonsec/claude-bug-bounty",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6928c71690e44abbbe557a89a594b965": {
+    "first_seen": "2026-06-18 12:00",
+    "source": "github_python",
+    "title": "microsoft/qlib",
+    "decision": "accepted",
     "promising_file": null
   },
   "693a60bc5bcd5da12dfe79937630cf5d": {
@@ -545,6 +580,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b4c05e11e0d55df2c0fea276ca357832": {
+    "first_seen": "2026-06-18 12:00",
+    "source": "github_python",
+    "title": "Lightricks/LTX-2",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b708b95a0a778458e7dc5cc48ba9557f": {
     "first_seen": "2026-06-04 12:07",
     "source": "github_python",
@@ -724,6 +766,13 @@
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
     "title": "IBM/mcp-context-forge",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e5d40fb8af83ca9a024df07cd3a1ea5e": {
+    "first_seen": "2026-06-18 12:00",
+    "source": "github_python",
+    "title": "cocoindex-io/cocoindex-code",
     "decision": "rejected_L0",
     "promising_file": null
   },
