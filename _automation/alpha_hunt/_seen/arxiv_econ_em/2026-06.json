@@ -132,6 +132,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_sovereign_stress_avalanches_and_network_amplificat_20260612.md"
   },
+  "3e78aa4c043f2ef8377f36a217e92408": {
+    "first_seen": "2026-06-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Tracking Brazil's Real Neutral Rate: A Multi-Block Ensemble Framework Combining ",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "3ec984f428760362034e91c70e62c650": {
     "first_seen": "2026-06-08 06:06",
     "source": "arxiv_econ_em",
@@ -293,6 +300,27 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7ba5afe965e9d4a207847bd280aa339e": {
+    "first_seen": "2026-06-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Causal Forecasting in Panel Data: A Two-Way Synthetic Forecasting Approach",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "7e09855194353780fa69d04cfd1d20f8": {
+    "first_seen": "2026-06-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Wasserstein Policy Learning for Distributional Outcomes",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7e24dce99d2e3cf9fc65680989a823bf": {
+    "first_seen": "2026-06-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Ranking Treatment Saturations under Clustered Network Interference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7f37e79958863187f22a16be2a211ad3": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
@@ -340,6 +368,13 @@
     "source": "arxiv_econ_em",
     "title": "CP-factorization for high dimensional tensor time series and double projection i",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8dd0482bc3f33d039b40530d9f94e47a": {
+    "first_seen": "2026-06-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Fitting Accumulated Stock Returns with Tempered Skew t-Distribution",
+    "decision": "accepted",
     "promising_file": null
   },
   "9563ad78d6c0952ac8b4727303d5a9cd": {
