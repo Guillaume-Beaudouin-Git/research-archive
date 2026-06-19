@@ -1,0 +1,98 @@
+[
+ {
+  "id": "2606.20485",
+  "title": "Optimal Order of Multi-Agent and General Many-Body Systems",
+  "summary": "This paper develops a general framework for analyzing multi-agent systems with feedback loops between agents actions and collective observations. The framework is built on two fundamental agent-level variables: power, which measures agent influence on collective outcomes, and response functions, which determine how agents react to observations. We derive how macroscopic properties, including total power, useful power, entropy, order, fragility, and mobility, emerge from these two variables of heterogeneous agents. To study the trade off between growth and resilience, we introduce a system-level utility function parameterized by a risk-appetite coefficient and derive an optimal degree of order that balances productivity, stability, and adaptability. The analysis suggests that stronger synchronization can increase collective output but may also increase systemic fragility and reduce mobility. We further argue that order, entropy, information, and useful energy are task-dependent and system-relative concepts whose meanings depend on the objectives of the system. By measuring and designing agent power distributions and response functions, it may be possible to better understand, predict, and optimize collective behavior and identify the conditions under which collective intelligence and optimal order emerge.",
+  "authors": [
+   "Jake J. Xia"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "cs.AI",
+   "nlin.AO",
+   "physics.soc-ph"
+  ],
+  "published": "2026-06-18T17:03:03Z",
+  "updated": "2026-06-18T17:03:03Z"
+ },
+ {
+  "id": "2606.20420",
+  "title": "Advanced Calibration Analysis and Tools: Identifying Influential Observations in Stochastic Interest Rate Model Calibration",
+  "summary": "The accurate calibration of interest rate models is central to market-consistent valuation and Economic Scenario Generators (ESGs). Traditional calibration methods for multi-factor models such as the G2++ model often rely on point estimates, neglecting the influence of specific market data and the quantification of estimation uncertainty. This paper develops a diagnostic framework embedding the calibration problem into non-linear regression theory. It shows that the common industry practice of minimizing the Root Mean Squared Relative Error (RMSRE) is equivalent to a Weighted Least Squares (WLS) problem. This equivalence yields the corresponding formulations for diagnostic tools, including the Weighted Hat Matrix for leverage analysis, Influence Functions for local sensitivity diagnostics, and the Functional Delta Method for local, boundary-respecting confidence intervals. The implementation uses an efficient Jacobian factorization that exploits the analytical tractability of At-The-Money (ATM) caps. The framework is applied to a dataset of Euro ATM caps covering the period 2016--2025. Our empirical analysis reveals a boundary-dominated leverage profile, repeated losses of effective dimensionality due to active parameter constraints, and a diagnostic regime shift in local parameter stability around the post-2022 market transition. The resulting message for actuarial model governance is that low RMSRE is not sufficient for calibration validation. We conclude by discussing the ",
+  "authors": [
+   "Philipp Mahler",
+   "Peter Ruckdeschel"
+  ],
+  "categories": [
+   "q-fin.CP",
+   "stat.AP"
+  ],
+  "published": "2026-06-18T16:03:55Z",
+  "updated": "2026-06-18T16:03:55Z"
+ },
+ {
+  "id": "2606.20145",
+  "title": "Trends, Volatility, Correlations, and Critical Phenomena in Financial Markets",
+  "summary": "We forecast future volatilities and correlations of financial markets based on the current trends in these markets. This complements previous work that models future expected returns by a cubic polynomial of the current trend strength. Empirically, we observe that volatilities and correlations tend to increase day after day in times of strong up- or down-trends. This effect is particularly pronounced in down-trends. It can be accurately quantified by quadratic polynomials of today's trend strengths, which refine common mean-reversion models of volatilities and correlations. Our results improve the prediction of market risk by accounting for market trends. They also support a recent proposal to model financial markets by a lattice gas near its critical point.",
+  "authors": [
+   "Sara A. Safari",
+   "Christoph Schmidhuber"
+  ],
+  "categories": [
+   "q-fin.ST",
+   "cond-mat.stat-mech",
+   "physics.data-an",
+   "q-fin.MF",
+   "q-fin.RM"
+  ],
+  "published": "2026-06-18T12:07:48Z",
+  "updated": "2026-06-18T12:07:48Z"
+ },
+ {
+  "id": "2606.20079",
+  "title": "How to spot outliers: an Ensemble Anomaly Detection Framework",
+  "summary": "Errors in risk valuation outputs arising from data-feed failures, model misconfiguration, or system malfunctions can propagate undetected through an investment bank's risk infrastructure and generate material operational losses. Using proprietary daily credit-derivatives data from a major global investment bank covering 183 trades across 129 trading days, we design, implement, and empirically evaluate the Ensemble Quality Assessment Framework (EQAF), a layered unsupervised architecture that combines complementary outlier-detection methods to monitor risk calculation integrity in real time. Using a controlled anomaly-injection protocol with eight operationally realistic scenarios, we show that the calibrated ensemble achieves F1 scores of 61-79%, substantially outperforming the best individual method (6-66%) across four distinct risk-measure datasets. Improvements of 4-6 percentage points in AUC-ROC confirm that this advantage is robust to threshold selection. We further demonstrate that purely statistical detection methods systematically fail to identify stale-value anomalies, a class of frozen-feed errors in which valuation outputs are identical to prior observations and therefore indistinguishable from normal data, and that domain-specific deterministic rules are architecturally indispensable. These findings have direct implications for model risk management under Basel III and the Fundamental Review of the Trading Book (FRTB), where automated and auditable quality controls",
+  "authors": [
+   "Daniil Peysakhovich",
+   "Rafał Sieradzki"
+  ],
+  "categories": [
+   "q-fin.RM"
+  ],
+  "published": "2026-06-18T10:54:18Z",
+  "updated": "2026-06-18T10:54:18Z"
+ },
+ {
+  "id": "2606.19517",
+  "title": "Do Prediction Markets Match Option Prices? Bitcoin Threshold Evidence from Binance and Polymarket",
+  "summary": "The digitization of financial markets has produced two classes of platforms that price, in principle, the same state - contingent payoffs: centralized crypto-option exchanges and blockchain-based prediction markets. This paper provides the first option-implied benchmark test of prediction-market pricing for cryptocurrency threshold contracts. For each hour in a matched sample, we compare the Polymarket Yes price with the discounted risk-neutral binary value implied by a listed Binance call option on the same underlying, strike, and maturity, and study the gap between them. In the main September 2023 Bitcoin contract, the mean pricing gap equals 5.6 percentage points across 214 hourly observations (t = 6.46, p < 10^{-9}). Pooling three Binance-compatible Bitcoin threshold markets yields a mean gap of 6.3 percentage points across 287 observations, robust to HAC and block-bootstrap inference. The gap is persistent - with an AR(1) half-life of roughly four hours - yet mean-reverting, consistent with slow information transmission between segmented venues rather than mechanical noise. Cross-sectional regressions reveal that the wedge is largest at low option-implied probabilities and long maturities, a pattern consistent with speculative demand for prediction-market contracts rather than measurement error. A delta-hedged arbitrage proxy remains profitable after conservative transaction costs, though with marginal statistical precision. A Deribit extension on the same three Bitcoin ",
+  "authors": [
+   "Victoria Portnaya"
+  ],
+  "categories": [
+   "q-fin.TR"
+  ],
+  "published": "2026-06-17T19:06:52Z",
+  "updated": "2026-06-17T19:06:52Z"
+ },
+ {
+  "id": "2606.19501",
+  "title": "DeXposure-Claw: An Agentic System for DeFi Risk Supervision",
+  "summary": "Decentralized finance exposes supervisors to fast-moving, networked credit risks. General-purpose LLM agents fit this setting poorly: they over-read weak evidence and recommend high-stakes interventions, while existing evaluations offer no regulator-aligned way to measure the resulting false alarms. We introduce DeXposure-Claw, a forecast-grounded agentic supervision system that routes LLM decisions through structured evidence: (1) DeXposure-FM, a graph time-series foundation model, forecasts future exposure networks; (2) deterministic monitors and stress scenarios then turn those forecasts into typed alerts, attribution signals, and scenario evidence; and (3) data-health and confidence gates constrain escalation before DeXposure-Claw emits auditable supervisory tickets with rationales. We further develop DeXposure-Bench, a six-axis evaluation harness, whose decision axis scores tickets against a regulator-aligned absolute-loss ground truth and an explicit false-intervention rate. Experiments on five years of weekly real data fully support our system. Code is at https://github.com/EVIEHub/DeXposure-Claw.",
+  "authors": [
+   "Aijie Shu",
+   "Bowei Chen",
+   "Wenbin Wu",
+   "Cathy Yi-Hsuan Chen",
+   "Fengxiang He"
+  ],
+  "categories": [
+   "cs.AI",
+   "cs.CL",
+   "cs.LG",
+   "q-fin.RM"
+  ],
+  "published": "2026-06-17T18:40:08Z",
+  "updated": "2026-06-17T18:40:08Z"
+ }
+]
