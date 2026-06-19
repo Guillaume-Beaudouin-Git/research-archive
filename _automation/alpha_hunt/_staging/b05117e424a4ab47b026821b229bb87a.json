@@ -1,0 +1,14 @@
+{
+  "hash": "b05117e424a4ab47b026821b229bb87a",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.19599v1",
+  "title": "Ramping Procurement and Bid-Cost Recovery in Real-Time Market",
+  "url": "http://arxiv.org/abs/2606.19599v1",
+  "description": "We study ramping procurement co-optimized with economic dispatch under net-demand uncertainty. We examine two flexible ramp product designs implemented by grid operators: single-interval and multi-interval co-optimization. Both rely on rolling-window stochastic optimization with binding and advisory interval decisions. We develop analytical frameworks to evaluate generator profits, consumer payments, bid cost recovery (BCR), and operational efficiency. In particular, net-demand uncertainty may lead to generator under-compensation, requiring discriminatory BCR. While operational efficiency is invariant to energy and ramp prices, producer profits and consumer payments depend critically on pricing. We examine locational marginal pricing (LMP) and two uniform pricing: maximum dispatch cost pricing (MDCP) and maximum temporal locational marginal pricing (MTLMP). With out-of-market BCR, LMP yields discriminatory energy prices, whereas MDCP eliminates BCR and MTLMP does so in most cases. This property enables us to establish truthful bidding incentives for price-taking generators under MDCP. Our analysis highlights trade-offs between single- and multi-interval co-optimization and pricing designs: single-interval energy-ramp co-optimization is advantageous under high forecast uncertainty and moderate ramping requirements, whereas multi-interval co-optimization is superior when net-demand forecasts are relatively accurate and ramp needs are challenging. Empirical results on CAISO and ERCOT data show that MDCP and MTLMP increase producer profits with negligible BCR, albeit at the expense of higher consumer payments relative to LMP.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-19 02:00 UTC"
+}

@@ -356,6 +356,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "84f3946a0c20efde30d98587a2b7bd4c": {
+    "first_seen": "2026-06-19 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Two-Sample IV: Efficient Two-Step Estimation and Tests for Overidentification an",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "851b2d9a509dbde822b06dc3ffda7210": {
     "first_seen": "2026-06-12 03:00",
     "source": "arxiv_econ_em",
@@ -419,6 +426,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md"
   },
+  "9e36a47b3a3ea28274c8dd27bd9ba7c2": {
+    "first_seen": "2026-06-19 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Biodiversity Media Narratives and Stock Market Performance: Evidence from Europe",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "a9878ed2fae135b1b81a5efc753e16c3": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
@@ -439,6 +453,13 @@
     "title": "When the Scaffold Stays On: AI, Practice Style, and Screening in Elite Skill For",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_and_s_20260605.md"
+  },
+  "b05117e424a4ab47b026821b229bb87a": {
+    "first_seen": "2026-06-19 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Ramping Procurement and Bid-Cost Recovery in Real-Time Market",
+    "decision": "accepted",
+    "promising_file": null
   },
   "b3e478cd45b44faad752616bda572c6f": {
     "first_seen": "2026-06-08 06:06",
@@ -465,6 +486,13 @@
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
     "title": "Interdependent Hitting Times",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bcd41672dcf8fab010f2d507e2e39b30": {
+    "first_seen": "2026-06-19 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Institutions, Inputs, and Agricultural Growth in China:Revisiting Several Contro",
     "decision": "rejected_L0",
     "promising_file": null
   },
