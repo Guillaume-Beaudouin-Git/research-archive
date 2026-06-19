@@ -1,0 +1,14 @@
+{
+  "hash": "9475775861596ef10a6c2ca6d92b5ff6",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/why-most-portfolios-are-under-diversified/",
+  "title": "Why Most Portfolios Are Under Diversified",
+  "url": "https://quantpedia.com/why-most-portfolios-are-under-diversified/",
+  "description": "Diversification is a key principle in portfolio construction, yet equal-weight portfolios often fail to deliver true risk diversification. This study shows that capital-based allocation can mask strong concentration in a small number of underlying risk factors. We analyze a simple multi-asset portfolio of ten ETFs spanning equities, bonds, commodities, credit, private equity, and Bitcoin. Despite equal weights, risk is highly concentrated in a few volatile assets and amplified by strong cross-asset correlations, particularly within equity and credit markets. Risk parity reduces concentration by balancing risk contributions and improves risk-adjusted performance, though at the cost of lower returns. Further improvement is achieved through clustering-based allocation, which groups similar assets and allocates risk across more independent sources of return. The results demonstrate that effective diversification depends on the structure of risk factors rather than the number of assets or equal capital weights. The post Why Most Portfolios Are Under Diversified first appeared on QuantPedia .",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-06-19 11:30 UTC"
+}
