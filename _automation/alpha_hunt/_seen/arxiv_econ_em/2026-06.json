@@ -433,6 +433,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "9e84bc167f19454aa0ce31e5a7a88ff6": {
+    "first_seen": "2026-06-19 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Statistical Foundations of LLM-based A/B Testing: A Surrogacy Framework for Huma",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "a9878ed2fae135b1b81a5efc753e16c3": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
@@ -514,6 +521,13 @@
     "first_seen": "2026-06-17 01:30",
     "source": "arxiv_econ_em",
     "title": "Partial Identification of Spatial Production Networks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ce0adcca579e07c52ebbd87d2ffec311": {
+    "first_seen": "2026-06-19 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Choosing A Headline Estimand from Matching, DID, and Hybrid Designs: A Minimax-R",
     "decision": "rejected_L0",
     "promising_file": null
   },
