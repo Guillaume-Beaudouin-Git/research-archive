@@ -1359,6 +1359,38 @@
       "verdict": "FAIL_A",
       "report_path": "_automation/feasibility/tested/quantocracy_testing_an_ai_assisted_research_workflow_for_mul_2026-06-18_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_biodiversity_media_narratives_and_stock_market_per_20260619.md",
+      "tested_date": "2026-06-19",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_biodiversity_media_narratives_and_stock_market_2026-06-19_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_ramping_procurement_and_bid_cost_recovery_in_real_20260619.md",
+      "tested_date": "2026-06-19",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_ramping_procurement_and_bid_cost_recovery_in_r_2026-06-19_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_statistical_foundations_of_llm_based_a_b_testing_a_20260619.md",
+      "tested_date": "2026-06-19",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_statistical_foundations_of_llm_based_a_b_testi_2026-06-19_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_why_most_portfolios_are_under_diversified_20260619.md",
+      "tested_date": "2026-06-19",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_why_most_portfolios_are_under_diversified_2026061_2026-06-19_report.md",
+      "stopped_at": "A"
     }
   ]
 }
