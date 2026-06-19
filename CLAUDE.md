@@ -560,6 +560,16 @@ L50. Funding-extremes-confirm-momentum-across-exchange-and-cycle: README §6.35 
 
 ## Parallel session coordination (READ BEFORE LAUNCHING /goal)
 - Before any /goal: run `git pull origin main` and read this CLAUDE.md.
+- **Worktree isolation — un worktree = une session ; JAMAIS deux sessions dans le même répertoire**
+  (le `.git/HEAD` est partagé → un checkout/commit déplace le HEAD sous l'autre session ; incident
+  2026-06-19 : commit asia_23_8 atterri sur la branche soybean, réparé par cherry-pick + `branch -f`).
+  Lancer toute nouvelle tâche dans un worktree dédié, branche neuve depuis `origin/main` :
+  `git fetch origin && git worktree add ../Algo_claude_<tache> -b claude/<tache> origin/main && cd ../Algo_claude_<tache>`
+  (puis lancer la session Claude dans ce répertoire). Branche existante :
+  `git worktree add ../Algo_claude_<tache> claude/<branche>`. Inspecter `git worktree list` ; nettoyer
+  après merge `git worktree remove ../Algo_claude_<tache>`. Toujours brancher depuis `origin/main` (pas
+  depuis la branche d'une autre session → PR propre). Ne jamais `branch -f`/rebaser la branche d'une
+  session ACTIVE sans la prévenir (son HEAD devient incohérent).
 - Never create parallel infrastructure folders without checking existing live/ first.
 - Strategy C canonical live infra: Futures/live/strategy_c_live/ (NOT strategy_c_paper/).
 - strategy_c_paper/: ONLY pre-existing log infra (log_trade.py, paper_trade_log.csv).
