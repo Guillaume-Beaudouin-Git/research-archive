@@ -1,6 +1,18 @@
 #!/bin/bash
-# watchdog_mt5.sh — relance MT5/Wine si le heartbeat EA (mtime de state.json) se
-# fige ALORS QUE la session forex est ouverte.
+# watchdog_mt5.sh — relance MT5/Wine si le lien MT5↔broker est RÉELLEMENT rompu
+# alors que la session forex est ouverte.
+#
+# Le heartbeat EA (mtime de state.json) FIGÉ ne suffit PLUS à déclencher un restart :
+# le tick se tarit ~5 min au rollover serveur (00:00 EEST = 21:00 UTC) et dans les
+# creux nocturnes ALORS QUE MT5 est sain et se reconnecte seul (journal "connection
+# lost"→"authorized" ~50 s). On distingue donc, heartbeat gelé en session :
+#   - terminal vivant ET connecté au broker (socket :443 établi) → trou de ticks
+#     normal → PAS de restart ;
+#   - process mort (DEAD) OU plus aucun socket courtier (DISCONNECTED) → vraie panne
+#     → restart.
+# Source de "connecté", la plus fiable au-dessus du heartbeat : socket TCP courtier
+# TEMPS RÉEL (l'EA n'expose aucun flag TERMINAL_CONNECTED ; le journal est
+# évènementiel/périmable, gardé en corroboration). cf. WATCHDOG_INCIDENT.
 #
 # Cron */3 min via scripts/run_with_env.sh (.env → FTMO_LIVE_MT5_FILES,
 # TELEGRAM_* ; venv → python3). Hors session (lib/market_hours.py = source de
@@ -8,10 +20,12 @@
 # sans rien faire — le heartbeat est STRUCTURELLEMENT muet marché fermé
 # (WriteState throttlé M1 sur TimeCurrent, book_executor.mq5:1291).
 #
-# --force : court-circuite calendrier + seuil d'âge (test à froid marché fermé).
-#   ⚠ --force SAUTE l'appel session_state — ne teste donc PAS le chemin de session
-#   (le test 2026-06-12 --force a masqué ce chemin ; pour l'exercer : kill no-force
-#   en session ouverte).
+# --force : court-circuite calendrier + seuil d'âge + check de connexion (restart
+#   inconditionnel — test à froid). --check : dry-run, imprime session/âge/lien/verdict
+#   SANS jamais agir (vérification sûre, compte armé). Surcharges test (env) :
+#   FTMO_WATCHDOG_STALE_S, FTMO_WATCHDOG_GRACE_S, FTMO_WATCHDOG_LOCK.
+#   ⚠ --force SAUTE session_state ET link_state — ne teste donc PAS ces chemins
+#   (pour les exercer : kill no-force en session, ou --check).
 #
 # Garde-fous :
 #  - heartbeat-DU-watchdog (beat → $ALIVE_F) écrit à chaque run : le supervisor
@@ -37,12 +51,19 @@ RESTARTS_F=/home/algo/logs/.ftmo_watchdog_restarts
 CRIT_F=/home/algo/logs/.ftmo_watchdog_crit
 ERR_F=/home/algo/logs/.ftmo_watchdog_err
 START_SH=/home/algo/start_mt5.sh
-STALE_S=240
+STALE_S="${FTMO_WATCHDOG_STALE_S:-240}"      # surchargeable (tests / nuit creuse)
 WAIT_S=120
 MAX_RESTARTS_H=2
+GRACE_S="${FTMO_WATCHDOG_GRACE_S:-60}"       # ré-poll socket : absorbe le blip de
+                                             # reconnexion rollover (~49 s observé)
+LOCKF="${FTMO_WATCHDOG_LOCK:-/home/algo/logs/.ftmo_watchdog.lock}"
+PID_PAT='[t]erminal64'                       # motif immunisé (jamais sa propre cmdline)
 
-FORCE=0
-[ "${1:-}" = "--force" ] && FORCE=1
+FORCE=0; MODE=run
+case "${1:-}" in
+    --force) FORCE=1 ;;                      # restart inconditionnel (test à froid)
+    --check) MODE=check ;;                   # dry-run : diagnostique, n'agit jamais
+esac
 
 ts() { date -u '+%Y-%m-%d %H:%M:%S UTC'; }
 log() { echo "$(ts) $*" >> "$LOG"; }
@@ -97,8 +118,86 @@ init_count() {
 
 state_age() { echo $(( $(date +%s) - $(stat -c %Y "$STATE" 2>/dev/null || echo 0) )); }
 
+# --- état du lien MT5 ↔ broker (pour ne PAS confondre « trou de ticks » et panne) ---
+# L'EA n'expose AUCUN flag TERMINAL_CONNECTED dans state.json (schéma vérifié) ; le
+# journal terminal est ÉVÈNEMENTIEL (peut être périmé). Signal le PLUS fiable, TEMPS
+# RÉEL : le socket TCP courtier (terminal64 → access server :443). Le journal sert de
+# corroboration loggée. (cf. WATCHDOG_INCIDENT — rollover serveur 21:00 UTC.)
+
+# Socket courtier ÉTABLI du pid donné (remote :443 non-loopback) → imprime le peer, rc 0.
+broker_socket_up() {
+    local pid="$1"
+    [ -n "$pid" ] || return 1
+    ss -tnp 2>/dev/null | awk -v p="$pid" '
+        $1=="ESTAB" && $0 ~ ("pid=" p "[,)]") {
+            peer=$5
+            if (peer ~ /:443$/ && peer !~ /^127\./ && peer !~ /^\[::1\]/) { print peer; f=1 }
+        }
+        END { exit (f ? 0 : 1) }'
+}
+
+# Dernier évènement réseau du journal terminal (UTF-16LE) : conn | lost | unknown.
+journal_link() {
+    local d f
+    d="$MT5_ROOT/logs"; [ -d "$d" ] || d="$MT5_ROOT/Logs"
+    f="$d/$(date -u +%Y%m%d).log"
+    [ -f "$f" ] || { echo unknown; return; }
+    iconv -f UTF-16LE -t UTF-8 "$f" 2>/dev/null | awk '
+        /Network/ && /authorized/                            { st="conn" }
+        /Network/ && (/connection.*lost/ || /no connection/) { st="lost" }
+        END { print (st=="" ? "unknown" : st) }'
+}
+
+# Imprime "VERDICT\tdiag" — VERDICT ∈ {DEAD, DISCONNECTED, CONNECTED}.
+# Un blip de reconnexion (rollover) est absorbé par un ré-poll du socket ≤ GRACE_S
+# avant de conclure DISCONNECTED (le socket est rétabli ~50 s après la perte).
+link_state() {
+    local pid jl peer waited=0
+    pid=$(pgrep -f "$PID_PAT" | head -1)
+    jl=$(journal_link)
+    if [ -z "$pid" ]; then
+        printf 'DEAD\tprocess terminal64 ABSENT ; journal=%s' "$jl"; return
+    fi
+    if peer=$(broker_socket_up "$pid"); then
+        printf 'CONNECTED\tpid=%s socket=%s ; journal=%s' "$pid" "$peer" "$jl"; return
+    fi
+    while [ "$waited" -lt "$GRACE_S" ]; do
+        sleep 5; waited=$((waited+5))
+        if peer=$(broker_socket_up "$pid"); then
+            printf 'CONNECTED\tpid=%s socket=%s (reconnecté après %ss) ; journal=%s' \
+                   "$pid" "$peer" "$waited" "$jl"; return
+        fi
+    done
+    printf 'DISCONNECTED\tpid=%s AUCUN socket courtier :443 après %ss ; journal=%s' \
+           "$pid" "$GRACE_S" "$jl"; return
+}
+
 AGE=$(state_age)
-beat "run age=${AGE}s force=$FORCE"          # preuve de vie du watchdog (chaque run)
+beat "run age=${AGE}s force=$FORCE mode=$MODE"   # preuve de vie du watchdog (chaque run)
+
+# --- --check : diagnostic pur, n'agit JAMAIS (ni session ni socket modifiés) -----
+if [ "$MODE" = check ]; then
+    session_state; SS=$?
+    LR=$(link_state); LINK=${LR%%$'\t'*}; LDIAG=${LR#*$'\t'}
+    case "$SS" in 0) sess=OUVERTE ;; 1) sess=FERMÉE ;; *) sess=ERREUR ;; esac
+    verdict=NO-RESTART
+    if [ "$SS" = 0 ] && [ "$AGE" -gt "$STALE_S" ] \
+       && { [ "$LINK" = DEAD ] || [ "$LINK" = DISCONNECTED ]; }; then verdict=RESTART; fi
+    echo "session=$sess(rc=$SS) age=${AGE}s/seuil=${STALE_S}s link=$LINK [$LDIAG] -> $verdict"
+    exit 0
+fi
+
+# Verrou : grace + WAIT_S peuvent dépasser l'intervalle cron */3 — jamais 2 runs en
+# parallèle (sinon double kill/restart). FAIL-OPEN : un verrou indisponible NE doit
+# JAMAIS désactiver le garde — on ne saute QUE sur contention réelle (fd ouvert + pris).
+exec 9>"$LOCKF" 2>/dev/null || true
+if ! flock -n 9 2>/dev/null; then
+    if { : >&9; } 2>/dev/null; then
+        log "run concurrent ignoré (verrou $LOCKF détenu)"; exit 0   # fd OK → vraie contention
+    fi
+    log "verrou $LOCKF indisponible — poursuite SANS verrou (fail-open)"  # fd KO → on poursuit
+fi
+
 if [ "$FORCE" -eq 0 ]; then
     session_state; SS=$?
     case "$SS" in
@@ -107,6 +206,23 @@ if [ "$FORCE" -eq 0 ]; then
         *) err_internal "check de session rc=$SS (venv/chemin/market_hours) — FAIL-SAFE: marché supposé OUVERT" ;;
     esac
     [ "$AGE" -le "$STALE_S" ] && exit 0     # heartbeat frais : rien à faire
+
+    # Heartbeat GELÉ en session : NE PAS conclure « MT5 mort » sur ce seul critère.
+    # Le tick se tarit ~5 min au rollover serveur (00:00 EEST = 21:00 UTC) et dans les
+    # creux nocturnes ALORS QUE MT5 est sain et se reconnecte seul (cf. WATCHDOG_INCIDENT,
+    # journal "connection lost"→"authorized" ~50 s). On NE redémarre QUE si le lien broker
+    # est réellement rompu : process mort (DEAD) OU plus de socket courtier (DISCONNECTED).
+    LR=$(link_state); LINK=${LR%%$'\t'*}; LDIAG=${LR#*$'\t'}
+    case "$LINK" in
+        CONNECTED)
+            log "heartbeat gelé ${AGE}s (seuil ${STALE_S}s) MAIS terminal vivant ET connecté [$LDIAG] — trou de ticks normal (rollover/creux) — PAS de restart"
+            beat "stale ${AGE}s connecté no-restart"
+            exit 0 ;;
+        DEAD|DISCONNECTED)
+            log "heartbeat gelé ${AGE}s ET lien $LINK [$LDIAG] — vraie panne — restart" ;;
+        *)
+            err_internal "link_state indéterminé ($LINK) [$LDIAG] — FAIL-SAFE: restart" ;;
+    esac
 fi
 
 # ---- anti-boucle : max 2 restarts par heure glissante --------------------
