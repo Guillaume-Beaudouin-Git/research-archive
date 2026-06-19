@@ -27,6 +27,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "179debfc9c550a78a3f61e5c0996ae32": {
+    "first_seen": "2026-06-19 01:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: PXG v3.0 – Searchable Compression via 2D Spatial Decomposition",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "183ff4d5de0bf29cf0058d35f41e3816": {
     "first_seen": "2026-06-03 06:06",
     "source": "hn_algotrading",
@@ -181,6 +188,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5ef4a19bda66b2487e1647ccba506f4b": {
+    "first_seen": "2026-06-19 01:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: CodeContext – Cut developer onboarding time from months to weeks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "644751c004537dbca1563ecddb009b7f": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -193,6 +207,13 @@
     "source": "hn_algotrading",
     "title": "Show HN: I made a generative online drum machine with ClojureScript",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "6bffdc456543fc46b97c27b8ae1854b6": {
+    "first_seen": "2026-06-19 01:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Fevela.me – A RSS-reader like client for the Nostr social network",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "7a15d52f183f0a24bbfcec8f4dfec855": {
@@ -227,6 +248,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Ask HN: Should I Keep the Code?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "93074f4a3e9d25227fbebd37522c4b15": {
+    "first_seen": "2026-06-19 01:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: I Ching simulator with accurate Yarrow Stalk probabilities",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -290,6 +318,13 @@
     "first_seen": "2026-06-10 02:00",
     "source": "hn_algotrading",
     "title": "Show HN: Create Your Own TV Channel",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bf9739aa8357a12a6bb12de54367caa9": {
+    "first_seen": "2026-06-19 01:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Zero-identity messaging app with physics-based post-quantum encryption",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -368,6 +403,20 @@
     "source": "hn_algotrading",
     "title": "Ask HN: What do you need to know to be good at the Unix Command Line?",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "de5e50981243d5db5052540bda1f0123": {
+    "first_seen": "2026-06-19 01:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: A Software-Defined USB PD Charger (ESP32, FPGA, Open Source Hardware)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "de654fdc5ad4a0caf9874b9e765f7c5b": {
+    "first_seen": "2026-06-19 01:30",
+    "source": "hn_algotrading",
+    "title": "The Ad Server Meets Web3: Infrastructure for the Ownership Economy",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "e16a3016a4fac60e6bc63d5212f121bc": {

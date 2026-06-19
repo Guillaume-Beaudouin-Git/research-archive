@@ -1,21 +1,21 @@
 {
-  "run_time": "2026-06-18 22:00 UTC",
+  "run_time": "2026-06-19 01:30 UTC",
   "accepted_count": 0,
   "by_source": {
     "hn_quant": {
       "total": 68,
-      "new": 1,
-      "accepted": 0,
-      "rej_l0": 1,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "hn_algotrading": {
-      "total": 174,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
       "rej_l1": 0,
+      "rej_l2": 0
+    },
+    "hn_algotrading": {
+      "total": 181,
+      "new": 7,
+      "accepted": 0,
+      "rej_l0": 6,
+      "rej_l1": 1,
       "rej_l2": 0
     },
     "quantocracy": {
@@ -51,7 +51,7 @@
       "rej_l2": 0
     },
     "arxiv_econ_em": {
-      "total": 87,
+      "total": 86,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
