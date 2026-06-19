@@ -146,10 +146,11 @@ def test_reconcile_three_strikes_stop(files_dir, runtime_isolated):
     assert last["stop_recommended"] == 1
 
 
-# --- MISSION 2 : tolérance vendredi (snapshot EOD 22:58 absent par construction) ---
-def _seed_friday_no_eod(files_dir, runtime, day, equity, anchor=10000.0, ts="22:54:59"):
-    """State figé à la clôture vendredi : AUCUN bloc eod, m5_today pas à jour (Do2258EOD
-    non exécuté). SOD présent pour l'ancre. Reproduit le gel forex ~22:54 réel."""
+# --- MISSION 2 : tolérance gel de clôture (EOD 22:58 absent par construction) — TOUS jours ---
+def _seed_closure_no_eod(files_dir, runtime, day, equity, anchor=10000.0, ts="22:54:59"):
+    """State figé au gel de clôture : AUCUN bloc eod, m5_today pas à jour (Do2258EOD non
+    exécuté). SOD présent pour l'ancre. Reproduit le gel de ticks réel ~22:54 Paris
+    (rollover serveur 21:00 UTC en semaine ; clôture forex le vendredi)."""
     statefiles.atomic_write_json(files_dir / "state.json", dict(
         schema="ftmo_live.state.v1", ts_paris=f"{day.replace('-', '.')} {ts}",
         phase="P1", attempt_start="2026-06-08", balance=equity, equity=equity,
@@ -161,42 +162,55 @@ def _seed_friday_no_eod(files_dir, runtime, day, equity, anchor=10000.0, ts="22:
 
 
 def test_reconcile_friday_degraded_succeeds(files_dir, runtime_isolated):
-    """Vendredi sans snapshot 22:58 : réconciliation dégradée RÉUSSIT (PnL réel de
-    clôture enregistré, modèle/Δ non rejoués, gate STOP non évalué)."""
+    """Vendredi sans snapshot 22:58 : réconciliation dégradée RÉUSSIT (PnL réel pré-swap
+    de clôture enregistré, modèle/Δ non rejoués, gate STOP non évalué)."""
     FRI = "2026-06-19"                                          # vendredi
-    _seed_friday_no_eod(files_dir, runtime_isolated, FRI, equity=10120.0)
+    _seed_closure_no_eod(files_dir, runtime_isolated, FRI, equity=10120.0)
     row = reconcile.run(FRI, alert=False)
     assert row["unexplained"] == 0
     assert row["pnl_real"] == pytest.approx(120.0)
-    assert row["detail_path"] == "friday_degraded"
+    assert row["detail_path"] == "degraded"
     assert row["stop_recommended"] == 0
 
 
-def test_reconcile_weekday_no_eod_still_raises(files_dir, runtime_isolated):
-    """Lun-jeu sans bloc eod = VRAIE absence → on lève toujours (pas de masquage)."""
+def test_reconcile_weekday_closure_freeze_degraded_succeeds(files_dir, runtime_isolated):
+    """MISSION 2 — lun-jeu : le gel de clôture (rollover serveur 21:00 UTC) est QUOTIDIEN.
+    Un jeudi figé ~22:54 sans EOD doit DÉGRADER (≠ ancien comportement qui levait)."""
     THU = "2026-06-18"                                          # jeudi
-    _seed_friday_no_eod(files_dir, runtime_isolated, THU, equity=10120.0)
+    _seed_closure_no_eod(files_dir, runtime_isolated, THU, equity=10075.0)
+    row = reconcile.run(THU, alert=False)
+    assert row["unexplained"] == 0
+    assert row["pnl_real"] == pytest.approx(75.0)
+    assert row["detail_path"] == "degraded"
+    assert row["stop_recommended"] == 0
+
+
+def test_reconcile_weekday_early_death_still_raises(files_dir, runtime_isolated):
+    """Anti-masquage : EA mort EN JOURNÉE un jeudi (figé 14:00, gel-clôture NON atteint)
+    = vraie absence → on lève (le fallback ne couvre QUE le gel de clôture ~22:54)."""
+    THU = "2026-06-18"
+    _seed_closure_no_eod(files_dir, runtime_isolated, THU, equity=10075.0, ts="14:00:00")
     with pytest.raises(RuntimeError, match="snapshot EOD 22:58 absent"):
         reconcile.run(THU, alert=False)
 
 
 def test_reconcile_friday_early_death_still_raises(files_dir, runtime_isolated):
-    """Vendredi mais EA mort tôt (figé 19:00, clôture NON atteinte) = vraie absence →
-    on lève (le fallback ne couvre QUE le gel-clôture réel ~22:54)."""
+    """Vendredi mais EA mort tôt (figé 19:00, clôture NON atteinte) = vraie absence → on
+    lève (même garde anti-masquage, tous jours confondus)."""
     FRI = "2026-06-19"
-    _seed_friday_no_eod(files_dir, runtime_isolated, FRI, equity=10120.0, ts="19:00:00")
+    _seed_closure_no_eod(files_dir, runtime_isolated, FRI, equity=10120.0, ts="19:00:00")
     with pytest.raises(RuntimeError, match="snapshot EOD 22:58 absent"):
         reconcile.run(FRI, alert=False)
 
 
-def test_reconcile_friday_preserves_consec(files_dir, runtime_isolated):
-    """Vendredi dégradé PRÉSERVE la série inexpliquée (jour sans information ne casse
-    ni n'étend la série) : un jeudi consec=2 reste 2 au travers du vendredi."""
+def test_reconcile_degraded_preserves_consec(files_dir, runtime_isolated):
+    """Jour dégradé PRÉSERVE la série inexpliquée (jour sans information ne casse ni n'étend
+    la série) : un jour consec=2 reste 2 au travers d'un jour dégradé."""
     statefiles.append_csv(reconcile.LOG, reconcile.LOG_COLUMNS, dict(
-        date="2026-06-18", consec_unexplained=2, unexplained=1, residual_usd=500.0,
+        date="2026-06-17", consec_unexplained=2, unexplained=1, residual_usd=500.0,
         stop_recommended=0, pnl_real=0.0, n_fills=0, detail_path="x"))
-    FRI = "2026-06-19"
-    _seed_friday_no_eod(files_dir, runtime_isolated, FRI, equity=10000.0)
-    row = reconcile.run(FRI, alert=False)
+    THU = "2026-06-18"
+    _seed_closure_no_eod(files_dir, runtime_isolated, THU, equity=10000.0)
+    row = reconcile.run(THU, alert=False)
     assert row["consec_unexplained"] == 2
     assert row["stop_recommended"] == 0
