@@ -24,6 +24,8 @@ Usage: supervisor.py --daemon | --report morning|evening | --add-fee N LABEL | -
 import argparse
 import json
 import os
+import re
+import subprocess
 import sys
 import time
 from datetime import datetime, timezone
@@ -98,6 +100,44 @@ def _state_freshness(state: dict, now: datetime) -> str:
     return f"State: âge {age_s:.0f} s"
 
 
+def _mt5_connected(timeout: float = 5.0) -> bool:
+    """True si MT5 est connecté au broker : process terminal64 vivant ET socket courtier
+    :443 ÉTABLI. Mirror Python du watchdog M1 (watchdog_mt5.sh broker_socket_up/link_state).
+
+    Gate l'alerte heartbeat : le gel de ticks au rollover serveur (~22:54→23:05 Paris) fige
+    le heartbeat > HEARTBEAT_MAX_S ALORS QUE le socket courtier est vivant → ce N'EST PAS une
+    panne → pas d'alerte (sinon faux « heartbeat perdu » chaque soir). Une vraie panne
+    (terminal64 mort OU socket :443 absent) laisse passer l'alerte.
+
+    Fail-safe : pgrep/ss indéterminés → False → l'alerte PASSE (jamais masquer une panne
+    potentielle sur un doute d'outillage). Le motif '[t]erminal64' est immunisé (ne matche
+    jamais pgrep lui-même ni le daemon supervisor).
+    """
+    try:
+        pids = subprocess.run(["pgrep", "-f", "[t]erminal64"], capture_output=True,
+                              text=True, timeout=timeout).stdout.split()
+    except Exception:
+        return False
+    if not pids:
+        return False                                  # terminal64 absent = panne
+    try:
+        ss = subprocess.run(["ss", "-tnp"], capture_output=True, text=True,
+                            timeout=timeout).stdout
+    except Exception:
+        return False
+    pidpat = re.compile(r"pid=(?:%s)[,)]" % "|".join(re.escape(p) for p in pids))
+    for line in ss.splitlines():
+        if not line.startswith("ESTAB") or not pidpat.search(line):
+            continue
+        cols = line.split()
+        if len(cols) >= 5:
+            peer = cols[4]
+            if peer.endswith(":443") and not peer.startswith("127.") \
+                    and not peer.startswith("[::1]"):
+                return True
+    return False
+
+
 # ------------------------------------------------------------------ alertes
 def _cooldown_ok(key: str, minutes: float, now: datetime) -> bool:
     st = _load(ALERTS_STATE, {})
@@ -136,9 +176,16 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
         return fired
 
     age = statefiles.state_age_s(state, now)
-    if session_open and age > HEARTBEAT_MAX_S:
+    # Connectivity-aware (jumeau du fix watchdog M1, MÊME cause racine) : un heartbeat gelé
+    # en session N'est une panne QUE si le lien broker est rompu. Le gel de ticks au rollover
+    # serveur (~22:54→23:05 Paris) fige le heartbeat > 180s ALORS QUE le socket courtier est
+    # vivant → PAS d'alerte (élimine le faux « heartbeat perdu » chaque soir). `and` court-
+    # circuité : _mt5_connected (subprocess) n'est appelé QUE si le heartbeat est déjà périmé.
+    if session_open and age > HEARTBEAT_MAX_S and not _mt5_connected():
         fired.append("heartbeat")
-        _alert("heartbeat", 15, f"heartbeat perdu {age:.0f}s > {HEARTBEAT_MAX_S}s", now)
+        _alert("heartbeat", 15,
+               f"heartbeat perdu {age:.0f}s > {HEARTBEAT_MAX_S}s ET lien broker rompu "
+               "(terminal64 mort ou socket :443 absent) — MT5 down ?", now)
 
     # Méta-surveillance du gardien : évaluée AVANT le mtime-gate (comme heartbeat),
     # donc jamais masquée par un state figé. EA mort + watchdog mort = double panne.

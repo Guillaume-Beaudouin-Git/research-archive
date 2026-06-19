@@ -88,11 +88,25 @@ def test_real_reject_not_masked_when_armed(files_dir, runtime_isolated):
     assert "reject" in supervisor.evaluate_alerts(files_dir)
 
 
-def test_heartbeat_lost(files_dir, runtime_isolated):
+def test_heartbeat_lost(files_dir, runtime_isolated, monkeypatch):
+    """Heartbeat gelé en session ET lien broker rompu (terminal64 mort/socket absent)
+    → alerte (vraie panne)."""
+    monkeypatch.setattr(supervisor, "_mt5_connected", lambda *a, **k: False)
     _write_state(files_dir, _state(ts_paris="2026.06.11 10:00:00"))
     _brain_ok(runtime_isolated)
     now = statefiles.parse_ts("2026.06.11 10:05:00")
     assert "heartbeat" in supervisor.evaluate_alerts(files_dir, now=now)
+
+
+def test_heartbeat_suppressed_when_connected(files_dir, runtime_isolated, monkeypatch):
+    """JUMEAU du fix watchdog M1 — heartbeat gelé en session MAIS MT5 connecté au broker
+    (gel de ticks au rollover serveur) → PAS d'alerte (élimine le faux « heartbeat perdu »
+    chaque soir). La connectivité (socket courtier :443) tranche, pas l'âge seul."""
+    monkeypatch.setattr(supervisor, "_mt5_connected", lambda *a, **k: True)
+    _write_state(files_dir, _state(ts_paris="2026.06.11 10:00:00"))
+    _brain_ok(runtime_isolated)
+    now = statefiles.parse_ts("2026.06.11 10:05:00")
+    assert "heartbeat" not in supervisor.evaluate_alerts(files_dir, now=now)
 
 
 def test_heartbeat_dormant_market_closed(files_dir, runtime_isolated):
@@ -106,10 +120,11 @@ def test_heartbeat_dormant_market_closed(files_dir, runtime_isolated):
     assert "heartbeat" not in fired
 
 
-def test_heartbeat_not_masked_by_mtime_gate(files_dir, runtime_isolated):
+def test_heartbeat_not_masked_by_mtime_gate(files_dir, runtime_isolated, monkeypatch):
     """MISSION 4 — reproduit le week-end : EA mort, state.json FIGÉ (mtime n'avance
-    plus). Le mtime-gate (anti-spam contenu) ne doit JAMAIS masquer l'alerte
-    heartbeat en session ouverte. Heartbeat est évalué AVANT le gate."""
+    plus) ET lien broker rompu. Le mtime-gate (anti-spam contenu) ne doit JAMAIS masquer
+    l'alerte heartbeat en session ouverte. Heartbeat est évalué AVANT le gate."""
+    monkeypatch.setattr(supervisor, "_mt5_connected", lambda *a, **k: False)
     _write_state(files_dir, _state(ts_paris="2026.06.11 09:50:00"))   # jeudi, gelé
     _brain_ok(runtime_isolated)
     now1 = statefiles.parse_ts("2026.06.11 10:00:00")                 # session ouverte
