@@ -570,5 +570,12 @@ L50. Funding-extremes-confirm-momentum-across-exchange-and-cycle: README §6.35 
   The L-registry above (L11-L50) is the constitution; session reports may cite aliases — see the
   aliases table. Lesson minting in sessions = NAMED candidates only; numbers are engraved here
   at reconciliation (no number minting inside a session).
+- **Worktree + artefacts locaux (gitignored)** : le moteur cleanroom (`audit_v2_independent/cleanroom/`),
+  les caches (`data/ftmo_portfolio/cache/`, `data_cache/`) et certains dirs cités dans REGISTER.md sont
+  **locaux/gitignored** → absents d'un worktree frais (checkout off main). Une session en worktree les
+  **importe du main dir par chemin absolu** (`<HOME>/Desktop/Algo_claude/…`), read-only :
+  le code d'étude vit dans le worktree, le moteur + caches restent référencés dans le main dir.
 - **Session close (obligatoire)**: `python3 tools/check_register_integrity.py` (fail-loud: cited
-  paths exist + git-tracked, N chain monotonic) — fix findings BEFORE the closing commit.
+  paths exist + git-tracked, N chain monotonic) — fix findings BEFORE the closing commit. **Lancer ce check
+  dans le MAIN working dir, JAMAIS dans un worktree** : un worktree n'a pas les dirs locaux/gitignored cités
+  → faux `MISSING` (l'intégrité canonique se vérifie là où vivent les artefacts locaux).
