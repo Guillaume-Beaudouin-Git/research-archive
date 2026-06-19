@@ -1,32 +1,46 @@
 name: Notify digest via Telegram
 
-# Triggers Telegram notification when a new feasibility digest markdown
-# is committed to main under _automation/feasibility/digests/.
-# Designed to chain after feasibility-digest routine PR auto-merges.
+# Sends a Telegram notification when a new feasibility/research digest markdown is
+# merged to main under _automation/feasibility/digests/.
+#
+# WHY workflow_run (not `on: push`): the digest PRs are squash-merged by auto-merge.yml
+# using the default GITHUB_TOKEN. Per GitHub's anti-recursion rule, a push performed with
+# GITHUB_TOKEN does NOT trigger other workflows (push/pull_request). So the previous
+# `on: push` trigger NEVER fired for auto-merged digests — only for manual/PAT pushes
+# (cf. the 3 test runs of 2026-05-30/06-11, then silence). We therefore chain off the
+# auto-merge workflow's completion. (Diagnosed 2026-06-19.)
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '_automation/feasibility/digests/*.md'
+  workflow_run:
+    workflows: ["Auto-merge claude/* PRs"]
+    types: [completed]
 
 jobs:
   notify:
+    # Only after a successful auto-merge run; the digest-diff step no-ops when no digest
+    # was merged (auto-merge runs for every claude/* PR, not just digests).
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # need previous commit for diff
+          ref: main          # auto-merge has just squash-merged the PR onto main
+          fetch-depth: 3      # need HEAD~1 for the merge diff
 
-      - name: Find newest digest file added/modified
+      - name: Find newest digest added/modified in the merge
         id: find
         run: |
-          # List markdown files changed in the last push under digests/
+          # The squash-merge is HEAD on main; diff it against its parent for digests.
           changed=$(git diff --name-only HEAD~1 HEAD -- '_automation/feasibility/digests/*.md' | tail -1)
           if [ -z "$changed" ]; then
-            echo "No digest changed in this push" >&2
+            echo "No digest changed in this merge — nothing to notify" >&2
+            exit 0
+          fi
+          if [ ! -f "$changed" ]; then
+            # e.g. a cleanup commit that DELETED a test digest — don't fail the run
+            echo "Digest $changed not present in tree (deleted?) — skipping" >&2
             exit 0
           fi
           echo "digest_path=$changed" >> "$GITHUB_OUTPUT"
@@ -96,7 +110,10 @@ jobs:
           CHAT:  ${{ secrets.TELEGRAM_CHAT_ID }}
           MESSAGE: ${{ steps.parse.outputs.message }}
         run: |
-          curl -s -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
+          # Capture the API response and FAIL LOUD if Telegram rejects (e.g. stale token),
+          # instead of curl -s silently swallowing a 401 (the old behaviour hid failures).
+          resp=$(curl -s -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
             --data-urlencode "chat_id=${CHAT}" \
             --data-urlencode "text=${MESSAGE}" \
-            --data-urlencode "disable_web_page_preview=true"
+            --data-urlencode "disable_web_page_preview=true")
+          echo "$resp" | python3 -c "import sys,json; r=json.load(sys.stdin); print('Telegram ok:', r.get('ok'), '| desc:', r.get('description','')); sys.exit(0 if r.get('ok') else 1)"
