@@ -216,6 +216,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "76374ceb79ce84eac60f6bd096e7d885": {
+    "first_seen": "2026-06-19 14:30",
+    "source": "hn_algotrading",
+    "title": "AI-Powered Is the New Cloud-Based: A Dev's Guide to Spotting Vendor Hype",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7a15d52f183f0a24bbfcec8f4dfec855": {
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
@@ -384,6 +391,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d87f94e04cdae972d9a25c5367c5e763": {
+    "first_seen": "2026-06-19 14:30",
+    "source": "hn_algotrading",
+    "title": "\"AI-Powered\" Is a Red Flag. Here's a Dev's Guide to Calling Bullshit",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "da9280f522c32103b39e35df4abdecfe": {
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
@@ -430,6 +444,13 @@
     "first_seen": "2026-06-01 10:06",
     "source": "hn_algotrading",
     "title": "DemocraticDefenseAgainst Bot Armies/AI Detection+CitizenOversight(JuryDutyModel)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e69f4828b57136622ea5866c3b922048": {
+    "first_seen": "2026-06-19 14:30",
+    "source": "hn_algotrading",
+    "title": "Refrag Explained",
     "decision": "rejected_L0",
     "promising_file": null
   },
