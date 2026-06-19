@@ -13,6 +13,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0a99db8ff077f8da758d63999a1c4bf8": {
+    "first_seen": "2026-06-19 12:00",
+    "source": "github_python",
+    "title": "OSU-NLP-Group/HippoRAG",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "11f8804759098e84d7e47d9f02d7b88f": {
     "first_seen": "2026-06-18 12:00",
     "source": "github_python",
@@ -67,6 +74,13 @@
     "source": "github_python",
     "title": "ashishpatel26/500-AI-Agents-Projects",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "18672c2467d1c1aea8b4624ab27dc56e": {
+    "first_seen": "2026-06-19 12:00",
+    "source": "github_python",
+    "title": "santinic/audiblez",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "18734bbaf0a048f76ccd7539ae1bbad0": {
@@ -286,6 +300,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5fd6fc5df90fb9af9c0e051227e6e1a8": {
+    "first_seen": "2026-06-19 12:00",
+    "source": "github_python",
+    "title": "VectifyAI/OpenKB",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "60a3d34b0f4927cd1b97237c8961f164": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -419,6 +440,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "79def6da3285a17edb5ea7ec3278ce8a": {
+    "first_seen": "2026-06-19 12:00",
+    "source": "github_python",
+    "title": "jamesyc/TimeCapsuleSMB",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7a06041a87705c2118394f2428d801f7": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -507,6 +535,13 @@
     "first_seen": "2026-06-10 11:00",
     "source": "github_python",
     "title": "FareedKhan-dev/train-llm-from-scratch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "905b1d425c7a10398e66583aaac023ce": {
+    "first_seen": "2026-06-19 12:00",
+    "source": "github_python",
+    "title": "stanford-oval/storm",
     "decision": "rejected_L0",
     "promising_file": null
   },
