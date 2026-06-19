@@ -214,3 +214,51 @@ def test_reconcile_degraded_preserves_consec(files_dir, runtime_isolated):
     row = reconcile.run(THU, alert=False)
     assert row["consec_unexplained"] == 2
     assert row["stop_recommended"] == 0
+
+
+# --- OPTION A : reconcile deux-temps (dégradé 21:00 → Δ complet 21:10 via m5 tardif) ---
+def test_optA_upgrade_full_delta(files_dir, runtime_isolated):
+    """Bout-en-bout : stage 1 (run dégrade + snapshot pré-swap) puis stage 2 (upgrade via le
+    m5_today tardif) → VRAIE décomposition Δ, résiduel ~0 (réel==modèle), ligne dégradée
+    REMPLACÉE (pas de doublon)."""
+    DAY = "2026-06-10"
+    _seed_files(files_dir, runtime_isolated, DAY)          # seed cohérent (eod+m5+targets+fills+sod)
+    st = statefiles.read_json(files_dir / "state.json")
+    st.pop("eod", None)                                    # gel de clôture : pas de bloc eod
+    st["ts_paris"] = f"{DAY.replace('-', '.')} 22:54:00"   # gel avéré
+    statefiles.atomic_write_json(files_dir / "state.json", st)
+    row1 = reconcile.run(DAY, alert=False)                 # stage 1
+    assert row1["detail_path"] == "degraded"
+    assert (runtime_isolated / "eod" / f"preswap_{DAY}.json").exists()
+    row2 = reconcile.upgrade(DAY, alert=False)             # stage 2 (m5_today date==DAY présent)
+    assert row2 is not None and row2["detail_path"].endswith(".json")
+    assert row2["unexplained"] == 0
+    assert abs(row2["residual_usd"]) <= row2["tol_usd"]    # réel==modèle → résiduel ~0
+    df = pd.read_csv(reconcile.LOG)
+    assert (df["date"].astype(str) == DAY).sum() == 1      # ligne REMPLACÉE, pas dupliquée
+
+
+def test_optA_upgrade_dry_run_matches_pnl(files_dir, runtime_isolated):
+    """--dry-run : calcule la décomposition SANS écrire (ligne CSV inchangée)."""
+    DAY = "2026-06-10"
+    _seed_files(files_dir, runtime_isolated, DAY)
+    st = statefiles.read_json(files_dir / "state.json")
+    st.pop("eod", None); st["ts_paris"] = f"{DAY.replace('-', '.')} 22:54:00"
+    statefiles.atomic_write_json(files_dir / "state.json", st)
+    reconcile.run(DAY, alert=False)
+    out = reconcile.upgrade(DAY, alert=False, dry_run=True)
+    assert out is not None and "pnl_real" in out and out["unexplained"] == 0
+    df = pd.read_csv(reconcile.LOG)
+    assert str(df[df["date"].astype(str) == DAY].iloc[-1]["detail_path"]) == "degraded"  # non écrit
+
+
+def test_optA_upgrade_noop_without_late_m5(files_dir, runtime_isolated):
+    """Si le m5_today tardif n'arrive pas (date != jour) → upgrade no-op, ligne dégradée
+    intacte (jamais de trou)."""
+    DAY = "2026-06-18"
+    _seed_closure_no_eod(files_dir, runtime_isolated, DAY, equity=10075.0)  # pas de m5_today
+    assert reconcile.run(DAY, alert=False)["detail_path"] == "degraded"
+    assert reconcile.upgrade(DAY, alert=False) is None
+    df = pd.read_csv(reconcile.LOG)
+    assert (df["date"].astype(str) == DAY).sum() == 1
+    assert str(df[df["date"].astype(str) == DAY].iloc[-1]["detail_path"]) == "degraded"
