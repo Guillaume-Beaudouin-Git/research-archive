@@ -1,0 +1,14 @@
+{
+  "hash": "9e36a47b3a3ea28274c8dd27bd9ba7c2",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.19972v1",
+  "title": "Biodiversity Media Narratives and Stock Market Performance: Evidence from Europe",
+  "url": "http://arxiv.org/abs/2606.19972v1",
+  "description": "This study constructs novel biodiversity related media risk indicators for France, Germany, Italy, and Spain over 2015-2025, capturing media attention to biodiversity threats using the GDELT Global Knowledge Graph. Using panel Granger causality tests and an augmented inverse probability weighting (AIPW) event-study design, we find highly significant evidence that biodiversity risk reduces stock prices, with effects peaking between 3 and 10 months after a shock. Moreover, we uncover a marked asymmetry whereby the positive effects of low biodiversity risk episodes outweigh the negative effects of high-risk episodes. Results are robust across quantiles of the return distribution and hold when controlling for European equity market volatility and economic policy uncertainty. Our findings provide the first evidence that biodiversity media narratives drive stock market valuations in Europe.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-19 02:00 UTC"
+}
