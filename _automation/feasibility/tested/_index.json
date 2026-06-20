@@ -1391,6 +1391,166 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/quantpedia_why_most_portfolios_are_under_diversified_2026061_2026-06-19_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_validated_volatility_volume_gap_classifier_mnq_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_validated_volatility_volume_gap_classifier_mnq_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_a_new_decomposition_sign_magnitude_financial_returns_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_a_new_decomposition_sign_magnitude_financial_r_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_continuous_cash_overlay_filters_growth_defensive_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_continuous_cash_overlay_filters_growth_defensi_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_do_prediction_markets_match_option_prices_bitcoin__20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_do_prediction_markets_match_option_prices_bitc_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_enhancing_regime_shift_detection_unstructured_treasury_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_enhancing_regime_shift_detection_unstructured__2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_geometric_observables_financial_regime_detection_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_geometric_observables_financial_regime_detecti_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_hybrid_news_sentiment_engine_adaptive_ensemble_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_hybrid_news_sentiment_engine_adaptive_ensemble_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_machine_learning_bitcoin_trading_transaction_costs_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_machine_learning_bitcoin_trading_transaction_c_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_macro_economists_machine_llm_commodity_etf_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_macro_economists_machine_llm_commodity_etf_202_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_realtime_price_impact_detection_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_realtime_price_impact_detection_20260620_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_regime_portfolio_allocation_hmm_rl_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_regime_portfolio_allocation_hmm_rl_20260620_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_resolution_aware_perpetual_futures_polymarket_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_resolution_aware_perpetual_futures_polymarket__2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_trading_in_the_sunshine_or_in_the_shade_market_imp_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_trading_in_the_sunshine_or_in_the_shade_market_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_trends_volatility_correlations_and_critical_phenom_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_trends_volatility_correlations_and_critical_ph_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_beyond_agent_architecture_execution_llm_trading_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_beyond_agent_architecture_execution_llm_tradin_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_beyond_the_smile_a_hybrid_convolutional_vae_for_cr_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_beyond_the_smile_a_hybrid_convolutional_vae_fo_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_bubbles_vs_baselines_token_valuation_pos_eip1559_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_bubbles_vs_baselines_token_valuation_pos_eip15_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_continuous_timing_signals_growth_defensive_style_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_continuous_timing_signals_growth_defensive_sty_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_crashing_together_rallying_apart_dynamic_condition_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_crashing_together_rallying_apart_dynamic_condi_2026-06-20_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_cross_sectional_topological_anomaly_scores_intraday_20260620.md",
+      "tested_date": "2026-06-20",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_cross_sectional_topological_anomaly_scores_int_2026-06-20_report.md",
+      "stopped_at": "A"
     }
   ]
 }
