@@ -1,4 +1,18 @@
 {
+  "00e8450d91e8d584f5d1e7bb3bb04fa5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Boundary behaviour of the Volterra square-root process",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "0299f692441ac0bc70e4a4660fa6a68c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Multiperiod Groundwater Markets",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "031117c197aab946086227d50ca399c0": {
     "first_seen": "2026-06-20 10:02",
     "source": "arxiv_econ_em",
@@ -6,11 +20,60 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_crashing_together_rallying_apart_dynamic_condition_20260620.md"
   },
+  "031f6f6c9721074815a68f2b5a33d8ab": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Enhancing a Risk Model by Adding Transient Statistical Factors",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "074c9a61d3c4ad2b5cdd675d1bdae312": {
     "first_seen": "2026-06-16 01:00",
     "source": "arxiv_econ_em",
     "title": "Limit theorems of Azadkia-Chatterjee's conditional graph correlation",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "089590c5778fc18329b0380df88ba22c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Conformal Prediction Intervals with Tail-Specific Guarantees",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "0a57fc5efafbd1902f7117624ec49650": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Unified Theory of Ownership Concentration, Overlap, and Dependence",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "0b643f5dd0caf13cca7c6ff9faab2358": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Visibility graphs can make money in financial markets",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "0c8f3ad4076bab3b1f4d540a7a389c51": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Information Networks of Stock Prices",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "0ede3d683cbc2d5742ab9393bf0de65c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Generating Financial Time Series by Matching Random Convolutional Features",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "0efb21919a6f3a25b611bc497abe2383": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Coordination as an Architectural Layer for LLM-Based Multi-Agent Systems",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "0ff717304b7b50b3e5271e86fb649b9f": {
@@ -34,11 +97,109 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "127e1291b9cff22e22f2e8249f96cd4a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Vector-Quantized Discrete Latent Factors Meet Financial Priors: Dynamic Cross-Se",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "1286db32f5f60a306a0a4066a5e26929": {
     "first_seen": "2026-06-12 02:00",
     "source": "arxiv_econ_em",
     "title": "Estimating Semiparametric and Nonparametric Fixed Effects Panel Data Models with",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "136f2892e08ffc20b9a001f4ec9d4a23": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Evaluating AI Investment Strategies",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "1444dacb96a1329d54937f753d7d0888": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Insurability Frontier of AI Risk: Mapping Threats to Affirmative Coverage, S",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "145a957fb5fd9832916bf3182792e1bb": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Faster Monotone Implied Volatility Solver",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "1533e0fc3d99efacd26de9c6724243e6": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Deep Learning Forecasting of the U.S. Aggregate Bond Index",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "158408d42e774d031cff86b6a84c98b0": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Multiplex Network Hawkes Model for Systemic Risk Measurement",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "1614cb281032bb3c7c587aacd005296e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "168f94d822b80feb26ecc3c52b45075f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Deep Least Squares Monte Carlo methods for the valuation of variable annuities w",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "16b2e06a3a97fc40852e8eba1622d500": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Empirical Evaluation of Deadline-Resolved Information Leakage on Documented Poly",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "18f12c95537b5bcdd46ddf057524a8ff": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Your SaaS Is an Insurance Product: A Modeling Framework",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "19e6c74ef35ca3cefd4c0144a0acd268": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Adaptive rerouting reshapes impacts of maritime chokepoint disruptions",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "1afb3ea86fe22d12b9a0ee29b1b41d1b": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Mean-field game of mean-variance portfolio management with peer-based relative r",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "1c068e93aa63112469c004c74df80de2": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Stochastic Volatility, Jumps, and Rates: A Unified Framework for Option Pricing ",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "1e24cf49d02ed1323bf827e2e7683e0d": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "FinStressTS: A Parametric Synthetic Benchmark for Time-Series Forecasting in Fin",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "1f70f293d7901b8b83ffbfb41b255efa": {
@@ -48,11 +209,32 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1f8f17e7299a4c91d7e828b030eca312": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Stock Investment: The p-index Approach",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "206ed1dea35b371d20321d2491554e5d": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "From Arbitrage Removal to Density Extraction: A Model-Free Framework for Short-D",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "208dbb613280558bdad4bfaed5939087": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
     "title": "Digital Maturity and Technical Efficiency in NHS Acute Trusts: Cross-Sectional E",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "20a3bf2ab58fcb406465e65a168816b9": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Multiplicative Langevin Process for Volatilities Produces Observed Q-Variance Re",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "20be6da5cf12521e80e30a602cb0f8ad": {
@@ -62,11 +244,53 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "22d82a0376f1624eb4f0a34cce65054b": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Correlation emergence and the Epps effect in two coupled limit order books",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "22f7f6ff598ad77bc1f5c3ef9b2235f6": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Explicit Signal-Adaptive Sequential Optimal Execution Quotes",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "2501390378195836476653f225da50b4": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Forward-Looking Stress Testing Under Macro Scenarios: Stable SVaR Estimation Usi",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "2545fe729848c3ae698c242ced694dab": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Formally Verified Library of Mathematical Finance in Lean 4",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "25ad961d2058d861cd6e4c2394d2338e": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
     "title": "Semiparametric Dynamic Logit Model with Endogenous Networks",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "25dc65f857ba95c31a1cb6473a4c37b2": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Decision-Induced Ranking Explains Prediction Inflation and Excessive Turnover in",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "2840987f6c9cc95171d13499b61ed9a7": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Functional integration by parts formulae for stochastic Volterra processes",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "285b0bee741a80b573df135b2caa09ab": {
@@ -76,12 +300,40 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "297a2bfaefc79358489c9c8ce8cf5de3": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Historical Developments in Probability Measures for Asset Pricing: From State Pr",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "2beba49963936083e8873838eca66a53": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Game-Theoretic Modeling of Heterogeneous Investor Interactions for Stock Price F",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "2c53a9fbba753bc23713723c50f0dd43": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
     "title": "Generative Predictive Distributions for Time Series",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_generative_predictive_distributions_for_time_seri_20260616.md"
+  },
+  "2ead8aaf538eb7d8d7da4ce4f863a72e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Is TabPFN the Silver Bullet for Insurance Pricing?",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "2f9cad0a306fbc8894777cb608b534b4": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Synthetic American Option Pricing via Jump-HMM-Driven Heston Implied Volatility",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
   },
   "2fe8f1d769e202f56010d740395b204d": {
     "first_seen": "2026-06-01 06:07",
@@ -109,6 +361,13 @@
     "source": "arxiv_econ_em",
     "title": "Econstellar: An Open-Source AI-Augmented Research Engine for Computational Finan",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "30a68f5fc01e93304a555f23c59d779a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Volatility Surface Reconstruction using Deep Learning under No-Arbitrage Constra",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "30c34a21484c7ae056b2c2e6a51bdb04": {
@@ -139,6 +398,48 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_sovereign_stress_avalanches_and_network_amplificat_20260612.md"
   },
+  "34e2e083c68c9c0e92839b282b37f526": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Deterministic Policy Gradient for Learning Equilibrium in Time-Inconsistent Cont",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "363994d151b313d03f0a9d92fb0d1659": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Predicting Stock Price Direction on Earnings Announcement Days using Multi-modal",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "3737be89e8c9a1331181b6ac0bb362b1": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Discovery under Hypothesis Redundancy: A Geometric Theory of Discovery Bottlenec",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "394377b8a6af003ee4e2d9b8491ab9c6": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "On the Expected Maximum Deficit and the Optimal Allocation of Reserves",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "3a6bd550e9737bb6fda1cd31e1c6c805": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Ethics of LLM Sandbox and Persona Dynamics",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "3b76bed82b2b6cd10bbd42fb79370236": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Reflexivity as Prompt: Does Awareness of Self-Reinforcing Market Dynamics Improv",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "3e78aa4c043f2ef8377f36a217e92408": {
     "first_seen": "2026-06-18 02:00",
     "source": "arxiv_econ_em",
@@ -153,11 +454,39 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3f46a71cd10ff747372aa8fbc7ffd01c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Fairness and Strategy-Proofness in Automated Market Makers",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "3f8dd6c17ccc6244a54a4870b8b0e8e9": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Multivariate Financial Forecasting using the Chronos Time Series Foundation Mode",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "408b957e3dc639b7e572d866fc45a044": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
     "title": "Identification and Inference for Algorithmic Frontiers with Selective Labels",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "40fa72a7d03728dc3a3abdb7bf66599c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "DeXposure-Claw: An Agentic System for DeFi Risk Supervision",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "416f98706e9806fc48fd2ffec6518f63": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Mortality Heterogeneity and Actuarial Fairness in China's Notional Defined Contr",
+    "decision": "rej_L0",
     "promising_file": null
   },
   "41a36b797afd2d98b8c321130beeb769": {
@@ -174,11 +503,67 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_trading_in_the_sunshine_or_in_the_shade_market_imp_20260620.md"
   },
+  "44138e55aec45ca1e562adb4290fd8e9": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Bi-Level Chaotic Fusion Based Graph Convolutional Network for Stock Market Predi",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "443991e967853191d1447533643b9d2a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Cost of Manipulation in AMM-Based Oracles",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "44e0cda16926a553e51ccf08594f5b13": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Strategic Users in a Priority Queue with Bulk Service on Blockchains",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "45b2230d5af54a92e0a350d17740acfa": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Scenario Generation for Time Series and Curves: A Comparison of Nonparametric an",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "46856e615aba79299957b8b28398aa72": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Pareto frontier of portfolio investment under volatility uncertainty and short-s",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "469598d65c814d64bda90edb21ed7df7": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "AgenticAITA: A Proof-Of-Concept About Deliberative Multi-Agent Reasoning for Aut",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "4758d9562f0e678ba65205d030faa10c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Quantum Horizon: An evaluation of quantum computing as a threat to Bitcoin and E",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "47ef889e4850a1b850ed2460b6d19354": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
     "title": "Semiparametric Difference-in-Differences Estimation With Missing Not at Random D",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4846fced8bb2bec4aee35a4d3671e1c7": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Balance Property: The Constrained Case, with a View on Risk Sharing",
+    "decision": "rej_L0",
     "promising_file": null
   },
   "48924b2aeedd4a7c2d333b3f08305168": {
@@ -188,11 +573,32 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4900a0ca1df8b83dc5d4dcd2afa40d16": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Benchmarking Deep Time Series Models for Equity Portfolios",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "4a266cbb07147a4d15913fb2afa7fa13": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
     "title": "Partial Identification from LLM Prompts",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4cd60ef0fa68750ba408f68e7960ac5b": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "On regularity of finite-maturity American put options in the Heston model",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "4d32c7e9b4cccec59f18740be1b6f445": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Robust Transformer-Based One-Step Stock Index Forecasting via Shifted Data Augme",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "5018556f4c326503e2b7d75ce9f16d70": {
@@ -202,12 +608,61 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "514366b3571cde6e54001d8a27c5b343": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Manipulation, Insider Information, and Regulation in Leveraged Event-Linked Mark",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "52188a1306049f717076e3336945c2f1": {
     "first_seen": "2026-06-20 10:02",
     "source": "arxiv_econ_em",
     "title": "Beyond the Smile: A Hybrid Convolutional VAE for Crypto Volatility Surfaces",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_beyond_the_smile_a_hybrid_convolutional_vae_for_cr_20260620.md"
+  },
+  "5308fffef14b7dea46fb7c18e2ceebb3": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "INEUS: Iterative Neural Solver for High-Dimensional PIDEs",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "53835c3af1e9cd0f3d677f98742cec52": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Frustrated Dynamics of Distance Matrices",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "53b4315fbbd7f6293880e0191bada375": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Battery Bidding under Price Uncertainty in Wholesale Electricity Markets",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "540fc2705dac9232856172e85f7c28be": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Stochastic Calculus and the Black-Scholes-Merton Model: A Simplified Approach",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "548cc6ae2e127cbb68fbb3bbd16a9177": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Group Quantization and Mellin Representations of the Heston Model",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "549577b8b51a90da09e1b07e64644f70": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Avellaneda-Stoikov and Cartea-Jaimungal as One Framework: A Forced Uniqueness Th",
+    "decision": "rej_L1",
+    "promising_file": null
   },
   "5a1cf42de8da6ae0c316e5ada8c35e1f": {
     "first_seen": "2026-06-01 06:07",
@@ -216,11 +671,53 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "5a617ce7447a839e2b7f12b6fcb14768": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Asymmetric Nonlinear Return Extrapolation and Optimal Portfolio Choice under Sto",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "5b126fce13c917aff4fc5fb656b66296": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
     "title": "Insurance of Agentic AI",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "5bcb98738ef0a7434331ecd7d782eb13": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Martingale Cohomology, Holonomy, and Homological Arbitrage",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "5be83263797e331da3d8428ec1a84f23": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "From Index to Equity: Pre-Training Transformers for Stock Return Prediction",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "5c0f5c2f77da89c0fa1817dcb40d943b": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Fill-Side Non-Retail Trading on Polymarket: An Empirical Study of Behavioral Tie",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "5e0358e72a0d065b85bac91d91955ff7": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Martingale Doppelg\u00e4nger-Eval: An Identification Framework for Auditing Candlesti",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "5e26565f9000189e5feffacf96966a08": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Foundations of a Time-Consistent Counterfactual Actuarial Runtime for Autonomous",
+    "decision": "rej_L0",
     "promising_file": null
   },
   "5ead9bfb814ef8d184a70ba6b7f106b6": {
@@ -237,11 +734,53 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5fcc60e2f06ed8c3982e43745c81e021": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "From Control Boundary to Insurance Claim: Reconstructing AI-Mediated Losses Thro",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "60224ddc5e0935111b88d5db24972abd": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Expanding the rough Heston model in $H$",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "603ba00291a6eee1359ac1e219c22524": {
     "first_seen": "2026-06-03 06:06",
     "source": "arxiv_econ_em",
     "title": "Recovering Direct Price Effects of Environmental Amenities in Housing Markets: R",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "61367a49c2d587e8d43c28cf4c145b16": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Orchestrating the Twin Transition in Multinational Corporations: Technology Road",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "63ad4a0596bc39cbd5bf6fb3a42f36b0": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Privacy Subsidy in Glosten-Milgrom: Bid-Ask Spread and Welfare under Flip-No",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "6563f3a03068a6acb2ba3a076971807e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Geometric Brownian motion with intermittent entries and exits",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "66165a12b1f734f1290008bf2b01cc1a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "When market boundaries weaken: Network reconfiguration and regime-dependent cros",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "6625f97dd3bc9d32c652561a15013046": {
@@ -251,6 +790,34 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_risks_and_uncertainty_in_monetary_policy_20260616.md"
   },
+  "672b28b339e6e7819e6bdcec1187181c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A deep learning approach for pricing convertible bonds with path-dependent reset",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "685efb24a25325c746a3b5d13b9abaa7": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Machine-Checked It\u00f4 Calculus for Brownian Motion",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "69540ad80e3305c60563a5120d7a2c21": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "PHINN: Persistent Homology Inspired Neural Network for Rare-Event Time Series Ge",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "69b6d832dded110f3f107260dcf255e3": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Three-Currency HJM for Brazilian Credit Markets",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "6a0cc9cf417c02a3462e71b355b9716a": {
     "first_seen": "2026-06-20 10:02",
     "source": "arxiv_econ_em",
@@ -258,11 +825,39 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_do_prediction_markets_match_option_prices_bitcoin__20260620.md"
   },
+  "6a6541171562be9d85026de55085118c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Explicit Rational Formulae for Bachelier (Normal) Implied Volatility",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "6b13eba24cbe807d6b7f4268b5d2c43a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Scenario Constraints with Memory: A Finite-State Approach to Quantitative Financ",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "6ceb047560fc553f5a06f90ddecf8d1e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Nonlinear filtering with stochastic discontinuities",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "6f984bf50a6b7e68597fcb860dbab4a6": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
     "title": "Random Set Quantile Estimation of Partially Identified Discrete Response Models",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6fa93dcdf2926975510723285a5aeaef": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Payment Heterogeneity Index: An Integrated Unsupervised Framework for High-V",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "71264d29bd7e07a0766f4b7ae0c04312": {
@@ -272,12 +867,26 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "715c7460146a7ce09f87026df19a7da1": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Entropy-Regularized Certainty-Equivalent Bellman Policies for Risk-Sensitive Mar",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "71f2c6ce4060f2cb5d56799ad5995a57": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
     "title": "Regime-Switching Models for Disaggregated Data",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_regime_switching_models_for_disaggregated_data_20260609.md"
+  },
+  "7243deb0df7d002341540e488147c591": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Certified Higher Order Quantum Framework for CSA and Margin-Aware Collateral O",
+    "decision": "rej_L0",
+    "promising_file": null
   },
   "734e948dbb0b979d7197abc7b4980989": {
     "first_seen": "2026-06-02 06:06",
@@ -300,6 +909,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_trends_volatility_correlations_and_critical_phenom_20260620.md"
   },
+  "75369505dc0c7e3ca7beb632c111e100": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Modeling Stochastic Multi-Agent Interaction in Intraday Battery Energy Storage D",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "7654fb73ae3fdb4a137713fe3caf6e2a": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
@@ -312,6 +928,20 @@
     "source": "arxiv_econ_em",
     "title": "Statistical and Numerical Convergence in Stochastic Equilibrium",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "77a3e8e0fc9bf4cefcd46ece23c49e8d": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Generative Adversarial Graph Neural Network for Synthetic Time Series Data",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "788344cc61db9336f5d22b8a95cf794f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Single-Period Portfolio Selection via Information Projection",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "78b07276f5a13b60ff2859f62e83331c": {
@@ -335,12 +965,40 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7ad8939ed9c6d8feae28737243c2d860": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "On the modeling assumptions of Historical Simulation for Value-at-Risk",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "7ba5afe965e9d4a207847bd280aa339e": {
     "first_seen": "2026-06-18 02:00",
     "source": "arxiv_econ_em",
     "title": "Causal Forecasting in Panel Data: A Two-Way Synthetic Forecasting Approach",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_causal_forecasting_in_panel_data_a_two_way_synthe_20260618.md"
+  },
+  "7d19391aa4959f9ab72a6170cb012fe4": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Infinite Horizon Optimal Consumption: Intertemporal Hedging under Epstein-Zin Pr",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "7da73ee762ad10e0dc220aa09a7e22fb": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "How the interpolation of life tables affects the decomposition of life insurance",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "7e04437334631a835693ee951c012a4c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Post-Quantum Secure Federated DeFi for Inclusive Banking",
+    "decision": "rej_L0",
+    "promising_file": null
   },
   "7e09855194353780fa69d04cfd1d20f8": {
     "first_seen": "2026-06-18 02:00",
@@ -356,11 +1014,25 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7e4760cf5264cca8c8cb55ff00ab9a5f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Beyond TVL: An Explainable Risk Scoring Framework for Tokenized Real-World Asset",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
   "7f37e79958863187f22a16be2a211ad3": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
     "title": "Finding Most Influential Sets",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "7f9f275ce500b7042c8d958edc845181": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Forward Hedging Reshapes Incentive Provision",
+    "decision": "rej_L1",
     "promising_file": null
   },
   "7ff73efba593eb5f7b606b96347884c1": {
@@ -377,11 +1049,60 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "80d06bdd73df3cae5153cb99a4b4fd99": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "PIVOT: Bridging Black-Scholes Implied-Volatility and Price Objectives via Differ",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "82004776f2aefe41e2d2a61262fb9eec": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "CFOs Meet LLMs",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "825d5070253451de8163c16bbbf438b8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Declining CVaR Glidepath Framework for Target-Date Fund Design with an Applica",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "829cb0a7bddb855f678c00c390da47a3": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "From Accuracy to Auditability: A Survey of Determinism in Financial AI Systems",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "82a6d7ad50aac316079e7afbeeee4c28": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Impact of Market Informedness on Market Makers' Profitability",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "82c6dd46ea8d2692dfff3df3d62f768c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Collective completeness and pricing-hedging duality II",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "8478c750f8a92b2e070c86e3d4c224bf": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
     "title": "Interdependent Hitting Times",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "84820c2b6ebba21824ebd359658c57f2": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Boom, Bubble, or Buildout? A Multi-Method Evaluation of Whether Artificial Intel",
+    "decision": "rej_L1",
     "promising_file": null
   },
   "84c4b30cb218ae3840d128d238e0f63e": {
@@ -405,11 +1126,67 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "85c0b19f1dc6f52927478a09a710dccc": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "TT-DAC-PS: Twin-Target Deterministic Actor-Critic with Policy Smoothing for Opti",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "8725a1e15ef904a466156af9a449b6de": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Sharpe Ratio and Return-VaR Ratio Maximization for Option Portfolios with Skew-E",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "8727983b73eb4d0f5f62de99b5ba45a2": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Scaling Limits of Bivariate Nearly-Unstable Hawkes Processes and Applications to",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "87d68490aed071abd000d7742c2c54a7": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
     "title": "CP-factorization for high dimensional tensor time series and double projection i",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8894419918a7d433602ec3fac2a94f8f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Insurance Pricing Optimization via Off-Policy Evaluation",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "891d31eb2381eadc48f7408776ac3381": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "An optimal transport foundation for a class of dynamically consistent risk measu",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "89df9ecbb240dd4bbfc9ef74b4d0ea02": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Markets Are Not Random, They Are Hard to Predict",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "8b3fb11780abbdff724032b9139b584f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "How to spot outliers: an Ensemble Anomaly Detection Framework",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "8cb1c9c1f28bbd01a45b52804582765e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Quantifying the Risk-Return Tradeoff in Forecasting",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "8dd0482bc3f33d039b40530d9f94e47a": {
@@ -418,6 +1195,48 @@
     "title": "Fitting Accumulated Stock Returns with Tempered Skew t-Distribution",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_fitting_accumulated_stock_returns_with_tempered_sk_20260618.md"
+  },
+  "8e0b266b54fbd458b417237b706802a2": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "GeomHerd: A Forward-looking Herding Quantification via Ricci Flow Geometry on Ag",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "8e85bb5455420a438c0d39c3d87fb69a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Gaming-Resistant Insurance Contracts for Autonomous AI Agents: Strategy-Proof To",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "8f18f622cff4f3cc1047cef7a2b4d537": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Viability of Blockchain Markets under Discrete Clearing and Paid Priority",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "90a2c97c0f5f27041ec401f1084d1860": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization: The",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "90bed1eb14ee6d4e69092b8810455927": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Privacy Subsidy: Kyle's $\u03bb$ under Noise-Perturbed Order-Flow Observation",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "950e3cc9c08718f87d5aa87fa3577914": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Memory-Induced Supra-Competitive Outcomes Between Deep Reinforcement Learning Ag",
+    "decision": "rej_L0",
+    "promising_file": null
   },
   "9563ad78d6c0952ac8b4727303d5a9cd": {
     "first_seen": "2026-06-11 01:30",
@@ -431,6 +1250,48 @@
     "source": "arxiv_econ_em",
     "title": "A Lecture Note on Offline RL and IRL, Part II: Foundations of Inverse Reinforcem",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "976651651858b85d54d56c53af8b7e20": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "One Currency, Two Forward Prices: The Onshore-Offshore Renminbi Puzzle",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "98509d45ea31b7a27e55e4e1e414e1ff": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Asymptotic Behaviour of Unexpected Losses and Risk Ratios for Co-Monotonic Alter",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "98873daedacf3116ca5460050ef723a4": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Nonlinear and Heavy-Tailed Predictability in Transition-Energy Financial Markets",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "990cb4a32e36c42d9dc2e6975766f93b": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "SURGE: Approximation-free Training Free Particle Filter for Diffusion Surrogate",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "9985fc67d72f9d6064fdb6f6381f0698": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Revisiting Trade-sign Long-memory and Square-root Law price impact",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "9abf49d767f4b70439cea1c8b2571e47": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Model Validation of Agentic AI Systems: A POMDP-Based Framework for Belief-State",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "9b3eda75be41cbbc28f6aad8c53e14c2": {
@@ -447,12 +1308,33 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_forecasting_of_volatility_and_risk_premia_in_elect_20260605.md"
   },
+  "9bd6f46a608147e0d980b1c39b3b91b3": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "In-Family Arbitrage-Free Interpolation of Mixture Densities Across Expirations",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "9be405ff3bc5213b30d8739feadfd024": {
     "first_seen": "2026-06-15 01:30",
     "source": "arxiv_econ_em",
     "title": "Forecasting with Bayesian Panel Vector Autoregressions Using the R Package bpvar",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_forecasting_with_bayesian_panel_vector_autoregr_20260615.md"
+  },
+  "9cb6944d7433a9a21638ede92535eea5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Axiomatic Market Making",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "9d7e8531cdeed41125d99fc56a966250": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Fast Monte-Carlo",
+    "decision": "rej_L0",
+    "promising_file": null
   },
   "9de04dec60768f57b9a090b2aefc40f8": {
     "first_seen": "2026-06-01 06:07",
@@ -468,6 +1350,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_biodiversity_media_narratives_and_stock_market_per_20260619.md"
   },
+  "9e5dfed2235d914db914e4f496e9f3d0": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing under Loc",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "9e84bc167f19454aa0ce31e5a7a88ff6": {
     "first_seen": "2026-06-19 03:30",
     "source": "arxiv_econ_em",
@@ -475,11 +1364,102 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_statistical_foundations_of_llm_based_a_b_testing_a_20260619.md"
   },
+  "9f22fd27dea07aa399cf7cc7e0c2cefe": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Neural-Actuarial Longevity Forecasting: Anchoring LSTMs for Explainable Risk Man",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a171fffceeb18808e21d3491dc51e518": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Reverse Stress Testing for Multivariate Scenarios: A Conditional Framework for S",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a1a34e00acc110b00c5caea7942d1193": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "ESG as Priced Crash Insurance: State-Dependent Tail Risk and Deconfounding Evide",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a266a22317d6b7b85f56989072237d8e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Weighted universal approximation of differentiable maps on infinite-dimensional ",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "a372d80aac602fd92311d26f4286b31f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "On the Structural Foundations of Signature Volatility Models: Existence, Arbitra",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a40d96dae86d74c1e1f07c1d79a0d2d3": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Mining Financial Data using Mixtures of Mirrored Weibull Distributions",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a491be48f276003c646957d21119629d": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "What Can Go Wrong During Caplet Stripping ?",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "a4a2314ddf5ea749841f22d0fe560c23": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Per-Market Information Leakage and Order-Flow Skill: Two Methodological Lenses o",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a5a25be7bd2fc2018b8434e49d3db287": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Optimal investment and Pension policy in Pay-As-You-Go systems under forward uti",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a7806277b9911a8a6ca2335487f30c43": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Modeling Dynamic Correlation Matrices with Shrinkage Priors",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "a81ba908fa70c17d07a3e3eb240dbfa2": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Learning Time-Inhomogeneous Markov Dynamics in Financial Time Series via Neural ",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "a9878ed2fae135b1b81a5efc753e16c3": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
     "title": "Decision Theory for the Archetype Discovery Problem",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "aa74e2ec3b6252a1ec498c3c1b410535": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Imperfect Commitment in Maximal Extractable Value Auctions",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "ad1830736a9d6acca5dc28ff0f0c0546": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Inspectable Neural Markov Models for Non-Stationary Time Series",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "ae40c16c730689b4bb01b0fc835d7713": {
@@ -489,6 +1469,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_rbreak_an_r_package_for_estimating_structural_br_20260611.md"
   },
+  "ae415a38248188c867f395e3d4bb3307": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Stress Amplified Resilience: ESG and Joint Fragility in Equity Markets",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "ae9fa41029091ffafde992e6415e6e44": {
     "first_seen": "2026-06-05 08:03",
     "source": "arxiv_econ_em",
@@ -496,12 +1483,47 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_and_s_20260605.md"
   },
+  "b022a4fcb37975403960effac3d00c26": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Portfolio Choice with Competing Precautionary and Accumulation Goals",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "b05117e424a4ab47b026821b229bb87a": {
     "first_seen": "2026-06-19 02:00",
     "source": "arxiv_econ_em",
     "title": "Ramping Procurement and Bid-Cost Recovery in Real-Time Market",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_ramping_procurement_and_bid_cost_recovery_in_real_20260619.md"
+  },
+  "b270243f79da88fa40ad4b27978fb2d8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Hour-Aware Adaptive Risk Management for Autonomous Memecoin Trading: A Multi-Lay",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "b33e035b9d98e9909a060f5bfffca2ec": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Default Contagion, Matrix Approximation, and Control in Sparse Financial Network",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "b37c3c1aa3375ef6f9f8bbb430a25ea8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "An Actuarial Cost and Revenue Model for Helicopter Emergency Medical Services: E",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "b39d8a921954bc56496125338b610f1a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Faster Forward Sensitivities: Reduced stochastic hedge ratios from pathwise algo",
+    "decision": "rej_L1",
+    "promising_file": null
   },
   "b3e478cd45b44faad752616bda572c6f": {
     "first_seen": "2026-06-08 06:06",
@@ -515,6 +1537,13 @@
     "source": "arxiv_econ_em",
     "title": "Bayesian Poisson-Randomized Gamma Tensor Factorization with Application to Inter",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b67d34a494931b6e53d36961b34cbdce": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Market-implied time to transition to a low-carbon economy: a stochastic modellin",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "b6cd1fba18d92b18dbc6740be6aa604a": {
@@ -531,6 +1560,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "bbbe4a433f76fa0cd9b4c2bfad7012ca": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Mean-Variance Optimization in Ambiguous Financial Markets with Learning",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
   "bcd41672dcf8fab010f2d507e2e39b30": {
     "first_seen": "2026-06-19 02:00",
     "source": "arxiv_econ_em",
@@ -545,11 +1581,39 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "bebdc04923fd49fc95b5cfe6741e254f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Deepening the Secondary Market: Integrating Trade Credit into Market Clearing wi",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "c07517f8c0865f02d4f9cf663beb74c8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Continuous-time Optimal Stopping through Deep Reinforcement Learning",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "c1727898a5345f5c5f8e6c5106da127e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Robust Volatility Index Calculation with OTM Option-implied Probability",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "c30d11b370d1ce5c39decc9b9ef280f9": {
     "first_seen": "2026-06-15 01:30",
     "source": "arxiv_econ_em",
     "title": "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c54094d1c0af8b3d46999d82ce64bd63": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Addressing Market Regime Changes and Heavy-Tailed Returns in Portfolio Optimizat",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "c6016565dd6b6e06d6417690f383311e": {
@@ -559,11 +1623,102 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c6cbd0bdddafb3237582a76392ed51cd": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Privacy Subsidy in Continuous-Time Kyle: Cumulative Welfare under Noise-Pert",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "c7bc38b87a8ba436b1d093228e454629": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Statistical Significance of the Inclusion of Graph Neural Networks in the Fi",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "c8c23b80fb82f448088ff57026ca2dcb": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Where the Quantum Lives in D-Wave Hybrid Portfolio Optimization",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "c941e27b577077991da868e0107668ec": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Modeling dependence in sparse time series of Insurance Claims",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "cba4b4a2674af73025c7b8b0a8948a5f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Multi-regime Markov-switching models with time-varying transition probabilities:",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "cbab65df9307a0a58e22d72690fc3ac5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Longitudinal Attribute-Conditioned Neural Network for Modeling Health-State Tr",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "cc8cd31865c7cbc6fb9b6f289c445efc": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Advanced Calibration Analysis and Tools: Identifying Influential Observations in",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "cd5e27ff5b3117cd7974add3b601b2a4": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Optimal exit strategies of CPT gamblers in unfair gambles",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "cdb27c9a7d580793eb393b669c3ad8ab": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Composite likelihood inference of fractional Gaussian processes with sequentiall",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "ce0adcca579e07c52ebbd87d2ffec311": {
     "first_seen": "2026-06-19 03:30",
     "source": "arxiv_econ_em",
     "title": "Choosing A Headline Estimand from Matching, DID, and Hybrid Designs: A Minimax-R",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cf0d59eb0bf87d53f171a140f7114fee": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Merton's Problem under Multivariate Affine Volterra Models with Jumps",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "d01f24d6a8487e10f04e6d4bff077671": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Quality-Adjusted Hit-Ratio Targeting in Corporate Bond Market Making",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "d0440501780dc33ae81aff07f8a142c5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Leveraging LLMs for Unstructured Claims Data Analysis",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "d2ad2bbe9de998b44d3bd07fb3b4444b": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Order of Multi-Agent and General Many-Body Systems",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "d30d6d25bd91c08ac0e4afbb640dc080": {
@@ -573,11 +1728,53 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_granular_instrumental_variables_estimation_and_20260615.md"
   },
+  "d31d33635cc93cc6d6f75a0890fc4d0c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Incremental SVD for Large-Scale Dynamic Matrices: Accuracy, Subspace Stability, ",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "d331f5a5274442d5bbfbcff9d1efb2d8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Dual Representation of Robust Risk Measures and Uncertainty Sets",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "d398ac195d1b03c067e135345596a380": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Algometrics: Forecasting Under Algorithmic Feedback",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "d454af6664f8dee2123c5f8ea5551483": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
     "title": "When Do Treatment Changes Identify Causal Effects?",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d463e72554d4fc4d09d2d9176fbd86ed": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Regime-Arrival Uncertainty in Generalization Bounds under Distribution Shift",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "d52a0a208b802ba8697fb12f8b1b84c2": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Wartime Controls, Political Connections, and the Pricing of Zaibatsu Rents in Ja",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "d62ea95371d50561efcfb864d6f183a5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Epistemic Risk of Risk: A Modal Framework for Quantitative Risk Management",
+    "decision": "rej_L0",
     "promising_file": null
   },
   "d84e83c3d28253d2d372e12b726dd19c": {
@@ -587,6 +1784,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d986edd68a0e4c5987734886c566ebb4": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "SBCA: Cross-Modal BERT-driven Actor-Critic for Multi-Asset Portfolio Optimizatio",
+    "decision": "rej_L2",
+    "promising_file": null
+  },
   "d9bebd816ef7d1978f1a8b3750a37afc": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
@@ -594,11 +1798,88 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_evaluating_ai_investment_strategies_20260609.md"
   },
+  "d9f8424169dffbc003ac82670453a941": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Two Sides of Schur Damping: High-Dimensional Pseudo-Likelihoods and Portfolio Al",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "da71abad9b2a1fa336c57655d864998f": {
     "first_seen": "2026-06-11 02:30",
     "source": "arxiv_econ_em",
     "title": "Threshold Regression for Fixed-T Panel Data with Interactive Fixed Effects",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "db64b26af947c384bb3471b3848c4a42": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "RED-2400: A Public Benchmark of Algorithmically-Rejected Trading Events with Out",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "db6890010a21671fabb5b0a2aca29280": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Implying Volatility: How Fast Can We Go?",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "dc4e42f4378a4b15012135bc5a3f309c": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Option prices from operational-time reaction-boundary lattices",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "dcfd95e159048edf68af6b15833673f9": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Distributional Portfolio Optimization (DPO): A Unified Framework for Distributio",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "dd4136b0f0ad0bd24b10c801b4cdcbb0": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Regime-Adaptive Continual Learning for Portfolio Management",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "de9eeec463907bdb778262d499c623a8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Fast-excursion limit of the Heston model",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "df195fabe7dd0952f9500a62d16a76d0": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "From Knowing to Doing: A Memory-Controlled Benchmark for LLM Trading Agents on S",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "df26ae5328efdb744c6624662a906dfd": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Market Makers and Risk Aversion: A Hamiltonian Approach to the Excess Volatility",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "dfc351b9ec182a058eaaec11cc0c6bf3": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Bankruptcy Prediction from 10-K Narratives: Evidence from Interpretable Text Sco",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "e00686fedc3c379372adf5d2511ace9e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Change-point estimation for Weibull time series with copula-based Markov models",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "e09dc432af1fd246d234abdbf80f2025": {
@@ -608,11 +1889,60 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_estimating_sloppy_directions_via_kde_the_case_of_k_20260616.md"
   },
+  "e0bb5a90c3bcc625cd2cc06ee28e3e6a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Zero-Copy Semantic Contagion: An In-Memory Streaming Architecture for Evolving A",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "e10d03b809ceb1811f357342f3392553": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Post-Rejection Follow-up Sampling: A Methodology for Counterfactual Outcome Meas",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "e29eb449fe416d8b3d8c145e40cac23e": {
     "first_seen": "2026-06-03 06:06",
     "source": "arxiv_econ_em",
     "title": "Sparse Tree-Based Aggregation for Time Series Regressions",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e2c91f5eea864e5da8769bacff0cf31e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Forward-Time Black-Scholes Reconstruction via Regularized Legendre Reduction",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "e382a3530eab35b1e427dccd37518dc7": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Competition in Dealer Markets with Internalisation and Externalisation",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "e433c02f84f4b2079d67b1b75973a73b": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Fitting Accumulated Stock Returns with Tempered Skew t-Distribution",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "e43a1ea6ff929fd4900102489a841900": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Consumption and Retirement Time under Shortfall Risk Measure",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "e43f3dfb5ec13c7bc7ae1d0b6210b025": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "TradeMech: A Method to Multilaterally Net Trades Without Altering Counterparty E",
+    "decision": "rej_L1",
     "promising_file": null
   },
   "e440c604a5eddd3fb728b1051eddb0c2": {
@@ -621,6 +1951,13 @@
     "title": "CausalAlpha: A Real-Time Geopolitical Risk Index from OSINT Channels for Causal ",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_causalalpha_a_real_time_geopolitical_risk_index_fr_20260608.md"
+  },
+  "e4b8a6d1c26535bad987f19103fda41f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Fast Implied Volatility Method with Expansions",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
   },
   "e57b66396e6b5a131d5bc8c4816abcf1": {
     "first_seen": "2026-06-16 01:00",
@@ -636,11 +1973,53 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e80992dc1427d0e23c2e37cc877b5bb8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Pricing Excess-of-Loss Reinsurance and CAT Bonds under Climate Uncertainty: A Co",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "e82757f7e0764f4a7ac03e7c1717e170": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Simple Hierarchical Causality Primer",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "e902e7bb1a7a6a96b498d0033d7923f7": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Belief at Risk: Quantifying Agentic AI Model Risk with LLM-Inferred Bayesian Sta",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "e90f3cea9edfed616a212b03f96e9e9d": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Gini-Bayes Connection: The CAP Slope as Bayes' Theorem, with Applications to",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "e9246690e19cd355fad0f93c48653481": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Designing On-Chain Options: Amortizing Perpetual Options",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
   "e933ee39d14cfc9ac16032725b14146f": {
     "first_seen": "2026-06-17 01:30",
     "source": "arxiv_econ_em",
     "title": "Statistical Foundations of LLM-based A/B Testing: A Surrogacy Framework for Huma",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e9a91c66e314f632ee423719f7a0ecc1": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Clearing in Liability Networks via Sheaves on Directed Hypergraphs",
+    "decision": "rej_L0",
     "promising_file": null
   },
   "e9d88ceafa255ae354b1cdbdbc4c91e7": {
@@ -657,11 +2036,39 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "eb1e05f766ea9020e77591469c6a7acb": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "From Classical Optimization to Bayesian Integration: A Comprehensive Analysis of",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "ebdb28a865f6f820c43b0924692865c2": {
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
     "title": "To Combine or Not? Consolidating Horizontal Acquisitions in Multi-sided Market",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "ec84f4e0b853c2e5517016222d84d404": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Valuation of Variable Annuities with Equity Protection Swaps under Jumps and Def",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "ed2bcc751823b1b23b153002d8d05e0a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Portfolio Preference Elicitation in Institutional Crossing Markets",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "edb172fa2ef011c03dff179e27a26d7e": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Bayesian Dynamic Modeling of Realized Volatility in Financial Asset Price Foreca",
+    "decision": "deferred_to_next_run",
     "promising_file": null
   },
   "ef99ddf03957949a65276c699cbc7834": {
@@ -678,11 +2085,39 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_structural_change_detection_in_high_dimensional_tr_20260602.md"
   },
+  "f0dc08cc614d29246bc1cafc6b74b0da": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Option Pricing under Stochastic Volatility and Jumps:A PIDE Framework with Empir",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "f124a37c7ff2c193d1feefa9cac10bac": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Market-Rule-Informed Neural Network for Efficient Imbalance Electricity Price ",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "f3534a84140bc40d14c74759e1656431": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Posterior and Likelihood Sensitivity in Bayesian Distributionally Robust Optimiz",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f4ea9087f66e885f474d63c81cb2816f": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Measuring multivariate maximal tail dependence",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "f5466394e11a02b7126c0cc4347fd5ff": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Statistics of a multi-factor function from its Fourier transform",
+    "decision": "rej_L0",
     "promising_file": null
   },
   "f60d87fab6cf92edf97cd1281317eaff": {
@@ -692,6 +2127,48 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "f65b4d78a36396ed06f66290e84c4de8": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Penalty-Free Pipeline for Direct Quantum-Annealer Portfolio Optimization",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "f6d259bf42f842d7504f756ae4ed84fc": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Tokenized but Illiquid? Evidence from Real-World Asset Markets",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "f70d429ac3b098c7fb72e20466d2b2e5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "The Value of Information: A Puzzle",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "f7884fa6845d47b244f04847e822f3df": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "PortBench: A Correlation-Aware, Full-Pipeline Benchmark for LLM-Driven Portfolio",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "f79e4cb6f6878a929a868e1dc8c3be73": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A data-driven Fourier-mixture neural-network method for density estimation",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "f8c9960279525c8efea8bd89a461f4b5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Beyond ESG Scores: Learning Dynamic Constraints for Sequential Portfolio Optimiz",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "f947078aee6e6f1a0d75b6761746cafa": {
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
@@ -699,12 +2176,40 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260601.md"
   },
+  "fad7f81d28ffa67fa453b45aeba076af": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "A Per-Component Diagnostic Protocol for Neural HJB-PIDE Solvers under Control-De",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "fbdc168e49bf6acf2d3068800daa2a54": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Statistical Model Checking of the Keynes+Schumpeter Model: A Transient Sensitivi",
+    "decision": "rej_L1",
+    "promising_file": null
+  },
+  "fc0fda3a49e58f97a7892577dea9943a": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "An extendable, integrated, and dynamic approach to forecasting and stress-testin",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "fc60a97fc97964a391c0c832b971fda5": {
     "first_seen": "2026-06-12 02:00",
     "source": "arxiv_econ_em",
     "title": "Prediction-Powered Causal Inference by Automatic Debiased Machine Learning and S",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_prediction_powered_causal_inference_by_automatic_20260612.md"
+  },
+  "fc61527a5e7e16b1ef3e7823e1ea06b5": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "SNAPO: Smooth Neural Adjoint Policy Optimization for Optimal Control via Differe",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
   },
   "fc7b297c2b60c1a68dd631a0dd4851a5": {
     "first_seen": "2026-06-08 06:06",
@@ -720,11 +2225,319 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "fe0878458347f263d5577ebd85ecb68d": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Analytic approximation for Bachelier option prices and applications",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
   "fec9f094b7c0c8a7e40f830f1df441d0": {
     "first_seen": "2026-06-10 01:30",
     "source": "arxiv_econ_em",
     "title": "Failure Modes of Deep Multi-Agent RL in Asynchronous Pricing: Reproducible Trigg",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
+  },
+  "fefc87e1f6c6200e4ffb801e167225cf": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Insuring Every Action: An Authority Frontier Framework for Runtime Actuarial Con",
+    "decision": "rej_L0",
+    "promising_file": null
+  },
+  "ff7651199799bb68ce3f4086cd140129": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Temporal Coarse-Graining of Latent Default-Probability Paths Generates Effective",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "ffe59b610b86957271e44bf7246f81f6": {
+    "first_seen": "2026-06-20 12:09",
+    "source": "arxiv_econ_em",
+    "title": "Numerical methods for lambda quantiles: robust evaluation and portfolio optimisa",
+    "decision": "deferred_to_next_run",
+    "promising_file": null
+  },
+  "2233e81d4ef34f04730aac8d87288ab7": {
+    "first_seen": "2026-06-06T18:14:29Z",
+    "source": "arxiv_econ_em",
+    "title": "Beyond Agent Architecture: Execution Assumptions and Reproducibility in LLM-Based Trading Systems",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_beyond_agent_architecture_execution_llm_trading_20260620.md"
+  },
+  "6d81ea54b077da7f7ea61d533e5db3be": {
+    "first_seen": "2026-05-17T15:24:53Z",
+    "source": "arxiv_econ_em",
+    "title": "Enhancing Regime Shift Detection Using Unstructured Data: A Study on the Treasury Market",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_enhancing_regime_shift_detection_unstructured_treasury_20260620.md"
+  },
+  "4bcf034909412e1816b3de868129ceb8": {
+    "first_seen": "2026-05-17T07:50:37Z",
+    "source": "arxiv_econ_em",
+    "title": "Deep Reinforcement Learning Framework for Diversified Portfolio Management Across Global Equity Markets",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_deep_rl_diversified_portfolio_global_equity_20260620.md"
+  },
+  "e0de61060302c2b877f956f389dac745": {
+    "first_seen": "2026-06-08T13:36:57Z",
+    "source": "arxiv_econ_em",
+    "title": "Volatility Forecasting and Return Prediction under Market Regimes: Evidence from High-Frequency Chinese Equity Data",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_volatility_forecasting_market_regimes_chinese_equity_20260620.md"
+  },
+  "1e1154770fa9284f1ce61deeee209eb7": {
+    "first_seen": "2026-06-11T14:49:42Z",
+    "source": "arxiv_econ_em",
+    "title": "Realtime price impact detection",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_realtime_price_impact_detection_20260620.md"
+  },
+  "d46ee456b822993a17deb1793d94ba05": {
+    "first_seen": "2026-06-07T11:55:03Z",
+    "source": "arxiv_econ_em",
+    "title": "Cross-sectional topological anomaly scores and intraday return predictability in the S&P 500: A BallMapper, decoder-conditional VAE, and Function-on-Function regression approach",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_cross_sectional_topological_anomaly_scores_intraday_20260620.md"
+  },
+  "dca6ece581258a354fb8c7e46049cfdc": {
+    "first_seen": "2026-05-12T21:21:25Z",
+    "source": "arxiv_econ_em",
+    "title": "Yield Curves Dynamics Using Variational Autoencoders Under No-arbitrage",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_yield_curve_dynamics_vae_no_arbitrage_20260620.md"
+  },
+  "d7f27c0a2cce2c89e0b7273c38de4ec6": {
+    "first_seen": "2026-05-27T02:04:31Z",
+    "source": "arxiv_econ_em",
+    "title": "Regime-Based Portfolio Allocation Using Hidden Markov Models and Reinforcement Learning",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_regime_portfolio_allocation_hmm_rl_20260620.md"
+  },
+  "2e42e98254ad6c69487b5d6cc2794524": {
+    "first_seen": "2026-06-03T08:11:45Z",
+    "source": "arxiv_econ_em",
+    "title": "ReSGA: A Large Tail Risk Model for Learning Value-at-Risk and Expected Shortfall",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_reSGA_large_tail_risk_model_var_es_20260620.md"
+  },
+  "281c9e9ef336fb3a61c566c78092746c": {
+    "first_seen": "2026-06-08T04:47:43Z",
+    "source": "arxiv_econ_em",
+    "title": "Continuous Cash-Overlay Filters for a Static Growth--Defensive Risk Sleeve: Slow-Tail Compensation, V-Shape Crash Brakes, Walk-Forward Validation, and Max-Cash Combination",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_continuous_cash_overlay_filters_growth_defensive_20260620.md"
+  },
+  "6d819cfb7de1456261d4cbba3cb1fab7": {
+    "first_seen": "2026-05-11T11:41:44Z",
+    "source": "arxiv_econ_em",
+    "title": "Resolution-Aware Perpetual Futures on Binary Prediction Markets: An Empirical Risk-Design Framework Using Polymarket Data",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_resolution_aware_perpetual_futures_polymarket_20260620.md"
+  },
+  "9725261b62ac081cf45144065e7607e0": {
+    "first_seen": "2026-05-18T01:03:28Z",
+    "source": "arxiv_econ_em",
+    "title": "Sequential Structure in Intraday Futures Data: LSTM vs Gradient Boosting on MNQ",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_sequential_structure_intraday_futures_lstm_mnq_20260620.md"
+  },
+  "50ec4a67c9888d7833dce46d2b64c72a": {
+    "first_seen": "2026-05-12T01:28:10Z",
+    "source": "arxiv_econ_em",
+    "title": "When Alpha Disappears: A One-Switch Benchmark for Decision-Time Leakage in Financial Backtests",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_when_alpha_disappears_decision_time_leakage_20260620.md"
+  },
+  "feb2ac714f2bf8ade1cdd80ea05826ac": {
+    "first_seen": "2026-05-20T02:45:07Z",
+    "source": "arxiv_econ_em",
+    "title": "Continuous Timing Signals for Growth-Defensive Style Allocation: Factor Attribution, Risk Matching, and Out-of-Sample Evidence",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_continuous_timing_signals_growth_defensive_style_20260620.md"
+  },
+  "e48dbbfdb6765f77994b22d2124c6589": {
+    "first_seen": "2026-06-05T16:47:23Z",
+    "source": "arxiv_econ_em",
+    "title": "Bubbles vs. Baselines: Token Valuation and Institutional Capital in PoS Networks under EIP-1559",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_bubbles_vs_baselines_token_valuation_pos_eip1559_20260620.md"
+  },
+  "00365fd6d61ae49315326d4c60f2e921": {
+    "first_seen": "2026-05-17T05:52:54Z",
+    "source": "arxiv_econ_em",
+    "title": "A Hybrid Gaussian Process Regression Framework for Stable Volatility-Covariance Estimation: Evidence from Global Equity Indices",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_hybrid_gaussian_process_vol_covariance_20260620.md"
+  },
+  "bb381ffbaa5d81cdc1ef735bf8aa35f8": {
+    "first_seen": "2026-05-16T18:49:00Z",
+    "source": "arxiv_econ_em",
+    "title": "Geometric Observables for Financial Regime Detection",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_geometric_observables_financial_regime_detection_20260620.md"
+  },
+  "b0bc9a48d822dfee53743c72b57bfcad": {
+    "first_seen": "2026-06-10T19:13:53Z",
+    "source": "arxiv_econ_em",
+    "title": "The Mathematics of Heuristic Portfolio Optimization (HPO)",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_mathematics_heuristic_portfolio_optimization_20260620.md"
+  },
+  "1c3aa0951053b1aa2ac1b729e9c23631": {
+    "first_seen": "2026-05-16T16:53:34Z",
+    "source": "arxiv_econ_em",
+    "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_representation_signatures_risk_feedback_llm_trading_20260620.md"
+  },
+  "f52e01657cbd1207738e4ddd745f5629": {
+    "first_seen": "2026-05-09T19:15:00Z",
+    "source": "arxiv_econ_em",
+    "title": "The Engineering of Skew: A Path-Dependent Framework for Asymmetric Volatility Management",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_engineering_skew_path_dependent_vol_management_20260620.md"
+  },
+  "256029cca7bc4ded2134909d00cb52ea": {
+    "first_seen": "2026-05-20T19:56:30Z",
+    "source": "arxiv_econ_em",
+    "title": "What Does Deep Hedging Actually Learn? Delta Corrections, Regime Fragility, and Symbolic Distillation",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_what_does_deep_hedging_actually_learn_20260620.md"
+  },
+  "f44c5433d29a8187e53bda0f16ccb08a": {
+    "first_seen": "2026-05-12T08:05:30Z",
+    "source": "arxiv_econ_em",
+    "title": "On convergence of the Mayer problems arising in the theory of financial markets with transaction cost",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_on_convergence_mayer_problems_transaction_cost_20260620.md"
+  },
+  "95eb8a2103eb2d877c5abaa9bd398cc4": {
+    "first_seen": "2026-05-31T14:05:52Z",
+    "source": "arxiv_econ_em",
+    "title": "On Reference-Regulated Multiperiod Mean-Variance Portfolio Optimization in High Dimensions",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_on_reference_regulated_multiperiod_mv_portfolio_20260620.md"
+  },
+  "443aa0262b924d739b35003201a3ca96": {
+    "first_seen": "2026-06-13T23:13:48Z",
+    "source": "arxiv_econ_em",
+    "title": "Fast, Reliable, and Error-Bounded Option Pricing with Pretrained Neural Networks: A GJR--GARCH Study",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_fast_reliable_error_bounded_option_pricing_neural_20260620.md"
+  },
+  "15f9f6e134070972e86db64c4c2ff104": {
+    "first_seen": "2026-05-22T23:34:00Z",
+    "source": "arxiv_econ_em",
+    "title": "Memory, Roughness, and Information Persistence in Financial Markets: A Structural Approach to Volatility Forecasting",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_memory_roughness_information_persistence_vol_forecasting_20260620.md"
+  },
+  "422d398478f1ea950b8e56c2c99af547": {
+    "first_seen": "2026-06-04T09:06:18Z",
+    "source": "arxiv_econ_em",
+    "title": "Derivative-Informed Operator Learning for Finance: On-the-Fly Greeks, Surfaces, Hedging, and Control",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_derivative_informed_operator_learning_greeks_20260620.md"
+  },
+  "0d6323a5f0b7b1377253dcec41a215df": {
+    "first_seen": "2026-06-02T10:34:22Z",
+    "source": "arxiv_econ_em",
+    "title": "Hybrid News Sentiment Engine: Real-Time Market Analysis via Adaptive Ensemble Learning on News-Price Pairs",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_hybrid_news_sentiment_engine_adaptive_ensemble_20260620.md"
+  },
+  "7a018511cc7da7809f02ba9b64777fa1": {
+    "first_seen": "2026-05-19T02:52:00Z",
+    "source": "arxiv_econ_em",
+    "title": "Do Better Volatility Forecasts Lead to Better Portfolios? Evidence from Graph Neural Networks",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_do_better_vol_forecasts_lead_better_portfolios_20260620.md"
+  },
+  "a68127ac2dc8421c6ae26ab665a2f0d0": {
+    "first_seen": "2026-05-19T14:30:49Z",
+    "source": "arxiv_econ_em",
+    "title": "Machine Learning-Based Bitcoin Trading Under Transaction Costs: Evidence From Walk-Forward Forecasting",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_machine_learning_bitcoin_trading_transaction_costs_20260620.md"
+  },
+  "2a04cfbff1cf9337cf59d68aca32e2b2": {
+    "first_seen": "2026-05-21T20:28:57Z",
+    "source": "arxiv_econ_em",
+    "title": "MadEvolve: Evolutionary Optimization of Trading Systems with Large Language Models",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_madevolve_evolutionary_optimization_trading_llm_20260620.md"
+  },
+  "056537d9ce950f2d3d31ffdcdb8d933c": {
+    "first_seen": "2026-05-12T02:17:32Z",
+    "source": "arxiv_econ_em",
+    "title": "A Validated Volatility-Volume-Gap Classifier for Regime Identification in MNQ Intraday Data",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_validated_volatility_volume_gap_classifier_mnq_20260620.md"
+  },
+  "30cac217df6c6347fc1d690fca6bdf11": {
+    "first_seen": "2026-06-08T04:03:17Z",
+    "source": "arxiv_econ_em",
+    "title": "Proof of Stake economy under centralized exchanges--a mean field model",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_proof_stake_centralized_exchanges_mean_field_20260620.md"
+  },
+  "8e141a42323c6ac463324c52a3932911": {
+    "first_seen": "2026-05-23T09:41:52Z",
+    "source": "arxiv_econ_em",
+    "title": "Market Regime Council for Dynamic Credit Assignment in Multi-Agent LLM Decision Systems",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_market_regime_council_llm_portfolio_shapley_20260620.md"
+  },
+  "5b54c5700b496be14a4a07a997e338b9": {
+    "first_seen": "2026-06-02T19:20:17Z",
+    "source": "arxiv_econ_em",
+    "title": "A new decomposition approach to modeling financial returns: Conditioning sign on magnitude",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_a_new_decomposition_sign_magnitude_financial_returns_20260620.md"
+  },
+  "ff0a6c90747b6e6b1e198922dafb3eef": {
+    "first_seen": "2026-06-02T21:06:27Z",
+    "source": "arxiv_econ_em",
+    "title": "Polymarket-v1 Database",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_polymarket_v1_database_complete_archive_20260620.md"
+  },
+  "f40a47d1d8574e5e4ca92394cbb0022f": {
+    "first_seen": "2026-05-11T12:03:35Z",
+    "source": "arxiv_econ_em",
+    "title": "A Taxonomy of Event-Linked Perpetual Futures: Variant Designs Beyond the Single-Market Binary Case",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_taxonomy_event_linked_perpetual_futures_20260620.md"
+  },
+  "665b325f1bed39175a6b5e14ee783ca2": {
+    "first_seen": "2026-05-04T08:26:39Z",
+    "source": "arxiv_econ_em",
+    "title": "Large-Scale Asset Selection via Metric Dependence with Enriched High Frequency Information",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_large_scale_asset_selection_metric_dependence_20260620.md"
+  },
+  "40cdcaaba6061ec1d9a9dd822ac85932": {
+    "first_seen": "2026-05-07T06:31:34Z",
+    "source": "arxiv_econ_em",
+    "title": "Multi-Dimensional Behavioral Evaluation of Agentic Stock Prediction Systems Using Large Language Model Judges with Closed-Loop Reinforcement Learning Feedback",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_multi_dimensional_behavioral_evaluation_agentic_stock_20260620.md"
+  },
+  "e9bcecbc459b34d79bd4cc0afdb84f9c": {
+    "first_seen": "2026-05-16T22:30:15Z",
+    "source": "arxiv_econ_em",
+    "title": "Financially Guided Deep Portfolio Optimization",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_financially_guided_deep_portfolio_optimization_20260620.md"
+  },
+  "88bd925e400eca7038523f67bd645c77": {
+    "first_seen": "2026-06-06T18:07:28Z",
+    "source": "arxiv_econ_em",
+    "title": "Macro Economists in the Machine: A Multi-Agent LLM Framework for Commodity-Related ETF Portfolio Construction",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_macro_economists_machine_llm_commodity_etf_20260620.md"
   }
 }
