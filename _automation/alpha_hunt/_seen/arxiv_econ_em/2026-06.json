@@ -1,4 +1,11 @@
 {
+  "031117c197aab946086227d50ca399c0": {
+    "first_seen": "2026-06-20 10:02",
+    "source": "arxiv_econ_em",
+    "title": "Crashing Together, Rallying Apart: Dynamic Conditional Tail Dependence in Crypto",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_crashing_together_rallying_apart_dynamic_condition_20260620.md"
+  },
   "074c9a61d3c4ad2b5cdd675d1bdae312": {
     "first_seen": "2026-06-16 01:00",
     "source": "arxiv_econ_em",
@@ -160,6 +167,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_when_do_markets_fully_process_public_information_20260609.md"
   },
+  "41cfef6a227343236c79fdbd69ce2690": {
+    "first_seen": "2026-06-20 10:02",
+    "source": "arxiv_econ_em",
+    "title": "Trading in the Sunshine or in the Shade: Market Impact and Adverse Selection on ",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_trading_in_the_sunshine_or_in_the_shade_market_imp_20260620.md"
+  },
   "47ef889e4850a1b850ed2460b6d19354": {
     "first_seen": "2026-06-09 06:05",
     "source": "arxiv_econ_em",
@@ -187,6 +201,13 @@
     "title": "Finding Most Influential Sets",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
+  },
+  "52188a1306049f717076e3336945c2f1": {
+    "first_seen": "2026-06-20 10:02",
+    "source": "arxiv_econ_em",
+    "title": "Beyond the Smile: A Hybrid Convolutional VAE for Crypto Volatility Surfaces",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_beyond_the_smile_a_hybrid_convolutional_vae_for_cr_20260620.md"
   },
   "5a1cf42de8da6ae0c316e5ada8c35e1f": {
     "first_seen": "2026-06-01 06:07",
@@ -230,6 +251,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_risks_and_uncertainty_in_monetary_policy_20260616.md"
   },
+  "6a0cc9cf417c02a3462e71b355b9716a": {
+    "first_seen": "2026-06-20 10:02",
+    "source": "arxiv_econ_em",
+    "title": "Do Prediction Markets Match Option Prices? Bitcoin Threshold Evidence from Binan",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_do_prediction_markets_match_option_prices_bitcoin__20260620.md"
+  },
   "6f984bf50a6b7e68597fcb860dbab4a6": {
     "first_seen": "2026-06-02 06:06",
     "source": "arxiv_econ_em",
@@ -264,6 +292,13 @@
     "title": "Estimating Demand for a New Product",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
+  },
+  "74b2ad8cb2e7def414f1453a261316a2": {
+    "first_seen": "2026-06-20 10:02",
+    "source": "arxiv_econ_em",
+    "title": "Trends, Volatility, Correlations, and Critical Phenomena in Financial Markets",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_trends_volatility_correlations_and_critical_phenom_20260620.md"
   },
   "7654fb73ae3fdb4a137713fe3caf6e2a": {
     "first_seen": "2026-06-16 02:30",
