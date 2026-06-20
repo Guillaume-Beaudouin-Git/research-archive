@@ -1,4 +1,11 @@
 {
+  "00365fd6d61ae49315326d4c60f2e921": {
+    "first_seen": "2026-05-17T05:52:54Z",
+    "source": "arxiv_econ_em",
+    "title": "A Hybrid Gaussian Process Regression Framework for Stable Volatility-Covariance Estimation: Evidence from Global Equity Indices",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_hybrid_gaussian_process_vol_covariance_20260620.md"
+  },
   "00baa6b3b3eaefebbbfc5fb37ee067c2": {
     "decision": "accepted",
     "first_seen": "2026-05-23 18:12",
@@ -19,6 +26,13 @@
     "promising_file": null,
     "source": "arxiv_econ_em",
     "title": "Higher-Order Neyman Orthogonality in Moment-Condition Models"
+  },
+  "056537d9ce950f2d3d31ffdcdb8d933c": {
+    "first_seen": "2026-05-12T02:17:32Z",
+    "source": "arxiv_econ_em",
+    "title": "A Validated Volatility-Volume-Gap Classifier for Regime Identification in MNQ Intraday Data",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_validated_volatility_volume_gap_classifier_mnq_20260620.md"
   },
   "05dab765a4aa142085705ebe90cb2efc": {
     "decision": "rejected_L0",
@@ -62,6 +76,13 @@
     "source": "arxiv_econ_em",
     "title": "Double Descent and Benign Overfitting in Macroeconomic Forecasting"
   },
+  "15f9f6e134070972e86db64c4c2ff104": {
+    "first_seen": "2026-05-22T23:34:00Z",
+    "source": "arxiv_econ_em",
+    "title": "Memory, Roughness, and Information Persistence in Financial Markets: A Structural Approach to Volatility Forecasting",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_memory_roughness_information_persistence_vol_forecasting_20260620.md"
+  },
   "1936ad7f67990445e68c0f69bc7661d2": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
@@ -83,12 +104,26 @@
     "source": "arxiv_econ_em",
     "title": "Vibe Econometrics and the Analysis Contract"
   },
+  "1c3aa0951053b1aa2ac1b729e9c23631": {
+    "first_seen": "2026-05-16T16:53:34Z",
+    "source": "arxiv_econ_em",
+    "title": "Representation Signatures and Risk-Feedback Alignment in LLM Trading Agents",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_representation_signatures_risk_feedback_llm_trading_20260620.md"
+  },
   "2219890f49f83bfd048c12c0791f4457": {
     "first_seen": "2026-05-30 18:06",
     "source": "arxiv_econ_em",
     "title": "Graph Neural Networks for Generalized Mundlak Estimator under Network Confoundin",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "256029cca7bc4ded2134909d00cb52ea": {
+    "first_seen": "2026-05-20T19:56:30Z",
+    "source": "arxiv_econ_em",
+    "title": "What Does Deep Hedging Actually Learn? Delta Corrections, Regime Fragility, and Symbolic Distillation",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_what_does_deep_hedging_actually_learn_20260620.md"
   },
   "2801d3b94bdb26540d84b3e7f026e549": {
     "decision": "rejected_L0",
@@ -103,6 +138,13 @@
     "promising_file": "arxiv_econ_em_the_harmonic_synthetic_control_method_20260523.md",
     "source": "arxiv_econ_em",
     "title": "The Harmonic Synthetic Control Method"
+  },
+  "2a04cfbff1cf9337cf59d68aca32e2b2": {
+    "first_seen": "2026-05-21T20:28:57Z",
+    "source": "arxiv_econ_em",
+    "title": "MadEvolve: Evolutionary Optimization of Trading Systems with Large Language Models",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_madevolve_evolutionary_optimization_trading_llm_20260620.md"
   },
   "2f775cdca8bf99289bf44527793b3594": {
     "decision": "rejected_L0",
@@ -167,6 +209,20 @@
     "source": "arxiv_econ_em",
     "title": "Endogenous Quantile Regression with Measurement Error in Dependent Variable"
   },
+  "40cdcaaba6061ec1d9a9dd822ac85932": {
+    "first_seen": "2026-05-07T06:31:34Z",
+    "source": "arxiv_econ_em",
+    "title": "Multi-Dimensional Behavioral Evaluation of Agentic Stock Prediction Systems Using Large Language Model Judges with Closed-Loop Reinforcement Learning Feedback",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_multi_dimensional_behavioral_evaluation_agentic_stock_20260620.md"
+  },
+  "4bcf034909412e1816b3de868129ceb8": {
+    "first_seen": "2026-05-17T07:50:37Z",
+    "source": "arxiv_econ_em",
+    "title": "Deep Reinforcement Learning Framework for Diversified Portfolio Management Across Global Equity Markets",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_deep_rl_diversified_portfolio_global_equity_20260620.md"
+  },
   "4cd0d4b120c609b6fa52eaf01cf33c33": {
     "decision": "accepted",
     "first_seen": "2026-05-27 12:08 UTC",
@@ -180,6 +236,13 @@
     "promising_file": "arxiv_econ_em_multi_regime_markov_switching_models_with_time_var_20260523.md",
     "source": "arxiv_econ_em",
     "title": "Multi-regime Markov-switching models with time-varying transition probabilities:"
+  },
+  "50ec4a67c9888d7833dce46d2b64c72a": {
+    "first_seen": "2026-05-12T01:28:10Z",
+    "source": "arxiv_econ_em",
+    "title": "When Alpha Disappears: A One-Switch Benchmark for Decision-Time Leakage in Financial Backtests",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_when_alpha_disappears_decision_time_leakage_20260620.md"
   },
   "556d6e5a6b188a2e97c8ff3514e12ef8": {
     "decision": "rejected_L0",
@@ -202,6 +265,13 @@
     "source": "arxiv_econ_em",
     "title": "Asymptotic Variance Theory for Trimmed Least Squares and Trimmed Least Absolute "
   },
+  "665b325f1bed39175a6b5e14ee783ca2": {
+    "first_seen": "2026-05-04T08:26:39Z",
+    "source": "arxiv_econ_em",
+    "title": "Large-Scale Asset Selection via Metric Dependence with Enriched High Frequency Information",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_large_scale_asset_selection_metric_dependence_20260620.md"
+  },
   "66e7a0389014db90f0db1619be4e1afa": {
     "first_seen": "2026-05-30 18:06",
     "source": "arxiv_econ_em",
@@ -215,6 +285,20 @@
     "promising_file": "arxiv_econ_em_algorithm_or_creative_a_three_arm_experimental_des_20260527.md",
     "source": "arxiv_econ_em",
     "title": "Algorithm or Creative? A Three-Arm Experimental Design for Decomposing Algorithmic Bias in Platform A/B Tests"
+  },
+  "6d819cfb7de1456261d4cbba3cb1fab7": {
+    "first_seen": "2026-05-11T11:41:44Z",
+    "source": "arxiv_econ_em",
+    "title": "Resolution-Aware Perpetual Futures on Binary Prediction Markets: An Empirical Risk-Design Framework Using Polymarket Data",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_resolution_aware_perpetual_futures_polymarket_20260620.md"
+  },
+  "6d81ea54b077da7f7ea61d533e5db3be": {
+    "first_seen": "2026-05-17T15:24:53Z",
+    "source": "arxiv_econ_em",
+    "title": "Enhancing Regime Shift Detection Using Unstructured Data: A Study on the Treasury Market",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_enhancing_regime_shift_detection_unstructured_treasury_20260620.md"
   },
   "6fc4a932144a971c866b8095f3e05c13": {
     "decision": "rejected_L0",
@@ -243,6 +327,13 @@
     "title": "Robust Inference for Dyadic Data with Dependent Ordered Nodes",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "7a018511cc7da7809f02ba9b64777fa1": {
+    "first_seen": "2026-05-19T02:52:00Z",
+    "source": "arxiv_econ_em",
+    "title": "Do Better Volatility Forecasts Lead to Better Portfolios? Evidence from Graph Neural Networks",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_do_better_vol_forecasts_lead_better_portfolios_20260620.md"
   },
   "7ddecd9da8608fa4fdeb1ea9f4222c8c": {
     "decision": "rejected_L1_no_signal",
@@ -286,12 +377,26 @@
     "source": "arxiv_econ_em",
     "title": "Multi-Dimensional Matching in Market Design"
   },
+  "8e141a42323c6ac463324c52a3932911": {
+    "first_seen": "2026-05-23T09:41:52Z",
+    "source": "arxiv_econ_em",
+    "title": "Market Regime Council for Dynamic Credit Assignment in Multi-Agent LLM Decision Systems",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_market_regime_council_llm_portfolio_shapley_20260620.md"
+  },
   "9437dc082e2dfae29663266728a68759": {
     "decision": "accepted",
     "first_seen": "2026-05-23 18:12",
     "promising_file": "arxiv_econ_em_lgb_a_macroeconomic_forecasting_road_test_20260523.md",
     "source": "arxiv_econ_em",
     "title": "LGB+: A Macroeconomic Forecasting Road Test"
+  },
+  "95eb8a2103eb2d877c5abaa9bd398cc4": {
+    "first_seen": "2026-05-31T14:05:52Z",
+    "source": "arxiv_econ_em",
+    "title": "On Reference-Regulated Multiperiod Mean-Variance Portfolio Optimization in High Dimensions",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_on_reference_regulated_multiperiod_mv_portfolio_20260620.md"
   },
   "960449911f312d54de5b5e94c5ae3268": {
     "decision": "accepted",
@@ -307,12 +412,26 @@
     "source": "arxiv_econ_em",
     "title": "Sufficient conditions for a Heuristic Rating Estimation Method application"
   },
+  "9725261b62ac081cf45144065e7607e0": {
+    "first_seen": "2026-05-18T01:03:28Z",
+    "source": "arxiv_econ_em",
+    "title": "Sequential Structure in Intraday Futures Data: LSTM vs Gradient Boosting on MNQ",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_sequential_structure_intraday_futures_lstm_mnq_20260620.md"
+  },
   "97bfdd8b3fcf3d74f3fd1e9d7c8e22c5": {
     "decision": "accepted",
     "first_seen": "2026-05-23 18:12",
     "promising_file": "arxiv_econ_em_saga_a_sequence_adaptive_generative_architecture_f_20260523.md",
     "source": "arxiv_econ_em",
     "title": "SAGA: A Sequence-Adaptive Generative Architecture for Multi-Horizon Probabilisti"
+  },
+  "a68127ac2dc8421c6ae26ab665a2f0d0": {
+    "first_seen": "2026-05-19T14:30:49Z",
+    "source": "arxiv_econ_em",
+    "title": "Machine Learning-Based Bitcoin Trading Under Transaction Costs: Evidence From Walk-Forward Forecasting",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_machine_learning_bitcoin_trading_transaction_costs_20260620.md"
   },
   "a7b1bb279d6e0ef7146f89829f1e622e": {
     "decision": "rejected_L0",
@@ -341,6 +460,13 @@
     "promising_file": null,
     "source": "arxiv_econ_em",
     "title": "Comment on Scientific production in the era of large language models"
+  },
+  "bb381ffbaa5d81cdc1ef735bf8aa35f8": {
+    "first_seen": "2026-05-16T18:49:00Z",
+    "source": "arxiv_econ_em",
+    "title": "Geometric Observables for Financial Regime Detection",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_geometric_observables_financial_regime_detection_20260620.md"
   },
   "c5a643b19d6eca5f5528a98457ee92a6": {
     "decision": "rejected_L0",
@@ -384,6 +510,13 @@
     "source": "arxiv_econ_em",
     "title": "Designing Persuasive Experiments"
   },
+  "d7f27c0a2cce2c89e0b7273c38de4ec6": {
+    "first_seen": "2026-05-27T02:04:31Z",
+    "source": "arxiv_econ_em",
+    "title": "Regime-Based Portfolio Allocation Using Hidden Markov Models and Reinforcement Learning",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_regime_portfolio_allocation_hmm_rl_20260620.md"
+  },
   "d98491da1f0debb31c1659b82fba4a80": {
     "first_seen": "2026-05-30 18:06",
     "source": "arxiv_econ_em",
@@ -397,6 +530,13 @@
     "promising_file": "arxiv_econ_em_tweedie_s_formula_variance_functions_and_score_dri_20260523.md",
     "source": "arxiv_econ_em",
     "title": "Tweedie's Formula, Variance Functions, and Score-Driven Updating"
+  },
+  "dca6ece581258a354fb8c7e46049cfdc": {
+    "first_seen": "2026-05-12T21:21:25Z",
+    "source": "arxiv_econ_em",
+    "title": "Yield Curves Dynamics Using Variational Autoencoders Under No-arbitrage",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_yield_curve_dynamics_vae_no_arbitrage_20260620.md"
   },
   "dcc8bdafd0c089ee9da544c1f9f0c31a": {
     "decision": "accepted",
@@ -418,6 +558,13 @@
     "promising_file": null,
     "source": "arxiv_econ_em",
     "title": "Demographic Transition and the Dynamics of Income Distribution in Japan: A Bayes"
+  },
+  "e9bcecbc459b34d79bd4cc0afdb84f9c": {
+    "first_seen": "2026-05-16T22:30:15Z",
+    "source": "arxiv_econ_em",
+    "title": "Financially Guided Deep Portfolio Optimization",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_financially_guided_deep_portfolio_optimization_20260620.md"
   },
   "edba64b8fb4551baa78fd43b8efda8a6": {
     "decision": "accepted",
@@ -461,6 +608,27 @@
     "source": "arxiv_econ_em",
     "title": "The fine structure of electricity price volatility"
   },
+  "f40a47d1d8574e5e4ca92394cbb0022f": {
+    "first_seen": "2026-05-11T12:03:35Z",
+    "source": "arxiv_econ_em",
+    "title": "A Taxonomy of Event-Linked Perpetual Futures: Variant Designs Beyond the Single-Market Binary Case",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_taxonomy_event_linked_perpetual_futures_20260620.md"
+  },
+  "f44c5433d29a8187e53bda0f16ccb08a": {
+    "first_seen": "2026-05-12T08:05:30Z",
+    "source": "arxiv_econ_em",
+    "title": "On convergence of the Mayer problems arising in the theory of financial markets with transaction cost",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_on_convergence_mayer_problems_transaction_cost_20260620.md"
+  },
+  "f52e01657cbd1207738e4ddd745f5629": {
+    "first_seen": "2026-05-09T19:15:00Z",
+    "source": "arxiv_econ_em",
+    "title": "The Engineering of Skew: A Path-Dependent Framework for Asymmetric Volatility Management",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_engineering_skew_path_dependent_vol_management_20260620.md"
+  },
   "f9ab71b35fbfd54ccfc83148818a4395": {
     "decision": "rejected_L0",
     "first_seen": "2026-05-23 18:12",
@@ -474,5 +642,12 @@
     "promising_file": null,
     "source": "arxiv_econ_em",
     "title": "Scaling the Queue: Reinforcement Learning for Equitable Call Classification Capa"
+  },
+  "feb2ac714f2bf8ade1cdd80ea05826ac": {
+    "first_seen": "2026-05-20T02:45:07Z",
+    "source": "arxiv_econ_em",
+    "title": "Continuous Timing Signals for Growth-Defensive Style Allocation: Factor Attribution, Risk Matching, and Out-of-Sample Evidence",
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_continuous_timing_signals_growth_defensive_style_20260620.md"
   }
 }
