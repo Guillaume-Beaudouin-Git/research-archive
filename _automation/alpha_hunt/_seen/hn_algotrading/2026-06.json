@@ -13,6 +13,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0f2703a00be21999a0dc750345c4cbaf": {
+    "first_seen": "2026-06-20 00:00",
+    "source": "hn_algotrading",
+    "title": "Ask HN: A proposal for interviewing \"AI-Augmented\" Engineers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "14c973e763f826dc99dce5faf99e61a7": {
     "first_seen": "2026-06-07 14:04",
     "source": "hn_algotrading",
@@ -87,6 +94,13 @@
     "first_seen": "2026-06-12 05:30",
     "source": "hn_algotrading",
     "title": "Show HN: Manob: A social media plaform without algorithm, ads, or data-tracking",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2b793ab81353343b0021b2497508e2b5": {
+    "first_seen": "2026-06-20 00:00",
+    "source": "hn_algotrading",
+    "title": "Launch Black Friday Marketing on Telegram with Telega.io",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -335,6 +349,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c220693ab62cf0cbd1941807e733e154": {
+    "first_seen": "2026-06-20 00:00",
+    "source": "hn_algotrading",
+    "title": "\"The Human OS Is Broken: A Framework for Algorithmic Governance",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c242cbb63994f87bd07eeaa6620ef1ed": {
     "first_seen": "2026-06-04 12:07",
     "source": "hn_algotrading",
@@ -381,6 +402,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Institutional equities algorithmic trading strategy",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d50ca67ee567b4f69d24e1b64f4bc396": {
+    "first_seen": "2026-06-20 00:00",
+    "source": "hn_algotrading",
+    "title": "What does your hiring process look like in a post-ChatGPT world?",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -437,6 +465,13 @@
     "first_seen": "2026-06-10 02:00",
     "source": "hn_algotrading",
     "title": "Show HN: Story Jam, a music composition tool for Storytellers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e2eb681442bd0e13fb1faf1ab69f9ce1": {
+    "first_seen": "2026-06-20 00:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: Cryptographic proofs that algorithms stay fair over time [pdf]",
     "decision": "rejected_L0",
     "promising_file": null
   },
