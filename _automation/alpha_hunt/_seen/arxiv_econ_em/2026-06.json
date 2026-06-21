@@ -52,8 +52,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Conformal Prediction Intervals with Tail-Specific Guarantees",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_conformal_prediction_intervals_with_tail_specific__20260620.md"
   },
   "0a57fc5efafbd1902f7117624ec49650": {
     "first_seen": "2026-06-20 12:09",
@@ -213,15 +213,15 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Mean-field game of mean-variance portfolio management with peer-based relative r",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_mean_field_game_of_mean_variance_portfolio_managem_20260620.md"
   },
   "1c068e93aa63112469c004c74df80de2": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Stochastic Volatility, Jumps, and Rates: A Unified Framework for Option Pricing ",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_stochastic_volatility_jumps_and_rates_a_unified_fr_20260620.md"
   },
   "1c3aa0951053b1aa2ac1b729e9c23631": {
     "first_seen": "2026-05-16T16:53:34Z",
@@ -276,8 +276,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Multiplicative Langevin Process for Volatilities Produces Observed Q-Variance Re",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_multiplicative_langevin_volatility_produces_observ_20260620.md"
   },
   "20be6da5cf12521e80e30a602cb0f8ad": {
     "first_seen": "2026-06-17 01:30",
@@ -304,15 +304,15 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Explicit Signal-Adaptive Sequential Optimal Execution Quotes",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_explicit_signal_adaptive_sequential_optimal_execut_20260620.md"
   },
   "2501390378195836476653f225da50b4": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Forward-Looking Stress Testing Under Macro Scenarios: Stable SVaR Estimation Usi",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_forward_looking_stress_testing_under_macro_scenari_20260620.md"
   },
   "2545fe729848c3ae698c242ced694dab": {
     "first_seen": "2026-06-20 12:09",
@@ -381,8 +381,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Game-Theoretic Modeling of Heterogeneous Investor Interactions for Stock Price F",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_game_theoretic_modeling_of_heterogeneous_investor__20260620.md"
   },
   "2c53a9fbba753bc23713723c50f0dd43": {
     "first_seen": "2026-06-16 02:30",
@@ -486,8 +486,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Deterministic Policy Gradient for Learning Equilibrium in Time-Inconsistent Cont",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_deterministic_policy_gradient_for_equilibrium_in_t_20260620.md"
   },
   "363994d151b313d03f0a9d92fb0d1659": {
     "first_seen": "2026-06-20 12:09",
@@ -542,8 +542,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Fairness and Strategy-Proofness in Automated Market Makers",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_fairness_and_strategy_proofness_in_automated_marke_20260620.md"
   },
   "3f8dd6c17ccc6244a54a4870b8b0e8e9": {
     "first_seen": "2026-06-20 12:09",
@@ -640,8 +640,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Pareto frontier of portfolio investment under volatility uncertainty and short-s",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_pareto_frontier_of_portfolio_investment_under_vola_20260620.md"
   },
   "469598d65c814d64bda90edb21ed7df7": {
     "first_seen": "2026-06-20 12:09",
@@ -654,8 +654,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Quantum Horizon: An evaluation of quantum computing as a threat to Bitcoin and E",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_quantum_horizon_evaluating_quantum_computing_as_a__20260620.md"
   },
   "47ef889e4850a1b850ed2460b6d19354": {
     "first_seen": "2026-06-09 06:05",
@@ -703,8 +703,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "On regularity of finite-maturity American put options in the Heston model",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_on_regularity_of_finite_maturity_american_put_opti_20260620.md"
   },
   "4d32c7e9b4cccec59f18740be1b6f445": {
     "first_seen": "2026-06-20 12:09",
@@ -773,8 +773,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Group Quantization and Mellin Representations of the Heston Model",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_group_quantization_and_mellin_representations_of_t_20260620.md"
   },
   "549577b8b51a90da09e1b07e64644f70": {
     "first_seen": "2026-06-20 12:09",
@@ -822,8 +822,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "From Index to Equity: Pre-Training Transformers for Stock Return Prediction",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_from_index_to_equity_pre_training_transformers_for_20260620.md"
   },
   "5c0f5c2f77da89c0fa1817dcb40d943b": {
     "first_seen": "2026-06-20 12:09",
@@ -1228,8 +1228,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "From Accuracy to Auditability: A Survey of Determinism in Financial AI Systems",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_from_accuracy_to_auditability_determinism_in_finan_20260620.md"
   },
   "82a6d7ad50aac316079e7afbeeee4c28": {
     "first_seen": "2026-06-20 12:09",
@@ -1242,8 +1242,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Collective completeness and pricing-hedging duality II",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_collective_completeness_and_pricing_hedging_dualit_20260620.md"
   },
   "8478c750f8a92b2e070c86e3d4c224bf": {
     "first_seen": "2026-06-09 06:05",
@@ -1298,8 +1298,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Scaling Limits of Bivariate Nearly-Unstable Hawkes Processes and Applications to",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_scaling_limits_of_bivariate_nearly_unstable_hawkes_20260620.md"
   },
   "87d68490aed071abd000d7742c2c54a7": {
     "first_seen": "2026-06-09 06:05",
@@ -1333,8 +1333,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Markets Are Not Random, They Are Hard to Predict",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_markets_are_not_random_they_are_hard_to_predict_20260620.md"
   },
   "8b3fb11780abbdff724032b9139b584f": {
     "first_seen": "2026-06-20 12:09",
@@ -1389,8 +1389,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Benchmarking Quantum Algorithmic Resilience for CVaR Portfolio Optimization: The",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_benchmarking_quantum_algorithms_for_cvar_portfolio_20260620.md"
   },
   "90bed1eb14ee6d4e69092b8810455927": {
     "first_seen": "2026-06-20 12:09",
@@ -1438,8 +1438,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "One Currency, Two Forward Prices: The Onshore-Offshore Renminbi Puzzle",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_one_currency_two_forward_prices_the_onshore_offsho_20260620.md"
   },
   "98509d45ea31b7a27e55e4e1e414e1ff": {
     "first_seen": "2026-06-20 12:09",
@@ -1536,8 +1536,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "End-to-End PDE-Based Quantum Algorithms for Multi-Asset Option Pricing under Loc",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_end_to_end_pde_based_quantum_algorithms_for_multi__20260620.md"
   },
   "9e84bc167f19454aa0ce31e5a7a88ff6": {
     "first_seen": "2026-06-19 03:30",
@@ -1606,8 +1606,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Optimal investment and Pension policy in Pay-As-You-Go systems under forward uti",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_optimal_investment_and_pension_policy_in_pay_as_yo_20260620.md"
   },
   "a68127ac2dc8421c6ae26ab665a2f0d0": {
     "first_seen": "2026-05-19T14:30:49Z",
@@ -1627,8 +1627,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Learning Time-Inhomogeneous Markov Dynamics in Financial Time Series via Neural ",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_learning_time_inhomogeneous_markov_dynamics_in_fin_20260620.md"
   },
   "a9878ed2fae135b1b81a5efc753e16c3": {
     "first_seen": "2026-06-16 02:30",
@@ -1662,8 +1662,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Stress Amplified Resilience: ESG and Joint Fragility in Equity Markets",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_stress_amplified_resilience_esg_and_joint_fragilit_20260620.md"
   },
   "ae9fa41029091ffafde992e6415e6e44": {
     "first_seen": "2026-06-05 08:03",
@@ -1676,8 +1676,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Portfolio Choice with Competing Precautionary and Accumulation Goals",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_portfolio_choice_with_competing_precautionary_and__20260620.md"
   },
   "b05117e424a4ab47b026821b229bb87a": {
     "first_seen": "2026-06-19 02:00",
@@ -1739,8 +1739,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Market-implied time to transition to a low-carbon economy: a stochastic modellin",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_market_implied_time_to_transition_to_a_low_carbon__20260620.md"
   },
   "b6cd1fba18d92b18dbc6740be6aa604a": {
     "first_seen": "2026-06-08 06:06",
@@ -1914,8 +1914,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Leveraging LLMs for Unstructured Claims Data Analysis",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_leveraging_llms_for_unstructured_insurance_claims__20260620.md"
   },
   "d2ad2bbe9de998b44d3bd07fb3b4444b": {
     "first_seen": "2026-06-20 12:09",
@@ -1935,8 +1935,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Incremental SVD for Large-Scale Dynamic Matrices: Accuracy, Subspace Stability, ",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_incremental_svd_for_large_scale_dynamic_matrices_a_20260620.md"
   },
   "d331f5a5274442d5bbfbcff9d1efb2d8": {
     "first_seen": "2026-06-20 12:09",
@@ -2019,8 +2019,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Two Sides of Schur Damping: High-Dimensional Pseudo-Likelihoods and Portfolio Al",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_two_sides_of_schur_damping_portfolio_allocation_an_20260620.md"
   },
   "da71abad9b2a1fa336c57655d864998f": {
     "first_seen": "2026-06-11 02:30",
@@ -2040,8 +2040,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Implying Volatility: How Fast Can We Go?",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_flashiv_fast_implied_volatility_solver_for_product_20260620.md"
   },
   "dc4e42f4378a4b15012135bc5a3f309c": {
     "first_seen": "2026-06-20 12:09",
@@ -2089,8 +2089,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Market Makers and Risk Aversion: A Hamiltonian Approach to the Excess Volatility",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_market_makers_and_risk_aversion_a_hamiltonian_appr_20260620.md"
   },
   "dfc351b9ec182a058eaaec11cc0c6bf3": {
     "first_seen": "2026-06-20 12:09",
@@ -2103,8 +2103,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Change-point estimation for Weibull time series with copula-based Markov models",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_change_point_estimation_for_weibull_time_series_wi_20260620.md"
   },
   "e09dc432af1fd246d234abdbf80f2025": {
     "first_seen": "2026-06-16 02:30",
@@ -2117,8 +2117,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Zero-Copy Semantic Contagion: An In-Memory Streaming Architecture for Evolving A",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_zero_copy_semantic_contagion_in_memory_streaming_f_20260620.md"
   },
   "e0de61060302c2b877f956f389dac745": {
     "first_seen": "2026-06-08T13:36:57Z",
@@ -2145,8 +2145,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Forward-Time Black-Scholes Reconstruction via Regularized Legendre Reduction",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_forward_time_black_scholes_reconstruction_via_regu_20260620.md"
   },
   "e382a3530eab35b1e427dccd37518dc7": {
     "first_seen": "2026-06-20 12:09",
@@ -2159,8 +2159,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Fitting Accumulated Stock Returns with Tempered Skew t-Distribution",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_fitting_accumulated_stock_returns_with_tempered_sk_20260620.md"
   },
   "e43a1ea6ff929fd4900102489a841900": {
     "first_seen": "2026-06-20 12:09",
@@ -2236,8 +2236,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "The Gini-Bayes Connection: The CAP Slope as Bayes' Theorem, with Applications to",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_the_gini_bayes_connection_cap_slope_as_bayes_theor_20260620.md"
   },
   "e9246690e19cd355fad0f93c48653481": {
     "first_seen": "2026-06-20 12:09",
@@ -2334,15 +2334,15 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Option Pricing under Stochastic Volatility and Jumps:A PIDE Framework with Empir",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260620.md"
   },
   "f124a37c7ff2c193d1feefa9cac10bac": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "A Market-Rule-Informed Neural Network for Efficient Imbalance Electricity Price ",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_market_rule_informed_neural_network_for_electricit_20260620.md"
   },
   "f3534a84140bc40d14c74759e1656431": {
     "first_seen": "2026-06-01 06:07",
@@ -2404,8 +2404,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Tokenized but Illiquid? Evidence from Real-World Asset Markets",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_tokenized_but_illiquid_evidence_from_real_world_as_20260620.md"
   },
   "f70d429ac3b098c7fb72e20466d2b2e5": {
     "first_seen": "2026-06-20 12:09",
@@ -2495,8 +2495,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Analytic approximation for Bachelier option prices and applications",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_analytic_approximation_for_bachelier_option_prices_20260620.md"
   },
   "feb2ac714f2bf8ade1cdd80ea05826ac": {
     "first_seen": "2026-05-20T02:45:07Z",
