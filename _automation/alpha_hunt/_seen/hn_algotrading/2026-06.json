@@ -237,6 +237,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "70708e953055bff4681cf2a340a434f4": {
+    "first_seen": "2026-06-21 14:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: I built a non-algorithmic social network for just my family and friends",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "76374ceb79ce84eac60f6bd096e7d885": {
     "first_seen": "2026-06-19 14:30",
     "source": "hn_algotrading",
@@ -500,6 +507,13 @@
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Algorithmic Trading Models – Moving Averages",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dbed3da86734b55ab856519ec32a800d": {
+    "first_seen": "2026-06-21 14:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: An algorithmic audio landscape",
     "decision": "rejected_L0",
     "promising_file": null
   },
