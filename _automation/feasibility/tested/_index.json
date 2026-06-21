@@ -1551,6 +1551,30 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_cross_sectional_topological_anomaly_scores_int_2026-06-20_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_change_point_estimation_for_weibull_time_series_wi_20260620.md",
+      "tested_date": "2026-06-21",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_change_point_estimation_for_weibull_time_serie_2026-06-21_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_conformal_prediction_intervals_with_tail_specific__20260620.md",
+      "tested_date": "2026-06-21",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_conformal_prediction_intervals_with_tail_speci_2026-06-21_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_enhancing_a_risk_model_by_adding_transient_20260621.md",
+      "tested_date": "2026-06-21",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_enhancing_a_risk_model_by_adding_transient_202_2026-06-21_report.md",
+      "stopped_at": "A"
     }
   ]
 }
