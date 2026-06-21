@@ -132,6 +132,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3d758291b190a18498f797fa1c76ba2d": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: PAlignPrims – C++ library for sequence alignment beyond bioinformatics",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "41d15a1b5033fe862d656522b0403adf": {
     "first_seen": "2026-06-04 12:07",
     "source": "hn_algotrading",
@@ -244,6 +251,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "7e569de20ef111b10ec23d25b7300e31": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Data Modeling Ancient Chinese Logic (Bazi/Ziwei Doushu) with AI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "84b064960ce39ef7332f4a5a91e09efe": {
     "first_seen": "2026-06-21 02:00",
     "source": "hn_algotrading",
@@ -272,10 +286,24 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "8e87b54e16e7bc90cb1833fb42053f8f": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Image Scaler – Privacy-focused image resizing with 60-image batches",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "911e2d924e287fc1dd6f8a20b179b78b": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
     "title": "Ask HN: Should I Keep the Code?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "914e5a7866717493d3e4b4a6a93bbc96": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Quantum Lings – A LeetCode-style platform for quantum computing",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -290,6 +318,13 @@
     "first_seen": "2026-06-14 20:30",
     "source": "hn_algotrading",
     "title": "Show HN: Ray Hosting – Topology-aware game server orchestrator made from scratch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "96cb94f146da75476f657f9faaf4c7a1": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Transfer Learning Boosts GQE Accelerating Drug Discovery in the NISQEra",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -328,6 +363,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "aa52b1980dba9dc94c76beacb3e96e14": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Tessera Designer – Generate beautiful, seamless patterns",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b11a2ff54fda336eecafef160842c8b6": {
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
@@ -346,6 +388,13 @@
     "first_seen": "2026-06-10 02:00",
     "source": "hn_algotrading",
     "title": "Show HN: Create Your Own TV Channel",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "be481e5236497c0ef0919967bb026618": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: The $1B problem with business cards nobody's solving properly",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -416,6 +465,13 @@
     "first_seen": "2026-06-20 00:00",
     "source": "hn_algotrading",
     "title": "What does your hiring process look like in a post-ChatGPT world?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d71e82da85760475b9564726472473a3": {
+    "first_seen": "2026-06-21 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Git Guide - The open source travel guide on GitHub Actions",
     "decision": "rejected_L0",
     "promising_file": null
   },
