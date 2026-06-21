@@ -90,6 +90,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2603df05d0e187863b02044c3b4be4ee": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: AI Revolutionizes E-Commerce Marketing: Meet PhotoG by Aid Lab",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "296ffe0c29eec7ff79cf9862fd185777": {
     "first_seen": "2026-06-12 05:30",
     "source": "hn_algotrading",
@@ -101,6 +108,13 @@
     "first_seen": "2026-06-20 00:00",
     "source": "hn_algotrading",
     "title": "Launch Black Friday Marketing on Telegram with Telega.io",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "328145bbf94a61be2367555b718c8e1c": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: SimpleAuth.link – Selfhosted passwordless service with no database",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -188,6 +202,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "56268d684e5c4032314c2ba0aa45bcb8": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Key Points of Today's PyTorch Deep Learning Session",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "56b656dd55d64afbb0f8ad6cad710bea": {
     "first_seen": "2026-06-06 08:04",
     "source": "hn_algotrading",
@@ -199,6 +220,13 @@
     "first_seen": "2026-06-08 06:06",
     "source": "hn_algotrading",
     "title": "Show HN: NoSuggest – Watch YouTube without the recommendation algorithm",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "58fac75b47f020a9aa72d80319e41c8c": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Anyone tried the IndexNow feature yet? Does it benefit SEO anyhow?",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -241,6 +269,13 @@
     "first_seen": "2026-06-21 14:00",
     "source": "hn_algotrading",
     "title": "Show HN: I built a non-algorithmic social network for just my family and friends",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "74489e1e7e56b65e6b18d4741a0ea67f": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Aegis AI – Adaptive screen-time coach that blocks distractions",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -321,6 +356,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "93da00a5ad6d045879eed02afe614b3f": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Reasonote, Open-Source AI-Generated Courses, Lessons, and Podcasts",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "964b598ba548fac6461daae96124bbba": {
     "first_seen": "2026-06-14 20:30",
     "source": "hn_algotrading",
@@ -381,6 +423,13 @@
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
     "title": "Monocod",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b4965d1b36097f3319a9a951dc45ae32": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: FSP2 Tested on excerpt \"Romeo and Juliet\" impressive compresion results",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -510,6 +559,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "dbdd71d7f94c72abe20d34648794533b": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "What is GEO and why is no one building in it?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "dbed3da86734b55ab856519ec32a800d": {
     "first_seen": "2026-06-21 14:00",
     "source": "hn_algotrading",
@@ -577,6 +633,13 @@
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
     "title": "Show HN: Mamba3-minimal – PyTorch implementation of Mamba-3",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "eb670263e5ea1b31e1bca9a1ab13fbf8": {
+    "first_seen": "2026-06-21 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: SRAW – new compression preformat Data Optimization for Embedded Systems",
     "decision": "rejected_L0",
     "promising_file": null
   },
