@@ -1,5 +1,5 @@
 {
-  "run_time": "2026-06-21 02:00 UTC",
+  "run_time": "2026-06-21 05:30 UTC",
   "accepted_count": 0,
   "by_source": {
     "hn_quant": {
@@ -11,10 +11,10 @@
       "rej_l2": 0
     },
     "hn_algotrading": {
-      "total": 198,
-      "new": 1,
+      "total": 206,
+      "new": 8,
       "accepted": 0,
-      "rej_l0": 1,
+      "rej_l0": 8,
       "rej_l1": 0,
       "rej_l2": 0
     },
