@@ -1,5 +1,17 @@
 {
-  "run_time": "2026-06-21 08:02 UTC",
-  "accepted_count": 0,
-  "by_source": {}
+  "run_time": "2026-06-21 10:21 UTC",
+  "accepted_count": 40,
+  "deferred_count": 109,
+  "by_source": {
+    "arxiv_econ_em": {
+      "total": 149,
+      "new": 0,
+      "accepted": 40,
+      "deferred": 109,
+      "rej_l0": 0,
+      "rej_l1": 0,
+      "rej_l2": 0,
+      "source": "recovered_from_arxiv_staging"
+    }
+  }
 }
