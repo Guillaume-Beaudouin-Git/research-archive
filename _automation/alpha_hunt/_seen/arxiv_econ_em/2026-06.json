@@ -17,8 +17,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Multiperiod Groundwater Markets",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_multiperiod_groundwater_markets_stochastic_20260621.md"
   },
   "031117c197aab946086227d50ca399c0": {
     "first_seen": "2026-06-20 10:02",
@@ -31,8 +31,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Enhancing a Risk Model by Adding Transient Statistical Factors",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_enhancing_a_risk_model_by_adding_transient_20260621.md"
   },
   "056537d9ce950f2d3d31ffdcdb8d933c": {
     "first_seen": "2026-05-12T02:17:32Z",
@@ -94,8 +94,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Coordination as an Architectural Layer for LLM-Based Multi-Agent Systems",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_coordination_as_architectural_layer_llm_multi_20260621.md"
   },
   "0ff717304b7b50b3e5271e86fb649b9f": {
     "first_seen": "2026-06-04 06:06",
@@ -178,8 +178,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "A Geometry-Aware Residual Correction of Hagan's SABR Implied Volatility Formula",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_geometry_aware_residual_correction_sabr_implied_20260621.md"
   },
   "168f94d822b80feb26ecc3c52b45075f": {
     "first_seen": "2026-06-20 12:09",
@@ -192,8 +192,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Empirical Evaluation of Deadline-Resolved Information Leakage on Documented Poly",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_empirical_evaluation_deadline_resolved_ils_poly_20260621.md"
   },
   "18f12c95537b5bcdd46ddf057524a8ff": {
     "first_seen": "2026-06-20 12:09",
@@ -241,8 +241,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "FinStressTS: A Parametric Synthetic Benchmark for Time-Series Forecasting in Fin",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_finstressts_a_parametric_synthetic_bench_20260621.md"
   },
   "1f70f293d7901b8b83ffbfb41b255efa": {
     "first_seen": "2026-06-09 06:05",
@@ -255,8 +255,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Stock Investment: The p-index Approach",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_stock_investment_the_p_index_approach_20260621.md"
   },
   "206ed1dea35b371d20321d2491554e5d": {
     "first_seen": "2026-06-20 12:09",
@@ -339,8 +339,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Decision-Induced Ranking Explains Prediction Inflation and Excessive Turnover in",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_decision_induced_ranking_prediction_inflation_20260621.md"
   },
   "281c9e9ef336fb3a61c566c78092746c": {
     "first_seen": "2026-06-08T04:47:43Z",
@@ -409,8 +409,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Synthetic American Option Pricing via Jump-HMM-Driven Heston Implied Volatility",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_synthetic_american_option_pricing_jump_hmm_20260621.md"
   },
   "2fe8f1d769e202f56010d740395b204d": {
     "first_seen": "2026-06-01 06:07",
@@ -444,8 +444,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Volatility Surface Reconstruction using Deep Learning under No-Arbitrage Constra",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_volatility_surface_reconstruction_deep_learning_20260621.md"
   },
   "30c34a21484c7ae056b2c2e6a51bdb04": {
     "first_seen": "2026-06-12 03:00",
@@ -549,8 +549,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Multivariate Financial Forecasting using the Chronos Time Series Foundation Mode",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_multivariate_financial_forecasting_chronos_ts_20260621.md"
   },
   "408b957e3dc639b7e572d866fc45a044": {
     "first_seen": "2026-06-16 02:30",
@@ -570,8 +570,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "DeXposure-Claw: An Agentic System for DeFi Risk Supervision",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_dexposure_claw_agentic_defi_risk_supervision_20260621.md"
   },
   "416f98706e9806fc48fd2ffec6518f63": {
     "first_seen": "2026-06-20 12:09",
@@ -605,8 +605,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Bi-Level Chaotic Fusion Based Graph Convolutional Network for Stock Market Predi",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_bi_level_chaotic_fusion_gcn_stock_prediction_20260621.md"
   },
   "443991e967853191d1447533643b9d2a": {
     "first_seen": "2026-06-20 12:09",
@@ -647,8 +647,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "AgenticAITA: A Proof-Of-Concept About Deliberative Multi-Agent Reasoning for Aut",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_agenticaita_multi_agent_deliberative_trading_20260621.md"
   },
   "4758d9562f0e678ba65205d030faa10c": {
     "first_seen": "2026-06-20 12:09",
@@ -794,8 +794,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Asymmetric Nonlinear Return Extrapolation and Optimal Portfolio Choice under Sto",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_asymmetric_nonlinear_return_extrapolation_port_20260621.md"
   },
   "5b126fce13c917aff4fc5fb656b66296": {
     "first_seen": "2026-06-05 08:03",
@@ -829,15 +829,15 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Fill-Side Non-Retail Trading on Polymarket: An Empirical Study of Behavioral Tie",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_fill_side_non_retail_trading_polymarket_behav_20260621.md"
   },
   "5e0358e72a0d065b85bac91d91955ff7": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Martingale Doppelgänger-Eval: An Identification Framework for Auditing Candlesti",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_martingale_doppelganger_eval_candlestick_vlm_20260621.md"
   },
   "5e26565f9000189e5feffacf96966a08": {
     "first_seen": "2026-06-20 12:09",
@@ -871,8 +871,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Expanding the rough Heston model in $H$",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_expanding_rough_heston_model_hurst_parameter_20260621.md"
   },
   "603ba00291a6eee1359ac1e219c22524": {
     "first_seen": "2026-06-03 06:06",
@@ -906,8 +906,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "When market boundaries weaken: Network reconfiguration and regime-dependent cros",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_when_market_boundaries_weaken_crypto_cross_20260621.md"
   },
   "6625f97dd3bc9d32c652561a15013046": {
     "first_seen": "2026-06-16 02:30",
@@ -1060,8 +1060,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Modeling Stochastic Multi-Agent Interaction in Intraday Battery Energy Storage D",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_stochastic_multi_agent_battery_energy_storage_20260621.md"
   },
   "7654fb73ae3fdb4a137713fe3caf6e2a": {
     "first_seen": "2026-06-16 02:30",
@@ -1088,8 +1088,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Single-Period Portfolio Selection via Information Projection",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_single_period_portfolio_selection_information_20260621.md"
   },
   "78b07276f5a13b60ff2859f62e83331c": {
     "first_seen": "2026-06-09 06:05",
@@ -1123,8 +1123,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "On the modeling assumptions of Historical Simulation for Value-at-Risk",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_modeling_assumptions_historical_simulation_var_20260621.md"
   },
   "7ba5afe965e9d4a207847bd280aa339e": {
     "first_seen": "2026-06-18 02:00",
@@ -1137,8 +1137,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Infinite Horizon Optimal Consumption: Intertemporal Hedging under Epstein-Zin Pr",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_infinite_horizon_optimal_consumption_epstein_20260621.md"
   },
   "7da73ee762ad10e0dc220aa09a7e22fb": {
     "first_seen": "2026-06-20 12:09",
@@ -1207,8 +1207,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "PIVOT: Bridging Black-Scholes Implied-Volatility and Price Objectives via Differ",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_pivot_bridging_black_scholes_iv_price_differen_20260621.md"
   },
   "82004776f2aefe41e2d2a61262fb9eec": {
     "first_seen": "2026-06-20 12:09",
@@ -1473,8 +1473,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Model Validation of Agentic AI Systems: A POMDP-Based Framework for Belief-State",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_model_validation_agentic_ai_pomdp_framework_20260621.md"
   },
   "9b3eda75be41cbbc28f6aad8c53e14c2": {
     "first_seen": "2026-06-04 06:06",
@@ -1494,8 +1494,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "In-Family Arbitrage-Free Interpolation of Mixture Densities Across Expirations",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_in_family_arbitrage_free_interpolation_mix_20260621.md"
   },
   "9be405ff3bc5213b30d8739feadfd024": {
     "first_seen": "2026-06-15 01:30",
@@ -1508,8 +1508,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Axiomatic Market Making",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_axiomatic_market_making_bid_ask_quoting_rule_20260621.md"
   },
   "9d7e8531cdeed41125d99fc56a966250": {
     "first_seen": "2026-06-20 12:09",
@@ -1557,8 +1557,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Reverse Stress Testing for Multivariate Scenarios: A Conditional Framework for S",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_reverse_stress_testing_multivariate_conditional_20260621.md"
   },
   "a1a34e00acc110b00c5caea7942d1193": {
     "first_seen": "2026-06-20 12:09",
@@ -1704,8 +1704,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Default Contagion, Matrix Approximation, and Control in Sparse Financial Network",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_default_contagion_matrix_approximation_sparse_20260621.md"
   },
   "b37c3c1aa3375ef6f9f8bbb430a25ea8": {
     "first_seen": "2026-06-20 12:09",
@@ -1872,8 +1872,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Advanced Calibration Analysis and Tools: Identifying Influential Observations in",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_advanced_calibration_stochastic_interest_rate_20260621.md"
   },
   "cd5e27ff5b3117cd7974add3b601b2a4": {
     "first_seen": "2026-06-20 12:09",
@@ -1949,8 +1949,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Algometrics: Forecasting Under Algorithmic Feedback",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_algometrics_forecasting_under_algorithmic_feed_20260621.md"
   },
   "d454af6664f8dee2123c5f8ea5551483": {
     "first_seen": "2026-06-02 06:06",
@@ -2033,8 +2033,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "RED-2400: A Public Benchmark of Algorithmically-Rejected Trading Events with Out",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_red_2400_public_benchmark_rejected_trading_20260621.md"
   },
   "db6890010a21671fabb5b0a2aca29280": {
     "first_seen": "2026-06-20 12:09",
@@ -2082,8 +2082,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "From Knowing to Doing: A Memory-Controlled Benchmark for LLM Trading Agents on S",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_from_knowing_to_doing_memory_controlled_llm_20260621.md"
   },
   "df26ae5328efdb744c6624662a906dfd": {
     "first_seen": "2026-06-20 12:09",
@@ -2096,8 +2096,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Bankruptcy Prediction from 10-K Narratives: Evidence from Interpretable Text Sco",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_bankruptcy_prediction_10k_narratives_text_20260621.md"
   },
   "e00686fedc3c379372adf5d2511ace9e": {
     "first_seen": "2026-06-20 12:09",
@@ -2131,8 +2131,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Post-Rejection Follow-up Sampling: A Methodology for Counterfactual Outcome Meas",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_post_rejection_follow_up_sampling_dex_filter_20260621.md"
   },
   "e29eb449fe416d8b3d8c145e40cac23e": {
     "first_seen": "2026-06-03 06:06",
@@ -2194,8 +2194,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "A Fast Implied Volatility Method with Expansions",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_a_fast_implied_volatility_method_with_expansi_20260621.md"
   },
   "e57b66396e6b5a131d5bc8c4816abcf1": {
     "first_seen": "2026-06-16 01:00",
@@ -2229,8 +2229,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Belief at Risk: Quantifying Agentic AI Model Risk with LLM-Inferred Bayesian Sta",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_belief_at_risk_agentic_ai_bayesian_state_20260621.md"
   },
   "e90f3cea9edfed616a212b03f96e9e9d": {
     "first_seen": "2026-06-20 12:09",
@@ -2313,8 +2313,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Bayesian Dynamic Modeling of Realized Volatility in Financial Asset Price Foreca",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_bayesian_dynamic_modeling_realized_volatility_20260621.md"
   },
   "ef99ddf03957949a65276c699cbc7834": {
     "first_seen": "2026-06-02 06:06",
@@ -2432,8 +2432,8 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Beyond ESG Scores: Learning Dynamic Constraints for Sequential Portfolio Optimiz",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_beyond_esg_scores_dynamic_constraints_sequenti_20260621.md"
   },
   "f947078aee6e6f1a0d75b6761746cafa": {
     "first_seen": "2026-06-01 06:07",
@@ -2537,7 +2537,7 @@
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
     "title": "Numerical methods for lambda quantiles: robust evaluation and portfolio optimisa",
-    "decision": "deferred_to_next_run",
-    "promising_file": null
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_numerical_methods_lambda_quantiles_portfolio_20260621.md"
   }
 }

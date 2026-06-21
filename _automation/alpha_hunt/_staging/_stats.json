@@ -1,62 +1,15 @@
 {
-  "run_time": "2026-06-21 11:00 UTC",
-  "accepted_count": 0,
+  "run_time": "2026-06-21 12:02 UTC",
+  "accepted_count": 40,
   "by_source": {
-    "hn_quant": {
-      "total": 69,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "hn_algotrading": {
-      "total": 206,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantocracy": {
-      "total": 75,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantinsti": {
-      "total": 15,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantpedia": {
-      "total": 13,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "github_python": {
-      "total": 92,
-      "new": 3,
-      "accepted": 0,
-      "rej_l0": 3,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
     "arxiv_econ_em": {
-      "total": 83,
-      "new": 0,
-      "accepted": 0,
+      "total": 109,
+      "new": 109,
+      "accepted": 40,
       "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     }
-  }
+  },
+  "note": "Deferred pool from 2026-06-20 run. _raw/ absent in cloud env."
 }
