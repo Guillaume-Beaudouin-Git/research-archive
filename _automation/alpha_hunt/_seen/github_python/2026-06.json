@@ -237,6 +237,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4102cbfde8cc1423fd2fd99bc5edbc62": {
+    "first_seen": "2026-06-21 11:00",
+    "source": "github_python",
+    "title": "bytedance/deer-flow",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "49b7eba96880ac94793b885bebd9929b": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -762,6 +769,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "cbcc9a0ca43883eb6918f6fe4ecd5780": {
+    "first_seen": "2026-06-21 11:00",
+    "source": "github_python",
+    "title": "smicallef/spiderfoot",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "cce45068546f7dcaab608990294fec39": {
     "first_seen": "2026-06-10 11:00",
     "source": "github_python",
@@ -892,6 +906,13 @@
     "first_seen": "2026-06-14 11:00",
     "source": "github_python",
     "title": "AUTOMATIC1111/stable-diffusion-webui",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f7ba6f78ccfa4c93be8c1016319ec337": {
+    "first_seen": "2026-06-21 11:00",
+    "source": "github_python",
+    "title": "topoteretes/cognee",
     "decision": "rejected_L0",
     "promising_file": null
   },
