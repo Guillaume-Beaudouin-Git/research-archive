@@ -1,59 +1,12 @@
 {
-  "run_time": "2026-06-21 14:25 UTC",
-  "accepted_count": 40,
+  "run_time": "2026-06-21 16:02 UTC",
+  "accepted_count": 29,
+  "note": "29 deferred arxiv_econ_em items from previous runs (cap=40 hit thrice). Processing from _seen/arxiv_econ_em/2026-06.json. 10 written so far, 19 pending agent completion.",
   "by_source": {
-    "hn_quant": {
-      "total": 69,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "hn_algotrading": {
-      "total": 208,
-      "new": 2,
-      "accepted": 0,
-      "rej_l0": 2,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantocracy": {
-      "total": 75,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantinsti": {
-      "total": 15,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantpedia": {
-      "total": 13,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "github_python": {
-      "total": 92,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
     "arxiv_econ_em": {
-      "total": 83,
-      "new": 40,
-      "accepted": 40,
+      "total": 29,
+      "deferred_pool": 29,
+      "accepted": 29,
       "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
