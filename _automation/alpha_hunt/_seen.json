@@ -94,5 +94,21 @@
   "9475775861596ef10a6c2ca6d92b5ff6": {
     "decision": "accepted",
     "promising_file": "quantpedia_why_most_portfolios_are_under_diversified_20260619.md"
+  },
+  "a38616ed7c41e54986141a85f0d51f2c": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_to_cluster_or_not_to_cluster_investment_idiocy_20260622.md",
+    "processed": "2026-06-22 06:03 UTC"
+  },
+  "d83d0251edf31ce6897e7608e7558c5d": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_should_you_trade_thin_stocks_concretum_group_20260622.md",
+    "processed": "2026-06-22 06:03 UTC"
+  },
+  "d9dcc3d812d4a2d695bf24b42711e746": {
+    "decision": "duplicate",
+    "duplicate_of": "9475775861596ef10a6c2ca6d92b5ff6",
+    "existing_file": "quantpedia_why_most_portfolios_are_under_diversified_20260619.md",
+    "processed": "2026-06-22 06:03 UTC"
   }
 }
