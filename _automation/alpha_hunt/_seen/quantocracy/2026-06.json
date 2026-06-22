@@ -6,6 +6,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_reconstructing_a_century_of_us_corporate_bonds_20260610.md"
   },
+  "06506a2d1a39fe620fb83e773f916f44": {
+    "first_seen": "2026-06-22 06:00",
+    "source": "quantocracy",
+    "title": "Academic Confirmation Bias [Anton Vorobets]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "0969bfa6574cfe091a35c1f429146376": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
@@ -40,6 +47,13 @@
     "title": "Resourcing a Triangulated Stat Arb Operation as a Solo Trader [Robot Wealth]",
     "decision": "accepted",
     "promising_file": "quantocracy_resourcing_a_triangulated_stat_arb_operation_solo_20260610.md"
+  },
+  "29757e492e9774a26edf81b6b9462217": {
+    "first_seen": "2026-06-22 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/21/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "32dbb08d10acf1c4b5c0ce59d2113062": {
     "first_seen": "2026-06-10 06:00",
@@ -153,6 +167,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_the_non_linear_costs_of_trading_concretum_group_20260607.md"
   },
+  "a38616ed7c41e54986141a85f0d51f2c": {
+    "first_seen": "2026-06-22 06:00",
+    "source": "quantocracy",
+    "title": "To Cluster Or Not To Cluster That is the Question… [Investment Idiocy]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "a48f4d1119ad06cf378526f05ca6252f": {
     "first_seen": "2026-06-10 06:00",
     "source": "quantocracy",
@@ -214,6 +235,20 @@
     "source": "quantocracy",
     "title": "The software side of replication [Implementing QuantLib]",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "d83d0251edf31ce6897e7608e7558c5d": {
+    "first_seen": "2026-06-22 06:00",
+    "source": "quantocracy",
+    "title": "Should You Trade Thin Stocks? [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "d9dcc3d812d4a2d695bf24b42711e746": {
+    "first_seen": "2026-06-22 06:00",
+    "source": "quantocracy",
+    "title": "Why Most Portfolios Are Under Diversified [Quantpedia]",
+    "decision": "accepted",
     "promising_file": null
   },
   "dacb858f11d59f8e825b2b0a832a6d78": {
