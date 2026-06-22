@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "08252e64697b9319d43ee0bd4feb3217": {
+    "first_seen": "2026-06-22 11:30",
+    "source": "github_python",
+    "title": "vectorize-io/hindsight",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0a046690b5e4a095de09f62ea2244bef": {
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
@@ -17,6 +24,13 @@
     "first_seen": "2026-06-19 12:00",
     "source": "github_python",
     "title": "OSU-NLP-Group/HippoRAG",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "0ceba1c65b985ce748c5b8e641e1fa24": {
+    "first_seen": "2026-06-22 11:30",
+    "source": "github_python",
+    "title": "kernalix7/winpodx",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -412,6 +426,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "703f181e825e1709b41ac6d1617074c1": {
+    "first_seen": "2026-06-22 11:30",
+    "source": "github_python",
+    "title": "HKUDS/DeepTutor",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "70f9840c967c0904cdcb2c1478f830c2": {
     "first_seen": "2026-06-08 12:06",
     "source": "github_python",
@@ -458,6 +479,13 @@
     "first_seen": "2026-06-03 06:06",
     "source": "github_python",
     "title": "HKUDS/Vibe-Trading",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "77d9d3704e878cfd93043e339728c697": {
+    "first_seen": "2026-06-22 11:30",
+    "source": "github_python",
+    "title": "NVIDIA/skills",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -573,6 +601,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9118ee95cb41e76de56d7bd422e74e68": {
+    "first_seen": "2026-06-22 11:30",
+    "source": "github_python",
+    "title": "Q00/ouroboros",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "94b5e24b42b739bc0e9c9606baa1cc6b": {
     "first_seen": "2026-06-13 11:00",
     "source": "github_python",
@@ -591,6 +626,13 @@
     "first_seen": "2026-06-06 14:03",
     "source": "github_python",
     "title": "ansible/ansible",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9c1e0e35a380e17180319b19a6e5fe15": {
+    "first_seen": "2026-06-22 11:30",
+    "source": "github_python",
+    "title": "virattt/ai-hedge-fund",
     "decision": "rejected_L0",
     "promising_file": null
   },
