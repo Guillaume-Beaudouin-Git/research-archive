@@ -1,0 +1,14 @@
+{
+  "hash": "b6ff4a9b249bdfdffeaa44ffe7c1999e",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.22483v1",
+  "title": "Neural networks for nonlinear regression with serially correlated disturbances: Evidence from cloud cover",
+  "url": "http://arxiv.org/abs/2606.22483v1",
+  "description": "We propose a new treatment of nonlinear regression with serially correlated disturbances that incorporates autoregressive moving average structures into feedforward neural networks. The resulting model provides an alternative to modeling temporal dependence using lagged variables. In simulations, the proposed method accurately recovers regression functions of varying complexity and the underlying error dynamics across a range of time-series lengths and signal-to-noise ratios. Finite-sample properties and out-of-sample predictive performances are shown to be robust to model misspecification induced by omitted lagged variables and incorrect specification of the error dynamics. Cloud cover is an important factor in climate projections. In an empirical study of cloud cover prediction for a grid of locations within and around the Mediterranean Sea, our proposed model yields more accurate predictions than existing methods, including long short-term memory networks. Improvements are observed broadly and are particularly pronounced in mountain areas relative to linear models with serially correlated errors, consistent with the presence of stronger nonlinear effects in cloud composure in such regions.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-06-23 03:00 UTC"
+}

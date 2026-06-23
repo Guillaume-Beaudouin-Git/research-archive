@@ -1,0 +1,14 @@
+{
+  "hash": "941fe868726e38ae0b7ed0b0e6433c73",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.23509v1",
+  "title": "Variance or Standard Deviation? Shell Geometry and Global-Scale Priors in High-Dimensional Shrinkage",
+  "url": "http://arxiv.org/abs/2606.23509v1",
+  "description": "We study how the choice of default prior for a common Gaussian scale affects high-dimensional shrinkage risk, highlighting the role played by high-dimensional geometry. Formally, we consider a high-dimensional setting in which the near-zero behavior of the common scale prior has first-order consequences for shrinkage risk, and show that priors that are flat on the variance and those flat on the standard deviation allocate markedly different mass near the zero-scale boundary, leading to distinct shrinkage behavior and informing principled default prior selection. Specifically, under a radial-power benchmark, we establish that the SD-flat benchmark has a one-unit asymptotic risk advantage near the origin, crosses over in the critical regime, and is second-order equivalent to the variance-flat benchmark for strong signals. Proper single global-scale hyperpriors and bounded coordinate-multiplier mixtures inherit these limits through the near-zero exponent of their SD-scale density. For heavier-tailed or sparse priors, that exponent still classifies the common global-scale component, while local-scale tails, model-size priors, or allocation priors can also affect risk.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-23 03:00 UTC"
+}
