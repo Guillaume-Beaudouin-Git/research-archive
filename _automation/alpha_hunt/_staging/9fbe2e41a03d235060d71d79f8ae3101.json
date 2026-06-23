@@ -1,0 +1,14 @@
+{
+  "hash": "9fbe2e41a03d235060d71d79f8ae3101",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/why-mean-variance-optimization-breaks-down/",
+  "title": "Why Mean-Variance Optimization Breaks Down",
+  "url": "https://quantpedia.com/why-mean-variance-optimization-breaks-down/",
+  "description": "Mean-Variance Optimization remains the intellectual cornerstone of modern portfolio theory, yet its real-world deployment via plug-in MVO often delivers unstable, over-leveraged portfolios that collapse out-of-sample. The core insight from VertoxQuant's analysis is profound: raw plug-in MVO does not merely propagate estimation error—it systematically amplifies it. This error-maximization phenomenon occurs because the optimizer's inverse-covariance operator assigns extreme weights to directions that appear low-risk, which, in finite samples, are dominated by noise rather than signal. For academics, this reveals a fundamental statistical pathology; for practitioners, it explains why backtests sparkle while live portfolios bleed. The post Why Mean-Variance Optimization Breaks Down first appeared on QuantPedia .",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-06-23 14:00 UTC"
+}

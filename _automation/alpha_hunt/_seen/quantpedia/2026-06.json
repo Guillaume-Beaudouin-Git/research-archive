@@ -41,6 +41,13 @@
     "decision": "accepted",
     "promising_file": "quantpedia_why_most_portfolios_are_under_diversified_20260619.md"
   },
+  "9fbe2e41a03d235060d71d79f8ae3101": {
+    "first_seen": "2026-06-23 14:00",
+    "source": "quantpedia",
+    "title": "Why Mean-Variance Optimization Breaks Down",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "ad0940d877b723ba89c4026d47e91531": {
     "first_seen": "2026-06-05 16:04",
     "source": "quantpedia",
