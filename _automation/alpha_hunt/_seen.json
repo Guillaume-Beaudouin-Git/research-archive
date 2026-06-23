@@ -110,5 +110,17 @@
     "duplicate_of": "9475775861596ef10a6c2ca6d92b5ff6",
     "existing_file": "quantpedia_why_most_portfolios_are_under_diversified_20260619.md",
     "processed": "2026-06-22 06:03 UTC"
+  },
+  "941fe868726e38ae0b7ed0b0e6433c73": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_variance_or_standard_deviation_shell_geometry_20260623.md"
+  },
+  "b6ff4a9b249bdfdffeaa44ffe7c1999e": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_neural_networks_nonlinear_regression_serially_c_20260623.md"
+  },
+  "f377aaa642fc734e40ffab39758596b8": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_distributional_granger_causality_identification_20260623.md"
   }
 }
