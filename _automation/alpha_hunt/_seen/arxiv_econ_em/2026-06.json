@@ -1133,6 +1133,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_causal_forecasting_in_panel_data_a_two_way_synthe_20260618.md"
   },
+  "7cd99c1962427df5f0e013369361ba3b": {
+    "first_seen": "2026-06-23 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Uniform Confidence Bands for Infinite-Dimensional Partially Identified Parameter",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7d19391aa4959f9ab72a6170cb012fe4": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1732,6 +1739,13 @@
     "first_seen": "2026-06-17 01:30",
     "source": "arxiv_econ_em",
     "title": "Bayesian Poisson-Randomized Gamma Tensor Factorization with Application to Inter",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b588f3b8a69b17ef4bc4a33b4d03657b": {
+    "first_seen": "2026-06-23 01:30",
+    "source": "arxiv_econ_em",
+    "title": "What's the Magic Formula Instrument?",
     "decision": "rejected_L0",
     "promising_file": null
   },
