@@ -181,6 +181,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2ec0aa67de421cd6861bed154970d66f": {
+    "first_seen": "2026-06-23 11:00",
+    "source": "github_python",
+    "title": "scrapy/scrapy",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "31605c7632633f12b6ec8305aa3e1e16": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -514,6 +521,13 @@
     "first_seen": "2026-06-08 12:06",
     "source": "github_python",
     "title": "magenta/magenta-realtime",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7b50dfeef8ed375c57383dc70ead87b8": {
+    "first_seen": "2026-06-23 11:00",
+    "source": "github_python",
+    "title": "langbot-app/LangBot",
     "decision": "rejected_L0",
     "promising_file": null
   },
