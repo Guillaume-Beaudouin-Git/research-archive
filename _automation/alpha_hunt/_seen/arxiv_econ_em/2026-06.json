@@ -671,6 +671,13 @@
     "decision": "rej_L0",
     "promising_file": null
   },
+  "488218ab2d8b91a2a08576a5ca1d63b8": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Learning Dependence Structures for Econometric Inference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "48924b2aeedd4a7c2d333b3f08305168": {
     "first_seen": "2026-06-15 01:30",
     "source": "arxiv_econ_em",
@@ -689,6 +696,13 @@
     "first_seen": "2026-06-16 02:30",
     "source": "arxiv_econ_em",
     "title": "Partial Identification from LLM Prompts",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4ba8efb4dfd82bd6cce2277c7ff33c7f": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "On the Asymptotic Inadmissibility of Double Machine Learning Estimators Under St",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -781,6 +795,13 @@
     "source": "arxiv_econ_em",
     "title": "Avellaneda-Stoikov and Cartea-Jaimungal as One Framework: A Forced Uniqueness Th",
     "decision": "rej_L1",
+    "promising_file": null
+  },
+  "59b629c061a36ac233370b30f2f54a12": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Networked risk perception and behavioral bubbles: the case of a pandemic",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "5a1cf42de8da6ae0c316e5ada8c35e1f": {
@@ -1406,6 +1427,13 @@
     "decision": "rej_L1",
     "promising_file": null
   },
+  "941fe868726e38ae0b7ed0b0e6433c73": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Variance or Standard Deviation? Shell Geometry and Global-Scale Priors in High-D",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "950e3cc9c08718f87d5aa87fa3577914": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1560,6 +1588,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_neural_actuarial_longevity_forecasting_anchoring_l_20260621.md"
   },
+  "9f828dde3cd3fb5f2719f0fa690ba86e": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Sensitivity Analysis for the Average Treatment Effect under Discrete Unobserved ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a171fffceeb18808e21d3491dc51e518": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1707,6 +1742,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_hour_aware_adaptive_risk_management_for_autonomous_20260621.md"
   },
+  "b334a8dff9026861261fb155c303eac8": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Professional networks and the diffusion of clinical guidelines in opioid prescri",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b33e035b9d98e9909a060f5bfffca2ec": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1761,6 +1803,13 @@
     "source": "arxiv_econ_em",
     "title": "Online Pandora's Box for Contextual LLM Cascading",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b6ff4a9b249bdfdffeaa44ffe7c1999e": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Neural networks for nonlinear regression with serially correlated disturbances: ",
+    "decision": "accepted",
     "promising_file": null
   },
   "b7a6b3703793cb4b1a2b73be64e5d592": {
@@ -1907,6 +1956,13 @@
     "first_seen": "2026-06-19 03:30",
     "source": "arxiv_econ_em",
     "title": "Choosing A Headline Estimand from Matching, DID, and Hybrid Designs: A Minimax-R",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ce1ec3a9af51611b287a06f6ed8b190b": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "A Test for Treatment Heterogeneity under a Distributional Difference-in-Differen",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -2091,6 +2147,13 @@
     "title": "Fast-excursion limit of the Heston model",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_fast_excursion_limit_of_the_heston_model_20260621.md"
+  },
+  "dee95ec71e477f803145ce2a54bc777e": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Inference methods for unit-specific coefficients in panel data models with laten",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "df195fabe7dd0952f9500a62d16a76d0": {
     "first_seen": "2026-06-20 12:09",
@@ -2363,6 +2426,13 @@
     "source": "arxiv_econ_em",
     "title": "Posterior and Likelihood Sensitivity in Bayesian Distributionally Robust Optimiz",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f377aaa642fc734e40ffab39758596b8": {
+    "first_seen": "2026-06-23 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Distributional Granger Causality: Identification, Sequential Inference, and Adap",
+    "decision": "accepted",
     "promising_file": null
   },
   "f40a47d1d8574e5e4ca92394cbb0022f": {
