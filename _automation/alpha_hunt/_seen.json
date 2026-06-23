@@ -122,5 +122,10 @@
   "f377aaa642fc734e40ffab39758596b8": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_distributional_granger_causality_identification_20260623.md"
+  },
+  "9fbe2e41a03d235060d71d79f8ae3101": {
+    "decision": "accepted",
+    "promising_file": "quantpedia_why_mean_variance_optimization_breaks_down_20260623.md",
+    "run_time": "2026-06-23 16:03 UTC"
   }
 }
