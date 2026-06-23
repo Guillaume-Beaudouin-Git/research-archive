@@ -167,6 +167,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3deb30869a6e421e49f5d86d165a1937": {
+    "first_seen": "2026-06-23 19:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: I turned algae into a bio-altimeter and put it on a weather balloon",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "41d15a1b5033fe862d656522b0403adf": {
     "first_seen": "2026-06-04 12:07",
     "source": "hn_algotrading",
@@ -375,6 +382,13 @@
     "source": "hn_algotrading",
     "title": "Show HN: Reasonote, Open-Source AI-Generated Courses, Lessons, and Podcasts",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "94e13275b0b696c7bb71559a2a8597b2": {
+    "first_seen": "2026-06-23 19:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Codesprint – A LeetCode Typing Trainer",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "964b598ba548fac6461daae96124bbba": {
