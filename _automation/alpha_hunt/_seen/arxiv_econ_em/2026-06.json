@@ -587,6 +587,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_when_do_markets_fully_process_public_information_20260609.md"
   },
+  "41be2b0dce0ad8f6e300cbd5f7e72fb2": {
+    "first_seen": "2026-06-24 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Statistical Foundations of LLM-based A/B Testing: A Surrogacy Framework for Huma",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "41cfef6a227343236c79fdbd69ce2690": {
     "first_seen": "2026-06-20 10:02",
     "source": "arxiv_econ_em",
@@ -804,6 +811,13 @@
     "decision": "rej_L1",
     "promising_file": null
   },
+  "55948a56a31ebe1ee82bf34efe7f9fb0": {
+    "first_seen": "2026-06-24 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Group-Level Treatment Effect Heterogeneity in Difference-in-Differences: A Balan",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "59b629c061a36ac233370b30f2f54a12": {
     "first_seen": "2026-06-23 03:00",
     "source": "arxiv_econ_em",
@@ -914,6 +928,13 @@
     "source": "arxiv_econ_em",
     "title": "Orchestrating the Twin Transition in Multinational Corporations: Technology Road",
     "decision": "rej_L0",
+    "promising_file": null
+  },
+  "63a97e06f38992f1771afaa8b14e0f87": {
+    "first_seen": "2026-06-24 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Heterogeneous Peer Effects with Endogenous Network Formation",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "63ad4a0596bc39cbd5bf6fb3a42f36b0": {
@@ -1602,6 +1623,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a0f4ec1bb55eccc0054be51d3e469c2d": {
+    "first_seen": "2026-06-24 02:30",
+    "source": "arxiv_econ_em",
+    "title": "When Surveys Become Conversations: Adaptive Matrix Validation for AI-Assisted In",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "a171fffceeb18808e21d3491dc51e518": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1741,6 +1769,13 @@
     "title": "The Mathematics of Heuristic Portfolio Optimization (HPO)",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_mathematics_heuristic_portfolio_optimization_20260620.md"
+  },
+  "b242d757f2958c1e278336398190b05e": {
+    "first_seen": "2026-06-24 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Bounds for Standard Errors in Combined Data",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "b270243f79da88fa40ad4b27978fb2d8": {
     "first_seen": "2026-06-20 12:09",
@@ -2532,6 +2567,20 @@
     "title": "Option Pricing under Stochastic Volatility and Jumps:A PIDE Framework with Empir",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260601.md"
+  },
+  "f972d643ad0403e745185a6ceca93b70": {
+    "first_seen": "2026-06-24 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Visible or Covert? The Causal Effect of Inspector Visibility on Fare Evasion Det",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fabb9c4ae8813114d0197d39cfe308a2": {
+    "first_seen": "2026-06-24 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Semi-nonparametric estimation of spatial dynamic panel data models with nonparam",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "fad7f81d28ffa67fa453b45aeba076af": {
     "first_seen": "2026-06-20 12:09",

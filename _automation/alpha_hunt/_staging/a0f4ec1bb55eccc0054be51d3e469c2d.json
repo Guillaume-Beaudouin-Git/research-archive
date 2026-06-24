@@ -1,0 +1,14 @@
+{
+  "hash": "a0f4ec1bb55eccc0054be51d3e469c2d",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.24244v1",
+  "title": "When Surveys Become Conversations: Adaptive Matrix Validation for AI-Assisted Interviews",
+  "url": "http://arxiv.org/abs/2606.24244v1",
+  "description": "AI-assisted interviews promise to reduce respondent burden in surveys by allowing respondents to describe experiences naturally while an AI system noisily maps those accounts into structured survey variables. That mapping is a measurement process that is fallible, versioned, adaptive, and potentially behaves differently across subgroups. This paper proposes Adaptive Matrix Validation (AMV), a design in which each respondent completes an AI-assisted interview, which is then mapped into tabular data by the AI. Respondents are also asked a small, randomized set of structured questions, which are used for statistical adjustment. The estimator first calibrates the mapped values using validation answers from other respondents, then corrects the remaining error with the validation answers observed for the target respondent. The paper develops estimators for item means, subgroup estimates, and regression coefficients when outcomes, predictors, or both are mapped from interviews. It also gives planning formulas the number of validation questions required and the sample size. A design-calibration simulation, an American Time Use Survey emulation, and a CHAMPS verbal-autopsy narrative study show when sparse validation can improve precision and when it cannot",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-24 02:30 UTC"
+}
