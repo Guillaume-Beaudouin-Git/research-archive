@@ -902,6 +902,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "ddbf3ea9760eebaca50b58475a554603": {
+    "first_seen": "2026-06-24 05:00",
+    "source": "github_python",
+    "title": "bradautomates/claude-video",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "de7af7bae8a3bbfbb608992a9a8ce68e": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
