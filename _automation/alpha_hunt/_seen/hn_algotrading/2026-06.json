@@ -202,6 +202,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4c5a2a90772b6eaacf1bc970b6c8c765": {
+    "first_seen": "2026-06-24 10:30",
+    "source": "hn_algotrading",
+    "title": "Ask HN: How to avoid LLMs struggling with Lisp parens?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4d56daec3f88bb72a5c324f630773e67": {
     "first_seen": "2026-06-05 18:03",
     "source": "hn_algotrading",
