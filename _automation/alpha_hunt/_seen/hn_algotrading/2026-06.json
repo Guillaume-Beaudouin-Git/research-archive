@@ -258,6 +258,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5940e7eba006d2d6e82c8f4607e90557": {
+    "first_seen": "2026-06-24 11:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: VibeFight is a small daily arena for launching fun projects",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5b435ad2dc12e15a57f18504cb619391": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -482,6 +489,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b4fc1b93134351378571ae4c73d8e66f": {
+    "first_seen": "2026-06-24 11:30",
+    "source": "hn_algotrading",
+    "title": "AI-Driven Data Migration: Transforming Enterprise Cloud Adoption",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b5b1d29489738a84a997a8d988141040": {
     "first_seen": "2026-06-08 10:03",
     "source": "hn_algotrading",
@@ -543,6 +557,13 @@
     "source": "hn_algotrading",
     "title": "Algorithmic Trading Models – Breakouts",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c84931a5a06305a44cabf1ed3836fd52": {
+    "first_seen": "2026-06-24 11:30",
+    "source": "hn_algotrading",
+    "title": "Launch HN: Gecko Security (YC F24) – AI That Finds Vulnerabilities in Code",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "caaa0fb2b3049485683a1402ef5ea3fb": {
@@ -675,6 +696,13 @@
     "first_seen": "2026-06-20 00:00",
     "source": "hn_algotrading",
     "title": "Show HN: Cryptographic proofs that algorithms stay fair over time [pdf]",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e57d11d13161af34028c54663a609369": {
+    "first_seen": "2026-06-24 11:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: I enhanced Soundex to correctly handle multi-word strings",
     "decision": "rejected_L0",
     "promising_file": null
   },
