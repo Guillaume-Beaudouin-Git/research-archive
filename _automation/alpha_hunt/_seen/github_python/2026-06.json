@@ -251,6 +251,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3ce19baddec55a63fb707ac6153cf762": {
+    "first_seen": "2026-06-25 11:00",
+    "source": "github_python",
+    "title": "run-llama/llama_index",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3da637cf19300e983e7131ab5b372da7": {
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
@@ -475,6 +482,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7514c0712eab3d958c233d0f32f03528": {
+    "first_seen": "2026-06-25 11:00",
+    "source": "github_python",
+    "title": "pytorch/pytorch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "75a241dfb57b73adcb9baaf331fad2d1": {
     "first_seen": "2026-06-02 14:06",
     "source": "github_python",
@@ -563,6 +577,13 @@
     "first_seen": "2026-06-13 11:00",
     "source": "github_python",
     "title": "skypilot-org/skypilot",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "830604a03f9b42bce2fa44fc5178b586": {
+    "first_seen": "2026-06-25 11:00",
+    "source": "github_python",
+    "title": "xbtlin/ai-berkshire",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -986,6 +1007,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "f6d8e5a51ea8fc024c317fae61898657": {
+    "first_seen": "2026-06-25 11:00",
+    "source": "github_python",
+    "title": "Significant-Gravitas/AutoGPT",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "f7ba6f78ccfa4c93be8c1016319ec337": {
     "first_seen": "2026-06-21 11:00",
     "source": "github_python",
@@ -997,6 +1025,13 @@
     "first_seen": "2026-06-13 11:00",
     "source": "github_python",
     "title": "py-pdf/pypdf",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fb4cf502d1768139400e9b3067c10cc9": {
+    "first_seen": "2026-06-25 11:00",
+    "source": "github_python",
+    "title": "NanmiCoder/MediaCrawler",
     "decision": "rejected_L0",
     "promising_file": null
   }
