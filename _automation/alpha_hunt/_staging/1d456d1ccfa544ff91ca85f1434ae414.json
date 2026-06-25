@@ -1,0 +1,16 @@
+{
+  "hash": "1d456d1ccfa544ff91ca85f1434ae414",
+  "source": "hn_algotrading",
+  "canonical_id": "35084227",
+  "title": "Show HN: PyBroker – Algotrading in Python with Machine Learning",
+  "url": "https://github.com/edtechre/pybroker",
+  "description": "Hello, I am excited to share PyBroker with you, a free and open-source Python framework that I developed for creating algorithmic trading strategies, including those that utilize machine learning. With PyBroker, you can easily develop and fine-tune trading rules, build powerful ML models, and gain valuable insights into your strategy's performance. Some of the key features of PyBroker include: - A super-fast backtesting engine built using NumPy and accelerated with Numba. - The ability to create and execute trading rules and models across multiple instruments with ease. - Access to historical data from Alpaca and Yahoo Finance. - The option to train and backtest models using Walkforward Analysis, which simulates how the strategy would perform during actual trading. The basic concept behind Walkforward Analysis is that it splits your historical data into multiple time windows and then \"walks forward\" in time in the same way that the strategy would be executed and retrained on new data in the real world. Walkforward Analysis also helps overcome the problem of data mining and overfitting by testing your strategy on out-of-sample data. - More reliable trading metrics that use randomized bootstrapping to provide more accurate results. PyBroker calculates metrics such as Sharpe, Profit Factor, and max drawdown using bootstrapping, which randomly samples your strategy's returns to simulate thousands of alternate scenarios that could have happened. This allows you to test for statistical significance and have more confidence in the effectiveness of your strategy. - Support for strategies that use ranking and flexible position sizing. - Caching of downloaded data, indicators, and models to speed up your development process. - Parallelized computations that enable faster performance. - Additionally, I have written tutorials on the framework and some general algorithmic trading concepts that can be found on https://www.pybroker.com . All of the code is available on Github using the link above. Thanks for reading!",
+  "points": 70,
+  "created_at": "2023-03-09T17:51:17Z",
+  "l1_matches": [
+    "metrics",
+    "code_quant",
+    "methodology"
+  ],
+  "captured": "2026-06-25 04:00 UTC"
+}
