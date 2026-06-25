@@ -1441,6 +1441,20 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_the_viability_of_blockchain_markets_under_discrete_20260621.md"
   },
+  "8f45c8adcd5e48dcae31c381ba5ec627": {
+    "first_seen": "2026-06-25 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Choosing What to Calibrate and What to Estimate in Structural Models",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "909764483f7117b857df98152559c4ca": {
+    "first_seen": "2026-06-25 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Partial Identification from LLM Prompts",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "90a2c97c0f5f27041ec401f1084d1860": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1924,6 +1938,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_addressing_market_regime_changes_and_heavy_tailed__20260621.md"
   },
+  "c5bf0a2c7a45096e2dd600332cb2163c": {
+    "first_seen": "2026-06-25 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Time-Varying Model Averaging of Multi-layer Network Vector Autoregressions",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "c6016565dd6b6e06d6417690f383311e": {
     "first_seen": "2026-06-17 01:30",
     "source": "arxiv_econ_em",
@@ -2105,6 +2126,13 @@
     "title": "Regime-Based Portfolio Allocation Using Hidden Markov Models and Reinforcement Learning",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_regime_portfolio_allocation_hmm_rl_20260620.md"
+  },
+  "d82974e54b95ebe010432c5478914d86": {
+    "first_seen": "2026-06-25 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Networked risk perception and behavioral bubbles: the case of a pandemic",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "d84e83c3d28253d2d372e12b726dd19c": {
     "first_seen": "2026-06-09 06:05",
