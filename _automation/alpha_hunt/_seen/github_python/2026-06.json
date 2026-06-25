@@ -1028,6 +1028,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "fa8fb6556867115ec41d0b169b80d6a5": {
+    "first_seen": "2026-06-25 19:30",
+    "source": "github_python",
+    "title": "NVIDIA-NeMo/Speech",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "fb4cf502d1768139400e9b3067c10cc9": {
     "first_seen": "2026-06-25 11:00",
     "source": "github_python",
