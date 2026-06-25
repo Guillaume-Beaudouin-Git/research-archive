@@ -1,0 +1,114 @@
+[
+ {
+  "id": "2606.26031",
+  "title": "Geometrically convex return risk measures on AM-algebras",
+  "summary": "Monetary risk measures quantify the risk of uncertain monetary payoffs (or losses), whereas in time series analysis risk is typically assessed using logarithmic returns. Return risk measures (RRMs) provide an axiomatic foundation for this latter approach, which relies crucially on the positive cone of the space of essentially bounded random variables. We extend RRMs to general ordered vector spaces and characterize positive homogeneity via the geometric epigraph. To investigate geometric convexity and establish connections with monetary risk measures, we specialize the domain to AM-algebras, encompassing Euclidean spaces and spaces of multidimensional essentially bounded random variables. The latter is novel in the context of RRMs and leads to the new classes of systemic and vector-valued RRMs. We establish results on finiteness, continuity, separability, as well as dual and aggregation-based representations.",
+  "authors": [
+   "Christian Laudagé"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "q-fin.RM"
+  ],
+  "published": "2026-06-24T17:03:06Z",
+  "updated": "2026-06-24T17:03:06Z"
+ },
+ {
+  "id": "2606.25986",
+  "title": "The Inference-Compute Frontier and a Latency-Efficient Architecture for Limit Order Book Prediction",
+  "summary": "We study whether a scaling-law-style inference-compute frontier appears in limit order book prediction. Using FI-2010 and a suite of models ranging from small decision trees to neural LOB architectures, we find that the realized empirical frontier of predictive loss versus structural forward work is well summarized by a power law. In particular, with MLPLOB held out as an architecture family, a power-law fit to the low- and mid-compute non-MLPLOB frontier extrapolates across multiple orders of magnitude and attains $R^2=0.941$ on the excluded high-compute MLPLOB target frontier. A similar exercise in latency space gives substantially weaker results, showing that latency is not merely noisy compute. We use this gap to motivate FastBiNLOB, a dense axis-separable LOB mixer built from hardware-friendly temporal and feature mixing operations. In a five-seed experiment, FastBiNLOB exceeds the published $y_{10}$ and $y_{100}$ macro-F1 targets at notably lower latency than existing published SOTA architectures.",
+  "authors": [
+   "C. Evans Hedges"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.ST",
+   "q-fin.TR"
+  ],
+  "published": "2026-06-24T15:54:09Z",
+  "updated": "2026-06-24T15:54:09Z"
+ },
+ {
+  "id": "2606.25811",
+  "title": "Hierarchical Graph Learning for Calendar Spread Strategies in Commodity Futures Markets",
+  "summary": "Commodity futures can be represented hierarchically, with underlying assets at the upper level and individual futures contracts at the lower level. Entities at each level can be connected by edges reflecting inherent correlations, with cross-level edges capturing contract-to-underlying asset connections. Building on our observations of these structures, we propose a hierarchical graph learning approach for calendar spread (CS) strategies in commodity futures markets, addressing two significant gaps in the machine-learning literature: (i) the absence of learning-based methods for CS strategies in futures markets, and (ii) the lack of consideration of maturity-dependent interrelationships across commodity futures. We first establish the efficacy of CS strategies by analytically showing that CS strategies can possess higher risk-adjusted returns, measured by the information ratio, and lower risk, measured by variance and delta, than long-only strategies. We then introduce a method to convert learning-based predictions into CS positions. Next, we develop a hierarchical graph learning method that predicts futures price movements by utilizing the maturity-dependent interrelationships, thereby yielding a CS trading algorithm. Empirical results on commodity futures markets traded on the Chicago Mercantile Exchange Group demonstrate that our method outperforms benchmark models in both prediction and trading performance. We find that maturity-dependent interrelationships across commodi",
+  "authors": [
+   "Yoonsik Hong",
+   "Diego Klabjan"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "cs.CE",
+   "cs.LG",
+   "q-fin.PM",
+   "q-fin.PR"
+  ],
+  "published": "2026-06-24T13:25:15Z",
+  "updated": "2026-06-24T13:25:15Z"
+ },
+ {
+  "id": "2606.25696",
+  "title": "A Two-Stage Decision Support System for Sustainability-Aware Long Short Portfolio Optimization",
+  "summary": "This paper proposes a two-stage decision support system for long-short portfolio optimization under environmental, social, and governance (ESG) considerations. In the first stage, assets are evaluated using a multi-criteria procedure based on TODIMSort, with criterion weights derived using the MEREC (Removal Effects of Criteria) method. This allows assets to be assigned to classes ordered according to preferences that respond to market conditions and investor priorities, thus generating sets of long and short opportunities that dynamically adapt to the prevailing regime. In the second stage, we formulate a non-convex portfolio optimization problem that maximizes the Omega ratio while respecting budget, bound and leverage constraints. To solve it, we introduce an adaptive particle swarm solver equipped with a controller that selects, at each iteration, the most suitable recombination operator from a diverse pool of operators and combines it with a projection-based repair mechanism for constraint management. The empirical study, conducted on 421 stocks in the STOXX Europe 600 index, examines both the exploration capabilities and solution quality of the proposed solver compared to state-of-the-art benchmarks, as well as the ex post profitability of the resulting portfolio strategies. The results show that ESG-enhanced long-short portfolios offer competitive and often superior performance compared to their non-ESG counterparts and the market-value-weighted benchmark.",
+  "authors": [
+   "Giacomo di Tollo",
+   "Massimiliano Kaucic",
+   "Filippo Piccotto"
+  ],
+  "categories": [
+   "cs.CE",
+   "q-fin.CP",
+   "q-fin.PM"
+  ],
+  "published": "2026-06-24T11:07:49Z",
+  "updated": "2026-06-24T11:07:49Z"
+ },
+ {
+  "id": "2606.25466",
+  "title": "Time-dependent weighted directed networks of cryptocurrency interaction from high-frequency returns",
+  "summary": "We investigate the evolving structure of interactions in cryptocurrency markets using a network-based framework constructed from high-frequency price data spanning 2020-2025. Directed and weighted networks are constructed from statistically significant Granger causal relationships between cryptocurrency log-returns, enabling us to quantify the flow of influence across assets. We find that normalized returns exhibit heavy-tailed distributions, consistent with the presence of large intermittent fluctuations and in line with stylized facts of financial markets. The resulting networks display pronounced heterogeneity in link weights and nodal strengths, indicating that a small subset of cryptocurrencies contributes disproportionately to market dynamics. By ranking cryptocurrencies based on their nodal out-strength, we uncover a dynamically evolving hierarchy of influence. Ethereum consistently emerges as the most influential asset, while Bitcoin shows a gradual decline in its relative importance. The ranking structure exhibits substantial temporal variability, with multiple cryptocurrencies entering and exiting the top positions over time. Our findings reveal a highly competitive and non-stable organization of the cryptocurrency ecosystem.",
+  "authors": [
+   "Shubhangam Shukla",
+   "Mahesh Peyyala",
+   "Abhijit Chakraborty"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "q-fin.GN"
+  ],
+  "published": "2026-06-24T06:48:28Z",
+  "updated": "2026-06-24T06:48:28Z"
+ },
+ {
+  "id": "2606.25461",
+  "title": "Equilibrium singular dividend control under ambiguity aggregation of heterogeneous discount rates",
+  "summary": "This paper studies a singular dividend control problem for a firm with heterogeneous shareholders whose discount rates follow a given distribution. The central planner aggregates expected discounted payoffs using an ambiguity aggregation function $phi$, which captures shareholder heterogeneity and ambiguity attitudes but also leads to time inconsistency. To address this issue, we seek a time-homogeneous equilibrium dividend law characterized by a partition of the state space into waiting and dividend-paying regions. We provide a rigorous mathematical characterization by proving a verification theorem and deriving necessary conditions for the equilibrium law. We then analyze barrier-type equilibria, showing non-existence for a class of aggregation functions that includes power-type and logarithmic aggregation functions, and establishing existence and uniqueness under linear and exponential aggregation. In the linear case, the bounded-rate equilibrium is shown to converge to the singular barrier-type equilibrium as the dividend rate bound tends to infinity. Numerical examples illustrate the effects of discount-rate heterogeneity and ambiguity aversion on the equilibrium barrier.",
+  "authors": [
+   "Yue Cao",
+   "Guohui Guan",
+   "Zongxia Liang",
+   "Xiaodong Luo"
+  ],
+  "categories": [
+   "math.OC",
+   "q-fin.MF"
+  ],
+  "published": "2026-06-24T06:43:40Z",
+  "updated": "2026-06-24T06:43:40Z"
+ },
+ {
+  "id": "2606.25007",
+  "title": "Multi-Stream Temporal Fusion for Financial Fraud Detection",
+  "summary": "Financial fraud detection in digital banking requires reasoning over multiple heterogeneous event streams -- transactions, login sessions, risk signals -- that individually appear benign but collectively reveal fraudulent patterns. We propose the Multi-Stream Fraud Transformer (MSFT), a unified architecture that encodes each event stream with independent Transformer encoders and fuses their representations through configurable mechanisms. We conduct a systematic ablation study comparing five fusion strategies: concatenation, gated fusion, time-aware positional encoding, cross-stream attention, and a full combination. On a large-scale dataset (10M users, 1.5% fraud rate) with 85M parameter models, we demonstrate that (1) sequence models significantly outperform gradient-boosted trees operating on aggregated features (0.74 vs. 0.99 AUROC), (2) per-stream encoding is essential -- a single-stream Transformer baseline with matched parameter budget reaches only 0.82 AUROC, an 18-point gap that confirms the multi-stream inductive bias is necessary, (3) time-aware positional encoding achieves the highest discrimination (0.9961 AUROC), (4) gated fusion yields the best precision (0.989) suitable for production deployment, and (5) the risk event stream provides the strongest individual signal contribution. We further validate on proprietary production data from a digital banking platform, showing over 22% relative AUROC improvement over the XGBoost baseline.",
+  "authors": [
+   "Mohammadamin Dashti Moghaddam",
+   "Nick Sciarrilli"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.ST"
+  ],
+  "published": "2026-06-23T17:37:27Z",
+  "updated": "2026-06-23T17:37:27Z"
+ }
+]
