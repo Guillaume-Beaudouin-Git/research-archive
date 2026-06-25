@@ -1,0 +1,14 @@
+{
+  "hash": "c5bf0a2c7a45096e2dd600332cb2163c",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.25292v1",
+  "title": "Time-Varying Model Averaging of Multi-layer Network Vector Autoregressions",
+  "url": "http://arxiv.org/abs/2606.25292v1",
+  "description": "In this paper, we introduce a flexible time-varying multi-layer network vector autoregression (VAR) model framework for large-scale time series, allowing agents in dynamic systems to interact through multiple channels and incorporating multiple adjacency matrices to capture network spillover effects. We propose a penalized model averaging method to determine a time-varying optimal combination of multi-layer network VAR candidate models whose number may be divergent. Under some regularity conditions, the asymptotic properties such as asymptotic optimality and convergence rates of the proposed time-varying weight estimation are derived in the contexts of both the in-sample fitting and out-of-sample prediction. In addition, we extend the conformal prediction method to construct prediction bands for locally stationary time series. Monte-Carlo simulation studies and an empirical application to forecast CPI inflation by combining multiple network information are given to illustrate reliable finite-sample estimation and predictive performance of the developed methodology.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-06-25 01:30 UTC"
+}
