@@ -27,6 +27,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_sharpe_ratio_of_pure_noise_20260617.md"
   },
+  "0fcf7fdbb0e706768e137148d5259984": {
+    "first_seen": "2026-06-25 06:30",
+    "source": "quantocracy",
+    "title": "News and earnings sentiment agree, mostly at the extremes [Tommi Johnsen]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "1964b7aa496ffb73bc15686ec8dc67f4": {
     "first_seen": "2026-06-02 06:06",
     "source": "quantocracy",
@@ -53,6 +60,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 06/21/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2c97c5fa90c54e7fbe225159f5a6aed6": {
+    "first_seen": "2026-06-25 06:30",
+    "source": "quantocracy",
+    "title": "Breaking Badly: finding the structural breaks in parameter estimates [Investment",
+    "decision": "accepted",
     "promising_file": null
   },
   "32dbb08d10acf1c4b5c0ce59d2113062": {
@@ -83,6 +97,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_value_at_risk_estimation_improved_estimates_with_20260618.md"
   },
+  "45af9e6165b6d2a85be38dfbb4248db6": {
+    "first_seen": "2026-06-25 06:30",
+    "source": "quantocracy",
+    "title": "Global Tactical Asset Allocation, Automated With Python and IBKR [Concretum Grou",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "4963d7204cf0a33fa37e8b59c45b9ba5": {
     "first_seen": "2026-06-17 06:00",
     "source": "quantocracy",
@@ -104,6 +125,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_forecasting_statistical_estimates_when_data_gets_r_20260610.md"
   },
+  "51d2e8ecbfb88a3bc900bb7fe4466af5": {
+    "first_seen": "2026-06-25 06:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/24/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5bac288020f567e781d736a10a44cc67": {
     "first_seen": "2026-06-17 06:00",
     "source": "quantocracy",
@@ -124,6 +152,13 @@
     "title": "New Feature: Return Contribution Analysis [Allocate Smartly]",
     "decision": "accepted",
     "promising_file": "quantocracy_new_feature_return_contribution_analysis_allocate_20260605.md"
+  },
+  "75feda7103bf1ee78137b9489daab2cd": {
+    "first_seen": "2026-06-25 06:30",
+    "source": "quantocracy",
+    "title": "Covariance Estimation for Wide Data [Eran Raviv]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   },
   "81a8316fbd7488a494b7f6c2a35d5a7d": {
     "first_seen": "2026-06-02 06:06",
