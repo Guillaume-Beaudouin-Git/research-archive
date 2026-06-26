@@ -608,6 +608,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d1b6ca5a2d619edbaad3c3c6f63357bc": {
+    "first_seen": "2026-06-26 14:30",
+    "source": "hn_algotrading",
+    "title": "I built a trainer for Conway's Doomsday algorithm (mental weekday calculation)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d1e4f38e21585634c800e73a5592fb9e": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
