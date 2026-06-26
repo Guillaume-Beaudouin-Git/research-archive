@@ -377,6 +377,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6105b8612b81e3c0385306dd6b41546a": {
+    "first_seen": "2026-06-26 11:30",
+    "source": "github_python",
+    "title": "didilili/ai-agents-from-zero",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "627db994136af968df8917b005479fc1": {
     "first_seen": "2026-06-17 11:30",
     "source": "github_python",
@@ -444,6 +451,13 @@
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
     "title": "SudoHopeX/KaliGPT",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6e5fb88e8d7802c10a769254a0ed351f": {
+    "first_seen": "2026-06-26 11:30",
+    "source": "github_python",
+    "title": "sympy/sympy",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -522,6 +536,13 @@
     "source": "github_python",
     "title": "NVIDIA/skills",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "78ad6c26894b2c1e85058a96ff0f3238": {
+    "first_seen": "2026-06-26 11:30",
+    "source": "github_python",
+    "title": "SimplifyJobs/Summer2026-Internships",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "792b8cfff075db827fd3fe57935cb182": {
@@ -664,6 +685,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9581d80429573d4aff4700a43b469210": {
+    "first_seen": "2026-06-26 11:30",
+    "source": "github_python",
+    "title": "safishamsi/graphify",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "97204030bb9106e0a5f03b3c6c3fadf8": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -720,10 +748,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a707ab18bd0085affdae38f32e2986cd": {
+    "first_seen": "2026-06-26 11:30",
+    "source": "github_python",
+    "title": "Project-MONAI/MONAI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ace91c48a4540a58471780e6b1e84ab0": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
     "title": "basicmachines-co/basic-memory",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "afe89f781979912e8271d86037e41218": {
+    "first_seen": "2026-06-26 11:30",
+    "source": "github_python",
+    "title": "commaai/openpilot",
     "decision": "rejected_L0",
     "promising_file": null
   },
