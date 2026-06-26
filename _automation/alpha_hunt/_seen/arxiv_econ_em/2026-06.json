@@ -286,6 +286,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "21dc7ef1c78fa89c51fe1f7362e1e589": {
+    "first_seen": "2026-06-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Determining the Structure of Dynamic Factor Models",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "2233e81d4ef34f04730aac8d87288ab7": {
     "first_seen": "2026-06-06T18:14:29Z",
     "source": "arxiv_econ_em",
@@ -2049,6 +2056,13 @@
     "title": "Leveraging LLMs for Unstructured Claims Data Analysis",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_leveraging_llms_for_unstructured_insurance_claims__20260620.md"
+  },
+  "d289ceba43ffc46d86692cf5889ce2dd": {
+    "first_seen": "2026-06-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Embedding Foundation Model Predictions in Discrete-Choice Models with Structural",
+    "decision": "accepted",
+    "promising_file": null
   },
   "d2ad2bbe9de998b44d3bd07fb3b4444b": {
     "first_seen": "2026-06-20 12:09",
