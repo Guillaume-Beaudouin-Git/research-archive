@@ -1,0 +1,14 @@
+{
+  "hash": "0b1dcb171aeb940a3801683fcee92c7d",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/understanding-investment-products-through-factor-analysis-and-replication/",
+  "title": "Understanding Investment Products Through Factor Analysis and Replication",
+  "url": "https://quantpedia.com/understanding-investment-products-through-factor-analysis-and-replication/",
+  "description": "Factor-based portfolio analysis provides a structured framework for understanding the drivers of investment performance, risk, and long-term behavior. This article applies a set of complementary methods to decompose portfolios into their underlying exposures, evaluate their statistical and economic significance, and assess their behavior across different market regimes. The analysis is conducted using Quantpedia Pro tools, specifically The Multi Factor Analysis, Factor Analysis Models, The 100-year Portfolio Analysis and The ETF Replication. Together, these methods form a unified factor-based framework that connects decomposition, validation, and replication of portfolio returns. This approach allows for a more robust understanding of portfolio structure and highlights the extent to which observed performance can be explained through systematic factor exposures. The post Understanding Investment Products Through Factor Analysis and Replication first appeared on QuantPedia .",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-06-26 13:30 UTC"
+}
