@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "122b2c8e7e3366f43716a05545186c77": {
+    "first_seen": "2026-06-27 11:30",
+    "source": "github_python",
+    "title": "mealie-recipes/mealie",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "129a2874563b6abb459b7a0cf5108d1d": {
     "first_seen": "2026-06-10 05:00",
     "source": "github_python",
@@ -755,6 +762,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a89d99b71af759966686518596ff83c0": {
+    "first_seen": "2026-06-27 11:30",
+    "source": "github_python",
+    "title": "browser-use/video-use",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ace91c48a4540a58471780e6b1e84ab0": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -794,6 +808,13 @@
     "first_seen": "2026-06-18 12:00",
     "source": "github_python",
     "title": "Lightricks/LTX-2",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b5d0403a02382520ff67cd1b5a01a8f4": {
+    "first_seen": "2026-06-27 11:30",
+    "source": "github_python",
+    "title": "hugohe3/ppt-master",
     "decision": "rejected_L0",
     "promising_file": null
   },
