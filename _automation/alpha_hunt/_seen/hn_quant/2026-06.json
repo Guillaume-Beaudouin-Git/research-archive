@@ -1,4 +1,11 @@
 {
+  "2659049b627a2dcfd245f8c5d6da585f": {
+    "first_seen": "2026-06-28 11:00",
+    "source": "hn_quant",
+    "title": "Regent: A Differentiable Graph-Based Quant Trading Pipeline (VQ-VAE and GNNs)",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4958f5ea080ea0d60422a86274971169": {
     "first_seen": "2026-06-28 00:00",
     "source": "hn_quant",

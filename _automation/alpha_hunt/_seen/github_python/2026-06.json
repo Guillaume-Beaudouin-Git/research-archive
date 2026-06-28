@@ -293,6 +293,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "48f976e6a081ca10360c7e69b87ec280": {
+    "first_seen": "2026-06-28 11:00",
+    "source": "github_python",
+    "title": "cupy/cupy",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "49b7eba96880ac94793b885bebd9929b": {
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
@@ -339,6 +346,13 @@
     "first_seen": "2026-06-05 12:04",
     "source": "github_python",
     "title": "microsoft/BitNet",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "54b7ce72e0d46b5817732e5e9c95b831": {
+    "first_seen": "2026-06-28 11:00",
+    "source": "github_python",
+    "title": "Robbyant/lingbot-map",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -430,6 +444,13 @@
     "first_seen": "2026-06-20 09:00",
     "source": "github_python",
     "title": "mikumifa/biliTickerBuy",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "67c32b7b09af3b6473865c5239b4dd48": {
+    "first_seen": "2026-06-28 11:00",
+    "source": "github_python",
+    "title": "usestrix/strix",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -780,6 +801,13 @@
     "first_seen": "2026-06-26 11:30",
     "source": "github_python",
     "title": "commaai/openpilot",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b3a30e0b86c67b67907d0027567c2ea3": {
+    "first_seen": "2026-06-28 11:00",
+    "source": "github_python",
+    "title": "pandas-dev/pandas",
     "decision": "rejected_L0",
     "promising_file": null
   },
