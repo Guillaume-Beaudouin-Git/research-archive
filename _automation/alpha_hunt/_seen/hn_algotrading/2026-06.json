@@ -300,6 +300,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "63ef72ce39dec11a39af99a6b5bf8b6b": {
+    "first_seen": "2026-06-28 04:00",
+    "source": "hn_algotrading",
+    "title": "Launch HN: BlankBio (YC S25) – Making RNA Programmable",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "644751c004537dbca1563ecddb009b7f": {
     "first_seen": "2026-06-02 20:06",
     "source": "hn_algotrading",
@@ -381,6 +388,13 @@
     "first_seen": "2026-06-07 14:04",
     "source": "hn_algotrading",
     "title": "Show HN: I rebuilt the \"similar movies/TV shows\" algorithm on TasteFinder",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8ad11d11543b3ae6e022fa3811bce624": {
+    "first_seen": "2026-06-28 04:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: SAI – A Reinforcement Learning Competition Platform",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -500,6 +514,13 @@
     "first_seen": "2026-06-21 05:30",
     "source": "hn_algotrading",
     "title": "Show HN: Tessera Designer – Generate beautiful, seamless patterns",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "aaaf72b2a5a9cd58deeb86b418cf41ce": {
+    "first_seen": "2026-06-28 04:00",
+    "source": "hn_algotrading",
+    "title": "MatrixTransformer: Structural Pattern Discovery Without Training",
     "decision": "rejected_L0",
     "promising_file": null
   },
