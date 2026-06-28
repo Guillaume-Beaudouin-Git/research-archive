@@ -1,20 +1,20 @@
 {
-  "run_time": "2026-06-27 12:30 UTC",
+  "run_time": "2026-06-28 00:00 UTC",
   "accepted_count": 0,
   "by_source": {
     "hn_quant": {
-      "total": 68,
-      "new": 0,
+      "total": 69,
+      "new": 1,
       "accepted": 0,
-      "rej_l0": 0,
+      "rej_l0": 1,
       "rej_l1": 0,
       "rej_l2": 0
     },
     "hn_algotrading": {
-      "total": 253,
-      "new": 1,
+      "total": 243,
+      "new": 0,
       "accepted": 0,
-      "rej_l0": 1,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     },
