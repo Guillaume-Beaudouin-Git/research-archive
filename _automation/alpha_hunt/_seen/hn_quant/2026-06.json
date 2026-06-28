@@ -1,4 +1,11 @@
 {
+  "4958f5ea080ea0d60422a86274971169": {
+    "first_seen": "2026-06-28 00:00",
+    "source": "hn_quant",
+    "title": "Fast feedback loops is the way",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "67dca229708b0e00e3474ae59f08296e": {
     "first_seen": "2026-06-09 16:04",
     "source": "hn_quant",
