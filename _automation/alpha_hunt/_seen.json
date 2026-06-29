@@ -127,5 +127,53 @@
     "decision": "accepted",
     "promising_file": "quantpedia_why_mean_variance_optimization_breaks_down_20260623.md",
     "run_time": "2026-06-23 16:03 UTC"
+  },
+  "0a404f2ff703a5c77c4c7b9d9c981baa": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_why_mean_variance_optimization_breaks_down_20260629.md"
+  },
+  "0b1dcb171aeb940a3801683fcee92c7d": {
+    "decision": "accepted",
+    "promising_file": "quantpedia_understanding_investment_products_factor_analysis_replication_20260626.md"
+  },
+  "1d456d1ccfa544ff91ca85f1434ae414": {
+    "decision": "accepted",
+    "promising_file": "hn_algotrading_pybroker_algotrading_python_machine_learning_20260625.md"
+  },
+  "2c97c5fa90c54e7fbe225159f5a6aed6": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_breaking_badly_structural_breaks_momentum_parameters_20260625.md"
+  },
+  "6b16af786e0460bd9675b81a0df64d0a": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_estimating_capacity_trading_strategy_nonlinear_costs_20260629.md"
+  },
+  "860bedd376713870134ad21de6d94edb": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_systematic_fx_regression_learning_transaction_cost_20260629.md"
+  },
+  "97618b940bc5a36d482c8f739ebe461d": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_fx_trend_following_walk_forward_validation_study_20260629.md"
+  },
+  "a0f4ec1bb55eccc0054be51d3e469c2d": {
+    "decision": "accepted",
+    "promising_file": "arxiv_adaptive_matrix_validation_ai_assisted_surveys_20260624.md"
+  },
+  "c119045d90f814176096143ad40a78f0": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_impressive_markets_hypothesis_price_discovery_social_media_20260629.md"
+  },
+  "c5bf0a2c7a45096e2dd600332cb2163c": {
+    "decision": "accepted",
+    "promising_file": "arxiv_time_varying_model_averaging_multilayer_network_var_20260625.md"
+  },
+  "d289ceba43ffc46d86692cf5889ce2dd": {
+    "decision": "accepted",
+    "promising_file": "arxiv_foundation_model_predictions_discrete_choice_structural_guarantees_20260626.md"
+  },
+  "d53fba4770995e6befbf5a9a6076059f": {
+    "decision": "accepted",
+    "promising_file": "hn_algotrading_claude_code_ai_guardrails_scraping_20260624.md"
   }
 }
