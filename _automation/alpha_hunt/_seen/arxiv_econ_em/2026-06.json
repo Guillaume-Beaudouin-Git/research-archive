@@ -1595,6 +1595,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_axiomatic_market_making_bid_ask_quoting_rule_20260621.md"
   },
+  "9d1e8143b48e68ed964bb5d178796155": {
+    "first_seen": "2026-06-29 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Quantifying Demand Shocks in the Green and Digital Transition",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "9d7e8531cdeed41125d99fc56a966250": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -2369,6 +2376,13 @@
     "first_seen": "2026-06-01 06:07",
     "source": "arxiv_econ_em",
     "title": "Moment-Based Inference for Regression with Latent Dirichlet Covariates",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e6aa37dc27aca8e26e27cdeffcf1595b": {
+    "first_seen": "2026-06-29 02:00",
+    "source": "arxiv_econ_em",
+    "title": "A Toolkit for the Study of Treatment-Effect Discontinuities",
     "decision": "rejected_L0",
     "promising_file": null
   },
