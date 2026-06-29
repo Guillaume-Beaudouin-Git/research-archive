@@ -174,6 +174,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "26015dd49c187bd45991dd3eb71ae67a": {
+    "first_seen": "2026-06-29 11:00",
+    "source": "github_python",
+    "title": "hsliuping/TradingAgents-CN",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "28b7e0fac1fbb854a9a881d5745193ec": {
     "first_seen": "2026-06-11 11:00",
     "source": "github_python",
@@ -244,6 +251,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "384d0fa44f4c1298ff6068668bfa102f": {
+    "first_seen": "2026-06-29 11:00",
+    "source": "github_python",
+    "title": "HKUDS/CLI-Anything",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3be2beb576bdfa022cf2eb6fe043b4bb": {
     "first_seen": "2026-06-09 12:05",
     "source": "github_python",
@@ -272,6 +286,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3e0aa9375ed3910da72ede1515e8f922": {
+    "first_seen": "2026-06-29 11:00",
+    "source": "github_python",
+    "title": "Mebus/cupp",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3eb505b87fd1528ce1389cd34c1014be": {
     "first_seen": "2026-06-17 11:30",
     "source": "github_python",
@@ -283,6 +304,13 @@
     "first_seen": "2026-06-17 11:30",
     "source": "github_python",
     "title": "fastapi/typer",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "40fc1115ee355c62810b87a14fd2ab35": {
+    "first_seen": "2026-06-29 11:00",
+    "source": "github_python",
+    "title": "ladaapp/lada",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -514,6 +542,13 @@
     "first_seen": "2026-06-12 13:30",
     "source": "github_python",
     "title": "LMCache/LMCache",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "72fff71eab2cd5b976bd9a5b41dc6c68": {
+    "first_seen": "2026-06-29 11:00",
+    "source": "github_python",
+    "title": "Unclecheng-li/VulnClaw",
     "decision": "rejected_L0",
     "promising_file": null
   },
