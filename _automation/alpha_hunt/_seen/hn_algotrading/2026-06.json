@@ -377,6 +377,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8207d1f84a3048f4d3abcdc12d1cf605": {
+    "first_seen": "2026-06-29 12:30",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Simplest way to productize my graph layout algo?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "84b064960ce39ef7332f4a5a91e09efe": {
     "first_seen": "2026-06-21 02:00",
     "source": "hn_algotrading",
@@ -573,6 +580,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b99044440e87084e9c181695730fe86f": {
+    "first_seen": "2026-06-29 12:30",
+    "source": "hn_algotrading",
+    "title": "AxiomGPT: Programming with LLMs by defining Oracles in natural language",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "be481e5236497c0ef0919967bb026618": {
     "first_seen": "2026-06-21 05:30",
     "source": "hn_algotrading",
@@ -640,6 +654,13 @@
     "first_seen": "2026-06-03 18:06",
     "source": "hn_algotrading",
     "title": "Show HN: Herniated disc made me build a back-safe kettlebell app",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cd99d5afe917ec47d52b89103ce24552": {
+    "first_seen": "2026-06-29 12:30",
+    "source": "hn_algotrading",
+    "title": "AI-Driven Hiring: How MokaHR Transforms Talent Acquisition",
     "decision": "rejected_L0",
     "promising_file": null
   },
