@@ -20,6 +20,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_new_feature_model_portfolio_withdrawal_rates_alloc_20260602.md"
   },
+  "0a404f2ff703a5c77c4c7b9d9c981baa": {
+    "first_seen": "2026-06-29 07:00",
+    "source": "quantocracy",
+    "title": "Why Mean-Variance Optimization Breaks Down [Quantpedia]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0f89180ffe5c02d1da66f09a45561759": {
     "first_seen": "2026-06-17 06:00",
     "source": "quantocracy",
@@ -59,6 +66,13 @@
     "first_seen": "2026-06-22 06:00",
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 06/21/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2be2ff79a795ce773eeb7bdd5a663765": {
+    "first_seen": "2026-06-29 07:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 06/28/2026",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -139,6 +153,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6b16af786e0460bd9675b81a0df64d0a": {
+    "first_seen": "2026-06-29 07:00",
+    "source": "quantocracy",
+    "title": "Estimating the Capacity of a Trading Strategy [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "6efa545a99f79a7f127432a45438a9a3": {
     "first_seen": "2026-06-17 06:00",
     "source": "quantocracy",
@@ -167,6 +188,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_institutions_return_expectations_across_assets_and_20260602.md"
   },
+  "860bedd376713870134ad21de6d94edb": {
+    "first_seen": "2026-06-29 07:00",
+    "source": "quantocracy",
+    "title": "Systematic FX trading with regression learning and transaction cost analysis [Ma",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "892b4f933cfe77fc5642e1d69cec9fc0": {
     "first_seen": "2026-06-17 06:00",
     "source": "quantocracy",
@@ -187,6 +215,13 @@
     "title": "A Common Sense Guide to Volatility Trading [Quant Galore]",
     "decision": "accepted",
     "promising_file": "quantocracy_common_sense_guide_to_volatility_trading_20260617.md"
+  },
+  "97618b940bc5a36d482c8f739ebe461d": {
+    "first_seen": "2026-06-29 07:00",
+    "source": "quantocracy",
+    "title": "FX Trend-Following: A Walk-Forward Validation Study [Quant Insti]",
+    "decision": "accepted",
+    "promising_file": null
   },
   "9a41c1c437077afaea6340d75e4fe002": {
     "first_seen": "2026-06-05 06:06",
@@ -243,6 +278,13 @@
     "title": "FIFA* (*Fitting and Forecasting Actual data) Portfolio Optimisation competition ",
     "decision": "accepted",
     "promising_file": "quantocracy_fifa_portfolio_optimisation_competition_real_returns_20260617.md"
+  },
+  "c119045d90f814176096143ad40a78f0": {
+    "first_seen": "2026-06-29 07:00",
+    "source": "quantocracy",
+    "title": "The Impressive Markets Hypothesis: Prices Still Know the Future [Alpha Architect",
+    "decision": "accepted",
+    "promising_file": null
   },
   "c4de23ec69921ec63a6bb930b2c61a6f": {
     "first_seen": "2026-06-10 06:00",
@@ -369,5 +411,12 @@
     "title": "Dual vs. Single Momentum in Commodities: Enhancing Risk-Adjusted Returns [Quantp",
     "decision": "accepted",
     "promising_file": "quantocracy_dual_vs_single_momentum_commodities_20260617.md"
+  },
+  "fda699c3472ef2bd67381e112813ab65": {
+    "first_seen": "2026-06-29 07:00",
+    "source": "quantocracy",
+    "title": "Trend Following (4/4): The Poor Man   s Trend Program [Beyond Passive]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
   }
 }
