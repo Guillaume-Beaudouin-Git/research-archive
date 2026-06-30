@@ -706,6 +706,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8bf225085196b08913244bd231ffa353": {
+    "first_seen": "2026-06-30 11:00",
+    "source": "github_python",
+    "title": "google/agents-cli",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8c9fb8e1d93cf31f7d30fa1b7f27cc83": {
     "first_seen": "2026-06-07 12:05",
     "source": "github_python",
