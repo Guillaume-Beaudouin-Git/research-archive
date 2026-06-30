@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "07515ba30c57763897cf4b7cd7f26636": {
+    "first_seen": "2026-06-30 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Literature Review and Evidence Aggregation: a Toolkit for Applied Micro",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "089590c5778fc18329b0380df88ba22c": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -61,6 +68,13 @@
     "title": "A Unified Theory of Ownership Concentration, Overlap, and Dependence",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_a_unified_theory_of_ownership_concentration_overl_20260621.md"
+  },
+  "0a85022ced88b3083531c373a3f8c6c8": {
+    "first_seen": "2026-06-30 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Generated outcomes as generated regressors: Equivalences in recursive causal est",
+    "decision": "accepted",
+    "promising_file": null
   },
   "0b643f5dd0caf13cca7c6ff9faab2358": {
     "first_seen": "2026-06-20 12:09",
@@ -986,6 +1000,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_a_deep_learning_approach_for_pricing_convertible_bon_20260621.md"
   },
+  "6754755d14a94d97d98e4169ba7478cf": {
+    "first_seen": "2026-06-30 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Second-Generation Heterogeneous Panel Data Model with Individual and Common Shoc",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "685efb24a25325c746a3b5d13b9abaa7": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1341,6 +1362,13 @@
     "source": "arxiv_econ_em",
     "title": "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "855de92fb8001216bf748a9890630da7": {
+    "first_seen": "2026-06-30 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Why Do We Need Travel Behavior Theory in the Age of AI? Multiple Goal Pursuit as",
+    "decision": "accepted",
     "promising_file": null
   },
   "85c0b19f1dc6f52927478a09a710dccc": {
@@ -1980,6 +2008,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_the_statistical_significance_of_the_inclusion_of_g_20260621.md"
   },
+  "c85967a632708f031ea2d4da8006a74c": {
+    "first_seen": "2026-06-30 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Stabilization without Inclusive Development: Neoliberalism, Economic Liberalizat",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c8c23b80fb82f448088ff57026ca2dcb": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -2365,6 +2400,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_a_fast_implied_volatility_method_with_expansi_20260621.md"
   },
+  "e4d5e800c31970a9f300a1e9a31665b0": {
+    "first_seen": "2026-06-30 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Liquidity-Based Audit of Algorithmic Trading Strategies",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "e57b66396e6b5a131d5bc8c4816abcf1": {
     "first_seen": "2026-06-16 01:00",
     "source": "arxiv_econ_em",
@@ -2721,6 +2763,13 @@
     "title": "Polymarket-v1 Database",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_polymarket_v1_database_complete_archive_20260620.md"
+  },
+  "ff1ed5186fde9f24f37133fcc25d8277": {
+    "first_seen": "2026-06-30 02:00",
+    "source": "arxiv_econ_em",
+    "title": "MACROCAST: A Vintage-Consistent Time Series Foundation Model for Real-Time Macro",
+    "decision": "accepted",
+    "promising_file": null
   },
   "ff7651199799bb68ce3f4086cd140129": {
     "first_seen": "2026-06-20 12:09",

@@ -1,0 +1,14 @@
+{
+  "hash": "07515ba30c57763897cf4b7cd7f26636",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.28848v1",
+  "title": "Literature Review and Evidence Aggregation: a Toolkit for Applied Micro",
+  "url": "http://arxiv.org/abs/2606.28848v1",
+  "description": "Consider an analyst interested in predicting the size of an effect. She has identified a set of prior published studies of similar effects. We provide a toolkit for (i) summarizing the prior literature, (ii) making predictions of effects in new contexts, and (iii) correcting for the bias from selectivity in the prior literature. We illustrate these methods with empirical examples from labor, public, behavioral, environmental, and development economics. Some of the tools are relevant even when only three prior studies are available. We show how it is possible to use covariates to transparently make predictions for a new context by reweighting prior estimates. The mean effect 0 after correcting for selectivity - is between 12% and 21% of the simple mean in our empirical examples. We conclude with a cookbook for practitioners producing meta-analyses.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-30 02:00 UTC"
+}
