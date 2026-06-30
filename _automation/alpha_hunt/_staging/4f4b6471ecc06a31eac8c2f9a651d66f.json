@@ -1,0 +1,14 @@
+{
+  "hash": "4f4b6471ecc06a31eac8c2f9a651d66f",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/guardrails-make-the-researcher-what-an-ai-agent-got-right-and-wrong-replicating-nine-equity-anomalies/",
+  "title": "Guardrails Make the Researcher: What an AI Agent Got Right (And Wrong) Replicating Nine Equity Anomalies",
+  "url": "https://quantpedia.com/guardrails-make-the-researcher-what-an-ai-agent-got-right-and-wrong-replicating-nine-equity-anomalies/",
+  "description": "An autonomous research agent replicated nine published US-equity anomalies on clean, survivorship-free data. The question is not only what it found (out-of-sample decay is the rule, and on a faithful build none survive — the lone apparent survivor turned out to be a construction error the discipline caught) but whether you can trust an agent to find it, and the checks that decide the answer. The post Guardrails Make the Researcher: What an AI Agent Got Right (And Wrong) Replicating Nine Equity Anomalies first appeared on QuantPedia .",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-06-30 13:00 UTC"
+}
