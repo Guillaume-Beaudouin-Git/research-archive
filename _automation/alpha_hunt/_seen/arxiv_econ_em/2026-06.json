@@ -195,6 +195,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_geometry_aware_residual_correction_sabr_implied_20260621.md"
   },
+  "163150e227e6bacc0556b47e7af1b8bf": {
+    "first_seen": "2026-06-30 04:30",
+    "source": "arxiv_econ_em",
+    "title": "The Shape of Macroeconomic Beliefs",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "168f94d822b80feb26ecc3c52b45075f": {
     "first_seen": "2026-06-20 12:09",
     "source": "arxiv_econ_em",
@@ -1182,6 +1189,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_ai_assisted_variance_reduction_in_randomized_expe_20260609.md"
   },
+  "795ecd7d396ea7f89188077d2ab2805c": {
+    "first_seen": "2026-06-30 04:30",
+    "source": "arxiv_econ_em",
+    "title": "Modeling Mode and Departure Time Responses to Congestion Pricing: A Spatial and ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "79d4b25a82e4f6235dec7aa231440f0e": {
     "first_seen": "2026-06-15 01:30",
     "source": "arxiv_econ_em",
@@ -1987,6 +2001,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "c5f61afb41521bba87e31d8efa71f132": {
+    "first_seen": "2026-06-30 04:30",
+    "source": "arxiv_econ_em",
+    "title": "Causal Inference Using Factor Models",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "c6016565dd6b6e06d6417690f383311e": {
     "first_seen": "2026-06-17 01:30",
     "source": "arxiv_econ_em",
@@ -2386,6 +2407,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_causalalpha_a_real_time_geopolitical_risk_index_fr_20260608.md"
   },
+  "e47adcd0baf886466dafad0d7df46958": {
+    "first_seen": "2026-06-30 04:30",
+    "source": "arxiv_econ_em",
+    "title": "Sensitivity, Informativeness, and Misspecification in GMM Estimation",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e48dbbfdb6765f77994b22d2124c6589": {
     "first_seen": "2026-06-05T16:47:23Z",
     "source": "arxiv_econ_em",
@@ -2670,6 +2698,13 @@
     "first_seen": "2026-06-24 02:30",
     "source": "arxiv_econ_em",
     "title": "Visible or Covert? The Causal Effect of Inspector Visibility on Fare Evasion Det",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f976d7adfa03b72ad4c753af4ec65b45": {
+    "first_seen": "2026-06-30 04:30",
+    "source": "arxiv_econ_em",
+    "title": "HERO: Improving the Reliability and Sensitivity of Generative Model Evaluation U",
     "decision": "rejected_L0",
     "promising_file": null
   },
