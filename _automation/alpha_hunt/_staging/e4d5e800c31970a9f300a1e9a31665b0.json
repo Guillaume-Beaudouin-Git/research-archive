@@ -1,0 +1,14 @@
+{
+  "hash": "e4d5e800c31970a9f300a1e9a31665b0",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.29018v1",
+  "title": "Liquidity-Based Audit of Algorithmic Trading Strategies",
+  "url": "http://arxiv.org/abs/2606.29018v1",
+  "description": "We show that net demand for liquidity by algo strategies is identifiable from its trade and price history alone, with no knowledge of its signal or optimization problem. An exact multi-period regret decomposition implies that the sign of this statistic classifies a linear strategy as a net liquidity consumer or provider, recovering the Kyle (1985) informed-trader/market-maker dichotomy from observables alone. Under an AR(1) cost process, the same statistic equals the product of strategy size and the squared Roll (1984) implied spread, making the correction a direct proxy for prevailing illiquidity. Extending to endogenous price impact and aggregating across N correlated strategies yields a liquidity-balance condition whose violation produces welfare loss scaling as N squared, a closed-form fire-sale externality. We calibrate to CRSP equity data (2016-2025), tracking implied spreads through the COVID-19 and 2022 rate-shock episodes, with an estimator computable in O(Tnd) time.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-30 02:00 UTC"
+}

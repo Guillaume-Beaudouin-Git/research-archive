@@ -1,0 +1,14 @@
+{
+  "hash": "855de92fb8001216bf748a9890630da7",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.29145v1",
+  "title": "Why Do We Need Travel Behavior Theory in the Age of AI? Multiple Goal Pursuit as an Illustrative Theory",
+  "url": "http://arxiv.org/abs/2606.29145v1",
+  "description": "Travel behavior and demand modeling seeks to understand the factors that motivate transportation decisions. At the same time, the field is increasingly adopting algorithmic and artificial intelligence (AI) tools that improve predictive accuracy, often at the cost of a grounding in hypothesis-based theory validation and behavioural explanation. In this discussion paper, we use goal pursuit theory (GPT) to illustrate why behavioral theory is a necessary complement to prediction in travel behavior research. Unlike random utility maximization (RUM) or close alternatives (e.g., random regret minimization (RRM)), GPT explicitly models how travelers (1) activate context-dependent goals (hedonic, gain, normative), (2) resolve conflicts between competing objectives, and (3) make sequential decisions across temporal scales. We demonstrate GPT's merits through three transport applications: activity scheduling (handling hierarchical goal structures), vehicle ownership (disentangling bundled mobility goals), and location choice (capturing latent goal interactions via matrix factorization). We provide actionable guidance for implementation, including: (a) hybrid choice model specifications linking goals to observable behaviors, (b) parallels to complementary behavioral theories from the transportation field, and (c) data requirements and comparative benchmarks against RUM/RRM models.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-06-30 02:00 UTC"
+}
