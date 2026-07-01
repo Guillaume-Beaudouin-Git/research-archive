@@ -1,0 +1,44 @@
+{
+  "09c7dbfb28c8a754601fde4d5200d866": {
+    "first_seen": "2026-07-01 11:00",
+    "source": "github_python",
+    "title": "allenai/olmocr",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1458529be81c43b4bcc0a659cdb65bed": {
+    "first_seen": "2026-07-01 11:00",
+    "source": "github_python",
+    "title": "ultralytics/yolov5",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "20c89809db441c50ab7933d703ee95aa": {
+    "first_seen": "2026-07-01 11:00",
+    "source": "github_python",
+    "title": "HKUDS/VideoAgent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6d203cb5d3f4b0fcd3ceae53691d1988": {
+    "first_seen": "2026-07-01 11:00",
+    "source": "github_python",
+    "title": "open-webui/open-webui",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "73eacb1db440b43b3499df21eaeaa21f": {
+    "first_seen": "2026-07-01 11:00",
+    "source": "github_python",
+    "title": "virgiliojr94/book-to-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9d868a2a85f9f1c2bf6706fe5e3da374": {
+    "first_seen": "2026-07-01 11:00",
+    "source": "github_python",
+    "title": "omkarcloud/botasaurus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  }
+}
