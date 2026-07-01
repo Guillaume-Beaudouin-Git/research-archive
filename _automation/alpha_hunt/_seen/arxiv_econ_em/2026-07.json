@@ -1,0 +1,30 @@
+{
+  "06154472162f371e5f777eb2de8b9fc0": {
+    "first_seen": "2026-07-01 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Coupling and Maximal Inequalities for Graph-Dependent Empirical Processes",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4512d6da5c69bd89efc81e2e67e9477b": {
+    "first_seen": "2026-07-01 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Supply Incrementality in Two-sided Marketplaces: A Causal Machine Lea",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "477d34ecc333742ff2b6428d63eb485e": {
+    "first_seen": "2026-07-01 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Quasi-Bayesian Hierarchical Models",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ea7e72be28b91ff09e500841c4c7a5da": {
+    "first_seen": "2026-07-01 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Delegation Rights: Property, Agency, and Investment Incentives in the Age of AI ",
+    "decision": "accepted",
+    "promising_file": null
+  }
+}

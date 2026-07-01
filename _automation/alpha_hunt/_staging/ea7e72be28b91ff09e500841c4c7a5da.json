@@ -1,0 +1,14 @@
+{
+  "hash": "ea7e72be28b91ff09e500841c4c7a5da",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.31935v1",
+  "title": "Delegation Rights: Property, Agency, and Investment Incentives in the Age of AI Agents",
+  "url": "http://arxiv.org/abs/2606.31935v1",
+  "description": "AI agents increasingly operate inside digital accounts by exercising privileges that users already hold, raising a new control question: whether an existing account entitlement must be exercised manually or may be exercised through a user-authorized automated proxy. We define \\emph{delegation rights} as the revocable, identity-preserving, scope-limited, and mode-specific authority of an account holder to authorize such proxy execution. We develop a three-party incomplete-contracts model with a User, an AI Agent provider, and a Platform. The contested object is not platform ownership, account transferability, data portability, or unrestricted API access, but residual control over the mode of account execution. Under Platform Control, the platform can protect infrastructure, identity systems, privacy boundaries, and third parties, but its discretionary veto weakens the User--Agent coalition's disagreement payoff and depresses relationship-specific investment. Under User Control, hold-up is reduced, but security, privacy, congestion, and third-party risks may remain insufficiently internalized. We then analyze \\emph{Certified Delegation}, under which access protection is conditional on verifiable authorization, revocability, auditability, rate-limit compliance, data minimization, and risk mitigation. Certification is therefore not merely a technical safety screen; it is a conditional allocation of residual control. Illustrative mechanism simulations show how this regime can reduce deadweight loss by restoring delegation incentives while bounding residual risk.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-01 02:00 UTC"
+}
