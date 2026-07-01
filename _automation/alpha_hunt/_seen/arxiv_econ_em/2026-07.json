@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7158b583533f510618c073a831e41517": {
+    "first_seen": "2026-07-01 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Design-Based Inference for Time-Series GMM",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "ea7e72be28b91ff09e500841c4c7a5da": {
     "first_seen": "2026-07-01 02:00",
     "source": "arxiv_econ_em",

@@ -1,0 +1,14 @@
+{
+  "hash": "7158b583533f510618c073a831e41517",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2606.31685v1",
+  "title": "Design-Based Inference for Time-Series GMM",
+  "url": "http://arxiv.org/abs/2606.31685v1",
+  "description": "This paper studies inference for time-series GMM when uncertainty comes from shock assignment within a realized historical episode. Rather than treating the data as one random draw from a population of hypothetical economies, the framework conditions on the historical environment and considers alternative realizations of shocks and instruments. For locally correctly specified GMM estimators, the centered moment has design long-run variance $Ω_R$, which determines the sandwich covariance for the finite-history estimand. Conventional HAC estimators instead converge to $Ω_R^+=Ω_R+Ω_μ$, where $Ω_μ\\succeq0$ is the long-run variance of the centered mean-moment path. HAC inference is therefore conservative for scalar functions of the finite-history estimand. Projection adjustment using predetermined covariates can reduce this HAC variance limit in Loewner order and, under an additional long-run orthogonality condition, yields a tighter conservative bound on the corresponding asymptotic covariance. Monte Carlo evidence shows when the distinction is quantitatively important. In a monetary-policy application, standard-error reductions from rich macro covariates provide a diagnostic for economically meaningful predictable variation in the mean-moment path.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-07-01 03:00 UTC"
+}
