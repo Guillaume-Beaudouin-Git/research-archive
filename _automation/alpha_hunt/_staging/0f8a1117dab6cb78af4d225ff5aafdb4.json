@@ -1,0 +1,15 @@
+{
+  "hash": "0f8a1117dab6cb78af4d225ff5aafdb4",
+  "source": "quantinsti",
+  "canonical_id": "https://blog.quantinsti.com/ai-aapl-trading-risk-manager-deepseek-python/",
+  "title": "Building a Guardrailed LLM Trading Risk-Manager Agent for AAPL",
+  "url": "https://blog.quantinsti.com/ai-aapl-trading-risk-manager-deepseek-python/",
+  "description": "Build a guardrail LLM trading risk manager for AAPL with DeepSeek. Includes Python code, walk-forward optimization, and techniques to modulate daily exposure.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "trading_topic",
+    "methodology"
+  ],
+  "captured": "2026-07-01 13:00 UTC"
+}
