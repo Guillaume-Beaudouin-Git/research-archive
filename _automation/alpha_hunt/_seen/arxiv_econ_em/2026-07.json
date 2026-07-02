@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4049122c11e4c1604ee11bec89882669": {
+    "first_seen": "2026-07-02 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Understanding Guest Preferences and Optimizing Two-sided Marketplaces: Airbnb as",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "4512d6da5c69bd89efc81e2e67e9477b": {
     "first_seen": "2026-07-01 02:00",
     "source": "arxiv_econ_em",
@@ -20,12 +27,26 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5622e07b3cc60a4730dd578983038706": {
+    "first_seen": "2026-07-02 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Post-selection inference for network structure",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "7158b583533f510618c073a831e41517": {
     "first_seen": "2026-07-01 03:00",
     "source": "arxiv_econ_em",
     "title": "Design-Based Inference for Time-Series GMM",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_design_based_inference_for_time_series_gmm_20260701.md"
+  },
+  "c9e126fd7c071d86217b46630be48b61": {
+    "first_seen": "2026-07-02 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Asymptotic Properties of Empirical Quantile-Based Estimators",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "ea7e72be28b91ff09e500841c4c7a5da": {
     "first_seen": "2026-07-01 02:00",
