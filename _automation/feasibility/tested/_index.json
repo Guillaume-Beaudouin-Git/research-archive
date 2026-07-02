@@ -1575,6 +1575,166 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_enhancing_a_risk_model_by_adding_transient_202_2026-06-21_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_explicit_signal_adaptive_sequential_optimal_execut_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_explicit_signal_adaptive_sequential_optimal_ex_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_fitting_accumulated_stock_returns_with_tempered_sk_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_fitting_accumulated_stock_returns_with_tempere_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_forward_looking_stress_testing_under_macro_scenari_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_forward_looking_stress_testing_under_macro_sce_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_from_accuracy_to_auditability_determinism_in_finan_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_from_accuracy_to_auditability_determinism_in_f_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_from_index_to_equity_pre_training_transformers_for_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_from_index_to_equity_pre_training_transformers_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_game_theoretic_modeling_of_heterogeneous_investor__20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_game_theoretic_modeling_of_heterogeneous_inves_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_incremental_svd_for_large_scale_dynamic_matrices_a_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_incremental_svd_for_large_scale_dynamic_matric_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_learning_time_inhomogeneous_markov_dynamics_in_fin_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_learning_time_inhomogeneous_markov_dynamics_in_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_multiplicative_langevin_volatility_produces_observ_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_multiplicative_langevin_volatility_produces_ob_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_scaling_limits_of_bivariate_nearly_unstable_hawkes_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_scaling_limits_of_bivariate_nearly_unstable_ha_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_two_sides_of_schur_damping_portfolio_allocation_an_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_two_sides_of_schur_damping_portfolio_allocatio_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_zero_copy_semantic_contagion_in_memory_streaming_f_20260620.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_zero_copy_semantic_contagion_in_memory_streami_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_addressing_market_regime_changes_and_heavy_tailed__20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "RegimeFilterHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_addressing_market_regime_changes_and_heavy_tai_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_axiomatic_market_making_bid_ask_quoting_rule_20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_axiomatic_market_making_bid_ask_quoting_rule_2_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_bayesian_dynamic_modeling_realized_volatility_20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_bayesian_dynamic_modeling_realized_volatility__2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_dexposure_claw_agentic_defi_risk_supervision_20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_dexposure_claw_agentic_defi_risk_supervision_2_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_entropy_regularized_certainty_equivalent_bellman_pol_20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_entropy_regularized_certainty_equivalent_bellm_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_hour_aware_adaptive_risk_management_for_autonomous_20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_hour_aware_adaptive_risk_management_for_autono_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_how_to_spot_outliers_an_ensemble_anomaly_detection_fr_20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "GenericHandler",
+      "verdict": "FAIL_A",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_how_to_spot_outliers_an_ensemble_anomaly_detec_2026-07-02_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_inspectable_neural_markov_models_for_non_stationary_t_20260621.md",
+      "tested_date": "2026-07-02",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_inspectable_neural_markov_models_for_non_stati_2026-07-02_report.md",
+      "stopped_at": "A"
     }
   ]
 }
