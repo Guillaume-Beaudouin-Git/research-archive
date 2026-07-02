@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7273d3a1b942ba36bc397bc29583f4de": {
+    "first_seen": "2026-07-02 19:00",
+    "source": "hn_algotrading",
+    "title": "Manipulating Headlines in LLM-Driven Algorithmic Trading",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "79a04f45b592e1fd37f48ef2e0786df6": {
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
