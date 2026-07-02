@@ -1,0 +1,14 @@
+{
+  "hash": "addd1b7d0f2374ca47e05a5d6fdec251",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/silicon-vs-satoshi-tactical-asset-rotation-between-nasdaq-100-and-bitcoin/",
+  "title": "Silicon vs. Satoshi: Tactical Asset Rotation Between NASDAQ-100 and Bitcoin",
+  "url": "https://quantpedia.com/silicon-vs-satoshi-tactical-asset-rotation-between-nasdaq-100-and-bitcoin/",
+  "description": "In the modern retail attention economy, Bitcoin and the NASDAQ-100 are not merely separate assets; they are competing narratives. Both appeal to the same pool of speculative capital, the same appetite for asymmetric upside, and the same behavioral forces of FOMO, herding, and recency bias. When technology stocks dominate the imagination, capital clusters around QQQ and the artificial intelligence trade. When Bitcoin breaks out, the crowd’s attention pivots toward crypto’s promise of explosive upside. This paper tests whether that rotation in attention leaves a systematic footprint. Using Donchian breakout signals across QQQ and Bitcoin, with cash as a fallback during periods of consolidation, we examine whether investors can harvest momentum without remaining permanently exposed to either asset’s full drawdown profile. The results suggest that the answer is yes: retail attention does not move randomly. It rotates, it concentrates, and—when measured through price breakouts—it can be systematically exploited. The post Silicon vs. Satoshi: Tactical Asset Rotation Between NASDAQ-100 and Bitcoin first appeared on QuantPedia .",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-07-02 14:00 UTC"
+}
