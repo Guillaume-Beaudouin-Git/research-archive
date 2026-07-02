@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "59346bb54ba73b981286bd86e6b9b51e": {
+    "first_seen": "2026-07-02 20:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: HelixDB – Native graph and vector types for RAG and retrieval",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7273d3a1b942ba36bc397bc29583f4de": {
     "first_seen": "2026-07-02 19:00",
     "source": "hn_algotrading",
