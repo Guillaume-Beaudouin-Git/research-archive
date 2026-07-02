@@ -20,6 +20,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "519e1c8c89158d00cede06fb0843afec": {
+    "first_seen": "2026-07-02 11:00",
+    "source": "github_python",
+    "title": "huggingface/transformers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6c6aeaf74bf34f01118960f3df92329c": {
+    "first_seen": "2026-07-02 11:00",
+    "source": "github_python",
+    "title": "langflow-ai/langflow",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6d203cb5d3f4b0fcd3ceae53691d1988": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -38,6 +52,27 @@
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
     "title": "omkarcloud/botasaurus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b53952b4ab864008a49706ef7d1632f9": {
+    "first_seen": "2026-07-02 11:00",
+    "source": "github_python",
+    "title": "alirezarezvani/claude-skills",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "bd191a12e3935b6ad1dcc947940bf183": {
+    "first_seen": "2026-07-02 11:00",
+    "source": "github_python",
+    "title": "PyCQA/bandit",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dba27f0165935559af97dab78ad4f218": {
+    "first_seen": "2026-07-02 11:00",
+    "source": "github_python",
+    "title": "agentskills/agentskills",
     "decision": "rejected_L0",
     "promising_file": null
   }
