@@ -1,0 +1,66 @@
+[
+ {
+  "id": "2607.01765",
+  "title": "A Cap-Axis Integral Diagnostic of Factor Models",
+  "summary": "I propose a cap-axis integral diagnostic for factor-model evaluation. Low-dimensional factor models can improve the maximum-Sharpe frontier while leaving zero-alpha violations on economically fixed subspaces. The diagnostic studies one such subspace by lifting pricing errors into a bridge-alpha curve along the market-capitalization rank axis. Under an aggregate-market gate, a zero curve is equivalent to pricing the market's internal cap-rank subspace. In 1967-2024 CRSP data, q5's daily negative bridge attenuates under lead-lag correction, while Fama-French and Carhart bridges are more visible monthly. Across 154 factors, the cap-axis norm is distinct from Sharpe gain and size exposure.",
+  "authors": [
+   "Useong Shin"
+  ],
+  "categories": [
+   "q-fin.GN",
+   "q-fin.CP",
+   "q-fin.MF",
+   "q-fin.PR",
+   "q-fin.ST"
+  ],
+  "published": "2026-07-02T06:28:56Z",
+  "updated": "2026-07-02T06:28:56Z"
+ },
+ {
+  "id": "2607.01705",
+  "title": "Portfolio Optimization under Fast and Slow Latent Mean-Reverting and Momentum Drift",
+  "summary": "We consider a class of partial-information portfolio optimization problems in which the drift of a risky asset is driven by two latent stochastic factors evolving at distinct time scales. We show that the filtered estimate of the latent mean-reversion level is driven by the difference between fast and slow exponential moving average (EMA)-type processes of the trailing price history, yielding a Moving Average Convergence Divergence (MACD)-type signal, along with a deterministic Volterra correction. Under logarithmic, power, and exponential utility, we derive candidate optimal strategies in explicit feedback form and establish admissibility and verification results. In particular, the results provide a mathematical foundation for the endogenous emergence of MACD-type trading signals as estimators of latent drift information contained in observed price paths.",
+  "authors": [
+   "Dannin J. Eccles",
+   "Roger Lee"
+  ],
+  "categories": [
+   "q-fin.MF"
+  ],
+  "published": "2026-07-02T04:56:40Z",
+  "updated": "2026-07-02T04:56:40Z"
+ },
+ {
+  "id": "2607.01550",
+  "title": "Is Trend Still Your Friend?: A Microstructural Account of the Demise of Short-Term Trend-Following",
+  "summary": "Systematic trend following has, on average, been profitable for at least two centuries; yet since approximately 2009, short-term trends have ceased to deliver reliable returns. Using a cross-section of roughly 100 liquid futures contracts spanning 1995-2025, together with an industry-representative CTA proxy, we document the break and characterise its dependence on signal speed and asset class. We evaluate four candidate explanations - capacity constraints, market electronification, a regime change in CTA-versus-order-flow interactions, and a microstructural mechanism - and find that the first three fail on grounds of timing, magnitude, or cross-sectional heterogeneity. Our central empirical finding is that the cross-sectional variable distinguishing degraded from surviving trends is the volatility-normalised tick size: post-2008 trend PnL has collapsed on small-tick contracts across all signal horizons, while remaining essentially intact on large-tick ones. Neither asset class nor liquidity replicates this dichotomy. We interpret this result through a self-fulfilling feedback loop that, in our view, lies at the heart of the trend anomaly itself: trend signals trigger directional trades, whose market impact reinforces the very price moves that generated the signal. Both the profitability and the persistence of trend are sustained by this impact channel, which requires that trend followers can execute aggressively at reasonable cost. We argue that the post-crisis transition to",
+  "authors": [
+   "Jutta G. Kurth",
+   "Zoltan Eisler",
+   "Adam Rej",
+   "Jean-Philippe Bouchaud"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "q-fin.PM"
+  ],
+  "published": "2026-07-02T00:16:17Z",
+  "updated": "2026-07-02T00:16:17Z"
+ },
+ {
+  "id": "2607.01377",
+  "title": "Liquidity Premium and Investment Horizons",
+  "summary": "We estimate Kyle's (1985) price-impact coefficient $λ$ directly from daily equity order flow and test its ability to forecast the cross-section of subsequent stock returns. Using CRSP data from 2020 to 2025, we construct firm-month measures of signed order flow and two estimators of $\\hatλ_{it}$: a within-month price-impact regression and an Amihud-style ratio. Signed order flow strongly predicts contemporaneous and one-month-ahead returns, while volume volatility predicts lower subsequent returns, consistent with widening price impact degrading price discovery. Fama-MacBeth regressions confirm that our order-flow signal carries significant cross-sectional return information after Newey--West adjustment. Theoretically, we resolve the liquidity premium puzzle of Constantinides (1986) through an adverse-selection mechanism: low order flow widens $λ$ and depresses prices today; subsequent normalization restores prices, generating the illiquidity premium without risk-based compensation.",
+  "authors": [
+   "Irene Aldridge"
+  ],
+  "categories": [
+   "econ.EM",
+   "q-fin.PR",
+   "q-fin.ST",
+   "q-fin.TR"
+  ],
+  "published": "2026-07-01T18:41:20Z",
+  "updated": "2026-07-01T18:41:20Z"
+ }
+]
