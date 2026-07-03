@@ -34,6 +34,20 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "592733a001a522cb71e8e561b0d4d6f3": {
+    "first_seen": "2026-07-03 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Measuring Opportunity Cost with Stock Lifetime Value",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "64d2d49ea3f2b14afc7d222ae29c19fb": {
+    "first_seen": "2026-07-03 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Liquidity Premium and Investment Horizons",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "7158b583533f510618c073a831e41517": {
     "first_seen": "2026-07-01 03:00",
     "source": "arxiv_econ_em",
@@ -48,11 +62,25 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d1fedc40860f055274b3ee1df9794542": {
+    "first_seen": "2026-07-03 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Granular Instrumental Variables in Large Panels: Identification and Inference Ac",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "ea7e72be28b91ff09e500841c4c7a5da": {
     "first_seen": "2026-07-01 02:00",
     "source": "arxiv_econ_em",
     "title": "Delegation Rights: Property, Agency, and Investment Incentives in the Age of AI ",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_delegation_rights_property_agency_and_investment_i_20260701.md"
+  },
+  "ef23cf971d2f323f20741a28c73f85f7": {
+    "first_seen": "2026-07-03 01:30",
+    "source": "arxiv_econ_em",
+    "title": "A condition for the identification of multivariate models with binary instrument",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }
