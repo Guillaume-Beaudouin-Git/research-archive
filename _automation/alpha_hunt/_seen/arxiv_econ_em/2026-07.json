@@ -55,6 +55,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_design_based_inference_for_time_series_gmm_20260701.md"
   },
+  "85e6db0afe9eb3e9197b793b6638d7ba": {
+    "first_seen": "2026-07-03 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Inference for Group Interaction Experiments",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "c9e126fd7c071d86217b46630be48b61": {
     "first_seen": "2026-07-02 02:00",
     "source": "arxiv_econ_em",
