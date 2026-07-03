@@ -207,5 +207,17 @@
   "4f4b6471ecc06a31eac8c2f9a651d66f": {
     "decision": "accepted",
     "promising_file": "quantpedia_guardrails_make_the_researcher_what_an_ai_agent_g_20260630.md"
+  },
+  "64d2d49ea3f2b14afc7d222ae29c19fb": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_liquidity_premium_and_investment_horizons_20260703.md"
+  },
+  "85e6db0afe9eb3e9197b793b6638d7ba": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_inference_for_group_interaction_experiments_20260703.md"
+  },
+  "d1fedc40860f055274b3ee1df9794542": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_granular_instrumental_variables_in_large_panels_id_20260703.md"
   }
 }
