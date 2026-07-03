@@ -159,5 +159,12 @@
     "title": "ApparentlyExempt: Algorithmic trading is circumventing short sale restrictions",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "f777c5bc9fc4c2a67134ee645640d874": {
+    "first_seen": "2026-07-03 05:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: WyrmRSS – a self-hosted RSS reader with inline YouTube",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }
