@@ -69,10 +69,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8234f39805230033ada74e995b040e63": {
+    "first_seen": "2026-07-04 11:00",
+    "source": "github_python",
+    "title": "microsoft/skills-for-fabric",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "849489015b5f8a2d49c57c4b95312f52": {
     "first_seen": "2026-07-03 11:00",
     "source": "github_python",
     "title": "rommapp/romm",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "86573aaca84ed087b009c63fe9ed0d7a": {
+    "first_seen": "2026-07-04 11:00",
+    "source": "github_python",
+    "title": "hesreallyhim/awesome-claude-code",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -97,10 +111,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "cce04eee97e2449c5cb64d1fffea416f": {
+    "first_seen": "2026-07-04 11:00",
+    "source": "github_python",
+    "title": "google/adk-python",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "dba27f0165935559af97dab78ad4f218": {
     "first_seen": "2026-07-02 11:00",
     "source": "github_python",
     "title": "agentskills/agentskills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "eb84bfb953b446f1d894402b3e94eddf": {
+    "first_seen": "2026-07-04 11:00",
+    "source": "github_python",
+    "title": "jiji262/douyin-downloader",
     "decision": "rejected_L0",
     "promising_file": null
   }
