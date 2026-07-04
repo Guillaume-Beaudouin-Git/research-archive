@@ -1,0 +1,17 @@
+{
+  "VAL": 1422.0,
+  "FEE": 96.0,
+  "N_eff": 173.7,
+  "decisions": [
+    {
+      "arm": "GATE160",
+      "affordable": true,
+      "rule": "\u0394p CI90>=-2.0pts AND \u0394EV CI90>=-$40",
+      "dp": 0.006493506493506494,
+      "dp_lo90": 0.0,
+      "dEV": 12.558441558441558,
+      "dEV_lo90": 0.0
+    }
+  ],
+  "note": "Cost gate only. Tail protection is prospective (breach replay), not this MC."
+}
