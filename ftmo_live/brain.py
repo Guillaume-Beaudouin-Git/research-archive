@@ -30,7 +30,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import LEGS, LIVE_CACHE, PIN_COMMITS  # noqa: E402
-from lib import governor, invariants, marketdata, signals, spec, statefiles, swaps  # noqa: E402
+from lib import governor, invariants, j1_gate, marketdata, signals, spec, statefiles, swaps  # noqa: E402
 
 OFF_SCHEDULE_BEFORE_H = 15  # un run production avant 15:00 Paris = anormal (warn)
 STATE_FRESH_S = 600
@@ -105,7 +105,15 @@ def run(dry_run: bool = False, as_of: str = None, equity: float = None,
     wt_row, sig_diag = signals.weights_for(target_date, cache)
     on_day = bool(sig_diag["on_day"])
     weights = {"XAUUSD": float(wt_row["XAUUSD"]), "USDJPY": float(wt_row["USDJPY"])}
+    # J1 (USDJPY) intervention-zone suspension overlay (ratifié 2026-07-03, hors chaîne gelée).
+    # suspend -> weights["USDJPY"]=0 -> ea_w_usdjpy=0 -> EA flatten J1 @22:05 sans réouverture
+    # (Volet 1 vérifié source primaire). Fail-safe: config absente -> défauts ; data JPY illisible
+    # -> fail-closed (suspend). Étude/preuve: data/ftmo_portfolio/j1_suspend_study/.
+    j1g = j1_gate.evaluate(cache)
+    if j1g["suspend"]:
+        weights["USDJPY"] = 0.0
     audit["signals"] = sig_diag
+    audit["j1_gate"] = j1g
     audit["weights"] = weights
 
     phase = phase or (state or {}).get("phase") or "P1"

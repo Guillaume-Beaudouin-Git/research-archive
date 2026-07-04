@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "t_off": 160.0,
+  "t_on": 155.0,
+  "n_resume": 10,
+  "_comment": "J1/USDJPY suspension gate (ratifié 2026-07-03). OFF si close USDJPY>=t_off; ON après n_resume closes<=t_on. Hors chaîne gelée. enabled:false = opt-out explicite. Étude: data/ftmo_portfolio/j1_suspend_study/."
+}
