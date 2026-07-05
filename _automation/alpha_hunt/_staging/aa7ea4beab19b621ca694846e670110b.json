@@ -1,0 +1,16 @@
+{
+  "hash": "aa7ea4beab19b621ca694846e670110b",
+  "source": "quantocracy",
+  "canonical_id": "https://quantocracy.com/redirect.php?key=SomsaTK8Nc&amp;source=feedburner",
+  "title": "Your Backtest Is Lying to You: Building a Walk-Forward Validation Harness in Python [Jdiv930]",
+  "url": "https://quantocracy.com/redirect.php?key=SomsaTK8Nc&amp;source=feedburner",
+  "description": "class=\"qo-content-col\"> Your Backtest Is Lying to You: Building a Walk-Forward Validation Harness in Python [Jdiv930] Last year I built a stock scanner in Python. The first backtest said my signals returned +40% over two years. I was, briefly, a genius. Then I fixed thr",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "trading_topic",
+    "code_quant",
+    "methodology"
+  ],
+  "captured": "2026-07-05 06:30 UTC"
+}
