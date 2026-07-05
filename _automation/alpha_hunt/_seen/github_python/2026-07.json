@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1064d71c46e7b39d5e6c720c7e8b05d9": {
+    "first_seen": "2026-07-05 11:30",
+    "source": "github_python",
+    "title": "OthmanAdi/planning-with-files",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1458529be81c43b4bcc0a659cdb65bed": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -24,6 +31,13 @@
     "first_seen": "2026-07-03 11:00",
     "source": "github_python",
     "title": "NVlabs/ProtoMotions",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "393967b3d96f1ecb4fa17f403010b9c6": {
+    "first_seen": "2026-07-05 11:30",
+    "source": "github_python",
+    "title": "karpathy/nanoGPT",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -90,6 +104,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8a9b5669e5c6c92919f421c3aff9fb3a": {
+    "first_seen": "2026-07-05 11:30",
+    "source": "github_python",
+    "title": "google-antigravity/antigravity-sdk-python",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9d868a2a85f9f1c2bf6706fe5e3da374": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -129,6 +150,13 @@
     "first_seen": "2026-07-04 11:00",
     "source": "github_python",
     "title": "jiji262/douyin-downloader",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ee7d231257627a887412c1fe2e096d13": {
+    "first_seen": "2026-07-05 11:30",
+    "source": "github_python",
+    "title": "GeeeekExplorer/nano-vllm",
     "decision": "rejected_L0",
     "promising_file": null
   }
