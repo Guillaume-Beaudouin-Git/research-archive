@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "11c9b0058317b9334f696e5e7f1fc382": {
+    "first_seen": "2026-07-05 05:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: TyxonQ, A Chinese Full-Stack Quantum Software Framework on Real Machine",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "129c78ac4d0c490a599e4d5320bf05d7": {
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
@@ -24,6 +31,13 @@
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
     "title": "Platform as a Service for Algorithmic Trading",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "38355feeb22748bc0267b174ae352546": {
+    "first_seen": "2026-07-05 05:30",
+    "source": "hn_algotrading",
+    "title": "Ask HN: How soon will AI take over traditional recommendation algorithms?",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -76,6 +90,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8ae7137dfac4a2aed7680227e7532a1e": {
+    "first_seen": "2026-07-05 05:30",
+    "source": "hn_algotrading",
+    "title": "NeoML – Machine learning framework for deep learning and traditional algorithms",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8b3a5ff44ce37f396865f850f98207f6": {
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
@@ -115,6 +136,13 @@
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
     "title": "KloudTrader – Algorithmic Trading for Non-Programmers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a0bebc736884851ed3fbc2180d596e89": {
+    "first_seen": "2026-07-05 05:30",
+    "source": "hn_algotrading",
+    "title": "Are data structures and algorithms still the gatekeeper for big tech interviews?",
     "decision": "rejected_L0",
     "promising_file": null
   },
