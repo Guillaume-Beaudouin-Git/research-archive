@@ -1823,6 +1823,22 @@
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_liquidity_based_audit_of_algorithmic_trad_2026_2026-07-04_report.md",
       "stopped_at": "A"
+    },
+    {
+      "source_md": "arxiv_econ_em_the_shape_of_macroeconomic_beliefs_20260630.md",
+      "tested_date": "2026-07-06",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/arxiv_econ_em_the_shape_of_macroeconomic_beliefs_20260630_2026-07-06_report.md",
+      "stopped_at": "A"
+    },
+    {
+      "source_md": "quantpedia_silicon_vs_satoshi_tactical_asset_rotation_bet_20260702.md",
+      "tested_date": "2026-07-06",
+      "handler": "RegimeFilterHandler",
+      "verdict": "REQUIRES_HUMAN",
+      "report_path": "_automation/feasibility/tested/quantpedia_silicon_vs_satoshi_tactical_asset_rotation_bet_20_2026-07-06_report.md",
+      "stopped_at": "A"
     }
   ]
 }
