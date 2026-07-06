@@ -125,6 +125,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "b88a56dda763e49ad7b19b7bbb692e4c": {
+    "first_seen": "2026-07-06 11:00",
+    "source": "github_python",
+    "title": "ComposioHQ/awesome-claude-skills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "bd191a12e3935b6ad1dcc947940bf183": {
     "first_seen": "2026-07-02 11:00",
     "source": "github_python",
