@@ -1,62 +1,13 @@
 {
-  "run_time": "2026-07-05 17:30 UTC",
+  "run_time": "2026-07-06 03:58 UTC",
   "accepted_count": 0,
-  "by_source": {
-    "hn_quant": {
-      "total": 66,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "hn_algotrading": {
-      "total": 274,
-      "new": 1,
-      "accepted": 0,
-      "rej_l0": 1,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantocracy": {
-      "total": 78,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantinsti": {
-      "total": 16,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "quantpedia": {
-      "total": 13,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "github_python": {
-      "total": 87,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
-    },
-    "arxiv_econ_em": {
-      "total": 77,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
-      "rej_l2": 0
+  "by_source": {},
+  "note": "process_raw_filter.py found no new _raw files this run (VPS distillation had not produced fresh raw drops locally). 4 pre-existing staged items from the 2026-07-05 06:30 UTC fetch (all quantocracy) were still sitting unprocessed in _staging/ and were processed into promising/ in this pass instead.",
+  "processed_from_backlog": {
+    "run_time": "2026-07-06 04:02 UTC",
+    "accepted_count": 4,
+    "by_source": {
+      "quantocracy": 4
     }
   }
 }
