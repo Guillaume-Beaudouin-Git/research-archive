@@ -1,0 +1,14 @@
+{
+  "hash": "0ce73b02844f1ae5c81f4d626d18e082",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.03669v1",
+  "title": "Split-Session Cluster GARCH for Overnight and Intraday Returns: The Role of Tail Heterogeneity",
+  "url": "http://arxiv.org/abs/2607.03669v1",
+  "description": "We propose the Split-Session Cluster GARCH model for heavy-tailed multivariate dependence among asset returns decomposed into overnight and intraday components. The model uses convolution-$t$ distributions to allow tail behavior to differ across clusters defined by trading sessions and, within each session, by economic sectors. It also accommodates block-structured conditional correlation matrices, preserving parsimony and scalability in high-dimensional settings. The resulting likelihood remains tractable and yields a score-driven specification for dynamic correlations. We apply the model to U.S. equity returns in six-asset and 100-asset applications. The results reveal pronounced tail heterogeneity between overnight and intraday returns. Model comparisons show that session-specific tail parameters substantially improve fit relative to a common multivariate-$t$ specification, while sector-level tail partitioning delivers additional gains concentrated mainly in the overnight component. In the 100-asset application, asset-level tail heterogeneity delivers the strongest out-of-sample likelihood and global minimum-variance (GMV) portfolio performance.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-07-07 03:30 UTC"
+}

@@ -6,6 +6,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "07b83fa077a66a369c9999309e539c45": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "A Pseudo Panel Difference-in-Differences (DiD) Analysis of Online Shopping Behav",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "09f9cc2c578097f284d3ebc0df1aae2b": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Deep Learning for Dynamic Programming with Recursive Utility",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0c0e681644e324cd0890a671899a9150": {
     "first_seen": "2026-07-07 02:00",
     "source": "arxiv_econ_em",
@@ -13,10 +27,38 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0ce73b02844f1ae5c81f4d626d18e082": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Split-Session Cluster GARCH for Overnight and Intraday Returns: The Role of Tail",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "2708f209b5b756de2a6a6fb4559243f9": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Causal Overlap Effects: A Cumulative Fixed Effect Approach",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3fd7de072604b217399944da9c4f46c9": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Geometric Control of Decisions' Affordability",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "4049122c11e4c1604ee11bec89882669": {
     "first_seen": "2026-07-02 02:00",
     "source": "arxiv_econ_em",
     "title": "Understanding Guest Preferences and Optimizing Two-sided Marketplaces: Airbnb as",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "40505e1090712253fd55d968b5e9eebd": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Remote Work: Driver or Deterrent of Digital Product Innovation",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
@@ -34,6 +76,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4df4f23585f39863765b7ebbeb054fa4": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Variance Estimation for Saturated Fixed-Effect Specifications",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "550e803a1e0c53f905a57745c9cebc81": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Rational Bubbles at the Spectral Edge: An Operator-Spectral Theory of Fragility,",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "5622e07b3cc60a4730dd578983038706": {
     "first_seen": "2026-07-02 02:00",
     "source": "arxiv_econ_em",
@@ -41,11 +97,32 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "588fdca7c5ad7d5088113351f1e6ee7d": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Stabilized Higher-Order Influence Functions: Statistical Theory of a Class of Bi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "592733a001a522cb71e8e561b0d4d6f3": {
     "first_seen": "2026-07-03 01:30",
     "source": "arxiv_econ_em",
     "title": "Measuring Opportunity Cost with Stock Lifetime Value",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5b408803e7f0bd3df73704fe9c9aca70": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Properties of the Conditional Likelihood Ratio Test under Discrete Approximation",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5c8360f491acacc0084bdddbe846dbd4": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Forecasting Realized Volatility with Time Series Foundation Models: A Comparison",
+    "decision": "accepted",
     "promising_file": null
   },
   "64d2d49ea3f2b14afc7d222ae29c19fb": {
@@ -61,6 +138,13 @@
     "title": "Design-Based Inference for Time-Series GMM",
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_design_based_inference_for_time_series_gmm_20260701.md"
+  },
+  "72a2ab4d0c0a97841a92dc308298d2e0": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Randomization Tests in Randomized Saturation Designs",
+    "decision": "rejected_L0",
+    "promising_file": null
   },
   "83081b7ed644b178f4d2af702d6c7562": {
     "first_seen": "2026-07-07 02:00",
@@ -80,6 +164,13 @@
     "first_seen": "2026-07-02 02:00",
     "source": "arxiv_econ_em",
     "title": "Asymptotic Properties of Empirical Quantile-Based Estimators",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d153ce6748832fbc945cbbc4bccdfca0": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "IMF Programs and Growth: A Source-Informed Robustness Reanalysis",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -108,6 +199,13 @@
     "first_seen": "2026-07-03 01:30",
     "source": "arxiv_econ_em",
     "title": "A condition for the identification of multivariate models with binary instrument",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ffadb025f912316557f7e85c03de41bc": {
+    "first_seen": "2026-07-07 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Approximate Minimax Estimation of a Bounded Normal Mean via Stochastic Mirror As",
     "decision": "rejected_L0",
     "promising_file": null
   }
