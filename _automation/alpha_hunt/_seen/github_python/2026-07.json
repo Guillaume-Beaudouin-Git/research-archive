@@ -41,6 +41,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "39cc9839460fbf4d3357ca7729281ff8": {
+    "first_seen": "2026-07-07 11:30",
+    "source": "github_python",
+    "title": "p1ngul1n0/blackbird",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3a076ec0a1805c2850e87e8e4deb8b8b": {
     "first_seen": "2026-07-03 11:00",
     "source": "github_python",
@@ -48,10 +55,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4b76663edbebcaf9489b2490d752ed72": {
+    "first_seen": "2026-07-07 11:30",
+    "source": "github_python",
+    "title": "datawhalechina/all-in-rag",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "519e1c8c89158d00cede06fb0843afec": {
     "first_seen": "2026-07-02 11:00",
     "source": "github_python",
     "title": "huggingface/transformers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "56a0fd8bb83e0cd107e8a0fbc4dbd574": {
+    "first_seen": "2026-07-07 11:30",
+    "source": "github_python",
+    "title": "tinygrad/tinygrad",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -118,6 +139,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "ae7d608e39d10b781713ed8acbde083e": {
+    "first_seen": "2026-07-07 11:30",
+    "source": "github_python",
+    "title": "kyutai-labs/pocket-tts",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b53952b4ab864008a49706ef7d1632f9": {
     "first_seen": "2026-07-02 11:00",
     "source": "github_python",
@@ -136,6 +164,20 @@
     "first_seen": "2026-07-02 11:00",
     "source": "github_python",
     "title": "PyCQA/bandit",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c32f0111cfa834c77b9319198db64a25": {
+    "first_seen": "2026-07-07 11:30",
+    "source": "github_python",
+    "title": "XiaoYouChR/Ghost-Downloader-3",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c436fd59e0625a49c2caf5cce78dca35": {
+    "first_seen": "2026-07-07 11:30",
+    "source": "github_python",
+    "title": "HKUDS/AI-Trader",
     "decision": "rejected_L0",
     "promising_file": null
   },
