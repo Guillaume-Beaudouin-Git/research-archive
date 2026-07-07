@@ -6,6 +6,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "0f446d323baaa69335729565a0b5c323": {
+    "first_seen": "2026-07-07 06:00",
+    "source": "quantocracy",
+    "title": "Quantitativo weekly [Quantitativo]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "1e0ca71788720d16ef170e98c34df22a": {
     "first_seen": "2026-07-01 06:00",
     "source": "quantocracy",
@@ -34,6 +41,20 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "8ba330a5cd8505db05fc4b947c6b6835": {
+    "first_seen": "2026-07-07 06:00",
+    "source": "quantocracy",
+    "title": "The Market Impact of Retail Options Trading [Relative Value Arbitrage]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "9bcaee0cc43077b215f4aeebc80d84ce": {
+    "first_seen": "2026-07-07 06:00",
+    "source": "quantocracy",
+    "title": "Building the Market Effect Mini-Portfolio [TradeQuantiX]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "aa7ea4beab19b621ca694846e670110b": {
     "first_seen": "2026-07-05 06:30",
     "source": "quantocracy",
@@ -45,6 +66,13 @@
     "first_seen": "2026-07-01 06:00",
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 06/30/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d6e9a5f45450f56e8ae2922b05abcfc5": {
+    "first_seen": "2026-07-07 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/06/2026",
     "decision": "rejected_L0",
     "promising_file": null
   },
