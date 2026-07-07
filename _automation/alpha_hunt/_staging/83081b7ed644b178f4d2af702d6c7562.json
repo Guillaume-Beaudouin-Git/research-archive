@@ -1,0 +1,14 @@
+{
+  "hash": "83081b7ed644b178f4d2af702d6c7562",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.02898v1",
+  "title": "Conformalized Lee Inference: Distribution-Free Individual Treatment Effect Intervals under Monotone Sample Selection",
+  "url": "http://arxiv.org/abs/2607.02898v1",
+  "description": "Empirical studies often observe outcomes only for selected units, and treatment may change who is observed. This paper studies prediction in randomized studies with one-sided selection. Standard prediction intervals can fail because treated selected observations are not the same group as selected controls. The paper asks how to predict missing treated outcomes and individual treatment effects for always-observed units. The proposed conformalized Lee procedure uses treated selected observations to train and check any prediction rule, then adjusts the cutoff using the observed treatment-control selection gap. For selected controls, the missing treated-outcome interval is shifted by the observed untreated outcome to produce an individual treatment-effect interval. The method provides reliable coverage without requiring the prediction rule to be correctly specified. The key result shows that the proposed adjustment uses the exact amount of uncertainty implied by the monotone selection logic of Lee [2009]. In simulations, ordinary conformal prediction demonstrates a lower coverage rate under selection-induced distribution shift, while the Lee-adjusted methods achieve the desired coverage rate. The results show that the proposed selection correction method can support reliable counterfactual prediction, while retaining practical implementation with modern prediction tools.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-07 02:00 UTC"
+}
