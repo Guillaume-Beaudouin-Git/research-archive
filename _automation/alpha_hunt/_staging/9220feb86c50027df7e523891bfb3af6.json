@@ -1,0 +1,14 @@
+{
+  "hash": "9220feb86c50027df7e523891bfb3af6",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.06368v1",
+  "title": "Factor-Augmented Machine Learning Panel Regressions",
+  "url": "http://arxiv.org/abs/2607.06368v1",
+  "description": "This paper develops the asymptotic theory for high-dimensional panel data regressions in settings with cross-sectionally dependent errors driven by common shocks. We consider a factor-augmented sparse-group LASSO estimator that combines MIDAS aggregation with latent factors. The estimator can take advantage of the mixed-frequency group structure in the time-series dimension. Theory shows that it can outperform the standard LASSO estimator both for prediction and estimation while allowing for cross-sectional dependence.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-07-08 01:30 UTC"
+}
