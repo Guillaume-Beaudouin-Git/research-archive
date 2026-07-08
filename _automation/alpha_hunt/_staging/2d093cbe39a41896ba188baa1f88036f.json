@@ -1,0 +1,14 @@
+{
+  "hash": "2d093cbe39a41896ba188baa1f88036f",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.05534v1",
+  "title": "Empirical Global Games of Regime Change",
+  "url": "http://arxiv.org/abs/2607.05534v1",
+  "description": "Global games theory provides a tractable framework for analyzing coordination problems with multiple equilibria, with regime overthrow serving as a canonical application. A large empirical literature on coups d'état examines the relationship between country-level characteristics, coup occurrence, and coup success using reduced-form approaches that leave the underlying coordination problem implicit. Bridging these literatures, we develop an estimable global games model of coups d'état. The model incorporates strategic coordination into the empirical analysis of coups, employing the global games framework as an equilibrium selection device. The model distinguishes between the feasibility and desirability of regime overthrow, allowing observable fundamentals to enter separately into beliefs about regime strength and perceived gains from rebellion. The model therefore provides a theoretical basis for decomposing coup outcomes into feasibility and desirability components under maintained exclusion restrictions and equilibrium assumptions. If information on coup strength is available, the model also allows estimation of agents' uncertainty about regime strength. We show how the model can be estimated using simulated maximum likelihood coupled with a contraction mapping, and demonstrate how observable covariates map into regime strength and the perceived benefits of overthrow. We illustrate how the framework can be applied through counterfactuals varying coup benefits, regime strength, and information quality.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-08 01:30 UTC"
+}
