@@ -267,5 +267,21 @@
   "9bcaee0cc43077b215f4aeebc80d84ce": {
     "decision": "accepted",
     "promising_file": "quantocracy_building_the_market_effect_mini_portfolio_tradequa_20260707.md"
+  },
+  "2d093cbe39a41896ba188baa1f88036f": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_empirical_global_games_of_regime_change_20260708.md"
+  },
+  "9220feb86c50027df7e523891bfb3af6": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_factor_augmented_ml_panel_regressions_20260708.md"
+  },
+  "c2547deef7b2f96828d0c43c29cb3368": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_retrieval_over_reasoning_llm_benchmark_20260708.md"
+  },
+  "e5ef08db424181e9451b8a3902b660c8": {
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_revision_risk_real_time_macro_forecasting_20260708.md"
   }
 }
