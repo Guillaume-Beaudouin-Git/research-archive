@@ -1,5 +1,5 @@
 {
-  "run_time": "2026-07-08 06:30 UTC",
+  "run_time": "2026-07-08 11:00 UTC",
   "accepted_count": 0,
   "by_source": {
     "hn_quant": {
@@ -35,7 +35,7 @@
       "rej_l2": 0
     },
     "quantpedia": {
-      "total": 14,
+      "total": 13,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
@@ -43,11 +43,11 @@
       "rej_l2": 0
     },
     "github_python": {
-      "total": 88,
-      "new": 0,
+      "total": 89,
+      "new": 5,
       "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
+      "rej_l0": 4,
+      "rej_l1": 1,
       "rej_l2": 0
     },
     "arxiv_econ_em": {

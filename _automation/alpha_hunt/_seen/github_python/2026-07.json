@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1f0d37f64f0f22d4b2e2994da3eaae32": {
+    "first_seen": "2026-07-08 11:00",
+    "source": "github_python",
+    "title": "microsoft/SkillOpt",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "20c89809db441c50ab7933d703ee95aa": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -97,6 +104,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7866623eb0bf3c045c6c275e73c1c2cf": {
+    "first_seen": "2026-07-08 11:00",
+    "source": "github_python",
+    "title": "Graphify-Labs/graphify",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7972a0399ff6ffcebb137b5de0422257": {
     "first_seen": "2026-07-03 11:00",
     "source": "github_python",
@@ -132,6 +146,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8b3ef10b1229e709eefe6ccb024b9bd2": {
+    "first_seen": "2026-07-08 11:00",
+    "source": "github_python",
+    "title": "jingyaogong/minimind",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9d868a2a85f9f1c2bf6706fe5e3da374": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -144,6 +165,13 @@
     "source": "github_python",
     "title": "kyutai-labs/pocket-tts",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "afd2dc40966d9807f7d2c4e30d232251": {
+    "first_seen": "2026-07-08 11:00",
+    "source": "github_python",
+    "title": "googleanalytics/google-analytics-mcp",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "b53952b4ab864008a49706ef7d1632f9": {
@@ -178,6 +206,13 @@
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "HKUDS/AI-Trader",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cbb7eef67b46b12f44fc9e649fd380a4": {
+    "first_seen": "2026-07-08 11:00",
+    "source": "github_python",
+    "title": "Tracer-Cloud/opensre",
     "decision": "rejected_L0",
     "promising_file": null
   },
