@@ -1,0 +1,2 @@
+# Regenerable price panel (via ../fetch_continuous.py) — never commit the blob.
+*.parquet
