@@ -16,7 +16,12 @@ import numpy as np
 import pandas as pd
 
 from .base import HypothesisHandler
-from ..data.loaders import STRATEGY_A_FULL_UNIVERSE, load_strategy_a_universe, split_universe
+from ..data.loaders import (
+    PriceDataUnavailable,
+    STRATEGY_A_FULL_UNIVERSE,
+    load_strategy_a_universe,
+    split_universe,
+)
 from ..stats.backtest_wf import compute_pnl, vol_target_positions, walk_forward_backtest
 from ..stats.bootstrap import stationary_bootstrap_sharpe
 from ..stats.dsr import compute_sharpe_stats, deflated_sharpe_ratio
@@ -205,11 +210,14 @@ class GenericHandler(HypothesisHandler):
             else:
                 baseline_sharpe = float((pnl_port.mean() / pnl_port.std()) * np.sqrt(252))
         except Exception as exc:
+            # Distinguish a data outage (sandbox 403 / no cache) from a real
+            # strategy failure — the orchestrator must not count the former as FAIL_A.
             result = {
                 "verdict": "FAIL_GENERIC",
                 "category": category,
                 "baseline_sharpe": np.nan,
                 "error": str(exc),
+                "data_unavailable": isinstance(exc, PriceDataUnavailable),
                 "pass": False,
             }
             self.results["level_A"] = result
