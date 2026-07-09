@@ -153,6 +153,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a40a9045aef1b589c1acde66e3ba1665": {
+    "first_seen": "2026-07-09 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Decypher-env, an RL Env for breaking AES encryption",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a6c10d5f7af6389ac50996c02a7f123b": {
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
