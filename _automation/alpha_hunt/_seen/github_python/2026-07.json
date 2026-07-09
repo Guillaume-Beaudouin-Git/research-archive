@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1b54756d21b72a6961c68a0e73efbc02": {
+    "first_seen": "2026-07-09 11:00",
+    "source": "github_python",
+    "title": "BigBodyCobain/Shadowbroker",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1f0d37f64f0f22d4b2e2994da3eaae32": {
     "first_seen": "2026-07-08 11:00",
     "source": "github_python",
@@ -157,6 +164,13 @@
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
     "title": "omkarcloud/botasaurus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ae19b955aa27656a792569d6d1dfe161": {
+    "first_seen": "2026-07-09 11:00",
+    "source": "github_python",
+    "title": "stanfordnlp/dspy",
     "decision": "rejected_L0",
     "promising_file": null
   },
