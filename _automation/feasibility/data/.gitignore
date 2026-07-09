@@ -1,3 +1,5 @@
-# Feasibility pipeline price cache — regenerable via build_price_cache.py on VPS.
-# Binary data blob (governance: caches are régénérables, jamais commités).
-cache/
+# Feasibility pipeline price cache.
+# Option A (2026-07): the canonical Strategy A parquet IS committed so the Anthropic
+# cloud sandbox (no network) can read it. Any other transient cache files stay ignored.
+cache/*
+!cache/strategy_a_universe.parquet
