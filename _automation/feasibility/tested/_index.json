@@ -625,30 +625,6 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "arxiv_econ_em_a_comparative_multi_hazard_risk_assessment_of_the__20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_a_comparative_multi_hazard_risk_assessment_of__2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_algorithm_or_creative_a_three_arm_experimental_des_20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_algorithm_or_creative_a_three_arm_experimental_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_auditing_and_fixing_economic_validity_in_tabular_f_20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_auditing_and_fixing_economic_validity_in_tabul_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "quantocracy_active_dual_momentum_gtaa_strategy_quantpedia_20260527.md",
       "tested_date": "2026-05-30",
       "handler": "GenericHandler",
@@ -665,22 +641,6 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "arxiv_econ_em_dynamic_consumer_demand_at_large_scale_20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_dynamic_consumer_demand_at_large_scale_2026052_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_learning_nonlinear_factor_models_with_unknown_mono_20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_learning_nonlinear_factor_models_with_unknown__2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_partial_identification_of_causal_effects_that_vary_20260527.md",
       "tested_date": "2026-05-30",
       "handler": "RegimeFilterHandler",
@@ -694,22 +654,6 @@
       "handler": "GenericHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_tweedies_formula_and_score_driven_updating_202_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "hn_algotrading_show_hn_i_built_a_toy_tpu_that_can_do_inference_an_20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/hn_algotrading_show_hn_i_built_a_toy_tpu_that_can_do_inferen_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_a_faster_monotone_implied_volatility_solver_chase_20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_a_faster_monotone_implied_volatility_solver_chas_2026-05-30_report.md",
       "stopped_at": "A"
     },
     {
@@ -745,59 +689,11 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "quantocracy_when_everyone_trades_the_same_factor_playbook_alph_20260527.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_when_everyone_trades_the_same_factor_playbook_al_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantpedia_building_an_ai_powered_quant_research_assistant_w_20260530.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantpedia_building_an_ai_powered_quant_research_assistant_w_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "quantpedia_quantpedia_awards_2026_winners_announcement_20260527.md",
       "tested_date": "2026-05-30",
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_awards_2026_winners_announcement_20260_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantpedia_quantpedia_premium_update_may_27th_20260530.md",
-      "tested_date": "2026-05-30",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_premium_update_may_27th_20260530_2026-05-30_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_how_to_build_a_reliable_algo_trading_infrastr_20260531.md",
-      "tested_date": "2026-05-31",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_how_to_build_a_reliable_algo_trading_infrastr_20_2026-05-31_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_the_sharpe_stability_ratio_of_trading_strateg_20260531.md",
-      "tested_date": "2026-05-31",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_the_sharpe_stability_ratio_of_trading_strateg_20_2026-05-31_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_trend_following_filters_part_10_alpha_architect_20260531.md",
-      "tested_date": "2026-05-31",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_trend_following_filters_part_10_alpha_architect__2026-05-31_report.md",
       "stopped_at": "A"
     },
     {
@@ -809,22 +705,6 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "quantpedia_quantpedia_days_2026_bring_again_11_special_offe_20260530.md",
-      "tested_date": "2026-05-31",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_days_2026_bring_again_11_special_offe__2026-05-31_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_modeling_covariate_transition_for_efficient_estima_20260601.md",
-      "tested_date": "2026-06-01",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_modeling_covariate_transition_for_efficient_es_2026-06-01_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_option_pricing_under_stochastic_volatility_and_jum_20260601.md",
       "tested_date": "2026-06-01",
       "handler": "GenericHandler",
@@ -833,51 +713,11 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "arxiv_econ_em_higher_order_debiased_estimators_for_general_treat_20260602.md",
-      "tested_date": "2026-06-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_higher_order_debiased_estimators_for_general_t_2026-06-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_information_and_voting_evidence_from_peru_s_2026_p_20260602.md",
-      "tested_date": "2026-06-02",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_information_and_voting_evidence_from_peru_s_20_2026-06-02_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_structural_change_detection_in_high_dimensional_tr_20260602.md",
       "tested_date": "2026-06-02",
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_structural_change_detection_in_high_dimensiona_2026-06-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_ai_overfitting_in_trading_systems_wisdom_trading_20260602.md",
-      "tested_date": "2026-06-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_ai_overfitting_in_trading_systems_wisdom_trading_2026-06-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_institutions_return_expectations_across_assets_and_20260602.md",
-      "tested_date": "2026-06-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_institutions_return_expectations_across_assets_a_2026-06-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_market_effect_research_holiday_seasonality_part_2__20260602.md",
-      "tested_date": "2026-06-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_market_effect_research_holiday_seasonality_part__2026-06-02_report.md",
       "stopped_at": "A"
     },
     {
@@ -905,51 +745,11 @@
       "stopped_at": null
     },
     {
-      "source_md": "arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_value_a_20260604.md",
-      "tested_date": "2026-06-04",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_resga_a_large_tail_risk_model_for_learning_val_2026-06-04_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_scale_ordered_contagion_a_spectral_theory_of_heter_20260604.md",
-      "tested_date": "2026-06-04",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_scale_ordered_contagion_a_spectral_theory_of_h_2026-06-04_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_forecasting_of_volatility_and_risk_premia_in_elect_20260605.md",
-      "tested_date": "2026-06-05",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_forecasting_of_volatility_and_risk_premia_in_e_2026-06-05_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_and_s_20260605.md",
       "tested_date": "2026-06-05",
       "handler": "GenericHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_when_the_scaffold_stays_on_ai_practice_style_a_2026-06-05_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_new_feature_return_contribution_analysis_allocate_20260605.md",
-      "tested_date": "2026-06-05",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_new_feature_return_contribution_analysis_allocat_2026-06-05_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_trend_following_2_4_sector_by_sector_replication_b_20260605.md",
-      "tested_date": "2026-06-05",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_trend_following_2_4_sector_by_sector_replication_2026-06-05_report.md",
       "stopped_at": "A"
     },
     {
@@ -974,14 +774,6 @@
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/quantocracy_research_review_5_june_2026_risk_management_capi_2026-06-07_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_the_crossword_puzzle_of_fitting_why_across_and_the_20260607.md",
-      "tested_date": "2026-06-07",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_the_crossword_puzzle_of_fitting_why_across_and_t_2026-06-07_report.md",
       "stopped_at": "A"
     },
     {
@@ -1033,22 +825,6 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "arxiv_econ_em_ai_assisted_variance_reduction_in_randomized_expe_20260609.md",
-      "tested_date": "2026-06-09",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_ai_assisted_variance_reduction_in_randomized_e_2026-06-09_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_evaluating_ai_investment_strategies_20260609.md",
-      "tested_date": "2026-06-09",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_evaluating_ai_investment_strategies_20260609_2026-06-09_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "quantocracy_reconstructing_a_century_of_us_corporate_bonds_20260610.md",
       "tested_date": "2026-06-10",
       "handler": "RegimeFilterHandler",
@@ -1065,14 +841,6 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "quantocracy_ufc_ultimate_fitting_championships_investment_idio_20260610.md",
-      "tested_date": "2026-06-10",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_ufc_ultimate_fitting_championships_investment_id_2026-06-10_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "quantocracy_when_insiders_and_news_disagree_cross_signal_20260610.md",
       "tested_date": "2026-06-10",
       "handler": "RegimeFilterHandler",
@@ -1081,43 +849,11 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "quantpedia_quantpedia_premium_update_june_10th_20260610.md",
-      "tested_date": "2026-06-10",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_premium_update_june_10th_20260610_2026-06-10_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_forecasting_statistical_estimates_when_data_gets_r_20260610.md",
-      "tested_date": "2026-06-10",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_forecasting_statistical_estimates_when_data_gets_2026-06-10_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_what_trend_following_actually_adds_to_risk_premia_20260610.md",
-      "tested_date": "2026-06-10",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_what_trend_following_actually_adds_to_risk_premi_2026-06-10_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_rbreak_an_r_package_for_estimating_structural_br_20260611.md",
       "tested_date": "2026-06-11",
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_rbreak_an_r_package_for_estimating_structural__2026-06-11_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantpedia_quantpedia_in_may_2026_20260611.md",
-      "tested_date": "2026-06-11",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantpedia_quantpedia_in_may_2026_20260611_2026-06-11_report.md",
       "stopped_at": "A"
     },
     {
@@ -1145,38 +881,6 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "quantocracy_the_right_way_to_use_ai_in_trading_this_week_algori_20260613.md",
-      "tested_date": "2026-06-13",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_the_right_way_to_use_ai_in_trading_this_week_alg_2026-06-13_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_forecasting_with_bayesian_panel_vector_autoregr_20260615.md",
-      "tested_date": "2026-06-15",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_forecasting_with_bayesian_panel_vector_autoreg_2026-06-15_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_granular_instrumental_variables_estimation_and_20260615.md",
-      "tested_date": "2026-06-15",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_granular_instrumental_variables_estimation_and_2026-06-15_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantpedia_dual_vs_single_momentum_in_commodities_enhanci_20260615.md",
-      "tested_date": "2026-06-15",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantpedia_dual_vs_single_momentum_in_commodities_enhanci_20_2026-06-15_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_estimating_sloppy_directions_via_kde_the_case_of_k_20260616.md",
       "tested_date": "2026-06-17",
       "handler": "RegimeFilterHandler",
@@ -1201,83 +905,11 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "quantocracy_automating_volatility_strategy_python_ib_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_automating_volatility_strategy_python_ib_2026061_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_common_sense_guide_to_volatility_trading_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_common_sense_guide_to_volatility_trading_2026061_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_dividend_timing_global_dividend_premium_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_dividend_timing_global_dividend_premium_20260617_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_dual_vs_single_momentum_commodities_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_dual_vs_single_momentum_commodities_20260617_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_factor_zoo_hundreds_animals_handful_species_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_factor_zoo_hundreds_animals_handful_species_2026_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_feature_selection_filter_based_methods_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_feature_selection_filter_based_methods_20260617_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_fifa_portfolio_optimisation_competition_real_returns_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_fifa_portfolio_optimisation_competition_real_ret_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_hidden_trade_around_spacex_ipo_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_hidden_trade_around_spacex_ipo_20260617_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "quantocracy_market_effect_turnaround_tuesday_effect_20260617.md",
       "tested_date": "2026-06-17",
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/quantocracy_market_effect_turnaround_tuesday_effect_20260617_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_sharpe_ratio_of_pure_noise_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_sharpe_ratio_of_pure_noise_20260617_2026-06-17_report.md",
       "stopped_at": "A"
     },
     {
@@ -1294,14 +926,6 @@
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/quantpedia_testing_ai_assisted_research_workflow_multi_20260_2026-06-17_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_sharpe_ratio_of_pure_noise_20260617.md",
-      "tested_date": "2026-06-17",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_sharpe_ratio_of_pure_noise_20260617_2026-06-17_report.md",
       "stopped_at": "A"
     },
     {
@@ -1329,59 +953,11 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "quantocracy_honey_i_shrunk_the_weights_instead_of_the_inputs_20260618.md",
-      "tested_date": "2026-06-18",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_honey_i_shrunk_the_weights_instead_of_the_inputs_2026-06-18_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_value_at_risk_estimation_improved_estimates_with_20260618.md",
-      "tested_date": "2026-06-18",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_value_at_risk_estimation_improved_estimates_with_2026-06-18_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_causal_forecasting_in_panel_data_a_two_way_synthe_20260618.md",
-      "tested_date": "2026-06-18",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_causal_forecasting_in_panel_data_a_two_way_syn_2026-06-18_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "quantocracy_testing_an_ai_assisted_research_workflow_for_mult_20260618.md",
-      "tested_date": "2026-06-18",
-      "handler": "SkipMonthHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/quantocracy_testing_an_ai_assisted_research_workflow_for_mul_2026-06-18_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_biodiversity_media_narratives_and_stock_market_per_20260619.md",
       "tested_date": "2026-06-19",
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_biodiversity_media_narratives_and_stock_market_2026-06-19_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_ramping_procurement_and_bid_cost_recovery_in_real_20260619.md",
-      "tested_date": "2026-06-19",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_ramping_procurement_and_bid_cost_recovery_in_r_2026-06-19_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_statistical_foundations_of_llm_based_a_b_testing_a_20260619.md",
-      "tested_date": "2026-06-19",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_statistical_foundations_of_llm_based_a_b_testi_2026-06-19_report.md",
       "stopped_at": "A"
     },
     {
@@ -1406,22 +982,6 @@
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_a_new_decomposition_sign_magnitude_financial_r_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_continuous_cash_overlay_filters_growth_defensive_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_continuous_cash_overlay_filters_growth_defensi_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_do_prediction_markets_match_option_prices_bitcoin__20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_do_prediction_markets_match_option_prices_bitc_2026-06-20_report.md",
       "stopped_at": "A"
     },
     {
@@ -1457,67 +1017,11 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "arxiv_econ_em_macro_economists_machine_llm_commodity_etf_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_macro_economists_machine_llm_commodity_etf_202_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_realtime_price_impact_detection_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_realtime_price_impact_detection_20260620_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_regime_portfolio_allocation_hmm_rl_20260620.md",
       "tested_date": "2026-06-20",
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_regime_portfolio_allocation_hmm_rl_20260620_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_resolution_aware_perpetual_futures_polymarket_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_resolution_aware_perpetual_futures_polymarket__2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_trading_in_the_sunshine_or_in_the_shade_market_imp_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_trading_in_the_sunshine_or_in_the_shade_market_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_trends_volatility_correlations_and_critical_phenom_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_trends_volatility_correlations_and_critical_ph_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_beyond_agent_architecture_execution_llm_trading_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_beyond_agent_architecture_execution_llm_tradin_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_beyond_the_smile_a_hybrid_convolutional_vae_for_cr_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_beyond_the_smile_a_hybrid_convolutional_vae_fo_2026-06-20_report.md",
       "stopped_at": "A"
     },
     {
@@ -1534,14 +1038,6 @@
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_continuous_timing_signals_growth_defensive_sty_2026-06-20_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_crashing_together_rallying_apart_dynamic_condition_20260620.md",
-      "tested_date": "2026-06-20",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_crashing_together_rallying_apart_dynamic_condi_2026-06-20_report.md",
       "stopped_at": "A"
     },
     {
@@ -1577,30 +1073,6 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "arxiv_econ_em_explicit_signal_adaptive_sequential_optimal_execut_20260620.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_explicit_signal_adaptive_sequential_optimal_ex_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_fitting_accumulated_stock_returns_with_tempered_sk_20260620.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_fitting_accumulated_stock_returns_with_tempere_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_forward_looking_stress_testing_under_macro_scenari_20260620.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_forward_looking_stress_testing_under_macro_sce_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_from_accuracy_to_auditability_determinism_in_finan_20260620.md",
       "tested_date": "2026-07-02",
       "handler": "GenericHandler",
@@ -1617,35 +1089,11 @@
       "stopped_at": "A"
     },
     {
-      "source_md": "arxiv_econ_em_game_theoretic_modeling_of_heterogeneous_investor__20260620.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_game_theoretic_modeling_of_heterogeneous_inves_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_incremental_svd_for_large_scale_dynamic_matrices_a_20260620.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_incremental_svd_for_large_scale_dynamic_matric_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
       "source_md": "arxiv_econ_em_learning_time_inhomogeneous_markov_dynamics_in_fin_20260620.md",
       "tested_date": "2026-07-02",
       "handler": "RegimeFilterHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_learning_time_inhomogeneous_markov_dynamics_in_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_multiplicative_langevin_volatility_produces_observ_20260620.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_multiplicative_langevin_volatility_produces_ob_2026-07-02_report.md",
       "stopped_at": "A"
     },
     {
@@ -1662,70 +1110,6 @@
       "handler": "GenericHandler",
       "verdict": "REQUIRES_HUMAN",
       "report_path": "_automation/feasibility/tested/arxiv_econ_em_two_sides_of_schur_damping_portfolio_allocatio_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_zero_copy_semantic_contagion_in_memory_streaming_f_20260620.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_zero_copy_semantic_contagion_in_memory_streami_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_addressing_market_regime_changes_and_heavy_tailed__20260621.md",
-      "tested_date": "2026-07-02",
-      "handler": "RegimeFilterHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_addressing_market_regime_changes_and_heavy_tai_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_axiomatic_market_making_bid_ask_quoting_rule_20260621.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_axiomatic_market_making_bid_ask_quoting_rule_2_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_bayesian_dynamic_modeling_realized_volatility_20260621.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_bayesian_dynamic_modeling_realized_volatility__2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_dexposure_claw_agentic_defi_risk_supervision_20260621.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_dexposure_claw_agentic_defi_risk_supervision_2_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_entropy_regularized_certainty_equivalent_bellman_pol_20260621.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_entropy_regularized_certainty_equivalent_bellm_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_hour_aware_adaptive_risk_management_for_autonomous_20260621.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_hour_aware_adaptive_risk_management_for_autono_2026-07-02_report.md",
-      "stopped_at": "A"
-    },
-    {
-      "source_md": "arxiv_econ_em_how_to_spot_outliers_an_ensemble_anomaly_detection_fr_20260621.md",
-      "tested_date": "2026-07-02",
-      "handler": "GenericHandler",
-      "verdict": "FAIL_A",
-      "report_path": "_automation/feasibility/tested/arxiv_econ_em_how_to_spot_outliers_an_ensemble_anomaly_detec_2026-07-02_report.md",
       "stopped_at": "A"
     },
     {
