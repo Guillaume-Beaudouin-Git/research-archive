@@ -1,0 +1,3 @@
+# Feasibility pipeline price cache — regenerable via build_price_cache.py on VPS.
+# Binary data blob (governance: caches are régénérables, jamais commités).
+cache/

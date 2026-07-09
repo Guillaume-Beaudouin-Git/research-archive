@@ -20,6 +20,7 @@ _ROOT = Path(__file__).parent.parent.parent
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
+from _automation.feasibility.data.loaders import PriceDataUnavailable
 from _automation.feasibility.handlers import HANDLER_REGISTRY, GenericHandler
 
 _FEASIBILITY_DIR = Path(__file__).parent
@@ -27,6 +28,19 @@ _PROMISING_DIR = _ROOT / "_automation" / "alpha_hunt" / "promising"
 _TESTED_DIR = _FEASIBILITY_DIR / "tested"
 _INDEX_JSON = _TESTED_DIR / "_index.json"
 _STATE_JSON = _FEASIBILITY_DIR / "_state.json"
+
+# Anti-false-verdict guardrail: a backtest that ran on < this many days of data
+# did not actually run. Below this, a "FAIL_A" is a DATA_UNAVAILABLE in disguise
+# (sandbox 403 blocking the price fetch), NOT a strategy failure. n_tests is the
+# DSR denominator — it must never be incremented by a data outage.
+_MIN_VALID_N_DAYS: int = 30
+
+# Substrings in a Level-A error that unambiguously mean "no data", not "bad strategy".
+_DATA_UNAVAILABLE_MARKERS: tuple[str, ...] = (
+    "no price cache and live fetch blocked",
+    "No data loaded for tickers",
+    "PriceDataUnavailable",
+)
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
@@ -59,6 +73,49 @@ def _slug_from_path(md_path: Path) -> str:
     return md_path.stem[:60]
 
 
+# ── Anti-false-verdict guardrail ─────────────────────────────────────────────────
+
+def _collect_n_days(obj) -> list[int]:
+    """Recursively gather every ``n_days`` value found in a results structure."""
+    found: list[int] = []
+    if isinstance(obj, dict):
+        for key, val in obj.items():
+            if key == "n_days" and isinstance(val, (int, float)):
+                found.append(int(val))
+            else:
+                found.extend(_collect_n_days(val))
+    elif isinstance(obj, list):
+        for val in obj:
+            found.extend(_collect_n_days(val))
+    return found
+
+
+def _is_data_unavailable(handler) -> bool:
+    """
+    True when Level A could NOT run a real backtest because price data was absent
+    (sandbox 403), rather than because the strategy failed on real data.
+
+    Detection (any of):
+      - an explicit ``data_unavailable`` marker on any level result;
+      - a Level-A error string matching a known data-outage marker;
+      - a recorded ``n_days`` that is below the minimum a real run always exceeds
+        (the Strategy A universe spans 2018→today ⇒ thousands of days when present).
+    """
+    results = getattr(handler, "results", {}) or {}
+    for level in results.values():
+        if isinstance(level, dict) and level.get("data_unavailable"):
+            return True
+
+    err = str(results.get("level_A", {}).get("error", ""))
+    if any(marker in err for marker in _DATA_UNAVAILABLE_MARKERS):
+        return True
+
+    n_days_vals = _collect_n_days(results)
+    if n_days_vals:
+        return max(n_days_vals) < _MIN_VALID_N_DAYS
+    return False
+
+
 # ── Dispatch ───────────────────────────────────────────────────────────────────
 
 def _dispatch_handler(md_path: Path):
@@ -88,6 +145,10 @@ def _run_one(md_path: Path, output_dir: Path, index: dict, state: dict) -> str:
     print(f"\n[Level A] Feasibility gate …")
     try:
         result_a = handler.run_level_A()
+    except PriceDataUnavailable as exc:
+        print(f"  DATA UNAVAILABLE in Level A: {exc}")
+        result_a = {"pass": False, "error": str(exc), "data_unavailable": True}
+        handler.results["level_A"] = result_a
     except Exception as exc:
         print(f"  ERROR in Level A: {exc}")
         result_a = {"pass": False, "error": str(exc)}
@@ -186,6 +247,33 @@ def _print_level_C_summary(result: dict) -> None:
     print(f"  {icon} Level C: {'PASS' if passed else 'FAIL'} ({n_pass}/3 checks)")
 
 
+def _record_data_unavailable(handler, md_path: Path, state: dict) -> str:
+    """
+    Record a DATA_UNAVAILABLE outcome WITHOUT counting it as a tested hypothesis.
+
+    Deliberately does NOT touch tested/_index.json and does NOT add the file to
+    ``processed_promising`` — so ``_find_untested`` re-picks it up on the next run
+    (once the price cache is present) and n_tests is never inflated by a data outage.
+    The event is logged under a separate ``data_unavailable`` state key for visibility.
+    """
+    err = str(handler.results.get("level_A", {}).get("error", "price data unavailable"))
+    print(f"\n  ⚠  DATA_UNAVAILABLE — not counted as a test (will retry once cache exists)")
+    print(f"     reason: {err}")
+
+    bucket = state.setdefault("data_unavailable", {})
+    bucket[md_path.name] = {
+        "last_seen": str(date.today()),
+        "handler": type(handler).__name__,
+        "reason": err,
+    }
+    state["last_run"] = str(date.today())
+    _save_json(_STATE_JSON, state)
+
+    print(f"  {'='*68}")
+    print(f"  Verdict: DATA_UNAVAILABLE (n_tests unchanged)")
+    return "DATA_UNAVAILABLE"
+
+
 def _write_report(
     handler,
     md_path: Path,
@@ -195,15 +283,6 @@ def _write_report(
     stopped_at: str | None,
 ) -> str:
     """Write report, update index + state, return verdict string."""
-    report_text = handler.generate_report()
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    slug = _slug_from_path(md_path)
-    report_filename = f"{slug}_{date.today()}_report.md"
-    report_path = output_dir / report_filename
-    report_path.write_text(report_text, encoding="utf-8")
-    print(f"\n  Report → {report_path.relative_to(_ROOT)}")
-
     # Determine verdict
     level_a = handler.results.get("level_A", {})
     level_b = handler.results.get("level_B", {})
@@ -212,13 +291,28 @@ def _write_report(
     if level_a.get("verdict") == "REQUIRES_HUMAN":
         verdict = "REQUIRES_HUMAN"
     elif stopped_at == "A":
-        verdict = "FAIL_A"
+        # GUARDRAIL: a Level-A failure with no real data is DATA_UNAVAILABLE, not
+        # FAIL_A. It must NOT be recorded as a tested hypothesis (n_tests stays exact)
+        # and must be left untested so it is retried once the price cache exists.
+        verdict = "DATA_UNAVAILABLE" if _is_data_unavailable(handler) else "FAIL_A"
     elif stopped_at == "B":
         verdict = "FAIL_B"
     elif not level_c.get("pass", False):
         verdict = "FAIL_C"
     else:
         verdict = "PASS"
+
+    if verdict == "DATA_UNAVAILABLE":
+        return _record_data_unavailable(handler, md_path, state)
+
+    report_text = handler.generate_report()
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    slug = _slug_from_path(md_path)
+    report_filename = f"{slug}_{date.today()}_report.md"
+    report_path = output_dir / report_filename
+    report_path.write_text(report_text, encoding="utf-8")
+    print(f"\n  Report → {report_path.relative_to(_ROOT)}")
 
     # Update index
     if "tested_hypotheses" not in index:
@@ -265,6 +359,7 @@ def _print_batch_summary(results: list[tuple[str, str]]) -> None:
     print(f"  FAIL_B         : {counts.get('FAIL_B', 0)}")
     print(f"  FAIL_C         : {counts.get('FAIL_C', 0)}")
     print(f"  REQUIRES_HUMAN : {counts.get('REQUIRES_HUMAN', 0)}")
+    print(f"  DATA_UNAVAIL   : {counts.get('DATA_UNAVAILABLE', 0)}")
     print(f"{'='*70}")
 
     passes = [(name, v) for name, v in results if v == "PASS"]
