@@ -279,10 +279,26 @@ def _fetch_live_universe(
 
     df = pd.DataFrame(prices).sort_index()
 
-    # Drop columns where > 50% of the FIRST n rows are NaN (late-listed assets)
-    n_first = min(len(df) // 4, 90)  # inspect first quarter up to 90 rows
-    late_listed = df.iloc[:n_first].isna().mean() > 0.5
-    df = df.loc[:, ~late_listed]
+    # Keep an asset unless it has genuinely sparse data DURING ITS OWN LIVE PERIOD
+    # (from its first valid observation onward). Late-listed assets (SOL 2020, ARB 2023,
+    # …) carry leading NaNs that PREDATE their listing — that is expected, not missing
+    # data, and is handled downstream by the rolling/shift signal (positions stay NaN
+    # pre-listing, so skipna sums exclude the asset until it lists). Measuring %NaN from
+    # the 2018 frame start would wrongly drop every asset that did not exist in 2018 —
+    # the original bug that amputated the 14-asset universe down to 7 (SOL is CORE).
+    keep_cols: list[str] = []
+    for col in df.columns:
+        s = df[col]
+        first = s.first_valid_index()
+        if first is None:
+            continue  # no data at all
+        live = s.loc[first:]
+        if len(live) < 30:
+            continue  # too short to be usable
+        if live.isna().mean() > 0.5:
+            continue  # > 50% NaN WITHIN its live span = real data-quality problem
+        keep_cols.append(col)
+    df = df[keep_cols]
 
     return df.dropna(how="all")
 
