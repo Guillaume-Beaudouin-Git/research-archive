@@ -27,6 +27,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1d59df10b0f39755f872ecfdcc6334f4": {
+    "first_seen": "2026-07-10 11:00",
+    "source": "github_python",
+    "title": "openai/openai-python",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1f0d37f64f0f22d4b2e2994da3eaae32": {
     "first_seen": "2026-07-08 11:00",
     "source": "github_python",
@@ -90,10 +97,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "541baae881cbb6894fc19e70844ef38a": {
+    "first_seen": "2026-07-10 11:00",
+    "source": "github_python",
+    "title": "Soju06/codex-lb",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "56a0fd8bb83e0cd107e8a0fbc4dbd574": {
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "tinygrad/tinygrad",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "69b168c5117df83738dc967a2fbc74aa": {
+    "first_seen": "2026-07-10 11:00",
+    "source": "github_python",
+    "title": "microsoft/graphrag",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -227,6 +248,13 @@
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "HKUDS/AI-Trader",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cb2af345c5a956073eb7e601776cb149": {
+    "first_seen": "2026-07-10 11:00",
+    "source": "github_python",
+    "title": "syncable-dev/memtrace-public",
     "decision": "rejected_L0",
     "promising_file": null
   },
