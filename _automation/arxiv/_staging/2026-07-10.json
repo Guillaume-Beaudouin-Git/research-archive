@@ -1,0 +1,67 @@
+[
+ {
+  "id": "2607.08531",
+  "title": "Optimal Prediction of Resistance and Support Levels under Constant Elasticity of Variance Processes",
+  "summary": "Assuming that the asset price $X$ follows a constant elasticity of variance process, this paper studies the optimal prediction problem $\\inf_{0\\leq τ\\leq T}\\mathbb{E}|X_τ-\\ell|$, where the infimum is taken over stopping times $τ$ of $X$ and $\\ell$ is a hidden aspiration level independent of $X$. Adopting the aspiration level hypothesis, we show that a class of admissible laws of $\\ell$ leads to optimal trading boundaries which are located relative to the median interval of $\\ell$ and serve as predictors of the resistance and support levels. The existence of these boundaries is proved and nonlinear integral equations are derived to characterise them uniquely. In the positive drift case the stopping set is bounded by two curves, while in the negative drift case the stopping set is described by a single boundary.",
+  "authors": [
+   "Ruibo Ma"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "math.PR"
+  ],
+  "published": "2026-07-09T14:28:07Z",
+  "updated": "2026-07-09T14:28:07Z"
+ },
+ {
+  "id": "2607.08500",
+  "title": "Estimating the Stochastic Discount Factor from Option Prices and Predicting the Equity Premium",
+  "summary": "This paper proposes a stochastic discount factor (SDF) scaled by time-varying volatility. By utilizing prices and market data implied solely from S\\&P 500 options, the proposed framework recovers a stable, non-monotonic SDF that captures the pure forward-looking expectations of market participants while mitigating observation noise. Our empirical analysis reveals that the SDF exhibits a distinctive hump on the shallow put side, which transitions into a more clearly defined W-shape as the time to maturity increases, identifying maturity as a key factor influencing the intensity of the central hump. We show that this structural feature can be theoretically rationalized by stochastic volatility dynamics under a constant market price of risk. The equity premium derived from the time-varying volatility scaled SDF demonstrates superior out-of-sample predictive performance relative to existing benchmarks, such as the Martin bounds.",
+  "authors": [
+   "Kenichiro Shiraya",
+   "Tomohisa Yamakami",
+   "Akira Yamazaki"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "q-fin.ST"
+  ],
+  "published": "2026-07-09T13:59:19Z",
+  "updated": "2026-07-09T13:59:19Z"
+ },
+ {
+  "id": "2607.08291",
+  "title": "Robustness in Sequential Decision Making under Evolving Uncertainty: Evidence from High-Frequency Market Making",
+  "summary": "We study sequential decision making under evolving uncertainty in high-frequency financial markets, where changing market dynamics continually challenge static decision policies. We show that robustness has two economically meaningful dimensions: uncertainty tolerance, which determines how much uncertainty the decision maker allows, and action robustness, which governs how conservatively decisions respond. Robustness is not merely protection against model misspecification, but a state-dependent mechanism that reshapes sequential decision behaviors. Simulation and empirical evidence show that action robustness has a substantially larger impact than uncertainty tolerance. Moreover, excessive robustness may reduce profitability in illiquid markets by limiting execution opportunities.",
+  "authors": [
+   "Ying Chen",
+   "Hoa Nguyen",
+   "Julian Sester",
+   "Hoang Hai Tran",
+   "Yijiong Zhang"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "q-fin.MF",
+   "q-fin.RM"
+  ],
+  "published": "2026-07-09T09:34:50Z",
+  "updated": "2026-07-09T09:34:50Z"
+ },
+ {
+  "id": "2607.08199",
+  "title": "Volatility in Prediction Markets: A Structural Approach",
+  "summary": "Forward-looking volatility forecasts are central inputs to derivatives pricing, market making, risk management, and volatility-linked trading strategies, with ARCH and GARCH models serving as the canonical workhorses. Such models are natural in standard asset markets, where prices are positive-valued stochastic processes and volatility is typically inferred from return dynamics. Prediction markets have a different structure: prices are bounded probabilities, payoffs are binary, and contracts resolve at known deadlines. We develop and estimate a volatility model tailored to binary prediction markets. The model combines two economic mechanisms: a Wright-Fisher deadline-resolution component, capturing how remaining binary uncertainty is forced to resolve over time, and a Glosten-Milgrom order-flow component, capturing volatility from informed trading as reflected in spreads and volume. Using a large panel of Kalshi contracts, we show that these structural variables carry substantial forecasting power. Plain ARCH/GARCH benchmarks are dominated by structural specifications; combining the structural model with residual GARCH dynamics gives the best overall forecasts. The model also provides an interpretable measurement framework: volatility is highest near fifty-fifty prices, rises near resolution, and varies across categories with the timing and discreteness of information arrival. Economics contracts are closer to smooth deadline-resolution dynamics, while sports contracts exhibi",
+  "authors": [
+   "Weiye Xi",
+   "Ciamac C. Moallemi",
+   "Mallesh Pai",
+   "Shouqiao Want"
+  ],
+  "categories": [
+   "q-fin.TR"
+  ],
+  "published": "2026-07-09T07:57:43Z",
+  "updated": "2026-07-09T07:57:43Z"
+ }
+]
