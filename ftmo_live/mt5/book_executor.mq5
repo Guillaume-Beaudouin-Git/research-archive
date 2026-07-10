@@ -134,6 +134,10 @@ string ParisDate()
    return StringFormat("%04d-%02d-%02d", p.year, p.mon, p.day);
   }
 int  ParisHM()  { MqlDateTime p; ParisStruct(p); return p.hour*100 + p.min; }
+// Wall-clock Paris HM: TimeTradeServer() advances by the server clock even with no ticks.
+// Used ONLY for the 22:58 EOD gate so Do2258EOD fires after the ~22:54 close-freeze, when
+// TimeCurrent() (hence ParisHM) stops advancing. ftmo_live ops G2 fix, 2026-07-10.
+int  ParisHMWall(){ MqlDateTime p; TimeToStruct((datetime)(TimeTradeServer()-InpServerTZOffsetMin*60), p); return p.hour*100 + p.min; }
 int  ParisDow() { MqlDateTime p; ParisStruct(p); return p.day_of_week; }  // 0=dim
 bool IsONDay()  { int d=ParisDow(); return (d==1 || d==2); }              // lun, mar
 bool IsWeekend(){ int d=ParisDow(); return (d==0 || d==6); }
@@ -1514,7 +1518,9 @@ void OnTimer()
       if(hm>=2145 && !g_done_2145) { g_done_2145=true; Do2145Export(); }
       if(hm>=2200 && !g_done_2200) { g_done_2200=true; Do2200TimeStop(); }
       if(hm>=2205 && hm<2330 && !g_done_2205) { g_done_2205=true; Do2205Rebalance(); }
-      if(hm>=2258 && !g_done_2258) { g_done_2258=true; Do2258EOD(); SaveState(); }
+      // G2 fix: OR a wall-clock trigger so the EOD fires even when the last tick froze
+      // ParisHM at ~22:54 (quiet close). g_done_2258 still guards against a double-fire.
+      if((hm>=2258 || ParisHMWall()>=2258) && !g_done_2258) { g_done_2258=true; Do2258EOD(); SaveState(); }
      }
    WriteState(false);
   }
