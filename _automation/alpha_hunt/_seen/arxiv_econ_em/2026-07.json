@@ -97,6 +97,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4791e04b7a5946a3102a6dce2a80d71c": {
+    "first_seen": "2026-07-10 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Finite-Population Inference for Heterogeneity in Many-Group Synthetic Difference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4df4f23585f39863765b7ebbeb054fa4": {
     "first_seen": "2026-07-07 03:30",
     "source": "arxiv_econ_em",
@@ -209,6 +216,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "c1fc886c859fc3719b8044750719f39d": {
+    "first_seen": "2026-07-10 03:30",
+    "source": "arxiv_econ_em",
+    "title": "A Design-Based Approach to Testing and Inference in (Quasi-)Experiments with Spi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c2547deef7b2f96828d0c43c29cb3368": {
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
@@ -277,6 +291,13 @@
     "source": "arxiv_econ_em",
     "title": "Robust Inference for Weighted Estimands",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f86f90f4a02931545b5a56a48d16fafd": {
+    "first_seen": "2026-07-10 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Rational Bubbles at the Spectral Edge: An Operator-Spectral Theory of Fragility,",
+    "decision": "accepted",
     "promising_file": null
   },
   "ffadb025f912316557f7e85c03de41bc": {
