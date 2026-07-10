@@ -13,6 +13,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "1dcab4e31d1944afa5f7dfa2a6c9c94f": {
+    "first_seen": "2026-07-10 06:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/09/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1e0ca71788720d16ef170e98c34df22a": {
     "first_seen": "2026-07-01 06:00",
     "source": "quantocracy",
@@ -26,6 +33,27 @@
     "title": "One of These Things Is Not Like the Others. Or is it? Pooling rule p&l estimates",
     "decision": "accepted",
     "promising_file": "quantocracy_one_of_these_things_is_not_like_the_others_or_is_i_20260701.md"
+  },
+  "470e572267739e1ec998a24046190689": {
+    "first_seen": "2026-07-10 06:30",
+    "source": "quantocracy",
+    "title": "How We Tried to Teach Claude to Read Like an Analyst, and the Market Said No [To",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "573462c6c0630befe0dc2c1d1c2bc4ee": {
+    "first_seen": "2026-07-10 06:30",
+    "source": "quantocracy",
+    "title": "Intraday Breakout Details That Matter: Exits, Slippage and 0DTE Options [Crackin",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "6c24646b812dca5cb6c4ee59a9bae5ca": {
+    "first_seen": "2026-07-10 06:30",
+    "source": "quantocracy",
+    "title": "Lookahead Bias in Fundamental Backtests: 66 Days, Measured [Tradevo Data]",
+    "decision": "accepted",
+    "promising_file": null
   },
   "6d5304c9ebc036e3c7c3c8aa8cda27da": {
     "first_seen": "2026-07-05 06:30",
@@ -60,6 +88,13 @@
     "source": "quantocracy",
     "title": "Your Backtest Is Lying to You: Building a Walk-Forward Validation Harness in Pyt",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "b7533e21d268f302cda9414e3de4ac7e": {
+    "first_seen": "2026-07-10 06:30",
+    "source": "quantocracy",
+    "title": "Quantitative Value [Concretum Group]",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "c1c404b15707ee78c88b5146336da1a1": {
