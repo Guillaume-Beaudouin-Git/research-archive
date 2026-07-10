@@ -55,6 +55,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4ae79f164c2bebff063aec4f57db080f": {
+    "first_seen": "2026-07-10 22:30",
+    "source": "hn_algotrading",
+    "title": "I got tired of every .NET HTML-to-PDF library so I built a free one from scratch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4f9734095e2b3926071acbb5b5b9def8": {
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
