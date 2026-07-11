@@ -83,10 +83,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "49e251d4cfbe9399063bc57be40bcec9": {
+    "first_seen": "2026-07-11 11:30",
+    "source": "github_python",
+    "title": "lllyasviel/Fooocus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4b76663edbebcaf9489b2490d752ed72": {
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "datawhalechina/all-in-rag",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4ff37b0ae8e9277fb14c5e3f90f25ef2": {
+    "first_seen": "2026-07-11 11:30",
+    "source": "github_python",
+    "title": "cognizant-ai-lab/neuro-san-studio",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -150,6 +164,13 @@
     "first_seen": "2026-07-03 11:00",
     "source": "github_python",
     "title": "django/django",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "81919a7c5ead1bc9abb164aa9271b06e": {
+    "first_seen": "2026-07-11 11:30",
+    "source": "github_python",
+    "title": "Skyvern-AI/skyvern",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -223,6 +244,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "b6fbdd3d9730a2d2a0ba39e4131dc975": {
+    "first_seen": "2026-07-11 11:30",
+    "source": "github_python",
+    "title": "volcengine/OpenViking",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b88a56dda763e49ad7b19b7bbb692e4c": {
     "first_seen": "2026-07-06 11:00",
     "source": "github_python",
@@ -286,6 +314,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e3b2ccba987cab703c7553690fe05ff2": {
+    "first_seen": "2026-07-11 11:30",
+    "source": "github_python",
+    "title": "ATH-MaaS/Pixelle-Video",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "eb84bfb953b446f1d894402b3e94eddf": {
     "first_seen": "2026-07-04 11:00",
     "source": "github_python",
@@ -297,6 +332,13 @@
     "first_seen": "2026-07-05 11:30",
     "source": "github_python",
     "title": "GeeeekExplorer/nano-vllm",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f5452d131c4ec960382fd2ab480366e5": {
+    "first_seen": "2026-07-11 11:30",
+    "source": "github_python",
+    "title": "FoundationAgents/OpenManus",
     "decision": "rejected_L0",
     "promising_file": null
   }
