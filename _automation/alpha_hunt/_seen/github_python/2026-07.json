@@ -83,6 +83,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4721397ab3e423f5438d81f876142478": {
+    "first_seen": "2026-07-12 11:00",
+    "source": "github_python",
+    "title": "microsoft/TRELLIS.2",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "49e251d4cfbe9399063bc57be40bcec9": {
     "first_seen": "2026-07-11 11:30",
     "source": "github_python",
@@ -94,6 +101,13 @@
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "datawhalechina/all-in-rag",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4f1004a4f2772c88b4779af23801ac67": {
+    "first_seen": "2026-07-12 11:00",
+    "source": "github_python",
+    "title": "teng-lin/notebooklm-py",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -143,6 +157,13 @@
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
     "title": "open-webui/open-webui",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "725d95cb5c58e5e13d1afeceb2853f6d": {
+    "first_seen": "2026-07-12 11:00",
+    "source": "github_python",
+    "title": "PrefectHQ/prefect",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -328,6 +349,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "eddcca6df45ad86c2b465e7f1918de05": {
+    "first_seen": "2026-07-12 11:00",
+    "source": "github_python",
+    "title": "youtubediscord/zapret",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ee7d231257627a887412c1fe2e096d13": {
     "first_seen": "2026-07-05 11:30",
     "source": "github_python",
@@ -335,10 +363,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "ef7a0f56d6bed172f43520cd2ff34d2f": {
+    "first_seen": "2026-07-12 11:00",
+    "source": "github_python",
+    "title": "lingfengQAQ/webnovel-writer",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "f5452d131c4ec960382fd2ab480366e5": {
     "first_seen": "2026-07-11 11:30",
     "source": "github_python",
     "title": "FoundationAgents/OpenManus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fe6dd3cd4071e8701c44168676ca28b9": {
+    "first_seen": "2026-07-12 11:00",
+    "source": "github_python",
+    "title": "MervinPraison/PraisonAI",
     "decision": "rejected_L0",
     "promising_file": null
   }
