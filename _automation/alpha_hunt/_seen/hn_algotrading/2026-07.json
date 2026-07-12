@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0efab16d096bee4e8b059d192c1fc3e7": {
+    "first_seen": "2026-07-12 11:30",
+    "source": "hn_algotrading",
+    "title": "Launch HN: Cord (YC W21) – training data toolbox for computer vision",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "11c9b0058317b9334f696e5e7f1fc382": {
     "first_seen": "2026-07-05 05:30",
     "source": "hn_algotrading",
@@ -80,6 +87,13 @@
     "first_seen": "2026-07-02 20:30",
     "source": "hn_algotrading",
     "title": "Show HN: HelixDB – Native graph and vector types for RAG and retrieval",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6133b8a11aa46ee072e8ff801c4f1d3b": {
+    "first_seen": "2026-07-12 11:30",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Are there any good open source algorithmic trading platforms?",
     "decision": "rejected_L0",
     "promising_file": null
   },
