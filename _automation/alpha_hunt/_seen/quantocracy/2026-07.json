@@ -13,6 +13,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "1c8c9b74d9a1f85c3cf45de5f13a2de7": {
+    "first_seen": "2026-07-13 06:30",
+    "source": "quantocracy",
+    "title": "Feature selection: Wrapper-based feature selection methods [Trading the Breaking",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "1dcab4e31d1944afa5f7dfa2a6c9c94f": {
     "first_seen": "2026-07-10 06:30",
     "source": "quantocracy",
@@ -48,6 +55,20 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "470fe79f857b5b3b1046d40bd0021901": {
+    "first_seen": "2026-07-13 06:30",
+    "source": "quantocracy",
+    "title": "Quantitativo weekly [Quantitativo]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "56e8978d4f33484edd2726a619e71601": {
+    "first_seen": "2026-07-13 06:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/12/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "573462c6c0630befe0dc2c1d1c2bc4ee": {
     "first_seen": "2026-07-10 06:30",
     "source": "quantocracy",
@@ -73,6 +94,13 @@
     "first_seen": "2026-07-05 06:30",
     "source": "quantocracy",
     "title": "Jumping back in the pool(ing): pooling by asset class and portfolio weight dista",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "864cf59c993228ff86e905862fb7933f": {
+    "first_seen": "2026-07-13 06:30",
+    "source": "quantocracy",
+    "title": "Network Momentum as a Cross-Asset Factor [Aligrithm]",
     "decision": "accepted",
     "promising_file": null
   },
@@ -123,6 +151,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 07/10/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d639218fa508369387df7eda975cd79f": {
+    "first_seen": "2026-07-13 06:30",
+    "source": "quantocracy",
+    "title": "Trend-Following P&L Is a Function of Autocorrelation (Closed Form) [Aligrithm]",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "d6e9a5f45450f56e8ae2922b05abcfc5": {
