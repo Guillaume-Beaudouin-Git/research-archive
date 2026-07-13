@@ -62,6 +62,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3e6d45e571229a87bc563e4e9f7701d2": {
+    "first_seen": "2026-07-13 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Deep Learning for Dynamic Programming with Recursive Utility Using First-order C",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "3fd7de072604b217399944da9c4f46c9": {
     "first_seen": "2026-07-07 03:30",
     "source": "arxiv_econ_em",
@@ -209,6 +216,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "99553cd69156b9b3b00f1749ad382258": {
+    "first_seen": "2026-07-13 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Misspecified regressions with mixed regressors: robust inference and causal inte",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9b046dd5a576e4d854726c74971083f6": {
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
@@ -297,6 +311,13 @@
     "first_seen": "2026-07-10 03:30",
     "source": "arxiv_econ_em",
     "title": "Rational Bubbles at the Spectral Edge: An Operator-Spectral Theory of Fragility,",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "fd2226c036e33de3021a96392ba5d718": {
+    "first_seen": "2026-07-13 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Media Measurement and the Assisted Own Goal: Attribution, Marketing-Mix Models, ",
     "decision": "accepted",
     "promising_file": null
   },
