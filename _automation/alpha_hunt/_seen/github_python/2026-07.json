@@ -62,6 +62,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "37902ef8d63ab6f91302dcb01b66f673": {
+    "first_seen": "2026-07-13 11:00",
+    "source": "github_python",
+    "title": "simonlin1212/TradingAgents-astock",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "393967b3d96f1ecb4fa17f403010b9c6": {
     "first_seen": "2026-07-05 11:30",
     "source": "github_python",
@@ -139,10 +146,31 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "609e06f4e833b3582f05a0771e64a089": {
+    "first_seen": "2026-07-13 11:00",
+    "source": "github_python",
+    "title": "3b1b/manim",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "62d636c3382edf01b1e54e7a5137b5f2": {
+    "first_seen": "2026-07-13 11:00",
+    "source": "github_python",
+    "title": "Vexa-ai/vexa",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "69b168c5117df83738dc967a2fbc74aa": {
     "first_seen": "2026-07-10 11:00",
     "source": "github_python",
     "title": "microsoft/graphrag",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6bf12b08e3d4ba732d881560526740d1": {
+    "first_seen": "2026-07-13 11:00",
+    "source": "github_python",
+    "title": "practical-tutorials/project-based-learning",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -227,6 +255,13 @@
     "first_seen": "2026-07-08 11:00",
     "source": "github_python",
     "title": "jingyaogong/minimind",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9a5ddddde0beeee11b2d0a00b667c8a5": {
+    "first_seen": "2026-07-13 11:00",
+    "source": "github_python",
+    "title": "make-all/tuya-local",
     "decision": "rejected_L0",
     "promising_file": null
   },
