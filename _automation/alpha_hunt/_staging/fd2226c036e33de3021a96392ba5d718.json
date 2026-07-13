@@ -1,0 +1,14 @@
+{
+  "hash": "fd2226c036e33de3021a96392ba5d718",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.09608v1",
+  "title": "Media Measurement and the Assisted Own Goal: Attribution, Marketing-Mix Models, and Individual-Level Incrementality",
+  "url": "http://arxiv.org/abs/2607.09608v1",
+  "description": "We use the assisted own goal hypothesis as a lens into media measurement. A demand-generating (upper-funnel) advertising platform such as a short-video social network can cause an incremental purchase, yet see that purchase booked on -- and credited to -- a downstream trusted marketplace, because consumers who discover a product on the platform complete the transaction elsewhere, for example because of distrust of the generating platform as a psychological mechanism. Under attribution-based return-on-ad-spend (ROAS) measurement, the diverted conversions are invisible to the originating platform. Marketing-mix models (MMMs) do not know which channel to credit with the outcome, and channel-by-week aggregation denies the audience-level granularity that budget decisions require. We develop an incrementality-based measurement model with two ingredients: ambient audience-level randomization -- each activated audience carries its own intent-to-treat (ITT) experiment -- and an individual-level extension of Predicted Incrementality by Experimentation (PIE), which learns a mapping from individual features to experiment-identified incremental outcomes. Because ITT contrasts are computed on channel-complete outcomes, the estimator is unbiased and the own goal disappears",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-13 01:00 UTC"
+}
