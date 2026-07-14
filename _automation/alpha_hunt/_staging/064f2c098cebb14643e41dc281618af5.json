@@ -1,0 +1,14 @@
+{
+  "hash": "064f2c098cebb14643e41dc281618af5",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.10558v1",
+  "title": "Local Asymptotic Power of Honest Confidence Intervals",
+  "url": "http://arxiv.org/abs/2607.10558v1",
+  "description": "Confidence intervals that are conservative against an untestable bias, called bias-aware or honest, are now standard in DiD, IV, RD, and factor-model settings. This paper characterises the local power of the tests they induce. Power is governed by the rate of the bias bound relative to the sampling rate, giving three regimes: when the bound vanishes faster than the standard error, conservatism is asymptotically free; when the two are of the same order it costs a bounded, explicit amount; and when the bound dominates, the typical case at the parametric rate, the honest test has zero local power, failing to reject local alternatives with probability approaching one. A minimax argument shows this loss is intrinsic to honesty itself, not a property of any particular construction. No honest procedure recovers it, and the standard bias-aware interval is rate-optimal. Broadly, any confidence interval whose width fails to shrink fast enough has no local power in the interior of the set it traces out, and at best one-sided power at the boundary. Partial identification is the limiting case of this argument. Simulations and two empirical applications illustrate the three regimes. The practical recommendation is to report the half-width of the power \"dead zone\" alongside bias-aware intervals.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-14 01:00 UTC"
+}
