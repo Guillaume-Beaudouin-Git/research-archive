@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "245b2a00c2011a5bfa84417664fb8a98": {
+    "first_seen": "2026-07-14 03:00",
+    "source": "arxiv_econ_em",
+    "title": "It Takes Two to Tango, but More to Assess Systemic Risk: Credit Networks Through",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2708f209b5b756de2a6a6fb4559243f9": {
     "first_seen": "2026-07-07 03:30",
     "source": "arxiv_econ_em",
@@ -60,6 +67,13 @@
     "source": "arxiv_econ_em",
     "title": "Empirical Global Games of Regime Change",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "2d4d75a898f641bcf322661a0f94743b": {
+    "first_seen": "2026-07-14 03:00",
+    "source": "arxiv_econ_em",
+    "title": "The Projection Solution to the Incidental Parameter Problem",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "3893ca1331fcebe0181e3b146311bbcd": {
@@ -209,6 +223,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "79ef6fe1e6ad74cd4f29cf11b1b3ee61": {
+    "first_seen": "2026-07-14 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Bayesian Robustness Values for Modern Causal Panel Estimators via Riesz Represen",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7dc8bde1add506df7c3f68f0d004f829": {
+    "first_seen": "2026-07-14 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Can looser ties sustain marriage? A dynamic matching model of specialisation and",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "83081b7ed644b178f4d2af702d6c7562": {
     "first_seen": "2026-07-07 02:00",
     "source": "arxiv_econ_em",
@@ -286,6 +314,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "e81fa2fd5f95dfa088ccfa6597d892cc": {
+    "first_seen": "2026-07-14 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Calibrated Horizon-Weighted Local Projection Designs for Markov Switchbacks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e8a2f3a44b6bed5e1cac9fa21438c4ab": {
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
@@ -318,6 +353,13 @@
     "first_seen": "2026-07-09 01:30",
     "source": "arxiv_econ_em",
     "title": "Robust Inference for Weighted Estimands",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f704581069172c7cec84f1b12856b408": {
+    "first_seen": "2026-07-14 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Inference for Fixed Effects Estimators when Panels are Unbalanced",
     "decision": "rejected_L0",
     "promising_file": null
   },
