@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "17eb2d8074cb8d155592201a145b4d6d": {
+    "first_seen": "2026-07-14 11:00",
+    "source": "github_python",
+    "title": "kangarooking/cangjie-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1b54756d21b72a6961c68a0e73efbc02": {
     "first_seen": "2026-07-09 11:00",
     "source": "github_python",
@@ -146,6 +153,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5db343aa1a6eb251889ce96a90b28f1d": {
+    "first_seen": "2026-07-14 11:00",
+    "source": "github_python",
+    "title": "NVlabs/FoundationPose",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "609e06f4e833b3582f05a0771e64a089": {
     "first_seen": "2026-07-13 11:00",
     "source": "github_python",
@@ -192,6 +206,13 @@
     "first_seen": "2026-07-12 11:00",
     "source": "github_python",
     "title": "PrefectHQ/prefect",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "73018ae040fa7b47ace90aebbd308cf2": {
+    "first_seen": "2026-07-14 11:00",
+    "source": "github_python",
+    "title": "PrimeIntellect-ai/verifiers",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -363,6 +384,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d08a14c8485f8d9fbbc14f5edd38b83b": {
+    "first_seen": "2026-07-14 11:00",
+    "source": "github_python",
+    "title": "Arindam200/awesome-ai-apps",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d32ed04fd7e22579dfd118c8d64a57c1": {
     "first_seen": "2026-07-09 22:30",
     "source": "github_python",
@@ -374,6 +402,13 @@
     "first_seen": "2026-07-02 11:00",
     "source": "github_python",
     "title": "agentskills/agentskills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e3748a84e2cba4d4e5c8fe51689b8d74": {
+    "first_seen": "2026-07-14 11:00",
+    "source": "github_python",
+    "title": "cactus-compute/needle",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -416,6 +451,13 @@
     "first_seen": "2026-07-11 11:30",
     "source": "github_python",
     "title": "FoundationAgents/OpenManus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f9f2b2ea028370f3ca46ec5459fd9ec0": {
+    "first_seen": "2026-07-14 11:00",
+    "source": "github_python",
+    "title": "PostHog/posthog",
     "decision": "rejected_L0",
     "promising_file": null
   },
