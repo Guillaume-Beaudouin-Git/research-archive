@@ -55,6 +55,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3b3f8f8b82f5d1adf8dcf7928fef495a": {
+    "first_seen": "2026-07-14 18:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: LAPACK without Fortran77; a C11 translation",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3e645d1661f685456eb480e40643cf49": {
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
