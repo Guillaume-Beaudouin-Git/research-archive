@@ -1,0 +1,14 @@
+{
+  "hash": "b82caf6b1d307df3b92d51b1cf64c649",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.12629v1",
+  "title": "Bivariate Isotonic Regression by Dynamic Programming",
+  "url": "http://arxiv.org/abs/2607.12629v1",
+  "description": "This article extends the dynamic programming framework introduced by (Rote, 2019) from the univariate to the bivariate isotonic problem, using an anti-diagonal traversal procedure. The proposed algorithm is applied to the well-known baseball data set that describes the association of salary with a collection of player properties, including the number of runs batted and hits. The new algorithm is relevant in the sense that dynamic programming has a wide range of applications in economics, such as the savings problem, economic growth, job search, business cycles, oligopoly equilibrium, recursive contracts, and forecasting.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-15 01:30 UTC"
+}

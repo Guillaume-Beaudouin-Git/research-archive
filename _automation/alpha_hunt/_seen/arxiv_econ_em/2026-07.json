@@ -41,6 +41,20 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_split_session_cluster_garch_for_overnight_and_intr_20260707.md"
   },
+  "1f1781e5c48dc909c3826357fbc5b64b": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Partial Identification with Multiple Nonlinear Measurements of a Latent Regresso",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1f7bbed1de749e2711383f8d7198cec2": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Orthogonal Integrated Conditional Moment Tests for Treatment Effect Heterogeneit",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "20d51f34d7219c8106bb7ab43a17e822": {
     "first_seen": "2026-07-14 01:00",
     "source": "arxiv_econ_em",
@@ -83,6 +97,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3bec823647fd3e2c34a385525c62d76a": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Removable Defects: The Economics and Limits of Deliberate Deficiency",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "3ceaad66a5dc844db446145737757b29": {
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
@@ -116,6 +137,13 @@
     "source": "arxiv_econ_em",
     "title": "Remote Work: Driver or Deterrent of Digital Product Innovation",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "431d485199dce0c04292c970e658e923": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Interpreting (and testing) factor loadings",
+    "decision": "accepted",
     "promising_file": null
   },
   "4512d6da5c69bd89efc81e2e67e9477b": {
@@ -223,6 +251,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "780d11481d954f5ca1538f8389f539cf": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Sensitivity to Subjective Expected Utility Maximization: A Methodological Study,",
+    "decision": "rejected_L2_not_accessible",
+    "promising_file": null
+  },
+  "7960d65e62f3cdefe4a85cb81b889750": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "KRAFT: A Transaction-Level Dataset for Korean Apartment Sales Integrated with Co",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "79ef6fe1e6ad74cd4f29cf11b1b3ee61": {
     "first_seen": "2026-07-14 03:00",
     "source": "arxiv_econ_em",
@@ -251,6 +293,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "8d00bcc8344c9c0a61eaa52097bc5d66": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Q-SCM: A Quantum-Sequential Choice Model for Driver Mental State Evolution",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "9220feb86c50027df7e523891bfb3af6": {
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
@@ -270,6 +319,20 @@
     "source": "arxiv_econ_em",
     "title": "A Framework for Transportation and Land Use Integration as a Parallel Constraine",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "b82caf6b1d307df3b92d51b1cf64c649": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Bivariate Isotonic Regression by Dynamic Programming",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "c132fd8e8cde28f1fba520b5d58464e7": {
+    "first_seen": "2026-07-15 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Modeling the Dynamic Relationship Between Brent Crude Oil Prices and the Nepal S",
+    "decision": "accepted",
     "promising_file": null
   },
   "c1fc886c859fc3719b8044750719f39d": {
