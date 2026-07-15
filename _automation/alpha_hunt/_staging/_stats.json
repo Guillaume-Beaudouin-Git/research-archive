@@ -1,6 +1,6 @@
 {
-  "run_time": "2026-07-15 07:00 UTC",
-  "accepted_count": 4,
+  "run_time": "2026-07-15 11:00 UTC",
+  "accepted_count": 0,
   "by_source": {
     "hn_quant": {
       "total": 65,
@@ -20,9 +20,9 @@
     },
     "quantocracy": {
       "total": 79,
-      "new": 5,
-      "accepted": 4,
-      "rej_l0": 1,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     },
@@ -35,7 +35,7 @@
       "rej_l2": 0
     },
     "quantpedia": {
-      "total": 13,
+      "total": 12,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
@@ -43,10 +43,10 @@
       "rej_l2": 0
     },
     "github_python": {
-      "total": 100,
-      "new": 0,
+      "total": 110,
+      "new": 7,
       "accepted": 0,
-      "rej_l0": 0,
+      "rej_l0": 7,
       "rej_l1": 0,
       "rej_l2": 0
     },

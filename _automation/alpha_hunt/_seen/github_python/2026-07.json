@@ -167,6 +167,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "624a93fdef1a3681e602c44e00b8e019": {
+    "first_seen": "2026-07-15 11:00",
+    "source": "github_python",
+    "title": "HKUDS/nanobot",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "62d636c3382edf01b1e54e7a5137b5f2": {
     "first_seen": "2026-07-13 11:00",
     "source": "github_python",
@@ -220,6 +227,13 @@
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
     "title": "virgiliojr94/book-to-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "75678b1f3c96523adaed0c3302919e9b": {
+    "first_seen": "2026-07-15 11:00",
+    "source": "github_python",
+    "title": "apache/ossie",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -286,10 +300,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9a82dab0939af2ef7cb14a7a1ca2fcd1": {
+    "first_seen": "2026-07-15 11:00",
+    "source": "github_python",
+    "title": "PrimeIntellect-ai/prime-rl",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9d868a2a85f9f1c2bf6706fe5e3da374": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
     "title": "omkarcloud/botasaurus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ac1e10b5f7ed69701fdd14b920858393": {
+    "first_seen": "2026-07-15 11:00",
+    "source": "github_python",
+    "title": "1c7/chinese-independent-developer",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -391,6 +419,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d15e8b5716bb43c021edbe0430eba552": {
+    "first_seen": "2026-07-15 11:00",
+    "source": "github_python",
+    "title": "snap-stanford/Biomni",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d32ed04fd7e22579dfd118c8d64a57c1": {
     "first_seen": "2026-07-09 22:30",
     "source": "github_python",
@@ -402,6 +437,20 @@
     "first_seen": "2026-07-02 11:00",
     "source": "github_python",
     "title": "agentskills/agentskills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dd7c5bfcaf7346bb5490e26f7a16e5e4": {
+    "first_seen": "2026-07-15 11:00",
+    "source": "github_python",
+    "title": "triton-inference-server/server",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e0b70abbf336a1bc2684db073cf110a5": {
+    "first_seen": "2026-07-15 11:00",
+    "source": "github_python",
+    "title": "zhinianboke/xianyu-auto-reply",
     "decision": "rejected_L0",
     "promising_file": null
   },
