@@ -6,6 +6,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "0a73ab754f723140b87e2fdadaa34c0d": {
+    "first_seen": "2026-07-15 07:00",
+    "source": "quantocracy",
+    "title": "Investing in “Distressed” TAA Strategies (Redux) [Allocate Smartly]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0f446d323baaa69335729565a0b5c323": {
     "first_seen": "2026-07-07 06:00",
     "source": "quantocracy",
@@ -104,6 +111,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "88db3ed63bf902cb23337adc9eff846e": {
+    "first_seen": "2026-07-15 07:00",
+    "source": "quantocracy",
+    "title": "Moving Averages and Harness Engineering for +33% CAGR on Portfolio Optimization ",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "8ba330a5cd8505db05fc4b947c6b6835": {
     "first_seen": "2026-07-07 06:00",
     "source": "quantocracy",
@@ -146,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c26128ec9c1887880def47570ed29d42": {
+    "first_seen": "2026-07-15 07:00",
+    "source": "quantocracy",
+    "title": "The Random-Max Percentile: Grading Every Backtest Against Its Search’s Random Ma",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "d4f4d550c50ea0f31f20abbf4ca52777": {
     "first_seen": "2026-07-11 06:00",
     "source": "quantocracy",
@@ -181,6 +202,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_guardrails_make_the_researcher_what_an_ai_agent_go_20260701.md"
   },
+  "dd656ed67ab980239240ce8c6d349743": {
+    "first_seen": "2026-07-15 07:00",
+    "source": "quantocracy",
+    "title": "The Intramonth Momentum Cycle [Alpha Architect]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "e62587d048b15f8903f47a97d5261fc9": {
     "first_seen": "2026-07-11 06:00",
     "source": "quantocracy",
@@ -193,6 +221,13 @@
     "source": "quantocracy",
     "title": "Silicon vs. Satoshi: Tactical Asset Rotation Between NASDAQ-100 and Bitcoin [Qua",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "f87b50ac0a0b599309a606a4ddcf1e10": {
+    "first_seen": "2026-07-15 07:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/14/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   }
 }
