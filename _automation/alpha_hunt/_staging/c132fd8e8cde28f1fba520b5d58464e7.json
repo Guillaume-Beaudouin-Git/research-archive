@@ -1,0 +1,14 @@
+{
+  "hash": "c132fd8e8cde28f1fba520b5d58464e7",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.11922v1",
+  "title": "Modeling the Dynamic Relationship Between Brent Crude Oil Prices and the Nepal Stock Exchange: An Integrated Econometric and Explainable Machine Learning Approach",
+  "url": "http://arxiv.org/abs/2607.11922v1",
+  "description": "This study examines the dynamic relationship between the global oil prices and Nepal Stock Exchange (NEPSE) using an integrated approach which combines traditional econometric techniques with machine learning and explainable AI techniques. For this, Daily data of International Oil prices and NEPSE index is analyzed from approximately thirteen years (June 2013 to June 2026) using Granger causality, EGARCH(1,1), and DCC-GARCH models to examine different properties like predictive relationships, asymmetric volatility behaviour, and time-varying correlations. To further supplement the econometric analysis, Machine Learning Models like Random Forest, LightGBM, and XGBoost algorithms were used to capture nonlinear relationships, along with explainable artificial intelligence techniques like SHAP values, Partial Dependence Plots, and Individual Conditional Expectation plots to further interpret the results of the model. The results from the econometric analysis showed a statistically significant unidirectional Granger causality from Brent crude oil to NEPSE with a four-day lag, high volatility persistence in both markets, and weak yet highly time-varying conditional correlations. Among the machine learning models, XGBoost achieves the best performance, and explainability analysis reveals that NEPSE own momentum and short-term volatility mainly influence its own behaviour and oil-related information serves as a minor, method-dependent contributor. The findings demonstrate that econometric and explainable machine learning approaches provide insights into the oil and equity market relationship in a way that each approach complements the result of one another.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-07-15 01:30 UTC"
+}
