@@ -454,6 +454,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e35f809a53f31cc0bb6b4b1a72b000bb": {
+    "first_seen": "2026-07-16 06:30",
+    "source": "github_python",
+    "title": "sickn33/agentic-awesome-skills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e3748a84e2cba4d4e5c8fe51689b8d74": {
     "first_seen": "2026-07-14 11:00",
     "source": "github_python",
