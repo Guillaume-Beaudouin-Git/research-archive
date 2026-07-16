@@ -1,0 +1,14 @@
+{
+  "hash": "e6d97d709b51159c9e0ce8770defc040",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/can-ai-do-financial-research/",
+  "title": "Can AI Do Financial Research?",
+  "url": "https://quantpedia.com/can-ai-do-financial-research/",
+  "description": "Large language models are already capable of summarizing financial research, but are they ready to conduct it? In their latest paper, researchers from Google, Boston College, and Columbia introduce a framework where a large language model doesn't just fetch data—it acts as an autonomous AI research agent capable of navigating the \"hypothesis discovery loop.\" By placing an LLM within a human-designed laboratory—complete with a symbolic language of 66 accounting primitives and a standardized backtesting pipeline—the authors tested whether AI can move beyond black-box predictions to generate economically legible and statistically robust signals. This isn't just about throwing a transformer at a price series; it is a systematic attempt to automate the \"propose–test–reflect\" cycle that defines empirical finance.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-07-16 20:00 UTC"
+}
