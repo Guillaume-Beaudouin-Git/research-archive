@@ -1,0 +1,66 @@
+[
+ {
+  "id": "2607.13929",
+  "title": "VAIOM: Continuous-Input, Discrete-Output Decoder-Only Financial Sequence Modeling",
+  "summary": "Financial observations are continuous, heterogeneous, and noisy, whereas decoder-only next-token models are usually built around discrete symbolic inputs. We introduce Vector-Input Autoregressive Inference for Ordinal-Return Modeling (VAIOM), a decoder-only Transformer for probabilistic next-return modeling on one-hour foreign-exchange bars. VAIOM separates input representation from output likelihood: continuous multivariate financial-event vectors preserve numerical structure at the input, while a categorical distribution over the next volatility-normalized return bucket supports cross-entropy training and likelihood evaluation. The selected 0.9M Hybrid Continuous Input model combines continuous event features with categorical asset metadata, a Mixture-of-Market-States return head, Gap, volatility-regime, and Ordinal auxiliary objectives, and full-sequence supervision. Models and preprocessing are fit using pre-2024 Train data; models are selected on 2024H2 Validation and evaluated without refitting on two 2025 Test periods. Across three independent training seeds, every model outperforms fixed single-bar LightGBM baseline in both Test halves. For the canonical checkpoint, paired gains over LightGBM are 0.029 and 0.043 bits per event. Validation experiments show that continuous input improves over discrete-token input under the same categorical return objective, full-sequence supervision improves over last-position training, and auxiliary representation shaping together with",
+  "authors": [
+   "Yiming Ma",
+   "Xinyu Chen"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.CP"
+  ],
+  "published": "2026-07-15T15:10:10Z",
+  "updated": "2026-07-15T15:10:10Z"
+ },
+ {
+  "id": "2607.13916",
+  "title": "Detecting unusual trading patterns on cryptocurrency exchanges by means of complexity measures",
+  "summary": "Artificial transaction generation remains an important source of potential market manipulation on cryptocurrency exchanges, as it may distort reported liquidity and reduce market transparency. This study proposes a diagnostic framework for detecting unusual trading patterns based on complexity and statistical-structure measures derived from high-frequency trade-level data. The analysis considers log-returns, trading volume, and transaction counts, using tail distributions, autocorrelation functions, multifractal characteristics, approximate entropy, and detrended cross-correlations. The methodology is applied to BTC, ETH, and XRP traded on Binance, Bitget, KuCoin, and Kraken over the period from April 1 to June 30, 2025. The results reveal a pronounced anomaly on Bitget for BTC and ETH after mid-May 2025. The number of transactions increases sharply, but there is no proportional increase in traded volume or return fluctuations. This regime is characterised by numerous low-volume trades, weaker autocorrelations, reduced multifractal organisation, higher short-pattern irregularity, and weaker cross-correlations involving the transaction-count series. These features are consistent with a noise-like component in trading activity and may indicate artificially increased transaction counts, although they do not provide direct proof of wash trading. The findings show that complexity-based indicators can be useful for detecting exchange-specific trading anomalies that remain hidden in",
+  "authors": [
+   "Jakub Zwydak",
+   "Marcin Wątorek",
+   "Jarosław Kwapień",
+   "Stanisław Drożdż"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "cs.CE",
+   "econ.EM",
+   "physics.data-an",
+   "stat.AP"
+  ],
+  "published": "2026-07-15T14:55:34Z",
+  "updated": "2026-07-15T14:55:34Z"
+ },
+ {
+  "id": "2607.13353",
+  "title": "Is Deep Hedging Reinforcement Learning?",
+  "summary": "The deep hedging framework of Buehler et al. (2019) trains a neural network policy, via Monte Carlo simulation of price paths and stochastic gradient descent, to minimize a risk measure applied to the terminal hedging error. In a recent stream of papers, my coauthors and I have referred to this technique as reinforcement learning (RL), a characterization that referees on several submissions have challenged on two grounds, among others: first, that because feedback is generated only at the terminal date, with no intermediate reward signal, the method cannot constitute genuine RL; and second, that the absence of a value function, a Bellman equation, temporal-difference (TD) learning, and an explicit exploration mechanism disqualifies the method from the RL category altogether, so that it should instead be labeled a neural-network method for stochastic optimal control. I argue that both objections rest on an unduly narrow, TD-centric reading of what constitutes RL. Once RL is understood, as it is in the standard references of the field, to include Monte Carlo policy-gradient methods and direct (actor-only) policy search as first-class members, the deep hedging algorithm of Buehler et al. (2019) falls squarely within the RL umbrella.",
+  "authors": [
+   "Frédéric Godin"
+  ],
+  "categories": [
+   "q-fin.CP"
+  ],
+  "published": "2026-07-15T00:24:42Z",
+  "updated": "2026-07-15T00:24:42Z"
+ },
+ {
+  "id": "2607.13112",
+  "title": "Anchored Geodesic Analysis for Multivariate Extremes",
+  "summary": "Extremal dependence is naturally described by the angular law of large multivariate observations. We introduce anchored geodesic component analysis (AGCA), a dimension-reduction method for extremal angular laws on the positive unit sphere. AGCA approximates angular variation by great subspheres constrained to pass through a chosen reference direction, with balanced complete dependence as the default anchor. Under a bounded sine-squared geodesic loss, the population and empirical problems reduce exactly to eigenanalysis of a second-moment matrix of anchored tangent departures. The resulting scores, loadings, residual risks and explained-variation summaries describe departures from the benchmark and remain well defined for face and near-axis extremes. Low-rank AGCA reconstructions also support tail simulation: bounded Lipschitz functionals and homogeneous tail scores, including portfolio capped excesses and value-at-risk, inherit explicit error bounds from the AGCA residual risk. We establish top-\\(k\\) consistency for oracle and rank-Pareto AGCA summaries and an oracle central limit theorem whose covariance is that of an independent sample from the limiting angular law. In daily equity-portfolio losses, AGCA finds concentrated benchmark-relative tail directions: ten components explain about \\(91\\%\\) of anchored variation and approximate capped-excess and normalized value-at-risk summaries with about \\(1.25\\%\\) average relative error.",
+  "authors": [
+   "Alberto Quaini",
+   "Chen Zhou"
+  ],
+  "categories": [
+   "stat.ME",
+   "math.ST",
+   "q-fin.RM"
+  ],
+  "published": "2026-07-14T12:31:29Z",
+  "updated": "2026-07-14T12:31:29Z"
+ }
+]
