@@ -377,6 +377,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c004d87bce8deb7a938e746797a44913": {
+    "first_seen": "2026-07-16 11:00",
+    "source": "github_python",
+    "title": "HKUDS/OpenHarness",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c32f0111cfa834c77b9319198db64a25": {
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
@@ -472,6 +479,13 @@
     "first_seen": "2026-07-11 11:30",
     "source": "github_python",
     "title": "ATH-MaaS/Pixelle-Video",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e6f2e70b88313e0aac9638057c81ba97": {
+    "first_seen": "2026-07-16 11:00",
+    "source": "github_python",
+    "title": "thinking-machines-lab/tinker-cookbook",
     "decision": "rejected_L0",
     "promising_file": null
   },
