@@ -41,6 +41,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_split_session_cluster_garch_for_overnight_and_intr_20260707.md"
   },
+  "18d133b06f9abcb5e3fb08a58d0121ae": {
+    "first_seen": "2026-07-16 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimation and Inference for Latent Dual Networks Using High-Dimensional IV Scre",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1f1781e5c48dc909c3826357fbc5b64b": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -237,6 +244,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6fcb7976ed9d1f412232ba37437c0076": {
+    "first_seen": "2026-07-16 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Time preference effects in forecasting",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "7158b583533f510618c073a831e41517": {
     "first_seen": "2026-07-01 03:00",
     "source": "arxiv_econ_em",
@@ -249,6 +263,13 @@
     "source": "arxiv_econ_em",
     "title": "Randomization Tests in Randomized Saturation Designs",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7570459fd9a18192f477e24480dca5a7": {
+    "first_seen": "2026-07-16 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Tabular Foundation Models for Discrete Choice Estimation",
+    "decision": "rejected_L2_not_accessible",
     "promising_file": null
   },
   "780d11481d954f5ca1538f8389f539cf": {
@@ -307,6 +328,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "99329c4ae60fb06a38e97f56398eaf30": {
+    "first_seen": "2026-07-16 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Detecting unusual trading patterns on cryptocurrency exchanges by means of compl",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "99553cd69156b9b3b00f1749ad382258": {
     "first_seen": "2026-07-13 01:00",
     "source": "arxiv_econ_em",
@@ -319,6 +347,13 @@
     "source": "arxiv_econ_em",
     "title": "A Framework for Transportation and Land Use Integration as a Parallel Constraine",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "a13aba685d3e7270148f75f284f1b311": {
+    "first_seen": "2026-07-16 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Removable Defects: The Economics and Limits of Deliberate Deficiency",
+    "decision": "accepted",
     "promising_file": null
   },
   "b82caf6b1d307df3b92d51b1cf64c649": {
@@ -368,6 +403,13 @@
     "source": "arxiv_econ_em",
     "title": "Granular Instrumental Variables in Large Panels: Identification and Inference Ac",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "e4001c50f0b56e47b9ef3a1d891c5ea2": {
+    "first_seen": "2026-07-16 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Manipulation testing based on Benford's Law for discrete scores",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "e5ef08db424181e9451b8a3902b660c8": {
@@ -438,6 +480,13 @@
     "source": "arxiv_econ_em",
     "title": "Media Measurement and the Assisted Own Goal: Attribution, Marketing-Mix Models, ",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "fdef86620968a14c502beec223c9cd90": {
+    "first_seen": "2026-07-16 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Global factors for local shocks in a data-scarce environment: with an applicatio",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "fe20c9ac2dba5daf1a004fdf605678c7": {
