@@ -69,6 +69,20 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "47df5ad4cd1cf3828aa4d7b1ced7cd99": {
+    "first_seen": "2026-07-17 06:30",
+    "source": "quantocracy",
+    "title": "The Mechanism Survives, the Magnitude Doesn   t [Tommi Johnsen]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "4b81bd07a3089bf9534ecb3105c21526": {
+    "first_seen": "2026-07-17 06:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/16/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "56e8978d4f33484edd2726a619e71601": {
     "first_seen": "2026-07-13 06:30",
     "source": "quantocracy",
@@ -81,6 +95,13 @@
     "source": "quantocracy",
     "title": "Intraday Breakout Details That Matter: Exits, Slippage and 0DTE Options [Crackin",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "6132945711c74da4c2b4f2b6c52eff06": {
+    "first_seen": "2026-07-17 06:30",
+    "source": "quantocracy",
+    "title": "State-Space Models for Price: CryptoMamba vs Transformers (Skeptical) [Aligrithm",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "6c24646b812dca5cb6c4ee59a9bae5ca": {
@@ -167,6 +188,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "cb56151da29245c9eb4489b216719111": {
+    "first_seen": "2026-07-17 06:30",
+    "source": "quantocracy",
+    "title": "How quants separate edge from noise [Trading the Breaking]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "d4f4d550c50ea0f31f20abbf4ca52777": {
     "first_seen": "2026-07-11 06:00",
     "source": "quantocracy",
@@ -221,6 +249,13 @@
     "source": "quantocracy",
     "title": "Silicon vs. Satoshi: Tactical Asset Rotation Between NASDAQ-100 and Bitcoin [Qua",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "f8520e6e22b2df24f3a888054e07548e": {
+    "first_seen": "2026-07-17 06:30",
+    "source": "quantocracy",
+    "title": "Can AI Do Financial Research? [Quantpedia]",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "f87b50ac0a0b599309a606a4ddcf1e10": {
