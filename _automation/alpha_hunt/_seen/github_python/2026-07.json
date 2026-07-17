@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "17dec50b80761feba743b0df47062d54": {
+    "first_seen": "2026-07-17 11:00",
+    "source": "github_python",
+    "title": "android/skills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "17eb2d8074cb8d155592201a145b4d6d": {
     "first_seen": "2026-07-14 11:00",
     "source": "github_python",
@@ -251,6 +258,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7dc2e1edcba7362a5499813ef127b012": {
+    "first_seen": "2026-07-17 11:00",
+    "source": "github_python",
+    "title": "ccxt/ccxt",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "81919a7c5ead1bc9abb164aa9271b06e": {
     "first_seen": "2026-07-11 11:30",
     "source": "github_python",
@@ -398,6 +412,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c9ef727ad293031e1c900178d7ceb2f6": {
+    "first_seen": "2026-07-17 11:00",
+    "source": "github_python",
+    "title": "ROCm/TheRock",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "cb2af345c5a956073eb7e601776cb149": {
     "first_seen": "2026-07-10 11:00",
     "source": "github_python",
@@ -480,6 +501,13 @@
     "source": "github_python",
     "title": "ATH-MaaS/Pixelle-Video",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e5bd4a42da77d8dd2ae2bf7925efd02e": {
+    "first_seen": "2026-07-17 11:00",
+    "source": "github_python",
+    "title": "open-telemetry/semantic-conventions-genai",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "e6f2e70b88313e0aac9638057c81ba97": {
