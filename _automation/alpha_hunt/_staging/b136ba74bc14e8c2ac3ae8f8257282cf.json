@@ -1,0 +1,14 @@
+{
+  "hash": "b136ba74bc14e8c2ac3ae8f8257282cf",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.14279v1",
+  "title": "From Vector Autoregressions to AI-based Time Series Forecasting: A Review",
+  "url": "http://arxiv.org/abs/2607.14279v1",
+  "description": "Forecasting is a central goal of time-series analysis. This review centers on three major developments in recent AI-based time-series forecasting: transformers, large pretrained models for zero-shot forecasting, and diffusion-based generative forecasters. We connect these methods to the econometric tradition built around the vector autoregression (VAR) through a common object: the conditional distribution of the future given the past. The review is organized around three long-standing challenges: \\emph{high dimensionality}, \\emph{nonstationarity}, and \\emph{nonlinearity}. We argue that modern methods make progress by expanding the classical forecasting template: they allow more flexible dynamics, use larger information sets and training corpora, and represent richer predictive distributions. Yet they often lack the inferential and structural tools that make classical models useful for testing, explanation, and policy analysis. We close by outlining open problems where econometric tools remain important.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-17 03:30 UTC"
+}

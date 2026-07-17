@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1a066643b88da702caec1385c0ab446d": {
+    "first_seen": "2026-07-17 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Probability of worthwhile effect of monotone-response treatments",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1f1781e5c48dc909c3826357fbc5b64b": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -94,6 +101,13 @@
     "first_seen": "2026-07-14 03:00",
     "source": "arxiv_econ_em",
     "title": "The Projection Solution to the Incidental Parameter Problem",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "304e65c7813e123a499d66a746186799": {
+    "first_seen": "2026-07-17 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Model Uncertainty under Non-Gaussian Errors: Bayesian Model Averaging and Select",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -356,10 +370,24 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "b136ba74bc14e8c2ac3ae8f8257282cf": {
+    "first_seen": "2026-07-17 03:30",
+    "source": "arxiv_econ_em",
+    "title": "From Vector Autoregressions to AI-based Time Series Forecasting: A Review",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "b82caf6b1d307df3b92d51b1cf64c649": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
     "title": "Bivariate Isotonic Regression by Dynamic Programming",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "befb540728c4affba737fea849eb18b3": {
+    "first_seen": "2026-07-17 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Aggregation Bias in Proxy Measurement: Nighttime Lights and Local Economic Activ",
     "decision": "accepted",
     "promising_file": null
   },
