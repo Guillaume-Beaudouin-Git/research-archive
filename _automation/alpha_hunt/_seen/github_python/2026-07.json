@@ -251,6 +251,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "75bc03e220cd455c993535a410121a73": {
+    "first_seen": "2026-07-18 11:00",
+    "source": "github_python",
+    "title": "MoonshotAI/kimi-cli",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7866623eb0bf3c045c6c275e73c1c2cf": {
     "first_seen": "2026-07-08 11:00",
     "source": "github_python",
@@ -361,6 +368,13 @@
     "source": "github_python",
     "title": "googleanalytics/google-analytics-mcp",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "b2405a880c1c2265dd3f963c04bce13c": {
+    "first_seen": "2026-07-18 11:00",
+    "source": "github_python",
+    "title": "OpenSenseNova/SenseNova-U1",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "b53952b4ab864008a49706ef7d1632f9": {
