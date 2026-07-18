@@ -1,5 +1,5 @@
 {
-  "run_time": "2026-07-18 01:30 UTC",
+  "run_time": "2026-07-18 09:30 UTC",
   "accepted_count": 0,
   "by_source": {
     "hn_quant": {
@@ -11,15 +11,15 @@
       "rej_l2": 0
     },
     "hn_algotrading": {
-      "total": 262,
-      "new": 0,
+      "total": 263,
+      "new": 1,
       "accepted": 0,
-      "rej_l0": 0,
+      "rej_l0": 1,
       "rej_l1": 0,
       "rej_l2": 0
     },
     "quantocracy": {
-      "total": 84,
+      "total": 77,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
@@ -44,14 +44,14 @@
     },
     "github_python": {
       "total": 96,
-      "new": 1,
+      "new": 0,
       "accepted": 0,
-      "rej_l0": 1,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     },
     "arxiv_econ_em": {
-      "total": 85,
+      "total": 82,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
