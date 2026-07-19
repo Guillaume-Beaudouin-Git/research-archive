@@ -160,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5577e10231210971d7c770465fd1c280": {
+    "first_seen": "2026-07-19 11:00",
+    "source": "github_python",
+    "title": "OWASP/Nettacker",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "56a0fd8bb83e0cd107e8a0fbc4dbd574": {
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
@@ -391,6 +398,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b82e2d57017f937a49a5cf068868994a": {
+    "first_seen": "2026-07-19 11:00",
+    "source": "github_python",
+    "title": "Canner/WrenAI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b88a56dda763e49ad7b19b7bbb692e4c": {
     "first_seen": "2026-07-06 11:00",
     "source": "github_python",
@@ -430,6 +444,13 @@
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "HKUDS/AI-Trader",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c67f55a52dfe5c5eeccba2f828f0ce78": {
+    "first_seen": "2026-07-19 11:00",
+    "source": "github_python",
+    "title": "FujiwaraChoki/MoneyPrinterV2",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -521,6 +542,13 @@
     "first_seen": "2026-07-11 11:30",
     "source": "github_python",
     "title": "ATH-MaaS/Pixelle-Video",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e3e6c9946dcffb3a66d9efb25684bdfd": {
+    "first_seen": "2026-07-19 11:00",
+    "source": "github_python",
+    "title": "kvcache-ai/ktransformers",
     "decision": "rejected_L0",
     "promising_file": null
   },
