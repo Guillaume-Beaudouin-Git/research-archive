@@ -1,4 +1,18 @@
 {
+  "0017d4035d88c21d8899424610c76bce": {
+    "first_seen": "2026-07-19 07:00",
+    "source": "quantocracy",
+    "title": "Refiner Trade: From Gross Sharpe to Net [Beyond Passive]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "0689d7653687705c5a13fd64fab39bca": {
+    "first_seen": "2026-07-19 07:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/18/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "089dff9d007cde9ffb7ef22a952e99eb": {
     "first_seen": "2026-07-05 06:30",
     "source": "quantocracy",
@@ -81,6 +95,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 07/16/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4bf0e113c8531d67e4e6206c3d21e487": {
+    "first_seen": "2026-07-19 07:00",
+    "source": "quantocracy",
+    "title": "Margin Debt Is at an All-Time High, What Does That Mean? [Allocate Smartly]",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "56e8978d4f33484edd2726a619e71601": {
@@ -167,6 +188,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "ad256f3af3c1a4f8bf142e7ec1a80fdd": {
+    "first_seen": "2026-07-19 07:00",
+    "source": "quantocracy",
+    "title": "Timing Equity Factors with Momentum [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "b7533e21d268f302cda9414e3de4ac7e": {
     "first_seen": "2026-07-10 06:30",
     "source": "quantocracy",
@@ -237,6 +265,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "e09b8ac2a8353d1ca71e49d9290c6e45": {
+    "first_seen": "2026-07-19 07:00",
+    "source": "quantocracy",
+    "title": "Percentile-Rank Momentum With Hysteresis: Low-Churn Signals [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "e62587d048b15f8903f47a97d5261fc9": {
     "first_seen": "2026-07-11 06:00",
     "source": "quantocracy",
@@ -263,6 +298,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 07/14/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ff8f309edca745dfe822b23691d4a81e": {
+    "first_seen": "2026-07-19 07:00",
+    "source": "quantocracy",
+    "title": "Two Accounting Anomalies: One May Be Risk, the Other Is Mispricing [Alpha Archit",
+    "decision": "accepted",
     "promising_file": null
   }
 }
