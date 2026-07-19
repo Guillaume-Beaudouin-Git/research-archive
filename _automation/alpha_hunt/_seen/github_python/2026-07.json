@@ -111,6 +111,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "40971d7215f411cdc5a0bbf5912a7ab1": {
+    "first_seen": "2026-07-19 21:00",
+    "source": "github_python",
+    "title": "bojieli/ai-agent-book",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4721397ab3e423f5438d81f876142478": {
     "first_seen": "2026-07-12 11:00",
     "source": "github_python",
