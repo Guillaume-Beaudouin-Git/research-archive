@@ -139,6 +139,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4cd60778d12459a8afd204d311884140": {
+    "first_seen": "2026-07-20 11:00",
+    "source": "github_python",
+    "title": "PrefectHQ/fastmcp",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4f1004a4f2772c88b4779af23801ac67": {
     "first_seen": "2026-07-12 11:00",
     "source": "github_python",
@@ -178,6 +185,13 @@
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "tinygrad/tinygrad",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5736afe2c267d6d0a14a98b93d07df2a": {
+    "first_seen": "2026-07-20 11:00",
+    "source": "github_python",
+    "title": "megadose/holehe",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -528,6 +542,13 @@
     "first_seen": "2026-07-15 11:00",
     "source": "github_python",
     "title": "zhinianboke/xianyu-auto-reply",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e14f91c35f6937af5bb15bc39a6a3574": {
+    "first_seen": "2026-07-20 11:00",
+    "source": "github_python",
+    "title": "langchain-ai/open-swe",
     "decision": "rejected_L0",
     "promising_file": null
   },
