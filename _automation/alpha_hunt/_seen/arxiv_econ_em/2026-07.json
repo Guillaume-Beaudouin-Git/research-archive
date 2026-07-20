@@ -391,6 +391,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "c0e993a2fed71c75c99188a4c2250230": {
+    "first_seen": "2026-07-20 03:00",
+    "source": "arxiv_econ_em",
+    "title": "mnorm: An R Package for Calculation and Differentiation of Conditional Multivari",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c132fd8e8cde28f1fba520b5d58464e7": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
