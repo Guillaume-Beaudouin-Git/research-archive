@@ -1,4 +1,11 @@
 {
+  "00fb9536423ea145d810fd800d5352b6": {
+    "first_seen": "2026-07-20 14:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: The0 – self-hosted runtime for trading bots, bring your own language",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0c365a3905d78f6def1c38063ba27c4f": {
     "first_seen": "2026-07-02 00:00",
     "source": "hn_algotrading",
