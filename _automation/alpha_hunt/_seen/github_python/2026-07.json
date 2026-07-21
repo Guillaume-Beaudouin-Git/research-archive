@@ -1,4 +1,11 @@
 {
+  "020cfdcdd0ded12ffadc0b28eb4949bd": {
+    "first_seen": "2026-07-21 11:30",
+    "source": "github_python",
+    "title": "datalab-to/chandra",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "09c7dbfb28c8a754601fde4d5200d866": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -76,10 +83,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "23698a4a282c14a5675dd009491ec387": {
+    "first_seen": "2026-07-21 11:30",
+    "source": "github_python",
+    "title": "langchain-ai/open_deep_research",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "23709526d300ed3e83575f2fff5a0b7a": {
     "first_seen": "2026-07-09 11:30",
     "source": "github_python",
     "title": "debpalash/OmniVoice-Studio",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "29ba4f300925250f405bb64e3352f4f0": {
+    "first_seen": "2026-07-21 11:30",
+    "source": "github_python",
+    "title": "owainlewis/awesome-artificial-intelligence",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -115,6 +136,13 @@
     "first_seen": "2026-07-19 21:00",
     "source": "github_python",
     "title": "bojieli/ai-agent-book",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "431323540cd07ec60a00f4ba4f65ba02": {
+    "first_seen": "2026-07-21 11:30",
+    "source": "github_python",
+    "title": "CloakHQ/CloakBrowser",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -538,6 +566,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e0a34d0e841cd24f289672ba481f94cc": {
+    "first_seen": "2026-07-21 11:30",
+    "source": "github_python",
+    "title": "dottxt-ai/outlines",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e0b70abbf336a1bc2684db073cf110a5": {
     "first_seen": "2026-07-15 11:00",
     "source": "github_python",
@@ -591,6 +626,13 @@
     "first_seen": "2026-07-16 11:00",
     "source": "github_python",
     "title": "thinking-machines-lab/tinker-cookbook",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e945d7b940f373396c1212f77760c305": {
+    "first_seen": "2026-07-21 11:30",
+    "source": "github_python",
+    "title": "NVIDIA/cosmos-framework",
     "decision": "rejected_L0",
     "promising_file": null
   },
