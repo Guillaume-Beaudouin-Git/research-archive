@@ -172,8 +172,27 @@ double TargetEq()    { return ACCOUNT_SIZE_USD*(1.0+PhaseTarget())*(1.0+2e-4); }
 double StaticFloor() { return ACCOUNT_SIZE_USD*(1.0-MAX_LOSS_FRAC); }
 double DailyBudget() { return ACCOUNT_SIZE_USD*DAILY_LOSS_FRAC; }
 double DailyFloor()  { return g_anchor_balance - DailyBudget(); }
-double LimEff()      { return MathMax(DailyFloor(), StaticFloor()); }
-double BreakerLine() { return LimEff() + CH_BREAKER_FRAC*DailyBudget(); } // funded: 0.30 idem (yaml)
+double LimEff()      { return MathMax(DailyFloor(), StaticFloor()); }  // limite dure (bust FTMO)
+// v2.4 (A) : le breaker protège le SEUL daily. Avant = LimEff() : sous balance
+// static+budget ($9,500) le max() basculait sur le statique et la ligne se
+// FIGEAIT ($9,150) alors que le buffer (0.30 x budget QUOTIDIEN) est dimensionné
+// pour une barrière qui se réarme chaque matin -> cliquet, état absorbant
+// (AUDIT.md F5(b)). Le daily se réancre au rollover : la ligne se réarme toujours,
+// et le max drawdown redevient la mort naturelle qu'on laisse advenir.
+// Garde état corrompu : ancre <= 0 (ea_state.json illisible, JjsNum -> 0 avec une
+// date non vide) donnerait une ligne négative = breaker DÉSARMÉ. L'ancien max()
+// retombait implicitement sur le statique ; on restaure ce filet explicitement.
+double BreakerLine()
+  {
+   if(g_anchor_balance <= 0.0)
+      return StaticFloor() + CH_BREAKER_FRAC*DailyBudget();
+   return DailyFloor() + CH_BREAKER_FRAC*DailyBudget();                        // funded: 0.30 idem (yaml)
+  }
+// v2.4 (C) : DÉTECTION SEULE. Régime terminal = le floor statique est plus proche
+// que le budget quotidien -> le compte breachera le max loss avant le daily.
+// Remplace le seuil eq<static+2% ($9,200) qui laissait une bande aveugle de $300.
+// JAMAIS de désarmement : couper ici détruirait l'option de résorption.
+bool   TerminalRegime() { return g_anchor_balance < StaticFloor()+DailyBudget(); }
 
 // gouverneur — miroir lib/invariants.py (oracle sim E._target_for_segment)
 double GovTaper(double eq)
@@ -1117,7 +1136,12 @@ void DayRollover()
    double eq=AccountInfoDouble(ACCOUNT_EQUITY);
    if(InpPhase!=3)                                     // abandon: zombie EOD (alerte)
      {
-      if(eq < StaticFloor()+CH_ABANDON_BUF*ACCOUNT_SIZE_USD) g_zombie_days++;
+      // v2.4 (C) : régime terminal (anchor < static+budget) OU l'ancien seuil
+      // eq < static+2%. L'ancien seul laissait une bande aveugle de $300 —
+      // <ACCOUNT_ID> y est resté 14 j en état absorbant avec le compteur à 0/5.
+      // ALERTE SEULE : aucun désarmement, l'option de résorption reste ouverte.
+      if(TerminalRegime() || eq < StaticFloor()+CH_ABANDON_BUF*ACCOUNT_SIZE_USD)
+         g_zombie_days++;
       else g_zombie_days=0;
      }
    SaveState();
@@ -1323,6 +1347,7 @@ void WriteState(bool force)
        "\"breaker_line\": %.2f,\n", DailyFloor(), StaticFloor(), BreakerLine());
    js+=StringFormat("\"room_daily_usd\": %.2f,\n\"target_equity\": %.2f,\n",
        eq-LimEff(), InpPhase==3 ? 0.0 : TargetEq());
+   js+=StringFormat("\"terminal_regime\": %d,\n", TerminalRegime()?1:0);  // v2.4 (C)
    js+=StringFormat("\"breaker_fired_today\": %d,\n\"opened_today\": %d,\n"
        "\"flat_today\": %d,\n", g_breaker_today?1:0, g_opened_today?1:0, g_flat_today?1:0);
    js+=StringFormat("\"open_days\": %d,\n\"min_days\": %d,\n", g_open_days, MIN_TRADING_DAYS);
