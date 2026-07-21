@@ -20,6 +20,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "09cbd84005dae1ffed7f5d8c1e1bcf9b": {
+    "first_seen": "2026-07-21 07:30",
+    "source": "quantocracy",
+    "title": "Quantitativo weekly #3 [Quantitativo]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "0a73ab754f723140b87e2fdadaa34c0d": {
     "first_seen": "2026-07-15 07:00",
     "source": "quantocracy",
@@ -54,6 +61,13 @@
     "title": "Rolling, rolling, rolling…. updating statistical estimates yes or no [Investment",
     "decision": "accepted",
     "promising_file": "quantocracy_rolling_rolling_rolling_updating_statistical_estim_20260701.md"
+  },
+  "2933dac03e3a7fe35654ede342fdcce0": {
+    "first_seen": "2026-07-21 07:30",
+    "source": "quantocracy",
+    "title": "Is RSI Overbought a Sell Signal? We Tested 70/30 [The Refutation]",
+    "decision": "accepted",
+    "promising_file": null
   },
   "2c5cbf900afb809ad3109c8afc21b121": {
     "first_seen": "2026-07-01 06:00",
@@ -167,6 +181,13 @@
     "decision": "accepted",
     "promising_file": "quantocracy_the_market_impact_of_retail_options_trading_relati_20260707.md"
   },
+  "8bcb78bbcd915816d57fbf0b9fdbbdb2": {
+    "first_seen": "2026-07-21 07:30",
+    "source": "quantocracy",
+    "title": "MACD: The Indicator Is a Passenger [The Refutation]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "9bcaee0cc43077b215f4aeebc80d84ce": {
     "first_seen": "2026-07-07 06:00",
     "source": "quantocracy",
@@ -200,6 +221,13 @@
     "source": "quantocracy",
     "title": "Quantitative Value [Concretum Group]",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "b79800b432eb8ae83d13be2a6a92e946": {
+    "first_seen": "2026-07-21 07:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/20/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "c1c404b15707ee78c88b5146336da1a1": {
