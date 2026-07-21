@@ -265,6 +265,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6b5628459eda102859e8729bec10620d": {
+    "first_seen": "2026-07-21 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Two Gaussians, Too Many: A bootstrap-based approach to assess identifiability in",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6bb97ffad4f6a6e31da2a2e69fbaf0cb": {
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
@@ -342,6 +349,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "8aed675734e876396f82663f28951fee": {
+    "first_seen": "2026-07-21 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Econometrics with Pre-Trained Embeddings for Unstructured Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8d00bcc8344c9c0a61eaa52097bc5d66": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -353,6 +367,13 @@
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
     "title": "Factor-Augmented Machine Learning Panel Regressions",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "968cb42ed9190303c2550c3f9a3adcd6": {
+    "first_seen": "2026-07-21 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Engineering Social Networks: How Initial Group Assignment Shapes Student Social ",
     "decision": "accepted",
     "promising_file": null
   },
@@ -454,6 +475,20 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "d96f8455c83e23d9f726db617dc93a82": {
+    "first_seen": "2026-07-21 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Vector Search As Nearest Neighbor Matching: RAG-based Policy Learning in Causal ",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "df00e20b9dd4e7ba099824251a6602e3": {
+    "first_seen": "2026-07-21 03:00",
+    "source": "arxiv_econ_em",
+    "title": "A Variance-Based Test for Heterogeneous Treatment Effects",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e2ee7ffb0a5e14756d759cceaf800f93": {
     "first_seen": "2026-07-21 01:30",
     "source": "arxiv_econ_em",
@@ -538,11 +573,25 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "fcf1a54feee74aebe4c40eebd0755ff3": {
+    "first_seen": "2026-07-21 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Tabular Foundation Models for Discrete Choice Estimation",
+    "decision": "rejected_L2_not_accessible",
+    "promising_file": null
+  },
   "fd2226c036e33de3021a96392ba5d718": {
     "first_seen": "2026-07-13 01:00",
     "source": "arxiv_econ_em",
     "title": "Media Measurement and the Assisted Own Goal: Attribution, Marketing-Mix Models, ",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "fd72937ee075ee642ef2143fd414f99d": {
+    "first_seen": "2026-07-21 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Identification and Inference with Machine-Learned Instruments",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "fdef86620968a14c502beec223c9cd90": {

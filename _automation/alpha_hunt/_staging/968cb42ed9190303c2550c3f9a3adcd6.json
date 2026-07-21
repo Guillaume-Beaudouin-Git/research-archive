@@ -1,0 +1,14 @@
+{
+  "hash": "968cb42ed9190303c2550c3f9a3adcd6",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.17926v1",
+  "title": "Engineering Social Networks: How Initial Group Assignment Shapes Student Social Interactions",
+  "url": "http://arxiv.org/abs/2607.17926v1",
+  "description": "A large literature uses exogenous variation to estimate how assignment to classrooms or other groups shapes social networks. Yet most of these analyses remain dyadic, treating each link in isolation, even though ties often form through triadic closure, as a friend of a friend also becomes a friend. Using fine-grained data on phone calls, text messages, physical co-location, and social-media ties, we estimate the network formation effects of randomly assigning first-year university students to classrooms and to smaller social groups. To analyze explicitly whether group assignment interact with triadic closure, we use our random assignment to estimate a subgraph generated model of network formation. Accounting for triadic closure turns out to be crucial. For social groups in particular, group assignment affects network formation almost entirely by inducing additional triadic closure. Estimates ignoring triadic closure can thus yield misleading predictions about the network effects and benefits of group assignment policies.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-21 03:00 UTC"
+}
