@@ -580,11 +580,23 @@ L50. Funding-extremes-confirm-momentum-across-exchange-and-cycle: README §6.35 
   The L-registry above (L11-L50) is the constitution; session reports may cite aliases — see the
   aliases table. Lesson minting in sessions = NAMED candidates only; numbers are engraved here
   at reconciliation (no number minting inside a session).
-- **Worktree + artefacts locaux (gitignored)** : le moteur cleanroom (`audit_v2_independent/cleanroom/`),
-  les caches (`data/ftmo_portfolio/cache/`, `data_cache/`) et certains dirs cités dans REGISTER.md sont
-  **locaux/gitignored** → absents d'un worktree frais (checkout off main). Une session en worktree les
-  **importe du main dir par chemin absolu** (`<HOME>/Desktop/Algo_claude/…`), read-only :
-  le code d'étude vit dans le worktree, le moteur + caches restent référencés dans le main dir.
+- **Worktree + artefacts locaux : distinguer CODE (tracké) et DONNÉES (locales).**
+  Règle : **tout code importé par du code tracké EST tracké.** Le moteur cleanroom
+  `audit_v2_independent/cleanroom/engine.py` est une **librairie canonique TRACKÉE** (PR #400,
+  2026-07-21) : 9 modules trackés en dépendent, dont le code LIVE `ftmo_live/lib/{invariants,
+  governor,replay,signals}.py` (miroir sim↔live de l'EA réel) + les 3 moteurs sim. Le laisser
+  « local » rendait `ftmo_live/lib/` non-importable sur un checkout frais ET laissait le moteur
+  dériver hors PR (le golden test comparait un miroir tracké à un moteur non tracké, sans revue ni
+  historique). Les `cleanroom/run_phase*.py` (scripts one-off, importés par personne) restent
+  locaux — c'est la frontière propre. [Correction : la version antérieure de cette ligne classait
+  `cleanroom/` entier comme « local/gitignored » — factuellement faux, engine.py n'a jamais été
+  gitignoré.]
+  En revanche les **caches régénérables** (`data/ftmo_portfolio/cache/*.parquet`, `data_cache/`,
+  panels) et dirs data cités dans REGISTER.md restent **locaux/gitignored** → absents d'un worktree
+  frais. Une session en worktree les **importe du main dir par chemin absolu**
+  (`<HOME>/Desktop/Algo_claude/…`), read-only. engine.py, lui, vit désormais
+  dans CHAQUE checkout (worktree inclus) → import relatif auto-cohérent, plus de dérive moteur
+  entre main dir et worktree.
 - **Session close (obligatoire)**: `python3 tools/check_register_integrity.py` (fail-loud: cited
   paths exist + git-tracked, N chain monotonic) — fix findings BEFORE the closing commit. **Lancer ce check
   dans le MAIN working dir, JAMAIS dans un worktree** : un worktree n'a pas les dirs locaux/gitignored cités
