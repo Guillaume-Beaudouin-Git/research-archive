@@ -265,6 +265,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b6e4ee9c2cfab866e44085e44ffacb92": {
+    "first_seen": "2026-07-21 21:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: I built a chat client that uses embeddings to cluster messages by topic",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ba29708146bba874491ecb9c196f9fcb": {
     "first_seen": "2026-07-18 09:30",
     "source": "hn_algotrading",
