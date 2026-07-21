@@ -1,4 +1,11 @@
 {
+  "04c6c47a6ce1b77289ea104746276b37": {
+    "first_seen": "2026-07-21 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Compositional Synthetic Controls",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "06154472162f371e5f777eb2de8b9fc0": {
     "first_seen": "2026-07-01 02:00",
     "source": "arxiv_econ_em",
@@ -185,6 +192,13 @@
     "first_seen": "2026-07-10 03:30",
     "source": "arxiv_econ_em",
     "title": "Finite-Population Inference for Heterogeneity in Many-Group Synthetic Difference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4bfb7b0300751ba486d18db38ceea97d": {
+    "first_seen": "2026-07-21 01:30",
+    "source": "arxiv_econ_em",
+    "title": "When and How to Pilot: Design Rules for Two-Wave Experiments",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -440,6 +454,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "e2ee7ffb0a5e14756d759cceaf800f93": {
+    "first_seen": "2026-07-21 01:30",
+    "source": "arxiv_econ_em",
+    "title": "A Design-Based Approach to Testing and Inference in (Quasi-)Experiments with Spi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e4001c50f0b56e47b9ef3a1d891c5ea2": {
     "first_seen": "2026-07-16 01:30",
     "source": "arxiv_econ_em",
@@ -493,6 +514,13 @@
     "first_seen": "2026-07-09 01:30",
     "source": "arxiv_econ_em",
     "title": "Robust Inference for Weighted Estimands",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f24dac79b7c1aa4b444a09d8dce3d975": {
+    "first_seen": "2026-07-21 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Kernel Minimum Distance Estimation and Testing with Conditional Moment Restricti",
     "decision": "rejected_L0",
     "promising_file": null
   },
