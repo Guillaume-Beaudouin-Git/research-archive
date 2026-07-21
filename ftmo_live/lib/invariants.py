@@ -36,13 +36,49 @@ def static_floor(initial: float = E.INIT) -> float:
 
 
 def lim_eff(anchor_balance: float, initial: float = E.INIT) -> float:
+    """Limite dure EFFECTIVE (condition de bust FTMO) : on breache si l'equity
+    passe sous le daily OU sous le statique. Inchangé par v2.4 (A)."""
     return max(daily_floor(anchor_balance, initial), static_floor(initial))
 
 
 def breaker_line(anchor_balance: float, breaker_frac: float,
                  initial: float = E.INIT) -> float:
-    """Flatten M5 si equity < lim_eff + frac x budget daily (room < 30%)."""
-    return lim_eff(anchor_balance, initial) + breaker_frac * (E.DAILY_BUDGET / E.INIT * initial)
+    """Flatten M5 si equity < daily_floor + frac x budget daily (room < 30%).
+
+    v2.4 remède (A) — le breaker protège le SEUL daily, plus le floor statique.
+    Avant : lim_eff() = max(daily, statique). Sous balance = static + budget
+    (10k : $9,500) le max() basculait sur le statique et la ligne se FIGEAIT
+    ($9,150), alors que le buffer (0.30 x budget QUOTIDIEN) est dimensionné pour
+    une barrière qui se réarme chaque matin. Cliquet unidirectionnel : la room ne
+    repoussait jamais, le compte ne pouvait plus ni passer ni mourir (état
+    absorbant, cf. AUDIT.md F5(b) « breaker-deadlock près du floor »).
+    Le daily se réancre au rollover, donc la ligne se réarme toujours : le
+    drawdown maximum redevient la mort naturelle qu'on laisse advenir.
+
+    Garde état corrompu : une ancre <= 0 (ea_state.json illisible) donnerait une
+    ligne négative = breaker DÉSARMÉ. L'ancien max() retombait implicitement sur
+    le statique ; on restaure ce filet explicitement."""
+    budget = E.DAILY_BUDGET / E.INIT * initial
+    if anchor_balance <= 0.0:
+        return static_floor(initial) + breaker_frac * budget
+    return daily_floor(anchor_balance, initial) + breaker_frac * budget
+
+
+def terminal_regime(anchor_balance: float, initial: float = E.INIT) -> bool:
+    """v2.4 remède (C) — DÉTECTION SEULE, ne modifie aucun comportement.
+
+    Vrai quand le floor statique est plus proche que le budget quotidien, i.e.
+    anchor < static + budget (10k : $9,500) : le compte breachera le max loss
+    AVANT de pouvoir breacher le daily. C'est le régime où la tentative est
+    structurellement compromise (p(pass) mesurée 21% vs 47% à neuf).
+
+    Remplace le déclencheur historique `eq < static + 2% x initial` ($9,200),
+    qui laissait une bande aveugle de $300 : le compte <ACCOUNT_ID> est resté 14
+    jours en régime terminal avec le compteur zombie à 0/5 et aucune alerte.
+
+    JAMAIS de désarmement automatique : couper le trading ici détruirait
+    l'option de résorption, qui est précisément ce que (A) rouvre."""
+    return anchor_balance < static_floor(initial) + E.DAILY_BUDGET / E.INIT * initial
 
 
 def target_equity(phase_target: float, initial: float = E.INIT) -> float:

@@ -85,8 +85,8 @@ def run_phase(M, i0, WT, ON, cfg, diag=None):
             return dict(out="timeout", end=end, last=i, used=di,
                         micro=micro_fired_days)
         limit = bal - BUDGET
-        lim_eff = max(limit, FLOOR)
-        brk_line = lim_eff + cfg["breaker"] * BUDGET
+        lim_eff = max(limit, FLOOR)          # limite dure de BUST (inchangée)
+        brk_line = E.breaker_line(bal, cfg)  # v2.4 (A) : dépend de cfg["brk_mode"]
         px_day, bounds = M["days"][i]
         cuts = [0] + bounds + [len(px_day)]
         taper0 = float(np.clip((bal - FLOOR) / INIT / cfg["taper"], 0.0, 1.0))
@@ -148,7 +148,10 @@ def run_phase(M, i0, WT, ON, cfg, diag=None):
             eq = bal + pl - dip
             eq_chk = eq + gap_extra
             hb = eq_chk < lim_eff
+            # v2.4 : l'EA conditionne le breaker à OurPositionsExist() (cf. cleanroom)
             hk = eq_chk < brk_line
+            if cfg.get("brk_needs_pos") and not np.any(pos):
+                hk = hk & False
             ht = eq >= target * (1 + E.EPS_T)
             tb = int(np.argmax(hb)) if hb.any() else len(seg)
             tk = int(np.argmax(hk)) if hk.any() else len(seg)
@@ -260,8 +263,8 @@ def run_funded(M, i0, WT, ON, cfg, horizon=504, wd_every=14):
     i = i0
     while i < M["n"] and days < horizon:
         limit = bal - BUDGET
-        lim_eff = max(limit, FLOOR)
-        brk_line = lim_eff + cfg["breaker"] * BUDGET
+        lim_eff = max(limit, FLOOR)          # limite dure de BUST (inchangée)
+        brk_line = E.breaker_line(bal, cfg)  # v2.4 (A) : dépend de cfg["brk_mode"]
         px_day, bounds = M["days"][i]
         cuts = [0] + bounds + [len(px_day)]
         taper0 = float(np.clip((bal - FLOOR) / INIT / cfg["taper"], 0.0, 1.0))
@@ -289,7 +292,10 @@ def run_funded(M, i0, WT, ON, cfg, horizon=504, wd_every=14):
                     pl += np.where(np.isfinite(col), (col / avg[k] - 1.0) * pos[k], 0.0)
             eq = bal + pl - dip
             bad = eq < lim_eff
+            # v2.4 : l'EA conditionne le breaker à OurPositionsExist() (cf. cleanroom)
             brk = eq < brk_line
+            if cfg.get("brk_needs_pos") and not np.any(pos):
+                brk = brk & False
             tb = int(np.argmax(bad)) if bad.any() else len(seg)
             tk = int(np.argmax(brk)) if brk.any() else len(seg)
             if min(tb, tk) < len(seg):

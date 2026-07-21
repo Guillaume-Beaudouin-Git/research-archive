@@ -76,6 +76,48 @@ def test_floors_and_breaker():
     assert inv.target_equity(0.10) == pytest.approx(11000.0 * (1 + E.EPS_T))
 
 
+def test_breaker_is_daily_only_v24_remedy_A():
+    """v2.4 (A) : le breaker suit le SEUL daily et se réarme chaque matin.
+
+    Régression du cliquet : sous balance $9,500 l'ancienne formule
+    max(daily, static) + 150 figeait la ligne à $9,150 quelle que soit l'ancre,
+    et la room ne repoussait plus jamais (état absorbant, compte <ACCOUNT_ID>)."""
+    # au-dessus de la bascule : daily contraignant, comportement inchangé
+    assert inv.breaker_line(10000.0, 0.30) == 9650.0
+    # sous la bascule : la ligne SUIT l'ancre au lieu de se figer à 9150
+    assert inv.breaker_line(9239.84, 0.30) == pytest.approx(8889.84)
+    assert inv.breaker_line(9100.0, 0.30) == pytest.approx(8750.0)
+    # la ligne est strictement monotone en l'ancre — plus aucun palier
+    lines = [inv.breaker_line(b, 0.30) for b in (9700, 9500, 9300, 9100, 9000)]
+    assert all(a > b for a, b in zip(lines, lines[1:]))
+    # et elle se réarme : room au breaker constante = 30% du budget, toujours
+    for bal in (10000.0, 9500.0, 9239.84, 9050.0):
+        assert bal - inv.breaker_line(bal, 0.30) == pytest.approx(350.0)
+
+
+def test_breaker_corrupt_anchor_falls_back_to_static():
+    """Ancre <= 0 (ea_state.json illisible) : sans garde la ligne serait à -350,
+    donc le breaker DÉSARMÉ. On retombe sur le filet statique de l'ancienne
+    formule au lieu de perdre la protection intraday."""
+    assert inv.breaker_line(0.0, 0.30) == 9150.0
+    assert inv.breaker_line(-1.0, 0.30) == 9150.0
+
+
+def test_terminal_regime_detection_v24_remedy_C():
+    """v2.4 (C) : détection seule, sans bande aveugle."""
+    assert not inv.terminal_regime(10000.0)
+    assert not inv.terminal_regime(9500.01)
+    # à exactement static+budget, daily_floor == static_floor : les deux formules
+    # de breaker coïncident, le cliquet n'a pas encore commencé -> pas terminal
+    assert not inv.terminal_regime(9500.0)
+    assert inv.breaker_line(9500.0, 0.30) == 9150.0     # = l'ancienne valeur
+    assert inv.terminal_regime(9499.99)                 # premier pas sous la bascule
+    # la bande aveugle de l'ancien seuil ($9,500 -> $9,200) est couverte :
+    # <ACCOUNT_ID> à 9239.84 était terminal et non détecté
+    assert inv.terminal_regime(9239.84)
+    assert inv.terminal_regime(9050.0)
+
+
 def test_tapers_two_bases():
     # gouverneur = base equity ; orb = base balance début de jour
     assert inv.governor_taper(9000.0, 0.02) == 0.0

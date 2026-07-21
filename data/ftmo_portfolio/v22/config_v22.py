@@ -38,6 +38,22 @@ CFG_FUNDED = dict(
     margin_cap=0.60, quantize=True, target=10.0,
 )
 
+# --- v2.4 : sémantique de l'EA RÉELLEMENT DÉPLOYÉ (2026-07-20, ex5 678e303e) ---
+# Deux écarts sim/EA corrigés ici. Les configs v2.2 ci-dessus restent gelées : tout
+# résultat pinné se reproduit à l'identique (leurs défauts sont la sémantique v2.2).
+#   brk_mode="daily"     -> remède (A) : breaker sur le daily seul, il se réarme
+#                           chaque matin au lieu de se figer à $9,150 sous $9,500.
+#   brk_needs_pos=True   -> l'EA conditionne le breaker à OurPositionsExist() ; sans
+#                           position il ne latche pas flat_today et rouvre au
+#                           rebalance suivant. Le sim v2.2 latchait à plat, d'où un
+#                           "zombie inerte à $0/j" qui n'existe PAS en live (l'EA réel
+#                           churn et meurt en ~35 j).
+# ATTENTION : l'EA n'ABANDONNE pas tout seul (ab_days = alerte Telegram, décision
+# humaine). Pour un p(funded) réaliste sans discipline de relance, mettre ab_days
+# très grand — l'écart mesuré est -43.5 pt.
+CFG_CHALLENGE_V24 = dict(CFG_CHALLENGE, brk_mode="daily", brk_needs_pos=True)
+CFG_FUNDED_V24 = dict(CFG_FUNDED, brk_mode="daily", brk_needs_pos=True)
+
 FEE = 96.0                   # challenge fee $96 (refunded at first payout)
 WALL = 91                    # 3-month mission wall (calendar days)
 WINDOWS = (("IS", "2013-10-01", "2019-12-31"), ("OOS", "2020-01-02", "2026-02-25"))
