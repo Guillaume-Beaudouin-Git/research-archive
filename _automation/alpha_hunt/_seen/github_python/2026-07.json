@@ -27,6 +27,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "158e26806f675cec7e9a9f9a34962c9c": {
+    "first_seen": "2026-07-22 11:30",
+    "source": "github_python",
+    "title": "bregman-arie/devops-exercises",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "15f6f2d9d99b6792207baf8e77c5eae2": {
     "first_seen": "2026-07-18 01:30",
     "source": "github_python",
@@ -346,6 +353,13 @@
     "first_seen": "2026-07-04 11:00",
     "source": "github_python",
     "title": "microsoft/skills-for-fabric",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "841bfa08b1e400d72bb455b2f0e46700": {
+    "first_seen": "2026-07-22 11:30",
+    "source": "github_python",
+    "title": "HKUDS/LightRAG",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -675,6 +689,13 @@
     "first_seen": "2026-07-14 11:00",
     "source": "github_python",
     "title": "PostHog/posthog",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fb0aaea21c2d59a07c2de82fd3476ec1": {
+    "first_seen": "2026-07-22 11:30",
+    "source": "github_python",
+    "title": "NVIDIA/Model-Optimizer",
     "decision": "rejected_L0",
     "promising_file": null
   },
