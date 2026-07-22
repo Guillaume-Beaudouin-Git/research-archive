@@ -167,6 +167,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "4072de5cc0277f3611bbfae7fd8c04f0": {
+    "first_seen": "2026-07-22 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Robust Signal Maximization in Spillover Experiments",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "431d485199dce0c04292c970e658e923": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
