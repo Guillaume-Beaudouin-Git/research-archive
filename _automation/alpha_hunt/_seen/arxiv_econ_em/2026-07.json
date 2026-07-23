@@ -104,6 +104,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "28c0c67d2627ebc155212d7aacb87133": {
+    "first_seen": "2026-07-23 04:00",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Network Spillovers under Dense Measurement Error",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2d093cbe39a41896ba188baa1f88036f": {
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
@@ -276,6 +283,13 @@
     "first_seen": "2026-07-08 01:30",
     "source": "arxiv_econ_em",
     "title": "Stabilized Higher-Order Influence Functions: Statistical Theory of a Class of Bi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "673d8620adc925cc4c67a2430a14892b": {
+    "first_seen": "2026-07-23 04:00",
+    "source": "arxiv_econ_em",
+    "title": "A Fixed-Effects Causal Forest for Staggered Adoption, with an Application to Med",
     "decision": "rejected_L0",
     "promising_file": null
   },
