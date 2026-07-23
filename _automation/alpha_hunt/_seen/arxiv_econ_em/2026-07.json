@@ -55,6 +55,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1979043c2c3e258ba7f5b3ae7f439e2f": {
+    "first_seen": "2026-07-23 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Identifying Treatment and Spillover Effects with Control-Based and Forecast-Base",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "1a066643b88da702caec1385c0ab446d": {
     "first_seen": "2026-07-17 03:30",
     "source": "arxiv_econ_em",
@@ -328,6 +335,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7962b1e22d626ffd5a9c72de45f13e67": {
+    "first_seen": "2026-07-23 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Treatment Geometry and Causal Identification with Earth Observation Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "79ef6fe1e6ad74cd4f29cf11b1b3ee61": {
     "first_seen": "2026-07-14 03:00",
     "source": "arxiv_econ_em",
@@ -410,6 +424,13 @@
     "source": "arxiv_econ_em",
     "title": "A Framework for Transportation and Land Use Integration as a Parallel Constraine",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "9fc51d0ab930b66a00d6c90fe6ea2e9c": {
+    "first_seen": "2026-07-23 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Efficient difference-in-differences estimation under partial interference with i",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "a13aba685d3e7270148f75f284f1b311": {
