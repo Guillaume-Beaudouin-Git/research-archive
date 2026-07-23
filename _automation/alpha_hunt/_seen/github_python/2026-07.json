@@ -237,6 +237,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5f4c0a2aa99f16092bc26a50ae79af22": {
+    "first_seen": "2026-07-23 11:00",
+    "source": "github_python",
+    "title": "oraios/serena",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "609e06f4e833b3582f05a0771e64a089": {
     "first_seen": "2026-07-13 11:00",
     "source": "github_python",
@@ -412,6 +419,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a478037ab136551cf01f60751b7c5412": {
+    "first_seen": "2026-07-23 11:00",
+    "source": "github_python",
+    "title": "raullenchai/Rapid-MLX",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "aa08f048b284638998462b1a17903426": {
+    "first_seen": "2026-07-23 11:00",
+    "source": "github_python",
+    "title": "vnpy/vnpy",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ac1e10b5f7ed69701fdd14b920858393": {
     "first_seen": "2026-07-15 11:00",
     "source": "github_python",
@@ -475,6 +496,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b94b382cf2e8c3429fe6dccc235a0a0d": {
+    "first_seen": "2026-07-23 11:00",
+    "source": "github_python",
+    "title": "slavakurilyak/awesome-ai-agents",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "bc15d56d036adc59fa85ba17c57080bc": {
     "first_seen": "2026-07-13 10:00",
     "source": "github_python",
@@ -500,6 +528,13 @@
     "first_seen": "2026-07-07 11:30",
     "source": "github_python",
     "title": "XiaoYouChR/Ghost-Downloader-3",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c39cd02320159c25f1fcca447ac64e2e": {
+    "first_seen": "2026-07-23 11:00",
+    "source": "github_python",
+    "title": "ayghri/i-have-adhd",
     "decision": "rejected_L0",
     "promising_file": null
   },
