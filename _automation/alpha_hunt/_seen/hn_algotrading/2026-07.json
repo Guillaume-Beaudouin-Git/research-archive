@@ -286,6 +286,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d6eac12be5ffbdf0f094fcfdbddb05e3": {
+    "first_seen": "2026-07-23 20:00",
+    "source": "hn_algotrading",
+    "title": "Ask HN: Surviving a Mid-Career Crisis",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "d87307cff5dddc26425b45dc9ccf12ba": {
     "first_seen": "2026-07-10 17:00",
     "source": "hn_algotrading",
