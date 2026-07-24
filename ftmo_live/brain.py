@@ -44,6 +44,56 @@ def _phase_mode_params(phase: str) -> dict:
     return {k: cfg.get(k) for k in keys}
 
 
+# Divergence relative modèle/broker au-delà de laquelle on alerte. La valeur du
+# modèle a été vérifiée EXACTE à 1e-5 près contre le compte armé (2026-07-24), donc
+# tout écart matériel est une NOUVELLE (ex. FTMO passant l'or de 1:15 à 1:9 = +67%).
+# 10% laisse passer les arrondis broker sans masquer un vrai changement de levier.
+MRATE_DIVERGENCE_ALERT = 0.10
+
+
+def _live_truth_audit(phase: str, live) -> dict:
+    """Expose les FAITS LIVE injectés par governor._live_truth + les confronte au broker.
+
+    Deux trous fermés (audit desk 2026-07-24) :
+
+    1. `mrate`/`brk_mode` étaient invisibles. `_live_truth()` les injecte avec un
+       fallback `getattr(E, "MRATE_SWING", littéral)` : si le cleanroom du VPS
+       diverge, on retombe SILENCIEUSEMENT sur le littéral et plus rien ne le dit.
+       Ils ne vont PAS dans les clés plates `ea_*` (le protocole EA est scalaire) ni
+       dans `state.json` (propriété de l'EA) — leur place est le bloc audit.
+
+    2. La confrontation modèle <-> broker n'existait pas, alors que LES DEUX MOITIÉS
+       étaient déjà dans le système : le modèle dans `phase_cfg["mrate"]`, le réel
+       dans `export.symbols[*].margin_rate_live`. Personne ne les multipliait. C'est
+       ce produit qui détecte un changement de levier FTMO — l'événement qui
+       invaliderait le sizing sans rien casser d'autre (l'EA, lui, enforce au taux
+       serveur via OrderCalcMargin : c'est le MODÈLE qui mentirait, pas l'exécution).
+    """
+    cfg = governor.phase_cfg(phase)
+    mr = list(cfg.get("mrate") or [])
+    out = dict(mrate=mr, brk_mode=cfg.get("brk_mode"),
+               brk_needs_pos=cfg.get("brk_needs_pos"),
+               mrate_source=cfg.get("mrate_source"))
+    if not live or len(mr) != len(LEGS):
+        out["mrate_vs_live"] = "indisponible"
+        out["mrate_divergence_breach"] = False
+        return out
+    cmp_, worst = {}, 0.0
+    for i, leg in enumerate(LEGS):
+        real = (live.get(leg) or {}).get("margin_rate")
+        if real is None or float(real) <= 0:
+            cmp_[leg] = None
+            continue
+        rel = float(mr[i]) / float(real) - 1.0
+        cmp_[leg] = dict(model=float(mr[i]), live=float(real),
+                         rel_diff=round(rel, 6))
+        worst = max(worst, abs(rel))
+    out["mrate_vs_live"] = cmp_
+    out["mrate_worst_rel_diff"] = round(worst, 6)
+    out["mrate_divergence_breach"] = worst > MRATE_DIVERGENCE_ALERT
+    return out
+
+
 def _positions_vec(state: dict):
     pos = np.zeros(4)
     avg = np.full(4, np.nan)
@@ -71,6 +121,7 @@ def run(dry_run: bool = False, as_of: str = None, equity: float = None,
     now = statefiles.now_paris().replace(tzinfo=None)
     target_date = pd.Timestamp(as_of).normalize() if as_of else pd.Timestamp(now.date())
 
+    live = None                      # specs broker par jambe (absent en dry-run)
     if dry_run:
         cache = cache_dir or (LIVE_CACHE / f"dryrun_{target_date.date()}")
         audit["data"] = marketdata.build_truncated_cache(target_date, cache)
@@ -141,6 +192,7 @@ def run(dry_run: bool = False, as_of: str = None, equity: float = None,
     audit["swap_forecast_tonight"] = swaps.forecast_night(tonight, target_date)
 
     mode = _phase_mode_params(phase)
+    audit["live_truth"] = _live_truth_audit(phase, live)
     targets = statefiles.build_targets(spec.spec_sha256(), target_date, phase,
                                        weights, on_day, mode, audit)
     out_path = None
@@ -198,12 +250,29 @@ def main(argv=None) -> int:
         check()
         return 0
     try:
-        run(dry_run=a.dry_run, as_of=a.as_of, equity=a.equity, balance=a.balance,
-            phase=a.phase, attempt_start=a.attempt_start,
-            cache_dir=Path(a.cache_dir) if a.cache_dir else None,
-            write=not a.no_write, emit_json=a.json)
+        res = run(dry_run=a.dry_run, as_of=a.as_of, equity=a.equity,
+                  balance=a.balance, phase=a.phase, attempt_start=a.attempt_start,
+                  cache_dir=Path(a.cache_dir) if a.cache_dir else None,
+                  write=not a.no_write, emit_json=a.json)
         if not a.dry_run:
-            statefiles.write_brain_status("OK", dict())
+            # live_truth recopié dans brain_status : c'est le canal que le superviseur
+            # lit quand targets.json est stale/absent (sinon la divergence de marge
+            # serait invisible exactement les jours où elle compte le plus).
+            # try/except : les targets sont ÉCRITES à ce stade (run() a réussi). Un bug
+            # de cette télémétrie ne doit pas transformer un succès en brain_status=
+            # ERROR — ça déclencherait une fausse alerte `brain` et ferait croire à des
+            # targets non régénérées alors qu'elles le sont.
+            detail = dict()
+            try:
+                lt = (((res or {}).get("targets") or {}).get("audit")
+                      or {}).get("live_truth") or {}
+                detail = dict(live_truth=dict(
+                    mrate_source=lt.get("mrate_source"),
+                    mrate_worst_rel_diff=lt.get("mrate_worst_rel_diff"),
+                    mrate_divergence_breach=bool(lt.get("mrate_divergence_breach"))))
+            except Exception as e:                      # télémétrie best-effort
+                detail = dict(live_truth_error=repr(e))
+            statefiles.write_brain_status("OK", detail)
         return 0
     except Exception as e:
         if not a.dry_run:

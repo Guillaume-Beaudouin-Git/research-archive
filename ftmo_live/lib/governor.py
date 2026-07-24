@@ -37,8 +37,13 @@ def _live_truth(cfg: dict) -> dict:
     # 2026-07-24). Sans ce fallback, déployer governor.py AVANT engine.py ferait
     # crasher brain.py sur un AttributeError à 21:50 — un ordre de déploiement ne doit
     # jamais pouvoir casser la chaîne live. Valeur = engine.MRATE_SWING.
-    cfg["mrate"] = list(getattr(E, "MRATE_SWING",
-                                [0.066667, 0.033334, 0.066667, 0.066667]))
+    swing = getattr(E, "MRATE_SWING", None)
+    cfg["mrate"] = list(swing) if swing is not None \
+        else [0.066667, 0.033334, 0.066667, 0.066667]
+    # Le module qui CHOISIT la source la déclare : sans ça le repli est indétectable
+    # en aval (audit desk 2026-07-24 — un fallback silencieux ne s'observe pas).
+    cfg["mrate_source"] = "engine.MRATE_SWING" if swing is not None \
+        else "REPLI littéral (cleanroom en retard sur main)"
     cfg["brk_mode"] = "daily"
     cfg["brk_needs_pos"] = True
     return cfg

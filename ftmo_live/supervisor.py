@@ -22,6 +22,7 @@ Rapports (cron, --report) :
 Usage: supervisor.py --daemon | --report morning|evening | --add-fee N LABEL | --test-alert
 """
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -307,7 +308,11 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
     disarm_notice = "kill-file FLAT" in err
     if err and not (disarm_notice and not int(state.get("kill", 0))):
         fired.append("reject")
-        _alert(f"reject_{hash(err) & 0xffff}", 60, f"EA erreur/reject: {err}", now)
+        # hashlib et non hash() : `hash()` de str est randomisé par PYTHONHASHSEED,
+        # donc une clé neuve à chaque redémarrage du daemon -> le cooldown ne tenait
+        # pas et alerts_state.json accumulait des clés orphelines (15/67 mesurées).
+        _alert("reject_" + hashlib.sha1(err.encode()).hexdigest()[:8], 60,
+               f"EA erreur/reject: {err}", now)
     if int(state.get("pending_unconfirmed", 0)) > 0:
         fired.append("pending")
         _alert("pending", 15,
@@ -337,10 +342,23 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
                f"FUNDED: retrait dû ${wd:,.0f} (wd14) — demander le payout", now)
     if int(state.get("spec_bounds_breach", 0)):
         fired.append("spec_bounds")
-        _alert("spec_bounds", 12 * 60,
+        # Clé de cooldown = hash de la SIGNATURE du breach (quelles jambes, quelle
+        # nature), PAS des valeurs. Deux pièges, tous deux mesurés :
+        #  - `hash()` de Python n'est pas stable entre processus (PYTHONHASHSEED) ->
+        #    hashlib, sinon une clé neuve à chaque redémarrage du daemon.
+        #  - le détail embarque les swaps live à 2 décimales : 17 chaînes distinctes
+        #    en 25 jours alors que l'ENSEMBLE des breaches est stable. Hasher le détail
+        #    brut contournerait le cooldown par construction = 1 alerte par jour ouvré
+        #    À VIE sur une condition permanente et connue (marge XAU 6.667% hors des
+        #    ±25% de deux ancres yaml périmées). Ce serait AGGRAVER la fatigue d'alerte
+        #    — celle-là même qui a coûté 38-60 séances de « LIVRE MONO » non vues.
+        # On neutralise donc les nombres : seule l'apparition d'une jambe ou d'une
+        # nature INÉDITE re-alerte.
+        detail = str(state.get("spec_bounds_detail", ""))
+        sig = re.sub(r"[-+0-9.]+", "#", detail)
+        _alert("spec_bounds_" + hashlib.sha1(sig.encode()).hexdigest()[:8], 12 * 60,
                "SPECS LIVE HORS BORNES datées (swap/triple/marge) — dérive "
-               f"dealer ou écart Standard/Swing: {state.get('spec_bounds_detail', '')}",
-               now)
+               f"dealer ou écart Standard/Swing: {detail}", now)
 
     bs = statefiles.read_brain_status()
     if bs is None or bs.get("status") != "OK" or \
@@ -359,6 +377,31 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
                f"(le livre ne tourne que sur les jambes ON lun/mar + micro-ORB). "
                f"p(campagne) mesuré ~53.7% vs ~82.5% livre complet : le challenge en "
                f"cours coûte le même prix pour un ticket bien moins bon.", now)
+
+    # Divergence marge MODÈLE <-> BROKER (LOT B). L'EA enforce au taux serveur
+    # (OrderCalcMargin) : c'est le MODÈLE qui mentirait, pas l'exécution — ni le sizing
+    # live ni le risque ne bougent, mais tout p(pass)/EV cité deviendrait faux.
+    # Placé APRÈS l'alerte `brain` à dessein : une régression de cette télémétrie
+    # (neuve, donc la moins éprouvée) ne doit jamais pouvoir éteindre la surveillance
+    # de santé en aval — `daemon()` avale les exceptions, une erreur ici tuerait
+    # silencieusement brain/book_idle/swap_drift à chaque boucle.
+    # `or 0` et pas `get(..., 0)` : la clé EXISTE avec la valeur null quand les specs
+    # broker sont indisponibles -> le défaut ne s'appliquerait pas -> TypeError.
+    bs_lt = (bs or {}).get("live_truth") or {}
+    if bs_lt.get("mrate_divergence_breach"):
+        fired.append("mrate_divergence")
+        _alert("mrate_divergence", 12 * 60,
+               f"MARGE MODÈLE ≠ BROKER — écart max "
+               f"{100 * float(bs_lt.get('mrate_worst_rel_diff') or 0):+.1f}% "
+               f"(source modèle: {bs_lt.get('mrate_source')}). Le sizing LIVE reste "
+               f"sûr (l'EA enforce au taux serveur) mais les p(pass)/EV cités sont "
+               f"à recalculer.", now)
+    if str(bs_lt.get("mrate_source") or "").startswith("REPLI"):
+        fired.append("mrate_fallback")
+        _alert("mrate_fallback", 24 * 60,
+               "MARGE modèle en REPLI littéral — le cleanroom du VPS est en retard "
+               "sur main (governor._live_truth n'a pas trouvé engine.MRATE_SWING). "
+               "Resynchroniser le dépôt VPS.", now)
 
     drift = swap_drift_last_night(files_dir, now)
     if drift and drift.get("gate_breach"):

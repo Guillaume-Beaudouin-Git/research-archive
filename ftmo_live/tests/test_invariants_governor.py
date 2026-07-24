@@ -159,3 +159,86 @@ def test_targets_staleness_26h():
     gen = pd.Timestamp("2026-06-10 21:50:00")
     assert not inv.targets_stale(gen, gen + pd.Timedelta(hours=25.9))
     assert inv.targets_stale(gen, gen + pd.Timedelta(hours=26.1))
+
+
+# ------------------------------------------------- LOT B : télémétrie live_truth
+def test_governor_declares_mrate_source():
+    """Le module qui CHOISIT la source doit la déclarer.
+
+    Sans ça, le repli `getattr(E,"MRATE_SWING", littéral)` est indétectable en aval :
+    un cleanroom VPS en retard ferait diverger le modèle SANS aucun signal
+    (audit desk 2026-07-24 — « un fallback silencieux ne s'observe pas »).
+    """
+    cfg = governor.phase_cfg("P1")
+    assert cfg["mrate_source"] == "engine.MRATE_SWING"
+    assert len(cfg["mrate"]) == 4
+    assert governor.phase_cfg("FUNDED")["mrate_source"] == "engine.MRATE_SWING"
+
+
+def test_mrate_divergence_detects_leverage_change():
+    """Confrontation modèle <-> broker : les deux moitiés existaient, personne ne
+    les multipliait. Le scénario à attraper = FTMO change le levier de l'or."""
+    import brain
+    real = {"XAUUSD": {"margin_rate": 0.066667}, "USDJPY": {"margin_rate": 0.033335},
+            "US100": {"margin_rate": 0.066667}, "GER40": {"margin_rate": 0.066670}}
+    ok = brain._live_truth_audit("P1", real)
+    assert ok["mrate_divergence_breach"] is False      # notre valeur est exacte
+    assert ok["mrate_worst_rel_diff"] < 1e-3
+
+    changed = dict(real, XAUUSD={"margin_rate": 0.111111})   # or 1:15 -> 1:9
+    bad = brain._live_truth_audit("P1", changed)
+    assert bad["mrate_divergence_breach"] is True
+    assert abs(bad["mrate_worst_rel_diff"]) > 0.3
+
+
+def test_mrate_audit_degrades_without_live_specs():
+    """Dry-run / specs partielles : jamais de crash, jamais de faux breach."""
+    import brain
+    none = brain._live_truth_audit("P1", None)
+    assert none["mrate_vs_live"] == "indisponible"
+    assert none["mrate_divergence_breach"] is False
+    partial = brain._live_truth_audit("P1", {"XAUUSD": {"margin_rate": None}})
+    assert partial["mrate_vs_live"]["XAUUSD"] is None
+    assert partial["mrate_divergence_breach"] is False
+
+
+def test_legs_order_identical_across_modules():
+    """L'appariement mr[i] <-> LEGS[i] n'est garanti que si les deux LEGS coïncident.
+
+    Sans ça, une divergence de marge serait comparée à la mauvaise jambe EN SILENCE.
+    L'audit a montré que le test de divergence ne le prouve PAS (les 3 jambes
+    non-JPY partagent 0.066667, donc un échange XAUUSD<->US100 passe inaperçu) :
+    c'est CE test qui porte la garantie.
+    """
+    import lib
+    assert list(lib.LEGS) == list(E.LEGS) == ["XAUUSD", "USDJPY", "US100", "GER40"]
+    assert len(E.MRATE_SWING) == len(E.LEGS)
+
+
+def test_mrate_divergence_catches_non_jpy_leg():
+    """Divergence sur US100 SEUL — le cas que le test précédent ne discriminait pas."""
+    import brain
+    real = {"XAUUSD": {"margin_rate": 0.066667}, "USDJPY": {"margin_rate": 0.033334},
+            "US100": {"margin_rate": 0.066667}, "GER40": {"margin_rate": 0.066667}}
+    bad = brain._live_truth_audit("P1", dict(real, US100={"margin_rate": 0.10}))
+    assert bad["mrate_divergence_breach"] is True
+    assert bad["mrate_vs_live"]["US100"]["rel_diff"] < -0.3
+    assert bad["mrate_vs_live"]["XAUUSD"]["rel_diff"] == 0.0      # les autres intacts
+
+
+def test_mrate_fallback_branch_declares_repli(monkeypatch):
+    """Branche REPLI : c'est elle qui arme l'alerte `mrate_fallback`, elle doit être testée."""
+    monkeypatch.delattr(E, "MRATE_SWING", raising=False)
+    cfg = governor.phase_cfg("P1")
+    assert cfg["mrate_source"].startswith("REPLI")
+    assert cfg["mrate"] == [0.066667, 0.033334, 0.066667, 0.066667]   # valeur préservée
+
+
+def test_worst_rel_diff_absent_does_not_crash_supervisor_format():
+    """Specs broker indisponibles -> la clé est ABSENTE puis écrite `null` en aval.
+    `get(k, 0)` ne protège PAS (la clé existe) : seul `or 0` évite le TypeError."""
+    import brain
+    out = brain._live_truth_audit("P1", None)
+    assert "mrate_worst_rel_diff" not in out
+    bs_lt = dict(mrate_worst_rel_diff=out.get("mrate_worst_rel_diff"))   # -> None
+    assert float(bs_lt.get("mrate_worst_rel_diff") or 0) == 0.0
