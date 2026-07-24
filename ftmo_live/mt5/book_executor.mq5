@@ -1423,12 +1423,13 @@ string JjsStr(string txt, string key)
 void SaveState()
   {
    string js=StringFormat(
-      "{\"anchor_balance\":%.2f,\"anchor_date\":\"%s\",\"opened_today\":%d,"
+      "{\"account_login\":%I64d,\"anchor_balance\":%.2f,\"anchor_date\":\"%s\",\"opened_today\":%d,"
       "\"flat_today\":%d,\"breaker_today\":%d,\"open_days\":%d,\"zombie\":%d,"
       "\"wd_tdays\":%d,\"micro_state\":%d,\"or_hi\":%.5f,\"or_lo\":%.5f,"
       "\"or_end_close\":%.5f,\"micro_entry\":%.5f,\"micro_be\":%d,"
       "\"d09\":%d,\"d1530\":%d,\"dor\":%d,\"d16\":%d,\"d1735\":%d,\"d2130\":%d,"
       "\"d2145\":%d,\"d22\":%d,\"d2205\":%d,\"d2258\":%d,\"exit_scan\":%d}",
+      AccountInfoInteger(ACCOUNT_LOGIN),
       g_anchor_balance, g_anchor_date, g_opened_today?1:0, g_flat_today?1:0,
       g_breaker_today?1:0, g_open_days, g_zombie_days, g_wd_tdays, g_micro_state,
       g_or_hi, g_or_lo, g_or_end_close, g_micro_entry, g_micro_be?1:0,
@@ -1445,6 +1446,26 @@ void LoadState()
    string txt="";
    while(!FileIsEnding(h)) txt+=FileReadString(h)+"\n";
    FileClose(h);
+   // v2.6 (audit B, M4) : garde bascule de compte. Le garde anchor_date ci-dessous
+   // ne couvre que « autre JOUR » ; une bascule de compte le MÊME jour sans purge
+   // manuelle de ea_state.json chargeait l'ancre de l'ANCIEN compte → BreakerLine
+   // calculée sous le static floor du nouveau compte = ZÉRO protection avant breach.
+   // Discriminant EXACT = le login (pas un seuil de balance : le P&L intraday fait
+   // légitimement diverger balance et ancre). Login absent (vieux format) = 0 via
+   // JjsNum → garde ignoré (rétro-compat, aucun ré-ancrage parasite).
+   long st_login=(long)JjsNum(txt, "account_login");
+   long cur_login=AccountInfoInteger(ACCOUNT_LOGIN);
+   // cur_login!=0 OBLIGATOIRE (audit indépendant) : au restart watchdog, OnInit peut
+   // tourner AVANT l'autorisation serveur → ACCOUNT_LOGIN lit 0 transitoirement. Sans
+   // ce garde, st_login(réel)!=0 déclencherait un ré-ancrage PARASITE sur le chemin
+   // chaud de CHAQUE restart → perte du latch breaker persisté = défait le fix v2.5.
+   // Un vrai switch pendant une lecture 0 est rattrapé à l'OnInit suivant (login résolu).
+   if(st_login!=0 && cur_login!=0 && st_login!=cur_login)
+     {
+      Print(StringFormat("LoadState: ea_state.json d'un AUTRE compte (state %I64d != live %I64d)"
+            " — état IGNORÉ, ré-ancrage sur le compte courant", st_login, cur_login));
+      return;   // globals restent aux défauts frais → OnInit ré-ancre (g_anchor_date=="")
+     }
    if(JjsStr(txt, "anchor_date")!=ParisDate()) return;   // autre jour: rollover gérera
    g_anchor_balance=JjsNum(txt, "anchor_balance");
    g_anchor_date   =JjsStr(txt, "anchor_date");
