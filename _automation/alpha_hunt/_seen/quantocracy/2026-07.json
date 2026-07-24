@@ -132,6 +132,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "56ebc017a6616340f9eadd3900c4a521": {
+    "first_seen": "2026-07-24 07:30",
+    "source": "quantocracy",
+    "title": "Getting the Target Right in Return Prediction [Quantpedia]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "573462c6c0630befe0dc2c1d1c2bc4ee": {
     "first_seen": "2026-07-10 06:30",
     "source": "quantocracy",
@@ -144,6 +151,13 @@
     "source": "quantocracy",
     "title": "State-Space Models for Price: CryptoMamba vs Transformers (Skeptical) [Aligrithm",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "67b9672a75ca372deb391939a9dab8c4": {
+    "first_seen": "2026-07-24 07:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/23/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "6c24646b812dca5cb6c4ee59a9bae5ca": {
@@ -234,6 +248,13 @@
     "first_seen": "2026-07-19 07:00",
     "source": "quantocracy",
     "title": "Timing Equity Factors with Momentum [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "b0a7b17f47f615768a4b0d5642842027": {
+    "first_seen": "2026-07-24 07:30",
+    "source": "quantocracy",
+    "title": "What Should You Change First in a Crypto Backtest? 99.75 Million Tests [Rulyfi]",
     "decision": "accepted",
     "promising_file": null
   },
@@ -339,6 +360,13 @@
     "first_seen": "2026-07-22 06:30",
     "source": "quantocracy",
     "title": "Can Machines Learn Weak Signals? Ridge > Zero > Lasso [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "f1f0856abeda186aa4a948844b2d1d8d": {
+    "first_seen": "2026-07-24 07:30",
+    "source": "quantocracy",
+    "title": "Algorithmic Trading, HFT, and Market Stability [Relative Value Arbitrage]",
     "decision": "accepted",
     "promising_file": null
   },
