@@ -51,7 +51,11 @@ def test_margin_cap_proportional_mirror(w):
     capped, _ = governor._call(4, cfg, w, 1.0, eq, pos, avg, PX,
                                START, START, quantize=False,
                                margin_cap=cfg["margin_cap"])
-    f = inv.margin_scale(raw, eq, cfg["margin_cap"])
+    # mrate explicite : depuis l'audit desk 2026-07-24, phase_cfg injecte le taux
+    # SWING live (le compte réel) ; le miroir doit être interrogé au MÊME taux,
+    # sinon on compare un cap Swing à un cap Standard (c'est ce décalage qui a
+    # laissé le brain dimensionner 2x trop large sans qu'aucun test ne le voie).
+    f = inv.margin_scale(raw, eq, cfg["margin_cap"], mrate=cfg["mrate"])
     assert np.allclose(np.asarray(capped), np.asarray(raw) * f, atol=1e-9)
 
 

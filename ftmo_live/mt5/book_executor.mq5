@@ -1269,8 +1269,33 @@ void Do2258EOD()
 //+------------------------------------------------------------------+
 //| state.json / fills.csv / ea_state.json                             |
 //+------------------------------------------------------------------+
+// v2.7 (audit desk dev#3) : dédup fills.csv par deal_ticket. Une sortie déclenchée
+// serveur (SL/TP dormant) est vue par DEUX chemins — ConfirmPendings (via ScanExitDeal)
+// ET DetectServerExits (scan d'historique) — qui appelaient tous deux LogFill sur le
+// MÊME deal. Prouvé en live le 2026-07-23 : deal 159697581 écrit 2x, la 2e ligne avec
+// un req_price jamais demandé (g_or_hi 28717.73) donc un slip fantôme de -91.32 bps.
+// Impact : bruit d'audit à 0.01 lot, mais $130-520 par événement sur le magic FORB en
+// FUNDED. « Premier écrit gagne » = on garde l'enregistrement de ConfirmPendings, qui
+// porte le vrai req_px (slip 0.79 mesuré) ; le fantôme est rejeté.
+// deal_tk<=0 (entrées) n'est jamais dédupliqué : elles loguent légitimement 0.
+#define FILL_DEDUP_N 64
+long g_logged_deals[FILL_DEDUP_N];
+int  g_logged_deals_n=0;
+
+bool FillAlreadyLogged(long deal_tk)
+  {
+   if(deal_tk<=0) return false;
+   int n=(g_logged_deals_n<FILL_DEDUP_N) ? g_logged_deals_n : FILL_DEDUP_N;
+   for(int i=0;i<n;i++)
+      if(g_logged_deals[i]==deal_tk) return true;
+   g_logged_deals[g_logged_deals_n % FILL_DEDUP_N]=deal_tk;
+   g_logged_deals_n++;
+   return false;
+  }
+
 void LogFill(Pending &p, double fill, double slip_bps, long deal_tk)
   {
+   if(FillAlreadyLogged(deal_tk)) return;             // v2.7 : anti double-journalisation
    int h=FileOpen("fills.csv", FILE_READ|FILE_WRITE|FILE_TXT|FILE_ANSI|FILE_SHARE_READ);
    if(h==INVALID_HANDLE) return;
    if(FileSize(h)==0)
