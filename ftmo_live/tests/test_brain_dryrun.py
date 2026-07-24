@@ -67,7 +67,11 @@ def test_targets_match_instrumented_engine(frozen, brain_weights, monkeypatch):
         return tgt, opened
 
     monkeypatch.setattr(E, "_target_for_segment", spy)
-    cfg = dict(C22.CFG_CHALLENGE, target=E.TARGET1, max_cal=C22.WALL)
+    # SWING + v2.4 : le brain (phase_cfg) modélise le compte RÉEL depuis l'audit desk
+    # 2026-07-24. Comparer à CFG_CHALLENGE (marge Standard 1:50) épinglerait le brain
+    # sur un sim mal calibré — c'est précisément ce que faisait ce test, et c'est
+    # pour ça que la dérive modèle/réel de 1.26 n'a été vue par personne.
+    cfg = dict(C22.CFG_CHALLENGE_V24_SWING, target=E.TARGET1, max_cal=C22.WALL)
     i = i0
     while i < M["n"] - 1:                      # chaîne de tentatives (funnel sim)
         r = V22.run_phase(M, i, WTa, ONa, cfg)

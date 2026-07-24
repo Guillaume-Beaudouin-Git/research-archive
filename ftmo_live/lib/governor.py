@@ -19,19 +19,44 @@ from . import spec as S
 PHASES = ("P1", "P2", "FUNDED")
 
 
+def _live_truth(cfg: dict) -> dict:
+    """Injecte les faits LIVE que la spec gelée ne porte pas (audit desk 2026-07-24, dev#2).
+
+    La spec yaml décrit la STRATÉGIE (gelée, sha pinné) ; ces deux-là décrivent le
+    BROKER et la VERSION D'EA, donc ils n'ont pas leur place dans le yaml :
+
+    - mrate : le compte réel est SWING (1:15, USDJPY 1:30). L'EA enforce le cap marge
+      60% au taux LIVE (OrderCalcMargin ~6.67%), mais le modèle Python utilisait le
+      défaut Standard (2%, 1:50) -> il dimensionnait ~2x plus large que l'EA n'exécute,
+      d'où une dérive modèle/réel de 1.26 et reconcile monté à 2/3 les 20-21/07.
+    - brk_mode/brk_needs_pos : sémantique EA v2.4+ (breaker daily-only qui se réarme,
+      conditionné à la présence de positions). Sans ça, toute fonction cleanroom
+      appelée avec ce cfg retomberait sur le breaker statique pré-v2.4 (le cliquet).
+    """
+    # getattr + littéral : le cleanroom du VPS peut être en retard sur main (constaté
+    # 2026-07-24). Sans ce fallback, déployer governor.py AVANT engine.py ferait
+    # crasher brain.py sur un AttributeError à 21:50 — un ordre de déploiement ne doit
+    # jamais pouvoir casser la chaîne live. Valeur = engine.MRATE_SWING.
+    cfg["mrate"] = list(getattr(E, "MRATE_SWING",
+                                [0.066667, 0.033334, 0.066667, 0.066667]))
+    cfg["brk_mode"] = "daily"
+    cfg["brk_needs_pos"] = True
+    return cfg
+
+
 def phase_cfg(phase: str) -> dict:
     """cfg sim de la phase: P1/P2 = challenge (P2 -> vm x p2_mult), FUNDED = funded."""
     sp = S.load()
     if phase == "FUNDED":
         cfg = dict(S.funded_cfg(sp))
         cfg["max_cal"] = None
-        return cfg
+        return _live_truth(cfg)
     cfg = dict(S.challenge_cfg(sp))
     cfg["target"] = float(S.rules(sp)["targets"]["phase1" if phase == "P1" else "phase2"])
     cfg["max_cal"] = S.wall_days(sp)
     if phase == "P2":
         cfg["vm"] = cfg["vm"] * cfg.get("p2_mult", 1.0)
-    return cfg
+    return _live_truth(cfg)
 
 
 def _stub(attempt_start: pd.Timestamp, today: pd.Timestamp) -> dict:
