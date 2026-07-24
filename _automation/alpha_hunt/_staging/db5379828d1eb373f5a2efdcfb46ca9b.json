@@ -1,0 +1,14 @@
+{
+  "hash": "db5379828d1eb373f5a2efdcfb46ca9b",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.21312v1",
+  "title": "Using Pre-Trends for Inference in Difference-in-Differences",
+  "url": "http://arxiv.org/abs/2607.21312v1",
+  "description": "Difference-in-differences (DID) are sometimes estimated with many pre-treatment periods. In such settings, the observed pre-treatment outcome evolutions provide direct information about the magnitude of shocks that could also occur after treatment. This paper proposes a simple inference procedure that uses those pre-trends as the reference distribution for the post-treatment DID. The procedure is closely related to existing conformal inference procedures, but its DID-specific predictor leads to a distinct identifying restriction. Existing procedures assume parallel trends, while this paper's procedure does not require parallel trends.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-24 01:00 UTC"
+}

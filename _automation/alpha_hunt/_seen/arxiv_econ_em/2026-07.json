@@ -370,6 +370,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8028a44fb91f3f39724e2a7094828e15": {
+    "first_seen": "2026-07-24 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Trust by Context, Not by Design? A Quantitative Study of Data Donation Willingne",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "83081b7ed644b178f4d2af702d6c7562": {
     "first_seen": "2026-07-07 02:00",
     "source": "arxiv_econ_em",
@@ -382,6 +389,13 @@
     "source": "arxiv_econ_em",
     "title": "Inference for Group Interaction Experiments",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "878f32f73f09ac40cd403b04c2b3e1ec": {
+    "first_seen": "2026-07-24 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Uniformly Consistent Semi-nonparametric Demand Estimation with Micro-Data",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "8aed675734e876396f82663f28951fee": {
@@ -510,6 +524,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "cd4f71d0b496ba26e5f61fe914c27029": {
+    "first_seen": "2026-07-24 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Stochastic Potential Choices and Outcomes",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d153ce6748832fbc945cbbc4bccdfca0": {
     "first_seen": "2026-07-07 03:30",
     "source": "arxiv_econ_em",
@@ -528,6 +549,13 @@
     "first_seen": "2026-07-21 03:00",
     "source": "arxiv_econ_em",
     "title": "Vector Search As Nearest Neighbor Matching: RAG-based Policy Learning in Causal ",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "db5379828d1eb373f5a2efdcfb46ca9b": {
+    "first_seen": "2026-07-24 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Using Pre-Trends for Inference in Difference-in-Differences",
     "decision": "accepted",
     "promising_file": null
   },
