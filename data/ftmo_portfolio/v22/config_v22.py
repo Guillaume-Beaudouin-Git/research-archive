@@ -67,8 +67,9 @@ MRATE_SWING = [0.066667, 0.033334, 0.066667, 0.066667]
 CFG_CHALLENGE_V24_SWING = dict(CFG_CHALLENGE_V24, mrate=MRATE_SWING)
 CFG_FUNDED_V24_SWING = dict(CFG_FUNDED_V24, mrate=MRATE_SWING)
 
-FEE = 96.0                   # challenge fee (refund au 1er payout). NB: réel = €99 SWING $10k permanent
-                             # (user 2026-07) ≈ $107 ; mise à jour devise-cohérente en suivi séparé
+FEE = 99.0                   # challenge fee €99 SWING $10k, PERMANENT (confirmé user 2026-07), refund au
+                             # 1er payout. NB devise : fee en EUR ; si la valeur funded (extr) est en USD,
+                             # appliquer ~1.08 EUR/USD pour être strict (fee ≈ $107) — écart ~8%, borné.
 WALL = 91                    # 3-month mission wall (calendar days)
 WINDOWS = (("IS", "2013-10-01", "2019-12-31"), ("OOS", "2020-01-02", "2026-02-25"))
 COHORT_STEP = 7
