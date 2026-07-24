@@ -52,7 +52,10 @@ MARGIN_ALERT_PCT = 50.0
 BRAIN_STALE_H = 25.0
 CAMPAIGN_BUDGET_USD = 400.0   # yaml live_gates: « budget 4+ fees (~$400) »
 
+BOOK_IDLE_ALERT_DAYS = 5      # ~1 semaine de séances sans moteur piloté par signal
+
 ALERTS_STATE = RUNTIME / "alerts_state.json"
+BOOK_STATE = RUNTIME / "book_state.json"
 SOD_DIR = RUNTIME / "sod"
 SNAP_PATH = RUNTIME / "snapshots.json"
 CAMPAIGN = RUNTIME / "campaign.json"
@@ -152,6 +155,63 @@ def _cooldown_ok(key: str, minutes: float, now: datetime) -> bool:
 def _alert(key: str, minutes: float, text: str, now: datetime) -> None:
     if _cooldown_ok(key, minutes, now):
         tg.send(f"🚨 FTMO live — {text}")
+
+
+def book_engine_streak(files_dir: Path) -> Optional[dict]:
+    """Les MOTEURS pilotés par signal (gold, J1) portent-ils du risque — et sinon, depuis
+    combien de jours-brain ?
+
+    Trou d'observabilité constaté le 2026-07-24 : w_xau = 0 pendant ~38-60 séances
+    consécutives (or flat, vote 2-1 des lookbacks à |sig| 0.3333 vs seuil 0.34) ET J1
+    suspendu par le gate depuis le 06/07 -> le livre DÉPLOYÉ était MONO (jambes ON
+    lun/mar + micro-ORB compteur) alors que tous les p(pass) cités décrivent le livre
+    COMPLET. Personne ne l'a vu : aucune alerte ni ligne de rapport ne posait la
+    question « le livre porte-t-il du risque aujourd'hui ? ». Écart mesuré :
+    p(campagne 91j) 82.5 % (complet) vs 53.7 % (MONO).
+
+    On ne regarde QUE les poids data (gold/J1) : `ea_on_day` est CALENDAIRE (lun+mar),
+    il remettrait la série à zéro chaque lundi et l'alerte ne partirait jamais.
+
+    Compteur idempotent par JOUR-BRAIN (clé `ea_valid_for_date`) : le superviseur tourne
+    plusieurs fois par jour, on ne compte qu'une fois par génération de targets.
+    """
+    t = statefiles.read_json(files_dir / "targets.json")
+    if not t:
+        return None
+    day = str(t.get("ea_valid_for_date", "") or "")
+    if not day:
+        return None
+    try:
+        engines_on = (abs(float(t.get("ea_w_xauusd", 0.0))) > 0.0
+                      or abs(float(t.get("ea_w_usdjpy", 0.0))) > 0.0)
+    except (TypeError, ValueError):
+        return None
+    st = statefiles.read_json(BOOK_STATE) or {}
+    if str(st.get("date", "")) != day:                     # nouveau jour-brain
+        st = dict(date=day,
+                  streak=0 if engines_on else int(st.get("streak", 0)) + 1)
+        statefiles.atomic_write_json(BOOK_STATE, st)
+    return dict(date=day, engines_on=engines_on, streak=int(st.get("streak", 0)),
+                w_xau=float(t.get("ea_w_xauusd", 0.0)),
+                w_jpy=float(t.get("ea_w_usdjpy", 0.0)),
+                on_day=int(t.get("ea_on_day", 0)) == 1)
+
+
+def _book_engine_line(files_dir: Path) -> str:
+    """Ligne de rapport « le livre porte-t-il du risque ? » — visibilité PASSIVE.
+
+    L'alerte (seuil BOOK_IDLE_ALERT_DAYS) ne suffit pas : c'est de voir cette ligne
+    chaque jour qui aurait fait remarquer les ~38-60 séances de moteurs coupés.
+    """
+    bk = book_engine_streak(files_dir)
+    if bk is None:
+        return "Moteurs: targets illisibles ⚠"
+    onl = " + jambes ON (lun/mar)" if bk["on_day"] else ""
+    if bk["engines_on"]:
+        return (f"Moteurs: gold {bk['w_xau']:+.2f} | J1 {bk['w_jpy']:+.2f} ✓ "
+                f"livre ACTIF{onl}")
+    return (f"Moteurs: gold {bk['w_xau']:+.2f} | J1 {bk['w_jpy']:+.2f} — "
+            f"⚠ LIVRE MONO depuis {bk['streak']} j{onl}")
 
 
 def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
@@ -291,6 +351,15 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
         _alert("brain", 60, f"brain_status {detail} — targets non régénérés "
                             f"({(bs or {}).get('error', '')})", now)
 
+    bk = book_engine_streak(files_dir)
+    if bk and not bk["engines_on"] and bk["streak"] >= BOOK_IDLE_ALERT_DAYS:
+        fired.append("book_idle")
+        _alert(f"book_idle_{day}", 24 * 60,
+               f"LIVRE MONO depuis {bk['streak']} jours-brain — moteurs gold ET J1 à 0 "
+               f"(le livre ne tourne que sur les jambes ON lun/mar + micro-ORB). "
+               f"p(campagne) mesuré ~53.7% vs ~82.5% livre complet : le challenge en "
+               f"cours coûte le même prix pour un ticket bien moins bon.", now)
+
     drift = swap_drift_last_night(files_dir, now)
     if drift and drift.get("gate_breach"):
         fired.append("swap_drift")
@@ -386,6 +455,7 @@ def build_morning(state: dict, files_dir: Path, now: datetime) -> str:
         f"Gouverneur: taper {gov.get('taper', '?')} glide {gov.get('glide', '?')} "
         f"pace {gov.get('pace', '?')} | breaker armé | "
         f"zombie {state.get('abandon_zombie_days', 0)}/5",
+        _book_engine_line(files_dir),
         "Programme: rebalance 22:05"
         + (" | GER40 17:35 + US100 22:05 (jour ON)" if on_day else "")
         + (" | micro-ORB armable 16:00" if micro_armed else " | micro-ORB OFF (jour ON)"

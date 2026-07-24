@@ -282,3 +282,50 @@ def test_reports_render(files_dir, runtime_isolated):
     assert "FTMO P1" in m and "Rooms" in m and "Programme" in m
     assert "PnL jour" in e and "Campagne" in e and "Réconciliation" in e
     assert "State:" in m and "State:" in e   # âge du state (dormant si marché fermé)
+
+
+# ---------------------------------------------------------------- livre MONO
+def _targets(files_dir, date, w_xau, w_jpy, on_day=0):
+    statefiles.atomic_write_json(
+        files_dir / "targets.json",
+        dict(ea_valid_for_date=date, ea_w_xauusd=w_xau, ea_w_usdjpy=w_jpy,
+             ea_on_day=on_day))
+    return files_dir
+
+
+def test_book_engine_streak_counts_through_on_days(tmp_path, monkeypatch):
+    """Le compteur MONO doit monter MALGRÉ les jours ON.
+
+    Régression du trou d'observabilité 2026-07-24 : `ea_on_day` est CALENDAIRE
+    (lun+mar). Le compter comme « du risque » remettrait la série à zéro chaque
+    lundi et l'alerte ne partirait JAMAIS — c'est exactement ce qui a laissé
+    ~38-60 séances de moteurs coupés passer inaperçues.
+    """
+    monkeypatch.setattr(supervisor, "BOOK_STATE", tmp_path / "book_state.json")
+    for i, (d, on) in enumerate([("2026-07-20", 1), ("2026-07-21", 1),
+                                 ("2026-07-22", 0)], start=1):
+        r = supervisor.book_engine_streak(_targets(tmp_path, d, 0.0, 0.0, on))
+        assert r["engines_on"] is False
+        assert r["streak"] == i
+
+
+def test_book_engine_streak_idempotent_and_resets(tmp_path, monkeypatch):
+    monkeypatch.setattr(supervisor, "BOOK_STATE", tmp_path / "book_state.json")
+    a = supervisor.book_engine_streak(_targets(tmp_path, "2026-07-22", 0.0, 0.0))
+    b = supervisor.book_engine_streak(_targets(tmp_path, "2026-07-22", 0.0, 0.0))
+    assert a["streak"] == b["streak"] == 1          # une seule fois par jour-brain
+    c = supervisor.book_engine_streak(_targets(tmp_path, "2026-07-23", 1.5, 0.0))
+    assert c["engines_on"] is True and c["streak"] == 0
+    # J1 seul suffit à réarmer le livre
+    d = supervisor.book_engine_streak(_targets(tmp_path, "2026-07-24", 0.0, -1.5))
+    assert d["engines_on"] is True and d["streak"] == 0
+
+
+def test_book_engine_line_and_missing_targets(tmp_path, monkeypatch):
+    monkeypatch.setattr(supervisor, "BOOK_STATE", tmp_path / "book_state.json")
+    line = supervisor._book_engine_line(_targets(tmp_path, "2026-07-22", 0.0, 0.0))
+    assert "MONO" in line
+    line = supervisor._book_engine_line(_targets(tmp_path, "2026-07-23", 1.5, 0.0))
+    assert "ACTIF" in line
+    (tmp_path / "targets.json").unlink()
+    assert "illisibles" in supervisor._book_engine_line(tmp_path)   # jamais de crash
