@@ -704,6 +704,15 @@ void FlattenAll(string reason)
       CloseLegLots(sym, magic, PositionGetDouble(POSITION_VOLUME), reason);
      }
    g_flat_today=true;
+   // v2.5 (audit B, C1/M1) : PERSISTER le latch immédiatement. Sans ceci, un
+   // restart MT5 le jour même (watchdog) après un breaker/target-lock rechargeait
+   // ea_state.json avec flat_today=0 (dernier SaveState = rollover 00:00) → l'EA
+   // rouvrait le book plein à 22:05 sur une journée déjà jugée en room<30% =
+   // breach direct du daily floor. SaveState() couvre les 3 appelants (breaker,
+   // target-lock, kill). Restaure aussi breaker_today en mémoire au reload → le
+   // supervisor re-voit l'état (state.json dérive des globals) et re-alerte.
+   // Le rollover 00:00 Paris purge flat_today=0 : le latch ne survit qu'INTRA-jour.
+   SaveState();
   }
 
 // confirmation asynchrone : entrée = delta de volume signé puis POSITION_PRICE_OPEN ;
