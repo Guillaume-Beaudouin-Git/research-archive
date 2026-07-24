@@ -64,7 +64,12 @@ def breaker_line(bal, cfg, initial=None):
     return max(limit, FLOOR / INIT * init) + cfg["breaker"] * budget
 MIN_OPEN_DAYS = 4
 LEGS = ["XAUUSD", "USDJPY", "US100", "GER40"]
-MRATE = np.array([0.02, 0.01, 0.02, 0.02])
+MRATE = np.array([0.02, 0.01, 0.02, 0.02])          # Standard-account (1:50) — DÉFAUT historique
+# Taux de marge réels du compte SWING FTMO (1:15 / USDJPY 1:30), lus serveur 2026-07 (essai4
+# live_specs). Le sim historique supposait Standard (2%) → cap 60% mordait ~2× moins qu'en live,
+# donc le sim SUR-dimensionnait les jambes ON. Passé via cfg["mrate"] (défaut = MRATE Standard →
+# non-régression préservée). Recalibration mesurée : p single 30→27%, campagne 93→83%.
+MRATE_SWING = [0.066667, 0.033334, 0.066667, 0.066667]
 LOT_UNITS = np.array([100.0, 100_000.0, 1.0, 1.0])   # contract size per 1.0 lot
 VSTEP = 0.01
 SCHED_MIN = [9 * 60, 15 * 60 + 30, 17 * 60 + 35, 22 * 60 + 5]
@@ -403,7 +408,7 @@ def _target_for_segment(s, i, M, WT, ON, cfg, bal, pos, avg, px0, i0, vm):
         return None, False
     mcap = cfg.get("margin_cap")
     if mcap is not None and eq > 0:
-        need = float(np.abs(tgt) @ MRATE)
+        need = float(np.abs(tgt) @ cfg.get("mrate", MRATE))   # cfg["mrate"]=MRATE_SWING pour le live-fidèle
         if cfg.get("margin_log") and (abs(tgt).sum() > 0):
             MARGIN_LOG.append(need / eq)
         if need > mcap * eq:
