@@ -54,7 +54,21 @@ CFG_FUNDED = dict(
 CFG_CHALLENGE_V24 = dict(CFG_CHALLENGE, brk_mode="daily", brk_needs_pos=True)
 CFG_FUNDED_V24 = dict(CFG_FUNDED, brk_mode="daily", brk_needs_pos=True)
 
-FEE = 96.0                   # challenge fee $96 (refunded at first payout)
+# --- v2.5 : marge SWING (compte RÉEL, 1:15 / USDJPY 1:30) — LIVE-FIDÈLE CANONIQUE ---
+# Le compte live est SWING ; l'EA enforce le cap 60% au taux LIVE (OrderCalcMargin ~6.67%).
+# Le sim historique supposait Standard (MRATE 2%, 1:50) → cap mordait ~2× moins → jambes ON
+# SUR-dimensionnées → p(pass) sim optimiste. Ces configs mettent cfg["mrate"]=MRATE_SWING pour
+# refléter le compte réel. Recalibration mesurée (2026-07-24) : p single 30.1→26.8%, campagne
+# 93.1→82.7%. Ce sont désormais les chiffres CANONIQUES pour toute décision (toujours bornes
+# hautes : le flash intra-bar reste non modélisé). Les configs V24 (marge Standard) sont
+# conservées pour la continuité avec les résultats de session antérieurs.
+# (valeur = engine.MRATE_SWING, inlinée ici pour éviter une dépendance d'import cleanroom)
+MRATE_SWING = [0.066667, 0.033334, 0.066667, 0.066667]
+CFG_CHALLENGE_V24_SWING = dict(CFG_CHALLENGE_V24, mrate=MRATE_SWING)
+CFG_FUNDED_V24_SWING = dict(CFG_FUNDED_V24, mrate=MRATE_SWING)
+
+FEE = 96.0                   # challenge fee (refund au 1er payout). NB: réel = €99 SWING $10k permanent
+                             # (user 2026-07) ≈ $107 ; mise à jour devise-cohérente en suivi séparé
 WALL = 91                    # 3-month mission wall (calendar days)
 WINDOWS = (("IS", "2013-10-01", "2019-12-31"), ("OOS", "2020-01-02", "2026-02-25"))
 COHORT_STEP = 7
