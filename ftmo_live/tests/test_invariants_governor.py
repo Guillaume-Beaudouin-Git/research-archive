@@ -94,6 +94,70 @@ def test_leg_leverage_clip_actually_bites():
     assert np.allclose(clipped[[0, 2, 3]], np.asarray(raw)[[0, 2, 3]])
 
 
+@pytest.mark.parametrize("s", [1, 2])
+def test_leg_cap_not_applied_on_close_segments(s):
+    """s=1 (09:00 GER40 off) et s=2 (15:30 US100 off) NE clippent PAS.
+
+    Côté EA, Do0900/Do1530 sont des TradeLegTo mono-jambe qui ne passent jamais
+    par CapQuantizeTrade, et lib/replay.py construit ces cibles en ligne : aucun
+    des deux ne clippe. Si le moteur clippait ici, il couperait une position J1
+    DÉTENUE que le live garderait — dans l'état de drawdown même que le cap doit
+    couvrir — et replay.py reproduisant l'EA, le reconcile ne le verrait JAMAIS.
+
+    Ce test est le SEUL garde-fou : la divergence est invisible dans les agrégats
+    (0 cohorte sur 462 ne bouge), donc aucun autre test ne rougirait.
+    """
+    cfg = dict(governor.phase_cfg("P1"), leg_lev_cap=CAPS_J1_12)
+    eq = 10000.0
+    # les deux jambes fermées doivent être non nulles, sinon le segment ne
+    # produit aucune cible (elif s == 1 and pos[3] != 0.0 / s == 2 and pos[2])
+    pos = np.array([0.0, 18.0 * eq, 7000.0, 5000.0])   # J1 détenue à 18x > cap
+    avg = np.array([np.nan, PX[1], PX[2], PX[3]])
+    tgt, _ = governor._call(s, cfg, (0.0, 0.0), 0.0, eq, pos, avg, PX,
+                            START, START, quantize=False, margin_cap=None)
+    assert tgt is not None
+    assert tgt[1] == pytest.approx(18.0 * eq), \
+        "le clip ne doit PAS s'appliquer aux segments de fermeture (miroir EA)"
+
+
+def test_leg_cap_applied_on_risk_segments():
+    """s=3 (17:35) et s=4 (22:05) clippent : ils passent par CapQuantizeTrade.
+
+    Les deux segments diffèrent : s=3 CONSERVE les jambes détenues (tgt=pos.copy()
+    puis seul GER40 est re-ciblé) tandis que s=4 RECALCULE J1 depuis les poids.
+    D'où deux montages distincts — sans quoi le test passerait à vide.
+    """
+    cfg = dict(governor.phase_cfg("P1"), leg_lev_cap=CAPS_J1_12)
+    eq = 10000.0
+    # s=3 : J1 détenue à 18x, conservée telle quelle par le segment -> clippée
+    pos = np.array([0.0, 18.0 * eq, 0.0, 0.0])
+    avg = np.array([np.nan, PX[1], np.nan, np.nan])
+    tgt, _ = governor._call(3, cfg, (0.0, 0.0), 1.0, eq, pos, avg, PX,
+                            START, START, quantize=False, margin_cap=None)
+    assert abs(tgt[1]) == pytest.approx(12.0 * eq), "s=3 doit clipper"
+    # s=4 : J1 recalculée depuis le poids -> poids fort pour dépasser le cap
+    raw, _ = governor._call(4, dict(cfg, leg_lev_cap=None), (0.0, 1.5), 1.0, eq,
+                            np.zeros(4), np.full(4, np.nan), PX, START, START,
+                            quantize=False, margin_cap=None)
+    assert abs(raw[1]) > 12.0 * eq, "montage trop faible : le cap ne mordrait pas"
+    tgt, _ = governor._call(4, cfg, (0.0, 1.5), 1.0, eq, np.zeros(4),
+                            np.full(4, np.nan), PX, START, START,
+                            quantize=False, margin_cap=None)
+    assert abs(tgt[1]) == pytest.approx(12.0 * eq), "s=4 doit clipper"
+
+
+def test_leg_cap_ignores_negative_and_zero():
+    """Miroir du garde `lc>0` de l'EA : None/0/négatif/NaN = pas de cap.
+
+    Une coquille yaml `USDJPY: -12.0` inverserait le signe de la cible côté
+    Python alors que l'EA l'ignorerait — divergence silencieuse.
+    """
+    eq, tgt = 10000.0, [0.0, 500000.0, 0.0, 0.0]
+    for bad in (0.0, -12.0, float("nan")):
+        out = inv.leg_leverage_clip(tgt, eq, [None, bad, None, None])
+        assert out[1] == pytest.approx(500000.0), f"cap={bad} doit être ignoré"
+
+
 @pytest.mark.parametrize("w", [(0.5, 1.4), (1.5, 1.5), (-1.0, 0.8)])
 def test_leg_cap_noop_when_disabled(w):
     """Clé absente == leg_lev_cap None == chiffres pinnés v2.2, strictement.

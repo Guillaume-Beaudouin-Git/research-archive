@@ -132,10 +132,17 @@ def preview(phase: str, wt_row, on_day: bool, bal: float, pos_usd: np.ndarray,
 
 
 def _probe_scale(cfg: dict, bal, pos, avg, px0, attempt_start, today) -> float:
-    """scale = vm*taper*glide*pace, extrait par appel-sonde (poids unité, sans cap)."""
+    """scale = vm*taper*glide*pace, extrait par appel-sonde (poids unité, sans cap).
+
+    `leg_lev_cap=None` explicite : la sonde lit tgt[0] (XAUUSD) pour en déduire le
+    scale du gouverneur. Si un cap était posé sur cette jambe, la sonde mesurerait
+    le CAP et non le scale — taper/glide/pace, déduits par ratios de sondes,
+    deviendraient faux dans tout le reporting (mesuré : 16.92 -> 12.00). Le cap
+    n'est pas un composant du gouverneur. (2e audit indépendant 2026-07-26.)
+    """
     eq = bal + E._mtm(pos, avg, px0)
     if eq <= 0:
         return 0.0
-    tgt, _ = _call(4, cfg, (1.0, 0.0), 0.0, bal, pos, avg, px0,
-                   attempt_start, today, quantize=False, margin_cap=None)
+    tgt, _ = _call(4, {**cfg, "leg_lev_cap": None}, (1.0, 0.0), 0.0, bal, pos, avg,
+                   px0, attempt_start, today, quantize=False, margin_cap=None)
     return float(tgt[0] / eq)
