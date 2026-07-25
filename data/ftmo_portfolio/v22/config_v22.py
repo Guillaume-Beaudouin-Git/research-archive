@@ -67,6 +67,22 @@ MRATE_SWING = [0.066667, 0.033334, 0.066667, 0.066667]
 CFG_CHALLENGE_V24_SWING = dict(CFG_CHALLENGE_V24, mrate=MRATE_SWING)
 CFG_FUNDED_V24_SWING = dict(CFG_FUNDED_V24, mrate=MRATE_SWING)
 
+# --- v2.8 : overlay risque leg_leverage_cap (yaml risk_overlays) ---
+# Le cap marge 60% est libellé en MARGE, pas en risque : 0.60/0.03333 = 18.05x de
+# notionnel pour USDJPY contre 9.0x pour les jambes à 6.667%. La jambe au pire skew
+# (2 des 3 breachs réels) reçoit donc 2x l'allocation des autres. Cap dur à 12x ->
+# le mouvement USDJPY nécessaire pour breacher le daily passe de 0.277% à 0.415%.
+# Coût en p(campagne) : INDISTINGUABLE DE ZÉRO sur [10x, 17x] (462 cohortes, tous les
+# CI90 traversent 0) ; le -1.52 pt mesuré à 12x est un tirage, pas un coût. Le seuil se
+# justifie par le tampon de queue (déterministe), JAMAIS par p(pass) : re-fitter sur
+# cette frontière serait de l'overfit pur (Lesson 10, L20).
+# None = pas de cap. Ordre LEGS = [XAUUSD, USDJPY, US100, GER40].
+# FUNDED = no-op mesuré (W_J1 max 1.50 à vm 1.0 -> 12x jamais atteint).
+# CFG_*_V24_SWING restent la référence SANS overlay pour les non-régressions pinnées.
+LEG_LEV_CAP = [None, 12.0, None, None]
+CFG_CHALLENGE_V28 = dict(CFG_CHALLENGE_V24_SWING, leg_lev_cap=LEG_LEV_CAP)
+CFG_FUNDED_V28 = dict(CFG_FUNDED_V24_SWING, leg_lev_cap=LEG_LEV_CAP)
+
 FEE = 99.0                   # challenge fee €99 SWING $10k, PERMANENT (confirmé user 2026-07), refund au
                              # 1er payout. NB devise : fee en EUR ; si la valeur funded (extr) est en USD,
                              # appliquer ~1.08 EUR/USD pour être strict (fee ≈ $107) — écart ~8%, borné.
@@ -108,8 +124,24 @@ MARGIN_RATES_STANDARD = {"XAUUSD": 1 / 30, "USDJPY": 1 / 100,
                          "US100": 1 / 50, "GER40": 1 / 50}
 MARGIN_RATES_SWING = {"XAUUSD": 1 / 9, "USDJPY": 1 / 30,
                       "US100": 1 / 15, "GER40": 1 / 15}
-SWING_MARGIN_STATUS = ("levier Swing officiel FTMO (forex 1:30, indices 1:15, "
-                       "métaux 1:9) — À CONFIRMER sur specs serveur Swing au déploiement")
+SWING_MARGIN_STATUS = ("levier Swing PUBLIÉ FTMO (forex 1:30, indices 1:15, métaux 1:9) "
+                       "— NON OBSERVÉ sur le serveur du compte armé : mesure 2026-07-24 = "
+                       "1:15 pour XAUUSD (0.066667), pas 1:9. Conservé comme ancre "
+                       "DOCUMENTAIRE et comme fallback CONSERVATEUR d'enforcement du cap "
+                       "marge côté EA (MarginRateEff), jamais comme borne de sanité seule.")
+# v2.8 : marge SWING RÉELLEMENT MESURÉE sur le compte armé <ACCOUNT_ID> (state.json
+# live_specs, 2026-07-24 23:54). C'est la seule des cinq valeurs du repo qui décrit
+# le serveur : ni policy 2%, ni Standard 3.33%, ni officiel 11.11%, ni trial 6.30%.
+# Ajoutée comme TROISIÈME ancre de sanité (ne REMPLACE pas swing_official) : la
+# marge live tombait hors des deux ancres existantes par construction — 6.667% est
+# exactement entre 3.333% et 11.111% — d'où spec_bounds_breach allumé en permanence,
+# donc AVEUGLE à toute dérive future. Remplacer swing_official aurait aussi relâché
+# le fallback conservateur de MarginRateEff (0.60/0.1111=5.4x -> 0.60/0.0667=9x).
+MARGIN_RATES_SWING_MEASURED = {"XAUUSD": 0.066667, "USDJPY": 0.033335,
+                               "US100": 0.066667, "GER40": 0.066670}
+SWING_MARGIN_MEASURED_READ_DATE = "2026-07-24"
+SWING_MARGIN_MEASURED_SOURCE = ("FTMO Swing $10k compte armé <ACCOUNT_ID> — "
+                                "state.json live_specs (OrderCalcMargin serveur)")
 SANITY_BOUND_SWAP_REL = 0.25   # |pts live - ancre|/|ancre| max avant alerte
 SANITY_BOUND_MARGIN_REL = 0.25
 
