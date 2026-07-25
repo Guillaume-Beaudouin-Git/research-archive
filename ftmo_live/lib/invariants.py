@@ -137,8 +137,11 @@ def leg_leverage_clip(tgt_usd: Sequence[float], eq: float,
     t = np.asarray(tgt_usd, float).copy()
     if caps is None or eq <= 0:
         return t
+    # `if c` couvre None ET 0 : l'EA encode "pas de cap" par 0 (les #define MQL5
+    # n'ont pas de None). Ne traiter que None ferait qu'un cap 0.0 flattenerait la
+    # jambe ici et serait ignoré par l'EA — comportements OPPOSÉS.
     for k, c in enumerate(caps):
-        if c is not None:
+        if c:
             t[k] = float(np.clip(t[k], -c * eq, c * eq))
     return t
 
