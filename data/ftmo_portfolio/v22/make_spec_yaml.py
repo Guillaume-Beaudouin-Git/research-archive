@@ -199,12 +199,16 @@ spec = {
                 "source": C22.SWING_MARGIN_MEASURED_SOURCE,
             },
             "swing_status": C22.SWING_MARGIN_STATUS,
-            "bounds_note": ("v2.8 : la borne de sanité EA porte sur les TROIS ancres "
-                            "(standard_measured, swing_official, swing_measured). "
-                            "Avant v2.8 elle n'en portait que deux et la marge réelle "
-                            "(6.667%) tombait hors des deux -> alarme allumée en "
-                            "permanence donc aveugle. swing_official reste le fallback "
-                            "CONSERVATEUR d'enforcement (MarginRateEff), inchangé."),
+            "bounds_note": ("v2.8 : les ancres de SANITÉ (EA et miroir Python) sont "
+                            "{standard_measured, swing_measured}. swing_official en est "
+                            "EXCLU : a +/-25% ses bornes se soudent a celles de la mesure "
+                            "([0.0500,0.0833] u [0.0833,0.1389] pour XAUUSD), si bien que "
+                            "l'or passant a 1:9 — le headline_margin_swing, delta p(pass) "
+                            "-15.6 pt — serait accepte EN SILENCE. Avant v2.8 il n'y avait "
+                            "que 2 ancres et la marge reelle (6.667%) tombait hors des "
+                            "deux -> alarme permanente, donc canal aveugle par saturation. "
+                            "swing_official reste emis : il est le fallback CONSERVATEUR "
+                            "d'enforcement (MarginRateEff), role distinct, inchange."),
         },
     },
     "recost_v221": {
