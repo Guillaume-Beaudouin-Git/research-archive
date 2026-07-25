@@ -2,6 +2,24 @@
 *Chaque ancre régénérée par son run (v2.2 : 2026-06-10 ; v2.2.1 : 2026-06-11). Commandes
 depuis `v22/` ; stack gelé ; /usr/bin/python3. Toute future modification doit re-passer CE fichier.*
 
+> ## ADDENDUM v2.2.2 — lot EA v2.8 (2026-07-26)
+> **Le tableau ci-dessous est daté v2.2.1 et ses valeurs ne sont PAS réécrites** (le champ
+> `meta.nonregression` du yaml le référence comme « révision v2.2.1 » ; le réécrire imposerait
+> un nouveau re-gel de la chaîne). Pour la spec courante **v2.2.2**, les ancres #19 et #20 valent :
+>
+> | # | Ancre | v2.2.1 *(tableau ci-dessous)* | **v2.2.2 (courant)** |
+> |---|---|---|---|
+> | 19 | sha256 `spec_v22.yaml` | `56fbdde78a2e…` | **`3e7626f6d3fdc53050a9ad1097c13c8af05179d380f5090141c323561060563b`** |
+> | 20 | sha256 `spec_v22.mqh` | `2fc65503ef66…` | **`d8d3dcb1ad88ec6bf2338ef88c4710d8595d5a0e9f1ca847d9e0ab0c8fe0388b`** |
+> | — | commit de gel du yaml (pin P2) | `87b6cd4` | **`ad403cef`** |
+> | — | log Experts attendu à l'init | `SPEC OK v2.2.1 sha 56fbdde78a2e…` | **`SPEC OK v2.2.2 sha 3e7626f6d3fd…`** |
+>
+> Les deux régénérations restent BYTE-IDENTIQUES ×2 (ancres #19/#20 tenues) et le drift-check
+> `challenge.config`/`funded.config` PASSE inchangé : l'overlay `risk_overlays.leg_leverage_cap`
+> vit HORS de ces blocs, donc **tous les chiffres pinnés v2.2 se reproduisent à l'identique**
+> avec un cfg sans overlay — vérifié A/B sur 462 cohortes (82.47 % / 381, 0 cohorte divergente).
+> Contenu du lot et raisons : `ea/README_BUILD.md` §« Re-geler la chaîne ».
+
 | # | Commande / source | Ancre attendue | Tolérance |
 |---|---|---|---|
 | 1 | `run_battery.py` → challenge_91 | IS 90.6 / OOS 83.4 / **pooled 87.0** | ±1.5 pt |

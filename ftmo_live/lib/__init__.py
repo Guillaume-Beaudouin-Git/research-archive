@@ -30,7 +30,8 @@ PIN_COMMITS = {
     "v22_spec_yaml": "ad403cefb7f8af9285acb1bdd424d0601080c5b5",
     "v22_ea_build": "79c6912a9639db1c08ac8c5449536bb293ce5a49",
 }
-# v2.2.2 (lot EA v2.8) : ancien mqh v2.2.1 = 2fc65503ef666d52… ; v2.2 = 1d83454602560c09…
+# v2.2.2 (lot EA v2.8) : ancien mqh v2.2.2-rc = c50dd642f6d138c8… (intermédiaire, 2 commits) ;
+# v2.2.1 = 2fc65503ef666d52… ; v2.2 = 1d83454602560c09…
 PIN_MQH_SHA256 = "d8d3dcb1ad88ec6bf2338ef88c4710d8595d5a0e9f1ca847d9e0ab0c8fe0388b"
 
 for _p in (str(V22), str(CLEANROOM)):
