@@ -59,6 +59,70 @@ def test_margin_cap_proportional_mirror(w):
     assert np.allclose(np.asarray(capped), np.asarray(raw) * f, atol=1e-9)
 
 
+CAPS_J1_12 = [None, 12.0, None, None]
+
+
+@pytest.mark.parametrize("w", [(0.5, 1.4), (1.5, 1.5), (-1.0, 0.8)])
+def test_leg_leverage_clip_mirror(w):
+    """Miroir == oracle sim, ET dans le bon ORDRE (clip AVANT le cap marge).
+
+    Si l'EA clippait après le cap marge et le sim avant, le reconcile produirait
+    un Δ inexpliqué chaque nuit où le cap mord -> gate STOP 3j à tort.
+    """
+    cfg = dict(governor.phase_cfg("P1"), leg_lev_cap=CAPS_J1_12)
+    pos, avg = np.zeros(4), np.full(4, np.nan)
+    eq = 10000.0
+    raw, _ = governor._call(4, dict(cfg, leg_lev_cap=None), w, 1.0, eq, pos, avg,
+                            PX, START, START, quantize=False, margin_cap=None)
+    capped, _ = governor._call(4, cfg, w, 1.0, eq, pos, avg, PX, START, START,
+                               quantize=False, margin_cap=cfg["margin_cap"])
+    clipped = inv.leg_leverage_clip(raw, eq, CAPS_J1_12)
+    f = inv.margin_scale(clipped, eq, cfg["margin_cap"], mrate=cfg["mrate"])
+    assert np.allclose(np.asarray(capped), np.asarray(clipped) * f, atol=1e-9)
+
+
+def test_leg_leverage_clip_actually_bites():
+    """Garde-fou : sans ceci les tests miroir passeraient sur un clip inopérant."""
+    cfg = dict(governor.phase_cfg("P1"), leg_lev_cap=None)
+    pos, avg = np.zeros(4), np.full(4, np.nan)
+    eq = 10000.0
+    raw, _ = governor._call(4, cfg, (1.5, 1.5), 1.0, eq, pos, avg, PX,
+                            START, START, quantize=False, margin_cap=None)
+    assert abs(raw[1]) > 12.0 * eq, "cas de test trop faible : le cap ne mord pas"
+    clipped = inv.leg_leverage_clip(raw, eq, CAPS_J1_12)
+    assert abs(clipped[1]) == pytest.approx(12.0 * eq, abs=1e-9)
+    assert np.allclose(clipped[[0, 2, 3]], np.asarray(raw)[[0, 2, 3]])
+
+
+@pytest.mark.parametrize("w", [(0.5, 1.4), (1.5, 1.5), (-1.0, 0.8)])
+def test_leg_cap_noop_when_disabled(w):
+    """Clé absente == leg_lev_cap None == chiffres pinnés v2.2, strictement.
+
+    Écrit sans supposer ce que porte le yaml courant : c'est la NON-RÉGRESSION
+    des 462 cohortes qui est testée, pas la valeur du cap du jour.
+    """
+    base = dict(governor.phase_cfg("P1"))
+    without = {k: v for k, v in base.items() if k != "leg_lev_cap"}
+    pos, avg = np.zeros(4), np.full(4, np.nan)
+    eq = 10000.0
+    args = dict(quantize=False, margin_cap=base["margin_cap"])
+    t_absent, _ = governor._call(4, without, w, 1.0, eq, pos, avg, PX,
+                                 START, START, **args)
+    t_none, _ = governor._call(4, dict(base, leg_lev_cap=None), w, 1.0, eq, pos,
+                               avg, PX, START, START, **args)
+    assert np.allclose(np.asarray(t_absent), np.asarray(t_none), atol=0.0)
+
+
+def test_leg_leverage_clip_edge_cases():
+    caps = CAPS_J1_12
+    assert np.allclose(inv.leg_leverage_clip([1.0, 9e9, 2.0, 3.0], 0.0, caps),
+                       [1.0, 9e9, 2.0, 3.0]), "eq<=0 doit être un no-op fail-safe"
+    assert np.allclose(inv.leg_leverage_clip([1.0, 9e9, 2.0, 3.0], 100.0, None),
+                       [1.0, 9e9, 2.0, 3.0]), "caps None doit être un no-op"
+    # symétrie : le cap borne la VALEUR ABSOLUE, short compris
+    assert inv.leg_leverage_clip([0, -9e9, 0, 0], 1000.0, caps)[1] == -12000.0
+
+
 @pytest.mark.parametrize("leg,price", [("XAUUSD", 3312.55), ("USDJPY", 144.831),
                                        ("US100", 21577.2), ("GER40", 24011.8)])
 @pytest.mark.parametrize("notional", [-150000.0, -42137.5, 0.0, 137.0, 5000.0,

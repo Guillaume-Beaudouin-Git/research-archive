@@ -122,6 +122,27 @@ def governor_scale(eq: float, vm: float, taper_frac: float, glide_frac: float,
     return s
 
 
+def leg_leverage_clip(tgt_usd: Sequence[float], eq: float,
+                      caps: Optional[Sequence[Optional[float]]]) -> np.ndarray:
+    """Cap de NOTIONNEL par jambe, à appliquer AVANT le cap marge (overlay v2.8).
+
+    Miroir EXACT de cleanroom.engine._target_for_segment. L'ORDRE compte : clipper
+    après le cap marge donnerait des cibles différentes, donc un Δ reconcile
+    inexpliqué à chaque nuit où le cap mord (et un gate STOP 3j déclenché à tort).
+
+    caps[k] None (ou caps None) = pas de cap. Unité = notionnel/equity, donc
+    invariante en vm — à ne pas confondre avec LEG_CAP_PRE_VM, garde-fou
+    anti-lot-aberrant côté EA qui, lui, suit vm.
+    """
+    t = np.asarray(tgt_usd, float).copy()
+    if caps is None or eq <= 0:
+        return t
+    for k, c in enumerate(caps):
+        if c is not None:
+            t[k] = float(np.clip(t[k], -c * eq, c * eq))
+    return t
+
+
 def margin_scale(tgt_usd: Sequence[float], eq: float, cap: float,
                  mrate: Sequence[float] = E.MRATE) -> float:
     """Facteur de scaling proportionnel toutes jambes si besoin > cap x equity."""

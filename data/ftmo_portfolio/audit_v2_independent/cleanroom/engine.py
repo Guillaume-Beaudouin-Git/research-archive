@@ -406,6 +406,19 @@ def _target_for_segment(s, i, M, WT, ON, cfg, bal, pos, avg, px0, i0, vm):
         opened = bool(abs(tgt[0]) > 0 or abs(tgt[1]) > 0 or tgt[2] > 0)
     if tgt is None:
         return None, False
+    # --- overlay risque v2.8 : cap de NOTIONNEL par jambe, AVANT le cap marge ---
+    # Le cap marge est libellé en MARGE : 0.60/0.03333 = 18.05x pour USDJPY contre
+    # 9.0x pour les jambes à 6.667% -> la jambe au pire skew reçoit 2x l'allocation.
+    # Unité = notionnel/equity, donc INVARIANTE EN vm (ne pas confondre avec
+    # LEG_CAP_PRE_VM côté EA, garde-fou anti-lot-aberrant qui, lui, suit vm).
+    # Appliqué AVANT le cap marge : écrêter J1 libère de la marge pour les autres
+    # jambes au lieu de les raboter proportionnellement.
+    # Défaut None => NO-OP STRICT : aucun chiffre pinné v2.2 ne bouge.
+    llc = cfg.get("leg_lev_cap")
+    if llc is not None and eq > 0:
+        for k in range(4):
+            if llc[k] is not None and abs(tgt[k]) > llc[k] * eq:
+                tgt[k] = llc[k] * eq if tgt[k] > 0 else -llc[k] * eq
     mcap = cfg.get("margin_cap")
     if mcap is not None and eq > 0:
         need = float(np.abs(tgt) @ cfg.get("mrate", MRATE))   # cfg["mrate"]=MRATE_SWING pour le live-fidèle

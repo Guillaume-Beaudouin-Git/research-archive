@@ -55,12 +55,17 @@ def phase_cfg(phase: str) -> dict:
     if phase == "FUNDED":
         cfg = dict(S.funded_cfg(sp))
         cfg["max_cal"] = None
+        # Overlay risque v2.8 : POLICY (change les cibles), donc il vient du yaml
+        # gelé — surtout PAS de _live_truth, qui est réservé aux faits BROKER et
+        # VERSION D'EA. Y glisser un plafond de levier contournerait l'ancre #19.
+        cfg["leg_lev_cap"] = S.leg_lev_cap_vector(sp, "funded")
         return _live_truth(cfg)
     cfg = dict(S.challenge_cfg(sp))
     cfg["target"] = float(S.rules(sp)["targets"]["phase1" if phase == "P1" else "phase2"])
     cfg["max_cal"] = S.wall_days(sp)
     if phase == "P2":
         cfg["vm"] = cfg["vm"] * cfg.get("p2_mult", 1.0)
+    cfg["leg_lev_cap"] = S.leg_lev_cap_vector(sp, "challenge")
     return _live_truth(cfg)
 
 

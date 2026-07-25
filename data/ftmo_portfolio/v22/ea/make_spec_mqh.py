@@ -37,13 +37,31 @@ for s in LEGS4:
         f"#define ANCHOR_R3D_{s}     {mql_dow}   // ENUM_DAY_OF_WEEK",
         f"#define MARGIN_STD_{s}     {ms['margin_rates']['standard_measured'][s]:.6f}",
         f"#define MARGIN_SWING_{s}   {ms['margin_rates']['swing_official'][s]:.6f}",
+        # v2.8 : TROISIÈME ancre = marge Swing réellement mesurée sur le compte armé.
+        # La borne de sanité EA teste les trois ; MARGIN_SWING_ (officiel) reste le
+        # fallback CONSERVATEUR de MarginRateEff, donc l'enforcement est inchangé.
+        f"#define MARGIN_MEAS_{s}    {ms['margin_rates']['swing_measured'][s]:.6f}",
     ]
 SANITY_BLOCK = "\n".join(sanity_lines)
+
+# ---- v2.8 : overlay risque leg_leverage_cap (0 = pas de cap) ----
+_ro = (spec.get("risk_overlays") or {}).get("leg_leverage_cap") or {}
+_ro_on = bool(_ro.get("enabled"))
+_ro_caps = _ro.get("caps") or {}
+
+
+def _legcap(s):
+    v = _ro_caps.get(s)
+    return "0" if (not _ro_on or v is None) else f"{float(v):g}"
+
+
+LEGCAP_BLOCK = "\n".join(
+    f"#define LEG_LEV_CAP_{s}   {_legcap(s)}" for s in LEGS4)
 
 mqh = f"""//+------------------------------------------------------------------+
 //| spec_v22.mqh — GÉNÉRÉ depuis spec_v22.yaml par make_spec_mqh.py  |
 //| NE PAS ÉDITER À LA MAIN (ancre #20: régénération byte-identique). |
-//| Pins: 605f4a4 + 4e1bac5 + 87b6cd4 ; yaml sha {brain.PIN_SHA256[:8]}…            |
+//| Pins: {brain.PIN_COMMITS['v22_contract'][:7]} + {brain.PIN_COMMITS['v22_residuals'][:7]} + {brain.PIN_COMMITS['v22_spec_yaml'][:7]} ; yaml sha {brain.PIN_SHA256[:8]}…            |
 //+------------------------------------------------------------------+
 #define SPEC_VERSION        "{spec['meta']['version']}"
 #define SPEC_SHA256         "{brain.PIN_SHA256}"
@@ -88,6 +106,12 @@ mqh = f"""//+------------------------------------------------------------------+
 #define MRATE_GER40         {f(mg['rates']['GER40'])}
 #define LOT_STEP            0.01
 #define LEG_CAP_PRE_VM      {f(g['leg_cap_pre_vm'])}
+
+// ---- v2.8 : cap de NOTIONNEL par jambe (risk_overlays.leg_leverage_cap) ----
+// Unité = notionnel/equity, INVARIANTE EN vm. Appliqué AVANT le cap marge.
+// 0 = pas de cap. À NE PAS confondre avec LEG_CAP_PRE_VM ci-dessus (garde-fou
+// anti-lot-aberrant à 42x eq, libellé pre-vm donc suiveur de vm).
+{LEGCAP_BLOCK}
 
 // ---- MICRO-ORB = LE compteur de jours (bloc micro_orb_day_counter du yaml) ----
 // entrée canonique post-OR (OR 15:30-16:00 CET, fill premier bar 5min post-OR);

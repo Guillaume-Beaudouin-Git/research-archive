@@ -1,11 +1,11 @@
 # ftmo_live — exécution automatisée du book CHALLENGE v2.2 + reporting Telegram
 
-Spec exécutable : `data/ftmo_portfolio/v22/spec_v22.yaml` **v2.2.1** (sha `56fbdde78a2e…`,
-re-cost data-only — policy v2.2 inchangée). Pins baseline : **605f4a4 + 4e1bac5 + 87b6cd4 +
+Spec exécutable : `data/ftmo_portfolio/v22/spec_v22.yaml` **v2.2.2** (sha `1f3081bfbfd0…`,
+re-cost data-only — policy v2.2 inchangée). Pins baseline : **605f4a4 + 4e1bac5 + ae52ea5 +
 79c6912** + commit recost v2.2.1 (pin de déploiement, `v22/RECOST_v2.2.1.md`).
 Cible : **compte démo FTMO neuf** ; bascule démo→challenge = changement de login MT5 uniquement.
 Aucune constante manuelle : brain charge le yaml (loader épinglé `v22/ea/brain.py`, drift-check),
-l'EA inclut `v22/ea/spec_v22.mqh` généré (sha `2fc65503ef66…`) et refuse de trader sans
+l'EA inclut `v22/ea/spec_v22.mqh` généré (sha `c50dd642f6d1…`) et refuse de trader sans
 `MQL5/Files/spec_v22.sha256` identique (**à re-déposer : contenu = nouveau sha yaml**).
 `ORB_RT_BPS` reste `era` — **aucun ré-ancrage avant le verdict N=60 du 2026-06-15**
 (procédure : `NONREGRESSION_v2.2.md`, branche kill RETIRÉE).

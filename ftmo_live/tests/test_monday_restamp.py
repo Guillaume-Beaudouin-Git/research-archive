@@ -18,7 +18,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import monday_restamp as MR  # noqa: E402
 
-SHA = "56fbdde78a2e5c4365e8e0f5bbda06d3697a198beccbcbf2dd02deea0eb27928"
+SHA = "1f3081bfbfd04be29f886ad85459305bdc4a5dd740d488b462f6a15048cac4bb"
 MON = datetime(2026, 6, 29, 13, 0, 0)   # lundi 13:00 Paris
 TUE = datetime(2026, 6, 30, 13, 0, 0)   # mardi
 

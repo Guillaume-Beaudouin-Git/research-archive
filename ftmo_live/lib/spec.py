@@ -8,7 +8,7 @@ import importlib.util
 from functools import lru_cache
 from typing import Optional
 
-from . import EA_DIR, PIN_MQH_SHA256, REPO
+from . import EA_DIR, LEGS, PIN_MQH_SHA256, REPO
 
 _LOADER_PATH = EA_DIR / "brain.py"
 
@@ -96,6 +96,35 @@ def measured_specs(s: Optional[dict] = None) -> dict:
     """Bloc v2.2.1 : specs mesurées datées (points, triple_dow, marge, bornes)."""
     s = s or load()
     return s["measured_specs"]
+
+
+def risk_overlays(s: Optional[dict] = None) -> dict:
+    """Bloc v2.8 : overlays de risque HORS challenge.config (drift-check intact).
+
+    `.get` et pas `[...]` : le bloc n'existe pas dans les specs gelées antérieures
+    à v2.2.2 — un accesseur qui lèverait sur une spec ancienne rendrait le code
+    incapable de tourner sur un rollback.
+    """
+    s = s or load()
+    return dict(s.get("risk_overlays") or {})
+
+
+def leg_lev_cap_vector(s: Optional[dict] = None,
+                       scope: str = "challenge") -> Optional[list]:
+    """Vecteur [XAUUSD, USDJPY, US100, GER40] de caps de notionnel/equity, ou None.
+
+    None (overlay absent, enabled=false, ou scope hors `applies_to`) => NO-OP
+    STRICT côté moteur : tous les chiffres pinnés v2.2 se reproduisent à
+    l'identique. `applies_to` est respecté ici, sinon le yaml mentirait sur son
+    propre périmètre.
+    """
+    ro = risk_overlays(s).get("leg_leverage_cap") or {}
+    if not ro.get("enabled"):
+        return None
+    if scope not in (ro.get("applies_to") or []):
+        return None
+    caps = ro.get("caps") or {}
+    return [caps.get(leg) for leg in LEGS]
 
 
 def triple_days(s: Optional[dict] = None) -> dict:
