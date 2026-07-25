@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "12e61816bd8fa59ad64d34610c0a732a": {
+    "first_seen": "2026-07-25 11:30",
+    "source": "github_python",
+    "title": "apache/superset",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1458529be81c43b4bcc0a659cdb65bed": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -314,6 +321,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "73c972504cc071fc10c4a13abf1a1dc3": {
+    "first_seen": "2026-07-25 11:30",
+    "source": "github_python",
+    "title": "OpenDCAI/DataFlow",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "73eacb1db440b43b3499df21eaeaa21f": {
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
@@ -346,6 +360,13 @@
     "first_seen": "2026-07-03 11:00",
     "source": "github_python",
     "title": "django/django",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "79d07c3f956d8754d7ada3661290b65b": {
+    "first_seen": "2026-07-25 11:30",
+    "source": "github_python",
+    "title": "VectifyAI/PageIndex",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -423,6 +444,13 @@
     "first_seen": "2026-07-01 11:00",
     "source": "github_python",
     "title": "omkarcloud/botasaurus",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a1346e21d1a1ce54a54a0a3c26b75388": {
+    "first_seen": "2026-07-25 11:30",
+    "source": "github_python",
+    "title": "NVlabs/Sana",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -657,6 +685,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e2b2b5d5de37879b6bebb33dded1bc15": {
+    "first_seen": "2026-07-25 11:30",
+    "source": "github_python",
+    "title": "jgravelle/jcodemunch-mcp",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e35f809a53f31cc0bb6b4b1a72b000bb": {
     "first_seen": "2026-07-16 06:30",
     "source": "github_python",
@@ -710,6 +745,13 @@
     "first_seen": "2026-07-04 11:00",
     "source": "github_python",
     "title": "jiji262/douyin-downloader",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ecfb0c673bef0bbd71b846615de45e4e": {
+    "first_seen": "2026-07-25 11:30",
+    "source": "github_python",
+    "title": "DedSecInside/TorBot",
     "decision": "rejected_L0",
     "promising_file": null
   },
