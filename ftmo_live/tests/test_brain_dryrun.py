@@ -71,7 +71,12 @@ def test_targets_match_instrumented_engine(frozen, brain_weights, monkeypatch):
     # 2026-07-24. Comparer à CFG_CHALLENGE (marge Standard 1:50) épinglerait le brain
     # sur un sim mal calibré — c'est précisément ce que faisait ce test, et c'est
     # pour ça que la dérive modèle/réel de 1.26 n'a été vue par personne.
-    cfg = dict(C22.CFG_CHALLENGE_V24_SWING, target=E.TARGET1, max_cal=C22.WALL)
+    # v2.8 : CFG_CHALLENGE_V28 = V24_SWING + overlay leg_leverage_cap. Le brain
+    # (phase_cfg) lit l'overlay depuis le yaml gelé ; comparer au sim SANS overlay
+    # ferait diverger les deux à chaque fois que le cap mord. C'est CE test qui
+    # prouve que les deux côtés appliquent le clip au même endroit de la chaîne
+    # (avant le cap marge) — la divergence d'ordre est le risque n°1 de l'overlay.
+    cfg = dict(C22.CFG_CHALLENGE_V28, target=E.TARGET1, max_cal=C22.WALL)
     i = i0
     while i < M["n"] - 1:                      # chaîne de tentatives (funnel sim)
         r = V22.run_phase(M, i, WTa, ONa, cfg)

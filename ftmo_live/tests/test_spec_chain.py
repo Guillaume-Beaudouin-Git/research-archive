@@ -25,8 +25,8 @@ def test_mqh_pin():
 
 def test_load_passes_and_drift_checked():
     s = spec.load()
-    assert s["meta"]["version"] == "v2.2.1"
-    assert "v2.2" in s["meta"]["policy_version"]          # recost = data-only
+    assert s["meta"]["version"] == "v2.2.2"               # v2.8: overlay leg_leverage_cap
+    assert "v2.2" in s["meta"]["policy_version"]
     assert s["challenge"]["config"]["orb_risk"] == 0.0
     assert s["challenge"]["config"]["micro_orb"] is True
     assert s["funded"]["ORB_RT_BPS"]["value"] == "era"
@@ -34,6 +34,29 @@ def test_load_passes_and_drift_checked():
     assert ms["read_date"] == "2026-06-10"
     assert ms["symbols"]["USDJPY"]["comm_side_usd_lot"] == 2.5
     assert ms["margin_rates"]["swing_official"]["XAUUSD"] == pytest.approx(1 / 9)
+    # v2.8 : 3e ancre = marge Swing MESURÉE sur le compte armé. swing_official
+    # (1:9) est conservé DOCUMENTAIRE + fallback conservateur d'enforcement ;
+    # c'est celle-ci qui décrit le serveur réel (1:15 pour l'or).
+    assert ms["margin_rates"]["swing_measured"]["XAUUSD"] == pytest.approx(0.066667)
+    assert ms["margin_rates"]["swing_measured"]["read_date"] == "2026-07-24"
+
+
+def test_leg_leverage_cap_overlay_frozen():
+    """L'overlay est POLICY : il doit vivre dans le yaml gelé, hors challenge.config.
+
+    Hors challenge.config est vital : le drift-check exige
+    challenge.config == dict(C22.CFG_CHALLENGE) ; l'y placer casserait le gel v2.2.
+    """
+    s = spec.load()
+    assert "leg_lev_cap" not in s["challenge"]["config"]
+    ro = s["risk_overlays"]["leg_leverage_cap"]
+    assert ro["enabled"] is True
+    assert ro["order"] == "before_margin_cap"
+    assert ro["caps"]["USDJPY"] == pytest.approx(12.0)
+    assert ro["caps"]["XAUUSD"] is None
+    assert spec.leg_lev_cap_vector(s, "challenge") == [None, 12.0, None, None]
+    assert spec.leg_lev_cap_vector(s, "funded") == [None, 12.0, None, None]
+    assert spec.leg_lev_cap_vector(s, "inexistant") is None
 
 
 def test_altered_yaml_rejected(tmp_path):

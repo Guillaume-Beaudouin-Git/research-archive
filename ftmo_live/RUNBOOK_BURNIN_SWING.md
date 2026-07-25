@@ -1,16 +1,16 @@
 # RUNBOOK — burn-in compte SWING $10k (build 2026-06-11)
 
-Baseline gelée 1947163 (chaîne yaml `56fbdde7…` / mqh `2fc65503…`). EA v1.01.
+Baseline gelée 1947163 (chaîne yaml `1f3081bf…` / mqh `c50dd642…`). EA v1.01.
 
 ## Déjà fait (session build 2026-06-11)
 
 | Étape | Preuve |
 |---|---|
-| Chaîne spec régénérée ×2 byte-identique (ancre #20) | mqh sha `2fc65503ef666d52…`, sha256 fichier = `56fbdde78a2e…` |
+| Chaîne spec régénérée ×2 byte-identique (ancre #20) | mqh sha `c50dd642f6d138c8…`, sha256 fichier = `1f3081bfbfd0…` |
 | mqh placé à côté de l'EA | `ftmo_live/mt5/spec_v22.mqh` |
 | Compilation MetaEditor (wine, VPS) | **0 errors, 0 warnings**, `mt5/build_2026-06-11.log` |
 | `.ex5` déployé | VPS `…/MQL5/Experts/ftmo_live/book_executor.ex5` sha `3670906b1f7e…` (= copie repo `mt5/book_executor.ex5`) |
-| `spec_v22.sha256` déposé | VPS `…/MQL5/Files/spec_v22.sha256` = `56fbdde7…` |
+| `spec_v22.sha256` déposé | VPS `…/MQL5/Files/spec_v22.sha256` = `1f3081bf…` |
 | Fix runtime tick_value=0 (lu serveur Swing 2026-06-11, 4/4 symboles) | `UsdPerUnitFallback()` = contract_size × 10^-digits **devise de cote → USD** (sémantique `measured_specs.swap_type` du yaml, même arithmétique que la validation swap : JPY ÷px, GER40 ×EURUSD) ; diag `UPU …` à l'init ; `ArmAssertUPU` à 17:35 / 22:05 / funded-ORB — aucun risque dimensionné si UPU≤0 |
 | Specs live vs bornes (v2.2.1) | déjà câblé : `ReadLiveSpecs()` lit SWAP_LONG/SHORT + ROLLOVER3DAYS + OrderCalcMargin à l'init + 22:05 + 21:45, bornes datées ±25 % (mqh) |
 
@@ -48,7 +48,7 @@ pré-enregistré = NULL, arm A reste) ; le clip dynamique + l'enforcement au tau
      corriger l'input (jamais les constantes).
    - Symboles : défauts mqh (`US100.cash`, `GER40.cash`, `XAUUSD`, `USDJPY`) — vérifier le
      Market Watch du compte Swing, ajuster les inputs si suffixes différents.
-   - Attendu au log Experts : `SPEC OK v2.2.1 sha 56fbdde78a2e…` ; 4 lignes `UPU <sym>: …
+   - Attendu au log Experts : `SPEC OK v2.2.2 sha 1f3081bfbfd0…` ; 4 lignes `UPU <sym>: …
      (live|FALLBACK)` toutes avec `usd_per_unit>0` ; `book_executor v2.2 INIT — phase 1…`.
      `INIT REFUSÉ` = spec_v22.sha256 absent/différent → STOP.
 4. **Soir 1 = OBSERVATION (sans armer)** : le kill-file `MQL5/Files/FLAT` est PRÉ-DÉPOSÉ →
@@ -62,7 +62,7 @@ pré-enregistré = NULL, arm A reste) ; le clip dynamique + l'enforcement au tau
    export→brain→targets→rebalance ne se valide qu'armé.
 5. **ARMER** : `rm "…/MQL5/Files/FLAT"` avant 15:30 Paris (journée pleine) ; vérifier
    `InpAttemptStart` = date du jour d'armement. Premiers événements : 21:45 export →
-   21:50 brain (targets.json, `ea_spec_sha256` = `56fbdde7…`) → 22:05 rebalance (fills
+   21:50 brain (targets.json, `ea_spec_sha256` = `1f3081bf…`) → 22:05 rebalance (fills
    XAUUSD/USDJPY ; lun+mar : +US100 22:05, GER40 17:35) ; micro-ORB dès le prochain jour
    OFF (mer-ven) 16:00.
 6. **Noter `margin_rate_live`** (state.json / market_export.json) dans ce runbook au premier
