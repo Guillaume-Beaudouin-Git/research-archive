@@ -79,7 +79,15 @@ def _u_vec(pos, avg, prices):
 
 # ------------------------------------------------- target with J1-band hook
 def _target_for_segment(s, i, M, WT, ON, cfg, bal, pos, avg, px0, i0, vm, obs):
-    """Clone of E._target_for_segment + j1_band hook + margin observation."""
+    """Clone of E._target_for_segment + j1_band hook + margin observation.
+
+    ATTENTION (v2.8, 2026-07-26) : ce clone est FIGÉ sur la sémantique v2.2 et
+    n'implémente PAS l'overlay risk_overlays.leg_leverage_cap (cap de notionnel
+    par jambe, USDJPY 12x) ajouté dans engine._target_for_segment. Relancer cette
+    étude avec CFG_CHALLENGE_V28 / CFG_FUNDED_V28 produirait silencieusement des
+    résultats SANS cap. Utiliser CFG_*_V24_SWING (sans overlay), ou porter le clip
+    ici — ne pas mélanger les deux.
+    """
     eq = bal + E._mtm(pos, avg, px0)
     room = (eq - FLOOR) / INIT
     taper = float(np.clip(room / cfg["taper"], 0.0, 1.0))

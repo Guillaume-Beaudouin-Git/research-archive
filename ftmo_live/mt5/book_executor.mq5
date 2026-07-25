@@ -880,12 +880,20 @@ void DetectServerExits()
       double slip=(fake.req_px>0) ? (px/fake.req_px-1.0)*fake.side*1e4 : 0.0;
       LogFill(fake, px, slip, (long)tk);
       if(m==magics[0] && g_micro_state==2) g_micro_state=3;
-      // v2.8 : g_exit_scan_from a avancé (l.834) pour TOUT magic, mais SaveState()
+      // v2.8 : g_exit_scan_from a avancé (l.864) pour TOUT magic, mais SaveState()
       // n'était appelé que pour le micro en état 2 — donc JAMAIS pour MAGIC_FORB.
       // Le curseur est bien persisté (SaveState "exit_scan" / LoadState) mais la
       // persistance n'était pas déclenchée : après restart le scan repartait en
       // arrière avec un ring de dédup vide = re-log. Un SaveState par deal de sortie
       // (quelques-uns par jour) : AtomicWrite déjà appelé ~15x/jour sur OnTimer.
+      // RÉSIDU CONNU (pré-existant, non corrigé ici) : la boucle descend du deal
+      // le plus RÉCENT au plus ancien et pose g_exit_scan_from=dt dès le premier,
+      // donc les deals plus anciens du même scan tombent sous le test l.863 et
+      // sont perdus. Persister le curseur rend cet oubli durable là où un curseur
+      // volatile pouvait reculer au restart. Bilan net assumé : doublons corrigés
+      // (impact $), complétude multi-deals-même-tick dégradée (impact audit seul).
+      // Correctif = re-scan borné, à instruire avec un test de rejeu — pas à
+      // l'aveugle : mal borné il est PIRE que le bug. (Audit 2026-07-26.)
       SaveState();
      }
   }
@@ -1342,8 +1350,8 @@ int  g_logged_deals_n=0;
 // l'écriture. Un FileOpen en échec (fills.csv verrouillé par un lecteur — reconcile.py
 // et supervisor.py le lisent) sortait en laissant le deal marqué « loggé » SANS ligne,
 // et bloquait le second chemin qui l'aurait rattrapé : les deux appelants sont
-// non-réentrants (ConfirmPendings pose done=true l.738 AVANT l'appel, DetectServerExits
-// avance g_exit_scan_from l.834 AVANT l'appel). Le double chemin EST le seul mécanisme
+// non-réentrants (ConfirmPendings pose done=true l.768 AVANT l'appel, DetectServerExits
+// avance g_exit_scan_from l.864 AVANT l'appel). Le double chemin EST le seul mécanisme
 // de rattrapage — le tuer transforme un FileOpen raté en trou d'audit définitif.
 // D'où : check PUR, marque APRÈS FileClose.
 bool DealAlreadyLogged(long deal_tk)
