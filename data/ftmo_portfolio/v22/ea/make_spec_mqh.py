@@ -37,9 +37,10 @@ for s in LEGS4:
         f"#define ANCHOR_R3D_{s}     {mql_dow}   // ENUM_DAY_OF_WEEK",
         f"#define MARGIN_STD_{s}     {ms['margin_rates']['standard_measured'][s]:.6f}",
         f"#define MARGIN_SWING_{s}   {ms['margin_rates']['swing_official'][s]:.6f}",
-        # v2.8 : TROISIÈME ancre = marge Swing réellement mesurée sur le compte armé.
-        # La borne de sanité EA teste les trois ; MARGIN_SWING_ (officiel) reste le
-        # fallback CONSERVATEUR de MarginRateEff, donc l'enforcement est inchangé.
+        # v2.8 : marge Swing réellement mesurée sur le compte armé. Les ancres de
+        # SANITÉ de l'EA sont {MARGIN_STD_, MARGIN_MEAS_} — MARGIN_SWING_ en est exclu
+        # (bornes soudées : l'or à 1:9 passerait en silence) mais reste émis car il est
+        # le fallback CONSERVATEUR de MarginRateEff : l'enforcement est inchangé.
         f"#define MARGIN_MEAS_{s}    {ms['margin_rates']['swing_measured'][s]:.6f}",
     ]
 SANITY_BLOCK = "\n".join(sanity_lines)

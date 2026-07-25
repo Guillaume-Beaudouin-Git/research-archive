@@ -86,14 +86,15 @@ def check_live_bounds(live: Dict[str, dict]) -> List[str]:
 
     swap: |live-ancre|/max(|ancre|, ABS_PTS_FLOOR) > bounds_rel.swap
     triple: dow différent de l'ancre
-    marge: hors ±bounds_rel.margin des TROIS ancres (Standard, Swing officiel,
-           Swing mesuré) — une seule dans la borne suffit
+    marge: hors ±bounds_rel.margin des ancres {standard_measured, swing_measured}
+           — une seule dans la borne suffit. swing_official est VOLONTAIREMENT exclu
+           (ses bornes se soudent à celles de la mesure : l'or à 1:9 passerait en
+           silence) ; il reste le fallback conservateur de MarginRateEff côté EA.
     """
     ms = _ms()
     rel_sw = float(ms["bounds_rel"]["swap"])
     rel_mg = float(ms["bounds_rel"]["margin"])
     std = ms["margin_rates"]["standard_measured"]
-    swing = ms["margin_rates"]["swing_official"]
     # v2.8 : 3e ancre = marge Swing MESURÉE sur le compte armé. Miroir exact du
     # test EA (book_executor.mq5::CheckLiveSpecBounds). Sans elle, la marge réelle
     # tombe hors des DEUX autres par construction (6.667% est exactement entre

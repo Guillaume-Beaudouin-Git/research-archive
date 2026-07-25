@@ -132,11 +132,15 @@ SWING_MARGIN_STATUS = ("levier Swing PUBLIÉ FTMO (forex 1:30, indices 1:15, mé
 # v2.8 : marge SWING RÉELLEMENT MESURÉE sur le compte armé <ACCOUNT_ID> (state.json
 # live_specs, 2026-07-24 23:54). C'est la seule des cinq valeurs du repo qui décrit
 # le serveur : ni policy 2%, ni Standard 3.33%, ni officiel 11.11%, ni trial 6.30%.
-# Ajoutée comme TROISIÈME ancre de sanité (ne REMPLACE pas swing_official) : la
-# marge live tombait hors des deux ancres existantes par construction — 6.667% est
-# exactement entre 3.333% et 11.111% — d'où spec_bounds_breach allumé en permanence,
-# donc AVEUGLE à toute dérive future. Remplacer swing_official aurait aussi relâché
-# le fallback conservateur de MarginRateEff (0.60/0.1111=5.4x -> 0.60/0.0667=9x).
+# Elle REMPLACE swing_official dans les ancres de SANITÉ, qui sont donc
+# {standard_measured, swing_measured} : à ±25% les bornes de swing_official et de la
+# mesure se SOUDENT pour XAUUSD ([0.0500,0.0833] u [0.0833,0.1389]), si bien que l'or
+# passant à 1:9 — le `headline_margin_swing`, Δ p(pass) -15.6 pt — serait accepté EN
+# SILENCE. Avant v2.8 la marge live tombait hors des deux ancres d'alors par
+# construction (6.667% est exactement entre 3.333% et 11.111%) : alarme permanente,
+# donc canal aveugle par saturation. swing_official CONSERVE son autre rôle, distinct :
+# fallback conservateur d'enforcement dans MarginRateEff (0.60/0.1111 = 5.4x) — c'est
+# pourquoi il n'est pas supprimé du yaml ni du mqh.
 MARGIN_RATES_SWING_MEASURED = {"XAUUSD": 0.066667, "USDJPY": 0.033335,
                                "US100": 0.066667, "GER40": 0.066670}
 SWING_MARGIN_MEASURED_READ_DATE = "2026-07-24"
