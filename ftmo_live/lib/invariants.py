@@ -137,11 +137,12 @@ def leg_leverage_clip(tgt_usd: Sequence[float], eq: float,
     t = np.asarray(tgt_usd, float).copy()
     if caps is None or eq <= 0:
         return t
-    # `if c` couvre None ET 0 : l'EA encode "pas de cap" par 0 (les #define MQL5
-    # n'ont pas de None). Ne traiter que None ferait qu'un cap 0.0 flattenerait la
-    # jambe ici et serait ignoré par l'EA — comportements OPPOSÉS.
+    # `c and c > 0` = miroir EXACT du garde `lc>0` de l'EA (mq5). Couvre None, 0
+    # (l'EA encode "pas de cap" par 0 : les #define MQL5 n'ont pas de None), les
+    # NÉGATIFS (une coquille yaml -12.0 inverserait le signe de la cible ici alors
+    # que l'EA l'ignorerait) et NaN (NaN > 0 est False).
     for k, c in enumerate(caps):
-        if c:
+        if c and c > 0:
             t[k] = float(np.clip(t[k], -c * eq, c * eq))
     return t
 

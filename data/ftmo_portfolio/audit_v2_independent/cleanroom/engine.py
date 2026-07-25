@@ -424,12 +424,12 @@ def _target_for_segment(s, i, M, WT, ON, cfg, bal, pos, avg, px0, i0, vm):
     # l'EA, le reconcile ne le verrait JAMAIS. (Audit indépendant 2026-07-26.)
     llc = cfg.get("leg_lev_cap")
     if llc is not None and eq > 0 and s in (3, 4):
-        # `not llc[k]` couvre None ET 0 : l'EA et make_spec_mqh encodent "pas de
-        # cap" par 0 (les #define MQL5 n'ont pas de None). Ne traiter que None ici
-        # ferait qu'un cap 0.0 flattenerait la jambe en Python et serait ignoré
-        # par l'EA — deux comportements OPPOSÉS. (Audit indépendant 2026-07-26.)
+        # `llc[k] and llc[k] > 0` = miroir EXACT du garde `lc>0` de l'EA. Couvre
+        # None, 0 (l'EA et make_spec_mqh encodent "pas de cap" par 0 : les #define
+        # MQL5 n'ont pas de None), les NÉGATIFS (une coquille yaml -12.0
+        # inverserait le signe de la cible ici alors que l'EA l'ignorerait) et NaN.
         for k in range(4):
-            if llc[k] and abs(tgt[k]) > llc[k] * eq:
+            if llc[k] and llc[k] > 0 and abs(tgt[k]) > llc[k] * eq:
                 tgt[k] = llc[k] * eq if tgt[k] > 0 else -llc[k] * eq
     mcap = cfg.get("margin_cap")
     if mcap is not None and eq > 0:

@@ -73,9 +73,41 @@ def test_ea_clip_before_margin_cap():
     i_clip = body.index("LegLevCap(")
     i_need = body.index("MarginRateEff(")
     assert i_clip < i_need, "le clip de levier doit précéder le calcul du cap marge"
+    flat = body.replace(" ", "").replace("\n", "")
+    # Mutation-testé (2e audit) : sans ces deux littéraux, un clip MORT (tgt[k]
+    # jamais affecté), un `>` inversé en `<`, un garde `lc>0` inversé ou un mauvais
+    # index de jambe passaient tous le test.
+    assert "lc>0&&MathAbs(tgt[k])>lc*eq" in flat, \
+        "condition de clip absente ou altérée (garde lc>0, sens de la comparaison)"
+    assert "tgt[k]=(tgt[k]>0?lc*eq:-lc*eq);" in flat, \
+        "affectation du clip absente ou altérée (clip mort, ou signe non symétrique)"
     # la jambe écrêtée doit être retaillée, sinon le clip est un calcul mort
     clip_block = body[i_clip - 200:i_need]
     assert "trade_mask[k]=true" in clip_block.replace(" ", "")
+
+
+def test_pin_commits_consistent_and_yaml_pin_is_real():
+    """P2 n'est vérifié par AUCUN garde-fou runtime (cf. README_BUILD) — ici.
+
+    Deux copies indépendantes de PIN_COMMITS existent (v22/ea/brain.py et
+    ftmo_live/lib/__init__.py) : elles doivent coïncider. Et le commit pinné
+    doit RÉELLEMENT contenir le yaml dont on pin le sha, sinon la traçabilité
+    du mqh (SPEC_PIN_YAML) est fausse en silence.
+    """
+    import subprocess
+    from lib import PIN_COMMITS, REPO
+    loader = spec.loader()
+    for k in ("v22_contract", "v22_residuals", "v22_spec_yaml"):
+        assert loader.PIN_COMMITS[k] == PIN_COMMITS[k], f"pin divergent: {k}"
+    sha_pin = loader.PIN_SHA256
+    blob = subprocess.run(
+        ["git", "show", f"{PIN_COMMITS['v22_spec_yaml']}:"
+         "data/ftmo_portfolio/v22/spec_v22.yaml"],
+        cwd=REPO, capture_output=True)
+    if blob.returncode != 0:          # commit absent (clone superficiel) -> skip
+        pytest.skip("commit pinné absent du dépôt local")
+    assert hashlib.sha256(blob.stdout).hexdigest() == sha_pin, \
+        "PIN_COMMITS['v22_spec_yaml'] ne contient pas le yaml pinné"
 
 
 def test_leg_leverage_cap_overlay_frozen():

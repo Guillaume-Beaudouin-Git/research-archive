@@ -436,24 +436,28 @@ void ReadLiveSpecs()
         }
       if(g_live_mrate[k]>0)
         {
-         bool near_std=MathAbs(g_live_mrate[k]-g_mrate_std[k])
-                       /g_mrate_std[k]<=SANITY_MARGIN_REL;
-         bool near_swing=MathAbs(g_live_mrate[k]-g_mrate_swing[k])
-                         /g_mrate_swing[k]<=SANITY_MARGIN_REL;
-         // v2.8 : 3e ancre (marge Swing mesurée sur le compte armé). Sans elle la
-         // marge réelle tombait hors des deux autres par construction -> alarme
-         // permanente -> canal aveugle. Garde >0 : une ancre à 0 (spec ancienne
-         // régénérée sans le bloc) diviserait par zéro.
+         // v2.8 : ancres de sanité = {standard_measured, swing_measured}.
+         // MARGIN_SWING_ (officiel 1:9) est VOLONTAIREMENT EXCLU d'ici : à ±25%
+         // son intervalle se SOUDE à celui de la mesure ([0.0500,0.0833] u
+         // [0.0833,0.1389] pour XAUUSD) -> l'or passant à 1:9 serait accepté EN
+         // SILENCE, alors que c'est le seul événement que ce canal doit attraper
+         // (headline_margin_swing du yaml : Δ p(pass) -15.6 pt). MARGIN_SWING_
+         // garde son autre rôle, distinct : fallback conservateur de
+         // MarginRateEff. Miroir exact de lib/swaps.py::check_live_bounds.
+         // Gardes >0 : une ancre nulle (spec régénérée sans le bloc) diviserait
+         // par zéro. (2e audit indépendant 2026-07-26.)
+         bool near_std=(g_mrate_std[k]>0)
+                       && MathAbs(g_live_mrate[k]-g_mrate_std[k])
+                          /g_mrate_std[k]<=SANITY_MARGIN_REL;
          bool near_meas=(g_mrate_meas[k]>0)
                         && MathAbs(g_live_mrate[k]-g_mrate_meas[k])
                            /g_mrate_meas[k]<=SANITY_MARGIN_REL;
-         if(!near_std && !near_swing && !near_meas)
+         if(!near_std && !near_meas)
            {
             g_spec_breach=true;
             g_spec_breach_detail+=StringFormat(
-               "%s marge %.4f hors Std %.4f/Swing %.4f/Mesure %.4f; ",
-               g_legs[k], g_live_mrate[k], g_mrate_std[k], g_mrate_swing[k],
-               g_mrate_meas[k]);
+               "%s marge %.4f hors Std %.4f/Mesure %.4f; ",
+               g_legs[k], g_live_mrate[k], g_mrate_std[k], g_mrate_meas[k]);
            }
         }
      }
@@ -852,6 +856,16 @@ void DetectServerExits()
    magics[1]=InpMagicBase+MAGIC_FORB;
    if(g_exit_scan_from==0) g_exit_scan_from=TimeCurrent()-3600;
    if(!HistorySelect(g_exit_scan_from-60, TimeCurrent()+60)) return;
+   // v2.8 : le curseur n'avance qu'APRÈS la boucle. Avant, il était posé sur le
+   // PREMIER deal vu — et comme la boucle descend du plus RÉCENT au plus ancien,
+   // tous les autres deals du même scan tombaient aussitôt sous le test
+   // `dt<=g_exit_scan_from` et étaient perdus. Combiné à la persistance ajoutée
+   // par ce même lot, l'oubli devenait DÉFINITIF (ex. redémarrage après coupure
+   // avec une sortie micro-SL ET une sortie FORB dans la fenêtre : une seule
+   // atteignait fills.csv). Accumuler puis affecter garde EXACTEMENT la même
+   // borne de scan (HistorySelect est déjà figé au-dessus) et les re-lectures
+   // éventuelles sont absorbées par le ring de dédup. (2e audit 2026-07-26.)
+   datetime scan_from=g_exit_scan_from, newest=g_exit_scan_from;
    for(int i=HistoryDealsTotal()-1; i>=0; i--)
      {
       ulong tk=HistoryDealGetTicket(i);
@@ -860,8 +874,8 @@ void DetectServerExits()
       if(m!=magics[0] && m!=magics[1]) continue;
       if(HistoryDealGetInteger(tk, DEAL_ENTRY)!=DEAL_ENTRY_OUT) continue;
       datetime dt=(datetime)HistoryDealGetInteger(tk, DEAL_TIME);
-      if(dt<=g_exit_scan_from) continue;
-      g_exit_scan_from=dt;
+      if(dt<=scan_from) continue;
+      if(dt>newest) newest=dt;
       long rsn=HistoryDealGetInteger(tk, DEAL_REASON);
       string label;
       if(m==magics[1]) label="funded_orb_exit";
@@ -880,20 +894,17 @@ void DetectServerExits()
       double slip=(fake.req_px>0) ? (px/fake.req_px-1.0)*fake.side*1e4 : 0.0;
       LogFill(fake, px, slip, (long)tk);
       if(m==magics[0] && g_micro_state==2) g_micro_state=3;
-      // v2.8 : g_exit_scan_from a avancé (l.864) pour TOUT magic, mais SaveState()
-      // n'était appelé que pour le micro en état 2 — donc JAMAIS pour MAGIC_FORB.
-      // Le curseur est bien persisté (SaveState "exit_scan" / LoadState) mais la
-      // persistance n'était pas déclenchée : après restart le scan repartait en
-      // arrière avec un ring de dédup vide = re-log. Un SaveState par deal de sortie
-      // (quelques-uns par jour) : AtomicWrite déjà appelé ~15x/jour sur OnTimer.
-      // RÉSIDU CONNU (pré-existant, non corrigé ici) : la boucle descend du deal
-      // le plus RÉCENT au plus ancien et pose g_exit_scan_from=dt dès le premier,
-      // donc les deals plus anciens du même scan tombent sous le test l.863 et
-      // sont perdus. Persister le curseur rend cet oubli durable là où un curseur
-      // volatile pouvait reculer au restart. Bilan net assumé : doublons corrigés
-      // (impact $), complétude multi-deals-même-tick dégradée (impact audit seul).
-      // Correctif = re-scan borné, à instruire avec un test de rejeu — pas à
-      // l'aveugle : mal borné il est PIRE que le bug. (Audit 2026-07-26.)
+     }
+   // v2.8 : le curseur avance pour TOUT magic (FORB inclus) et il est PERSISTÉ.
+   // Avant, SaveState() n'était appelé que pour le micro en état 2 — donc jamais
+   // pour MAGIC_FORB : le curseur était bien sérialisé (SaveState "exit_scan" /
+   // LoadState) mais la persistance n'était pas déclenchée, et après un restart
+   // le scan repartait en arrière avec un ring de dédup vide = re-log.
+   // Un seul SaveState par scan (et non plus un par deal) : AtomicWrite est déjà
+   // appelé ~15x/jour sur OnTimer, inutile de le multiplier.
+   if(newest>g_exit_scan_from)
+     {
+      g_exit_scan_from=newest;
       SaveState();
      }
   }
