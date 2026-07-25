@@ -48,6 +48,17 @@ SANITY_BLOCK = "\n".join(sanity_lines)
 _ro = (spec.get("risk_overlays") or {}).get("leg_leverage_cap") or {}
 _ro_on = bool(_ro.get("enabled"))
 _ro_caps = _ro.get("caps") or {}
+# L'EA n'a AUCUNE notion de phase : les #define sont les mêmes en challenge et en
+# funded. Le Python, lui, respecte `applies_to` (lib/spec.py::leg_lev_cap_vector).
+# Restreindre applies_to à une seule phase ferait donc diverger SILENCIEUSEMENT le
+# modèle et l'EA sur l'autre. Fail-loud plutôt que divergence silencieuse : si ce
+# besoin apparaît, il faudra câbler InpPhase dans LegLevCap(), pas contourner ici.
+if _ro_on and sorted(_ro.get("applies_to") or []) != ["challenge", "funded"]:
+    raise SystemExit(
+        "make_spec_mqh: risk_overlays.leg_leverage_cap.applies_to = "
+        f"{_ro.get('applies_to')!r} — l'EA ne sait pas distinguer les phases, il "
+        "appliquerait le cap aux DEUX. Câbler InpPhase dans LegLevCap() avant de "
+        "restreindre applies_to.")
 
 
 def _legcap(s):

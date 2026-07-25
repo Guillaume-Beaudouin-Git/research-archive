@@ -1,7 +1,7 @@
 # ftmo_live — exécution automatisée du book CHALLENGE v2.2 + reporting Telegram
 
 Spec exécutable : `data/ftmo_portfolio/v22/spec_v22.yaml` **v2.2.2** (sha `1f3081bfbfd0…`,
-re-cost data-only — policy v2.2 inchangée). Pins baseline : **605f4a4 + 4e1bac5 + ae52ea5 +
+v2.2 + overlay risque leg_leverage_cap : POLICY, change les cibles ; challenge.config/funded.config inchangés). Pins baseline : **605f4a4 + 4e1bac5 + ae52ea5 +
 79c6912** + commit recost v2.2.1 (pin de déploiement, `v22/RECOST_v2.2.1.md`).
 Cible : **compte démo FTMO neuf** ; bascule démo→challenge = changement de login MT5 uniquement.
 Aucune constante manuelle : brain charge le yaml (loader épinglé `v22/ea/brain.py`, drift-check),
