@@ -81,6 +81,9 @@ def test_ea_clip_before_margin_cap():
         "condition de clip absente ou altérée (garde lc>0, sens de la comparaison)"
     assert "tgt[k]=(tgt[k]>0?lc*eq:-lc*eq);" in flat, \
         "affectation du clip absente ou altérée (clip mort, ou signe non symétrique)"
+    assert "doublelc=LegLevCap(k);" in flat, \
+        "le cap doit être lu pour la jambe k (pas un index figé)"
+    assert "if(eq>0)" in flat, "garde eq>0 absente (division/cap sur equity nulle)"
     # la jambe écrêtée doit être retaillée, sinon le clip est un calcul mort
     clip_block = body[i_clip - 200:i_need]
     assert "trade_mask[k]=true" in clip_block.replace(" ", "")
@@ -104,8 +107,17 @@ def test_pin_commits_consistent_and_yaml_pin_is_real():
         ["git", "show", f"{PIN_COMMITS['v22_spec_yaml']}:"
          "data/ftmo_portfolio/v22/spec_v22.yaml"],
         cwd=REPO, capture_output=True)
-    if blob.returncode != 0:          # commit absent (clone superficiel) -> skip
-        pytest.skip("commit pinné absent du dépôt local")
+    if blob.returncode != 0:
+        # PAS un skip silencieux : ce cas se produit précisément après un
+        # SQUASH-merge (le commit de gel disparaît), c'est-à-dire quand la
+        # traçabilité SPEC_PIN_YAML devient fausse — le moment où il faut
+        # alerter, pas se taire. Échec bruyant, sauf clone superficiel avéré.
+        shallow = (REPO / ".git" / "shallow").exists()
+        assert shallow, (
+            f"PIN_COMMITS['v22_spec_yaml']={PIN_COMMITS['v22_spec_yaml'][:8]} "
+            "est introuvable dans le dépôt (squash-merge ?) — SPEC_PIN_YAML "
+            "embarqué dans le mqh ne trace plus rien. Re-pinner sur le commit réel.")
+        pytest.skip("clone superficiel : commit pinné hors profondeur")
     assert hashlib.sha256(blob.stdout).hexdigest() == sha_pin, \
         "PIN_COMMITS['v22_spec_yaml'] ne contient pas le yaml pinné"
 

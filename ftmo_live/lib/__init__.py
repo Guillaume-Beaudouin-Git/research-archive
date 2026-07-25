@@ -27,11 +27,11 @@ PIN_COMMITS = {
     "v22_contract": "605f4a426da3eac4f5a2644bca774a07f1e5f754",
     "v22_residuals": "4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539",
     # v2.8 : commit de gel du yaml v2.2.2 (ancien v2.2.1: 87b6cd4080e2b1c9e666c6b9dd15680ce29a7e1e)
-    "v22_spec_yaml": "ae52ea525208ce33f15d4e50aa1aceba16d0e5d2",
+    "v22_spec_yaml": "ad403cefb7f8af9285acb1bdd424d0601080c5b5",
     "v22_ea_build": "79c6912a9639db1c08ac8c5449536bb293ce5a49",
 }
 # v2.2.2 (lot EA v2.8) : ancien mqh v2.2.1 = 2fc65503ef666d52… ; v2.2 = 1d83454602560c09…
-PIN_MQH_SHA256 = "c50dd642f6d138c8bbfb5e0c13d05df0e9146c942e6bb5eb8340c7e0d75d44d2"
+PIN_MQH_SHA256 = "d8d3dcb1ad88ec6bf2338ef88c4710d8595d5a0e9f1ca847d9e0ab0c8fe0388b"
 
 for _p in (str(V22), str(CLEANROOM)):
     if _p not in sys.path:
