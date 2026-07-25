@@ -28,7 +28,7 @@ PIN_COMMITS = {
     "v22_contract": "605f4a426da3eac4f5a2644bca774a07f1e5f754",
     "v22_residuals": "4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539",
     # v2.8 : commit de gel du yaml v2.2.2 (ancien v2.2.1: 87b6cd4080e2b1c9e666c6b9dd15680ce29a7e1e)
-    "v22_spec_yaml": "ae52ea525208ce33f15d4e50aa1aceba16d0e5d2",
+    "v22_spec_yaml": "ad403cefb7f8af9285acb1bdd424d0601080c5b5",
 }
 REPO = Path("<HOME>/Desktop/Algo_claude")
 

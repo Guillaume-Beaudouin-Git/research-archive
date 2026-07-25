@@ -1,13 +1,13 @@
 //+------------------------------------------------------------------+
 //| spec_v22.mqh — GÉNÉRÉ depuis spec_v22.yaml par make_spec_mqh.py  |
 //| NE PAS ÉDITER À LA MAIN (ancre #20: régénération byte-identique). |
-//| Pins: 605f4a4 + 4e1bac5 + ae52ea5 ; yaml sha 1f3081bf…            |
+//| Pins: 605f4a4 + 4e1bac5 + ad403ce ; yaml sha 3e7626f6…            |
 //+------------------------------------------------------------------+
 #define SPEC_VERSION        "v2.2.2"
-#define SPEC_SHA256         "1f3081bfbfd04be29f886ad85459305bdc4a5dd740d488b462f6a15048cac4bb"
+#define SPEC_SHA256         "3e7626f6d3fdc53050a9ad1097c13c8af05179d380f5090141c323561060563b"
 #define SPEC_PIN_CONTRACT   "605f4a426da3eac4f5a2644bca774a07f1e5f754"
 #define SPEC_PIN_RESIDUALS  "4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539"
-#define SPEC_PIN_YAML       "ae52ea525208ce33f15d4e50aa1aceba16d0e5d2"
+#define SPEC_PIN_YAML       "ad403cefb7f8af9285acb1bdd424d0601080c5b5"
 
 // ---- compte & règles FTMO (2-step Swing $10k) ----
 #define ACCOUNT_SIZE_USD    10000
