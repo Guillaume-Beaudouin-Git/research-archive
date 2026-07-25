@@ -41,6 +41,43 @@ def test_load_passes_and_drift_checked():
     assert ms["margin_rates"]["swing_measured"]["read_date"] == "2026-07-24"
 
 
+def test_mt5_mqh_copy_identical():
+    """La copie que l'EA #include DOIT être celle qui est pinnée.
+
+    verify_mqh_pin() hache v22/ea/spec_v22.mqh, mais l'EA compile avec
+    ftmo_live/mt5/spec_v22.mqh (copie manuelle non scriptée, étape S4). Depuis
+    v2.8 le mqh porte une LIMITE DE RISQUE (LEG_LEV_CAP_*) : une copie mt5/
+    divergente mais gardant le bon SPEC_SHA256 compilerait et passerait
+    SpecHashOK avec un cap de levier faux. 3 lignes ferment la classe entière.
+    """
+    from lib import LIVE_ROOT
+    a = hashlib.sha256((EA_DIR / "spec_v22.mqh").read_bytes()).hexdigest()
+    b = hashlib.sha256((LIVE_ROOT / "mt5" / "spec_v22.mqh").read_bytes()).hexdigest()
+    assert a == b == PIN_MQH_SHA256
+    assert ((EA_DIR / "spec_v22.sha256").read_text().strip()
+            == (LIVE_ROOT / "mt5" / "spec_v22.sha256").read_text().strip())
+
+
+def test_ea_clip_before_margin_cap():
+    """L'EA doit clipper AVANT le cap marge — vérification STATIQUE.
+
+    Le MQL5 n'est pas exécutable en CI : sans ce test, l'ordre d'application
+    côté EA (le risque n°1 de l'overlay) n'est garanti que par un commentaire.
+    Si l'EA clippait APRÈS le scaling proportionnel du cap marge, les cibles
+    différeraient du sim à chaque nuit où le cap mord -> Δ reconcile inexpliqué
+    et gate STOP 3j déclenché à tort. (Audit indépendant 2026-07-26.)
+    """
+    from lib import LIVE_ROOT
+    src = (LIVE_ROOT / "mt5" / "book_executor.mq5").read_text()
+    body = src.split("void CapQuantizeTrade(")[1].split("\nvoid ")[0]
+    i_clip = body.index("LegLevCap(")
+    i_need = body.index("MarginRateEff(")
+    assert i_clip < i_need, "le clip de levier doit précéder le calcul du cap marge"
+    # la jambe écrêtée doit être retaillée, sinon le clip est un calcul mort
+    clip_block = body[i_clip - 200:i_need]
+    assert "trade_mask[k]=true" in clip_block.replace(" ", "")
+
+
 def test_leg_leverage_cap_overlay_frozen():
     """L'overlay est POLICY : il doit vivre dans le yaml gelé, hors challenge.config.
 

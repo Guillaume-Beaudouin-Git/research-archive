@@ -414,10 +414,22 @@ def _target_for_segment(s, i, M, WT, ON, cfg, bal, pos, avg, px0, i0, vm):
     # Appliqué AVANT le cap marge : écrêter J1 libère de la marge pour les autres
     # jambes au lieu de les raboter proportionnellement.
     # Défaut None => NO-OP STRICT : aucun chiffre pinné v2.2 ne bouge.
+    # s in (3, 4) UNIQUEMENT — les segments qui POSENT du risque et qui, côté EA,
+    # passent par CapQuantizeTrade (Do1735, Do2205Rebalance). s=1 (09:00 GER40 off)
+    # et s=2 (15:30 US100 off) sont des FERMETURES mono-jambe : l'EA y appelle
+    # TradeLegTo directement, et lib/replay.py construit la cible en ligne — aucun
+    # des deux ne clippe. Clipper ici écrêterait la position J1 DÉTENUE dans le
+    # seul sim : le modèle couperait un levier que le live garderait, précisément
+    # dans l'état de drawdown que le cap doit couvrir, et replay.py reproduisant
+    # l'EA, le reconcile ne le verrait JAMAIS. (Audit indépendant 2026-07-26.)
     llc = cfg.get("leg_lev_cap")
-    if llc is not None and eq > 0:
+    if llc is not None and eq > 0 and s in (3, 4):
+        # `not llc[k]` couvre None ET 0 : l'EA et make_spec_mqh encodent "pas de
+        # cap" par 0 (les #define MQL5 n'ont pas de None). Ne traiter que None ici
+        # ferait qu'un cap 0.0 flattenerait la jambe en Python et serait ignoré
+        # par l'EA — deux comportements OPPOSÉS. (Audit indépendant 2026-07-26.)
         for k in range(4):
-            if llc[k] is not None and abs(tgt[k]) > llc[k] * eq:
+            if llc[k] and abs(tgt[k]) > llc[k] * eq:
                 tgt[k] = llc[k] * eq if tgt[k] > 0 else -llc[k] * eq
     mcap = cfg.get("margin_cap")
     if mcap is not None and eq > 0:
