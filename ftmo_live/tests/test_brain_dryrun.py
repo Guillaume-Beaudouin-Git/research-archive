@@ -71,7 +71,16 @@ def test_targets_match_instrumented_engine(frozen, brain_weights, monkeypatch):
     # 2026-07-24. Comparer à CFG_CHALLENGE (marge Standard 1:50) épinglerait le brain
     # sur un sim mal calibré — c'est précisément ce que faisait ce test, et c'est
     # pour ça que la dérive modèle/réel de 1.26 n'a été vue par personne.
-    cfg = dict(C22.CFG_CHALLENGE_V24_SWING, target=E.TARGET1, max_cal=C22.WALL)
+    # v2.8 : CFG_CHALLENGE_V28 = V24_SWING + overlay leg_leverage_cap. Le brain
+    # (phase_cfg) lit l'overlay depuis le yaml gelé ; comparer au sim SANS overlay
+    # ferait diverger les deux dès que le cap mord (mesuré : 20 des 28 décisions
+    # de cette fenêtre), donc bruyamment — ce n'est pas un test affaibli.
+    # PORTÉE EXACTE : ce test prouve le CÂBLAGE yaml -> cfg -> cible (une dérive
+    # entre la valeur du yaml et config_v22.py serait attrapée). Il ne prouve PAS
+    # l'ordre d'application côté EA : les deux côtés appellent littéralement la
+    # même E._target_for_segment, et aucune ligne de MQL5 n'est exercée ici.
+    # L'ordre côté EA est couvert par test_ea_clip_before_margin_cap (statique).
+    cfg = dict(C22.CFG_CHALLENGE_V28, target=E.TARGET1, max_cal=C22.WALL)
     i = i0
     while i < M["n"] - 1:                      # chaîne de tentatives (funnel sim)
         r = V22.run_phase(M, i, WTa, ONa, cfg)

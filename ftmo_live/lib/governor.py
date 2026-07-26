@@ -55,12 +55,17 @@ def phase_cfg(phase: str) -> dict:
     if phase == "FUNDED":
         cfg = dict(S.funded_cfg(sp))
         cfg["max_cal"] = None
+        # Overlay risque v2.8 : POLICY (change les cibles), donc il vient du yaml
+        # gelé — surtout PAS de _live_truth, qui est réservé aux faits BROKER et
+        # VERSION D'EA. Y glisser un plafond de levier contournerait l'ancre #19.
+        cfg["leg_lev_cap"] = S.leg_lev_cap_vector(sp, "funded")
         return _live_truth(cfg)
     cfg = dict(S.challenge_cfg(sp))
     cfg["target"] = float(S.rules(sp)["targets"]["phase1" if phase == "P1" else "phase2"])
     cfg["max_cal"] = S.wall_days(sp)
     if phase == "P2":
         cfg["vm"] = cfg["vm"] * cfg.get("p2_mult", 1.0)
+    cfg["leg_lev_cap"] = S.leg_lev_cap_vector(sp, "challenge")
     return _live_truth(cfg)
 
 
@@ -127,10 +132,17 @@ def preview(phase: str, wt_row, on_day: bool, bal: float, pos_usd: np.ndarray,
 
 
 def _probe_scale(cfg: dict, bal, pos, avg, px0, attempt_start, today) -> float:
-    """scale = vm*taper*glide*pace, extrait par appel-sonde (poids unité, sans cap)."""
+    """scale = vm*taper*glide*pace, extrait par appel-sonde (poids unité, sans cap).
+
+    `leg_lev_cap=None` explicite : la sonde lit tgt[0] (XAUUSD) pour en déduire le
+    scale du gouverneur. Si un cap était posé sur cette jambe, la sonde mesurerait
+    le CAP et non le scale — taper/glide/pace, déduits par ratios de sondes,
+    deviendraient faux dans tout le reporting (mesuré : 16.92 -> 12.00). Le cap
+    n'est pas un composant du gouverneur. (2e audit indépendant 2026-07-26.)
+    """
     eq = bal + E._mtm(pos, avg, px0)
     if eq <= 0:
         return 0.0
-    tgt, _ = _call(4, cfg, (1.0, 0.0), 0.0, bal, pos, avg, px0,
-                   attempt_start, today, quantize=False, margin_cap=None)
+    tgt, _ = _call(4, {**cfg, "leg_lev_cap": None}, (1.0, 0.0), 0.0, bal, pos, avg,
+                   px0, attempt_start, today, quantize=False, margin_cap=None)
     return float(tgt[0] / eq)

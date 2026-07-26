@@ -122,6 +122,31 @@ def governor_scale(eq: float, vm: float, taper_frac: float, glide_frac: float,
     return s
 
 
+def leg_leverage_clip(tgt_usd: Sequence[float], eq: float,
+                      caps: Optional[Sequence[Optional[float]]]) -> np.ndarray:
+    """Cap de NOTIONNEL par jambe, à appliquer AVANT le cap marge (overlay v2.8).
+
+    Miroir EXACT de cleanroom.engine._target_for_segment. L'ORDRE compte : clipper
+    après le cap marge donnerait des cibles différentes, donc un Δ reconcile
+    inexpliqué à chaque nuit où le cap mord (et un gate STOP 3j déclenché à tort).
+
+    caps[k] None (ou caps None) = pas de cap. Unité = notionnel/equity, donc
+    invariante en vm — à ne pas confondre avec LEG_CAP_PRE_VM, garde-fou
+    anti-lot-aberrant côté EA qui, lui, suit vm.
+    """
+    t = np.asarray(tgt_usd, float).copy()
+    if caps is None or eq <= 0:
+        return t
+    # `c and c > 0` = miroir EXACT du garde `lc>0` de l'EA (mq5). Couvre None, 0
+    # (l'EA encode "pas de cap" par 0 : les #define MQL5 n'ont pas de None), les
+    # NÉGATIFS (une coquille yaml -12.0 inverserait le signe de la cible ici alors
+    # que l'EA l'ignorerait) et NaN (NaN > 0 est False).
+    for k, c in enumerate(caps):
+        if c and c > 0:
+            t[k] = float(np.clip(t[k], -c * eq, c * eq))
+    return t
+
+
 def margin_scale(tgt_usd: Sequence[float], eq: float, cap: float,
                  mrate: Sequence[float] = E.MRATE) -> float:
     """Facteur de scaling proportionnel toutes jambes si besoin > cap x equity."""

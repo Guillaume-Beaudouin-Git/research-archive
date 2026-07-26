@@ -86,13 +86,31 @@ def check_live_bounds(live: Dict[str, dict]) -> List[str]:
 
     swap: |live-ancre|/max(|ancre|, ABS_PTS_FLOOR) > bounds_rel.swap
     triple: dow différent de l'ancre
-    marge: hors ±bounds_rel.margin de Standard ET de Swing (l'un OU l'autre OK)
+    marge: hors ±bounds_rel.margin des ancres {standard_measured, swing_measured}
+           — une seule dans la borne suffit. swing_official est VOLONTAIREMENT exclu
+           (ses bornes se soudent à celles de la mesure : l'or à 1:9 passerait en
+           silence) ; il reste le fallback conservateur de MarginRateEff côté EA.
     """
     ms = _ms()
     rel_sw = float(ms["bounds_rel"]["swap"])
     rel_mg = float(ms["bounds_rel"]["margin"])
     std = ms["margin_rates"]["standard_measured"]
-    swing = ms["margin_rates"]["swing_official"]
+    # v2.8 : 3e ancre = marge Swing MESURÉE sur le compte armé. Miroir exact du
+    # test EA (book_executor.mq5::CheckLiveSpecBounds). Sans elle, la marge réelle
+    # tombe hors des DEUX autres par construction (6.667% est exactement entre
+    # Std 3.333% et Swing officiel 11.111%) -> breach permanent dans
+    # audit["live_spec_bounds"] de chaque targets.json -> une vraie dérive de marge
+    # y serait indiscernable du faux positif. `.get` : une spec antérieure à
+    # v2.2.2 n'a pas le bloc. (Audit indépendant 2026-07-26.)
+    meas = ms["margin_rates"].get("swing_measured") or {}
+    # 2e audit 2026-07-26 : swing_official est RETIRÉ des ancres de sanité. À ±25%,
+    # [swing_official] et [swing_measured] se SOUDENT pour XAUUSD
+    # ([0.0500,0.0833] ∪ [0.0833,0.1389]) -> l'or passant à 1:9 (0.111111) serait
+    # accepté EN SILENCE. Or c'est exactement le `headline_margin_swing` du yaml
+    # (« LE TERME MATÉRIEL », Δp(pass) -15.6 pt, décision comité) : le seul
+    # événement que ce canal doit attraper. swing_official GARDE son autre rôle,
+    # distinct : fallback conservateur d'enforcement dans MarginRateEff (EA).
+    refs = (std, meas)
     breaches = []
     for leg, lv in live.items():
         if leg not in ms["symbols"]:
@@ -113,10 +131,13 @@ def check_live_bounds(live: Dict[str, dict]) -> List[str]:
         mr = lv.get("margin_rate")
         if mr is not None and float(mr) > 0:
             mr = float(mr)
-            ok = any(abs(mr - float(ref[leg])) / float(ref[leg]) <= rel_mg
-                     for ref in (std, swing))
+            ok = any(leg in ref and float(ref[leg]) > 0
+                     and abs(mr - float(ref[leg])) / float(ref[leg]) <= rel_mg
+                     for ref in refs)
             if not ok:
                 breaches.append(f"{leg} marge {mr:.4f} hors bornes Standard "
-                                f"{float(std[leg]):.4f}/Swing {float(swing[leg]):.4f} "
-                                f"±{rel_mg:.0%}")
+                                f"{float(std[leg]):.4f}"
+                                + (f"/Mesure {float(meas[leg]):.4f}"
+                                   if leg in meas else "")
+                                + f" ±{rel_mg:.0%}")
     return breaches

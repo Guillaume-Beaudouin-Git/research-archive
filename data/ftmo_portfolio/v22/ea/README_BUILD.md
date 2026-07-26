@@ -1,17 +1,17 @@
 # BUILD EA v2.2 — contrat de spec (amendement au brief, 2026-06-10)
 
-**Spec = `v22/spec_v22.yaml` @ 87b6cd4 (sha `56fbdde7…` (v2.2.1)). Rien n'est régénéré ni retapé ici.**
-Pins baseline : `605f4a4` (contrat v2.2) + `4e1bac5` (résidus) + `87b6cd4` (gel yaml).
+**Spec = `v22/spec_v22.yaml` @ ad403ce (sha `3e7626f6…`, v2.2.2). Rien n'est régénéré ni retapé ici.**
+Pins baseline : `605f4a4` (contrat v2.2) + `4e1bac5` (résidus) + `ad403ce` (gel yaml).
 
 ## Chaîne zéro-constante-manuelle (l'ancre #19 étendue au live = ancre #20)
 ```
-config_v22.py ──make_spec_yaml.py──▶ spec_v22.yaml (sha 56fbdde7…, ancre #19)
+config_v22.py ──make_spec_yaml.py──▶ spec_v22.yaml (sha 3e7626f6…, ancre #19)
                                           │
                brain.py.load() ◀──────────┤  (pin sha + drift-check vs config_v22 + pins commits)
                                           │
               make_spec_mqh.py ◀──────────┘
                  │            └──▶ spec_v22.sha256  → à déposer dans MQL5/Files/
-                 └──▶ spec_v22.mqh (constantes EA + SPEC_SHA256 embarqué, sha 2fc65503…, ancre #20)
+                 └──▶ spec_v22.mqh (constantes EA + SPEC_SHA256 embarqué, sha d8d3dcb1…, ancre #20)
                           │
                 EA OnInit() → SpecHashOK() : lit MQL5/Files/spec_v22.sha256,
                 refuse de trader si absent/différent de l'embarqué.
@@ -41,5 +41,31 @@ config_v22.py ──make_spec_yaml.py──▶ spec_v22.yaml (sha 56fbdde7…, a
 
 ## Vérifications
 - `python3 brain.py --check` → spec OK + pins présents.
-- `python3 make_spec_mqh.py` ×2 → sha mqh identique (`2fc65503…`).
-- EA : compiler avec spec_v22.mqh ; OnInit doit logger `SPEC OK v2.2.1 sha 56fbdde78a2e…`.
+- `python3 make_spec_mqh.py` ×2 → sha mqh identique (`d8d3dcb1…`).
+- EA : compiler avec spec_v22.mqh ; OnInit doit logger `SPEC OK v2.2.2 sha 3e7626f6d3fd…`.
+
+## Re-geler la chaîne (lot v2.8, 2026-07-25) — les 3 pins MANUELS et le piège circulaire
+
+Aucun des trois pins n'est automatique ; deux d'entre eux font échouer le brain de
+19:50 UTC (donc « gestion seule » le lendemain) s'ils sont oubliés :
+
+| # | Fichier | Constante | Sanction si oublié |
+|---|---|---|---|
+| P1 | `v22/ea/brain.py` | `PIN_SHA256` | `SpecError` — `make_spec_mqh.py` ne tourne même pas |
+| P2 | `v22/ea/brain.py` + `ftmo_live/lib/__init__.py` | `PIN_COMMITS["v22_spec_yaml"]` | **silencieux** (non vérifié par `load()`) — contrôler à l'œil |
+| P3 | `ftmo_live/lib/__init__.py` | `PIN_MQH_SHA256` | `RuntimeError` dans `verify_mqh_pin()` |
+
+**Piège circulaire → DEUX commits obligatoires.** Le mqh embarque `SPEC_PIN_YAML`
+= le commit qui gèle le yaml, et l'en-tête du mqh dérive des mêmes pins : poser P2
+change donc le sha du mqh, donc P3. Or ce commit n'existe qu'après le commit.
+Séquence : (1) régénérer le yaml → P1 → **commit n°1** ; (2) lire son sha → P2 →
+régénérer le mqh ×2 → P3 → copier vers `ftmo_live/mt5/` → **commit n°2**.
+
+**Interpréteur** : `make_spec_yaml.py` exige pandas. Utiliser `/usr/bin/python3`
+EXPLICITEMENT — un alias shell `python3` peut pointer un interpréteur sans pandas,
+auquel cas le script échoue **sans écrire** et un `diff` de contrôle passe alors au
+vert à tort (faux PASS observé le 2026-07-25).
+
+**Copie S4 non scriptée** : `make_spec_mqh.py` n'écrit que dans `v22/ea/`. Oublier
+la copie vers `ftmo_live/mt5/` fait compiler l'EA avec l'ANCIEN mqh → binaire
+portant l'ancien `SPEC_SHA256` face au nouveau fichier `Files/` → `INIT_FAILED`.

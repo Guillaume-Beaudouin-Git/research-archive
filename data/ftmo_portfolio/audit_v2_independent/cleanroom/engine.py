@@ -406,6 +406,31 @@ def _target_for_segment(s, i, M, WT, ON, cfg, bal, pos, avg, px0, i0, vm):
         opened = bool(abs(tgt[0]) > 0 or abs(tgt[1]) > 0 or tgt[2] > 0)
     if tgt is None:
         return None, False
+    # --- overlay risque v2.8 : cap de NOTIONNEL par jambe, AVANT le cap marge ---
+    # Le cap marge est libellé en MARGE : 0.60/0.03333 = 18.05x pour USDJPY contre
+    # 9.0x pour les jambes à 6.667% -> la jambe au pire skew reçoit 2x l'allocation.
+    # Unité = notionnel/equity, donc INVARIANTE EN vm (ne pas confondre avec
+    # LEG_CAP_PRE_VM côté EA, garde-fou anti-lot-aberrant qui, lui, suit vm).
+    # Appliqué AVANT le cap marge : écrêter J1 libère de la marge pour les autres
+    # jambes au lieu de les raboter proportionnellement.
+    # Défaut None => NO-OP STRICT : aucun chiffre pinné v2.2 ne bouge.
+    # s in (3, 4) UNIQUEMENT — les segments qui POSENT du risque et qui, côté EA,
+    # passent par CapQuantizeTrade (Do1735, Do2205Rebalance). s=1 (09:00 GER40 off)
+    # et s=2 (15:30 US100 off) sont des FERMETURES mono-jambe : l'EA y appelle
+    # TradeLegTo directement, et lib/replay.py construit la cible en ligne — aucun
+    # des deux ne clippe. Clipper ici écrêterait la position J1 DÉTENUE dans le
+    # seul sim : le modèle couperait un levier que le live garderait, précisément
+    # dans l'état de drawdown que le cap doit couvrir, et replay.py reproduisant
+    # l'EA, le reconcile ne le verrait JAMAIS. (Audit indépendant 2026-07-26.)
+    llc = cfg.get("leg_lev_cap")
+    if llc is not None and eq > 0 and s in (3, 4):
+        # `llc[k] and llc[k] > 0` = miroir EXACT du garde `lc>0` de l'EA. Couvre
+        # None, 0 (l'EA et make_spec_mqh encodent "pas de cap" par 0 : les #define
+        # MQL5 n'ont pas de None), les NÉGATIFS (une coquille yaml -12.0
+        # inverserait le signe de la cible ici alors que l'EA l'ignorerait) et NaN.
+        for k in range(4):
+            if llc[k] and llc[k] > 0 and abs(tgt[k]) > llc[k] * eq:
+                tgt[k] = llc[k] * eq if tgt[k] > 0 else -llc[k] * eq
     mcap = cfg.get("margin_cap")
     if mcap is not None and eq > 0:
         need = float(np.abs(tgt) @ cfg.get("mrate", MRATE))   # cfg["mrate"]=MRATE_SWING pour le live-fidèle

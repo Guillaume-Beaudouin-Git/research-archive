@@ -23,12 +23,42 @@ def test_in_bounds_no_breach():
     assert swaps.check_live_bounds(_live_ok()) == []
 
 
-def test_swing_margin_is_in_bounds():
+def test_swing_official_margin_now_breaches_on_gold():
+    """v2.8 : le levier Swing PUBLIÉ (or 1:9) doit désormais ALERTER.
+
+    Renversement d'intention assumé (2e audit indépendant 2026-07-26). Avant,
+    swing_official était une ancre de sanité et l'or à 1:9 était donc accepté en
+    silence — alors que c'est précisément le `headline_margin_swing` du yaml
+    (« LE TERME MATÉRIEL », Δ p(pass) -15.6 pt, décision comité), le seul
+    événement que ce canal doit attraper. Avec 3 ancres à ±25%, les intervalles
+    de swing_official et swing_measured se SOUDAIENT pour XAUUSD
+    ([0.0500,0.0833] u [0.0833,0.1389]) : le canal était structurellement aveugle.
+    Ancres de sanité = {standard_measured, swing_measured} ; swing_official garde
+    son autre rôle, distinct : fallback conservateur de MarginRateEff côté EA.
+
+    Les autres jambes ne bougent pas : leur levier publié (1:15 indices, 1:30 FX)
+    est CELUI qui est mesuré sur le compte armé.
+    """
     live = _live_ok()
     ms = spec.measured_specs()
     for leg in live:
         live[leg]["margin_rate"] = ms["margin_rates"]["swing_official"][leg]
-    assert swaps.check_live_bounds(live) == []     # Swing = borne attendue
+    br = swaps.check_live_bounds(live)
+    assert len(br) == 1 and br[0].startswith("XAUUSD marge 0.1111"), br
+
+
+def test_measured_swing_margin_is_in_bounds():
+    """La marge RÉELLEMENT mesurée sur le compte armé ne doit rien déclencher.
+
+    C'est la contrepartie du test ci-dessus : le canal doit être SILENCIEUX au
+    repos (sinon il est aveugle par saturation — l'état d'avant v2.8, où
+    spec_bounds_breach était allumé en permanence).
+    """
+    live = _live_ok()
+    ms = spec.measured_specs()
+    for leg in live:
+        live[leg]["margin_rate"] = ms["margin_rates"]["swing_measured"][leg]
+    assert swaps.check_live_bounds(live) == []
 
 
 def test_swap_out_of_bounds_breaches():
