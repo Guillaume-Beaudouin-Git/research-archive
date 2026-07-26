@@ -6,6 +6,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "03f39da381be682cae41a8ff803b839a": {
+    "first_seen": "2026-07-26 06:00",
+    "source": "quantocracy",
+    "title": "Part (3/3) – Refiner Trade: A Second Signal and the Case for Trading Less [Beyon",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0689d7653687705c5a13fd64fab39bca": {
     "first_seen": "2026-07-19 07:00",
     "source": "quantocracy",
@@ -46,6 +53,13 @@
     "source": "quantocracy",
     "title": "Quantitativo weekly [Quantitativo]",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "19fd802854f166d3d23f38c5c028d63b": {
+    "first_seen": "2026-07-26 06:00",
+    "source": "quantocracy",
+    "title": "Network Momentum [Quantitativo]",
+    "decision": "accepted",
     "promising_file": null
   },
   "1c8c9b74d9a1f85c3cf45de5f13a2de7": {
@@ -90,6 +104,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "3fe187764e1e2c9d379ff195eea80955": {
+    "first_seen": "2026-07-26 06:00",
+    "source": "quantocracy",
+    "title": "Portfolio optimization with macro factors and neural networks [Macrosynergy]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "470e572267739e1ec998a24046190689": {
     "first_seen": "2026-07-10 06:30",
     "source": "quantocracy",
@@ -125,6 +146,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "52b7a77e829cacb4d82c745d736bf105": {
+    "first_seen": "2026-07-26 06:00",
+    "source": "quantocracy",
+    "title": "Research Review | 24 July 2026 | Strategy Analytics [Capital Spectator]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "56e8978d4f33484edd2726a619e71601": {
     "first_seen": "2026-07-13 06:30",
     "source": "quantocracy",
@@ -157,6 +185,13 @@
     "first_seen": "2026-07-24 07:30",
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 07/23/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "69d8b2b5443e33d1e02368c1286d6f4c": {
+    "first_seen": "2026-07-26 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/25/2026",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -360,6 +395,13 @@
     "first_seen": "2026-07-22 06:30",
     "source": "quantocracy",
     "title": "Can Machines Learn Weak Signals? Ridge > Zero > Lasso [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "ed1ae6eb9599fc1b20370895ef24ed0c": {
+    "first_seen": "2026-07-26 06:00",
+    "source": "quantocracy",
+    "title": "Momentum Is a Ranking Problem: Learning-to-Rank vs Regress-then-Rank [Aligrithm]",
     "decision": "accepted",
     "promising_file": null
   },
