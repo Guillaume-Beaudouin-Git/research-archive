@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1623ce9645adb88ecdaf12ad5d3c35a2": {
+    "first_seen": "2026-07-26 11:00",
+    "source": "github_python",
+    "title": "Lightning-AI/litgpt",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "17dec50b80761feba743b0df47062d54": {
     "first_seen": "2026-07-17 11:00",
     "source": "github_python",
@@ -409,6 +416,13 @@
     "first_seen": "2026-07-04 11:00",
     "source": "github_python",
     "title": "hesreallyhim/awesome-claude-code",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "86c1d740b51307c9b1c3a77cc3747d91": {
+    "first_seen": "2026-07-26 11:00",
+    "source": "github_python",
+    "title": "sirkirby/unifi-mcp",
     "decision": "rejected_L0",
     "promising_file": null
   },
