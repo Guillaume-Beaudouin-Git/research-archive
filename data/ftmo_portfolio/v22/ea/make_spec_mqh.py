@@ -37,13 +37,43 @@ for s in LEGS4:
         f"#define ANCHOR_R3D_{s}     {mql_dow}   // ENUM_DAY_OF_WEEK",
         f"#define MARGIN_STD_{s}     {ms['margin_rates']['standard_measured'][s]:.6f}",
         f"#define MARGIN_SWING_{s}   {ms['margin_rates']['swing_official'][s]:.6f}",
+        # v2.8 : marge Swing réellement mesurée sur le compte armé. Les ancres de
+        # SANITÉ de l'EA sont {MARGIN_STD_, MARGIN_MEAS_} — MARGIN_SWING_ en est exclu
+        # (bornes soudées : l'or à 1:9 passerait en silence) mais reste émis car il est
+        # le fallback CONSERVATEUR de MarginRateEff : l'enforcement est inchangé.
+        f"#define MARGIN_MEAS_{s}    {ms['margin_rates']['swing_measured'][s]:.6f}",
     ]
 SANITY_BLOCK = "\n".join(sanity_lines)
+
+# ---- v2.8 : overlay risque leg_leverage_cap (0 = pas de cap) ----
+_ro = (spec.get("risk_overlays") or {}).get("leg_leverage_cap") or {}
+_ro_on = bool(_ro.get("enabled"))
+_ro_caps = _ro.get("caps") or {}
+# L'EA n'a AUCUNE notion de phase : les #define sont les mêmes en challenge et en
+# funded. Le Python, lui, respecte `applies_to` (lib/spec.py::leg_lev_cap_vector).
+# Restreindre applies_to à une seule phase ferait donc diverger SILENCIEUSEMENT le
+# modèle et l'EA sur l'autre. Fail-loud plutôt que divergence silencieuse : si ce
+# besoin apparaît, il faudra câbler InpPhase dans LegLevCap(), pas contourner ici.
+if _ro_on and sorted(_ro.get("applies_to") or []) != ["challenge", "funded"]:
+    raise SystemExit(
+        "make_spec_mqh: risk_overlays.leg_leverage_cap.applies_to = "
+        f"{_ro.get('applies_to')!r} — l'EA ne sait pas distinguer les phases, il "
+        "appliquerait le cap aux DEUX. Câbler InpPhase dans LegLevCap() avant de "
+        "restreindre applies_to.")
+
+
+def _legcap(s):
+    v = _ro_caps.get(s)
+    return "0" if (not _ro_on or v is None) else f"{float(v):g}"
+
+
+LEGCAP_BLOCK = "\n".join(
+    f"#define LEG_LEV_CAP_{s}   {_legcap(s)}" for s in LEGS4)
 
 mqh = f"""//+------------------------------------------------------------------+
 //| spec_v22.mqh — GÉNÉRÉ depuis spec_v22.yaml par make_spec_mqh.py  |
 //| NE PAS ÉDITER À LA MAIN (ancre #20: régénération byte-identique). |
-//| Pins: 605f4a4 + 4e1bac5 + 87b6cd4 ; yaml sha {brain.PIN_SHA256[:8]}…            |
+//| Pins: {brain.PIN_COMMITS['v22_contract'][:7]} + {brain.PIN_COMMITS['v22_residuals'][:7]} + {brain.PIN_COMMITS['v22_spec_yaml'][:7]} ; yaml sha {brain.PIN_SHA256[:8]}…            |
 //+------------------------------------------------------------------+
 #define SPEC_VERSION        "{spec['meta']['version']}"
 #define SPEC_SHA256         "{brain.PIN_SHA256}"
@@ -88,6 +118,12 @@ mqh = f"""//+------------------------------------------------------------------+
 #define MRATE_GER40         {f(mg['rates']['GER40'])}
 #define LOT_STEP            0.01
 #define LEG_CAP_PRE_VM      {f(g['leg_cap_pre_vm'])}
+
+// ---- v2.8 : cap de NOTIONNEL par jambe (risk_overlays.leg_leverage_cap) ----
+// Unité = notionnel/equity, INVARIANTE EN vm. Appliqué AVANT le cap marge.
+// 0 = pas de cap. À NE PAS confondre avec LEG_CAP_PRE_VM ci-dessus (garde-fou
+// anti-lot-aberrant à 42x eq, libellé pre-vm donc suiveur de vm).
+{LEGCAP_BLOCK}
 
 // ---- MICRO-ORB = LE compteur de jours (bloc micro_orb_day_counter du yaml) ----
 // entrée canonique post-OR (OR 15:30-16:00 CET, fill premier bar 5min post-OR);

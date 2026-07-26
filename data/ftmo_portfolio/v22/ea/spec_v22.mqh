@@ -1,13 +1,13 @@
 //+------------------------------------------------------------------+
 //| spec_v22.mqh — GÉNÉRÉ depuis spec_v22.yaml par make_spec_mqh.py  |
 //| NE PAS ÉDITER À LA MAIN (ancre #20: régénération byte-identique). |
-//| Pins: 605f4a4 + 4e1bac5 + 87b6cd4 ; yaml sha 56fbdde7…            |
+//| Pins: 605f4a4 + 4e1bac5 + ad403ce ; yaml sha 3e7626f6…            |
 //+------------------------------------------------------------------+
-#define SPEC_VERSION        "v2.2.1"
-#define SPEC_SHA256         "56fbdde78a2e5c4365e8e0f5bbda06d3697a198beccbcbf2dd02deea0eb27928"
+#define SPEC_VERSION        "v2.2.2"
+#define SPEC_SHA256         "3e7626f6d3fdc53050a9ad1097c13c8af05179d380f5090141c323561060563b"
 #define SPEC_PIN_CONTRACT   "605f4a426da3eac4f5a2644bca774a07f1e5f754"
 #define SPEC_PIN_RESIDUALS  "4e1bac5cf6486fcd0070876d47dd2dcdc7a8f539"
-#define SPEC_PIN_YAML       "87b6cd4080e2b1c9e666c6b9dd15680ce29a7e1e"
+#define SPEC_PIN_YAML       "ad403cefb7f8af9285acb1bdd424d0601080c5b5"
 
 // ---- compte & règles FTMO (2-step Swing $10k) ----
 #define ACCOUNT_SIZE_USD    10000
@@ -46,6 +46,15 @@
 #define MRATE_GER40         0.02
 #define LOT_STEP            0.01
 #define LEG_CAP_PRE_VM      1.5
+
+// ---- v2.8 : cap de NOTIONNEL par jambe (risk_overlays.leg_leverage_cap) ----
+// Unité = notionnel/equity, INVARIANTE EN vm. Appliqué AVANT le cap marge.
+// 0 = pas de cap. À NE PAS confondre avec LEG_CAP_PRE_VM ci-dessus (garde-fou
+// anti-lot-aberrant à 42x eq, libellé pre-vm donc suiveur de vm).
+#define LEG_LEV_CAP_XAUUSD   0
+#define LEG_LEV_CAP_USDJPY   12
+#define LEG_LEV_CAP_US100   0
+#define LEG_LEV_CAP_GER40   0
 
 // ---- MICRO-ORB = LE compteur de jours (bloc micro_orb_day_counter du yaml) ----
 // entrée canonique post-OR (OR 15:30-16:00 CET, fill premier bar 5min post-OR);
@@ -90,21 +99,25 @@
 #define ANCHOR_R3D_XAUUSD     3   // ENUM_DAY_OF_WEEK
 #define MARGIN_STD_XAUUSD     0.033333
 #define MARGIN_SWING_XAUUSD   0.111111
+#define MARGIN_MEAS_XAUUSD    0.066667
 #define ANCHOR_SWL_USDJPY     (0.96)
 #define ANCHOR_SWS_USDJPY     (-20.3)
 #define ANCHOR_R3D_USDJPY     3   // ENUM_DAY_OF_WEEK
 #define MARGIN_STD_USDJPY     0.010000
 #define MARGIN_SWING_USDJPY   0.033333
+#define MARGIN_MEAS_USDJPY    0.033335
 #define ANCHOR_SWL_US100     (-637.16)
 #define ANCHOR_SWS_US100     (27.49)
 #define ANCHOR_R3D_US100     5   // ENUM_DAY_OF_WEEK
 #define MARGIN_STD_US100     0.020000
 #define MARGIN_SWING_US100   0.066667
+#define MARGIN_MEAS_US100    0.066667
 #define ANCHOR_SWL_GER40     (-393.88)
 #define ANCHOR_SWS_GER40     (-48.68)
 #define ANCHOR_R3D_GER40     5   // ENUM_DAY_OF_WEEK
 #define MARGIN_STD_GER40     0.020000
 #define MARGIN_SWING_GER40   0.066667
+#define MARGIN_MEAS_GER40    0.066670
 
 //+------------------------------------------------------------------+
 //| Assert d'init: MQL5/Files/spec_v22.sha256 doit == SPEC_SHA256.    |

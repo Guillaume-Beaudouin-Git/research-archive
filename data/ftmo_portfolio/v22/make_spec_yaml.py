@@ -39,8 +39,12 @@ sS = pd.read_parquet(E.CACHE / "panel_swapS.parquet")
 
 spec = {
     "meta": {
-        "version": "v2.2.1",
-        "policy_version": "v2.2 (recost v2.2.1 = data-only, policy inchangée — pré-enregistré)",
+        "version": "v2.2.2",
+        "policy_version": ("v2.2 + overlay risque leg_leverage_cap (v2.8, 2026-07-25) — "
+                           "POLICY : change les cibles. challenge.config et funded.config "
+                           "sont INCHANGÉS, donc tout résultat pinné v2.2 se reproduit à "
+                           "l'identique avec un cfg SANS overlay (non-régression vérifiée "
+                           "A/B sur 462 cohortes : 82.47% / 381 des deux côtés)."),
         "spec_date": "2026-06-10",
         "baseline_commits": BASELINE_COMMITS,
         "supersedes": "v2.1 — toute référence baseline v2.1 est remplacée par ce pin",
@@ -188,7 +192,23 @@ spec = {
                                   for k, v in C22.MARGIN_RATES_STANDARD.items()},
             "swing_official": {k: round(v, 6)
                                for k, v in C22.MARGIN_RATES_SWING.items()},
+            "swing_measured": {
+                **{k: round(v, 6)
+                   for k, v in C22.MARGIN_RATES_SWING_MEASURED.items()},
+                "read_date": C22.SWING_MARGIN_MEASURED_READ_DATE,
+                "source": C22.SWING_MARGIN_MEASURED_SOURCE,
+            },
             "swing_status": C22.SWING_MARGIN_STATUS,
+            "bounds_note": ("v2.8 : les ancres de SANITÉ (EA et miroir Python) sont "
+                            "{standard_measured, swing_measured}. swing_official en est "
+                            "EXCLU : a +/-25% ses bornes se soudent a celles de la mesure "
+                            "([0.0500,0.0833] u [0.0833,0.1389] pour XAUUSD), si bien que "
+                            "l'or passant a 1:9 — le headline_margin_swing, delta p(pass) "
+                            "-15.6 pt — serait accepte EN SILENCE. Avant v2.8 il n'y avait "
+                            "que 2 ancres et la marge reelle (6.667%) tombait hors des "
+                            "deux -> alarme permanente, donc canal aveugle par saturation. "
+                            "swing_official reste emis : il est le fallback CONSERVATEUR "
+                            "d'enforcement (MarginRateEff), role distinct, inchange."),
         },
     },
     "recost_v221": {
@@ -237,6 +257,35 @@ spec = {
         "attempts_mean": 3.24, "funded_value_usd": 1422, "ev_campaign_usd": 926,
         "cdf": {"30d": 0.416, "61d": 0.703, "91d": 0.870, "182d": 0.989, "270d": 1.0},
         "details": "NONREGRESSION_v2.2.md",
+    },
+    "risk_overlays": {
+        "leg_leverage_cap": {
+            "enabled": True,
+            "applies_to": ["challenge", "funded"],
+            "order": "before_margin_cap",
+            "unit": "notional_usd / equity_usd",
+            "caps": {k: (C22.LEG_LEV_CAP[i] if C22.LEG_LEV_CAP[i] is None
+                         else float(C22.LEG_LEV_CAP[i]))
+                     for i, k in enumerate(LEGS4)},
+            "rationale": (
+                "Le cap marge 60% est libellé en MARGE, pas en risque : 0.60/0.03333 = "
+                "18.05x de notionnel pour USDJPY contre 9.0x pour les jambes à 6.667% — "
+                "la jambe au pire skew (2 des 3 breachs réels) reçoit 2x l'allocation. "
+                "Cap 12x -> le mouvement USDJPY nécessaire pour breacher le daily passe "
+                "de 0.277% à 0.415% (+50%, déterministe). Coût en p(campagne) : "
+                "INDISTINGUABLE DE ZÉRO sur [10x, 17x] (462 cohortes, tous les CI90 "
+                "traversent 0) ; le -1.52 pt mesuré à 12x est un tirage, pas un coût. "
+                "Le seuil se justifie par le tampon de queue, JAMAIS par p(pass) : "
+                "re-fitter sur cette frontière serait de l'overfit (Lesson 10, L20)."),
+            "notes": (
+                "HORS challenge.config à dessein : le drift-check de v22/ea/brain.py "
+                "exige challenge.config == dict(C22.CFG_CHALLENGE), donc y placer "
+                "l'overlay casserait le gel v2.2 et la reproductibilité des chiffres "
+                "pinnés. FUNDED = no-op mesuré (W_J1 max 1.50 à vm 1.0 -> 12x jamais "
+                "atteint). Ne pas confondre avec LEG_CAP_PRE_VM (garde-fou "
+                "anti-lot-aberrant à 42x, libellé pre-vm donc suiveur de vm) : ce cap-ci "
+                "est libellé en notionnel/equity, donc INVARIANT en vm."),
+        },
     },
     "live_gates_unchanged": [
         "test swap overnight (±20% sinon STOP)",

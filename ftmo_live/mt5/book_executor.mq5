@@ -120,6 +120,7 @@ int     g_live_r3d[N_LEGS];
 double  g_anc_swl[N_LEGS], g_anc_sws[N_LEGS];
 int     g_anc_r3d[N_LEGS];
 double  g_mrate_std[N_LEGS], g_mrate_swing[N_LEGS];
+double  g_mrate_meas[N_LEGS];        // v2.8 : marge Swing mesurée (compte armé)
 bool    g_spec_breach=false;
 string  g_spec_breach_detail="";
 
@@ -362,6 +363,17 @@ double LegLotCap(int k, double eq)         // cap sanity dérivé du mqh (pace m
    if(one<=0) return 0.0;
    return LEG_CAP_PRE_VM*VmEff()*2.0*eq/one;
   }
+// v2.8 : cap de NOTIONNEL par jambe (risk_overlays.leg_leverage_cap du yaml).
+// 0 = pas de cap. Invariant en vm — contrairement à LegLotCap ci-dessus, qui est
+// un garde-fou anti-lot-aberrant libellé pre-vm (donc croissant avec vm).
+double LegLevCap(int k)
+  {
+   double c[N_LEGS];
+   c[0]=LEG_LEV_CAP_XAUUSD; c[1]=LEG_LEV_CAP_USDJPY;
+   c[2]=LEG_LEV_CAP_US100;  c[3]=LEG_LEV_CAP_GER40;
+   if(k<0 || k>=N_LEGS) return 0.0;
+   return c[k];
+  }
 
 //+------------------------------------------------------------------+
 //| v2.2.1 — specs live (swap pts, rollover3days, marge) vs bornes     |
@@ -378,6 +390,15 @@ void InitAnchors()
    g_mrate_std[1]=MARGIN_STD_USDJPY;   g_mrate_swing[1]=MARGIN_SWING_USDJPY;
    g_mrate_std[2]=MARGIN_STD_US100;    g_mrate_swing[2]=MARGIN_SWING_US100;
    g_mrate_std[3]=MARGIN_STD_GER40;    g_mrate_swing[3]=MARGIN_SWING_GER40;
+   // v2.8 : 3e ancre = marge Swing MESURÉE sur le compte armé (2026-07-24).
+   // La marge réelle (or 6.667%) tombait hors des DEUX ancres existantes par
+   // construction — elle est exactement entre Std 3.333% et Swing officiel
+   // 11.111% — d'où spec_bounds_breach allumé en permanence, donc un canal
+   // d'alerte AVEUGLE à toute dérive future (aveuglement d'instrument, pas
+   // nuisance cosmétique). MARGIN_SWING_ reste inchangé et continue de servir
+   // de fallback CONSERVATEUR à MarginRateEff : l'enforcement ne bouge pas.
+   g_mrate_meas[0]=MARGIN_MEAS_XAUUSD; g_mrate_meas[1]=MARGIN_MEAS_USDJPY;
+   g_mrate_meas[2]=MARGIN_MEAS_US100;  g_mrate_meas[3]=MARGIN_MEAS_GER40;
   }
 
 void ReadLiveSpecs()
@@ -415,15 +436,28 @@ void ReadLiveSpecs()
         }
       if(g_live_mrate[k]>0)
         {
-         bool near_std=MathAbs(g_live_mrate[k]-g_mrate_std[k])
-                       /g_mrate_std[k]<=SANITY_MARGIN_REL;
-         bool near_swing=MathAbs(g_live_mrate[k]-g_mrate_swing[k])
-                         /g_mrate_swing[k]<=SANITY_MARGIN_REL;
-         if(!near_std && !near_swing)
+         // v2.8 : ancres de sanité = {standard_measured, swing_measured}.
+         // MARGIN_SWING_ (officiel 1:9) est VOLONTAIREMENT EXCLU d'ici : à ±25%
+         // son intervalle se SOUDE à celui de la mesure ([0.0500,0.0833] u
+         // [0.0833,0.1389] pour XAUUSD) -> l'or passant à 1:9 serait accepté EN
+         // SILENCE, alors que c'est le seul événement que ce canal doit attraper
+         // (headline_margin_swing du yaml : Δ p(pass) -15.6 pt). MARGIN_SWING_
+         // garde son autre rôle, distinct : fallback conservateur de
+         // MarginRateEff. Miroir exact de lib/swaps.py::check_live_bounds.
+         // Gardes >0 : une ancre nulle (spec régénérée sans le bloc) diviserait
+         // par zéro. (2e audit indépendant 2026-07-26.)
+         bool near_std=(g_mrate_std[k]>0)
+                       && MathAbs(g_live_mrate[k]-g_mrate_std[k])
+                          /g_mrate_std[k]<=SANITY_MARGIN_REL;
+         bool near_meas=(g_mrate_meas[k]>0)
+                        && MathAbs(g_live_mrate[k]-g_mrate_meas[k])
+                           /g_mrate_meas[k]<=SANITY_MARGIN_REL;
+         if(!near_std && !near_meas)
            {
             g_spec_breach=true;
-            g_spec_breach_detail+=StringFormat("%s marge %.4f hors Std %.4f/Swing %.4f; ",
-               g_legs[k], g_live_mrate[k], g_mrate_std[k], g_mrate_swing[k]);
+            g_spec_breach_detail+=StringFormat(
+               "%s marge %.4f hors Std %.4f/Mesure %.4f; ",
+               g_legs[k], g_live_mrate[k], g_mrate_std[k], g_mrate_meas[k]);
            }
         }
      }
@@ -822,6 +856,16 @@ void DetectServerExits()
    magics[1]=InpMagicBase+MAGIC_FORB;
    if(g_exit_scan_from==0) g_exit_scan_from=TimeCurrent()-3600;
    if(!HistorySelect(g_exit_scan_from-60, TimeCurrent()+60)) return;
+   // v2.8 : le curseur n'avance qu'APRÈS la boucle. Avant, il était posé sur le
+   // PREMIER deal vu — et comme la boucle descend du plus RÉCENT au plus ancien,
+   // tous les autres deals du même scan tombaient aussitôt sous le test
+   // `dt<=g_exit_scan_from` et étaient perdus. Combiné à la persistance ajoutée
+   // par ce même lot, l'oubli devenait DÉFINITIF (ex. redémarrage après coupure
+   // avec une sortie micro-SL ET une sortie FORB dans la fenêtre : une seule
+   // atteignait fills.csv). Accumuler puis affecter garde EXACTEMENT la même
+   // borne de scan (HistorySelect est déjà figé au-dessus) et les re-lectures
+   // éventuelles sont absorbées par le ring de dédup. (2e audit 2026-07-26.)
+   datetime scan_from=g_exit_scan_from, newest=g_exit_scan_from;
    for(int i=HistoryDealsTotal()-1; i>=0; i--)
      {
       ulong tk=HistoryDealGetTicket(i);
@@ -830,8 +874,8 @@ void DetectServerExits()
       if(m!=magics[0] && m!=magics[1]) continue;
       if(HistoryDealGetInteger(tk, DEAL_ENTRY)!=DEAL_ENTRY_OUT) continue;
       datetime dt=(datetime)HistoryDealGetInteger(tk, DEAL_TIME);
-      if(dt<=g_exit_scan_from) continue;
-      g_exit_scan_from=dt;
+      if(dt<=scan_from) continue;
+      if(dt>newest) newest=dt;
       long rsn=HistoryDealGetInteger(tk, DEAL_REASON);
       string label;
       if(m==magics[1]) label="funded_orb_exit";
@@ -849,7 +893,19 @@ void DetectServerExits()
       double px=HistoryDealGetDouble(tk, DEAL_PRICE);
       double slip=(fake.req_px>0) ? (px/fake.req_px-1.0)*fake.side*1e4 : 0.0;
       LogFill(fake, px, slip, (long)tk);
-      if(m==magics[0] && g_micro_state==2) { g_micro_state=3; SaveState(); }
+      if(m==magics[0] && g_micro_state==2) g_micro_state=3;
+     }
+   // v2.8 : le curseur avance pour TOUT magic (FORB inclus) et il est PERSISTÉ.
+   // Avant, SaveState() n'était appelé que pour le micro en état 2 — donc jamais
+   // pour MAGIC_FORB : le curseur était bien sérialisé (SaveState "exit_scan" /
+   // LoadState) mais la persistance n'était pas déclenchée, et après un restart
+   // le scan repartait en arrière avec un ring de dédup vide = re-log.
+   // Un seul SaveState par scan (et non plus un par deal) : AtomicWrite est déjà
+   // appelé ~15x/jour sur OnTimer, inutile de le multiplier.
+   if(newest>g_exit_scan_from)
+     {
+      g_exit_scan_from=newest;
+      SaveState();
      }
   }
 
@@ -918,6 +974,25 @@ bool TargetsValidate()                                  // true = risque nouveau
 //+------------------------------------------------------------------+
 void CapQuantizeTrade(double &tgt[], double eq, string reason, bool &trade_mask[])
   {
+   // v2.8 : cap de NOTIONNEL par jambe (overlay risque yaml), AVANT le cap marge.
+   // Écrêter J1 libère de la marge pour les autres jambes au lieu de les raboter
+   // proportionnellement. Unité = notionnel/equity, INVARIANTE EN vm (ne pas
+   // confondre avec LEG_CAP_PRE_VM, garde-fou anti-lot-aberrant à 42x qui suit vm).
+   // L'ORDRE est le miroir exact de cleanroom.engine._target_for_segment et de
+   // lib/invariants.leg_leverage_clip : clipper APRÈS le cap marge donnerait des
+   // cibles différentes du sim -> Δ reconcile inexpliqué toutes les nuits où le
+   // cap mord. trade_mask=true est OBLIGATOIRE : sans lui la jambe écrêtée ne
+   // serait jamais retaillée et le clip resterait un calcul mort (bug silencieux).
+   if(eq>0)
+      for(int k=0;k<N_LEGS;k++)
+        {
+         double lc=LegLevCap(k);                          // <=0 => pas de cap
+         if(lc>0 && MathAbs(tgt[k])>lc*eq)
+           {
+            tgt[k]=(tgt[k]>0 ? lc*eq : -lc*eq);
+            trade_mask[k]=true;
+           }
+        }
    // v2.2.1: enforcement au taux de marge LIVE (OrderCalcMargin) — le broker
    // rejetterait sinon ; la policy v2.2 (MRATE_*) reste le miroir sim, l'écart
    // Swing vs policy est LE headline du recost (Δ p(pass) -15.6 pt si Swing).
@@ -1282,22 +1357,35 @@ void Do2258EOD()
 long g_logged_deals[FILL_DEDUP_N];
 int  g_logged_deals_n=0;
 
-bool FillAlreadyLogged(long deal_tk)
+// v2.8 (audit desk 2026-07-25) : le check-and-set de v2.7 marquait le deal AVANT
+// l'écriture. Un FileOpen en échec (fills.csv verrouillé par un lecteur — reconcile.py
+// et supervisor.py le lisent) sortait en laissant le deal marqué « loggé » SANS ligne,
+// et bloquait le second chemin qui l'aurait rattrapé : les deux appelants sont
+// non-réentrants (ConfirmPendings pose done=true l.768 AVANT l'appel, DetectServerExits
+// avance g_exit_scan_from l.864 AVANT l'appel). Le double chemin EST le seul mécanisme
+// de rattrapage — le tuer transforme un FileOpen raté en trou d'audit définitif.
+// D'où : check PUR, marque APRÈS FileClose.
+bool DealAlreadyLogged(long deal_tk)
   {
    if(deal_tk<=0) return false;
    int n=(g_logged_deals_n<FILL_DEDUP_N) ? g_logged_deals_n : FILL_DEDUP_N;
    for(int i=0;i<n;i++)
       if(g_logged_deals[i]==deal_tk) return true;
+   return false;
+  }
+
+void MarkDealLogged(long deal_tk)
+  {
+   if(deal_tk<=0) return;                             // entrées : jamais dédupliquées
    g_logged_deals[g_logged_deals_n % FILL_DEDUP_N]=deal_tk;
    g_logged_deals_n++;
-   return false;
   }
 
 void LogFill(Pending &p, double fill, double slip_bps, long deal_tk)
   {
-   if(FillAlreadyLogged(deal_tk)) return;             // v2.7 : anti double-journalisation
+   if(DealAlreadyLogged(deal_tk)) return;             // v2.7 : anti double-journalisation
    int h=FileOpen("fills.csv", FILE_READ|FILE_WRITE|FILE_TXT|FILE_ANSI|FILE_SHARE_READ);
-   if(h==INVALID_HANDLE) return;
+   if(h==INVALID_HANDLE) return;                      // v2.8 : NON marqué -> l'autre chemin rattrape
    if(FileSize(h)==0)
       FileWriteString(h, "ts_server,ts_paris,phase,reason,symbol,side,lots,req_price,"
                          "fill_price,slip_bps,latency_ms,order_ticket,deal_ticket,"
@@ -1309,6 +1397,11 @@ void LogFill(Pending &p, double fill, double slip_bps, long deal_tk)
        TsServer(), TsParis(), InpPhase, p.reason, p.symbol, p.side>0?"BUY":"SELL",
        p.lots, p.req_px, fill, slip_bps, lat_ms, 0, deal_tk, 0, p.magic));
    FileClose(h);
+   // v2.8 : marquer APRÈS l'écriture réussie. La ligne de secours du second chemin
+   // porte un req_px fabriqué (slip faux) mais le VRAI deal_ticket, le VRAI fill et
+   // les VRAIS lots — reconcile.py reconstruit le P&L sur les fills, pas sur le slip.
+   // Un fill au slip faux vaut mieux qu'un fill absent.
+   MarkDealLogged(deal_tk);
    WriteState(true);
   }
 

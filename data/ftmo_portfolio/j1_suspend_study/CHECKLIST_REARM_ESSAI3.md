@@ -28,7 +28,7 @@ rechargerait mauvais profil + mauvaise date.
 
 ## D. Algo/Auto-Trading ON
 Après toute manip VNC / rechargement de profil, Algo Trading peut repasser OFF (ret=10027 vécu → book paralysé).
-- [ ] Vérifier **AutoTrading ON** ; au log Experts : `SPEC OK v2.2.1 sha 56fbdde78a2e…`,
+- [ ] Vérifier **AutoTrading ON** ; au log Experts : `SPEC OK v2.2.2 sha 3e7626f6d3fd…`,
       4× `UPU <sym>: … usd_per_unit>0`, `book_executor v2.2 INIT — phase 1…`. `INIT REFUSÉ` = STOP.
 
 ## E. flat_today collé (incident 2026-06-16)
