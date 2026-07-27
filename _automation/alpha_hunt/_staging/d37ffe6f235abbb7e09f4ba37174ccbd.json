@@ -1,0 +1,14 @@
+{
+  "hash": "d37ffe6f235abbb7e09f4ba37174ccbd",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.21807v1",
+  "title": "Partial Identification with Auxiliary Moment Restrictions",
+  "url": "http://arxiv.org/abs/2607.21807v1",
+  "description": "Partial identification is often set aside in practice because the identification regions it delivers are too wide to be useful, pushing researchers toward strong assumptions that buy point identification at the cost of credibility. We show that a source of information already sitting in most interval-valued datasets can fix this without adding any assumption at all. When an outcome is reported only as an interval---because a data custodian bracketed, top-coded, or formally privatized it to protect respondents---the same custodian typically continues to publish accurate population aggregates of that outcome, precisely because doing so does not compromise any individual record. We develop a framework for exploiting exactly this information: restricting the set of admissible completions of the data to those consistent with a known aggregate, rather than restricting the interval itself, and characterizing the sharp identification region that results for the best linear predictor. The restrictions we study behave in strikingly different ways---some collapse the region by a full dimension, others narrow it while leaving its shape intact. We characterize the geometric effect of each restriction and derive closed-form directional measures of identifying value for the mean and conditional-mean cases. An illustration using interval-valued wages from the Current Population Survey shows that the effect is far from marginal: modest auxiliary information recovers a substantial share of the identifying power usually thought to be lost once an outcome is coarsened.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-27 04:00 UTC"
+}
