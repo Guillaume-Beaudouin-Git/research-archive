@@ -27,6 +27,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "4c929ed7bf50ec0d5d93582820d4093b": {
+    "first_seen": "2026-07-27 21:30",
+    "source": "quantpedia",
+    "title": "From Backtest to Benchmark: Validating New Strategies with Quantpedia API",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "a2d48ae5067e16e494a1173e630940ad": {
     "first_seen": "2026-07-13 13:00",
     "source": "quantpedia",
