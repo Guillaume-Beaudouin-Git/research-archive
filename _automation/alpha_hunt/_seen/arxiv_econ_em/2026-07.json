@@ -90,6 +90,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "21a78c43ef9c313baf25cd8c29e67258": {
+    "first_seen": "2026-07-27 04:00",
+    "source": "arxiv_econ_em",
+    "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "245b2a00c2011a5bfa84417664fb8a98": {
     "first_seen": "2026-07-14 03:00",
     "source": "arxiv_econ_em",
@@ -524,6 +531,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "c3c005b0a6dd60fd025f9a3c96e4aba6": {
+    "first_seen": "2026-07-27 04:00",
+    "source": "arxiv_econ_em",
+    "title": "To what extent can long-differencing capture climate adaptation?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c9e126fd7c071d86217b46630be48b61": {
     "first_seen": "2026-07-02 02:00",
     "source": "arxiv_econ_em",
@@ -549,6 +563,13 @@
     "first_seen": "2026-07-03 01:30",
     "source": "arxiv_econ_em",
     "title": "Granular Instrumental Variables in Large Panels: Identification and Inference Ac",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "d37ffe6f235abbb7e09f4ba37174ccbd": {
+    "first_seen": "2026-07-27 04:00",
+    "source": "arxiv_econ_em",
+    "title": "Partial Identification with Auxiliary Moment Restrictions",
     "decision": "accepted",
     "promising_file": null
   },
@@ -615,6 +636,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_delegation_rights_property_agency_and_investment_i_20260701.md"
   },
+  "eb03cc91cd9846925cd0adfa9319041d": {
+    "first_seen": "2026-07-27 04:00",
+    "source": "arxiv_econ_em",
+    "title": "Nonlinear Boosting with Multiple Testing in High-Dimensional Generalised Linear ",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "eecde19e9d9bae996eb41ecfdde2f64a": {
     "first_seen": "2026-07-07 02:00",
     "source": "arxiv_econ_em",
@@ -655,6 +683,13 @@
     "source": "arxiv_econ_em",
     "title": "Rational Bubbles at the Spectral Edge: An Operator-Spectral Theory of Fragility,",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "fa991543cc588fc33e76516cf2e31f03": {
+    "first_seen": "2026-07-27 04:00",
+    "source": "arxiv_econ_em",
+    "title": "Interventional Score Geometry for Causal Inference",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "fcf1a54feee74aebe4c40eebd0755ff3": {
