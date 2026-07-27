@@ -1,0 +1,14 @@
+{
+  "hash": "4c929ed7bf50ec0d5d93582820d4093b",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/from-backtest-to-benchmark-validating-new-strategies-with-quantpedia-api/",
+  "title": "From Backtest to Benchmark: Validating New Strategies with Quantpedia API",
+  "url": "https://quantpedia.com/from-backtest-to-benchmark-validating-new-strategies-with-quantpedia-api/",
+  "description": "A profitable backtest is rarely the end of a research process. In professional quantitative research, the more important question often comes after the first positive result: is the strategy genuinely new, or is it simply another version of an already known factor, timing rule, or anomaly? This is especially relevant when a researcher develops a new systematic strategy with a clean historical equity curve. The strategy may have acceptable risk-adjusted performance, stable drawdowns, and a logical trading rule, but those statistics alone do not prove that the idea is unique. A silver strategy, for example, may look different on the surface while still behaving like a known commodity timing model, a trend-following strategy, a volatility filter, or a broader macro factor exposure. This article shows how Quantpedia API can be used as a benchmark dataset for validating new research. Instead of evaluating a new backtest in isolation, the strategy is compared against the Quantpedia universe of documented quantitative strategies. The workflow identifies nearest neighbours, assigns the strategy to a factor cluster, calculates a uniqueness score, and produces a research robustness report that can be used for deeper validation. The goal is not to replace human research judgment. The goal is to create a structured robustness checker that helps researchers understand whether a new strategy is truly differentiated, redundant with known effects, or simply a variation of an existing Quantpedia strategy profile.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-07-27 21:30 UTC"
+}
