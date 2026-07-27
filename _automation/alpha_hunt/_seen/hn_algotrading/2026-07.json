@@ -41,6 +41,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "17596eaf81799608b93e59dfb7d9effe": {
+    "first_seen": "2026-07-27 06:00",
+    "source": "hn_algotrading",
+    "title": "Why the Technological Singularity May Be a \"Big Nothing\"",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "1a642db12ad8af68dd2be2ff08a9ca71": {
     "first_seen": "2026-07-16 11:30",
     "source": "hn_algotrading",
@@ -241,6 +248,13 @@
     "first_seen": "2026-07-15 16:00",
     "source": "hn_algotrading",
     "title": "Show HN: SirixDB 1.0 Beta – Git-Like Versioning, Diffs, Time-Travel Queries",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a7fc3d1dff84e30b2cad27c2bdd94d60": {
+    "first_seen": "2026-07-27 06:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: ChunkHound – Advanced Code RAG",
     "decision": "rejected_L0",
     "promising_file": null
   },
