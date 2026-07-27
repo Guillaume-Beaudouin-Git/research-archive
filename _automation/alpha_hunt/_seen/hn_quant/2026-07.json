@@ -1,4 +1,11 @@
 {
+  "f28cb33212c74475c7d0eee31f8add14": {
+    "first_seen": "2026-07-27 07:30",
+    "source": "hn_quant",
+    "title": "Ask HN: Does the tech industry require deterministic ML training?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "fd792c5a2725dbc85b75e39e59e2454c": {
     "first_seen": "2026-07-15 22:00",
     "source": "hn_quant",
