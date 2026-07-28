@@ -1,4 +1,11 @@
 {
+  "009b4b2e5db3b3b1b91ee2be4ca9fea4": {
+    "first_seen": "2026-07-28 11:00",
+    "source": "github_python",
+    "title": "HKUDS/OpenSpace",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "020cfdcdd0ded12ffadc0b28eb4949bd": {
     "first_seen": "2026-07-21 11:30",
     "source": "github_python",
@@ -97,6 +104,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "20dc713f28154a00bed716d9e6471a64": {
+    "first_seen": "2026-07-28 11:00",
+    "source": "github_python",
+    "title": "paperswithbacktest/awesome-systematic-trading",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "21d8da7ee92a632ec12784847a8fa6c0": {
     "first_seen": "2026-07-03 11:00",
     "source": "github_python",
@@ -129,6 +143,13 @@
     "first_seen": "2026-07-24 11:00",
     "source": "github_python",
     "title": "tile-ai/tilelang",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "352a1a75e011049486a7526f36a084c5": {
+    "first_seen": "2026-07-28 11:00",
+    "source": "github_python",
+    "title": "agentscope-ai/QwenPaw",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -822,6 +843,13 @@
     "first_seen": "2026-07-12 11:00",
     "source": "github_python",
     "title": "MervinPraison/PraisonAI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ff443d85415609a21cf517a7cad41bf0": {
+    "first_seen": "2026-07-28 11:00",
+    "source": "github_python",
+    "title": "lightseekorg/tokenspeed",
     "decision": "rejected_L0",
     "promising_file": null
   }
