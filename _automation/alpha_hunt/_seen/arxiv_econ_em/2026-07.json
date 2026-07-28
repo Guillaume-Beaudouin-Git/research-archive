@@ -321,6 +321,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "68fc4cde4eba134b4a1ccd9fac5e6ef8": {
+    "first_seen": "2026-07-28 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Debiased Machine Learning: Identification, Estimation, and Shape Constraints",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6b5628459eda102859e8729bec10620d": {
     "first_seen": "2026-07-21 03:00",
     "source": "arxiv_econ_em",
@@ -578,6 +585,13 @@
     "source": "arxiv_econ_em",
     "title": "Robust estimation of the autocorrelation function via forward ratios",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "c4ce3c6a9ecd6db283185e221574dff6": {
+    "first_seen": "2026-07-28 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Inference on counterfactual distributions using martingale posteriors",
+    "decision": "accepted",
     "promising_file": null
   },
   "c65d91a144657beb2c6eea4b18da61f8": {
