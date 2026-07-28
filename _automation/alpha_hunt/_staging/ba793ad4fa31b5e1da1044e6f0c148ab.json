@@ -1,0 +1,14 @@
+{
+  "hash": "ba793ad4fa31b5e1da1044e6f0c148ab",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.23585v1",
+  "title": "The One-Period Kyle (1985) Model Has a Unique Equilibrium: A Monotone Gaussian Bayes inverse-rigidity theorem",
+  "url": "http://arxiv.org/abs/2607.23585v1",
+  "description": "Let $V$ and $U$ be independent standard normal random variables. For any Borel map $φ\\colon\\mathbb{R}\\to\\mathbb{R}$, set $Y_φ=φ(V)+U$, and define $P_φ(y)=\\mathbb{E}[V\\mid Y_φ=y]$ and $F_φ(x)=\\mathbb{E}[P_φ(x+U)]$. We prove that, if for every $v\\in\\mathbb{R}$, the quantity $φ(v)$ maximises $x(v-F_φ(x))$ over $x\\in\\mathbb{R}$, then $φ$ is the identity function. This is the normalised one-period Kyle (1985) model of insider trading. It follows that Kyle's closed-form affine strategy is the unique equilibrium of the model for arbitrary Gaussian location and scale, and that its canonical competitive pricing rule is necessarily linear. This settles a long-standing question in financial economics. Boulatov, Kyle and Livdan (2005, 2013) introduced complex-analytic techniques to the problem. McLennan, Monteiro and Tourky (2017) proved a linear growth bound for $P_φ$, real-entire regularity of $F_φ$, and uniqueness when an equilibrium strategy agrees locally with a uniquely continuable analytic function. The present proof requires no regularity assumption on $φ$ beyond Borel measurability. Its argument is real-variable and probabilistic: the maximisation forces sharp upper and lower bounds for Gaussian-randomised monotone functions to coincide, and the corresponding equality cases admit only the identity function.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-28 01:30 UTC"
+}

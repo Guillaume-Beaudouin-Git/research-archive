@@ -27,6 +27,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "09c46dabb605c3b503b5e65a6c26ab3e": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Towards Optimal Estimators for Randomized Control Trials",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "09f9cc2c578097f284d3ebc0df1aae2b": {
     "first_seen": "2026-07-07 03:30",
     "source": "arxiv_econ_em",
@@ -286,6 +293,13 @@
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_forecasting_realized_volatility_with_time_series_f_20260707.md"
   },
+  "6089c633cfb68a3b625c102761d33caa": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "What should the encroaching supplier do?: A Stackelberg Game Approach",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "64d2d49ea3f2b14afc7d222ae29c19fb": {
     "first_seen": "2026-07-03 01:30",
     "source": "arxiv_econ_em",
@@ -419,6 +433,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8cedcae0cd6415d0b72c0e4d2461b31c": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Do decisions about outliers and influential effects matter? Evidence from 358 be",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8d00bcc8344c9c0a61eaa52097bc5d66": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -482,6 +503,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "a94f38cb453fe1efebea6b89ab9c816a": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Attenuated Heterogeneity in Fixed-Effects Causal Forests, and a Cross-Fitted Cor",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "b136ba74bc14e8c2ac3ae8f8257282cf": {
     "first_seen": "2026-07-17 03:30",
     "source": "arxiv_econ_em",
@@ -493,6 +521,13 @@
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
     "title": "Bivariate Isotonic Regression by Dynamic Programming",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "ba793ad4fa31b5e1da1044e6f0c148ab": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "The One-Period Kyle (1985) Model Has a Unique Equilibrium: A Monotone Gaussian B",
     "decision": "accepted",
     "promising_file": null
   },
@@ -536,6 +571,20 @@
     "source": "arxiv_econ_em",
     "title": "To what extent can long-differencing capture climate adaptation?",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c434bbd36d17789fe50d60e79f53da62": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Robust estimation of the autocorrelation function via forward ratios",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "c65d91a144657beb2c6eea4b18da61f8": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Bitcoin Price Direction Prediction via Regime-Aware Multi-Modal Fusion of Social",
+    "decision": "accepted",
     "promising_file": null
   },
   "c9e126fd7c071d86217b46630be48b61": {
@@ -592,6 +641,13 @@
     "source": "arxiv_econ_em",
     "title": "A Variance-Based Test for Heterogeneous Treatment Effects",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e0b12d56e9e038e3fbc73a96571ed156": {
+    "first_seen": "2026-07-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Systemic Methodological Dysfunction in Statistical Research for Clinical Decisio",
+    "decision": "accepted",
     "promising_file": null
   },
   "e2ee7ffb0a5e14756d759cceaf800f93": {

@@ -1,0 +1,14 @@
+{
+  "hash": "6089c633cfb68a3b625c102761d33caa",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.22846v1",
+  "title": "What should the encroaching supplier do?: A Stackelberg Game Approach",
+  "url": "http://arxiv.org/abs/2607.22846v1",
+  "description": "Suppliers often encroach downstream by operating in-house production-units while continuing to supply independent production-units. We study the optimal configuration, including optimal pricing, for an encroaching supplier that balances these dual roles through a Stackelberg game. The integrated supplier determines the wholesale price charged to the outsourced production unit and the retail price of its own product, while the outsourced unit responds optimally. Customer demand-response incorporates both price-based substitutions (of the two production-units) and loyalty (towards individual units). With strong customer loyalty and luxury products, at the optimal choice for the coalition, both units co-exist profitably. In contrast, when the products become essential, the optimal strategy depends upon customer-fallback rates (fraction of the exiting production-unit's market that falls-back to other). Under low fallback, the coalition either sustains co-existence at maximum prices or disciplines the out-house to operate at break-even---with high fallback it is optimal to shut-down the in-house or eliminate the out-house---we derive two factors that identify the above. We further develop a numerical procedure to identify the optimal regime for any given set of parameters. Two surprising results are---higher market potential of the out-house can become a reason for it to operate at break-even---and the coalition may find it beneficial to operate its in-house at losses, particularly for products that are neither highly essential nor in the luxury category.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-28 01:30 UTC"
+}
