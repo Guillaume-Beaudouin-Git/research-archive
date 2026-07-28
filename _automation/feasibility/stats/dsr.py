@@ -2,10 +2,37 @@
 Niveau B — Deflated Sharpe Ratio (Bailey & Lopez de Prado 2014).
 Adjusts observed Sharpe for skewness, kurtosis, and number of independent trials
 to produce a probability that the true Sharpe exceeds zero.
+
+CALIBRATION OF THE TRIAL DISPERSION (2026-07)
+---------------------------------------------
+The deflation benchmark is E[max SR] over `n_trials` draws from the distribution
+of the trials actually run, and it scales linearly with that distribution's
+standard deviation σ_SR.
+
+This module has always used the *sampling-noise* value of σ_SR implicitly, by
+scaling the expected-max-of-n-normals by `se_sr_per` (the standard error of the
+SR estimator, which shrinks like 1/sqrt(T)). That is the correct value under the
+paper's null hypothesis, and it self-adjusts with the backtest length. It is
+therefore NOT affected by the mis-calibration found in the repo-root `dsr.py`,
+which hard-coded σ_SR = 1.0 in ANNUALISED units — a value equal to the sampling
+noise of a 252-day backtest, hence ~3.6x too wide on a 13-year sample and
+sufficient to make DSR >= 0.95 unreachable (required SR ~ 3.38 at n_trials=321).
+
+What changed here: the dispersion is now an EXPLICIT parameter
+(`std_sr_trials`, annualised) instead of an implicit side-effect, the value
+actually used is reported in the output dict, and `estimate_std_sr_trials` lets
+callers supply the empirically observed dispersion of a trial family — which is
+what the paper's benchmark is really defined over, since it captures both
+estimation noise and genuine heterogeneity between trials.
+
+Keep `estimate_std_sr_trials` / `sampling_noise_floor_sr` numerically identical
+to the repo-root `dsr.py` implementations; `tests/test_dsr.py` asserts they
+agree and will fail loudly if the two copies drift apart again.
 """
 from __future__ import annotations
 
 import math
+from typing import Optional, Sequence
 
 import numpy as np
 import pandas as pd
@@ -15,6 +42,80 @@ TRADING_DAYS: int = 252
 EULER_MASCHERONI: float = 0.5772156649015329
 # Current n_tests for Algo_claude project — override per session as needed
 ALGO_CLAUDE_N_TESTS: int = 274
+
+
+def sampling_noise_floor_sr(n_obs: int, periods_per_year: int = TRADING_DAYS) -> float:
+    """
+    Pure-sampling-noise std-dev of the annualised Sharpe, sqrt(periods_per_year / T).
+
+    Under H0 (true SR = 0, iid normal returns) the SR estimator has per-period
+    standard deviation 1/sqrt(T). This is the smallest defensible trial
+    dispersion: even an entirely worthless family of trials shows this much
+    spread in measured Sharpes from estimation error alone.
+
+    Mirror of `dsr.sampling_noise_floor_sr` at the repo root.
+    """
+    if n_obs < 2:
+        raise ValueError(f"n_obs must be >= 2 to define a sampling floor, got {n_obs}")
+    return math.sqrt(periods_per_year / float(n_obs))
+
+
+def estimate_std_sr_trials(
+    sharpes: Sequence[float],
+    periods_per_year: int = TRADING_DAYS,
+    n_obs: Optional[int] = None,
+    apply_floor: bool = True,
+) -> float:
+    """
+    Estimate the trial-Sharpe dispersion from the Sharpes observed in a family.
+
+    WHY THE OBSERVED DISPERSION IS THE RIGHT QUANTITY
+    -------------------------------------------------
+    E[max SR] is the expected maximum of `n_trials` draws from the distribution
+    of the trials you actually ran. That spread has two components, and the
+    benchmark needs both:
+      1. estimation noise — each Sharpe is measured with error
+         ~ sqrt(periods_per_year / T), present even if every trial is worthless;
+      2. genuine heterogeneity — a grid over lookbacks, thresholds and
+         instruments spans real differences in true Sharpe.
+    A fixed constant captures neither and (for any backtest longer than a year)
+    grossly over-deflates. The empirical sd of the trial Sharpes captures both.
+
+    WHY THE FLOOR IS A GUARD-RAIL
+    -----------------------------
+    The observed sd is itself an estimate and is biased DOWNWARDS exactly when
+    it matters: few trials, survivorship-clipped families where losing variants
+    were never written down, or near-degenerate grids. Each of those
+    under-deflates and yields FALSE POSITIVES — the expensive error for a
+    research gate. Clamping at sqrt(periods_per_year / T) forbids the estimator
+    from claiming the trials cluster more tightly than measurement error allows.
+
+    Mirror of `dsr.estimate_std_sr_trials` at the repo root.
+
+    Args:
+        sharpes:          Annualised Sharpes of the family's trials (incl. winner).
+        periods_per_year: Annualisation factor matching `sharpes`.
+        n_obs:            Backtest length T; required when `apply_floor` is True.
+        apply_floor:      Clamp at the sampling-noise floor.
+
+    Returns:
+        Estimated annualised std-dev of the trial Sharpe distribution.
+    """
+    arr = np.asarray(list(sharpes), dtype=float)
+    arr = arr[np.isfinite(arr)]
+    if arr.size < 2:
+        raise ValueError(
+            f"need >= 2 finite trial Sharpes to estimate a dispersion, got {arr.size}. "
+            "With a single trial there is no selection bias to deflate (use n_trials=1), "
+            "or supply std_sr_trials explicitly."
+        )
+
+    observed = float(arr.std(ddof=1))
+    if not apply_floor:
+        return observed
+    if n_obs is None:
+        raise ValueError("n_obs is required when apply_floor=True (needed for the noise floor)")
+    return max(observed, sampling_noise_floor_sr(n_obs, periods_per_year))
 
 
 def compute_sharpe_stats(returns: pd.Series) -> dict:
@@ -61,6 +162,7 @@ def deflated_sharpe_ratio(
     skewness: float,
     kurtosis: float,
     n_trials: int = 1,
+    std_sr_trials: Optional[float] = None,
 ) -> dict:
     """
     Deflated Sharpe Ratio (Bailey & Lopez de Prado 2014, JPM).
@@ -87,17 +189,42 @@ def deflated_sharpe_ratio(
     n_trials : int
         Number of independent strategies tested (AMTP / selection-bias angle).
         Use the project's current n_tests counter. Default: 1 (no correction).
+    std_sr_trials : float, optional
+        ANNUALISED std-dev of the Sharpe distribution across the tried
+        strategies. If None (default), the sampling-noise value implied by the
+        SR estimator's own standard error is used — the paper's null hypothesis,
+        and the historical behaviour of this module. Supply the empirical
+        dispersion via `estimate_std_sr_trials` when the trial family was
+        genuinely heterogeneous, since the noise value is a LOWER bound and
+        therefore under-deflates in that case.
 
     Returns
     -------
     dict
-        sharpe_threshold  : float — SR cutoff adjusted for n_trials (annualised)
-        psr               : float — Probabilistic SR (non-normality only, n_trials=1)
-        dsr               : float — Deflated SR (PSR corrected for n_trials)
-        verdict           : str   — 'PASS' if DSR > 0.95, else 'FAIL'
+        sharpe_threshold     : float — SR cutoff adjusted for n_trials (annualised)
+        psr                  : float — Probabilistic SR (non-normality only, n_trials=1)
+        dsr                  : float — Deflated SR (PSR corrected for n_trials)
+        std_sr_trials        : float — annualised trial dispersion actually used
+        std_sr_trials_source : str   — 'declared' or 'sampling_noise'
+        verdict              : str   — 'PASS' if DSR > 0.95, else 'FAIL'
     """
     if n_observations < 2:
-        return {"sharpe_threshold": np.nan, "psr": np.nan, "dsr": np.nan, "verdict": "FAIL"}
+        return {
+            "sharpe_threshold": np.nan,
+            "psr": np.nan,
+            "dsr": np.nan,
+            "std_sr_trials": np.nan,
+            "std_sr_trials_source": "undefined",
+            "verdict": "FAIL",
+        }
+
+    if std_sr_trials is not None:
+        std_sr_trials = float(std_sr_trials)
+        if not (std_sr_trials > 0.0) or not math.isfinite(std_sr_trials):
+            raise ValueError(
+                f"std_sr_trials must be a finite positive annualised Sharpe std-dev, "
+                f"got {std_sr_trials!r}"
+            )
 
     # Work in per-period (daily) scale for the Bailey-LdP formulas
     sr_per = sharpe_observed / math.sqrt(TRADING_DAYS)
@@ -117,6 +244,18 @@ def deflated_sharpe_ratio(
     z_psr = (sr_per - 0.0) / se_sr_per
     psr = float(scipy_stats.norm.cdf(z_psr))
 
+    # Trial dispersion, in PER-PERIOD Sharpe units to match sr_per / se_sr_per.
+    # Default = se_sr_per, the SR estimator's own standard error: this is the
+    # dispersion implied by the paper's null (all trials truly worthless) and it
+    # scales like 1/sqrt(T), so it self-corrects with backtest length. An
+    # explicit std_sr_trials arrives ANNUALISED and is de-annualised here.
+    if std_sr_trials is None:
+        std_sr_per = se_sr_per
+        std_sr_source = "sampling_noise"
+    else:
+        std_sr_per = std_sr_trials / math.sqrt(TRADING_DAYS)
+        std_sr_source = "declared"
+
     # SR threshold: expected maximum Sharpe from n_trials IID random strategies
     # (Bailey-LdP 2014, eq. 8 — expected max of n standard normals, Euler-Mascheroni approx)
     if n_trials <= 1:
@@ -127,7 +266,7 @@ def deflated_sharpe_ratio(
         z2 = scipy_stats.norm.ppf(1.0 - 1.0 / (n_trials * math.e))
         e_max_std_normal = (1.0 - EULER_MASCHERONI) * z1 + EULER_MASCHERONI * z2
         # Scale to SR units
-        sr_threshold_per = se_sr_per * e_max_std_normal
+        sr_threshold_per = std_sr_per * e_max_std_normal
 
     # DSR: P(true SR > sr_threshold)
     z_dsr = (sr_per - sr_threshold_per) / se_sr_per
@@ -140,6 +279,8 @@ def deflated_sharpe_ratio(
         "sharpe_threshold": float(sr_threshold_ann),
         "psr": float(psr),
         "dsr": float(dsr),
+        "std_sr_trials": float(std_sr_per * math.sqrt(TRADING_DAYS)),
+        "std_sr_trials_source": std_sr_source,
         "verdict": "PASS" if dsr > 0.95 else "FAIL",
     }
 
