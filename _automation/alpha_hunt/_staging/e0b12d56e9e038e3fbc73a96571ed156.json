@@ -1,0 +1,14 @@
+{
+  "hash": "e0b12d56e9e038e3fbc73a96571ed156",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.23660v1",
+  "title": "Systemic Methodological Dysfunction in Statistical Research for Clinical Decisions",
+  "url": "http://arxiv.org/abs/2607.23660v1",
+  "description": "I critique a set of entrenched methodological conventions that collectively create systemic dysfunction in statistical research for clinical decisions. These include: (1) the prevalent use of hypothesis tests to compare treatments, (2) remoteness from patient care of the methods used to evaluate the accuracy of predictions of patient outcomes, (3) poor practice of meta-analysis to combine findings across studies, and (4) widespread research with incredible certitude. It appears that the dysfunction is held in place by three factors: (i) rudimentary instruction in statistical methodology received by medical students and residents, (ii) reliance of clinical researchers on consulting biostatisticians, wo act as statistical gatekeepers in evaluation of grant proposals and paper submissions, and (iii) institutional practices of research funding agencies, medical journals, and governmental bodies that regulate medical treatment. I conjecture that systemic changes are necessary to break the existing impasse, moving statistical research to a better equilibrium.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-28 01:30 UTC"
+}
