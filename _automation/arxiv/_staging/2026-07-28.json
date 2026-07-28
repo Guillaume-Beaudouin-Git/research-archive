@@ -1,0 +1,631 @@
+[
+ {
+  "id": "2607.24680",
+  "title": "One Other Option Pricing Scheme",
+  "summary": "We present a distinctive approach to parameterizing the risk neutral distribution. Using parsimonious and interpretable parameters, the model provides direct and localized control over the shape of the implied volatility curve. It captures a wide variety of shapes, including those with local concavity. Empirical results demonstrate accurate calibration across a quarter million curves from a two-year Standard and Poor's 500 index option dataset. The fitted parameters exhibit stable patterns across tenors, enabling term structure interpolation and dynamic process construction without static arbitrage.",
+  "authors": [
+   "Jimin Lin"
+  ],
+  "categories": [
+   "q-fin.CP",
+   "math.PR"
+  ],
+  "published": "2026-07-27T17:21:10Z",
+  "updated": "2026-07-27T17:21:10Z"
+ },
+ {
+  "id": "2607.24410",
+  "title": "The Fundamental Structure of Risk: From Characteristics to Covariance",
+  "summary": "Estimating the covariance structure of financial assets typically relies on his- torical returns, making risk models dependent on noisy and asset-specific time se- ries. We propose the Characteristic-Driven Dynamic Factor Model (CD-DFM), a non-linear latent factor model that instead constructs a representation of the asset cross-section directly from observable firm characteristics, primarily company funda- mentals. The learned latent space jointly determines interpretable factor exposures and a forward covariance estimator, and is trained end to end on an objective that combines a Stein covariance loss with a factor reconstruction term, targeting the out-of-sample second moments used in risk management. Because the latent repre- sentation, i.e. the encoder depends only on characteristics, previously unseen assets can be embedded at inference time without retraining. Experiments on S&P 500 equities show that CD-DFM produces economically structured latent representa- tions, interpretable factor portfolios, and competitive covariance forecasts despite relying on substantially lower-frequency information than return-based approaches. Among the benchmarked methods, it is the only model that simultaneously combines characteristic-driven representations, factor interpretability, competitive covariance calibration, and zero-shot onboarding of unseen assets.",
+  "authors": [
+   "Alexandre Alouadi",
+   "Charles-Albert Lehalle"
+  ],
+  "categories": [
+   "q-fin.ST",
+   "q-fin.RM"
+  ],
+  "published": "2026-07-27T13:26:53Z",
+  "updated": "2026-07-27T13:26:53Z"
+ },
+ {
+  "id": "2607.24150",
+  "title": "Approximation of stochastic insurer balance-sheet results using signatures of economic scenarios",
+  "summary": "In the insurance industry, Asset and Liability Management (ALM) models are key tools for numerous applications, including Solvency Capital Requirement (SCR) computation and asset allocation optimization. However, their use often entails a significant computational cost, especially when a large number of sensitivities or stressed balance-sheet evaluations must be performed. In this work, we propose an approximation framework for the outputs of an ALM model, such as the Value In Force or the Best Estimate, based on the theory of path signatures. More precisely, the proposed approach consists of approximating ALM outputs by a linear combination of signature terms derived from input economic scenarios. We show that the resulting surrogate is easy to calibrate, essentially through regularized linear regression, and exhibits strong predictive performance while drastically reducing computational costs. We further investigate its robustness under changes in the distribution of economic scenarios by considering variations in the parameters of the underlying model of risk factors while the surrogate model is kept fixed. These results make the proposed approach particularly suitable for large-scale sensitivity analyses and fast balance-sheet evaluations in practical actuarial applications.",
+  "authors": [
+   "Hervé Andrès",
+   "Alexandre Boumezoued",
+   "Arthur Bourdon",
+   "Benjamin Jourdain"
+  ],
+  "categories": [
+   "q-fin.RM"
+  ],
+  "published": "2026-07-27T08:30:28Z",
+  "updated": "2026-07-27T08:30:28Z"
+ },
+ {
+  "id": "2607.24114",
+  "title": "Optimal Control with Expectation Constraint in a Smooth Boundary Case",
+  "summary": "As in Bouchard et al. (2010) and Bouchard and Nutz (2014), we study a utility maximization problem with expectation constraint. We first consider a uniformly elliptic case in which the endogenous state boundary associated with the constraint in expectation is proved to be smooth. This allows one to derive a proper Dirichlet condition for the value function of the optimal control problem on this boundary. We then propose a new truncation argument in the martingale representation of the expectation constraint. This leads to an approximating sequence of auxiliary systems of PDEs for which comparison holds. Convergence to the initial optimal control problem is proved. In the degenerate case, we propose another approximation which consists in adding a small noise term to recover uniformly ellipticity. Convergence is also proved. To the best of our knowledge, it is the first time that a full analysis is performed for such control problems, so as to open the doors to the use of numerical schemes. Numerical resolution in a toy example is performed using neural networks. It is complemented by an estimation of the numerical error, also performed by using a neural network approach.",
+  "authors": [
+   "Bruno Bouchard",
+   "Lucas Gnecco Heredia",
+   "Ludovic Moreau",
+   "Kim-Anh Pham"
+  ],
+  "categories": [
+   "math.OC",
+   "q-fin.PM"
+  ],
+  "published": "2026-07-27T07:56:45Z",
+  "updated": "2026-07-27T07:56:45Z"
+ },
+ {
+  "id": "2607.24065",
+  "title": "Variational Quantum Conditional Boltzmann Machines for Time-Series Forecasting: Architectures, Symmetric Hyperparameter Evaluation, and a Nonlinear Benchmark",
+  "summary": "In this study, we developed and evaluated four conditional energy-based forecasting architectures: a classical Gaussian-Bernoulli CRBM, a hybrid quantum-classical QCRBM, a full-register QQRBM, and a lag-feature QFeatureQRBM with complete derivations of their conditional distributions, Contrastive-Divergence gradients, and hybrid training, bridging the energy-based formulation and the implementation-level quantum computation. Unlike prior comparisons, our evaluation enforces symmetric hyperparameter optimisation: classical and quantum-specific hyperparameters receive an equally thorough grid search across thirteen structured experiments. We test on two data classes, a Gaussian-process dataset (GP) generated with real financial data and the input-driven NARMA-10 nonlinear benchmark. Across both regimes we find no systematic evidence of a quantum advantage at the available sample size: no quantum architecture improves on the best classical baseline. The fully quantum QQRBM and QFeatureQRBM are significantly worse, whereas the hybrid QCRBM is statistically indistinguishable from the strongest classical CRBM on both datasets. A power analysis bounds this null result: at n = 12 only medium-to-large effects are detectable, so small advantages cannot be excluded. An iso-parameter (matched-budget) comparison reaches the same conclusion: the classical CRBM is lowest at three of the four budgets and no CRBM-vs-QCRBM difference is significant at any budget.",
+  "authors": [
+   "Gerhard Hellstern",
+   "Danyal Maheshwari",
+   "Martin Zaefferer",
+   "Martin Braun",
+   "Tanja Döhler"
+  ],
+  "categories": [
+   "quant-ph",
+   "cs.LG",
+   "q-fin.ST"
+  ],
+  "published": "2026-07-27T07:08:34Z",
+  "updated": "2026-07-27T07:08:34Z"
+ },
+ {
+  "id": "2607.23161",
+  "title": "Risk Aversion in the Small and in the Large: Beyond Arrow-Pratt A Wiener Chaos Hierarchy of Dynamic Risk Premia",
+  "summary": "The Arrow-Pratt approximation is one of the cornerstones of expected utility theory, providing the classical local approximation of certainty equivalents and risk premia in terms of absolute risk aversion. Despite its widespread use, its mathematical scope and relationship to higher-order risk preferences remain only partially understood. This paper develops a new framework for the analysis of certainty equivalents and dynamic risk premia based on Malliavin calculus and Wiener chaos analysis. We first show that the classical Arrow-Pratt approximation is not asymptotically valid for arbitrary sequences of vanishing risks, thereby identifying precise limitations of the traditional theory. Motivated by this observation, we formulate certainty equivalents dynamically by considering the progressive revelation of uncertainty through a Brownian filtration. Combining Itô calculus, the Clark--Ocone representation and the Wiener chaos decomposition, we derive a complete hierarchy of higher-order dynamic risk premia and obtain explicit representations of the corresponding coefficients in terms of Malliavin derivatives. For mixed Wiener chaos expansions, higher-order preference measures, including prudence and temperance, emerge naturally through interactions between chaos components and are characterised using Bell polynomial representations. Explicit results for quadratic Gaussian functionals and the Vasicek interest-rate model illustrate the theory and identify a broad class of regula",
+  "authors": [
+   "Christian Oliver Ewald"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "econ.GN"
+  ],
+  "published": "2026-07-25T11:34:27Z",
+  "updated": "2026-07-25T11:34:27Z"
+ },
+ {
+  "id": "2607.23068",
+  "title": "Neural Network-Driven Volatility Drag Mitigation under Aggressive Leverage",
+  "summary": "This paper introduces a compact reformulation of a modular end-to-end neural network for global minimum-variance portfolio optimization that decouples model complexity from both look-back window length and universe size. A five-parameter hyperbolic weighted moving average combined with a saturating exponential replaces the original 2,400-parameter lag-transformation layer, and a bidirectional gated-recurrent-unit eigencleaning module together with a streamlined marginal-volatility network reduce total learnable parameters from 39,586 to just 2,175. In out-of-sample tests against state-of-the-art nonlinear-shrinkage and risk-parity benchmarks, the compact network attains the lowest realized portfolio variance without compromising expected return. Under long-only constraints, the variance reduction supports substantially higher leverage while maintaining comparable drawdown control. Validation in a high-fidelity trading simulator that incorporates realistic margin-call dynamics confirms enhanced over-leverage resilience. These findings demonstrate that end-to-end variance-minimization architectures can achieve substantial parameter efficiency and robust capital-efficiency gains without sacrificing risk-adjusted performance.",
+  "authors": [
+   "Christian Bongiorno",
+   "Efstratios Manolakis",
+   "Rosario Nunzio Mantegna"
+  ],
+  "categories": [
+   "q-fin.PM",
+   "cs.LG"
+  ],
+  "published": "2026-07-25T06:32:26Z",
+  "updated": "2026-07-25T06:32:26Z"
+ },
+ {
+  "id": "2607.22317",
+  "title": "Latent Fragility and Clustered Withdrawals in Dynamic Banks Runs",
+  "summary": "Using a mean-field game framework, we study a dynamic model of bank runs in which more withdrawals raise the risk of bank failure. Even though depositors receive gradual and idiosyncratic shocks, withdrawals occur in clusters. The main mechanism is latent fragility: run-prone depositors accumulate gradually over time and may prefer to wait individually, but they withdraw together once collective exit becomes self-fulfilling. We establish equilibrium existence and characterize earliest-run and latest-run equilibria. The clustering mechanism arises whether depositor heterogeneity is discrete or continuous. A common aggregate state coordinates withdrawal timing and leads to a unique threshold equilibrium.",
+  "authors": [
+   "Jodi Dianetti",
+   "Giorgio Ferrari",
+   "Yunzhi Hu",
+   "Hao Xing"
+  ],
+  "categories": [
+   "econ.TH",
+   "q-fin.GN",
+   "q-fin.MF"
+  ],
+  "published": "2026-07-24T13:58:08Z",
+  "updated": "2026-07-24T13:58:08Z"
+ },
+ {
+  "id": "2607.22085",
+  "title": "Neilson's Weak vs. Strong Loss Aversion: A Characterization and a Generalized CPT-Utility Function",
+  "summary": "In multi-objective and multi-criteria decision-making under risk, especially in settings involving individual behavior, risk-aware analysis based on subjective evaluation has become increasingly important. Moving beyond risk-neutral modeling and the constraints of Expected Utility Theory (EUT), Cumulative Prospect Theory (CPT) provides a behaviorally grounded framework for capturing how individuals perceive and evaluate risky prospects. This paper conducts a rigorous theoretical analysis of Neilson's definitions of aversion. We provide a gamble-based interpretation, sharpen key conceptual distinctions, and make explicit the conditions under which the weak and strong notions coincide as well as when they diverge. Furthermore, we examine the Kobberling-Wakker utility function and related standard CPT specifications, highlighting structural limitations and inconsistencies that arise when these forms are required to satisfy Neilson-type aversion conditions. To address these issues, we propose a generalized CPT-utility function that retains the canonical reference-dependent shape while offering additional flexibility. This generalization extends the descriptive scope of CPT and provides an explicit functional form that is useful for sensitivity analysis and utility function-based optimization.",
+  "authors": [
+   "Symeon Vaidanis",
+   "Marios Kountouris"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "cs.CE",
+   "cs.IT",
+   "cs.NI"
+  ],
+  "published": "2026-07-24T08:34:07Z",
+  "updated": "2026-07-24T08:34:07Z"
+ },
+ {
+  "id": "2607.21826",
+  "title": "Are cryptocurrencies real financial bubbles? Evidence from quantitative analyses",
+  "summary": "The growth of peer-to-peer exchanges and the blockchain technology has led to a proliferation of cryptocurrencies and to a massive increase in the number of investors who actually negotiate digital money. Cryptocurrencies trade at prices mainly driven by investor sentiment, becoming a potential source of financial bubbles and instabilities. In this work, we apply quantitative models to the study of Bitcoin and Ether, two of the most famous cryptocurrencies. Our bubble detection methodology combines the Log Periodic Power Law (LPPL) model, originally created by Johansen, Ledoit and Sornette (JLS), and the statistical model developed by Phillips, Shi, and Yu (PSY). In particular, we employ three different versions of JLS model, i.e. Ordinary Least Square (OLS), Generalised Least Squares (GLS) and Maximum Likelihood Estimation (MLE), and two PSY statistical tests (BSADF and BSADF*). We find that, during the sample period 1st December 2016 - 16th January 2018, Bitcoin shows typical hallmarks of a bubble phase in mid December 2017 and in the first half of January 2018, anticipating the large crashes observed thereafter. Also the Ether price dynamics reveals bubble evidence in mid June 2017, anticipating the crash observed on 12th June, and a weaker signal around 12th January 2018, anticipating the crash observed in the same days. This paper confirms the high risk of speculative bubbles associated with cryptocurrencies, related to investor exuberance pumping market prices far away ",
+  "authors": [
+   "Marco Bianchetti",
+   "Camilla Ricci",
+   "Marco Scaringi"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "econ.GN",
+   "q-fin.CP",
+   "q-fin.GN",
+   "q-fin.ST"
+  ],
+  "published": "2026-07-23T21:25:51Z",
+  "updated": "2026-07-23T21:25:51Z"
+ },
+ {
+  "id": "2607.21687",
+  "title": "Optimal Surplus Management for Insurers under Stochastic Interest Rates and Jump-Driven Liabilities",
+  "summary": "This paper investigates the optimal surplus management problem of an insurance company operating in a financial market with stochastic interest rates and jump-driven liabilities. The insurer dynamically allocates its surplus between a risky stock and a risk-free zero-coupon bond while facing insurance claims modeled by a compound Poisson process with exponentially distributed claim sizes. The short term interest rate follows a Cox-Ingersoll-Ross (CIR) process, which captures mean-reverting dynamics commonly observed in term structure models. The insurer maximizes the expected exponential utility of terminal surplus. Using stochastic control techniques, we derive the associated Hamilton-Jacobi-Bellman (HJB) equation. Although the exponential utility structure suggests an exponential affine representation, the interaction between the interest rate hedge and the surplus state generates quadratic surplus terms in the HJB equation. To obtain a tractable formulation, we adopt a normalized surplus projection method, which provides an approximate reduction of the full three-dimensional problem to a nonlinear system of partial differential equations (which is subsequently numerically validated). The optimal investment policy admits an economically meaningful decomposition consisting of a myopic demand component and an interest rate hedging component. Numerical experiments illustrate how the optimal strategy and the surplus distribution depend on interest rate volatility, claim intensi",
+  "authors": [
+   "Nader Karimi",
+   "Foad Shokrollahi",
+   "Masoumeh Shahmoradi"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "math.PR"
+  ],
+  "published": "2026-07-23T14:58:29Z",
+  "updated": "2026-07-23T14:58:29Z"
+ },
+ {
+  "id": "2607.21170",
+  "title": "Portfolio Optimization under Dynamic Rebalancing via Topological Data Analysis and News Sentiments",
+  "summary": "Understanding similarity among financial assets is essential for effective portfolio diversification. This paper proposes a novel sentiment-adjusted portfolio optimization framework that integrates Topological Data Analysis (TDA) with technical indicators and FinBERT-based sentiment scores extracted from financial news. A TDA-based distance measure is employed within an agglomerative clustering framework to identify topologically dissimilar assets for portfolio construction. By incorporating sentiment information, the framework captures rapid changes in market perception and investor behavior that are not reflected by technical indicators alone. Unlike conventional correlation and Euclidean distance based approaches, the proposed method characterizes complex nonlinear relationships through topological summaries. To account for the transient nature of market sentiment, a dynamic rolling-window rebalancing strategy with frequent portfolio updates is adopted. A retention mechanism is further introduced to preserve high-quality assets across consecutive rebalancing windows, thereby reducing portfolio turnover and transaction costs. Extensive empirical analysis on S&P 500 constituents demonstrates that the proposed framework consistently outperforms correlation and Euclidean distance based methods, as well as benchmark strategies including Naïve, Index, and full-universe portfolios, in terms of returns and reward-risk performance. Furthermore, the framework exhibits strong robustn",
+  "authors": [
+   "Divyanee Garg"
+  ],
+  "categories": [
+   "q-fin.PM"
+  ],
+  "published": "2026-07-23T10:57:13Z",
+  "updated": "2026-07-23T10:57:13Z"
+ },
+ {
+  "id": "2607.20762",
+  "title": "Quantifying Sub-Optimality in Routing for Automated Market Makers",
+  "summary": "We provide a large-scale empirical audit of DEX routing using 2.98 million WETH-USDC swaps on Ethereum. Comparing realized routes with optimized benchmarks, we measure an average shortfall of 2.02 bps per trade or \\$24 million. To attribute losses, we introduce three reproducible optimal benchmarks: a Support-Constrained Optimum (SCO) that evaluates split quality conditional on the pools actually used; a Full-Venue Optimum (FVO) that considers all available pools to quantify the value of broader pool access; and a Gas-Aware FVO (G-FVO) that augments FVO with gas costs to capture the trade-off between additional pool usage and gas expenditure. Computing these benchmarks at scale is enabled by a bisection-based algorithm for optimal routing across multiple pools for the same token pair. Two regularities emerge. First, information timeliness is crucial: moving from execution-time state to one-block lagged state optimization significantly raises mean shortfall and additional delays further degrade performance, albeit with diminishing increments; evaluated on the same stale snapshots, realized routes lie closer to optimal, indicating timing-mismatch as a key component. Second, inefficiency is heterogeneous and heavy-tailed: small trades suffer higher percentage losses, while a few extreme outliers dominate the aggregate dollar shortfalls. Finally, we demonstrate that sandwiching attacks drive a significant fraction of routing sub-optimality. Our benchmark protocol and algorithm of",
+  "authors": [
+   "Weiye Xi",
+   "Ciamac C. Moallemi"
+  ],
+  "categories": [
+   "q-fin.TR"
+  ],
+  "published": "2026-07-22T22:28:18Z",
+  "updated": "2026-07-22T22:28:18Z"
+ },
+ {
+  "id": "2607.20415",
+  "title": "Flux-Corrected Diagonal Frog: second order and positivity at all time steps",
+  "summary": "By Godunov's theorem, linear second-order finite-difference schemes for the Fokker-Planck equation cannot preserve positivity. The Diagonal Frog (DF) framework previously bypassed this barrier using eventual positivity, but required a strict minimum time step. This paper resolves the small-step limitation using a nonlinear extension of the DF solvers. We split the second-order directional operator into a monotone M-matrix core and an antidiffusive flux correction. A Zalesak-type limiter is then applied iteratively within the implicit banded solve. The resulting Flux-Corrected DF (FCDF) schemes (variants A and B) are unconditionally positive across all time steps. Because the limiter acts on fluxes rather than point values, these schemes conserve discrete mass exactly and maintain second-order accuracy. Crucially, the limiter activates only within unresolved layers. This ensures the global $L_1$ convergence remains second-order uniformly in the cell Péclet number, avoiding the first-order degradation seen in the Chang-Cooper scheme. The method's Picard iteration is contractive under a purely convective step restriction. To support arbitrary step sizes, we develop an active-set reformulation. This solves the system using a semismooth Newton iteration, where computational cost scales only with the number of nodes where positivity binds. Finally, we introduce a defect-corrected time stepping approach that restores second-order time accuracy. Numerical experiments on Ornstein-Uhle",
+  "authors": [
+   "Andrey Itkin"
+  ],
+  "categories": [
+   "math.NA",
+   "cs.CE",
+   "physics.comp-ph",
+   "q-fin.CP"
+  ],
+  "published": "2026-07-22T17:53:40Z",
+  "updated": "2026-07-22T17:53:40Z"
+ },
+ {
+  "id": "2607.20343",
+  "title": "Path-Space Model Risk via Signature-Induced Optimal Transport",
+  "summary": "We propose a signature-induced, optimal transport framework for path-space model risk, in which ambiguity between stochastic path laws is factorized through optimal transport costs on signature coordinates under a common coupling. Via an ambient feature-space relaxation, we derive for affine signature scores and affine half-space events explicit robust expectation and probability bounds that depend only on the baseline model. In both cases, the correction is governed by the same effective budget, which depends only on the affine score and the budget vector of the ambiguity set. Moreover, the same quantity leads to a budget-aware sparse signature surrogate method for more general, possibly implicit, or data-driven, path functionals. We illustrate the resulting methodology through controlled stress tests and benchmark model-misspecification problems in finance and insurance.",
+  "authors": [
+   "Tomoyuki Ichiba",
+   "Qijin Shi"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "math.OC",
+   "q-fin.MF"
+  ],
+  "published": "2026-07-22T16:30:15Z",
+  "updated": "2026-07-23T01:59:37Z"
+ },
+ {
+  "id": "2607.20093",
+  "title": "Retail Trader's Ruin: An Anatomy of Popular Signal Failure",
+  "summary": "We test whether five widely promoted retail signal families - trend, oscillator, candlestick, volume, and calendar rules - deliver a positive, economically meaningful, net-of-cost, and survivable edge. Practical viability is the conjunction of three predeclared gates: statistical edge after multiplicity correction, economic viability after trading costs, and finite-bankroll survival under leverage. Exposure-matched benchmarks, stationary-bootstrap confidence intervals, hierarchical Benjamini-Yekutieli control, one-sided claim-exclusion tests, and equivalence tests distinguish positive evidence, statistically refuted materiality, and unresolved cases. Four of six candidates - oscillator, volume, calendar, and candlestick - are REFUTED, ruled out on statistical and/or economic materiality grounds; trend and a momentum calibration benchmark are INCONCLUSIVE, with confidence intervals too wide at this sample size to resolve the claim; none is SUPPORTED. Cross-sectional tests use point-in-time membership and delisting corrections. The momentum benchmark itself does not clear the statistical gate and is classified INCONCLUSIVE, not REFUTED - the critical validity signature that a genuinely uncertain positive control is never falsely falsified by this design. Under FINRA- and ESMA-anchored leverage and margin scenarios, survival is not the binding constraint for any tested family at the US headline scenario, though it becomes discriminating for trend and oscillator under the higher-",
+  "authors": [
+   "Adam Darmanin"
+  ],
+  "categories": [
+   "q-fin.ST",
+   "q-fin.RM",
+   "q-fin.TR"
+  ],
+  "published": "2026-07-22T12:47:56Z",
+  "updated": "2026-07-22T12:47:56Z"
+ },
+ {
+  "id": "2607.19497",
+  "title": "The Science and Practice of Trend-Following Systems",
+  "summary": "We present a unified approach to designing trend-following (TF) systems and classify them into European, American, and Time Series Momentum categories. For European TF systems, we derive an exact relationship between profit-and-loss, autocorrelation, and drift in volatility-normalized returns. We analyze the expected return under fractional ARFIMA processes and show that TF systems are profitable when the long-term autocorrelation is positive, even under short-term mean reversion. In the frequency domain, the expected return is represented as a Poisson-kernel reading of the analytical or empirical spectrum of the volatility-normalized returns: the system profits at zero drift when the kernel-weighted spectral mass exceeds one, so trend-following alpha is excess spectral mass at low frequencies. Longer lookbacks benefit in addition from the squared drift of the return process. We derive the closed-form Sharpe ratio, with the excess kurtosis of the innovations entering through a single loading, and the net Sharpe ratio and cost-optimal span under trading costs. Under white noise, we derive the closed-form skewness of aggregated TF returns, which is positive at every horizon and peaks near half the filter span. Monte Carlo experiments confirm the analytical results. We show that the positive skewness of TF returns is structural under various model assumptions. Empirically, we evaluate the systems on liquid contracts, and show that all TF systems are strongly correlated and our a",
+  "authors": [
+   "Artur Sepp",
+   "Vladimir Lucic"
+  ],
+  "categories": [
+   "q-fin.ST",
+   "q-fin.MF"
+  ],
+  "published": "2026-07-21T18:16:01Z",
+  "updated": "2026-07-21T18:16:01Z"
+ },
+ {
+  "id": "2607.19279",
+  "title": "Gaussian Boson Sampling for Asset Clustering in Statistical Arbitrage Portfolios",
+  "summary": "Gaussian Boson Sampling (GBS) provides a native photonic quantum heuristic for sampling dense subgraphs from adjacency matrices, offering a scalable physical approach to combinatorial graph search problems. Simultaneously, correlation matrix clustering algorithms, such as Spectral and SPONGE, have established robust benchmarks for identifying co-moving assets from correlation matrices in statistical arbitrage (StatArb) strategies. In this work, we map S&P 500 residual correlation data into GBS-compatible adjacency matrices. We benchmark those classical clustering algorithms against two quantum clustering algorithms, GBS Boost and our novel GBS Roots, to construct dynamic, market-neutral portfolios over a rolling one-year window. Simulations across distinct macroeconomic regimes reveal that quantum clustering generates superior alpha within large stock universes during periods of high volatility, effectively isolating structural market idiosyncrasies. Crucially, this economic advantage persists under simulated low-loss conditions and extends into high-loss regimes via the application of coherent displacement to compensate for photon loss. Our findings underscore the efficacy of GBS-derived graph clustering in constructing robust StatArb portfolios, establishing a quantum foundation for broader quantitative finance applications.",
+  "authors": [
+   "Dayne Marcus Lopena",
+   "Daniel Buguks",
+   "Zhenghao Li",
+   "Ewan Mer",
+   "Shana H. Winston",
+   "Shang Yu",
+   "Mihai Cucuringu",
+   "Del Rajan"
+  ],
+  "categories": [
+   "quant-ph",
+   "q-fin.CP"
+  ],
+  "published": "2026-07-21T16:48:37Z",
+  "updated": "2026-07-21T16:48:37Z"
+ },
+ {
+  "id": "2607.19218",
+  "title": "Denoising Subordinated Probabilistic Models: Diffusion with a Tempered-Stable Volatility Clock, and What the Noise Mechanism Actually Controls",
+  "summary": "Heavy-tailed diffusion models replace Gaussian noise by a Gaussian variance mixture: denoising Levy probabilistic models (DLPM) take the mixing variables i.i.d. across coordinates, while Student-t EDM shares one mixing variable per sample. Neither has dynamics, yet temporal dependence of the noise amplitude - volatility clustering - is the defining stylized fact of financial returns. We introduce the Denoising Subordinated Probabilistic Model (DSPM), whose mixing vector is a stationary AR(1) chain driven by tempered-stable subordinator increments (the discrete Barndorff-Nielsen-Shephard volatility process) along the data axis. Conditionally on the chain the DDPM machinery survives verbatim; kurtosis and squared-noise autocorrelation are closed-form in the chain parameters, giving an exactly identified, analytically invertible calibration; DDPM, DLPM and Student-t noise are boundary cases of one memory parameter. We then prove a delimiting result: when the denoiser is conditioned on the mixing variables, their law is a nuisance - in the exact-denoiser limit the generated distribution is invariant to it and interventions on the chain do nothing. Experiments confirm both halves: conditioned models match the data's clustering whatever the mixing law, a designed x8 volatility shock moves the envelope by under 13%, while blind models transmit the mechanism exactly as calibrated. Finally, coupling the chain to the data by a variational volatility encoder - trained with the stochasti",
+  "authors": [
+   "Junchi Shen",
+   "Helin Zhao"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "math.ST"
+  ],
+  "published": "2026-07-21T15:48:50Z",
+  "updated": "2026-07-21T15:48:50Z"
+ },
+ {
+  "id": "2607.19453",
+  "title": "Predictive Extrema, Unprofitable Policies: An AI-Assisted Audit of Candle-Based Binance Spot Timing Models",
+  "summary": "We audit whether candle-based machine-learning models can turn predictions of cryptocurrency extrema or short-horizon outcomes into positive Binance Spot paper policies after assumed costs. Numerical results come from scripted fixed-seed model runs and deterministic simulators; human-supervised AI agents supported the July 20 evidence-integrity revision through literature retrieval, separately tasked critique, artifact reconciliation, documentation, and source packaging, not trading decisions. The strongest later-period evidence, conditional on extensive predecessor search, is negative: an unchanged ten-pair mandatory-daily selector lost 6.72\\% over 19 July cycles at an assumed 31-bps completed-cycle cost, with 3 wins and 16 losses. In short model-specific July evaluations, the validation-selected local-minimum policy returned -1.79\\%, while the local-maximum sell-to-cash/re-entry policy underperformed continuous holding by 2.80\\%; their gross mean advantages of 11.11 and 12.21 bps were below even the 21-bps stress. A Gurgul-inspired, OHLCV-only daily adaptation attained minimum/maximum ROC AUC of 0.874/0.896 but average precision of only 0.134/0.116 and lost 44.30\\% over seven cycles, versus -41.20\\% for buy-and-hold. A forensic audit also downgraded an earlier One4All \"30-day holdout\": its dates had influenced prior architecture work, its four-hour outcome horizon was not purged at split boundaries, it used same-close entry, and its raw result directories were absent. Acros",
+  "authors": [
+   "Ayoub Jadouli"
+  ],
+  "categories": [
+   "cs.LG",
+   "cs.AI",
+   "q-fin.ST",
+   "q-fin.TR"
+  ],
+  "published": "2026-07-21T14:04:15Z",
+  "updated": "2026-07-21T14:04:15Z"
+ },
+ {
+  "id": "2607.19030",
+  "title": "Pricing options on illiquid assets using liquid market benchmarks: an application to energy markets",
+  "summary": "The Gasoil options market is illiquid, making it difficult to construct its implied volatility surface directly. However, it is closely linked to the highly liquid Brent options market. In this paper, we jointly model Brent and Gasoil futures prices through a correlated Bachelier local volatility model: the Brent factor is described by a normal mixture diffusion model, while the Gasoil-Brent spot volatility spread is estimated using a data-driven procedure that identifies clusters of historical crack-spread levels and Gasoil-Brent volatility spreads. The resulting bivariate model allows us to compute an implied volatility correction that maps Brent implied volatilities to Gasoil implied volatilities without using illiquid Gasoil option prices as inputs. Monte Carlo simulations demonstrate that the resulting implied volatilities closely match observed Gasoil implied volatilities when benchmarked against more direct approaches. These results suggest that the proposed framework is well suited for modeling refined products and pricing the corresponding financial derivatives.",
+  "authors": [
+   "Federico Aluigi",
+   "Lucia Caramellino",
+   "Paolo Pigato",
+   "Edoardo Scrima"
+  ],
+  "categories": [
+   "q-fin.CP",
+   "q-fin.PR",
+   "stat.CO"
+  ],
+  "published": "2026-07-21T12:17:59Z",
+  "updated": "2026-07-21T12:17:59Z"
+ },
+ {
+  "id": "2607.19005",
+  "title": "Observable Matrix Dynamics of Stocks",
+  "summary": "The Observable Matrix Dynamics (OMD) approach monitors the time development of complex non-linear systems through the trajectory of a fixed-size distance matrix and its spectrum. We apply it to the S\\&P 500 cross section over three crisis decades, the 2001 dot-com bust, the 2007--2008 financial crisis, and the 2020 Covid crash, with three fixed-size observables on a fixed universe. The arccos distance matrix of the rolling return correlations reads the correlation geometry: its effective dimension collapses at the 2008 and 2020 crises, while the 2001 bust is a dispersed unwind. Read against machine-learning distance matrices, its spectrum stays in the un-relaxed, pre-learning regime with no low-dimensional manifold, so the market never learns its correlation structure or relaxes to a stationary geometry. Subtracting the market factor exposes a coherent sector rotation, whose name-level attribution identifies which stocks drive each crisis and in what order. At a short lookback these signals resolve precursors and forecast the endogenous 2008 crisis, though not the exogenous 2020 shock. The other two observables model the daily return and volatility rankings as Markov chains on their ranking spaces. The return chain has persistent, defensive-led bellwethers and near-reversible dynamics. The volatility chain is far more persistent, led by the financial sector, and is the only one to carry a weak, episodic arrow of time, flaring at market stress and matching volatility clusterin",
+  "authors": [
+   "Igor Halperin"
+  ],
+  "categories": [
+   "q-fin.ST",
+   "cs.CE",
+   "q-fin.GN",
+   "q-fin.PM"
+  ],
+  "published": "2026-07-21T11:38:58Z",
+  "updated": "2026-07-22T02:31:03Z"
+ },
+ {
+  "id": "2607.18815",
+  "title": "Cloud failure and cyber insurance: calibration of stress scenarios and diversification",
+  "summary": "The expansion of the cyber insurance market remains exposed to the threat of accumulation events that could simultaneously affect a large number of policyholders. Although few such catastrophes have been observed so far, apart from worldwide cyberattacks such as WannaCry and NotPetya in 2017, the nature of cyber risk makes their occurrence plausible. Stress-testing tools are therefore needed to assess whether an insurance portfolio can withstand such crises. In this perspective, the European Insurance and Occupational Pensions Authority (EIOPA) has identified cloud outage as one of the key scenarios to consider in cyber insurance stress-testing frameworks. In this paper, we propose a framework to model and calibrate cloud-outage scenarios and to measure the diversification of a cyber insurance portfolio. We also show how this diversification can protect against accumulation risk and provide underwriting guidelines to reduce the vulnerability of a portfolio to cloud-outage scenarios.",
+  "authors": [
+   "Olivier Lopez",
+   "Daniel Nkameni"
+  ],
+  "categories": [
+   "q-fin.RM"
+  ],
+  "published": "2026-07-21T07:53:11Z",
+  "updated": "2026-07-21T07:53:11Z"
+ },
+ {
+  "id": "2607.18813",
+  "title": "Mixing-Law Uncertainty in Multivariate Normal Mean-Variance Mixtures: Semi-parametric Estimation and Robust Cumulative-Prospect Decisions",
+  "summary": "The distribution of a normal mean-variance mixture depends on the law of its positive mixing variable. We compare six parametric mixing laws with a grid nonparametric maximum likelihood estimator under the same determinant identification constraint. The mixing mean $m=\\E(Z)$ is estimated and is not fixed at one. A paired block bootstrap is used to compare multivariate holdout log scores. The models that cannot be distinguished from the model with the largest score define a finite ambiguity set. We then consider a cumulative prospect problem on a common portfolio direction. For each model in the set, the NMVM representation gives a scalar projected return and a corresponding prospect-value function of the exposure. The distributionally robust decision maximizes the lower envelope of these functions. We prove existence of a solution, give the candidate points for the piecewise smooth problem, derive a reference-gap scaling result, and construct an interval branch-and-bound certificate for the finite-scenario optimum. In an application to 30 stock returns, the mixture models give higher holdout density scores than the multivariate Gaussian model. Several parametric and semi-parametric models, however, remain in the ambiguity set. The worst-case model is therefore determined at the portfolio optimization stage rather than selected in advance from a point estimate of the holdout score.",
+  "authors": [
+   "Nuerxiati Abudurexiti"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "q-fin.PM",
+   "q-fin.ST"
+  ],
+  "published": "2026-07-21T07:49:31Z",
+  "updated": "2026-07-21T07:49:31Z"
+ },
+ {
+  "id": "2607.18705",
+  "title": "Pathwise Portfolio Theory and Market Viability",
+  "summary": "The theory of portfolios, and its allied notions and fundamental results concerning growth optimality, the numéraire property, and ``market viability'' -- which rules out the possibility of financing nontrivial future liability streams starting with arbitrarily small initial capital -- is developed in a pathwise setting, completely devoid of probabilistic considerations. The approach replaces the familiar semimartingale decomposition of stochastic analysis for assets' returns, by decompositions generated through suitable trend extractors and their associated residual paths; then deploys Föllmer's celebrated pathwise version of classical Itô integration and calculus. The resulting growth-numéraire and viability-boundedness equivalences bear considerable similarities to their semimartingale counterparts, but need not collapse into a single equivalence class in the pathwise setting; this separation is illustrated by two examples.",
+  "authors": [
+   "Ioannis Karatzas",
+   "Donghan Kim"
+  ],
+  "categories": [
+   "q-fin.MF"
+  ],
+  "published": "2026-07-21T05:02:11Z",
+  "updated": "2026-07-21T05:02:11Z"
+ },
+ {
+  "id": "2607.18001",
+  "title": "AlphaZeroBeta: Deep Reinforcement Learning for Market-Neutral Portfolios",
+  "summary": "Market-neutral portfolios aim to generate consistent returns while offsetting systematic market risk. Traditional approaches based on factor models or convex optimization often underperform during market regime shifts or when structural assumptions break down. We propose AlphaZeroBeta, a deep reinforcement learning framework designed to deliver benchmark-relative alpha (excess returns) with near-zero beta (market neutrality). AlphaZeroBeta combines a composite reward function that balances risk-adjusted excess return, benchmark correlation, and transaction costs with a CNN-GRU policy trained end-to-end via Recurrent PPO and evaluated through a rolling walk-forward protocol. Backtests covering 2014-2024 across seven equity indices show that the model achieves higher Sharpe ratios than the baselines while maintaining near-zero benchmark correlations and competitive drawdowns.",
+  "authors": [
+   "Boris Belyakov"
+  ],
+  "categories": [
+   "q-fin.PM",
+   "q-fin.CP"
+  ],
+  "published": "2026-07-20T14:33:47Z",
+  "updated": "2026-07-20T14:33:47Z"
+ },
+ {
+  "id": "2607.17991",
+  "title": "Optimal Market Making in Prediction Markets",
+  "summary": "Prediction markets are attracting growing attention as trading volumes rise and their practical relevance increases. To ensure efficient price discovery, liquidity provision becomes ever more important. Due to the binary settlement structure in prediction markets, optimal market making leads to an optimization problem that is fundamentally different from the ones studied in classical settings. In this paper, we develop a stochastic control framework for prediction markets in which the market price is modeled as a conditional probability of the outcome that is generated by a transformed latent belief diffusion. A market maker selects bid and ask quotes to maximize expected terminal wealth while controlling both mark-to-market inventory risk and the settlement risk of remaining positions at resolution. We derive the associated Hamilton--Jacobi--Bellman equation and characterize the unique optimal bid and ask quotes. By transforming the equation to the latent belief space and using a fixed-point argument, we prove existence and uniqueness of a classical solution and verify the resulting optimal quoting strategy. In addition, we provide a numerical analysis, which reveals how optimal liquidity provision in prediction markets depends on inventory, market beliefs, time to resolution, and risk aversion. Further, we demonstrate that the optimal quoting strategy substantially improves downside protection while preserving most of its expected profit relative to a myopic benchmark that ",
+  "authors": [
+   "Dominik Feil",
+   "Max Nendel"
+  ],
+  "categories": [
+   "q-fin.TR",
+   "math.OC",
+   "q-fin.MF"
+  ],
+  "published": "2026-07-20T14:22:52Z",
+  "updated": "2026-07-20T14:22:52Z"
+ },
+ {
+  "id": "2607.17502",
+  "title": "Mean-field equilibrium price formation under single-default risk",
+  "summary": "We study equilibrium price formation in an incomplete financial market with a large population of agents, where stock prices are subject to a single-default event. Agents are assumed to be heterogeneous in their risk aversion and terminal liabilities, and maximize exponential utility of terminal net wealth. We first characterize each agent's optimal strategy by a quadratic-growth backward stochastic differential equation (BSDE) driven by Brownian motions and a compensated default martingale. We then formulate the market-clearing condition in terms of aggregate optimal demand and derive a mean-field quadratic-growth BSDE for the equilibrium risk premium. The resulting characterization quantifies how default intensity, jump size, and agent heterogeneity jointly shape the default-risk component of equilibrium security risk premia. Under a Markovian factor model, we establish short-time solvability of the mean-field BSDE through a fixed-point argument based on estimates for a coupled semilinear PDE system. Finally, we show that the risk premium characterized by the mean-field BSDE asymptotically clears the market as the population size tends to infinity.",
+  "authors": [
+   "Masashi Sekine"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "q-fin.PR"
+  ],
+  "published": "2026-07-20T03:17:24Z",
+  "updated": "2026-07-20T03:17:24Z"
+ },
+ {
+  "id": "2607.17428",
+  "title": "Uniform-Loss Automated Market Making for Prediction Markets",
+  "summary": "Automated market makers (AMMs) for prediction markets descend from market scoring rules, where a mechanism operator subsidizes a market to aggregate beliefs about uncertain events. The existing literature has focused on bounding the total worst-case loss to the subsidizer, but has not addressed how that loss is distributed across price states or over time. We use the framework of loss-versus-rebalancing (LVR) to study this distribution and introduce \\textit{uniform AMMs}, defined by the property that instantaneous LVR is proportional to pool value and independent of the current token price. In a static setting, we show that for a broad class of \\textit{win-martingales} -- processes that converge to 0 or 1 at a fixed resolution time -- there exists a pricing function that achieves uniform LVR under that process, and conversely, that any sufficiently regular pricing function induces a win-martingale under which it is uniform. We then extend the framework to dynamic liquidity management, showing that liquidity levels can be adjusted over time to implement a prescribed target expected cumulative loss schedule. This theory is illustrated with canonical examples of win-martingales and pricing functions. Our results can inform AMM designers and liquidity providers on how the inevitable cost of subsidizing price discovery can be shaped and controlled across both price and time.",
+  "authors": [
+   "Ciamac C. Moallemi",
+   "Dan Robinson",
+   "Brian Zhu"
+  ],
+  "categories": [
+   "q-fin.TR"
+  ],
+  "published": "2026-07-19T22:35:00Z",
+  "updated": "2026-07-23T12:13:27Z"
+ },
+ {
+  "id": "2607.17427",
+  "title": "Abliteration Is Not a Scalpel: Off-Target Effects of Refusal Removal on Decision Disposition Across Model Families",
+  "summary": "Abliteration - deleting a model's refusal direction from its weights - is the standard recipe behind popular \"uncensored\" open-weight models. We show the surgery is not clean. As a disposition probe we use 21,600 decisions under uncertainty - weekly up/down calls on 60 Warsaw Stock Exchange equities over 18 weeks, replayed through a frozen pipeline so the decision-layer model is the only variable. The task elicits no refusals at all, so any between-arm delta is pure side effect. Holding provenance constant (official BF16 checkpoints, a single abliteration author, an identical serving stack, one byte-identical frozen prompt), we compare base and abliterated arms of two Mixture-of-Experts families, Gemma-4-26B-A4B-it and Qwen3-30B-A3B-Instruct-2507. Three effects replicate across both families (weeks-clustered bootstrap CIs excluding zero): abliterated models are systematically more optimistic (+12.2 pp Gemma, +7.4 pp Qwen; the confirmed preregistered endpoint), justify themselves at greater length, and use fewer explicit uncertainty words in forced self-critiques (both exploratory). A fourth effect reverses sign: the same operation makes Gemma-abliterated less confident and Qwen-abliterated more (family CIs non-overlapping) - one weight surgery, opposite shifts in expressed confidence. Capability covariates rule out instruction-following degradation as the driver, and no arm shows economic skill: the apparent edge of abliterated arms is regime beta, not alpha. Our provenance a",
+  "authors": [
+   "Aleksander Fafuła"
+  ],
+  "categories": [
+   "cs.LG",
+   "cs.CL",
+   "q-fin.CP"
+  ],
+  "published": "2026-07-19T22:27:00Z",
+  "updated": "2026-07-19T22:27:00Z"
+ },
+ {
+  "id": "2607.17381",
+  "title": "Determining Insolvency Regions in Banks: A Stochastic Dynamic Approach Integrating Liquidity and Credit Risk",
+  "summary": "We develop a continuous-time structural dynamic model to determine the exact insolvency regions of banks arising from the non-linear interaction between liquidity and credit risk. While existing literature predominantly treats these risks in isolation or via reduced-form specifications, we explicitly model the feedback loop where funding shocks and regulatory constraints force balance-sheet adjustments that can lead to endogenous insolvency. By incorporating Basel III regulatory requirements (LCR and NSFR) into a stochastic optimal control framework, we solve for the exact insolvency boundary using the Hamilton-Jacobi-Bellman (HJB) equation. To bridge the gap between theoretical complexity and supervisory practice, we derive and validate a surrogate analytical approximation function that allows for real-time monitoring. Calibrated using granular balance-sheet data from the Iranian banking sector, our model reveals significant non-linear threshold effects: the joint occurrence of liquidity stress and credit portfolio defaults disproportionately accelerates the transition toward insolvency compared to their individual effects. The proposed surrogate function offers supervisors a computationally efficient tool for stress testing and early warning systems. Our findings provide novel insights into financial frictions in emerging markets and offer a rigorous framework for integrated risk management.",
+  "authors": [
+   "Nader Karimi",
+   "Davood Ahmadian"
+  ],
+  "categories": [
+   "q-fin.RM"
+  ],
+  "published": "2026-07-19T18:48:00Z",
+  "updated": "2026-07-19T18:48:00Z"
+ },
+ {
+  "id": "2607.17212",
+  "title": "A General Model for Continuous Time Principal-Agent Problem Under Hidden Action",
+  "summary": "In this paper, we study a general continuous-time Principal-Agent (PA) problem, where the agent privately makes effort and consumption decisions over time under a contract with payment schemes both in continuous time and in lump sums. In particular, we allow the continuous payment process to be a controlled diffusion, which is directly related to the pay-to-performance sensitivity (PPS) in the empirical literature. In solving the agent's problem, we propose a new sufficient condition that directly yields a solution to the agent's problem, without requiring a separate verification step for the solution obtained from the first-order approach. We also present an example which can be solved explicitly.",
+  "authors": [
+   "Jaeyoung Sung",
+   "Jianfeng Zhang",
+   "Zimu Zhu"
+  ],
+  "categories": [
+   "q-fin.MF"
+  ],
+  "published": "2026-07-19T12:08:24Z",
+  "updated": "2026-07-19T12:08:24Z"
+ },
+ {
+  "id": "2607.17020",
+  "title": "Risk Measures on Lipschitz Spaces",
+  "summary": "This paper develops a theory of monetary risk measures on metric state spaces. We propose the space of Lipschitz functions vanishing at a reference state as a natural domain for financial positions. The associated Lipschitz-free space provides its canonical predual, linking anchored Lipschitz payoffs to transport-based dual variables interpreted as redistributions of mass around the benchmark. Since the domain lacks constants and need not be a Banach lattice under the Lipschitz norm, standard cash-additive methods do not apply directly. We address this by using additivity along benchmark-deviation instruments and derive dual representations for convex and coherent risk measures. The framework covers temporal cash flows, path-dependent payoffs, network risk, and model uncertainty.",
+  "authors": [
+   "Henrik Karlholm",
+   "Marlon Moresco",
+   "Marcelo Righi"
+  ],
+  "categories": [
+   "q-fin.MF"
+  ],
+  "published": "2026-07-19T01:17:46Z",
+  "updated": "2026-07-19T01:17:46Z"
+ },
+ {
+  "id": "2607.16970",
+  "title": "Herding and Liquidity in Order-Book Markets. II. Fundamental Anchoring and the Resilience of Liquidity",
+  "summary": "An order-book market whose liquidity provision is anchored to a fundamental value carries a restoring force: the price mean-reverts to value and the book refills after a shock. We show this restoring force is a robust intrinsic stabiliser and identify it causally-dialling the anchor down removes the mean-reversion, and a leverage-driven fire-sale then self-sustains. Separately, we ask whether a stressed market transmits its liquidity stress to a coupled calmer one, and find that it cannot: across six transmission channels of increasing strength-cross-market herding, arbitrage flow, and market-maker withdrawal up to a funding-constrained population fire-sale and a leverage spiral-the receiver's stress is independent of whether its neighbour is stressed, at every anchor strength. Market-maker withdrawal thins the receiving book but does not ignite it. Our order parameter throughout is the one-sidedness of the book-liquidity stress rather than a directional price crash-so a liquidity crisis here means the sustained one-sidedness a failing anchor produces. A liquidity crisis in this model is a failure of fundamental anchoring, not of market making.",
+  "authors": [
+   "Jan Novotny"
+  ],
+  "categories": [
+   "q-fin.TR"
+  ],
+  "published": "2026-07-18T21:10:15Z",
+  "updated": "2026-07-18T21:10:15Z"
+ },
+ {
+  "id": "2607.16935",
+  "title": "Robust Control for Marked Point Processes under Transition-Rate Uncertainty",
+  "summary": "We consider a novel robust utility maximisation problem under bounded cumulative transition rate uncertainty within the class of non-Markovian marked point processes on a finite state-space. Utility is maximised over the class of admissible controls, while Nature chooses a worst-case biometric scenario from the class of admissible, path-dependent cumulative transition rates restricted by path-dependent upper and lower bounds. We prove a martingale optimality principle and a novel existence and uniqueness result for a non-standard worst-case backwards stochastic differential equation, which allows us to establish existence and uniqueness of worst-case and best-case prospective reserves of life and health insurance contracts with reserve-dependent payments. Finally, we find an explicit solution of a novel robust consumption-insurance problem with power utility preferences.",
+  "authors": [
+   "Sascha Desmettre",
+   "Philipp C. Hornung"
+  ],
+  "categories": [
+   "math.OC",
+   "math.PR",
+   "q-fin.RM"
+  ],
+  "published": "2026-07-18T19:07:56Z",
+  "updated": "2026-07-18T19:07:56Z"
+ },
+ {
+  "id": "2607.16801",
+  "title": "A Practical Guide to Simulating Correlated Binary Outcomes",
+  "summary": "Simulating dependent Bernoulli outcomes with prescribed means and pairwise Pearson correlations is a common task in risk modeling. A familiar approach is the Gaussian-threshold workflow for binary outcomes, often viewed as a Bernoulli analogue of the Gaussian copula construction. We show that setting latent Gaussian correlations equal to target Bernoulli correlations is generally incorrect after thresholding, and that pairwise tetrachoric calibration is exact only when the calibrated latent matrix is positive semidefinite. We therefore formulate the problem directly over the joint Bernoulli probability mass function. Given target means and pairwise correlations, we impose normalization, nonnegativity, mean constraints, and pairwise cross-moment constraints as a linear program over the $2^N$ atomic probabilities. The resulting PMF formulation either returns an exact law matching the requested first and second moments or certifies infeasibility. A convex-hull characterization further shows that every feasible target admits a law supported on at most $1+N+\\binom{N}{2}$ states, while every infeasible target admits a separating quadratic certificate. We then develop a truncated-moment completion scheme that fits a reduced cross-moment table and generates samples by sequential conditioning, together with a sparse-support working-set refinement that can reduce memory usage on structured instances, although the worst-case complexity remains exponential. Together, these constructions ",
+  "authors": [
+   "Chi Heem Wong",
+   "Zied Ben Chaouch"
+  ],
+  "categories": [
+   "cs.CE",
+   "q-fin.CP",
+   "q-fin.RM",
+   "stat.CO"
+  ],
+  "published": "2026-07-18T12:48:31Z",
+  "updated": "2026-07-18T12:48:31Z"
+ },
+ {
+  "id": "2607.16622",
+  "title": "Proof-of-Stake Dynamics: The Elusive Price Anchor and Endogenous Volatility Harvesting",
+  "summary": "In this paper, we develop an open-economy macroeconomic model of a Proof-of-Stake network to analyze nominal token-price dynamics and the systemic effects of speculative capital. We first consider a network populated solely by active utility users, who finance network activity through a steady exogenous inflow of fiat currency. We prove the existence of a unique, globally asymptotically stable steady-state equilibrium with a well-defined nominal token price and derive a closed-form expression for the network's relaxation time. Calibrating the model using parameters representative of the current Ethereum network, we estimate a relaxation half-life of approximately 46 years. This extreme macroeconomic inertia implies that the token price may remain persistently displaced from its evolving steady-state benchmark, producing sustained price overshooting as the network adjusts to changing fundamentals. We then introduce an Investor class to examine the effects of passive and active speculative capital. We show that passive institutional staking compresses the native staking yield and creates a structural imbalance that systematically raises the nominal token price while shifting consensus ownership away from active utility users. Active speculative capital has a qualitatively different effect. In response to capital shocks, the Consumer class's rigid preference for fiat-denominated consumption generates an endogenous constant-value strategy. This mechanism shifts staked-token owner",
+  "authors": [
+   "Mikhail Perepelitsa"
+  ],
+  "categories": [
+   "econ.GN",
+   "q-fin.MF",
+   "q-fin.TR"
+  ],
+  "published": "2026-07-18T03:47:16Z",
+  "updated": "2026-07-18T03:47:16Z"
+ },
+ {
+  "id": "2607.16601",
+  "title": "The conditional higher moment risk measure: second-order asymptotics with FGM contagion",
+  "summary": "This paper investigates second-order asymptotic expansions for the conditional higher moment (CoHM) coherent risk measure under a Farlie-Gumbel-Morgenstern (FGM) dependence structure, capturing a weak contagion between a primary loss risk and a reference risk. Assuming that the primary risk belongs to the Fréchet, Weibull, or Gumbel maximum domain of attraction, we systematically derive second-order asymptotic expansions using extreme value theory and second-order regular variation theory. Compared with existing first-order results, our refined approximations capture higher-order tail behavior and dependence effects more accurately. Numerical simulations confirm that the second-order asymptotics substantially reduce approximation errors, especially at extreme confidence levels. Empirical applications to insurance claim data further illustrate the practical superiority of the second-order approach.",
+  "authors": [
+   "Haifan Hu",
+   "Bingzhen Geng",
+   "Jiajun Liu",
+   "Shijie Wang"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "math.PR"
+  ],
+  "published": "2026-07-18T02:42:14Z",
+  "updated": "2026-07-18T02:42:14Z"
+ },
+ {
+  "id": "2607.16450",
+  "title": "Portfolio Optimization under Heavy Tails and Asymmetric Volatility: Evidence from Taiwan-Exposed ETFs",
+  "summary": "Taiwan's central role in global semiconductor manufacturing exposes Taiwan-related ETFs to technology concentration, geopolitical uncertainty, and supply-chain disruptions, resulting in return distributions characterized by heavy tails, volatility clustering, and asymmetric responses to negative shocks. This paper analyzes thirty U.S.-listed ETFs with Taiwan exposure from February 2015 to February 2025 using tail-risk diagnostics, asymmetric volatility modeling, and portfolio optimization under mean--variance and conditional value-at-risk (CVaR) criteria. Hill tail-index estimates document heavy-tailed behavior across the ETF universe. Although the ETFs exhibit broadly similar asymptotic tail-decay behavior, semiconductor-focused ETFs produce substantially larger VaR and CVaR estimates than diversified benchmarks, indicating that cross-sectional differences in extreme downside risk are driven primarily by differences in return scale rather than tail-index estimates. GJR-GARCH estimates reveal persistent, asymmetric volatility, and the apparent long memory in squared returns is largely attributable to conditional heteroskedasticity rather than genuine fractional integration. CVaR optimization produces substantially more concentrated allocations than mean--variance optimization, with the CVaR tangent portfolio allocating a large weight to SMH during the post-COVID AI-driven expansion. Portfolio rankings depend on the performance measure: the Sharpe ratio and STARR measure favor",
+  "authors": [
+   "Ting-Jung Lee",
+   "Abootaleb Shirvani",
+   "Farzana Afroz",
+   "Svetlozar T. Rachev",
+   "Frank J. Fabozzi"
+  ],
+  "categories": [
+   "q-fin.PM"
+  ],
+  "published": "2026-07-17T18:48:58Z",
+  "updated": "2026-07-17T18:48:58Z"
+ },
+ {
+  "id": "2607.16281",
+  "title": "A Novel Hybrid Quantum Reservoir Computing (nHQRC) for Phase Transition Detection in Non-Equilibrium Dynamical Systems",
+  "summary": "The analysis of highly non-linear stochastic data within non-equilibrium dynamical systems requires computational frameworks capable of detecting latent phase transitions before systemic structural breakdowns occur. Traditional Variational Quantum Algorithms (VQAs) are frequently bottlenecked by vanishing gradients, the barren plateau problem, and prohibitive training overheads. In this paper, we propose a novel Hybrid Quantum Reservoir Computing (nHQRC) framework, which bypasses these limitations by employing a frozen, disordered Transverse-Field Ising Model (TFIM) to project time-dependent stochastic driving forces into an exponentially large Hilbert space. To resolve the physical phase multi-wrapping vulnerabilities present in baseline quantum reservoir models, we introduce a lookahead-free, pre-amplification manifold scaling technique. Multi-qubit configurations are genetically optimized to the \"edge of chaos,\" while quantum state tracking is performed by extracting von Neumann entropy ($S$) and exact mixed-state Quantum Fisher Information (QFI) to act as leading entanglement witnesses. Utilizing these quantum triggers as boundary constraints, trajectory predictions are constructed via a generative Stochastic Schrödinger Bridge (SSB) readout. By subjecting the quantum reservoir to an 8-dimensional non-stationary stochastic driving field, the framework significantly improves systemic drift-to-diffusion efficiency ($η$) and actively arrests maximum trajectory decay (MTD) by",
+  "authors": [
+   "Manoj B. Bhatkar",
+   "Prashant M. Yawalkar"
+  ],
+  "categories": [
+   "quant-ph",
+   "cs.LG",
+   "q-fin.CP",
+   "q-fin.ST"
+  ],
+  "published": "2026-07-09T19:22:30Z",
+  "updated": "2026-07-09T19:22:30Z"
+ }
+]
