@@ -174,6 +174,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "5e7b446042d437c861b9d4525e9ec3ae": {
+    "first_seen": "2026-07-28 06:00",
+    "source": "quantocracy",
+    "title": "The NAAIM-AAII Equities Allocation Spread: Smart Money Relative Sentiment Indica",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "6132945711c74da4c2b4f2b6c52eff06": {
     "first_seen": "2026-07-17 06:30",
     "source": "quantocracy",
@@ -213,6 +220,20 @@
     "first_seen": "2026-07-05 06:30",
     "source": "quantocracy",
     "title": "Jumping back in the pool(ing): pooling by asset class and portfolio weight dista",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "712352e808494a1a8b60315799c0e020": {
+    "first_seen": "2026-07-28 06:00",
+    "source": "quantocracy",
+    "title": "The Inflation Compass Model [CSS Analytics]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "7a05f2623c9fc018712395e8e070a659": {
+    "first_seen": "2026-07-28 06:00",
+    "source": "quantocracy",
+    "title": "GAMLSS/ZAGA: Conditional IR* Distribution For Trading Strategies [Krzysztof Ozim",
     "decision": "accepted",
     "promising_file": null
   },
@@ -305,6 +326,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 07/20/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bd1a353827d4d555cae0a1f09b517b76": {
+    "first_seen": "2026-07-28 06:00",
+    "source": "quantocracy",
+    "title": "Crafting a Trading Strategy [Handelsmeisterei]",
+    "decision": "accepted",
     "promising_file": null
   },
   "c1c404b15707ee78c88b5146336da1a1": {
@@ -410,6 +438,13 @@
     "source": "quantocracy",
     "title": "Algorithmic Trading, HFT, and Market Stability [Relative Value Arbitrage]",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "f51a7cf260326e226daa4ac87ebecd88": {
+    "first_seen": "2026-07-28 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/27/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "f6f3a0560154268b66160dc090b66f07": {
