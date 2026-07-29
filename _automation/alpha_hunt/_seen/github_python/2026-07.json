@@ -664,6 +664,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d133c5d64a0563a45d107c0c26f59f71": {
+    "first_seen": "2026-07-29 11:00",
+    "source": "github_python",
+    "title": "deepfakes/faceswap",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d15e8b5716bb43c021edbe0430eba552": {
     "first_seen": "2026-07-15 11:00",
     "source": "github_python",
@@ -682,6 +689,13 @@
     "first_seen": "2026-07-24 11:00",
     "source": "github_python",
     "title": "flashinfer-ai/flashinfer",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d764d9f1dee8f8ec84690a364bae9b18": {
+    "first_seen": "2026-07-29 11:00",
+    "source": "github_python",
+    "title": "sgl-project/sglang",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -766,6 +780,13 @@
     "first_seen": "2026-07-16 11:00",
     "source": "github_python",
     "title": "thinking-machines-lab/tinker-cookbook",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e859bb98e2d5192871584dac7a56c5ed": {
+    "first_seen": "2026-07-29 11:00",
+    "source": "github_python",
+    "title": "polarsource/polar",
     "decision": "rejected_L0",
     "promising_file": null
   },
