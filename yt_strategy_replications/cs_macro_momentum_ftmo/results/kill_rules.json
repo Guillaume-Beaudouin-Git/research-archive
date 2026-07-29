@@ -1,0 +1,153 @@
+{
+  "kill1_placebo": {
+    "V0": {
+      "best_vm": 2.0,
+      "p_real": 0.39966666666666667,
+      "p_placebo": 0.2783333333333333,
+      "days_real": 118.0,
+      "days_placebo": 119.0,
+      "beats_placebo": true
+    },
+    "V1": {
+      "best_vm": 2.5,
+      "p_real": 0.39466666666666667,
+      "p_placebo": 0.26366666666666666,
+      "days_real": 110.0,
+      "days_placebo": 111.0,
+      "beats_placebo": true
+    },
+    "V2": {
+      "best_vm": 2.5,
+      "p_real": 0.2653333333333333,
+      "p_placebo": 0.254,
+      "days_real": 72.0,
+      "days_placebo": 72.0,
+      "beats_placebo": true
+    },
+    "V3": {
+      "best_vm": 2.5,
+      "p_real": 0.21966666666666668,
+      "p_placebo": 0.256,
+      "days_real": 80.0,
+      "days_placebo": 81.0,
+      "beats_placebo": false
+    }
+  },
+  "kill1_verdict_family_dead": false,
+  "kill2_two_sided": {
+    "short_leg_zero_cost": {
+      "mean_bps_day": -0.8456642691795547,
+      "hac_t": -0.9036456237530058,
+      "block_boot_p": 0.822,
+      "sharpe": -0.2515463875664105,
+      "significant": false
+    },
+    "long_leg_zero_cost": {
+      "mean_bps_day": 2.929741091054436,
+      "hac_t": 3.183170381127488,
+      "block_boot_p": 0.0005,
+      "sharpe": 0.8450915406281997,
+      "significant": true
+    }
+  },
+  "kill3_beta_orthogonality": {
+    "V0": {
+      "beta": 0.3157428366491223,
+      "alpha_bps_day": 0.2433918265099471,
+      "alpha_t": 0.28225946475285835,
+      "r2": 0.1548940561828116,
+      "r2_over_30pct": false,
+      "n": 3294
+    },
+    "V1": {
+      "beta": 0.2712192224342975,
+      "alpha_bps_day": 0.3399087475238043,
+      "alpha_t": 0.4749691721921561,
+      "r2": 0.1622315884370551,
+      "r2_over_30pct": false,
+      "n": 3294
+    },
+    "V2": {
+      "beta": 0.4251920536472879,
+      "alpha_bps_day": -1.128451891158644,
+      "alpha_t": -1.2394106184960465,
+      "r2": 0.22482753712103698,
+      "r2_over_30pct": false,
+      "n": 3294
+    },
+    "V3": {
+      "beta": 0.3023900211864874,
+      "alpha_bps_day": -1.5262397823476368,
+      "alpha_t": -1.836432329898537,
+      "r2": 0.1455224077871925,
+      "r2_over_30pct": false,
+      "n": 3294
+    }
+  },
+  "kill4_gross_vs_cost": {
+    "V0_panel": {
+      "gross_mean_bps": 7.410190754872624,
+      "cost_mean_bps": 4.206092262138176,
+      "cost_p95_bps": 8.462503820278814,
+      "ratio_gross_over_costp95": 0.8756499154677464,
+      "passes_1p5x": false,
+      "n_periods": 1317
+    },
+    "V0_anchor": {
+      "gross_mean_bps": 7.416846804738381,
+      "cost_mean_bps": 5.10829260362132,
+      "cost_p95_bps": 9.984188311048877,
+      "ratio_gross_over_costp95": 0.742859266439378,
+      "passes_1p5x": false,
+      "n_periods": 1317
+    },
+    "V1_panel": {
+      "gross_mean_bps": 6.511860297213284,
+      "cost_mean_bps": 3.4342227519666926,
+      "cost_p95_bps": 6.666488666554959,
+      "ratio_gross_over_costp95": 0.9768051252952055,
+      "passes_1p5x": false,
+      "n_periods": 1317
+    },
+    "V1_anchor": {
+      "gross_mean_bps": 6.511860297213284,
+      "cost_mean_bps": 4.129391649420777,
+      "cost_p95_bps": 7.861309281111795,
+      "ratio_gross_over_costp95": 0.828342972443432,
+      "passes_1p5x": false,
+      "n_periods": 1317
+    },
+    "V2_panel": {
+      "gross_mean_bps": 36.432726693309824,
+      "cost_mean_bps": 30.68820733393383,
+      "cost_p95_bps": 68.15214479305129,
+      "ratio_gross_over_costp95": 0.5345793122716875,
+      "passes_1p5x": false,
+      "n_periods": 151
+    },
+    "V2_anchor": {
+      "gross_mean_bps": 36.43210239957337,
+      "cost_mean_bps": 32.44987974081952,
+      "cost_p95_bps": 71.38642687417304,
+      "ratio_gross_over_costp95": 0.510350552546764,
+      "passes_1p5x": false,
+      "n_periods": 151
+    },
+    "V3_panel": {
+      "gross_mean_bps": 4.8333751030809,
+      "cost_mean_bps": 6.160897648285952,
+      "cost_p95_bps": 13.478275050966552,
+      "ratio_gross_over_costp95": 0.35860487227067595,
+      "passes_1p5x": false,
+      "n_periods": 1317
+    },
+    "V3_anchor": {
+      "gross_mean_bps": 4.782257764761137,
+      "cost_mean_bps": 13.420597977977362,
+      "cost_p95_bps": 30.365720743032007,
+      "ratio_gross_over_costp95": 0.15748869606062343,
+      "passes_1p5x": false,
+      "n_periods": 1317
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "campaign_V0": {
+    "p_pass_global": 0.20175,
+    "p_pass_phase1": 0.0,
+    "p_pass_phase2_cond": NaN,
+    "p_fail_daily": 0.076,
+    "p_fail_floor": 0.12525,
+    "p_timeout": 0.597,
+    "days_median": 241.0,
+    "days_p90": 359.0,
+    "n_paths": 4000
+  }
+}
