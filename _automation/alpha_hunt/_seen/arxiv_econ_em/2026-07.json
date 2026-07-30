@@ -538,6 +538,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "b5eeb12c8af9963d12bc41eed2b290d4": {
+    "first_seen": "2026-07-30 01:30",
+    "source": "arxiv_econ_em",
+    "title": "A Simple Robust Procedure in Instrumental Variables Regression",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b82caf6b1d307df3b92d51b1cf64c649": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -615,10 +622,24 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "c908f10cf81a967b8f4debafb6582b93": {
+    "first_seen": "2026-07-30 01:30",
+    "source": "arxiv_econ_em",
+    "title": "The Innate Economic Preferences of Language Models",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "c9e126fd7c071d86217b46630be48b61": {
     "first_seen": "2026-07-02 02:00",
     "source": "arxiv_econ_em",
     "title": "Asymptotic Properties of Empirical Quantile-Based Estimators",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cc21ff4e0ea481990cbac99058c514b3": {
+    "first_seen": "2026-07-30 01:30",
+    "source": "arxiv_econ_em",
+    "title": "The Evolutionary Dynamics of AI, Politicization, Contestation, and Trust in Scie",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -760,6 +781,13 @@
     "source": "arxiv_econ_em",
     "title": "Kernel Minimum Distance Estimation and Testing with Conditional Moment Restricti",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f525aeb439c1699c3c2e211bb9047fa7": {
+    "first_seen": "2026-07-30 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Specification Testing for Dyadic Regression Models",
+    "decision": "accepted",
     "promising_file": null
   },
   "f704581069172c7cec84f1b12856b408": {
