@@ -20,6 +20,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "117f0845eb048ea56de4924278e2215f": {
+    "first_seen": "2026-07-30 23:30",
+    "source": "hn_algotrading",
+    "title": "Wrapper Company vs. Recursion Company",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "11c9b0058317b9334f696e5e7f1fc382": {
     "first_seen": "2026-07-05 05:30",
     "source": "hn_algotrading",
