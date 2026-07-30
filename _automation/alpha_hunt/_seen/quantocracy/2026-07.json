@@ -41,6 +41,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "0cb34cf5e23f7b6bdb2c6205542429ec": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "I Invented 2021 Candle Types to Find the One Holy Grail [Paper to Profit]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0e9157ea550ea3b1aff8f252a9de7350": {
     "first_seen": "2026-07-22 06:30",
     "source": "quantocracy",
@@ -53,6 +60,20 @@
     "source": "quantocracy",
     "title": "Quantitativo weekly [Quantitativo]",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "18cbf63f40fcf42f24c076d07292dffa": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "Path Signatures: Does the Shape of Price Paths Predict Returns? [Delphic Alpha]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "19db3fc3229c29d39833a197af1caa7b": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 07/29/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "19fd802854f166d3d23f38c5c028d63b": {
@@ -82,6 +103,20 @@
     "title": "Rolling, rolling, rolling…. updating statistical estimates yes or no [Investment",
     "decision": "accepted",
     "promising_file": "quantocracy_rolling_rolling_rolling_updating_statistical_estim_20260701.md"
+  },
+  "200005e05274170906f815195efc462b": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "A Microstructural Account of the Demise of Short-Term Trend-Following [Quantpedi",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "287c451100e9428aefaa38cf08c27ac8": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "Podcast: Why I stopped trying to predict the market [Trading the Breaking]",
+    "decision": "accepted",
+    "promising_file": null
   },
   "2933dac03e3a7fe35654ede342fdcce0": {
     "first_seen": "2026-07-21 07:30",
@@ -237,6 +272,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "7eb5526236fc9a7944893e91e3bbdcd8": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "A Database of Historical Macroeconomic Events [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "864cf59c993228ff86e905862fb7933f": {
     "first_seen": "2026-07-13 06:30",
     "source": "quantocracy",
@@ -263,6 +305,13 @@
     "source": "quantocracy",
     "title": "MACD: The Indicator Is a Passenger [The Refutation]",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "9757c609ff8fb5220743a22199f6b4f7": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "Chicken and Egg: Use the SPX to Time the VIX, Not Vice Versa [Aligrithm]",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "9bcaee0cc43077b215f4aeebc80d84ce": {
@@ -314,6 +363,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "b2f78cf0d8ca0b9c63e7b267876f1e81": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "When Risk Is Not Rewarded [Concretum Group]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "b7533e21d268f302cda9414e3de4ac7e": {
     "first_seen": "2026-07-10 06:30",
     "source": "quantocracy",
@@ -353,6 +409,13 @@
     "first_seen": "2026-07-17 06:30",
     "source": "quantocracy",
     "title": "How quants separate edge from noise [Trading the Breaking]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "cf0be267630807950ee61134c873cd36": {
+    "first_seen": "2026-07-30 06:30",
+    "source": "quantocracy",
+    "title": "Does Your Backtest Survive the Adverse Same-Bar Fill? A 48.8 Million-Pair Stress",
     "decision": "accepted",
     "promising_file": null
   },
