@@ -1,0 +1,5 @@
+step,N,obs_yr,mean_bps,SR,t_hac,maxDD_pct,vol_ann,note
+0_archived_specA_H1,4998,258.4,4.56,1.701,7.33,-13.6,6.93,"UTC clock, H1 close-to-close, halt gap included"
+1_+exchange_clock_H1,4882,252.4,7.091,2.627,11.14,-18.2,6.81,"exchange clock, H1, halt gap still included"
+2_+M1_entry_gapExcluded,4881,252.3,5.115,2.01,8.72,-8.0,6.42,"exchange clock, M1 prices, halt gap EXCLUDED, NO winsor"
+3_+winsorise_0.5/99.5,4881,252.3,5.117,2.129,9.22,-7.2,6.07,as reported in step 3

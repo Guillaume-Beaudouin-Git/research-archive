@@ -1,0 +1,5 @@
+sleeve,sym,n_fut_sessions,completeness,fut_gap_bps,fut_hour1_cap_bps,fut_window_cap_bps,fut_t_window_cap,n_common,corr_fut_cfd,cfd_window_bps_samePeriod,fut_window_bps_samePeriod
+GOLD,GC=F,464,0.742,0.28,2.37,3.78,1.17,392,0.945,7.72,4.68
+SILVER,SI=F,464,0.742,1.72,-0.11,-1.39,-0.23,435,0.966,9.88,0.99
+WTI,CL=F,443,0.709,2.32,-0.89,-2.48,-0.59,414,0.838,-2.61,-0.34
+SOYBEAN,ZS=F,463,0.741,-4.46,7.79,9.65,2.84,0,,,
