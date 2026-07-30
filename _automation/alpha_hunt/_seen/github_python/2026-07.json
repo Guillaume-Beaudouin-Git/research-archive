@@ -181,6 +181,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3c3ca9e20cffe91ce5a74a5d6494a3b0": {
+    "first_seen": "2026-07-30 11:30",
+    "source": "github_python",
+    "title": "ScrapeGraphAI/Scrapegraph-ai",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "40971d7215f411cdc5a0bbf5912a7ab1": {
     "first_seen": "2026-07-19 21:00",
     "source": "github_python",
@@ -696,6 +703,13 @@
     "first_seen": "2026-07-29 11:00",
     "source": "github_python",
     "title": "sgl-project/sglang",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "da9acf041d40cf65bfb91cac8f47d15f": {
+    "first_seen": "2026-07-30 11:30",
+    "source": "github_python",
+    "title": "github/awesome-copilot",
     "decision": "rejected_L0",
     "promising_file": null
   },
