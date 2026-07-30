@@ -59,7 +59,18 @@ M1 IEF (Ingénierie Économique et Financière), Univ. Rennes 1. Solo algo resea
 
 ## Portfolio context
 - Personal book: A (TSMOM, paused) + B (HL testnet, mainnet ~Jul 2026)
-- Propfirm book (décision 2026-06-10): **FTMO uniquement (futures/CFD) + Propr (crypto)**. Tradeify annulé; C-sur-NQ sans véhicule (L22c). Potential D: decorrelated, propfirm-targeted.
+- Propfirm book: **FTMO (CFD) + Propr (crypto)**. FTMO ne supporte ni futures CME (L22c) ni CFD
+  obligataire (`PropFirms/ftmo/rules.md:135-143`).
+  ⚠ **Le volet « firmes futures écartées en bloc » du gel du 2026-06-10 est LEVÉ (2026-07-30, L51)** :
+  il reposait sur un modèle mental ACTIONS (« daily-flat ⇒ pas de tenue multi-jours »), factuellement
+  faux pour le CME — une règle daily-flat ne coupe que la pause de settlement, et MyFundedFutures
+  autorise l'overnight sur tous ses plans. Les firmes futures (Apex / Topstep / MFFU) redeviennent
+  des véhicules **évaluables au cas par cas**, sous le test L53 d'abord (si la marge du lot minimum
+  tient dans le capital perso, le propfirm n'apporte rien).
+- **Le compte IBKR personnel est un VÉHICULE DE PREMIÈRE CLASSE, pas un repli** : pas de barrière,
+  pas d'horloge, 100 % du P&L, coûts futures ~0.4 bps RT contre 2-7 bps en CFD retail. Toute
+  stratégie tuée sur le VÉHICULE ou sur le COÛT CFD doit y être re-évaluée (politique de
+  ré-ouverture, §registre L).
 - **Book de référence = A SEUL — SR 0.57** (recalc 2026-07-29 : A live BTC/ETH/SOL, rendements
   **EXCESS**, IC95 **[-0.50, 1.63] — contient zéro**). Fourchette défendable : **0.57** (A seul) à
   **1.85** (A + proxy B optimiste). **L'ancien 2.31 est CADUC** : il combinait SR_A=1.33 (univers
@@ -190,6 +201,71 @@ L48. Registry-check must sweep consolidated paths: a Phase-0 sweep grepping only
 L49. Unlock-drift is short-alt-beta: a calendar-event claim on a structurally bleeding universe must clear a MATCHED PLACEBO CALENDAR, not just significance/decay/DSR gates — the unlock short shows net +337 bps/event, t 2.90, N=578, undecayed, DSR 0.94, yet sits BELOW the placebo median of random vol-matched days on the same tokens (p95 +539). Flat dose-response + zero insider gradient + linear event-time escalator complete the falsification. Family: L11; same signature as announcement_premium "drift accrues off-event". (session_I 06-10.)
 L50. Funding-extremes confirm momentum across exchange and cycle: README §6.35 (HL, z-score, 2023-26) replicated independently (Binance, trailing-1y percentile, 2020-26, 13 perps, 2,195 events) — extreme-high funding precedes CONTINUATION (+20/+30/+113 bps at 8h/24h/72h; +239 @72h in 2020-21). Funding-contrarian family closed at the exchange-perp tier; funding-percentile carry-sizing overlays have no IC foundation. (session_I 06-10.)
 
+### Véhicule, sessions & ré-ouverture — registre L (L51-L55, gravé 2026-07-30)
+L51. **Un jour de trading futures n'est PAS un jour calendaire, et « no overnight » ne forfait
+     pas la nuit.** La session CME de ZN va de 18:00 ET (J-1) à 17:00 ET (J) ; une règle
+     daily-flat de propfirm futures ne coupe que la **pause de settlement** (Apex 4.0 : flat
+     16:59 → reprise 18:00 ; Topstep : 16:10 → 18:00 ; MyFundedFutures : tenue overnight
+     AUTORISÉE sur tous les plans). Mesuré sur month-end ZN : la jambe TENUE par un compte
+     daily-flat porte **92.9 %** de l'effet (+16.25 bps, t 4.79) et la jambe abandonnée est
+     nulle (+1.24, t 1.43, p 0.168). **Le gel du 2026-06-10 (« toutes les firmes futures sont
+     daily-flat ⇒ tenues multi-jours disqualifiées ») est LEVÉ : il importait un modèle mental
+     ACTIONS et pré-tuait des candidats sans rapport.** (month_end_vehicle 07-30.)
+L52. **Ne jamais faire confiance au nom d'un champ de provider ; et une décomposition
+     intraday/overnight n'est pas définie tant qu'on n'a pas dit DE QUEL JOUR on parle.**
+     `yfinance ZN=F` daily `Open` = l'ouverture **Globex 18:00 ET du jour calendaire
+     PRÉCÉDENT** (71.6 % exact au tick, médiane 0 tick), `Close` = settlement 15:00 ET —
+     alors que `TLT.Open` est bien 09:30 ET. Le naïf « open→close capture 93 % » n'est donc
+     PAS « l'effet est intraday » mais « la session CME de 21 h capture 93 % ». Même effet,
+     découpé sur la journée cash US : 56/44 sur TLT, et une version RTH-only sur ZN ne garde
+     que 27-51 % **en perdant la significativité**. Tick-matcher les barres daily contre des
+     barres horaires indépendantes AVANT toute décomposition. (month_end_vehicle 07-30.)
+L53. **Si la marge du lot minimum tient dans le capital personnel, le propfirm n'apporte
+     RIEN — et ce test coûte 5 minutes, à faire AVANT toute simulation.** Un propfirm vend du
+     levier sur du capital qu'on n'a pas ; 1 ZN ne demande que ~$1 800 de marge, soit 14 % d'un
+     compte de $13 k. Compte perso : **+$2 275/an (+17.6 %), Sharpe 0.92 net, 100 % du P&L**,
+     sans barrière ni horloge ni frais. Route propfirm : 11 mois, $639, 80 % du P&L d'UN
+     contrat, sous une barrière qu'un événement historique a déjà franchie (pire événement
+     −$2 009 vs buffer $2 000 : **le lot minimum couvre toute la barrière de mort**), sur un
+     plan legacy non achetable. **Strictement dominée.** Corollaire de process : la matrice de
+     véhicule passe AVANT le backtest (correctif du biais « véhicule en dernier »).
+     (month_end_vehicle 07-30.)
+L54. **La condition liante d'un overlay de régime n'est PAS le MaxDD (correction de L15) :
+     c'est que le régime prédisant la VARIANCE prédise la MOYENNE dans le MÊME SENS.** Le book
+     MONO déployé a un MaxDD de −81 % (condition L15 remplie) et l'overlay a quand même échoué :
+     les flags prédisent bien la variance (vol stress 9.8 % vs 4.2 %) mais le book gagne
+     **+218 bps vs +21 bps** sur ces mêmes jours — la prime overnight EST la rémunération de ce
+     risque, donc toute coupe retranche les jours qui paient. Aucune variante ne bat son
+     **dé-levier à volatilité égale** (O3 : +3.76 pt vs +4.29 pt) ni son placebo à duty cycle
+     identique (+2.0 pt seul ; O1 au 55e percentile) ; la durée EMPIRE (médiane 18→20 j).
+     ⇒ Un overlay de régime ne peut aider qu'un book dont les régimes de haute vol sont AUSSI
+     ses régimes de bas rendement. **Et le MaxDD n'est pas invariant d'échelle** : la même
+     sleeve est à −9 % au vol-targeting de recherche et −81 % à vm 14× ⇒ toute condition en
+     MaxDD s'évalue **au levier DÉPLOYÉ**. (regime_overlay_ftmo 07-30.)
+L55. **La pondération inverse-vol sur un univers macro mixte est un amplificateur de swap sur
+     CFD.** Mesuré sur CS macro momentum 17 instruments : le FX porte **53 % du notionnel**,
+     contribue **−7.8 %** du gross P&L et un quart de la facture de swap — les jambes basse-vol
+     raflent le gros notionnel, donc le gros portage, pour la plus faible contribution. Swap
+     3.47 %/an contre 7.25 %/an de gross = **48 % de la prime** (L36 mesuré, non supposé). Et
+     ralentir n'échappe pas au carry (mensuel : gross SR 0.846→0.423 pour 0.09 pt/an économisé —
+     le swap porte sur le notionnel TENU). (cs_macro_momentum 07-29.)
+
+### Politique de RÉ-OUVERTURE des familles archivées (2026-07-30)
+**Une archive n'est pas un cimetière.** Le critère de ré-ouverture est la NATURE du kill, pas
+son existence :
+
+| Nature du kill d'origine | Statut | Justification |
+|---|---|---|
+| **Mécanique** — le signal n'existe pas : gross ≈ 0, two-sided négatif à coût NUL, régime-dépendant, sous placebo | **RESTE FERMÉ** | recalibrer une statistique ne ressuscite pas un gross de 0.00 bps |
+| **Véhicule** — pas d'instrument, contraintes de barrière, granularité de lot | **ROUVRABLE** | prouvé : month-end rejeté 2× sur le véhicule, vivant sur le compte perso (L53) |
+| **Coût** — tué au tarif CFD retail (2-7 bps RT) | **ROUVRABLE** | le coût futures (~0.4 bps RT sur MNQ) change le gate d'un ordre de grandeur |
+| **Puissance** — IC contenant zéro sur échantillon tronqué/court | **ROUVRABLE** | UNDERPOWERED ≠ REJECTED ; et l'échantillon était parfois tronqué par un fichier d'entrée (pre-FOMC : 49 événements au lieu de 102 disponibles) |
+| **Géométrie** — barrière, sizing, horloge | **ROUVRABLE** | ~60 % du p(pass) vient de la géométrie, pas de l'alpha |
+
+Règle de discipline : rouvrir exige un **angle explicitement nouveau**, écrit AVANT de toucher
+la donnée, et l'angle doit être de l'une des quatre catégories rouvrables. Rouvrir pour
+re-tester le même angle = data-mining, et déflate le DSR de tous les candidats.
+
 ### Aliases historiques (citations dans les artefacts ≠ numéro gravé — artefacts JAMAIS réécrits)
 | Cité comme | Où | Gravé comme |
 |---|---|---|
@@ -214,7 +290,17 @@ L50. Funding-extremes confirm momentum across exchange and cycle: README §6.35 
 - Funding rates: Hyperliquid 8h, cached CSV in data/funding_carry/
 - NQ 1-min: `data/raw/NQ_1min_databento_2010-2026.parquet` (CANONIQUE, source GLBX dbn.zst) + `data/raw/NQ_1min_2022-12-26_2025-12-11.parquet` (ex-Kaggle — provenance de la validation historique de C, à conserver ; CSV Kaggle d'origine n'existe plus)
 - FX/indices M1 canonique: `data/deep_history_utc/` (true UTC 2007→2026-06, spread calibré, MANIFEST machine-généré, trous 2018-2021 réparés 2026-06-10). m5_indices (P2 fait) : 13 M1 EET supprimés ; restent `US2000_M1.csv` (pas de superset), `binance/` (crypto M1), panels parquet EET (`*_m1_panel.parquet`, consommés par code actif — migration tz à prévoir, `_audit/m5_indices_migration_checklist_2026-06-10.md`).
-- Commodity futures: yfinance =F tickers (CL=F, GC=F, …) — continuous front-month
+- ⚠ **La colonne `spread` de `deep_history_utc` est INUTILISABLE SEULE (mesuré 2026-07-29/30)** :
+  (a) **massivement non peuplée sur le FX** — EURUSD **66/69/63 %** de barres à spread NUL en
+  2021/2022/2023, GBPUSD 33 % en 2022, GER40 22 % à 19:00 UTC (indices et or plutôt propres) ;
+  (b) même peuplée, elle **sous-estime le round-trip FTMO réel d'environ 2.4×** (mesuré sur les
+  4 jambes ancrées). ⇒ Tout coût calculé sur cette seule colonne est **optimiste**. Utiliser le
+  panel RT mesuré + les swaps mesurés, ou majorer explicitement. Conséquence rassurante : les
+  familles tuées SUR LE COÛT (L43, L34) l'ont été malgré une sous-estimation ⇒ **renforcées** ;
+  mais tout PASS obtenu sur du FX 2021-2023 est à re-vérifier.
+- Commodity futures: yfinance =F tickers (CL=F, GC=F, …) — continuous front-month. ⚠ **Ne jamais
+  faire confiance au nom d'un champ** : `ZN=F.Open` = ouverture Globex 18:00 ET du jour
+  calendaire PRÉCÉDENT, pas une ouverture de séance US (L52).
 - FX M5: Dukascopy bi5 custom decoder in `Forex/research/archived/strategy_e_fix_flow/data_setup.py` + `Forex/data/dukascopy_downloader_m5.py`. DL ~12min/pair-year, 4 threads. Cache dukascopy_m5 SUPPRIMÉ 2026-06-10 (P2 partiel) — régénérable, ou resampler deep_history_utc M1.
 - Equities: yfinance + Tiingo (limited free tier)
 - FRED: DTB3 (RF daily), interbank rates monthly
