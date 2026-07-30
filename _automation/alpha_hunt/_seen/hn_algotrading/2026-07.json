@@ -321,6 +321,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "ccb7d6b3947e9d115bcfe4237253eb5f": {
+    "first_seen": "2026-07-30 09:30",
+    "source": "hn_algotrading",
+    "title": "Replacing Polling with Events in a Trading Execution Engine",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d6eac12be5ffbdf0f094fcfdbddb05e3": {
     "first_seen": "2026-07-23 20:00",
     "source": "hn_algotrading",
