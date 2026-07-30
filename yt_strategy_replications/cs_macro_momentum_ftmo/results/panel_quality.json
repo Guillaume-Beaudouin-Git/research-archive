@@ -1,0 +1,12 @@
+{
+  "sessions": 3294,
+  "all_open_pct": 97.51062537947783,
+  "closed_pct_by_class": {
+    "fx": 0.01,
+    "index": 0.99,
+    "metal": 0.75,
+    "commodity": 0.91
+  },
+  "start": "2013-10-01",
+  "end": "2026-06-05"
+}
