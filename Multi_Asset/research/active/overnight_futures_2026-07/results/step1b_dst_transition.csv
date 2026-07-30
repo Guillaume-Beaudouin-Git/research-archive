@@ -1,0 +1,7 @@
+sleeve,switch,n_pre,pre_bps,n_post,postA_bps,postB_bps,n_postB
+GOLD,mar_switch,400,9.51,392,0.71,2.34,308
+GOLD,nov_switch,380,7.62,380,11.71,11.71,380
+SILVER,mar_switch,259,18.28,253,-3.97,-3.98,230
+SILVER,nov_switch,240,14.35,239,10.43,10.43,239
+WTI,mar_switch,268,26.17,263,6.57,5.99,260
+WTI,nov_switch,249,1.56,252,2.64,2.64,252

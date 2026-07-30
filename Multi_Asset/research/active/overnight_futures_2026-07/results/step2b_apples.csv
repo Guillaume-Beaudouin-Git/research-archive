@@ -1,0 +1,5 @@
+sleeve,N_cfd_full,cfd_full_bps,cfd_full_SR,N_cfd_overlap,cfd_overlap_bps,N_fut,fut_bps,N_common,cfd_common_bps,fut_common_bps,diff_bps,t_diff,corr,capture_ratio
+GOLD,3780,4.59,1.667,401,4.64,464,3.78,392,4.58,4.68,0.1,0.1,0.954,1.02
+SILVER,2443,4.68,0.869,442,10.94,464,-1.39,433,10.95,1.99,-8.96,-3.91,0.928,0.18
+WTI,2497,3.2,0.596,444,1.3,443,-2.48,414,1.11,-0.34,-1.44,-1.3,0.983,-0.31
+SOYBEAN,13,13.88,,0,,463,9.65,0,,,,,,

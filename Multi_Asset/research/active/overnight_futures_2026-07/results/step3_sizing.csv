@@ -1,0 +1,13 @@
+sleeve,sizing,kelly_leverage,target_leverage,contracts_exact,contracts_int,margin_used,margin_pct,feasible,kelly_fraction_of_1lot,acct_vol_pct,acct_CAGR_pct,acct_maxDD_pct
+GOLD,full_Kelly,30.2,30.23,11.14,11,25388,169.3,False,,,,
+GOLD,half_Kelly,30.2,15.11,5.57,5,11540,76.9,False,,,,
+GOLD,quarter_Kelly,30.2,7.56,2.78,2,4616,30.8,True,,,,
+GOLD,1_contract(min),30.2,2.71,1.0,1,2308,15.4,True,0.09,16.4,33.2,-20.4
+SILVER,full_Kelly,7.8,7.75,2.0,1,6469,43.1,True,,,,
+SILVER,half_Kelly,7.8,3.88,1.0,0,0,0.0,False,,,,
+SILVER,quarter_Kelly,7.8,1.94,0.5,0,0,0.0,False,,,,
+SILVER,1_contract(min),7.8,3.88,1.0,1,6469,43.1,True,0.5,35.0,20.2,-73.1
+WTI,full_Kelly,-7.9,-7.89,-16.09,-17,-14280,-95.2,False,,,,
+WTI,half_Kelly,-7.9,-3.94,-8.04,-9,-7560,-50.4,False,,,,
+WTI,quarter_Kelly,-7.9,-1.97,-4.02,-5,-4200,-28.0,False,,,,
+WTI,1_contract(min),-7.9,0.49,1.0,1,840,5.6,True,-0.062,4.1,-2.8,-33.7
