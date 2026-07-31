@@ -468,6 +468,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8f4bba4a46773931187b7a2f41bc8bea": {
+    "first_seen": "2026-07-31 11:00",
+    "source": "github_python",
+    "title": "trailofbits/skills",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9a5ddddde0beeee11b2d0a00b667c8a5": {
     "first_seen": "2026-07-13 11:00",
     "source": "github_python",
@@ -538,10 +545,24 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "b06ff8c49b7d79b57a0b39177369ee52": {
+    "first_seen": "2026-07-31 11:00",
+    "source": "github_python",
+    "title": "fishaudio/fish-speech",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b2405a880c1c2265dd3f963c04bce13c": {
     "first_seen": "2026-07-18 11:00",
     "source": "github_python",
     "title": "OpenSenseNova/SenseNova-U1",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b308dc7ab27265312407432f0dd01582": {
+    "first_seen": "2026-07-31 11:00",
+    "source": "github_python",
+    "title": "figma/mcp-server-guide",
     "decision": "rejected_L0",
     "promising_file": null
   },
