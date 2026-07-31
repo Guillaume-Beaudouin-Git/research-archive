@@ -1,0 +1,7 @@
+check,season,n_sessions,slots_reopen_hour,slots_per_session_reopen,slots_halt_hour,slots_per_session_halt
+V1_bar_availability,US_standard(win),2115,20150.0,9.53,6412.0,3.03
+V1_bar_availability,US_DST(summer),3938,36069.0,9.16,13290.0,3.37
+V1_traded_sessions_with_FTMO_print_in_first_15min,all,4901,4890.0,0.9978,,
+V2_dll_reset_alignment,all,6053,5642.0,0.9321,411.0,
+V3_zero_range_L60,H1_all,117997,,0.00228,,0.00508
+V3_stale_M1_close,M1_all/M1_reopen_hour,6886976,,0.04182,,0.07551
