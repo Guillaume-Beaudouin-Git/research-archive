@@ -1,0 +1,50 @@
+{
+ "s035": {
+  "stop_dist_atr_median": 1.0330171966484665,
+  "stop_dist_atr_mean": 1.2616116816970604,
+  "pct_exits_by_stop": 62.85631180919139,
+  "expR_stop_exact": 0.03294051680139602,
+  "expR_open_gap": 0.017074964975538037,
+  "sharpe_stop_exact": 0.988750636073879,
+  "sharpe_open_gap": 0.49064457577580295,
+  "pct_stopped_bars_that_gapped_through": 24.942156409069874,
+  "mean_slipR_all": 0.015865551825857985,
+  "expR_open_gap_swap": 0.0015955719338896252,
+  "expR_stop_exact_swap": 0.01746112375974761,
+  "twosided_open_gap": {
+   "long": 0.026740600493501458,
+   "short": 0.0021072017457192233
+  },
+  "twosided_open_gap_swap": {
+   "long": 0.0032346715592883996,
+   "short": -0.0009426631420614899
+  },
+  "recent_open_gap_swap_expR": -0.021342271861400683,
+  "broker_only_open_gap_swap_expR": 0.0008487325801090363,
+  "yf_only_open_gap_swap_expR": 0.0025662133147563
+ },
+ "s036": {
+  "stop_dist_atr_median": 1.088128360196044,
+  "stop_dist_atr_mean": 1.2643891288339602,
+  "pct_exits_by_stop": 61.51592107833561,
+  "expR_stop_exact": 0.026389310936965973,
+  "expR_open_gap": 0.015907523401317413,
+  "sharpe_stop_exact": 1.0210355874020525,
+  "sharpe_open_gap": 0.5962320478790497,
+  "pct_stopped_bars_that_gapped_through": 18.29152111781518,
+  "mean_slipR_all": 0.010481787535648565,
+  "expR_open_gap_swap": 0.00041791193593895934,
+  "expR_stop_exact_swap": 0.010899699471587521,
+  "twosided_open_gap": {
+   "long": 0.02981511896963012,
+   "short": -0.003957642754370232
+  },
+  "twosided_open_gap_swap": {
+   "long": 0.006146574803266166,
+   "short": -0.007764727482240463
+  },
+  "recent_open_gap_swap_expR": -0.015106690353346554,
+  "broker_only_open_gap_swap_expR": -0.00217113725295227,
+  "yf_only_open_gap_swap_expR": 0.004573566461009157
+ }
+}

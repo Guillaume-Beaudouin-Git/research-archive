@@ -1,0 +1,599 @@
+{
+ "s035": {
+  "geometry": {
+   "note": "risk0 = 6*ATR is the R denominator; the pattern exit puts the real stop closer",
+   "risk0_pct_of_px": 10.436411646082162
+  },
+  "l58_flat_geometry": {
+   "all": {
+    "matched_expR": 0.041202199039612496,
+    "matched_w": 3438.0,
+    "flat_expR": 0.0021399148472392338,
+    "flat_n": 250860
+   },
+   "filter": {
+    "matched_expR": -0.007830998760736247,
+    "matched_w": 3438.0,
+    "flat_expR": 0.00709612976218939,
+    "flat_n": 32984
+   },
+   "gap": {
+    "matched_expR": 0.027593130014574738,
+    "matched_w": 3438.0,
+    "flat_expR": 0.008616408515489121,
+    "flat_n": 20412
+   },
+   "both": {
+    "matched_expR": -0.02005317032435976,
+    "matched_w": 3438.0,
+    "flat_expR": 0.00023747301353572108,
+    "flat_n": 6217
+   }
+  },
+  "by_source": [
+   {
+    "srcgrp": "broker_real (ftmo_panel / M1_resample)",
+    "count": 1943,
+    "mean": 0.0218812074,
+    "sum": 42.5151859429,
+    "count_swap": 1943,
+    "mean_swap": 0.0058031415,
+    "sum_swap": 11.2755038897
+   },
+   {
+    "srcgrp": "yfinance_continuous_futures",
+    "count": 1495,
+    "mean": 0.0473139203,
+    "sum": 70.7343108203,
+    "count_swap": 1495,
+    "mean_swap": 0.0326126017,
+    "sum_swap": 48.7558395963
+   }
+  ],
+  "pnl_share_yf_pct": 62.458830142282515,
+  "per_instrument": [
+   {
+    "instr": "XPTUSD",
+    "src": "yf:PL=F",
+    "count": 300,
+    "mean": 0.090421082,
+    "sum": 27.1263245975
+   },
+   {
+    "instr": "XAGUSD",
+    "src": "yf:SI=F",
+    "count": 266,
+    "mean": 0.0822797186,
+    "sum": 21.8864051574
+   },
+   {
+    "instr": "JP225",
+    "src": "ftmo_panel",
+    "count": 353,
+    "mean": 0.0518159742,
+    "sum": 18.2910388843
+   },
+   {
+    "instr": "XPDUSD",
+    "src": "yf:PA=F",
+    "count": 315,
+    "mean": 0.0288494089,
+    "sum": 9.0875638035
+   },
+   {
+    "instr": "HK50",
+    "src": "ftmo_panel",
+    "count": 351,
+    "mean": 0.0174951051,
+    "sum": 6.1407818746
+   },
+   {
+    "instr": "SOYBEAN",
+    "src": "yf:ZS=F",
+    "count": 111,
+    "mean": 0.0422789663,
+    "sum": 4.6929652592
+   },
+   {
+    "instr": "US30",
+    "src": "ftmo_panel",
+    "count": 115,
+    "mean": 0.0406957875,
+    "sum": 4.6800155653
+   },
+   {
+    "instr": "US2000",
+    "src": "ftmo_panel",
+    "count": 168,
+    "mean": 0.0258068783,
+    "sum": 4.3355555548
+   },
+   {
+    "instr": "WHEAT",
+    "src": "yf:ZW=F",
+    "count": 98,
+    "mean": 0.0439019857,
+    "sum": 4.3023945953
+   },
+   {
+    "instr": "US500",
+    "src": "ftmo_panel",
+    "count": 146,
+    "mean": 0.0241522058,
+    "sum": 3.5262220413
+   },
+   {
+    "instr": "UKOIL",
+    "src": "yf:BZ=F",
+    "count": 93,
+    "mean": 0.0316555108,
+    "sum": 2.9439625035
+   },
+   {
+    "instr": "XAUUSD",
+    "src": "M1_resample",
+    "count": 5,
+    "mean": 0.2830151457,
+    "sum": 1.4150757285
+   },
+   {
+    "instr": "GER40",
+    "src": "ftmo_panel",
+    "count": 244,
+    "mean": 0.0055882858,
+    "sum": 1.3635417296
+   },
+   {
+    "instr": "USDCAD",
+    "src": "M1_resample",
+    "count": 3,
+    "mean": 0.422650488,
+    "sum": 1.2679514641
+   },
+   {
+    "instr": "US100",
+    "src": "ftmo_panel",
+    "count": 248,
+    "mean": 0.0049263735,
+    "sum": 1.221740621
+   },
+   {
+    "instr": "COFFEE",
+    "src": "yf:KC=F",
+    "count": 135,
+    "mean": 0.0081533216,
+    "sum": 1.100698415
+   },
+   {
+    "instr": "BTCUSD",
+    "src": "M1_resample",
+    "count": 2,
+    "mean": 0.2114939754,
+    "sum": 0.4229879508
+   },
+   {
+    "instr": "AUS200",
+    "src": "ftmo_panel",
+    "count": 136,
+    "mean": 0.0027897285,
+    "sum": 0.3794030773
+   },
+   {
+    "instr": "EURGBP",
+    "src": "M1_resample",
+    "count": 1,
+    "mean": 0.032826152,
+    "sum": 0.032826152
+   },
+   {
+    "instr": "USDJPY",
+    "src": "M1_resample",
+    "count": 6,
+    "mean": -0.0015416321,
+    "sum": -0.0092497927
+   },
+   {
+    "instr": "EU50",
+    "src": "ftmo_panel",
+    "count": 159,
+    "mean": -0.0003214557,
+    "sum": -0.0511114605
+   },
+   {
+    "instr": "AUDUSD",
+    "src": "M1_resample",
+    "count": 3,
+    "mean": -0.0223419981,
+    "sum": -0.0670259944
+   },
+   {
+    "instr": "COCOA",
+    "src": "yf:CC=F",
+    "count": 174,
+    "mean": -0.0004891139,
+    "sum": -0.0851058136
+   },
+   {
+    "instr": "AUDJPY",
+    "src": "M1_resample",
+    "count": 1,
+    "mean": -0.1972320616,
+    "sum": -0.1972320616
+   },
+   {
+    "instr": "EURUSD",
+    "src": "M1_resample",
+    "count": 2,
+    "mean": -0.1186676958,
+    "sum": -0.2373353916
+   },
+   {
+    "instr": "ETHUSD",
+    "src": "yf:ETH-USD",
+    "count": 3,
+    "mean": -0.1069658991,
+    "sum": -0.3208976974
+   }
+  ],
+  "recent_2019plus": {
+   "n": 1225,
+   "twosided_pre_swap": {
+    "long": 0.04190317325024107,
+    "short": -0.04358649656866784,
+    "n_long": 745,
+    "n_short": 480
+   },
+   "twosided_post_swap": {
+    "long": 0.020309669135636362,
+    "short": -0.045513366644963235
+   },
+   "expR_post_swap": -0.005482214272272048,
+   "gross_bps": 6.213172629947203,
+   "swap_bps": -12.351172914857445,
+   "rt_cost_bps": 2.8817080733185922,
+   "cost_ratio_gross_over_cost": 0.4078790239856761
+  },
+  "full_sample_cost_ratio": {
+   "gross_bps": 27.25819654057995,
+   "cost_bps": 15.60231548043333,
+   "ratio": 1.7470609778890906
+  },
+  "bootstrap_netR": {
+   "mean": 0.03294051680139602,
+   "p2_5": 0.021318621463427227,
+   "p97_5": 0.0457188366398502,
+   "p_le_0": 0.0,
+   "n_blocks": 400
+  },
+  "bootstrap_netR_swap": {
+   "mean": 0.01746112375974761,
+   "p2_5": 0.006083242235264645,
+   "p97_5": 0.029895608379647838,
+   "p_le_0": 0.0015,
+   "n_blocks": 400
+  },
+  "bootstrap_recent_swap": {
+   "mean": -0.005482214272272048,
+   "p2_5": -0.02367563906668965,
+   "p97_5": 0.013929466801732076,
+   "p_le_0": 0.704,
+   "n_blocks": 153
+  },
+  "bootstrap_broker_only_swap": {
+   "mean": 0.005803141476949002,
+   "p2_5": -0.006109709388087695,
+   "p97_5": 0.018245671443803336,
+   "p_le_0": 0.165,
+   "n_blocks": 228
+  }
+ },
+ "s036": {
+  "geometry": {
+   "note": "risk0 = 6*ATR is the R denominator; the pattern exit puts the real stop closer",
+   "risk0_pct_of_px": 10.827285338344392
+  },
+  "l58_flat_geometry": {
+   "all": {
+    "matched_expR": 0.0361699674649397,
+    "matched_w": 5119.0,
+    "flat_expR": 0.0021399148472392338,
+    "flat_n": 250860
+   },
+   "filter": {
+    "matched_expR": -0.009613197042046414,
+    "matched_w": 5119.0,
+    "flat_expR": 0.00709612976218939,
+    "flat_n": 32984
+   },
+   "gap": {
+    "matched_expR": 0.02826589918455787,
+    "matched_w": 5119.0,
+    "flat_expR": 0.008564721049202913,
+    "flat_n": 40785
+   },
+   "both": {
+    "matched_expR": -0.014822326944369694,
+    "matched_w": 5119.0,
+    "flat_expR": 0.006915930459609509,
+    "flat_n": 10296
+   }
+  },
+  "by_source": [
+   {
+    "srcgrp": "broker_real (ftmo_panel / M1_resample)",
+    "count": 3154,
+    "mean": 0.0171897385,
+    "sum": 54.2164352857,
+    "count_swap": 3154,
+    "mean_swap": 0.0012780163,
+    "sum_swap": 4.030863286
+   },
+   {
+    "srcgrp": "yfinance_continuous_futures",
+    "count": 1965,
+    "mean": 0.041155444,
+    "sum": 80.8704474006,
+    "count_swap": 1965,
+    "mean_swap": 0.0263433579,
+    "sum_swap": 51.764698309
+   }
+  ],
+  "pnl_share_yf_pct": 59.86550714058574,
+  "per_instrument": [
+   {
+    "instr": "XPTUSD",
+    "src": "yf:PL=F",
+    "count": 312,
+    "mean": 0.0937416169,
+    "sum": 29.247384478
+   },
+   {
+    "instr": "JP225",
+    "src": "ftmo_panel",
+    "count": 414,
+    "mean": 0.0501606978,
+    "sum": 20.7665288816
+   },
+   {
+    "instr": "XAGUSD",
+    "src": "yf:SI=F",
+    "count": 308,
+    "mean": 0.0659095583,
+    "sum": 20.3001439513
+   },
+   {
+    "instr": "XPDUSD",
+    "src": "yf:PA=F",
+    "count": 315,
+    "mean": 0.0376341292,
+    "sum": 11.8547507134
+   },
+   {
+    "instr": "SOYBEAN",
+    "src": "yf:ZS=F",
+    "count": 168,
+    "mean": 0.0629378824,
+    "sum": 10.5735642396
+   },
+   {
+    "instr": "AUS200",
+    "src": "ftmo_panel",
+    "count": 245,
+    "mean": 0.0314666787,
+    "sum": 7.7093362871
+   },
+   {
+    "instr": "HK50",
+    "src": "ftmo_panel",
+    "count": 414,
+    "mean": 0.0169471581,
+    "sum": 7.0161234473
+   },
+   {
+    "instr": "WHEAT",
+    "src": "yf:ZW=F",
+    "count": 155,
+    "mean": 0.0358601114,
+    "sum": 5.5583172682
+   },
+   {
+    "instr": "US2000",
+    "src": "ftmo_panel",
+    "count": 294,
+    "mean": 0.0175089909,
+    "sum": 5.1476433377
+   },
+   {
+    "instr": "US30",
+    "src": "ftmo_panel",
+    "count": 332,
+    "mean": 0.013489837,
+    "sum": 4.4786258866
+   },
+   {
+    "instr": "BTCUSD",
+    "src": "M1_resample",
+    "count": 32,
+    "mean": 0.109426563,
+    "sum": 3.501650015
+   },
+   {
+    "instr": "XAUUSD",
+    "src": "M1_resample",
+    "count": 26,
+    "mean": 0.1231084252,
+    "sum": 3.2008190559
+   },
+   {
+    "instr": "US100",
+    "src": "ftmo_panel",
+    "count": 375,
+    "mean": 0.0079687157,
+    "sum": 2.9882684043
+   },
+   {
+    "instr": "ETHUSD",
+    "src": "yf:ETH-USD",
+    "count": 28,
+    "mean": 0.098425359,
+    "sum": 2.7559100518
+   },
+   {
+    "instr": "US500",
+    "src": "ftmo_panel",
+    "count": 284,
+    "mean": 0.0090537175,
+    "sum": 2.5712557644
+   },
+   {
+    "instr": "UKOIL",
+    "src": "yf:BZ=F",
+    "count": 192,
+    "mean": 0.0132749048,
+    "sum": 2.5487817206
+   },
+   {
+    "instr": "USDCAD",
+    "src": "M1_resample",
+    "count": 6,
+    "mean": 0.2335390475,
+    "sum": 1.4012342851
+   },
+   {
+    "instr": "COCOA",
+    "src": "yf:CC=F",
+    "count": 279,
+    "mean": 0.0044897122,
+    "sum": 1.2526297013
+   },
+   {
+    "instr": "GER40",
+    "src": "ftmo_panel",
+    "count": 401,
+    "mean": 2.11592e-05,
+    "sum": 0.0084848566
+   },
+   {
+    "instr": "AUDJPY",
+    "src": "M1_resample",
+    "count": 4,
+    "mean": -0.0066991231,
+    "sum": -0.0267964922
+   },
+   {
+    "instr": "EURUSD",
+    "src": "M1_resample",
+    "count": 9,
+    "mean": -0.0039760469,
+    "sum": -0.0357844218
+   },
+   {
+    "instr": "USDJPY",
+    "src": "M1_resample",
+    "count": 18,
+    "mean": -0.0077273536,
+    "sum": -0.1390923649
+   },
+   {
+    "instr": "EURGBP",
+    "src": "M1_resample",
+    "count": 4,
+    "mean": -0.0877691414,
+    "sum": -0.3510765657
+   },
+   {
+    "instr": "NZDUSD",
+    "src": "M1_resample",
+    "count": 3,
+    "mean": -0.1280230162,
+    "sum": -0.3840690485
+   },
+   {
+    "instr": "AUDUSD",
+    "src": "M1_resample",
+    "count": 9,
+    "mean": -0.0633221759,
+    "sum": -0.5698995828
+   },
+   {
+    "instr": "USDCHF",
+    "src": "M1_resample",
+    "count": 5,
+    "mean": -0.1738005815,
+    "sum": -0.8690029073
+   },
+   {
+    "instr": "EU50",
+    "src": "ftmo_panel",
+    "count": 272,
+    "mean": -0.0036538981,
+    "sum": -0.9938602858
+   },
+   {
+    "instr": "UK100",
+    "src": "ftmo_panel",
+    "count": 7,
+    "mean": -0.1719933238,
+    "sum": -1.2039532667
+   },
+   {
+    "instr": "COFFEE",
+    "src": "yf:KC=F",
+    "count": 208,
+    "mean": -0.0154857439,
+    "sum": -3.2210347236
+   }
+  ],
+  "recent_2019plus": {
+   "n": 1808,
+   "twosided_pre_swap": {
+    "long": 0.04798400631730695,
+    "short": -0.04434030073856179,
+    "n_long": 1089,
+    "n_short": 719
+   },
+   "twosided_post_swap": {
+    "long": 0.02596420229593145,
+    "short": -0.04720727738141429
+   },
+   "expR_post_swap": -0.0031344115801811563,
+   "gross_bps": 19.579869371097967,
+   "swap_bps": -13.667755684045561,
+   "rt_cost_bps": 2.9903398786152553,
+   "cost_ratio_gross_over_cost": 1.1753966290712319
+  },
+  "full_sample_cost_ratio": {
+   "gross_bps": 23.816793267468054,
+   "cost_bps": 16.181160346707195,
+   "ratio": 1.4718841391566013
+  },
+  "bootstrap_netR": {
+   "mean": 0.026389310936965973,
+   "p2_5": 0.01653417425222859,
+   "p97_5": 0.03601842818177536,
+   "p_le_0": 0.0,
+   "n_blocks": 467
+  },
+  "bootstrap_netR_swap": {
+   "mean": 0.010899699471587521,
+   "p2_5": 0.0012740374519012838,
+   "p97_5": 0.02028768008434556,
+   "p_le_0": 0.0105,
+   "n_blocks": 467
+  },
+  "bootstrap_recent_swap": {
+   "mean": -0.0031344115801811563,
+   "p2_5": -0.01815758997090089,
+   "p97_5": 0.01327973492955338,
+   "p_le_0": 0.651,
+   "n_blocks": 190
+  },
+  "bootstrap_broker_only_swap": {
+   "mean": 0.0012780162606274691,
+   "p2_5": -0.007877807195635479,
+   "p97_5": 0.011036597931045444,
+   "p_le_0": 0.3805,
+   "n_blocks": 286
+  }
+ }
+}
