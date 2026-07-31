@@ -160,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3bb96d024382a64443c179359779aed6": {
+    "first_seen": "2026-07-31 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Debiased Machine Learning: Identification, Estimation, and Shape Constraints",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3bec823647fd3e2c34a385525c62d76a": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -340,6 +347,13 @@
     "source": "arxiv_econ_em",
     "title": "Debiased Machine Learning: Identification, Estimation, and Shape Constraints",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "69e70bb79de38ff86899722a4cac76a1": {
+    "first_seen": "2026-07-31 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Energy Market and Carbon Emission Spillovers in Critical Minerals Investment: A ",
+    "decision": "accepted",
     "promising_file": null
   },
   "6b5628459eda102859e8729bec10620d": {
@@ -559,6 +573,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b7621d39a4ebc167a613f25c957feaf1": {
+    "first_seen": "2026-07-31 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Optimizing Regret",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "b82caf6b1d307df3b92d51b1cf64c649": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -570,6 +591,13 @@
     "first_seen": "2026-07-31 01:00",
     "source": "arxiv_econ_em",
     "title": "Linear Estimation of Structural and Causal Effects for Nonseparable Panel Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b9882f471af6001f0afc894a20b652f1": {
+    "first_seen": "2026-07-31 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Single-Network Finite-Sample Inference in Strategic Network Formation Models",
     "decision": "rejected_L0",
     "promising_file": null
   },
