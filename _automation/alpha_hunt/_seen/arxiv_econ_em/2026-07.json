@@ -216,6 +216,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "41ce19a13ac5bbedd8f2347e7065b763": {
+    "first_seen": "2026-07-31 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Bootstrap inference in autoregressive duration models",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "431d485199dce0c04292c970e658e923": {
     "first_seen": "2026-07-15 01:30",
     "source": "arxiv_econ_em",
@@ -419,6 +426,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "82f73b2a6d2543d0e5d44923c2dd9617": {
+    "first_seen": "2026-07-31 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Nonfundamentalness or missing information ? Evidence from causal-noncausal VARs ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "83081b7ed644b178f4d2af702d6c7562": {
     "first_seen": "2026-07-07 02:00",
     "source": "arxiv_econ_em",
@@ -550,6 +564,13 @@
     "source": "arxiv_econ_em",
     "title": "Bivariate Isotonic Regression by Dynamic Programming",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "b8cef683d5c95f9be1033fa88b7bb648": {
+    "first_seen": "2026-07-31 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Linear Estimation of Structural and Causal Effects for Nonseparable Panel Data",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "ba793ad4fa31b5e1da1044e6f0c148ab": {
