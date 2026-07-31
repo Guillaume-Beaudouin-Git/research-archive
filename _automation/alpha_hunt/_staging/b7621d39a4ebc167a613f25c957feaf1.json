@@ -1,0 +1,14 @@
+{
+  "hash": "b7621d39a4ebc167a613f25c957feaf1",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2607.18866v2",
+  "title": "Optimizing Regret",
+  "url": "http://arxiv.org/abs/2607.18866v2",
+  "description": "Building on the identity that expected regret equals the covariance between costs and decisions, this paper develops a derivative theory of the covariance regret functional. We derive the Gâteaux derivative, showing that the universal steepest-descent direction is the contrarian policy $-(c-\\bar c)$, while ascent yields momentum. For linear policies $\\hatπ(c)=Ac+b$, the gradient is the cost covariance matrix $Σ_c$, with a zero Hessian implying boundary-optimal solutions such as the minimum-variance portfolio. We extend to constrained optimization, sign-gradient duality between regret minimization and alpha maximization, finite-sample convergence bounds paralleling Thompson Sampling, and gradient-descent algorithms requiring only input observations.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-07-31 03:30 UTC"
+}
