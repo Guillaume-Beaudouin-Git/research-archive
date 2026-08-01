@@ -1,0 +1,35 @@
+{
+  "window": "2020-01-02 -> 2026-05-29 (6.40y)",
+  "gold_total_return_pct": 193.9,
+  "gold_annualised_pct": 18.34,
+  "gold_mean_daily_bps": 7.13,
+  "n_exact_mirror_legs_in_142": 36,
+  "std_sr_trials_all142": 0.8662,
+  "std_sr_trials_mirror_free": 0.9204,
+  "n_mirror_free": 106,
+  "sr_benchmark_all142": 2.297,
+  "sr_benchmark_mirror_free": 2.348,
+  "amtp_sidak": {
+    "me_fom_nfp_cpi_XAUUSD_+1": {
+      "t_hac": 2.683,
+      "p_raw": 0.00729,
+      "p_sidak_N16": 0.1104,
+      "p_sidak_N142": 0.646,
+      "p_sidak_N164": 0.6986
+    },
+    "ed_cpi_us_XAUUSD_LO": {
+      "t_hac": 2.049,
+      "p_raw": 0.04047,
+      "p_sidak_N16": 0.4837,
+      "p_sidak_N142": 0.9972,
+      "p_sidak_N164": 0.9989
+    },
+    "cal_XAUUSD_tom_+1": {
+      "t_hac": 1.485,
+      "p_raw": 0.13744,
+      "p_sidak_N16": 0.9061,
+      "p_sidak_N142": 1.0,
+      "p_sidak_N164": 1.0
+    }
+  }
+}
