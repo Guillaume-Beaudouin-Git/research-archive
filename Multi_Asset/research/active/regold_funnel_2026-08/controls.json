@@ -1,0 +1,529 @@
+{
+  "cost_model_C1": {
+    "rt_bps": 1.83889614824847,
+    "swap_long": -2.0654794520548023,
+    "swap_short": -0.33452054794521047
+  },
+  "funnel_trial_dispersion": {
+    "n_trials_batch": 142,
+    "std_sr_observed": 0.8662424341889275
+  },
+  "mirror_check_L25": {
+    "ed_fomc_XAUUSD_LO|ed_fomc_XAUUSD_SS": {
+      "gross_a": 18.85421875128512,
+      "gross_b": -18.85421875128512,
+      "sum": 0.0
+    },
+    "ed_nfp_us_XAUUSD_LO|ed_nfp_us_XAUUSD_SS": {
+      "gross_a": -14.230887008413792,
+      "gross_b": 14.230887008413792,
+      "sum": 0.0
+    },
+    "ed_cpi_us_XAUUSD_LO|ed_cpi_us_XAUUSD_SS": {
+      "gross_a": 17.85575313204023,
+      "gross_b": -17.85575313204023,
+      "sum": 0.0
+    },
+    "gv_XAUUSD_t1.5_cont|gv_XAUUSD_t1.5_fade": {
+      "gross_a": -9.736132891284518,
+      "gross_b": 9.736132891284518,
+      "sum": 0.0
+    },
+    "im_XAUUSD_1430_1530_mom|im_XAUUSD_1430_1530_fade": {
+      "gross_a": 0.6517952755215888,
+      "gross_b": -0.6517952755215888,
+      "sum": 0.0
+    }
+  },
+  "survivors": {
+    "me_fom_nfp_cpi_XAUUSD_+1": {
+      "family": "multi_event",
+      "at_C1": {
+        "mean_bps_per_trade_net": 13.237061036385455,
+        "sharpe_excess": 1.0485487370052795,
+        "hac_t_excess": 2.6834372848834045,
+        "max_dd_pct": -0.1070490085489448,
+        "wf_pass_rate": 0.8,
+        "p_pass_2phase_static": 0.6208,
+        "med_days_2phase_static": 229.0,
+        "p_bust_static": 0.1972
+      },
+      "at_C3_tail": {
+        "mean_bps_per_trade_net": 11.194504036912225,
+        "sharpe_excess": 0.8372793574559578,
+        "p_pass_2phase_static": 0.5458
+      },
+      "dsr_corrected": {
+        "N=16 gold perimeter": {
+          "sharpe": 1.2482744618292716,
+          "sr_benchmark": 1.5596298629058556,
+          "dsr": 0.19803630474557038,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        },
+        "N=142 funnel batch": {
+          "sharpe": 1.2482744618292716,
+          "sr_benchmark": 2.2969322148797993,
+          "dsr": 0.0021295273858827827,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        },
+        "N=164 program funnel": {
+          "sharpe": 1.2482744618292716,
+          "sr_benchmark": 2.33885706675516,
+          "dsr": 0.0014765275837130124,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        }
+      },
+      "L38_beta_orthogonality": {
+        "all_days": {
+          "n": 1535,
+          "alpha_bps_per_day": 4.030936486701551,
+          "t_alpha": 2.615280854325655,
+          "beta": 0.2502494257015627,
+          "t_beta": 5.068186243580148,
+          "r2": 0.04563860652121099
+        },
+        "active_days": {
+          "n": 183,
+          "alpha_bps_per_day": 25.41888451119838,
+          "t_alpha": 2.1815459977549745,
+          "beta": 1.568175937206406,
+          "t_beta": 6.990997245180269,
+          "r2": 0.2861438943000766
+        }
+      },
+      "trade_shape": "close(T-1) -> 13:30 on T",
+      "L58_placebo": {
+        "n_selected": 186,
+        "n_pool": 1466,
+        "mean_actual_bps": 14.910079988114997,
+        "mean_unconditional_bps": 6.4349883815185285,
+        "mean_pool_bps": 5.359703907557449,
+        "l58_pool_minus_uncond_bps": -1.0752844739610792,
+        "excess_over_unconditional_bps": 8.475091606596468,
+        "t_hac_selected_vs_zero": 4.517729282127942,
+        "t_hac_selected_vs_unconditional": 2.567938572452834,
+        "placebo_shift_p50": 6.337883842269138,
+        "placebo_shift_p90": 12.463489251693055,
+        "placebo_shift_p95": 14.375266135126635,
+        "pct_of_placebo_shift": 0.9612,
+        "placebo_iid_p90": 12.379059086620625,
+        "pct_of_placebo_iid": 0.9678
+      },
+      "L25_disjoint_legs": {
+        "gold_uptrend": {
+          "n": 118,
+          "mean_bps": 9.628622961486908,
+          "t_hac": 2.3404984391518373
+        },
+        "gold_downtrend": {
+          "n": 60,
+          "mean_bps": 19.275336627258408,
+          "t_hac": 3.7020607129347156
+        }
+      },
+      "L59_delay": [
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 0,
+          "n": 187,
+          "gross_bps": 17.141436636688734,
+          "net_bps": 13.237061036385457,
+          "t_hac_net": 3.073728978447875
+        },
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 1,
+          "n": 187,
+          "gross_bps": 16.773073546955114,
+          "net_bps": 12.868697946651846,
+          "t_hac_net": 3.0086367500513616
+        },
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 5,
+          "n": 187,
+          "gross_bps": 17.165532201596655,
+          "net_bps": 13.26115660129338,
+          "t_hac_net": 3.0654221603981053
+        },
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 15,
+          "n": 187,
+          "gross_bps": 17.632460115661395,
+          "net_bps": 13.728084515358125,
+          "t_hac_net": 3.11522522850241
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 0,
+          "n": 187,
+          "gross_bps": 15.068679466141473,
+          "net_bps": 11.164303865838203,
+          "t_hac_net": 2.756336432172897
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 1,
+          "n": 187,
+          "gross_bps": 14.700539140398686,
+          "net_bps": 10.796163540095414,
+          "t_hac_net": 2.6798226731724397
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 5,
+          "n": 187,
+          "gross_bps": 15.092976065061336,
+          "net_bps": 11.188600464758064,
+          "t_hac_net": 2.7396411304516968
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 15,
+          "n": 187,
+          "gross_bps": 15.559276659876241,
+          "net_bps": 11.654901059572966,
+          "t_hac_net": 2.8099235176088824
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 0,
+          "n": 187,
+          "gross_bps": 15.068679466141473,
+          "net_bps": 11.164303865838203,
+          "t_hac_net": 2.756336432172897
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 1,
+          "n": 187,
+          "gross_bps": 14.700539140398686,
+          "net_bps": 10.796163540095414,
+          "t_hac_net": 2.6798226731724397
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 5,
+          "n": 187,
+          "gross_bps": 15.092976065061336,
+          "net_bps": 11.188600464758064,
+          "t_hac_net": 2.7396411304516968
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 15,
+          "n": 187,
+          "gross_bps": 15.559276659876241,
+          "net_bps": 11.654901059572966,
+          "t_hac_net": 2.8099235176088824
+        }
+      ]
+    },
+    "ed_cpi_us_XAUUSD_LO": {
+      "family": "event_drift",
+      "at_C1": {
+        "mean_bps_per_trade_net": 13.951377531736956,
+        "sharpe_excess": 0.8158794620013642,
+        "hac_t_excess": 2.0489036876421594,
+        "max_dd_pct": -0.0925445154885845,
+        "wf_pass_rate": 0.8,
+        "p_pass_2phase_static": 0.5398,
+        "med_days_2phase_static": 333.0,
+        "p_bust_static": 0.0084
+      },
+      "at_C3_tail": {
+        "mean_bps_per_trade_net": 11.90882053226372,
+        "sharpe_excess": 0.6703993794854933,
+        "p_pass_2phase_static": 0.4576
+      },
+      "dsr_corrected": {
+        "N=16 gold perimeter": {
+          "sharpe": 1.0919138603226133,
+          "sr_benchmark": 1.5596298629058556,
+          "dsr": 0.08071530577847058,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        },
+        "N=142 funnel batch": {
+          "sharpe": 1.0919138603226133,
+          "sr_benchmark": 2.2969322148797993,
+          "dsr": 0.0001544877139669407,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        },
+        "N=164 program funnel": {
+          "sharpe": 1.0919138603226133,
+          "sr_benchmark": 2.33885706675516,
+          "dsr": 9.454115420461048e-05,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        }
+      },
+      "L38_beta_orthogonality": {
+        "all_days": {
+          "n": 1528,
+          "alpha_bps_per_day": 2.9492445725672396,
+          "t_alpha": 2.665922509548111,
+          "beta": 0.05597217626602658,
+          "t_beta": 1.9667492996112728,
+          "r2": 0.004380677794113663
+        },
+        "active_days": {
+          "n": 70,
+          "alpha_bps_per_day": 50.72457132663111,
+          "t_alpha": 2.0491873473536724,
+          "beta": 1.0939958926698934,
+          "t_beta": 2.132615635323762,
+          "r2": 0.07138151784581737
+        }
+      },
+      "trade_shape": "close(T-1) -> 13:30 on T",
+      "L58_placebo": {
+        "n_selected": 71,
+        "n_pool": 1581,
+        "mean_actual_bps": 17.855753132040242,
+        "mean_unconditional_bps": 6.4349883815185285,
+        "mean_pool_bps": 5.922101412962526,
+        "l58_pool_minus_uncond_bps": -0.5128869685560025,
+        "excess_over_unconditional_bps": 11.420764750521712,
+        "t_hac_selected_vs_zero": 3.260998226561458,
+        "t_hac_selected_vs_unconditional": 2.0857755661170154,
+        "placebo_shift_p50": 6.182904784736357,
+        "placebo_shift_p90": 15.996636952234708,
+        "placebo_shift_p95": 18.621497912532234,
+        "pct_of_placebo_shift": 0.9372,
+        "placebo_iid_p90": 16.020895580917735,
+        "pct_of_placebo_iid": 0.9336
+      },
+      "L25_disjoint_legs": {
+        "gold_uptrend": {
+          "n": 44,
+          "mean_bps": 16.413901822494253,
+          "t_hac": 2.1768279404201425
+        },
+        "gold_downtrend": {
+          "n": 24,
+          "mean_bps": 16.88326642535723,
+          "t_hac": 2.6303361247956794
+        }
+      },
+      "L59_delay": [
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 0,
+          "n": 71,
+          "gross_bps": 17.85575313204023,
+          "net_bps": 13.951377531736956,
+          "t_hac_net": 2.5479416663443453
+        },
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 1,
+          "n": 71,
+          "gross_bps": 17.493862873603426,
+          "net_bps": 13.58948727330015,
+          "t_hac_net": 2.4964027002627183
+        },
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 5,
+          "n": 71,
+          "gross_bps": 17.661371690790656,
+          "net_bps": 13.75699609048738,
+          "t_hac_net": 2.4655435555320997
+        },
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 15,
+          "n": 71,
+          "gross_bps": 17.96358054739774,
+          "net_bps": 14.05920494709447,
+          "t_hac_net": 2.6447430565430063
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 0,
+          "n": 71,
+          "gross_bps": 16.911107324961097,
+          "net_bps": 13.006731724657826,
+          "t_hac_net": 2.447297628880616
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 1,
+          "n": 71,
+          "gross_bps": 16.54928303787415,
+          "net_bps": 12.644907437570874,
+          "t_hac_net": 2.3929344134539874
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 5,
+          "n": 71,
+          "gross_bps": 16.71680112890558,
+          "net_bps": 12.812425528602303,
+          "t_hac_net": 2.3587542319720294
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 15,
+          "n": 71,
+          "gross_bps": 17.017823772371397,
+          "net_bps": 13.113448172068123,
+          "t_hac_net": 2.552974722768433
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 0,
+          "n": 71,
+          "gross_bps": 16.911107324961097,
+          "net_bps": 13.006731724657826,
+          "t_hac_net": 2.447297628880616
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 1,
+          "n": 71,
+          "gross_bps": 16.54928303787415,
+          "net_bps": 12.644907437570874,
+          "t_hac_net": 2.3929344134539874
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 5,
+          "n": 71,
+          "gross_bps": 16.71680112890558,
+          "net_bps": 12.812425528602303,
+          "t_hac_net": 2.3587542319720294
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 15,
+          "n": 71,
+          "gross_bps": 17.017823772371397,
+          "net_bps": 13.113448172068123,
+          "t_hac_net": 2.552974722768433
+        }
+      ]
+    },
+    "cal_XAUUSD_tom_+1": {
+      "family": "calendar",
+      "at_C1": {
+        "mean_bps_per_trade_net": 14.71852294198149,
+        "sharpe_excess": 0.6627274303757091,
+        "hac_t_excess": 1.4853743173115332,
+        "max_dd_pct": -0.1135913273722884,
+        "wf_pass_rate": 1.0,
+        "p_pass_2phase_static": 0.5756,
+        "med_days_2phase_static": 241.0,
+        "p_bust_static": 0.1386
+      },
+      "at_C3_tail": {
+        "mean_bps_per_trade_net": 12.675965942508254,
+        "sharpe_excess": 0.5466525941846164,
+        "p_pass_2phase_static": 0.5302
+      },
+      "dsr_corrected": {
+        "N=16 gold perimeter": {
+          "sharpe": 0.8766612196291806,
+          "sr_benchmark": 1.5596298629058556,
+          "dsr": 0.03832537082562928,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        },
+        "N=142 funnel batch": {
+          "sharpe": 0.8766612196291806,
+          "sr_benchmark": 2.2969322148797993,
+          "dsr": 0.00011581160909050228,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        },
+        "N=164 program funnel": {
+          "sharpe": 0.8766612196291806,
+          "sr_benchmark": 2.33885706675516,
+          "dsr": 7.518773834794017e-05,
+          "passed": false,
+          "std_sr_trials": 0.8662424341889275
+        }
+      },
+      "L38_beta_orthogonality": {
+        "all_days": {
+          "n": 1654,
+          "alpha_bps_per_day": 1.746214632433853,
+          "t_alpha": 1.1874735399489427,
+          "beta": 0.39903262278594387,
+          "t_beta": 7.186605296732216,
+          "r2": 0.13542675689086392
+        },
+        "active_days": {
+          "n": 396,
+          "alpha_bps_per_day": 2.975548831204633,
+          "t_alpha": 0.7515346777642823,
+          "beta": 1.4974767493519083,
+          "t_beta": 16.634531474544993,
+          "r2": 0.508541697096234
+        }
+      },
+      "trade_shape": "open->next close",
+      "L58_placebo": {
+        "n_selected": 401,
+        "n_pool": 1253,
+        "mean_actual_bps": 18.622898542284755,
+        "mean_unconditional_bps": 12.493058491165096,
+        "mean_pool_bps": 10.531313989569735,
+        "l58_pool_minus_uncond_bps": -1.9617445015953603,
+        "excess_over_unconditional_bps": 6.129840051119659,
+        "t_hac_selected_vs_zero": 2.185399845501466,
+        "t_hac_selected_vs_unconditional": 0.7193376192351897,
+        "placebo_shift_p50": 13.10390658566395,
+        "placebo_shift_p90": 21.956159344976545,
+        "placebo_shift_p95": 24.394996192583502,
+        "pct_of_placebo_shift": 0.7948,
+        "placebo_iid_p90": 21.177231839736677,
+        "pct_of_placebo_iid": 0.819
+      },
+      "L25_disjoint_legs": {
+        "gold_uptrend": {
+          "n": 256,
+          "mean_bps": 23.64771674592336,
+          "t_hac": 2.1892662622883763
+        },
+        "gold_downtrend": {
+          "n": 133,
+          "mean_bps": 9.101088946083355,
+          "t_hac": 0.781543005274605
+        }
+      },
+      "L59_delay": [
+        {
+          "entry_shift_min": 0,
+          "exit_shift_min": 0,
+          "n": 401,
+          "gross_bps": 18.622898542284762,
+          "net_bps": 14.71852294198149,
+          "t_hac_net": 1.7272208024105928
+        },
+        {
+          "entry_shift_min": 1,
+          "exit_shift_min": 0,
+          "n": 400,
+          "gross_bps": 17.77692145863827,
+          "net_bps": 13.872545858334997,
+          "t_hac_net": 1.6389371718500843
+        },
+        {
+          "entry_shift_min": 5,
+          "exit_shift_min": 0,
+          "n": 400,
+          "gross_bps": 17.77692145863827,
+          "net_bps": 13.872545858334997,
+          "t_hac_net": 1.6389371718500843
+        }
+      ]
+    }
+  }
+}
