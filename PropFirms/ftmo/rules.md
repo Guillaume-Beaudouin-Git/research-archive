@@ -49,11 +49,29 @@ sources:
 
 ## Maximum Loss — mechanism
 
+> ⚠ **PORTÉE — À LIRE AVANT LA CITATION (précisé 2026-08-01).** La citation ci-dessous décrit le
+> plancher **à cliquet**, qui ne s'applique **QU'AU CHALLENGE 1-STEP** — produit **écarté** par ce
+> projet. Sur le **2-step** que nous exécutons, le plancher est **STATIQUE** : −10 % du capital
+> initial, fixe, il ne monte jamais avec les gains ($10k → plancher dur $9 000).
+>
+> **Toutes les simulations du projet doivent utiliser le plancher STATIQUE.** Cette contradiction
+> apparente a été signalée et tranchée deux fois (2026-07-20, 2026-08-01) : ne pas la rouvrir.
+> La distinction n'est pas cosmétique — un plancher à cliquet mord surtout sur les chemins
+> *gagnants* (un repli après gains peut casser), donc l'utiliser à tort **sous-estimerait** tous
+> les p(pass).
+
+### Variante 1-step (écartée) — citation d'origine
+
 > ✓ Quoted from FTMO Academy:
 > _"recalculated daily at 00:00 CE(S)T as the difference between the highest account balance achieved at 00:00 CE(S)T of any preceding trading day or, if higher, the amount of Initial Simulated Capital, and the Maximum Loss Amount, which is 10% of the Initial Simulated Capital. Additionally, the limit can only increase, but never decrease."_
 
 - Equivalent to a **trailing EOD drawdown that locks at the initial balance** (high-water-mark of EOD balance, never below starting capital).
 - 10% of initial capital, anchored on EOD HWM ≥ initial.
+
+### Variante 2-step (LA NÔTRE) — plancher statique
+
+- Max Loss = **10 % du capital initial, ancré au capital initial**, jamais recalculé.
+- Max Daily Loss = **5 %** du solde d'ouverture de journée, appliqué sur l'**équité** en intraday.
 
 ---
 
