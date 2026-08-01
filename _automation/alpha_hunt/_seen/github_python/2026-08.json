@@ -1,0 +1,23 @@
+{
+  "81d75d47927c50c709e83364c6d9e06e": {
+    "first_seen": "2026-08-01 11:30",
+    "source": "github_python",
+    "title": "Zipstack/unstract",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dff2a6edbf4f1e07a262e4c7bc1ed2c0": {
+    "first_seen": "2026-08-01 11:30",
+    "source": "github_python",
+    "title": "abus-aikorea/voice-pro",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fd0b3c9553518ec9ae445e310cc6dbe7": {
+    "first_seen": "2026-08-01 11:30",
+    "source": "github_python",
+    "title": "SimplifyJobs/Summer2027-Internships",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  }
+}
