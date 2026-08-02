@@ -1,0 +1,119 @@
+id,name,t_stat,kill_class,reach_status,reach_series,reach_note
+E001,B1 month-end Treasury rally (dash-for-cash),t_HAC 4.65 (TLT c2c); 4.79 HELD leg ZN; 4.6-6.0 ZN/ZF/ZB,VEHICULE (resolved),RECOVERED,B1_month_end_bonds,growth_engine audit series
+E002,"ASIA_23_8 gold overnight (23:00-07:00 UTC, swap-free)",t_HAC(alpha) 4.82,GEOMETRIE + VEHICULE,PROXY,ovn_GOLD_fut,"exchange-anchored futures rebuild (L56), not the 23:00-07:00 UTC CFD sleeve"
+E003,SILVER overnight drift (post-2014 regime),t_HAC 4.55; alpha t 4.6,GEOMETRIE + COUT,PROXY,ovn_SILVER_fut,idem
+E004,WTI overnight drift,t_HAC 3.64,COUT + GEOMETRIE,PROXY,ovn_WTI_fut,idem
+E005,SOYBEAN reopen drift,alpha t_HAC 4.6,COUT + PUISSANCE(OOS),PROXY,ovn_SOYBEAN_fut,"N=313 only, CFD window never existed"
+E006,Precious-Q1 January seasonality (silver),gross t_HAC 3.72 / NET-CFD 3.07,GEOMETRIE (sparse vs challenge clock),NO_SERIES,,January seasonality: event tables only
+E007,Precious-Q1 January seasonality (platinum),gross 3.74 / NET-CFD 3.00,GEOMETRIE,NO_SERIES,,"platinum, no CFD/futures series persisted"
+E008,Precious-Q1 January seasonality (gold),t 3.22 (Jan) / 2.54 (Jan+Aug+Sep sleeve),GEOMETRIE (sparse),NO_SERIES,,
+E009,Precious-Q1 combined (Ag+Pt+Pd+Au),NET-CFD 2.42 (Ag+Pt) / 2.82 (E3 measured swap),GEOMETRIE,NO_SERIES,,combined precious-Q1 basket never written out
+E010,COFFEE July seasonality (Brazil frost),gross 1.55 / NET measured-swap 1.96 (E2 generic-swap run: 0.73),"PUISSANCE (month-selection deflation, N=21)",NO_SERIES,,COFFEE July
+E011,WHEAT May seasonality (winter-wheat weather),gross 1.69 / NET 0.89 (E2) / 0.96 (E3),COUT (CFD swap) + PUISSANCE,NO_SERIES,,WHEAT May
+E012,Gap Pattern Type A (gap continuation + trend filter),expR +0.033 -> +0.038 delay+1,PUISSANCE (DSR invalide) + gate abandonne,RECOVERED,gapA_S035_point,rebuilt from the trade ledger by build_extra.py
+E013,Gap Pattern Type B (looser gap definition),expR long +0.040 / short +0.007,PUISSANCE (DSR invalide),RECOVERED,gapB_S036_point,idem
+E014,S1 VRP signal (VIX minus realised vol) daily swing,t_HAC(IC) 3.59 (h=1) 3.10 (h=3) 2.84 (h=5) 2.33 (h=10),COUT + gate abandonne,NO_SERIES,,S1 VRP QQQ: IC scans and PNGs only; net-futures 0.454 exists as a scalar
+E015,VIX-term carry timed (contango/backwardation),t 2.86,GEOMETRIE (mandate/profile) + VEHICULE (ETF/ETN),NO_SERIES,,VIX-term carry timed
+E016,MR reversal 1-day SPX,t 3.61,GEOMETRIE (execution clock) - artefact probable,NO_SERIES,,1-day SPX reversal: never written out
+E017,VIX expiry SOQ day-after bounce,spot ^VIX t 2.02 / VIXY t 1.76,VEHICULE + PUISSANCE,NO_SERIES,,VIX expiry SOQ
+E018,Leveraged-ETF EOD rebalance flow (NQ last 30 min),t 1.28 (uncond 1.15),PUISSANCE + COUT,NO_SERIES,,lev-ETF EOD flow
+E019,Long-vol / tail hedge (VXX),n/a (negative EV by design),VEHICULE (FTMO) - MECANIQUE as standalone,RECOVERED,Long_vol_VXX,
+E020,Treasury auction cycle,-,VEHICULE (jamais mesure),RECOVERED,auction_ZN_post,event ledger from the 2026-07-30 session
+M001,CS macro momentum 17 instruments,t_HAC 1.37-1.58,MECANIQUE (two-sided a cout nul),RECOVERED,cs_macro_V1_panel,
+M002,Pre-FOMC drift US30 / GER40,t_HAC 2.41 -> 2.12 on 97 evts,MECANIQUE (regime),PROXY,paper_fomc_long_even,FTMO paper-edge replication of the same window
+M003,Regime overlay (VIX term + MA200) on FTMO book,,MECANIQUE (mean-variance sign mismatch),NO_SERIES,,"overlay on the book, not a sleeve — out of scope by construction"
+M004,Piste A stat-arb / cointegrated pairs,hac_t 1.15 best,MECANIQUE (pas de cointegration OOS),RECOVERED,dec_H2_resid_port,
+M005,Piste A residual: gold/silver relative value,,VEHICULE,RECOVERED,dec_H1_goldsilver,
+M006,Piste B range-fade (ADX + band),hac_t 2.48 (XAU adx25 band2.5),MECANIQUE (detection look-ahead) - XAU leg = COUT,NO_SERIES,,piste B: parameter grid only
+M007,Piste C daily MR on indices,hac_t 1.89 best,MECANIQUE (two-sided),RECOVERED,dec_pisteC_best,
+M008,Strategy C NQ opening momentum iter_10,,MECANIQUE (edge faible + L24),NO_SERIES,,"Strategy C iter_10: results.json, no daily stream"
+M009,ORB V2+E7 / K5 (FTMO US100 CFD),,MECANIQUE (placebo) + COUT,RECOVERED,orb_e7_R15,R units; scale-invariant under ERC
+M010,sector_hothand_propfirm,t_HAC 10.38 claimed,MECANIQUE (artefact),NO_SERIES,,"look-ahead artefact, excluded on merit anyway"
+M011,Ross Hook (oxfordstrat #76-79),alpha t ~5,PUISSANCE (deflation) - a re-mesurer,RECOVERED,s076_mtm_fx,Ross Hook replication
+M012,Bollinger %b reversal (oxfordstrat #12/#13),,MECANIQUE (beta apparie) - PAS un faux mort,NO_SERIES,,oxfordstrat cohort: gates.csv only
+M013,Hook Pattern Crabel (oxfordstrat #43),long +0.105 / short +0.074,MECANIQUE (artefact de fill),NO_SERIES,,idem
+M014,Oops Bullish gap-down fade (oxfordstrat #60),alpha t 0.61 (NS),PUISSANCE (effet trop faible),NO_SERIES,,idem
+M015,ORB-stop family (Crabel NR/NR7/GSV/ORB/ORBP/wide-range),-,MECANIQUE (artefact de fill),NO_SERIES,,"ORB-stop cohort, ~8 strategies"
+M016,"Trend/MA/channel family (oxfordstrat, ~40 entries)",-,MECANIQUE (beta long),PROXY,EMA_50_200/Donchian_55/Momentum_MA200,"~40-entry trend cohort, 4 representatives"
+M017,Candle-pattern family (Doji/Engulfing/Hikkake/Smash Day),-,MECANIQUE,NO_SERIES,,candle-pattern cohort
+M018,RSI(2) Connors (oxfordstrat #72/#73),t 2.65 (full) / -0.1 (2019-26),MECANIQUE (decay post-publication),NO_SERIES,,RSI(2) Connors
+M019,Friday Momentum / One Night Stand (#34),-,MECANIQUE (artefact de fill),NO_SERIES,,Friday momentum
+M020,Gao time-of-day momentum (first 30min -> last 30min),gross t -0.08 / NET t -6.08,MECANIQUE (gross ~0),NO_SERIES,,Gao time-of-day
+M021,Post-release intraday continuation FOMC (flat close),t 0.03 full / 1.95 on 2023-26,MECANIQUE (sign-flip),NO_SERIES,,
+M022,CPI/NFP gap continuation (open+5min -> close),t 0.69,PUISSANCE + COUT,NO_SERIES,,CPI/NFP gap continuation
+M023,Pre-CPI drift,t 2.12 full / 1.53 ex-2025 (CI crosses 0),MECANIQUE (one outlier year),NO_SERIES,,pre-CPI
+M024,Pre-NFP drift,t -1.19,MECANIQUE,NO_SERIES,,pre-NFP
+M025,"Pre-CB drift (ECB->DAX, BOJ->NIKKEI, FOMC->SP500)",ECB -0.81 / BOJ 0.82 / FOMC 0.82 (net <=0.54),"MECANIQUE (signal absent, pas sous-puissant)",NO_SERIES,,pre-CB
+M026,Post-limit-move reversion (fade >2.5 sigma day),t 2.30 raw; bear-shock 2.12 / bull-shock 1.38 NS,MECANIQUE (two-sided),NO_SERIES,,post-limit-move
+M027,"Gap-fade (fade big gap, open->close)",t 0.42 same-bar -> -0.05 at +30 min,MECANIQUE,PROXY,paper_overnight_fade,gap-fade family
+M028,Turn-of-month (multi-asset),SPY 1.0 / TLT -0.17 / IEF 0.6 / DBC -0.8 / GLD 1.3,MECANIQUE,NON_DAILY,swapkilled ME_*,"monthly, 125 obs"
+M029,Turn-of-month indices (US500/US100/US30),gross t<=0.81 / net t<=1.24,MECANIQUE (beta),NON_DAILY,swapkilled ME_US,monthly
+M030,Month-end equity rebalance L/S (eq vs bond),t -1.44,MECANIQUE (mauvais signe),NON_DAILY,,monthly
+M031,Quarter-end window dressing / start-of-quarter reversion,t 0.40 / 0.96,MECANIQUE,NO_SERIES,,
+M032,Last-hour momentum SPX (Gao),t -0.13,MECANIQUE,NO_SERIES,,
+M033,Overnight conditional (-intraday x overnight),t 0.27 conditional / 4.04 unconditional,MECANIQUE (beta),NO_SERIES,,overnight conditional
+M034,OPEX / quad-witching,t -1.96 (quad-day -25 bps),MECANIQUE + DONNEES (GEX),NO_SERIES,,OPEX
+M035,Copper -> S&P500 lead-lag,"t in [-1.54, +0.33] across 1/3/5/10/20d + weekly",MECANIQUE,NO_SERIES,,copper lead-lag
+M036,Oil term-structure timed (carry direction),t -2.62 (carry-correct direction),MECANIQUE (L32),NO_SERIES,,
+M037,Backwardation-gated long oil,-,MECANIQUE,NO_SERIES,,
+M038,Gold / real-rates momentum,t 0.53,MECANIQUE,NO_SERIES,,
+M039,Credit momentum HYG/IEF,t -0.00,MECANIQUE,NO_SERIES,,
+M040,Oil [B]/[C] carry-sign engine,-,MECANIQUE + DONNEES,NO_SERIES,,
+M041,Grains short carry-aligned (soybean Oct / cocoa Dec / wheat Jul),-3.82 / -1.10 / -1.17 (all wrong-signed),MECANIQUE (mecanisme faux),NO_SERIES,,
+M042,Regime filters on directional signals (MA200/vol/ADX/breadth/flat-on-event),best t 2.62 (breadth),MECANIQUE,NO_SERIES,,"regime filters, overlay not sleeve"
+M043,Signal filters on TSMOM (MA200 / vol / persistence / strong-class / DD-sizing),t 1.36-5.12,MECANIQUE (tuning moteur),NO_SERIES,,"signal filters on TSMOM, overlay"
+M044,Survival overlays (DD-sizing / vol-target asym / flat-overnight / vov / per-sleeve cap),-,MECANIQUE,NO_SERIES,,survival overlays
+M045,Combination setups (regime-switch / double-TF / RSI-dip / BB+filter / trend+RS),-,MECANIQUE,NO_SERIES,,
+M046,Reversion setups 5-day (RSI14 / Bollinger / MA-z / Donchian-fade / gap-fill),median t 0.13-1.22,MECANIQUE (two-sided),PROXY,Pullback_uptrend,5-day reversion cohort
+M047,Multi-asset daily TSMOM on FTMO universe (the engine),t 4.70-4.80 gross,COUT (CFD carry) - et MECANIQUE en two-sided,RECOVERED,tsmom_chosen,the FTMO TSMOM engine
+M048,Donchian breakout daily,t 1.98 / 1.73,MECANIQUE (decay + two-sided) + COUT,RECOVERED,Donchian_breakout,
+M049,XS-momentum basket,t 1.95,MECANIQUE,RECOVERED,XS_momentum,
+M050,Pullback-in-uptrend,-,MECANIQUE (mauvais profil),RECOVERED,Pullback_uptrend,
+R001,Strategy A TSMOM v3 crypto,"IC95 [-0.50, 1.63] contient zero",PUISSANCE (CI contient zero),RECOVERED,btc_proxy_A,Strategy A crypto TSMOM proxy series
+R002,Strategy B delta-neutral carry HL,WF 8h folds 0/4 positifs; net_sharpe moyen -1.55,MECANIQUE (cout de rotation) + PUISSANCE (WF<5),NO_SERIES,,delta-neutral carry: walkforward table only
+R003,Crypto-CFD TSMOM two-sided (FTMO),short leg t 0.28 at swap=0,MECANIQUE (two-sided a cout nul),RECOVERED,crypto_trend_cfd,
+R004,Token unlock cliff short,"t 2.90, net +337 bps/event, DSR 0.94, undecayed",MECANIQUE (sous placebo),NO_SERIES,,unlock cliff: event table
+R005,Funding-extremes contrarian,+20/+30/+113 bps at 8h/24h/72h (CONTINUATION),MECANIQUE (mauvais signe),NO_SERIES,,funding extremes: event table
+R006,PMR basis delta-neutral,IC real,COUT (plafond L12),NO_SERIES,,
+R007,ETH netflow on-chain,naive t 2.58 -> HAC t 0.11,PUISSANCE (N_eff),NO_SERIES,,
+R008,BTC VRP Deribit,0/13 folds positive,MECANIQUE + COUT,NO_SERIES,,
+R009,"SPY iron-condor VRP (defined risk, real chains)","CI [-0.39, 0.74] contains zero",COUT (spread) - MECANIQUE au tier retail,NO_SERIES,,SPY iron condor
+R010,"VRP index (VIX vs realised, monthly non-overlapping)",IV>RV 83.7% of months,VEHICULE (infra options) + MECANIQUE au tier retail,NO_SERIES,,
+R011,PEAD post-earnings drift,~4% 60-day spread (Bernard-Thomas),DONNEES,NO_SERIES,,PEAD
+R012,H1 London-open reversal of Asian displacement,port HAC-t 2.11 European vs -0.57 Asia-native,COUT (deja re-teste sur futures),NO_SERIES,,
+R013,H2 post-USD-news intraday continuation,pooled HAC-t 0.19,MECANIQUE (gross ~0),NO_SERIES,,
+R014,H3 day-of-week x session FX seasonality,DSR 0; p(pass) 0.0002,MECANIQUE (bruit de grille),NO_SERIES,,
+R015,WMR fix reversal (Pattern B segmentation),"two-sided t 3.55, gross 2.07 bps/d",COUT (tier institutionnel),NO_SERIES,,WMR fix reversal
+R016,"G10 FX carry (FX-1..FX-4, G1 conditional)",IC -0.028 on 2013-2023,MECANIQUE (regime),NO_SERIES,,G10 carry
+R017,London ORB v1 FX,best t_HAC 1.01 (GBPUSD) vs gate 1.65,MECANIQUE,NO_SERIES,,
+R018,Round Number Cascade FX,EUR t 1.167 -> -2.357; GBP all FAIL,MECANIQUE,PROXY,top10_lit_048,"round-number cascade, funnel line"
+R019,CIP-EOQ cross-currency basis,net mu 1-3 bps vs 3x cost 24 bps,MECANIQUE + DONNEES,NO_SERIES,,CIP-EOQ
+R020,F2 Asian range breakout London open,IJR gate_ratio 0.751 vs 3.0,PUISSANCE (gate mal calibre a l'origine) - re-derive et toujours FAIL,NO_SERIES,,
+R021,D1 Failed-ORB fade NQ,IC_t 1.55 vs gate 2.5,PUISSANCE + COUT,NO_SERIES,,
+R022,D2 VWAP touch fade post-noon NQ,IC_t -0.86 (wrong direction),MECANIQUE,NO_SERIES,,
+R023,D3 opening-range mid-fade + D5 afternoon BB squeeze,-,PUISSANCE (combo non teste),NO_SERIES,,Strategy D D3+D5
+R024,D4 lunch RSI reversal NQ,IC_t 1.61,MECANIQUE,NO_SERIES,,
+R025,Network momentum GMOM,-,PUISSANCE (univers),NO_SERIES,,
+R026,jt_momentum_cs (Jegadeesh-Titman 70 stocks),ic_tstat -0.49,MECANIQUE,NO_SERIES,,
+M051,MACD fast-trend diversifier,trade-skew +4.2,n/a (brique de forme),RECOVERED,MACD_cross,
+M052,"Commodity seasonality (broad, archive keeper)",-,MECANIQUE (artefact de roll),RECOVERED,commodity_seasonality,
+M053,"Cointegrated commodity-spread grids (WTI-Brent, Corn-Wheat, cracks)",OOS-stationary,VEHICULE (capital),NON_DAILY,swapkilled spreads,monthly
+M054,Diversified TSMOM on futures (growth engine),-,"PUISSANCE (SR faible, pas nul)",RECOVERED,growth_trend,
+M055,Conditional long-convexity (straddle after vol compression),-,MECANIQUE (mecanisme inverse),NO_SERIES,,long-convexity straddle
+M056,Martingale / grid / pyramiding sizing overlays,-,MECANIQUE,NO_SERIES,,"sizing overlays, create no edge by construction"
+M057,PCA-residual ETF stat-arb (Avellaneda-Lee),-,MECANIQUE,NO_SERIES,,PCA stat-arb
+M058,COT hedging pressure,-,MECANIQUE (decay),NO_SERIES,,COT
+M059,Broad month-end expansion (13 sleeves),-,PUISSANCE (surajustement),NON_DAILY,swapkilled 13 sleeves,monthly
+M060,Month-end FX flow (Melvin-Prins),-,MECANIQUE,NO_SERIES,,month-end FX flow
+M061,C1/C2/C3 prop-suitable reversion candidates,C1 t<1.55 not two-sided; C2 long-leg t -1.98 WRONG SIGN,MECANIQUE,NO_SERIES,,
+M062,Short-vol carry regime-filtered,-,MECANIQUE (artefact),NO_SERIES,,
+M063,Equity sector factor L/S,-,MECANIQUE,NO_SERIES,,
+M064,Kaufman ER regime filter / z-score MR on spreads,-,MECANIQUE,NO_SERIES,,
+D001,Dispersion (index vs component IV),-,DONNEES,NO_SERIES,,dispersion — needs component IV
+D002,Dividend futures / ex-div,-,DONNEES,NO_SERIES,,dividend futures
+D003,Index reconstitution flows,-,MECANIQUE + DONNEES,NO_SERIES,,index reconstitution flows
+D004,OPEX dealer-gamma (GEX) conditioning,OPEX-specific excess +27.4 bps t 1.89,DONNEES,NO_SERIES,,OPEX dealer gamma
+D005,ZN Baltussen bond-futures intraday momentum,-,DONNEES,NO_SERIES,,"ZN Baltussen — open chantier, nothing persisted"
+D006,Glassnode stablecoin mint/burn,-,DONNEES,NO_SERIES,,Glassnode
+D007,HLP vault flow contrarian / Uniswap V3 LP / GitHub commit velocity / BTC cross-exchange lead-lag,-,DONNEES / non teste,NO_SERIES,,HLP vault / Uniswap / GitHub velocity
+D008,Commodities XS basis + TSMOM (Erb-Harvey / Moskowitz),-,DONNEES / non teste,NO_SERIES,,Commodities XS basis+TSMOM — phase A incomplete
