@@ -1,0 +1,80 @@
+name,path,col,cost,family,note,status,n_raw,sr_raw,transform,start,end
+gold_trend_cfd,data/ftmo_portfolio/cache/phase1c_sleeves.parquet,gold,net,trend,"XAUUSD TSMOM, carry-adj",OK,6895,0.29369373550651745,,2000-01-03,2026-06-05
+energy_LO_cfd,data/ftmo_portfolio/cache/phase1c_sleeves.parquet,energy_LO,net,trend,UKOIL+USOIL long-only trend,OK,6895,0.0416955854890105,,2000-01-03,2026-06-05
+J1_usdjpy_LO,data/ftmo_portfolio/cache/phase1c_sleeves.parquet,J1,net,trend,"USDJPY 12-1 long-only, VT10%",OK,5039,0.4233278849527583,,2007-01-02,2026-06-05
+crypto_trend_cfd,data/ftmo_portfolio/cache/phase1c_sleeves.parquet,crypto,net,trend,BTC+ETH CFD trend,OK,6895,0.41372847497408627,,2000-01-03,2026-06-05
+metals_pair_cfd,data/ftmo_portfolio/cache/phase1c_sleeves.parquet,metals_pair,net,trend,XAU+XAG trend,OK,6895,0.21077155593529864,,2000-01-03,2026-06-05
+trend_replica,data/ftmo_portfolio/cache/phase1_sleeve_returns.parquet,trend_replica,net,trend,,OK,4809,0.6239665682800234,,2008-01-01,2026-06-05
+trend_replica_carryadj,data/ftmo_portfolio/cache/phase1_sleeve_returns.parquet,trend_replica_carryadj,net,trend,,OK,4809,0.5086350714783516,,2008-01-01,2026-06-05
+trend_full,data/ftmo_portfolio/cache/phase1_sleeve_returns.parquet,trend_full,net,trend,,OK,4809,0.40009258155373,,2008-01-01,2026-06-05
+trend_full_carryadj,data/ftmo_portfolio/cache/phase1_sleeve_returns.parquet,trend_full_carryadj,net,trend,,OK,4809,0.4997267076069745,,2008-01-01,2026-06-05
+ovn_GOLD_fut,Multi_Asset/research/active/marginal_admission_2026-08/cache/overnight_raw_sleeves.parquet,GOLD,net,overnight,"un-winsorised, 0.66 bps RT MGC",OK,4881,1.73202634499812,,2007-01-29,2026-06-04
+ovn_SILVER_fut,Multi_Asset/research/active/marginal_admission_2026-08/cache/overnight_raw_sleeves.parquet,SILVER,net,overnight,"un-winsorised, 1.15 bps RT SIL",OK,3148,0.6243712026721503,,2014-01-30,2026-06-04
+ovn_WTI_fut,Multi_Asset/research/active/marginal_admission_2026-08/cache/overnight_raw_sleeves.parquet,WTI,net,overnight,"un-winsorised, 3.67 bps RT MCL",OK,3313,-0.6266881981741433,,2013-01-29,2026-06-04
+ovn_SOYBEAN_fut,Multi_Asset/research/active/marginal_admission_2026-08/cache/overnight_raw_sleeves.parquet,SOYBEAN,net,overnight,"un-winsorised, N=313 only",OK,293,1.4543962254822154,,2018-01-08,2019-08-29
+ovn_GOLD_winsorised,Multi_Asset/research/active/overnight_futures_2026-07/results/step3_sleeve_series.csv,GOLD,gross,overnight,WINSORISED 0.5/99.5 in constructor,OK,4901,1.86106924684175,,2007-01-01,2026-06-04
+B1_month_end_bonds,Multi_Asset/research/active/growth_engine_2026-07/audit_growth_returns.parquet,bonds,net,flow,"E001 dash-for-cash, the deployed IBKR sleeve",OK,4634,0.9099124534317911,,2008-01-02,2026-05-29
+growth_trend,Multi_Asset/research/active/growth_engine_2026-07/audit_growth_returns.parquet,trend,net,trend,personal-book trend leg,OK,4634,0.4652407529532325,,2008-01-02,2026-05-29
+J1_trendres,data/trend_research/g1_sleeves.csv,J1,net,trend,,OK,6836,0.578402122056439,,2000-02-01,2026-05-31
+TSMOM_unfilt,data/trend_research/g1_sleeves.csv,TSMOM_unfilt,net,trend,,OK,6605,0.42191275459801836,,2000-12-20,2026-05-31
+TSMOM_long_only,data/trend_research/g1_sleeves.csv,TSMOM_long_only,net,trend,,OK,6605,0.5808694778086602,,2000-12-20,2026-05-31
+G1_gold_orig,data/trend_research/g2_swap_grid.csv,G1_baseline_orig,net,trend,,OK,6208,0.6794583695421943,,2001-08-31,2026-05-29
+G1_credit_shorts,data/trend_research/g2_swap_grid.csv,G1_credit_shorts_mul1,net,trend,,OK,6208,0.6945043306171188,,2001-08-31,2026-05-29
+book_10pct_vol,data/trend_research/g3_book_book.csv,book_10pct_vol,net,trend,,OK,5459,0.7081523953275628,,2001-09-04,2026-05-28
+btc_proxy_A,data/trend_research/g5_book_vs_A.csv,btc_proxy_A,net,crypto,Strategy A proxy,OK,4248,1.2574634071158353,,2014-10-15,2026-06-01
+EMA_50_200,data/skew_research/session_basic_trend/setup_daily_series.csv,EMA 50/200,net,trend,,OK,8099,0.4434404594335137,,2000-01-03,2026-05-28
+Donchian_55,data/skew_research/session_basic_trend/setup_daily_series.csv,Donchian 55,net,trend,,OK,8099,0.21613087618062932,,2000-01-03,2026-05-28
+Momentum_MA200,data/skew_research/session_basic_trend/setup_daily_series.csv,Momentum MA200,net,trend,,OK,8099,0.5645293962812886,,2000-01-03,2026-05-28
+MACD_cross,data/skew_research/session_basic_trend/setup_daily_series.csv,MACD cross,net,trend,,OK,8099,0.3325982711544818,,2000-01-03,2026-05-28
+Pullback_uptrend,data/skew_research/session_basic_trend/setup_daily_series.csv,Pullback-in-uptrend,net,reversion,,OK,8099,0.39310603759205925,,2000-01-03,2026-05-28
+commodity_seasonality,data/skew_research/session_basic_trend/commodity_seasonality_oos.csv,0,net,seasonal,OOS commodity seasonality book,OK,2617,0.32554727226215735,,2016-01-04,2026-05-27
+Donchian_breakout,data/skew_research/session_cowork/phase1_series_all.csv,Donchian-breakout,net,trend,,OK,8039,0.35766381438518857,,2000-03-27,2026-05-28
+XS_momentum,data/skew_research/session_cowork/phase1_series_all.csv,XS-momentum,net,momentum,M049,OK,8039,0.4528351984818143,,2000-03-27,2026-05-28
+Long_vol_VXX,data/skew_research/session_cowork/phase1_series_all.csv,Long-vol(VXX),net,vol,,OK,2094,-0.3410598164989134,,2018-01-26,2026-05-27
+P2_TSMOM_FOMC,data/skew_research/MERGE_portfolio_returns.csv,P2_TSMOM+FOMC,net,mixed,,OK,2094,0.4189332675196635,,2018-01-26,2026-05-27
+P4_triple_invol,data/skew_research/MERGE_portfolio_returns.csv,P4_triple_invol,net,mixed,,OK,2094,0.16892031905195498,,2018-01-26,2026-05-27
+tsmom_swapfree_full,PropFirms/ftmo/program_2026-06/ftmo_survivors_book/results/tsmom_swapfree_full.csv,ret,gross,trend,swap NOT charged,OK,7971,0.8020943771429165,,2000-01-03,2026-05-28
+tsmom_swapnet_nocrypto,PropFirms/ftmo/program_2026-06/ftmo_survivors_book/results/tsmom_swapnet_nocrypto.csv,ret,net,trend,,OK,4990,0.024162962847905218,,2006-07-26,2026-05-27
+survivors_final_book,PropFirms/ftmo/program_2026-06/ftmo_survivors_book/results/final_book_daily.csv,ret,net,mixed,RH+TSMOM book,OK,5866,0.2665713684761091,,2007-01-01,2026-06-05
+tsmom_chosen,PropFirms/ftmo/program_2026-06/ftmo_research/tsmom/chosen_returns.csv,0,gross,trend,swap-free variant,OK,7971,0.8020943771429168,,2000-01-03,2026-05-28
+paper_im_book,PropFirms/ftmo/program_2026-06/ftmo_paper_edges/results/im_book.parquet,net,net,momentum,intraday momentum book,OK,3600,-1.2759748417443106,,2013-12-31,2026-05-29
+paper_rev_book,PropFirms/ftmo/program_2026-06/ftmo_paper_edges/results/rev_book.parquet,net,net,reversion,,OK,3600,-3.1283720015706806,,2013-12-31,2026-05-29
+paper_fomc_long_even,PropFirms/ftmo/program_2026-06/ftmo_paper_edges/results/fomc_long-even.parquet,net,net,event,M002 family,OK,2188,0.006541418116412394,,2018-01-01,2026-05-29
+paper_overnight_fade,PropFirms/ftmo/program_2026-06/ftmo_paper_edges/results/overnight_fade_book.parquet,net,net,reversion,,OK,3222,-0.17641776036859871,,2014-01-02,2026-05-29
+top10_ang_006,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_006.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,1567,0.33241020565263546,,2020-01-01,2025-12-31
+top10_ang_017,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_017.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,0.04043632813282498,,2018-01-01,2026-05-29
+top10_ang_018,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_018.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,1673,-2.9746896834617296,,2020-01-01,2026-05-29
+top10_ang_019,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_019.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,1827,-0.061309648029089704,,2018-01-01,2024-12-31
+top10_ang_024,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_024.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,-0.12891439384208161,,2018-01-01,2026-05-29
+top10_ang_024_flip,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_024_flip.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,-0.9727907253208443,,2018-01-01,2026-05-29
+top10_ang_025,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_025.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2199,-1.1086743040852391,,2018-01-01,2026-05-29
+top10_ang_025_flip,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_025_flip.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2199,0.19846152526529767,,2018-01-01,2026-05-29
+top10_ang_025_flip_mod2,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_025_flip_mod2.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2196,0.05931890436814097,,2018-01-01,2026-05-29
+top10_ang_025_flip_mod3,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_025_flip_mod3.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2197,0.14502991518002367,,2018-01-01,2026-05-29
+top10_ang_047,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_047.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,0.5037960597848953,,2018-01-01,2026-05-29
+top10_ang_047_mod1,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_047_mod1.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,0.41586141397261,,2018-01-01,2026-05-29
+top10_ang_047_mod2,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_047_mod2.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,0.027516708431044486,,2018-01-01,2026-05-29
+top10_ang_047_mod3,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_047_mod3.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,0.8551467111327067,,2018-01-01,2026-05-29
+top10_ang_048,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_ang_048.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,-2.905725994664743,,2018-01-01,2026-05-29
+top10_lit_012,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_lit_012.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,1566,-0.5507697578064782,,2020-01-01,2025-12-31
+top10_lit_013,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_lit_013.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2196,0.311328420799319,,2018-01-01,2026-05-29
+top10_lit_020,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_lit_020.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,-0.4898969617598161,,2018-01-01,2026-05-29
+top10_lit_021,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_lit_021.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2195,0.138101151833982,,2018-01-01,2026-05-29
+top10_lit_048,PropFirms/ftmo/program_2026-06/top10_test/results/daily_pnl_lit_048.csv,pnl_frac,net,funnel,164-test funnel; gold legs over-costed 1.9x (COST_AUDIT s3),OK,2303,-0.7091399792186839,,2018-01-01,2026-05-29
+dec_H1_goldsilver,Multi_Asset/research/active/decorrelated_sleeves_2026-07/iteration_2/piste_A/H1_goldsilver_returns.csv,ret,net,statarb,,OK,6052,-0.6335391619162103,,2007-01-01,2026-06-05
+dec_H2_resid_port,Multi_Asset/research/active/decorrelated_sleeves_2026-07/iteration_2/piste_A/H2_resid_portfolio_returns.csv,ret,net,statarb,,OK,3683,-1.0166759805817767,,2013-09-30,2026-06-05
+dec_pisteC_best,Multi_Asset/research/active/decorrelated_sleeves_2026-07/iteration_2/piste_C/best_daily_returns.csv,ret,net,reversion,M007,OK,4218,0.3696075883862704,,2012-01-16,2026-06-05
+cs_macro_V1_panel,yt_strategy_replications/cs_macro_momentum_ftmo/results/variant_series.parquet,V1_panel,net,momentum,M001 best variant,OK,3294,0.41444386097187225,,2013-10-01,2026-06-05
+cs_macro_V0_anchor,yt_strategy_replications/cs_macro_momentum_ftmo/results/variant_series.parquet,V0_anchor,net,momentum,,OK,3294,0.25750644264081723,,2013-10-01,2026-06-05
+voie_b_ftmo,Futures/research/active/voie_b_ftmo/results/ftmo_voie_b_returns.csv,ret,net,unknown,underlying UNCONFIRMED per CLAUDE.md,OK,4267,2.628399435655021,,2010-01-04,2026-05-27
+double7_cfd,data/double7_connors/eq_cfd_sleeves.csv,0,net,reversion,Connors Double 7,OK,4628,0.6088303462564911,level->pct_change,2008-01-03,2026-05-27
+orb_e7_R15,data/ftmo_portfolio/cache/orb_e7_R15.parquet,R,net,orb,R multiples; scale-invariant under ERC,OK,4013,0.40286279261327346,,2010-06-07,2026-05-29
+btc_sleeve_it2,data/ftmo_portfolio/cache/btc_sleeve_it2.parquet,r,net,crypto,,OK,4270,0.9881204085914301,,2014-09-18,2026-05-27
+s060_oxford,Multi_Asset/research/archived/oxfordstrat_109_audit/results/s060_deepdive_daily.csv,strat,net,oxford,S060 deep-dive,OK,7770,2.9573550946167373,,2000-01-03,2026-05-29
+s076_mtm_fx,PropFirms/ftmo/program_2026-06/s076_replication/results/mtm_fx.csv,ret,net,oxford,S076 Ross Hook,OK,5132,0.30518097957306173,,2007-01-01,2026-06-05
+prodige_s1,PropFirms/ftmo/program_2026-06/ftmo_3strats_audit_2026-06/results/s1_daily.parquet,pnl_R,net,orb,,OK,4089,0.1362298773127497,,2010-06-25,2026-05-29
+prodige_s3_net,PropFirms/ftmo/program_2026-06/ftmo_3strats_audit_2026-06/results/s3_reproduction.parquet,s3_net_x1,net,momentum,,OK,1190,0.3492621871489344,,2021-09-14,2026-05-28
+gapA_S035_point,Multi_Asset/research/active/marginal_admission_2026-08/cache/extra_sleeves.parquet,gapA_S035_point,net,gap,"E012, pre-registered spec, N=3438",OK,6857,0.8713084558714685,,2000-02-14,2026-05-26
+gapB_S036_point,Multi_Asset/research/active/marginal_admission_2026-08/cache/extra_sleeves.parquet,gapB_S036_point,net,gap,E013,OK,6859,0.8503685324744193,,2000-02-11,2026-05-27
+gapA_S035_best,Multi_Asset/research/active/marginal_admission_2026-08/cache/extra_sleeves.parquet,gapA_S035_best,net,gap,"E012 best-of-grid, selection-biased",OK,6867,1.1257971829421571,,2000-01-31,2026-05-26
+auction_ZN_post,Multi_Asset/research/active/marginal_admission_2026-08/cache/extra_sleeves.parquet,auction_ZN_post,net,flow,"E020, never tested pre-2026-07",OK,6696,0.3044070381265,,2000-11-08,2026-07-08

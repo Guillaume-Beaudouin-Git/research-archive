@@ -1,8 +1,22 @@
 {
+  "308c54aea93eef94b83e38361dbc8718": {
+    "first_seen": "2026-08-02 11:00",
+    "source": "github_python",
+    "title": "Huanshere/VideoLingo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "81d75d47927c50c709e83364c6d9e06e": {
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
     "title": "Zipstack/unstract",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dfd6bd6b78d332c1b01473f8838f25cb": {
+    "first_seen": "2026-08-02 11:00",
+    "source": "github_python",
+    "title": "Emily2040/seedance-2.0",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -17,6 +31,13 @@
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
     "title": "SimplifyJobs/Summer2027-Internships",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "fd3d7af7e4db077ee693b2f6236bc727": {
+    "first_seen": "2026-08-02 11:00",
+    "source": "github_python",
+    "title": "atilaahmettaner/tradingview-mcp",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   }
