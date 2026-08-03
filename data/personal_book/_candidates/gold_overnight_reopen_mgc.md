@@ -13,6 +13,26 @@ Globex (18:00 ET)**. ⚠ **Le mécanisme des rapports archivés est FALSIFIÉ** 
 demande physique asiatique » — l'effet est ancré à **l'horloge CME**, 1 à 2 h **AVANT** Tokyo (L56).
 La fenêtre héritée « 23:00-07:00 UTC » était juste en hiver et **une heure en retard tout l'été**.
 
+⚠ **Seconde falsification de mécanisme (2026-08-04)** : c'est un phénomène de **PAUSE DE
+SETTLEMENT**, pas de **durée de fermeture**. La coupure de 49 h du week-end ne porte que
+**+0.31 bps, t 0.08** (excès apparié NÉGATIF), tandis que la pause d'environ 1 h en semaine porte
+**+4.39 bps, t 2.99**. ⇒ **Toute histoire du type « le flux s'accumule pendant la fermeture » part
+d'un fait contraire.** Source : `Multi_Asset/research/active/cross_conditioning_2026-08/` §1.
+
+⚠ **Et l'edge lui-même prédit la VARIANCE plus que la moyenne** : R²(moyenne) 0.00-0.09 % contre
+R²(variance) 0.37-6.45 % (|t| 2.0-4.2), sur des états de nature **différente** de l'amplitude. La
+propriété appartient donc à **l'edge**, pas au choix de dose. À garder en tête avant tout
+dimensionnement (L54).
+
+## Aucun conditionnement ne le sauve (mesuré, 2026-08-04)
+
+Six états testés (liquidité/participation, calendrier structurel, position de clôture sans échelle),
+**gradient plat partout** : max |t| = **0.98** contre un seuil indulgent à 2.00. Sur les 4 directions
+pré-enregistrées testables, **3 sortent avec le signe opposé**. Et l'économie tue avant la
+statistique : **un quintile divise la fréquence par 5**, donc il faudrait **3× le gross par trade**
+(~11 bps contre 3.67) rien que pour tenir l'EV annuelle — le meilleur bucket, pourtant cherry-pické
+et sans gradient, rend **259 bps/an contre 442, soit −41 %**.
+
 ## Métriques mesurées
 
 | Métrique | Valeur |
