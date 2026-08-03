@@ -6,10 +6,31 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5b98d3acf77f89f33d70109c0264e111": {
+    "first_seen": "2026-08-03 11:00",
+    "source": "github_python",
+    "title": "kovidgoyal/calibre",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "81d75d47927c50c709e83364c6d9e06e": {
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
     "title": "Zipstack/unstract",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9e0c300681fe4e7505ca2decbf6e4996": {
+    "first_seen": "2026-08-03 11:00",
+    "source": "github_python",
+    "title": "invoke-ai/InvokeAI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ccf53ea0a374ed5ffbb30af3bcb7ac9f": {
+    "first_seen": "2026-08-03 11:00",
+    "source": "github_python",
+    "title": "vitali87/code-graph-rag",
     "decision": "rejected_L0",
     "promising_file": null
   },
