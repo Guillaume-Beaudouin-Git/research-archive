@@ -1,5 +1,5 @@
 {
-  "last_synthesis_week": "2026-W30",
+  "last_synthesis_week": "2026-W31",
   "themes_tracked": {
     "mnq_intraday_falsification": {
       "first_seen": "2026-W21",
@@ -8,9 +8,15 @@
       "n_papers_total": 3,
       "status": "saturated",
       "weeks_declining": 4,
-      "key_arxiv_ids": ["2605.04004", "2605.11423", "2605.17724"],
+      "key_arxiv_ids": [
+        "2605.04004",
+        "2605.11423",
+        "2605.17724"
+      ],
       "note": "Three-paper cluster by Mesfin (same author, 2021-2025 MNQ dataset). DEEP_DIVE on 2605.04004 (2026-05-25_analysis.md) confirms REFERENCE_ONLY: Strategy C's multi-filter conjunction (VWAP + gap <1.2% + range ≥30pts) is absent from all 14 Mesfin families. Mesfin's best result gap-continuation T=3.23 has N=22 vs Strategy C N=346. No new papers W22-W25. Strategy C propfirm vehicle cancelled 2026-06-10 — this theme is doubly inert.",
-      "deep_dive_completed": ["2605.04004"],
+      "deep_dive_completed": [
+        "2605.04004"
+      ],
       "saturated_at": "2026-W25"
     },
     "defi_carry_mechanics": {
@@ -20,9 +26,15 @@
       "n_papers_total": 3,
       "status": "saturated",
       "weeks_declining": 4,
-      "key_arxiv_ids": ["2605.05089", "2605.06405", "2605.11263"],
+      "key_arxiv_ids": [
+        "2605.05089",
+        "2605.06405",
+        "2605.11263"
+      ],
       "note": "No new papers W22-W25. DEEP_DIVE on 2605.05089 confirms TEST_LATER trigger: mainnet review ~2026-07-17 when notionnel >$5K. DeFi permissionless calibration doesn't transfer to HL centralized. Exit asymmetry real but negligible at $50 testnet.",
-      "deep_dive_completed": ["2605.05089"],
+      "deep_dive_completed": [
+        "2605.05089"
+      ],
       "test_later_trigger": "mainnet 60-day review ~2026-07-17",
       "saturated_at": "2026-W25"
     },
@@ -33,7 +45,10 @@
       "n_papers_total": 2,
       "status": "saturated",
       "weeks_declining": 4,
-      "key_arxiv_ids": ["2605.17307", "2605.19278"],
+      "key_arxiv_ids": [
+        "2605.17307",
+        "2605.19278"
+      ],
       "note": "ML/RL fails HAC-robust inference across Nasdaq-100/Nikkei/Euro Stoxx. Best forecast MSE ≠ best Sharpe. No new papers W22-W25. Lowest paper count of all W21 themes.",
       "saturated_at": "2026-W25"
     },
@@ -76,7 +91,18 @@
       "n_papers_total": 10,
       "status": "consolidating",
       "weeks_declining": 0,
-      "key_arxiv_ids": ["2605.27848", "2605.30943", "2606.06190", "2606.09478", "2606.20145", "2606.23492", "2606.27932", "2606.31251", "2606.31475", "2607.06117"],
+      "key_arxiv_ids": [
+        "2605.27848",
+        "2605.30943",
+        "2606.06190",
+        "2606.09478",
+        "2606.20145",
+        "2606.23492",
+        "2606.27932",
+        "2606.31251",
+        "2606.31475",
+        "2607.06117"
+      ],
       "note": "MERGED 2026-W28 from two previously separate, fading themes ('regime_detection_markov' T6 W23-W25, 'regime_conditioned_vol_forecasting' T7 W24-W25) per the W25 note's own contingency ('if W26 brings no T7/T6/T4 papers: merge and freeze'). W26/W27 brought the OPPOSITE of silence — a 3-week synthesis gap meant this merge/freeze decision was about to be made on stale evidence. Actual gap-window activity: W26 continuous-HMM heavy-tail equity VaR (2606.23492); W27 rough-vol/Grünwald-Letnikov regime detection (2606.27932), 'financial rogue waves' Schrödinger/Anderson-localization early-warning detector on VIX/VXO/VSTOXX (2606.31475, TEST_LATER), GAMLSS/ZAGA regime-conditional distributional strategy comparison (2606.31251, REFERENCE_ONLY); W28 relief-gated regime rotation with signal-frozen-at-screening / weights-only-walk-forward protocol (2607.06117, TEST_LATER). 5 distinct methodological traditions, 5 of the last 6 weeks touched (W23-W24, W26-W28) — genuine consolidation, not noise. None individually clear TEST_NOW (all single-asset equity/vol-index studies, no crypto), but H002's evidence base is now the strongest of any open Strategy A hypothesis.",
       "operational_actions": [
         "H002 (Strategy A vol-ratio scalar) pre-registration is now overdue relative to its evidence base — 10 papers, 7 weeks, still gated on H004 resolving the denominator choice"
@@ -89,7 +115,12 @@
       "n_papers_total": 4,
       "status": "declining",
       "weeks_declining": 1,
-      "key_arxiv_ids": ["2606.07059", "2606.13419", "2606.15715", "2606.16269"],
+      "key_arxiv_ids": [
+        "2606.07059",
+        "2606.13419",
+        "2606.15715",
+        "2606.16269"
+      ],
       "note": "Downgraded from CONSOLIDATING (W25) to DECLINING: zero new papers across the full W26-W28 window (3 weeks). The two operational actions it generated (TWAP protocol check, event-time impact calibration) are unresolved regardless of citation momentum — see H006 and Strategy B mainnet urgency (~2026-07-17) in current synthesis.",
       "operational_actions": [
         "Verify HL API supports TWAP protocol at $1K-$5K notional (H006 check, <1h, before mainnet) — STILL UNRESOLVED, mainnet now ~5 days out as of 2026-07-12",
@@ -104,7 +135,10 @@
       "n_papers_total": 2,
       "status": "declining",
       "weeks_declining": 1,
-      "key_arxiv_ids": ["2606.16840", "2606.20145"],
+      "key_arxiv_ids": [
+        "2606.16840",
+        "2606.20145"
+      ],
       "note": "2606.16840: lower tail copula of 13 cryptos near-complete (crashes synchronized), upper tail sparse (rallies fragment); standard models underestimate joint-crash prob ~8x. 2606.20145: vol increases quadratically with trend strength, asymmetric down>up (REFERENCE_ONLY). Common thread: left tail of crypto markets is qualitatively different from right tail. Downgraded to DECLINING 2026-W28: zero corroborating papers across the W26-W28 gap — the third independent paper needed to confirm the trend never arrived. H005 (correlation-spike guardrail) remains open but unreinforced.",
       "skeptic": "2606.16840 and 2606.20145 share asymmetry framing but study different mechanisms (copula structure vs vol forecasting). Post-hoc labeling risk.",
       "saturated_at": null
@@ -116,7 +150,11 @@
       "n_papers_total": 4,
       "status": "declining",
       "weeks_declining": 1,
-      "key_arxiv_ids": ["2607.00475", "2607.01550", "2607.01705"],
+      "key_arxiv_ids": [
+        "2607.00475",
+        "2607.01550",
+        "2607.01705"
+      ],
       "note": "First tracked entry (papers dated W27, 06-29→07-05, surfaced only now due to the W26/W27 synthesis gap). Four papers in a single week, all bearing on trend-following's economic viability: 2607.01550 (CFM: Kurth/Eisler/Rej/Bouchaud — tick-size-normalized-by-vol separates trend-dead from trend-alive futures post-2009, ~100 instruments 1995-2025, REFERENCE_ONLY but institutional-quality and directly relevant to Strategy A); 2607.00475 (end-to-end ML portfolio policy vs TSMOM benchmark on 16 CME futures, REFERENCE_ONLY, N<30); 2607.01705 (theoretical: MACD emerges endogenously as optimal filter for two-timescale latent drift, READ only, no empirical test). Flagged DECLINING already per this tracker's own convention (zero papers the week immediately after first appearance, same rule applied to T7 at its W24→W25 transition) — but this is a first-week artifact, not yet a real decay signal; the CFM paper alone (2607.01550) generated H007 and deserves a genuine second data point before being written off.",
       "strategy_link": "A — spawned H007 (crypto tick-size/vol diagnostic vs CFM trend-survival threshold)"
     }
@@ -131,7 +169,9 @@
       "data_required": "HL 8h funding rates BTC/ETH/SOL (data/funding_carry/, ~8 months from Oct 2025)",
       "cost_to_test": "LOW",
       "conflict_with_archived": "none",
-      "origin_arxiv": ["2605.06405"],
+      "origin_arxiv": [
+        "2605.06405"
+      ],
       "priority_note": "W25 P1 (combined with H003 + H006 TWAP add-on). Mainnet launch ~2026-07-17 (~4 weeks) creates urgency."
     },
     {
@@ -149,9 +189,15 @@
         "quantocracy_rethinking_trend_following_optimal_regime_dependen_20260523"
       ],
       "additional_support": {
-        "w23": ["2605.30943 — vol-conditioned regime homogeneity confirms vol_5d/vol_28d as transitional-regime proxy"],
-        "w24": ["2606.09478 (T7) — regime-conditioned vol forecasting outperforms single-scale GARCH in strict WF OOS"],
-        "w25": ["2606.20145 (adjacent, REFERENCE_ONLY) — trend-polynomial vol conditioning; leverage effect asymmetry reinforces down-trend vol amplification mechanism"]
+        "w23": [
+          "2605.30943 — vol-conditioned regime homogeneity confirms vol_5d/vol_28d as transitional-regime proxy"
+        ],
+        "w24": [
+          "2606.09478 (T7) — regime-conditioned vol forecasting outperforms single-scale GARCH in strict WF OOS"
+        ],
+        "w25": [
+          "2606.20145 (adjacent, REFERENCE_ONLY) — trend-polynomial vol conditioning; leverage effect asymmetry reinforces down-trend vol amplification mechanism"
+        ]
       },
       "elevation_status": "pre-registration candidate — 4-source evidence base across 5 weeks (T4 W21, T6/2605.30943 W23, T7/2606.09478 W24, 2606.20145 adjacent W25). Pre-registration document should be drafted after H004 resolves denominator choice.",
       "denominator_pending": "Resolve via H004 IC feasibility before writing pre-registration"
@@ -163,12 +209,17 @@
       "status": "open",
       "linked_strategy": "B",
       "data_required": {
-        "available": ["HL 8h funding rates BTC/ETH/SOL (data/funding_carry/, Oct 2025 onwards)", "VIX daily via yfinance ^VIX"],
+        "available": [
+          "HL 8h funding rates BTC/ETH/SOL (data/funding_carry/, Oct 2025 onwards)",
+          "VIX daily via yfinance ^VIX"
+        ],
         "gap": "~8 months of HL funding data. VIX>25 events in window: estimated 2-5. N_events may be <10 (underpowered)."
       },
       "cost_to_test": "LOW",
       "conflict_with_archived": "none — archived 'Macro overlay' (CLAUDE.md ✗) refers to directional alpha overlays on TSMOM (L17/L18 sentiment proxies). H003 is a risk gate (kill-switch) on delta-neutral carry, not a directional overlay.",
-      "origin_arxiv": ["2605.30442"],
+      "origin_arxiv": [
+        "2605.30442"
+      ],
       "economic_mechanism": "Fiat turbulence (VIX-correlated) is the primary stress propagation channel (2605.30442) — precedes crypto repricing. During risk-off, institutional leveraged long demand collapses on crypto perps 12-24h before spot reprices, compressing funding rates. VIX>25 identifies onset of this sequence. Kill-switch: reduce Strategy B 50% or exit fully when VIX closes >25; re-enter when VIX <20 on close.",
       "additional_support_w25": "2606.16840 (T9) confirms lower tail copula near-complete during crash regimes — VIX>25 is a plausible trigger for the crash copula onset, reinforcing H003 mechanism.",
       "caveat": "If N_events <10 in available data window, skip IC test and defer to 2026-10-01 (12+ months HL data). Note VIX>25 as manual monitoring threshold in the interim.",
@@ -183,8 +234,12 @@
       "data_required": "BTC/ETH/SOL daily returns (Binance klines, already in Strategy A pipeline). No new data fetch required.",
       "cost_to_test": "LOW",
       "conflict_with_archived": "none — Strategy A's 28-bar window is canonical but no alternative vol estimator has been tested or archived. HAR-TSMOM not in archived research history.",
-      "origin_arxiv": ["2606.11962"],
-      "origin_themes": ["T7 (2606.06190 + 2606.09478) — regime-conditioned vol forecasting outperforms single-scale GARCH"],
+      "origin_arxiv": [
+        "2606.11962"
+      ],
+      "origin_themes": [
+        "T7 (2606.06190 + 2606.09478) — regime-conditioned vol forecasting outperforms single-scale GARCH"
+      ],
       "economic_mechanism": "BTC/ETH/SOL realized vol has long memory (Hurst H ~0.6-0.8). HAR(1,5,22) decomposes vol into daily/weekly/monthly components, providing earlier detection of vol expansion via weekly and monthly components already trending upward. The 28-bar rolling window lags because it is dominated by recent low-vol observations. This lag contributed to over-sizing just before the 2026-05-11 propfirm breach.",
       "interaction_with_h002": "H004 resolves the base vol question before H002 pre-registration. If RMSE(vol_HAR) / RMSE(vol_28d) < 0.95: H002 pre-registration uses vol_HAR as base (position = tanh_signal × clamp(vol_5d / vol_HAR, 0.5, 2.0)). If ≥0.95: close H004, H002 proceeds with vol_28d unchanged.",
       "success_criterion": "RMSE improvement ≥5% on holdout 2024-2026 → incorporate. <5% → close H004.",
@@ -199,7 +254,9 @@
       "data_required": "BTC/ETH/SOL daily returns (already in Strategy A pipeline). No new data needed.",
       "cost_to_test": "LOW",
       "conflict_with_archived": "none — L11 establishes average correlation ≥0.80 but does not address tail copula trigger or proactive guardrail mechanics. No prior guardrail research archived.",
-      "origin_arxiv": ["2606.16840"],
+      "origin_arxiv": [
+        "2606.16840"
+      ],
       "economic_mechanism": "L11 establishes baseline BTC/ETH/SOL correlation ≥0.80 in all regimes. 2606.16840 shows that during crashes, the effective copula approaches completeness — standard models underestimate joint-crash prob by ~8×. When rolling 3d pairwise correlation of negative-return days exceeds 0.90 simultaneously across all three pairs, the portfolio has entered the high-density lower tail copula region. A proactive 50% size reduction at this point costs at most 3-4 days of carry; it reduces P(MAX_TOTAL_DD breach) from the tail copula regime materially.",
       "success_criterion": "N_events ≥ 10 (2020-2026) AND t_HAC(IC) > 2.0 → register as Strategy A modification candidate. N < 10 → document as manual monitoring heuristic (threshold: all 3 pairs > 0.90 AND all 3 daily returns negative), revisit when 5y+ daily data available.",
       "priority_note": "W25 P2 add-on to H004 session (~1h additional). Strategy A modification #1 candidate (alongside H002 and H004 — prioritize by expected PnL impact before committing).",
@@ -214,7 +271,9 @@
       "data_required": "No research data needed. API documentation check + one TWAP paper trade at testnet scale to verify.",
       "cost_to_test": "LOW",
       "conflict_with_archived": "none — Strategy B's execution method (IOC) has never been formally evaluated against TWAP alternatives.",
-      "origin_arxiv": ["2606.15715"],
+      "origin_arxiv": [
+        "2606.15715"
+      ],
       "economic_mechanism": "Visible TWAP execution on HL broadcasts the order schedule, allowing liquidity providers to post contra-side limit orders in advance, reducing spread and adverse selection premium paid by the executor. Hidden IOC orders trigger informed participants to lean directionally, amplifying execution costs. At $1K-$5K mainnet notional, TWAP over 15-30 min window should reduce per-trade drag vs IOC.",
       "success_criterion": "Binary: HL API supports TWAP at $1K-$5K notional → implement for mainnet. Does not support → document limitation, keep IOC with event-time impact calibration.",
       "priority_note": "W25 P1 add-on to H001+H003 session (<1h). Pre-mainnet operational decision — must resolve before launch."
@@ -228,7 +287,9 @@
       "data_required": "HL perpetual tick sizes (fetchable via HL API, not yet in data/) + existing vol_28d pipeline (already computed for Strategy A). No new market data fetch beyond tick-size metadata.",
       "cost_to_test": "LOW",
       "conflict_with_archived": "none — risk diagnostic, not a new signal; does not consume Strategy A's 3-modification budget.",
-      "origin_arxiv": ["2607.01550"],
+      "origin_arxiv": [
+        "2607.01550"
+      ],
       "economic_mechanism": "CFM (2607.01550) shows tick-size/vol is the variable separating trend collapse from survival in traditional futures — small tick breaks the self-reinforcing market-impact channel that sustains trend. Crypto perpetuals have effectively continuous tick size relative to price/vol, which by this mechanism should place BTC/ETH/SOL in the 'trend dead' bucket — yet Strategy A shows Sharpe 1.33 OOS. Either crypto trend survives via a different channel (market immaturity, uncrowded retail order flow) with a possibly shorter half-life than assumed, or the mechanism doesn't generalize outside traditional-futures microstructure (informative null either way).",
       "success_criterion": "Document the computed ratio and a qualitative verdict (falls in 'dead' or 'alive' bucket per the paper's description) in Strategy A's risk notes — diagnostic only, not a backtest gate.",
       "priority_note": "W28 P2 (<1h, does not compete with Strategy B mainnet checklist for time)."
@@ -245,7 +306,11 @@
   "pipeline_notes": {
     "first_run_week": "2026-W21",
     "requires_human_rate_week1": 0.84,
-    "handlers_needed": ["StressTestHandler", "RegimeFilterHandler_complete", "ExitRuleHandler"],
+    "handlers_needed": [
+      "StressTestHandler",
+      "RegimeFilterHandler_complete",
+      "ExitRuleHandler"
+    ],
     "noise_items_to_filter": [
       "hn_quant_launch_hn_promoted_yc_w21",
       "quantocracy_quant_mashup_homepage",
@@ -260,6 +325,7 @@
     "w27_note": "6 papers retained across 06-29→07-03 (CryptoGAT, covariance heavy-tails, rough-vol regime detection, 'Bounce Has No Direction', liquidity audit, GAMLSS regime-conditional comparison, financial rogue waves, parametric portfolio policies, tail risk CVaR+trend, CFM trend-death mechanism, fast/slow momentum drift theory — 10 papers total across the week, corrected count). 4 DEEP_DIVE (Bounce→REFERENCE_ONLY, GAMLSS→REFERENCE_ONLY, rogue-waves→TEST_LATER, parametric-portfolio→REFERENCE_ONLY, CFM-trend→REFERENCE_ONLY = 5 DEEP_DIVE). Highest-density week of the whole gap; backfilled into W28 synthesis (regime-conditioning + new trend_following_structural_mechanism themes).",
     "w28_note": "07-06: total infra failure (both direct fetch and VPS staging fallback stale/out of window) — 0 papers, explicitly NOT a 'no relevant papers' outcome. 07-07: 2 retained, both DEEP_DIVE (look-ahead-freedom formal verification tool → TEST_LATER; vol forecasting foundation models vs HAR → REFERENCE_ONLY). 07-08: 1 retained, DEEP_DIVE (relief-gated regime rotation → TEST_LATER). No files for 07-09/07-10 (Thu/Fri) — second consecutive gap in the same week worth watching; no 07-11/07-12 (weekend, expected per Mon-Fri cron).",
     "w29_note": "STRUCTURAL FAILURE in the daily arxiv-curation routine, distinct from the W26/W27 weekly-synthesis gap: zero daily selection files (`YYYY-MM-DD.md`/`_analysis.md`) produced for the entire 07-09→07-19 window (11 days), while the upstream VPS raw-fetch → `_staging/*.json` pipeline stayed healthy throughout (populated JSON for 07-09, 07-10, 07-13, 07-14, 07-15, 07-16, 07-17; git-confirmed committed on schedule). The daily-curation step (staging → dated .md selection/DEEP_DIVE triage) simply stopped producing output after 07-08 with no error visible in this repo. This weekly-synthesis routine itself ran on schedule (no W29 gap) — the outage is entirely upstream and unrelated to the W26/W27 fix. 0 papers retained for W29 synthesis as a direct consequence; theme statuses in themes_tracked left unchanged this week per the 'don't penalize decline counters on a known pipeline outage' rule (see 2026-W29.md §0). Flag for human operator: diagnose whatever schedules the daily arxiv-curation routine (same class of blind spot as synthesis_gap_w26_w27, never actioned for this sibling routine). ~7 days of un-triaged papers sit in _staging/ pending backfill once fixed.",
-    "w30_note": "ESCALATION — the W29 outage did not self-heal, and a second layer has now failed on top of it. Daily-curation gap: still 0 selection files since 07-08 (now 18 days, 07-09→07-26). Raw-fetch layer, which W29 verified healthy through 07-17: only ONE commit to `_automation/arxiv/_staging/` in the 07-18→07-26 window (`28ee22a data: arxiv distilled fetch 2026-07-20`), vs daily commits before. Sibling scraper `_automation/alpha_hunt/` fetched normally all week (multiple commits/day through 07-26) — rules out a VPS-wide outage, isolates the fault to the arxiv-specific fetch/curation chain. 0 papers retained for W30 as a direct consequence; theme statuses left unchanged again (2nd consecutive frozen week) but flagged in 2026-W30.md §2 that a 3rd consecutive freeze at W31 should not be automatic. Third consecutive weekly synthesis (W28/W29/W30) reporting the same unresolved failure family, now worse not better — escalated via push notification this cycle rather than filed as a fourth quiet repo note. Also unresolved: Strategy B mainnet go-live (~2026-07-17 target) now 9 days overdue with `_meta/current_focus.md` still 46 days stale, 4th synthesis cycle raising it (W25→W28→W29→W30)."
+    "w30_note": "ESCALATION — the W29 outage did not self-heal, and a second layer has now failed on top of it. Daily-curation gap: still 0 selection files since 07-08 (now 18 days, 07-09→07-26). Raw-fetch layer, which W29 verified healthy through 07-17: only ONE commit to `_automation/arxiv/_staging/` in the 07-18→07-26 window (`28ee22a data: arxiv distilled fetch 2026-07-20`), vs daily commits before. Sibling scraper `_automation/alpha_hunt/` fetched normally all week (multiple commits/day through 07-26) — rules out a VPS-wide outage, isolates the fault to the arxiv-specific fetch/curation chain. 0 papers retained for W30 as a direct consequence; theme statuses left unchanged again (2nd consecutive frozen week) but flagged in 2026-W30.md §2 that a 3rd consecutive freeze at W31 should not be automatic. Third consecutive weekly synthesis (W28/W29/W30) reporting the same unresolved failure family, now worse not better — escalated via push notification this cycle rather than filed as a fourth quiet repo note. Also unresolved: Strategy B mainnet go-live (~2026-07-17 target) now 9 days overdue with `_meta/current_focus.md` still 46 days stale, 4th synthesis cycle raising it (W25→W28→W29→W30).",
+    "w31_note": "MIXED — raw-fetch layer partially resumed (3 commits this week: 07-28 40 papers, 07-30 19, 07-31 14 = 73 new), rules out a fully dead VPS/cron. But the daily-curation step (staging → dated .md selection/DEEP_DIVE) is STILL completely silent — 0 files since 07-08, now 25 days. Summed backlog across every staging file dated after the last curated day (07-09,07-10,07-13,07-14,07-15,07-16,07-17,07-20,07-28,07-30,07-31): 122 fetched-but-untriaged papers. Theme statuses left unchanged a 4th cycle running, but on stronger grounds than W29/W30's default carry-forward: the 122-paper backlog is affirmative evidence literature volume has not declined, only monitoring did — decaying weeks_declining counters now would be actively wrong, not just conservative. Escalated via push notification this cycle (4th consecutive synthesis flagging this failure family: W28/W29/W30/W31). Strategy B mainnet (~2026-07-17 target) now 16 days overdue, current_focus.md still stamped 2026-06-10 (53 days stale), 5th synthesis cycle raising it (W25→W28→W29→W30→W31)."
   }
 }
