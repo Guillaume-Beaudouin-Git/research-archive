@@ -61,13 +61,27 @@ Usage:
     out = deflated_sharpe_ratio(returns, n_trials=50, periods_per_year=365,
                                 std_sr_trials=sd)
 
-NOTE ON `rf` (flagged 2026-07, deliberately NOT changed):
-    `_sharpe_ratio` subtracts a risk-free rate with default `rf=0.02`. The
-    project constitution requires returns to be EXCESS returns already. Passing
-    excess returns while leaving `rf=0.02` subtracts the cash rate twice
-    (~0.1 Sharpe at 1%/day vol). Pass `rf=0.0` when your series is already in
-    excess terms. The default is left untouched here to avoid silently moving
-    every historical number produced by this module.
+NOTE ON `rf` — DEFAULT CHANGED TO 0.0 ON 2026-08-04 (was 0.02):
+    Two independent failure modes, the second measured in production:
+
+    (1) DOUBLE SUBTRACTION (flagged 2026-07). The project constitution requires
+        returns to be EXCESS returns already. Passing excess returns with
+        `rf=0.02` subtracts the cash rate twice (~0.1 Sharpe at 1%/day vol).
+
+    (2) HORIZON MISMATCH (measured 2026-08-04, forced_flow_cooccurrence). The
+        line `rf_per_period = rf / periods_per_year` makes `periods_per_year`
+        do two incompatible jobs at once: annualisation factor AND risk-free
+        accrual divisor. Those coincide only for a CONTINUOUSLY INVESTED
+        series. For an EVENT strategy they diverge catastrophically:
+        quarter-end has ~4 events/year, so `rf_per_period = 0.02/4 = 50 bps`
+        is charged against a position held 60 MINUTES earning 2.89 bps.
+        Measured impact: Sharpe **-12.1 instead of +0.38**.
+
+    The safe default is therefore `rf=0.0`, and a warning now fires on any
+    non-zero `rf`. If you genuinely hold cash between periods and want the
+    financing charge, compute it from ACTUAL TIME AT RISK and subtract it from
+    the series yourself before calling this module — `periods_per_year` cannot
+    express it.
 """
 
 import math
@@ -192,18 +206,37 @@ def estimate_std_sr_trials(
 
 
 def _sharpe_ratio(returns: np.ndarray, periods_per_year: int = 365,
-                  rf: float = 0.02) -> float:
+                  rf: float = 0.0) -> float:
     """
     Annualised Sharpe Ratio from a series of per-period returns.
 
     Args:
-        returns:          Array of per-period returns (e.g. daily).
+        returns:          Array of per-period returns, ALREADY IN EXCESS TERMS
+                          (project constitution). Hence `rf` defaults to 0.
         periods_per_year: 365 for daily, 252 for business-day, 8760 for hourly.
-        rf:               Annual risk-free rate (default 2%).
+                          For an EVENT series this is the event count per year.
+        rf:               Annual risk-free rate. **Default 0.0 since 2026-08-04.**
+                          Any non-zero value warns: `rf/periods_per_year` charges
+                          a full inter-event interval of financing regardless of
+                          how long the position is actually held, which produced
+                          Sharpe -12.1 instead of +0.38 on a 4-events/year,
+                          60-minute-hold series. See module docstring.
 
     Returns:
         Annualised Sharpe Ratio (float).
     """
+    if rf != 0.0:
+        warnings.warn(
+            f"_sharpe_ratio called with rf={rf} (non-zero). Two known failure "
+            f"modes: (1) double subtraction if the series is already excess "
+            f"(constitution requires it); (2) horizon mismatch — "
+            f"rf/periods_per_year charges {rf / periods_per_year:.6f} per "
+            f"observation, i.e. a FULL inter-observation interval of financing, "
+            f"irrespective of actual time at risk. Prefer rf=0.0 and subtract a "
+            f"time-at-risk-based financing cost from the series yourself.",
+            DSRCalibrationWarning,
+            stacklevel=2,
+        )
     rf_per_period = rf / periods_per_year
     excess = returns - rf_per_period
     mean = excess.mean()
@@ -264,7 +297,7 @@ def probabilistic_sharpe_ratio(
     returns: np.ndarray,
     sr_benchmark: float,
     periods_per_year: int = 365,
-    rf: float = 0.02,
+    rf: float = 0.0,
 ) -> float:
     """
     Probabilistic Sharpe Ratio: probability that the true SR exceeds sr_benchmark,
@@ -308,7 +341,7 @@ def deflated_sharpe_ratio(
     returns: np.ndarray,
     n_trials: int,
     periods_per_year: int = 365,
-    rf: float = 0.02,
+    rf: float = 0.0,
     mean_sr_trials: float = 0.0,
     std_sr_trials: Optional[float] = None,
 ) -> dict:
