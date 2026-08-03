@@ -1,0 +1,44 @@
+{
+  "38bd7ddd1a5f6855de4c9d1e81a866d9": {
+    "first_seen": "2026-08-03 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Conditional projection methods for large-scale Bayesian VARs",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "7c5a50f9650b044b09e477552718b32e": {
+    "first_seen": "2026-08-03 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Distance Profile Embedding for Independence and Conditional Independence Testing",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a4e87bd25adc3080b276904f2d6c61b3": {
+    "first_seen": "2026-08-03 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Producing Policy Recommendations: from Statistical Decision Theory to Empirical ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a861d6710f2f23ebc416175ac525e816": {
+    "first_seen": "2026-08-03 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Robust Instrumental Variables: Sharp Rates and Inference under Adversarial Conta",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "af633ef3608bb10837a737bc1332d586": {
+    "first_seen": "2026-08-03 03:30",
+    "source": "arxiv_econ_em",
+    "title": "TerraNova: A Foundation Model for the Anthropocene",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "f3e5c1442f8e23bd2964c9fe06989279": {
+    "first_seen": "2026-08-03 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Microstructural Foundations of Rough Noise",
+    "decision": "rejected_L0",
+    "promising_file": null
+  }
+}
