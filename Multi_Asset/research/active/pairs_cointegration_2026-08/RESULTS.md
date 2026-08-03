@@ -364,7 +364,9 @@ mais adoucir la pénalité d'une espérance nulle laisse une espérance nulle.
 `code/stage_a2_diagnostics.py` (D1/D2/D3, gross gate, L25, L58) ·
 `code/stage_a3_powered.py` (trades non chevauchants, bootstrap par blocs, L38) ·
 `code/stage_b_strategy.py` (moteur intraday-flat, **écrit mais non exercé** — K1 a échoué avant).
-Sorties dans `outputs/` (tables de résultats, aucun blob de données).
+Sorties dans `outputs/` — **gitignored par convention du dépôt** (régénérables). La table complète
+des 171 paires, promise «rapportée intégralement» au pré-enregistrement, est donc **trackée** dans
+`APPENDIX_halflife_171.md`.
 
 ### 9.1 Incident de cache, et pourquoi les chiffres tiennent
 
