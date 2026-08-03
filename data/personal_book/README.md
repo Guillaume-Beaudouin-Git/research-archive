@@ -47,6 +47,22 @@ data/personal_book/
 | [`vix_soq_expiry_intraday.md`](_candidates/vix_soq_expiry_intraday.md) | Near-miss daily (t=1,76 sur VIXY < gate 2). Edge réel suspecté **intraday auction SOQ** — non mesurable sans data intraday VIXY/VIX futures. | Skew_horizon +1,43, décorrélé, ~12 évts/an. Le vrai edge vit en granularité SOQ-print. | `session_structural_dislocations/exploration_2026-06.md` |
 | [`mr_reversal_1d_spx.md`](_candidates/mr_reversal_1d_spx.md) | Skew daily +0,71 confirmé MAIS **délai+1 collapse SR 0,57→0,08** → probablement artefact bid-ask bounce close-print, non capturable retail. Prior = kill ; la re-mesure open→close confirmera très probablement. | t=3,61 raw, mais asymétrique (long-après-baisse SR 1,11 vs short SR 0,28) ; décay OOS 0,76→0,33. | `session_vol_tail/exploration_2026-06.md` |
 
+### ⚠ Orphelins de véhicule — ajoutés 2026-08-03
+
+**Trois edges d'affilée passent leurs contrôles de mécanisme et meurent sur la BARRIÈRE, le LEVIER
+ou le COÛT CFD — jamais sur le signal.** Ce n'est plus une coïncidence : le format propfirm
+sélectionne un profil que le retail ne peut pas produire (le profil « FTMO-suitable » est celui d'un
+**fournisseur de liquidité**, or nous payons le spread qu'il faudrait encaisser). Corollaire
+opérationnel : **matrice de véhicule AVANT backtest (L53)**, et tout edge tué sur le coût CFD ou sur
+le levier doit être re-testé ici avant d'être archivé.
+
+| Fiche | Bloc | Pourquoi candidat | Source |
+|---|---|---|---|
+| [`gold_overnight_reopen_mgc.md`](_candidates/gold_overnight_reopen_mgc.md) | **Le mieux mesuré du dépôt hors month-end.** t_HAC 4,82, DSR 0,99, WF 5/5, β 0,014. **SR 1,31 à 0,66 bps (futures)** vs 0,99 à 1,5 bps (CFD, sous le gate). Survit au retard d'entrée : **93 % à +10 min** post-2021, 18/20 ans positifs. Aucune nuit de swap. | ⚠ gap non tradable **doublé à 36,1 %** post-2021 (mort à 40 %) ; à lot fixe skew **+0,99 → −0,49**, queue −18,4 % en une séance ; **aucun panier** (l'argent DÉTRUIT le Sharpe). Inconnue restante : le spread réel à la réouverture. | `overnight_sleeve_reopen_2026-08/`, `close_continuation_gold_subwindows_2026-08/` §B |
+| [`xag_xau_leadlag_120m.md`](_candidates/xag_xau_leadlag_120m.md) | **UNDERPOWERED, pas rejeté.** 5/5 folds sur 19 ans, two-sided, placebo p=0,0000, L38 R² 0,6 %, survit à +15 min. DSR 0,610. **SR 0,491** (annualisé en √66, L47), +2,87 %/an à 1×. | Meurt sur la GÉOMÉTRIE : +10 % en 182 j exige **×6,9**, où **1 σ d'un trade = 5,00 % = la barrière journalière** ; pire trade **−25,15 %**. Intraday-flat ⇒ zéro swap hors CFD. ⚠ `\|IC\|` **CROÎT** avec l'horizon ⇒ **pas** fermé par la latence. | `statarb_multivariate_2026-08/` |
+| [`audusd_usdcad_pair.md`](_candidates/audusd_usdcad_pair.md) | **Kill de COÛT ⇒ rouvrable hors CFD.** Gross **+5,12 bps** IC95 [+2,79, +7,42], two-sided des deux côtés, L38 R² 0,003, **DSR 0,972 déflaté sur 171 paires**. Net CFD +1,07, IC **contient zéro** (coût = 79 % du gross). Véhicule : 6A/6C. | ⚠ **Seul survivant sur 171 paires**, dans une famille par ailleurs fermée (0/171 demi-vies compatibles séance ; cointégration ne tient pas ; 10/18 paires à jambes de signe opposé). Cas isolé à **re-prouver**, pas tête de famille. | `pairs_cointegration_2026-08/` |
+| [`eod_reversal_stocks_LITERATURE.md`](_candidates/eod_reversal_stocks_LITERATURE.md) | **Pointeur de littérature, ZÉRO mesure interne.** >20 % d'alpha brut annoncé, explicitement non-gamma (Baltussen-Da-Soebhag). Écarté du programme FTMO pour un problème d'**UNIVERS**, pas de coût. | **Bloqué sur la donnée** : exige une coupe d'actions individuelles, absente du dépôt ; levier données payantes fermé. Faire la **matrice de véhicule d'abord** — si le panier minimal ne tient pas dans le capital, ne pas coder une ligne. | `literature_sweep_2026-08/SWEEP.md` |
+
 ---
 
 ## Matrice de statut — tout l'arc de recherche
