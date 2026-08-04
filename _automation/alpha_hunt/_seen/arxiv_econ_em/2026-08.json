@@ -34,6 +34,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "eb228c73402c04400bc6eeedc5b87e8e": {
+    "first_seen": "2026-08-04 01:00",
+    "source": "arxiv_econ_em",
+    "title": "Monotone Response for Random Objects",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "f3e5c1442f8e23bd2964c9fe06989279": {
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
