@@ -1,4 +1,11 @@
 {
+  "02b5ba91ce923110bd33c362e2b6233a": {
+    "first_seen": "2026-08-04 11:00",
+    "source": "github_python",
+    "title": "RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "308c54aea93eef94b83e38361dbc8718": {
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
@@ -13,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "64408fc084b96191230bf17a012c646d": {
+    "first_seen": "2026-08-04 11:00",
+    "source": "github_python",
+    "title": "uber/ADR",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "81d75d47927c50c709e83364c6d9e06e": {
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
@@ -20,10 +34,31 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9222727545d834d0b796cce3bcbd9c17": {
+    "first_seen": "2026-08-04 11:00",
+    "source": "github_python",
+    "title": "Coldcard/firmware",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9e0c300681fe4e7505ca2decbf6e4996": {
     "first_seen": "2026-08-03 11:00",
     "source": "github_python",
     "title": "invoke-ai/InvokeAI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bd3af76e5404e9c5f010b10e54001e4f": {
+    "first_seen": "2026-08-04 11:00",
+    "source": "github_python",
+    "title": "spesmilo/electrum",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c5108899895805c469f2aae090111a4c": {
+    "first_seen": "2026-08-04 11:00",
+    "source": "github_python",
+    "title": "python/mypy",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -45,6 +80,13 @@
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
     "title": "abus-aikorea/voice-pro",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fa59958f2960232ef266ad319f4712a8": {
+    "first_seen": "2026-08-04 11:00",
+    "source": "github_python",
+    "title": "huangruiteng/loopx",
     "decision": "rejected_L0",
     "promising_file": null
   },
