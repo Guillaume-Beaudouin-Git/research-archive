@@ -1,0 +1,7 @@
+# Intermediaires ligne-a-ligne : REGENERABLES par code/step*.py, jamais commites
+# (regle "aucun blob data" / _meta/data_governance.md). Seuls les tableaux
+# agreges sont versionnes.
+step1_segments.csv
+step3_series.csv
+step4_excursions_*.csv
+step5_book_excursion.csv
