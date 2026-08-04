@@ -23,8 +23,8 @@ sources:
 |-----------|---------------------|------------------------|--------|
 | Profit target | ✓ 10% of initial capital | ✓ 5% of initial capital | trading-objectives/ |
 | Maximum Daily Loss | ✓ 5% of initial capital (recalculated daily at 00:00 CE(S)T) | ✓ 5% of initial capital | trading-objectives/ |
-| Maximum Total Loss | ✓ 10% of initial capital (high-water-marked, only increases) | ✓ 10% of initial capital | trading-objectives/ |
-| Min trading days | ✓ ≥4 trading days | ✓ ≥4 trading days | trading-objectives/ |
+| Maximum Total Loss | ✓ 10% of initial capital — **STATIQUE, ancré au capital initial** (corrigé 2026-08-04) | ✓ idem, statique | trading-objectives/ |
+| Min trading days | ✓ ≥4 trading days ⚠ **définition de « trading day » NON citée en source primaire** (voir ci-dessous) | ✓ ≥4 trading days | trading-objectives/ |
 | Max trading period | ✓ none (unlimited) | ✓ none (unlimited) | trading-objectives/ |
 
 ## 1-Step Challenge — Trading Objectives
@@ -37,6 +37,25 @@ sources:
 | Min trading days | ◐ ≥4 | tradingfinder 2026 |
 
 > ⚠️ 1-Step values are 2026-review-corroborated but not all directly quoted from ftmo.com — re-verify before purchasing a 1-Step.
+
+## ⚠ « Trading day » — DÉFINITION MANQUANTE EN SOURCE PRIMAIRE (relevé 2026-08-04)
+
+Toutes les autres règles de ce fichier sont citées **verbatim**. Celle-ci ne l'est pas : on sait
+qu'il faut **≥4 trading days**, on ne sait pas ce qui **compte** comme trading day.
+
+**Pourquoi c'est important** : une pièce entière du livre déployé — le **micro-ORB compteur de
+jours** (`micro_orb_day_counter`, US100.cash à 0.01 lot) — n'existe QUE pour satisfaire cette règle.
+Son audit (`Multi_Asset/research/active/audit_micro_orb_2026-08/`) montre qu'elle fait son travail
+(taux d'échec **0.00 %**, médiane **4 séances** = le minimum arithmétique), mais **on valide une
+pièce contre une règle qu'on n'a jamais lue à la source**.
+
+Questions ouvertes, toutes matérielles : une position **ouverte** suffit-elle, ou faut-il une
+position **fermée** ? un volume minimum ? un jour où l'on est en position depuis la veille sans
+nouvel ordre compte-t-il ? le jour est-il compté en heure de Prague (cohérent avec le reset 00:00
+CE(S)T) ?
+
+**À vérifier en source primaire avant tout travail sur le compteur.** Précédent : le « parc
+multi-comptes » a été instruit puis annulé faute d'avoir lu les T&C d'abord.
 
 ## Daily Loss Limit — mechanism
 
