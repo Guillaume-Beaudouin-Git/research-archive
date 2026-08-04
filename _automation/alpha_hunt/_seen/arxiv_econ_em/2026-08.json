@@ -1,4 +1,18 @@
 {
+  "07ff502c1a9210a4364000ebaccda007": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Double Machine Learning with High-dimensional Interactive Fixed Effects",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "34ebe209893184e5d68c34fc519113d8": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Measurement Error and Peer Effects in Networks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "38bd7ddd1a5f6855de4c9d1e81a866d9": {
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
@@ -6,10 +20,38 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "4ebe5cf482dc768551b991892f1c5311": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "A Simple Approximation to the Distribution of the Ridge Regression Estimator",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "5c91323c1ed4975430a1568fc2eabf4a": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "AI Governance for Institutional Readiness in Finance",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "7b52baaaf3665faf9fa1c60cd5a8c73f": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Measuring Product Quality Using Images: The CLIP Q-Score and an Application to R",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "7c5a50f9650b044b09e477552718b32e": {
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
     "title": "Distance Profile Embedding for Independence and Conditional Independence Testing",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "9100ef7d09a489e3c1dfe679d98e22de": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Social Effects with Randomized and Observational Network Data",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -34,6 +76,41 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "b6c114fc355b92939ca0d358f39c0383": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Monotonicity and Rigidity in Gaussian Inverse Regression: The One-Period Kyle Mo",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "c3e5672120f58f664ac178a7b08b42e5": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "High-Dimensional Panel Data Models with Interactive Fixed Effects: Beyond the Li",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d1970727232bee5cdd3344cfd1696f49": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "A Nonparametric Test for Cross-Unit Spillovers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d7044ea555ba824a11f510ea17932edf": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Peer Influence in Multilayer Networks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "debe05f7ed68797929fc7ac1ef8b1a58": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Regression with Observational Multilayered Network Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "eb228c73402c04400bc6eeedc5b87e8e": {
     "first_seen": "2026-08-04 01:00",
     "source": "arxiv_econ_em",
@@ -45,6 +122,13 @@
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
     "title": "Microstructural Foundations of Rough Noise",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f5a117f6c08127bc94e31e610ebdd66a": {
+    "first_seen": "2026-08-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "A Structural Matrix Autoregression Framework for International Spillovers",
     "decision": "rejected_L0",
     "promising_file": null
   }
