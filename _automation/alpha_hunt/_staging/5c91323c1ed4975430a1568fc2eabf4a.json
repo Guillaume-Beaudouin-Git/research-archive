@@ -1,0 +1,14 @@
+{
+  "hash": "5c91323c1ed4975430a1568fc2eabf4a",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.02311v1",
+  "title": "AI Governance for Institutional Readiness in Finance",
+  "url": "http://arxiv.org/abs/2608.02311v1",
+  "description": "Agentic AI is gaining acceptance in asset management, but governance has not kept pace: 88% of surveyed finance professionals report no operational governance framework for agentic AI despite universal awareness of its deployment, and only 24 of 75 large U.S. money managers disclosing AI use in Form ADV filings report a formal governance policy. We argue this gap is architectural, not cultural: governance built for deterministic systems assumes static validation. However, continuously retrained agentic policies violate static governance by design. We propose a four-layer framework (Policy, Engineering, Composition, Systemic) with computable instantiations: a regret-covariance statistic that detects policy drift from observed data alone, and a calibrated crowding model showing joint drawdown probability rising from 39.2% to 79.3% as institutions converge on correlated exposures. We support the framework with a study of a deployed LLM-embedding trading strategy and a contemporaneous discretionary fund blowup, clarifying which controls transfer across agentic and human-directed risk-taking. We also provide a 90-day framework implementation sequence for institutions.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "metrics"
+  ],
+  "captured": "2026-08-04 03:30 UTC"
+}

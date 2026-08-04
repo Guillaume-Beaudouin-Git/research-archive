@@ -13,10 +13,31 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "1f81e68d528a65b3542287a7f9c3acdb": {
+    "first_seen": "2026-08-04 06:00",
+    "source": "quantocracy",
+    "title": "Supertrend, flipped to death: the most-taught indicator on the internet [The Ref",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "26f5778970ba50c0017a0edccc83e871": {
     "first_seen": "2026-08-01 06:00",
     "source": "quantocracy",
     "title": "Bitcoin’s Overnight Returns Forecast the VIX [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "63133a0de9db060a3ee86597570f7cb2": {
+    "first_seen": "2026-08-04 06:00",
+    "source": "quantocracy",
+    "title": "Quantitativo weekly #4 [Quantitativo]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "65486b9d754b3ca40eec56713036d06b": {
+    "first_seen": "2026-08-04 06:00",
+    "source": "quantocracy",
+    "title": "Conformal Prediction in Quantitative Finance [Vertox Quant]",
     "decision": "accepted",
     "promising_file": null
   },
@@ -27,11 +48,32 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "a2638271adbcfeb032775f3ea2a0e423": {
+    "first_seen": "2026-08-04 06:00",
+    "source": "quantocracy",
+    "title": "Down June & July: 11 of 13 Septembers Closed Lower [Quantifiable Edges]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "ab686fb09a8ba83310587578c0b1394c": {
+    "first_seen": "2026-08-04 06:00",
+    "source": "quantocracy",
+    "title": "Making Option Pricing Models More Practical [Relative Value Arbitrage]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "e89bce0b4d726c5e94fcee126b2e4b7c": {
     "first_seen": "2026-08-01 06:00",
     "source": "quantocracy",
     "title": "Fair Value as an Adaptive Low-Pass Filter: LAFO for Mean Reversion [Aligrithm]",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "fe70544a6bd761256c10cccd441b8a46": {
+    "first_seen": "2026-08-04 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/03/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   }
 }
