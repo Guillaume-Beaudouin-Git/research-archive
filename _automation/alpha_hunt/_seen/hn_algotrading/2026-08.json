@@ -12,5 +12,12 @@
     "title": "Show HN: Project ESPAÑOL: Find level-appropriate Spanish-language poems",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "bdd50cf5f97d6d4919184013b2a638dc": {
+    "first_seen": "2026-08-05 15:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: Wordllama – Things you can do with the token embeddings of an LLM",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }
