@@ -6,10 +6,31 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "08b89e298b35e1e1a7233a415bf0d7b9": {
+    "first_seen": "2026-08-05 11:00",
+    "source": "github_python",
+    "title": "iam-veeramalla/aws-devops-zero-to-hero",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "219cad2352e1cacad33bcb53cf425163": {
+    "first_seen": "2026-08-05 11:00",
+    "source": "github_python",
+    "title": "sierra-research/tau2-bench",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "308c54aea93eef94b83e38361dbc8718": {
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
     "title": "Huanshere/VideoLingo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "535786d21f60bd4e20e4a499bd769ad0": {
+    "first_seen": "2026-08-05 11:00",
+    "source": "github_python",
+    "title": "mpfaffenberger/code_puppy",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -24,6 +45,20 @@
     "first_seen": "2026-08-04 11:00",
     "source": "github_python",
     "title": "uber/ADR",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "649bbbfc3fd1b8445be8967ba307382e": {
+    "first_seen": "2026-08-05 11:00",
+    "source": "github_python",
+    "title": "Comfy-Org/workflow_templates",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6b900dc1b42037dc94f2257866b81b0d": {
+    "first_seen": "2026-08-05 11:00",
+    "source": "github_python",
+    "title": "blader/humanizer",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -45,6 +80,13 @@
     "first_seen": "2026-08-03 11:00",
     "source": "github_python",
     "title": "invoke-ai/InvokeAI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ac08ae85b981c5fb0d2a4356a7e7d446": {
+    "first_seen": "2026-08-05 11:00",
+    "source": "github_python",
+    "title": "anandprtp/Antra",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -80,6 +122,13 @@
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
     "title": "abus-aikorea/voice-pro",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f7daa799ef12d0ae3d663363e7b99307": {
+    "first_seen": "2026-08-05 11:00",
+    "source": "github_python",
+    "title": "NovaSky-AI/SkyRL",
     "decision": "rejected_L0",
     "promising_file": null
   },
