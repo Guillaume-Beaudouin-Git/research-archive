@@ -1,0 +1,9 @@
+variant,denom,mode,budget_cal,p_pass,p_floor,p_daily,p_timeout,p_death,median_days,pace_now
+"DEPLOYED  pace ON, denom 91",91,coupled,91,0.61975,0.004325,0.375625,0.0003,0.37995,7,0.8
+pace OFF,,off,91,0.6021,0.00365,0.393025,0.001225,0.396675,5,1
+HIGH leg only (denom 91),91,hi_only,91,0.6036,0.00435,0.3919,0.00015,0.39625,5,1
+LOW leg only (denom 91),91,lo_only,91,0.6174,0.003625,0.3773,0.001675,0.380925,7,0.8
+"pace ON, denom 182",182,coupled,91,0.621975,0.003725,0.37305,0.00125,0.376775,7,0.8
+"A: horizon 182, denom 91 (A only)",91,coupled,182,0.619925,0.004325,0.37575,0,0.380075,7,0.8
+"A+B: horizon 182, denom 182",182,coupled,182,0.622675,0.0038,0.373525,0,0.377325,7,0.8
+"A, pace OFF, horizon 182",,off,182,0.602525,0.0038,0.393675,0,0.397475,5,1

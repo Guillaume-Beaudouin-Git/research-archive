@@ -1,0 +1,9 @@
+arm,n,p_pass,p_timeout,p_floor,p_daily,p_abandon,timeouts_at_or_above_target,median_timeout_equity
+cleanroom CFG_LIVE (first pass)  wall 91,432,0.259259,0.196759,0.368056,0.118056,0.0578704,0.882353,11073.4
+cleanroom + fix_deadlock          wall 91,432,0.43287,0.0231481,0.368056,0.118056,0.0578704,0,9929.61
+cleanroom CFG_LIVE (first pass)  wall 182,432,0.266204,0.173611,0.375,0.127315,0.0578704,1,11097.1
+cleanroom + fix_deadlock          wall 182,432,0.439815,0,0.375,0.127315,0.0578704,,
+"v2.2 engine, micro-ORB OFF        wall 91",432,0.259259,0.196759,0.368056,0.118056,0.0578704,0.882353,11073.4
+"v2.2 engine, micro-ORB ON (spec)  wall 91",432,0.449074,0.0231481,0.365741,0.104167,0.0578704,0,9934.68
+"v2.2 engine, micro-ORB OFF        wall 182",432,0.266204,0.173611,0.375,0.127315,0.0578704,1,11097.1
+"v2.2 engine, micro-ORB ON (spec)  wall 182",432,0.446759,0,0.37037,0.122685,0.0601852,,
