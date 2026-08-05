@@ -1,0 +1,7 @@
+V scenario,V,rien,A,B,A+B,best
+"MONO / IS  2013-17  (deployed book, weak regime)",347,-0.05872,0.52904,-0.0117192,0.576784,A+B
+"MONO / POOLED       (deployed book, BASELINE)",782,3.47017,4.14441,3.56729,4.19718,A+B
+"MONO / OOS 2020-24  (deployed book, strong regime)",1195,6.8206,7.57693,6.96529,7.63448,A+B
+FULL 4-sleeve / POOLED (if gold + J1 re-arm),1347,8.05368,8.84023,8.21589,8.89954,A+B
+"FULL 4-sleeve / OOS    (if gold + J1 re-arm, strong)",2105,14.2029,15.1401,14.4524,15.2082,A+B
+"first pass's V (OOS gross, NOT trader share)",2529,17.6425,18.6641,17.9409,18.737,A+B
