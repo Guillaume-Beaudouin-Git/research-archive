@@ -20,6 +20,20 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "3ce0dfa20a1b9b32a100fbe78bc39f1f": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Testing for Smooth Structural Change in Cointegrated Systems",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "40e2d79ee74eb7193bcd140aacb7cdb7": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "When Predictions Become Regressors: A Split-Sample Correction for Biases in Down",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "4ebe5cf482dc768551b991892f1c5311": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -27,11 +41,25 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "5a79698e349486f06ed454fa69b7b22e": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Microstructural Foundations of Rough Noise",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5c91323c1ed4975430a1568fc2eabf4a": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
     "title": "AI Governance for Institutional Readiness in Finance",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "6c0c9d341d7d83f2edf1fad6fbfad4ec": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Bandwidth-Free Inference for Recursive Nonlinear Impulse Response Functions",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "7b52baaaf3665faf9fa1c60cd5a8c73f": {
@@ -45,6 +73,13 @@
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
     "title": "Distance Profile Embedding for Independence and Conditional Independence Testing",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8d37db00952f547497a16fe876e719ea": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Identification and Information after Nuisance Projection",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -62,6 +97,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a68e2139f65845de817dc1234ea5e07d": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "A fully nonlinear structural vector autoregressive model identified via independ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a861d6710f2f23ebc416175ac525e816": {
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
@@ -74,6 +116,13 @@
     "source": "arxiv_econ_em",
     "title": "TerraNova: A Foundation Model for the Anthropocene",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "afc4bddff8b83ed7e05b1961fa94bb34": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Producing Policy Recommendations: from Statistical Decision Theory to Empirical ",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "b6c114fc355b92939ca0d358f39c0383": {
@@ -108,6 +157,13 @@
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
     "title": "Regression with Observational Multilayered Network Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e2d9b7b96c97177d5cfc377c0e906061": {
+    "first_seen": "2026-08-05 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Difference-in-differences with \"bad controls\"",
     "decision": "rejected_L0",
     "promising_file": null
   },
