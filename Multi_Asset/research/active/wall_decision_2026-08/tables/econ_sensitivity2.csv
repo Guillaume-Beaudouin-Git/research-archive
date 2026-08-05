@@ -1,0 +1,7 @@
+scenario,V,w65,w91,w130,w182,w270,w360,argmax,any_positive
+"MONO / IS  2013-17  (deployed book, weak regime)",347,-0.518958,-0.05872,0.375092,0.576784,0.52458,0.858132,360,True
+"MONO / POOLED       (deployed book, BASELINE)",782,2.96923,3.47017,4.01222,4.19718,3.91384,4.54938,360,True
+"MONO / OOS 2020-24  (deployed book, strong regime)",1195,6.28101,6.8206,7.46539,7.63448,7.13169,8.05394,360,True
+FULL 4-sleeve / POOLED (if gold + J1 re-arm),1347,7.49987,8.05368,8.7363,8.89954,8.31598,9.34376,360,True
+"FULL 4-sleeve / OOS    (if gold + J1 re-arm, strong)",2105,13.5781,14.2029,15.0741,15.2082,14.2219,15.7759,360,True
+"first pass's V (OOS gross, NOT trader share)",2529,16.9781,17.6425,18.6192,18.737,17.5254,19.3738,360,True

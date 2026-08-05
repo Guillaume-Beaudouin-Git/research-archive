@@ -1,0 +1,41 @@
+wall,metric,leg,estimand,arms,delta_pt,ci_lo,ci_hi,placebo_mean,edge_pt,mde80_pt,sig,block_cohorts,n_eff
+91,p_campaign,HIGH,main,hi_only-off,-1.85185,-5.55556,1.38889,1.96759,-3.81944,4.96032,ns,7,61.7
+91,p_campaign,HIGH,interaction,coupled-lo_only,0.462963,-3.24074,4.62963,1.71682,-1.25386,5.62169,ns,7,61.7
+91,p_campaign,LOW,main,lo_only-off,-6.25,-10.6481,-2.08333,-0.366512,-5.88349,6.11772,YES,7,61.7
+91,p_campaign,LOW,interaction,coupled-hi_only,-3.93519,-8.7963,1.15741,-0.617284,-3.3179,7.10979,ns,7,61.7
+91,p_campaign,BOTH,aggregate (first pass),coupled-off,-5.78704,-11.3426,-0.231481,1.35031,-7.13735,7.93651,YES,7,61.7
+91,p_1try,HIGH,main,hi_only-off,2.08333,0,4.62963,0.559414,1.52392,3.30688,ns,7,61.7
+91,p_1try,HIGH,interaction,coupled-lo_only,1.38889,-0.462963,3.47222,0.771605,0.617284,2.81085,ns,7,61.7
+91,p_1try,LOW,main,lo_only-off,-0.925926,-3.00926,1.38889,-0.270062,-0.655864,3.14153,ns,7,61.7
+91,p_1try,LOW,interaction,coupled-hi_only,-1.62037,-3.93519,0.694444,-0.0578704,-1.5625,3.30688,ns,7,61.7
+91,p_1try,BOTH,aggregate (first pass),coupled-off,0.462963,-2.31481,3.7037,0.501543,-0.0385802,4.29894,ns,7,61.7
+91,p_floor|1try,HIGH,main,hi_only-off,0.694444,-2.5463,3.24074,2.00617,-1.31173,4.1336,ns,7,61.7
+91,p_floor|1try,HIGH,interaction,coupled-lo_only,2.08333,-0.694444,4.86111,2.95139,-0.868056,3.96825,ns,7,61.7
+91,p_floor|1try,LOW,main,lo_only-off,-1.15741,-3.7037,0.694444,-0.964506,-0.192901,3.14153,ns,7,61.7
+91,p_floor|1try,LOW,interaction,coupled-hi_only,0.231481,-1.85185,2.31481,-0.0192901,0.250772,2.97619,ns,7,61.7
+91,p_floor|1try,BOTH,aggregate (first pass),coupled-off,0.925926,-2.77778,4.16667,1.98688,-1.06096,4.96032,ns,7,61.7
+91,p_daily|1try,HIGH,main,hi_only-off,-0.231481,-2.31481,2.08333,-0.964506,0.733025,3.14153,ns,7,61.7
+91,p_daily|1try,HIGH,interaction,coupled-lo_only,-0.462963,-2.5463,1.85185,-1.35031,0.887346,3.14153,ns,7,61.7
+91,p_daily|1try,LOW,main,lo_only-off,0.925926,-1.38889,3.24074,0.790895,0.135031,3.30688,ns,7,61.7
+91,p_daily|1try,LOW,interaction,coupled-hi_only,0.694444,-1.38889,2.5463,0.405093,0.289352,2.81085,ns,7,61.7
+91,p_daily|1try,BOTH,aggregate (first pass),coupled-off,0.462963,-2.31481,3.00926,-0.559414,1.02238,3.80291,ns,7,61.7
+182,p_campaign,HIGH,main,hi_only-off,1.38889,-0.925926,3.47222,2.10262,-0.713735,3.14153,ns,10,43.2
+182,p_campaign,HIGH,interaction,coupled-lo_only,1.85185,-2.31481,4.62963,0.733025,1.11883,4.96032,ns,10,43.2
+182,p_campaign,LOW,main,lo_only-off,-7.40741,-14.8148,-1.38889,0.752315,-8.15972,9.58995,YES,10,43.2
+182,p_campaign,LOW,interaction,coupled-hi_only,-6.94444,-13.6574,-3.24074,-0.617284,-6.32716,7.44048,YES,10,43.2
+182,p_campaign,BOTH,aggregate (first pass),coupled-off,-5.55556,-12.7315,-1.15741,1.48534,-7.0409,8.2672,YES,10,43.2
+182,p_1try,HIGH,main,hi_only-off,1.15741,-0.231481,2.77778,0.289352,0.868056,2.14947,ns,10,43.2
+182,p_1try,HIGH,interaction,coupled-lo_only,1.38889,0,3.00926,0.559414,0.829475,2.14947,ns,10,43.2
+182,p_1try,LOW,main,lo_only-off,-1.15741,-3.7037,1.62037,-0.231481,-0.925926,3.80291,ns,10,43.2
+182,p_1try,LOW,interaction,coupled-hi_only,-0.925926,-3.00926,1.38889,0.0385802,-0.964506,3.14153,ns,10,43.2
+182,p_1try,BOTH,aggregate (first pass),coupled-off,0.231481,-2.31481,3.24074,0.327932,-0.0964506,3.96825,ns,10,43.2
+182,p_floor|1try,HIGH,main,hi_only-off,-0.231481,-3.24074,2.31481,1.50463,-1.73611,3.96825,ns,10,43.2
+182,p_floor|1try,HIGH,interaction,coupled-lo_only,0.925926,-2.31481,4.16667,2.19907,-1.27315,4.62963,ns,10,43.2
+182,p_floor|1try,LOW,main,lo_only-off,-0.231481,-3.00926,1.85185,-1.00309,0.771605,3.47222,ns,10,43.2
+182,p_floor|1try,LOW,interaction,coupled-hi_only,0.925926,-1.62037,3.00926,-0.308642,1.23457,3.30688,ns,10,43.2
+182,p_floor|1try,BOTH,aggregate (first pass),coupled-off,0.694444,-3.24074,3.93519,1.19599,-0.501543,5.12566,ns,10,43.2
+182,p_daily|1try,HIGH,main,hi_only-off,0.925926,-0.694444,2.5463,-0.713735,1.63966,2.31481,ns,10,43.2
+182,p_daily|1try,HIGH,interaction,coupled-lo_only,0.694444,-1.15741,2.78356,-0.713735,1.40818,2.81498,ns,10,43.2
+182,p_daily|1try,LOW,main,lo_only-off,0.231481,-2.31481,2.5463,0.868056,-0.636574,3.47222,ns,10,43.2
+182,p_daily|1try,LOW,interaction,coupled-hi_only,0,-2.31481,1.85185,0.868056,-0.868056,2.97619,ns,10,43.2
+182,p_daily|1try,BOTH,aggregate (first pass),coupled-off,0.925926,-1.62037,3.47222,0.154321,0.771605,3.63757,ns,10,43.2
