@@ -6,6 +6,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "1bc01ab3d1f89ab2f29e1dc40e409756": {
+    "first_seen": "2026-08-05 03:30",
+    "source": "arxiv_econ_em",
+    "title": "CausalForge: A Formally Grounded, Self-Improving Agentic Framework for Automated",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "34ebe209893184e5d68c34fc519113d8": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
