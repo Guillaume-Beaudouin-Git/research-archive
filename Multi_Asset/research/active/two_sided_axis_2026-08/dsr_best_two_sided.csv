@@ -1,0 +1,2 @@
+symbol,rule,sharpe,sr_benchmark,dsr,skewness,excess_kurtosis,n_obs,n_trials,std_sr_trials,std_sr_trials_source,passed
+US100,R2_mom12_1_dz2pct,0.28098239340435377,0.5506915366197791,0.17387617624438922,-0.22310623067081464,9.331565583619371,3070,21,0.2865042592244414,declared,False
