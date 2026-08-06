@@ -1,0 +1,14 @@
+{
+  "hash": "b4fafbc35efa33ccf3b747fc91c57a5d",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.04469v1",
+  "title": "Generalized Impulse Responses of Portfolio Default Probabilities: A Modular Framework with an Application to Geopolitical Risk",
+  "url": "http://arxiv.org/abs/2608.04469v1",
+  "description": "Credit stress testing requires impulse responses of portfolio default probabilities, not only macro-financial drivers. We derive closed-form generalized impulse responses for the mean, quantiles (PD-at-Risk), and expected shortfall in a modular framework combining a Bayesian VAR, a Gaussian satellite, and the Merton-Vasicek model underlying Basel IRB regulation. Results extend to any probit-Gaussian mapping of a latent factor. Nonlinearity makes responses depend on conditional means and variances; plug-in evaluations understate projected default probability levels by 6-8% and miss tail quantiles. For U.S. geopolitical risk shocks, 99%-quantile responses exceed mean responses by 50%, and peak responses vary 4.6-fold across the credit cycle.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-06 03:30 UTC"
+}

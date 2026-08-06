@@ -41,6 +41,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "8a9824d6b3e22ce848633c586200dafd": {
+    "first_seen": "2026-08-06 06:00",
+    "source": "quantocracy",
+    "title": "The Signal Ceiling: Why No Single-Bar OHLCV Edge Beats Costs in MNQ [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "8ea81609beefb990de046a7513570f9c": {
     "first_seen": "2026-08-01 06:00",
     "source": "quantocracy",
@@ -62,11 +69,32 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "b9d54b3e86e27b21a2a396018bb67e57": {
+    "first_seen": "2026-08-06 06:00",
+    "source": "quantocracy",
+    "title": "The Statistic That Passed Every Test I Had And Still Isn’t an Edge [Jan Heger]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "e45279f25e7cd430a3e06bf011da65c9": {
+    "first_seen": "2026-08-06 06:00",
+    "source": "quantocracy",
+    "title": "Quick 5 ETF Rotational Strategy Returns the Upside of Stocks with Half the Risk ",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "e89bce0b4d726c5e94fcee126b2e4b7c": {
     "first_seen": "2026-08-01 06:00",
     "source": "quantocracy",
     "title": "Fair Value as an Adaptive Low-Pass Filter: LAFO for Mean Reversion [Aligrithm]",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "e8fd1d1c5097e8a6df7886b445758a3b": {
+    "first_seen": "2026-08-06 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/05/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "fe70544a6bd761256c10cccd441b8a46": {
