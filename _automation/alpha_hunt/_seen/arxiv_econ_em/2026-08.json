@@ -1,4 +1,11 @@
 {
+  "00e7073d2417ca970423a0ac8cc76213": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "A Pairwise Differencing Distribution Regression Approach for Network Models",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "07ff502c1a9210a4364000ebaccda007": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -41,6 +48,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "4bd48926ae65d48e4d7706fc9a4786fd": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Clustered Local Projections for Short and Ultra-Short Time Series -- A Hierarchi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4ebe5cf482dc768551b991892f1c5311": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -62,10 +76,45 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "5d878c5b603f01d403bd4fb6f9c3811f": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Heterogeneity in Travel Mode Choice Shifts with Causal Forests",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5da7b4aa166f29efa3265a6facef0d24": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Correlation Matrices in High Dimensions: The Elliptope as a Sample-Correlation E",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5ec9086d8c08d2b0eaac30638f244c3b": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Exact Inference in Fixed-Effect Regressions with Concentrated Identifying Variat",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6c0c9d341d7d83f2edf1fad6fbfad4ec": {
     "first_seen": "2026-08-05 02:00",
     "source": "arxiv_econ_em",
     "title": "Bandwidth-Free Inference for Recursive Nonlinear Impulse Response Functions",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "6d1d06411d3e5e3c043afbe5622d0e6e": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Algorithm-Driven SVARs: Navigating the Wilderness of Big Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "745b2590f771be0c9dc6394e5726d411": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Drivers of Success: A Bayesian State-Space Model to Disentangling Latent Driver ",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -118,6 +167,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "aec62f00d4726dc5605d892c078d1a81": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Soft-Noncrossing Bayesian Panel Quantile Regression for Measuring Climate Tail R",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "af633ef3608bb10837a737bc1332d586": {
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
@@ -130,6 +186,13 @@
     "source": "arxiv_econ_em",
     "title": "Producing Policy Recommendations: from Statistical Decision Theory to Empirical ",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "b4fafbc35efa33ccf3b747fc91c57a5d": {
+    "first_seen": "2026-08-06 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Generalized Impulse Responses of Portfolio Default Probabilities: A Modular Fram",
+    "decision": "accepted",
     "promising_file": null
   },
   "b6c114fc355b92939ca0d358f39c0383": {
