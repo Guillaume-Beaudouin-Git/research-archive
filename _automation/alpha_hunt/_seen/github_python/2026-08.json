@@ -13,6 +13,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0f18c69c5bc3b2a6d09f2258ff201c0f": {
+    "first_seen": "2026-08-06 11:30",
+    "source": "github_python",
+    "title": "goauthentik/authentik",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "219cad2352e1cacad33bcb53cf425163": {
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
@@ -122,6 +129,13 @@
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
     "title": "abus-aikorea/voice-pro",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ebf2af1f1918e87e6b382c3a6ccdd90c": {
+    "first_seen": "2026-08-06 11:30",
+    "source": "github_python",
+    "title": "frappe/hrms",
     "decision": "rejected_L0",
     "promising_file": null
   },
