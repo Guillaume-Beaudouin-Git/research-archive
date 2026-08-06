@@ -1,0 +1,6 @@
+file,n,first,last,n_post2021,detail
+fomc_events.csv,182,2004-01-28,2026-04-29,43,date + source only; NO time-of-day
+economic_calendar.csv,77,2020-01-14,2026-05-12,65,event=CPI; has time_utc
+economic_calendar.csv,52,2020-01-29,2026-04-29,43,event=FOMC; has time_utc
+economic_calendar.csv,25,2020-01-30,2026-01-29,21,event=GDP; has time_utc
+economic_calendar.csv,77,2020-01-03,2026-05-01,65,event=NFP; has time_utc

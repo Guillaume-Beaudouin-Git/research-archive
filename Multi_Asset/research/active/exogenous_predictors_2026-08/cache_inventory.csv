@@ -1,0 +1,20 @@
+family,file,series,n_obs,first,last,median_gap_days,freq,n_post2021,n_pre2021,verdict
+FRED,fred_BAMLH0A0_DGS3MO_DTWEXBGS_d06fce80fc.parquet,bamlh0a0hym2,786,2023-05-23,2026-05-21,1.0,daily,786,0,"TRUNCATED (requested 2007-01-01, first obs 2023-05-23)"
+FRED,fred_BAMLH0A0_DGS3MO_DTWEXBGS_d06fce80fc.parquet,t10y2y,4852,2007-01-02,2026-05-22,1.0,daily,1348,3504,usable
+FRED,fred_BAMLH0A0_DGS3MO_DTWEXBGS_d06fce80fc.parquet,t10y3m,4852,2007-01-02,2026-05-22,1.0,daily,1348,3504,usable
+FRED,fred_BAMLH0A0_DGS3MO_DTWEXBGS_d06fce80fc.parquet,dtwexbgs,4847,2007-01-01,2026-05-15,1.0,daily,1343,3504,usable
+FRED,fred_BAMLH0A0_DGS3MO_DTWEXBGS_d06fce80fc.parquet,dgs3mo,4851,2007-01-02,2026-05-21,1.0,daily,1347,3504,usable
+FRED,fred_DTB3_37358bdf84.parquet,dtb3,6602,2000-01-03,2026-05-26,1.0,daily,1349,5253,usable
+FRED,fred_DGS3MO_16fc089f19.parquet,dgs3mo,5851,2003-01-02,2026-05-21,1.0,daily,1347,4504,usable
+FRED,fred_T10Y2Y_4b4c751920.parquet,t10y2y,5852,2003-01-02,2026-05-22,1.0,daily,1348,4504,usable
+FRED,fred_DTWEXBGS_ff6045edaa.parquet,dtwexbgs,5107,2006-01-02,2026-05-15,1.0,daily,1343,3764,usable
+FRED,fred_VIXCLS_14ec2ab193.parquet,vixcls,4906,2007-01-03,2026-05-21,1.0,daily,1381,3525,usable
+scrape,http_cboe_pcr_equity_a15f2987.parquet,pcr_equity,3253,2006-11-01,2019-10-04,1.0,daily,0,3253,ENDS PRE-2021 -> unusable
+scrape,http_cboe_pcr_total_3d75419d.parquet,pcr_total,3253,2006-11-01,2019-10-04,1.0,daily,0,3253,ENDS PRE-2021 -> unusable
+scrape,http_naaim_exposure_xlsx_ffd686b1.parquet,naaim_exposure,1039,2006-07-05,2026-05-20,-7.0,daily,281,758,usable
+panel,fx_rates_3m.csv,USD,257,2005-01-31,2026-05-31,31.0,monthly,65,192,usable
+panel,fx_rates_3m.csv,JPY,255,2005-01-31,2026-03-31,31.0,monthly,63,192,usable
+panel,fx_rates_3m.csv,EUR,253,2005-01-31,2026-01-31,31.0,monthly,61,192,usable
+panel,fx_rates_3m.csv,GBP,253,2005-01-31,2026-01-31,31.0,monthly,61,192,usable
+panel,vix_term_structure.csv,^VIX,3873,2011-01-03,2026-05-27,1.0,daily,1356,2517,usable
+panel,vix_term_structure.csv,^VIX3M,3872,2011-01-03,2026-05-27,1.0,daily,1355,2517,usable

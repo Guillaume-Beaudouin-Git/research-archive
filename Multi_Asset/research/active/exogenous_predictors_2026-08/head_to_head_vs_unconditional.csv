@@ -1,0 +1,7 @@
+inst,strategy,N,trades_per_year,gross_bps_per_day,t_gross,swap_bps_per_day,rt_cost_total_bps,net_ann_bps,ann_vol_bps,net_sharpe
+XAUUSD,"unconditional long, held",1399,0.18,5.722,2.01,-1.518,1.84,1085.9,1749.3,0.621
+XAUUSD,"unconditional short, held",1399,0.18,-5.722,-2.01,-0.336,1.84,-1564.9,1749.3,-0.895
+USDJPY,"unconditional long, held",1410,0.18,3.128,2.05,0.06,1.5,830.0,958.8,0.866
+USDJPY,"unconditional short, held",1410,0.18,-3.128,-2.05,-1.267,1.5,-1144.3,958.8,-1.193
+XAUUSD,BEST conditioned F1: E2_slope H=20 quintile,50,9.5,148.464,1.91,-20.904,17.48,1192.7,,
+USDJPY,BEST conditioned F1: E7_naaim H=20 median,70,13.2,33.79,0.83,-9.795,19.799999999999997,297.1,,
