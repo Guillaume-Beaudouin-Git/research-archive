@@ -1,0 +1,5 @@
+symbol,benchmark,bench_rate_pct_yr,swap_long_bps_night,swap_short_bps_night,markup_long_pct_yr,markup_short_pct_yr,markup_asymmetry_pct_yr_(mL-mS),total_differential_bps_night,of_which_risk_free_bps_night,of_which_TRUE_SUBSIDY_bps_night,true_subsidy_pct_yr_365n,subsidy_share_of_differential_pct
+XAUUSD,USD,3.59,-1.518,-0.3358,1.951,4.816,-2.865,1.1822,1.9671,-0.7849,-2.865,-66.4
+USDJPY,USD-JPY,2.321,0.0599,-1.2665,-2.54,6.944,-9.484,-1.3264,1.2719,-2.5983,-9.484,195.9
+US100,USD,3.59,-2.1257,0.0917,4.169,3.255,0.914,2.2174,1.9671,0.2503,0.914,11.3
+GER40,EUR,2.028,-1.564,-0.1933,3.681,2.733,0.948,1.3707,1.1111,0.2596,0.948,18.9

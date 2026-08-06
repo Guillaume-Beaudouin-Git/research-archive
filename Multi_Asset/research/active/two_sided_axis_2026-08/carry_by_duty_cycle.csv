@@ -1,0 +1,37 @@
+symbol,duty_cycle,policy,carry_pct_yr
+US100,1.0,long-only,-9.15
+US100,1.0,50/50 two-sided,-3.91
+US100,1.0,short-only,1.33
+US100,0.6,long-only,-5.49
+US100,0.6,50/50 two-sided,-2.35
+US100,0.6,short-only,0.8
+US100,0.4,long-only,-3.66
+US100,0.4,50/50 two-sided,-1.57
+US100,0.4,short-only,0.53
+GER40,1.0,long-only,-6.77
+GER40,1.0,50/50 two-sided,-3.3
+GER40,1.0,short-only,0.18
+GER40,0.6,long-only,-4.06
+GER40,0.6,50/50 two-sided,-1.98
+GER40,0.6,short-only,0.11
+GER40,0.4,long-only,-2.71
+GER40,0.4,50/50 two-sided,-1.32
+GER40,0.4,short-only,0.07
+XAUUSD,1.0,long-only,-8.49
+XAUUSD,1.0,50/50 two-sided,-4.38
+XAUUSD,1.0,short-only,-0.27
+XAUUSD,0.6,long-only,-5.1
+XAUUSD,0.6,50/50 two-sided,-2.63
+XAUUSD,0.6,short-only,-0.16
+XAUUSD,0.4,long-only,-3.4
+XAUUSD,0.4,50/50 two-sided,-1.75
+XAUUSD,0.4,short-only,-0.11
+USDJPY,1.0,long-only,2.5
+USDJPY,1.0,50/50 two-sided,-2.39
+USDJPY,1.0,short-only,-7.28
+USDJPY,0.6,long-only,1.5
+USDJPY,0.6,50/50 two-sided,-1.43
+USDJPY,0.6,short-only,-4.37
+USDJPY,0.4,long-only,1.0
+USDJPY,0.4,50/50 two-sided,-0.96
+USDJPY,0.4,short-only,-2.91
