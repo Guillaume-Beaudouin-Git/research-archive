@@ -19,5 +19,12 @@
     "title": "Show HN: Wordllama – Things you can do with the token embeddings of an LLM",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "d5dd752a759f50b9f7a018a45b47b2b3": {
+    "first_seen": "2026-08-06 17:30",
+    "source": "hn_algotrading",
+    "title": "Quantum computers do not test every solution at once",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }
