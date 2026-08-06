@@ -1,0 +1,7 @@
+cls,is_rollover,cells,med_abs_t,max_abs_t,med_abs_gross
+FX,False,1048,0.7988,19.5836,0.4725
+FX,True,152,2.4283,19.6904,1.1312
+energy,False,207,0.5066,2.3093,1.3703
+index,False,388,1.0195,2.6957,1.0046
+index,True,56,1.3451,2.7728,1.2104
+metal,False,333,0.7813,4.8777,1.3481

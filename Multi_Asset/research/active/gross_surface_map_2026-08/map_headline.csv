@@ -1,0 +1,5 @@
+cls,instruments,cond_cells,cost_rt_bps,gate_3x_bps,best_gross_bps,best_gross_clean_bps,best_gross_over_gate,cells_over_gate,frac_t_over_2
+index,4,1316,1.8,5.4,6.7128,6.7128,1.2431,2,0.0798
+FX,10,3600,1.5,4.5,5.5662,5.5662,1.2369,1,0.1156
+energy,2,608,7.53,22.59,17.3741,17.3741,0.7691,0,0.0609
+metal,3,987,6.37,19.11,8.5737,8.5737,0.4486,0,0.0821

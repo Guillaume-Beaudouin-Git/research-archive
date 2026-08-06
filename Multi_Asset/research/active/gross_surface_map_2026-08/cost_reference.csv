@@ -1,0 +1,20 @@
+instrument,cls,point_size,price_med,spread_zero_frac,spread_med_bps_measured,cost_rt_bps,cost_source,gate_3x_bps
+EURUSD,FX,0.0,1.0977,0.4862,0.0831,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+GBPUSD,FX,0.0,1.2968,0.1196,0.3123,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+USDJPY,FX,0.001,144.14,0.3038,0.1741,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+USDCHF,FX,0.0,0.8984,0.1514,1.1042,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+USDCAD,FX,0.0,1.3551,0.085,0.3478,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+AUDUSD,FX,0.0,0.6714,0.0969,0.5484,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+NZDUSD,FX,0.0,0.6123,0.0747,1.5059,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+EURGBP,FX,0.0,0.8583,0.0649,1.1477,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+EURJPY,FX,0.001,157.106,0.0031,0.54,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+AUDJPY,FX,0.001,94.471,0.0023,1.0152,1.5,COST_AUDIT catalogue (column zero-inflated -> not measurable),4.5
+US500,index,0.01,4584.1,0.0092,0.8698,1.8,"COST_AUDIT.md S5 honest range [1.8;2.9], low end",5.4
+US100,index,0.1,15835.0,0.009,7.3226,1.8,"COST_AUDIT.md S5 honest range [1.8;2.9], low end",5.4
+US30,index,0.1,35573.9,0.1411,4.266,1.8,"COST_AUDIT.md S5 honest range [1.8;2.9], low end",5.4
+GER40,index,0.01,15998.56,0.0096,0.7371,1.8,"COST_AUDIT.md S5 honest range [1.8;2.9], low end",5.4
+XAUUSD,metal,0.01,1981.32,0.0186,0.6075,1.84,"COST_AUDIT.md S3, measured",5.52
+XAGUSD,metal,0.001,25.411,0.0,5.3697,6.37,measured here (spread x point) + 1.0 bps slippage -- UNMEASURED elsewhere,19.11
+COPPER,metal,0.0001,4.2854,0.0,10.3805,11.38,measured here (spread x point) + 1.0 bps slippage -- UNMEASURED elsewhere,34.14
+UKOIL,energy,0.001,78.702,0.0,6.2409,7.24,measured here (spread x point) + 1.0 bps slippage -- UNMEASURED elsewhere,21.72
+USOIL,energy,0.001,74.4525,0.0,6.5297,7.53,measured here (spread x point) + 1.0 bps slippage -- UNMEASURED elsewhere,22.59
