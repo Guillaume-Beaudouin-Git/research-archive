@@ -1,0 +1,5 @@
+source,n_cells,median_gross_over_cost,p90,best
+"F1 held, cost = RT + swap actually paid",83.0,0.881,3.266,6.528
+"F2 intraday-flat, cost = RT (no swap)",82.0,0.336,0.955,1.721
+gross_surface_map 2026-08 (PRICE predictors),6511.0,0.38,,
+"L43 (FX intraday-flat, different method)",,0.36,,
