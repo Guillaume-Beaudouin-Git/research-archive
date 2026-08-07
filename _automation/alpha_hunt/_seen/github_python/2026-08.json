@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1e4b8a47a50e7d4299cc4b8a8840d08a": {
+    "first_seen": "2026-08-07 12:00",
+    "source": "github_python",
+    "title": "kijai/ComfyUI-KJNodes",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "219cad2352e1cacad33bcb53cf425163": {
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
@@ -87,6 +94,13 @@
     "first_seen": "2026-08-03 11:00",
     "source": "github_python",
     "title": "invoke-ai/InvokeAI",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a59a89b54621dfc878b4a6b8aeea5ebe": {
+    "first_seen": "2026-08-07 12:00",
+    "source": "github_python",
+    "title": "semantica-agi/semantica",
     "decision": "rejected_L0",
     "promising_file": null
   },
