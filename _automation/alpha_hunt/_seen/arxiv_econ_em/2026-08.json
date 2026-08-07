@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "055ca79b8e26861d1fd1fe778e081ce8": {
+    "first_seen": "2026-08-07 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Risk in a Data-Rich Model",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "07ff502c1a9210a4364000ebaccda007": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -46,6 +53,20 @@
     "source": "arxiv_econ_em",
     "title": "When Predictions Become Regressors: A Split-Sample Correction for Biases in Down",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "48fa4e4dcb4a24d508f048c11d642514": {
+    "first_seen": "2026-08-07 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Bartlett Couplings of the Onion and Vine LKJ Samplers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4a5e52909d90ff3f7aae02ca67548b47": {
+    "first_seen": "2026-08-07 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Fixed-Effect Saturation Is Not Weak Identification: Certifying Inference under M",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "4bd48926ae65d48e4d7706fc9a4786fd": {
