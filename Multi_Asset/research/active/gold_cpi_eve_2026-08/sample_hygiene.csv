@@ -1,0 +1,6 @@
+metric,value
+cpi_dates_bls,234
+entry_dates_in_price_index,232
+entry_dropped_not_traded,2
+exit_bar_is_cpi_day,230
+exit_bar_is_not_cpi_day,2

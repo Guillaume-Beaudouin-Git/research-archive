@@ -1,0 +1,4 @@
+era,N,pre_bps_mean,pre_bps_t,post_bps_mean,post_bps_t,total_bps_mean,total_bps_t,pre_share_of_total
+OOS,166,8.904,1.46,-3.535,-0.51,5.369,0.6,1.658
+DISCOVERY,64,7.288,1.52,23.252,2.31,30.54,3.07,0.239
+ALL,230,8.454,1.84,3.919,0.64,12.373,1.69,0.683
