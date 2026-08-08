@@ -6,10 +6,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "081207afe2ac193916a0be676c8032cd": {
+    "first_seen": "2026-08-08 12:00",
+    "source": "github_python",
+    "title": "Universal-Commerce-Protocol/ucp",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "08b89e298b35e1e1a7233a415bf0d7b9": {
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
     "title": "iam-veeramalla/aws-devops-zero-to-hero",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "0c2c8cc3a7e8d1a37c8c40bd271b397d": {
+    "first_seen": "2026-08-08 12:00",
+    "source": "github_python",
+    "title": "google-deepmind/weathernext",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -38,6 +52,20 @@
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
     "title": "Huanshere/VideoLingo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3c223f0b39b6f7920692214e7d1375df": {
+    "first_seen": "2026-08-08 12:00",
+    "source": "github_python",
+    "title": "AgriciDaniel/claude-seo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3c3c67f9b8bd9c1c08828811ff69ab02": {
+    "first_seen": "2026-08-08 12:00",
+    "source": "github_python",
+    "title": "harveyai/harvey-labs",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -150,6 +178,13 @@
     "first_seen": "2026-08-06 11:30",
     "source": "github_python",
     "title": "frappe/hrms",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f5c3a2950cdd75b51e3176a7d5d16ea2": {
+    "first_seen": "2026-08-08 12:00",
+    "source": "github_python",
+    "title": "superlinked/sie",
     "decision": "rejected_L0",
     "promising_file": null
   },
