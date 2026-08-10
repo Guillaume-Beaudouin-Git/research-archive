@@ -34,6 +34,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1765ff7d19cee445c9ce12380510e2c3": {
+    "first_seen": "2026-08-10 11:00",
+    "source": "github_python",
+    "title": "neuml/txtai",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1e4b8a47a50e7d4299cc4b8a8840d08a": {
     "first_seen": "2026-08-07 12:00",
     "source": "github_python",
@@ -206,6 +213,13 @@
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
     "title": "NovaSky-AI/SkyRL",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f88586db5686cfd2343c66989e287940": {
+    "first_seen": "2026-08-10 11:00",
+    "source": "github_python",
+    "title": "confident-ai/deepteam",
     "decision": "rejected_L0",
     "promising_file": null
   },
