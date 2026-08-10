@@ -13,6 +13,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0f4c4d0a4ce9e649e6f54eba1c97bafe": {
+    "first_seen": "2026-08-10 06:00",
+    "source": "quantocracy",
+    "title": "Skewness as a Hidden Driver of Anomaly Returns [Alpha Architect]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "1330195c87073075ce9f5a73747026c2": {
     "first_seen": "2026-08-01 06:00",
     "source": "quantocracy",
@@ -34,11 +41,25 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "2c6d8e6d3b29c470eed88f153bd4e292": {
+    "first_seen": "2026-08-10 06:00",
+    "source": "quantocracy",
+    "title": "Bid-Ask Spread From OHLC: The GMM Estimator That Beats Roll/CS [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "3ebec81535cc07940addcec54611b042": {
     "first_seen": "2026-08-07 06:00",
     "source": "quantocracy",
     "title": "Testing for Mean Reversion: ADF, Hurst Exponent and Half-Life [Quantt]",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "5019d5313d1f23b480eccbefb8cecaa6": {
+    "first_seen": "2026-08-10 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/09/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "63133a0de9db060a3ee86597570f7cb2": {
@@ -90,6 +111,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "ae322b7295f5e1773871aeb43aa105bc": {
+    "first_seen": "2026-08-10 06:00",
+    "source": "quantocracy",
+    "title": "150 Years of Global Stock Returns – The Birthplace Lottery [Beyond Passive]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "b9d54b3e86e27b21a2a396018bb67e57": {
     "first_seen": "2026-08-06 06:00",
     "source": "quantocracy",
@@ -104,6 +132,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "bfb6cc4f4ea9b2c1d591d4abadd49b68": {
+    "first_seen": "2026-08-10 06:00",
+    "source": "quantocracy",
+    "title": "Bond indices and systematic duration management [Macrosynergy]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "e45279f25e7cd430a3e06bf011da65c9": {
     "first_seen": "2026-08-06 06:00",
     "source": "quantocracy",
@@ -116,6 +151,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 08/06/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e822f8063a9b6fc50990f6ef31a97121": {
+    "first_seen": "2026-08-10 06:00",
+    "source": "quantocracy",
+    "title": "Trading Strategy Comparison: Is B Really Better Than A? [Krzysztof Ozimek]",
+    "decision": "accepted",
     "promising_file": null
   },
   "e89bce0b4d726c5e94fcee126b2e4b7c": {

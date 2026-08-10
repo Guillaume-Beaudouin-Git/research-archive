@@ -1,0 +1,14 @@
+{
+  "hash": "2c6d8e6d3b29c470eed88f153bd4e292",
+  "source": "quantocracy",
+  "canonical_id": "https://quantocracy.com/redirect.php?key=kpX0m4aFrq&amp;source=feedburner",
+  "title": "Bid-Ask Spread From OHLC: The GMM Estimator That Beats Roll/CS [Aligrithm]",
+  "url": "https://quantocracy.com/redirect.php?key=kpX0m4aFrq&amp;source=feedburner",
+  "description": "class=\"qo-content-col\"> Bid-Ask Spread From OHLC: The GMM Estimator That Beats Roll/CS [Aligrithm] You backtest a strategy, subtract \"a spread\" for costs, and move on. Where did that number come from? If you typed in a guess, or pulled a single quoted spread f",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "trading_topic"
+  ],
+  "captured": "2026-08-10 06:00 UTC"
+}
