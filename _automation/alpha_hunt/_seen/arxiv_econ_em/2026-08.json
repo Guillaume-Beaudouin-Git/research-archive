@@ -20,6 +20,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "0c5b6ccce47780ea5d2286eaa9675aa8": {
+    "first_seen": "2026-08-10 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating and Testing Kinks in Panel Data Models",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "1bc01ab3d1f89ab2f29e1dc40e409756": {
     "first_seen": "2026-08-05 03:30",
     "source": "arxiv_econ_em",
@@ -153,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8977f4345271272ad908e5890a6b63ca": {
+    "first_seen": "2026-08-10 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Adversarial Causal Intervention Falsification",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8d37db00952f547497a16fe876e719ea": {
     "first_seen": "2026-08-05 02:00",
     "source": "arxiv_econ_em",
@@ -255,6 +269,13 @@
     "first_seen": "2026-08-05 02:00",
     "source": "arxiv_econ_em",
     "title": "Difference-in-differences with \"bad controls\"",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e71c24728b24ac0cbd5d13eedf32ee38": {
+    "first_seen": "2026-08-10 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Clustered Local Projections for Short and Ultra-Short Time Series -- A Hierarchi",
     "decision": "rejected_L0",
     "promising_file": null
   },
