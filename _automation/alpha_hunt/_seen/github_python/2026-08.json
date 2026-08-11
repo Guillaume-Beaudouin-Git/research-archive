@@ -90,10 +90,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "538b533710fd196c8476dfeed19de515": {
+    "first_seen": "2026-08-11 11:30",
+    "source": "github_python",
+    "title": "NVlabs/GR00T-WholeBodyControl",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "5b98d3acf77f89f33d70109c0264e111": {
     "first_seen": "2026-08-03 11:00",
     "source": "github_python",
     "title": "kovidgoyal/calibre",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "622c16101d955e57c91c171c6c52aee5": {
+    "first_seen": "2026-08-11 11:30",
+    "source": "github_python",
+    "title": "AWeirdDev/flights",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -192,6 +206,13 @@
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
     "title": "abus-aikorea/voice-pro",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e0e2d7d5cd5c9a9ad9d5f0e2d2bc5f5f": {
+    "first_seen": "2026-08-11 11:30",
+    "source": "github_python",
+    "title": "AgriciDaniel/claude-obsidian",
     "decision": "rejected_L0",
     "promising_file": null
   },
