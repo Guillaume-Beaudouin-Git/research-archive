@@ -40,5 +40,12 @@
     "title": "Quantum computers do not test every solution at once",
     "decision": "rejected_L0",
     "promising_file": null
+  },
+  "f736d78f0130c9187842c667597c4f6f": {
+    "first_seen": "2026-08-11 15:00",
+    "source": "hn_algotrading",
+    "title": "2. Ask HN: We built a solution for 100B-node P2P. Does anyone care about this?",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }
