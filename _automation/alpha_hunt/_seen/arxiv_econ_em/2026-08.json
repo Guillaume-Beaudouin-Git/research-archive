@@ -167,6 +167,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "808b6bc76380c526278e8b40d1bb5705": {
+    "first_seen": "2026-08-11 04:00",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Experimental Design and Estimation when Potential Outcomes are Bounded",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8977f4345271272ad908e5890a6b63ca": {
     "first_seen": "2026-08-10 02:30",
     "source": "arxiv_econ_em",
@@ -193,6 +200,13 @@
     "source": "arxiv_econ_em",
     "title": "From Rating Factors to Crash Mechanisms: A Multiscale Causal DAG Framework Linki",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "934220a66e597d1e238b6ab2c5596277": {
+    "first_seen": "2026-08-11 04:00",
+    "source": "arxiv_econ_em",
+    "title": "Bias-robust causal inference for panel data",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "a4e87bd25adc3080b276904f2d6c61b3": {
@@ -291,6 +305,13 @@
     "source": "arxiv_econ_em",
     "title": "Asymptotics for Treatment Choice with Partial Identification",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d09f33d8bd829a9956eb93130348309f": {
+    "first_seen": "2026-08-11 04:00",
+    "source": "arxiv_econ_em",
+    "title": "AI Governance for Institutional Readiness in Finance",
+    "decision": "accepted",
     "promising_file": null
   },
   "d1970727232bee5cdd3344cfd1696f49": {
