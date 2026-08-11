@@ -139,6 +139,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6e6d04f11d5d4a6951c2de4cb0ca7449": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Beyond the Grid: Cost, Carbon, and Capital Requirements of On-Site Power Technol",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "745b2590f771be0c9dc6394e5726d411": {
     "first_seen": "2026-08-06 03:30",
     "source": "arxiv_econ_em",
@@ -181,10 +188,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9302591dd29a600c64e8b2eaf9520661": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "From Rating Factors to Crash Mechanisms: A Multiscale Causal DAG Framework Linki",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "a4e87bd25adc3080b276904f2d6c61b3": {
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
     "title": "Producing Policy Recommendations: from Statistical Decision Theory to Empirical ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a5dd2d7dc2addfb0d2113490a4ba7930": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Stationary Errors and Quantile Regression in Short Panels",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -199,6 +220,20 @@
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
     "title": "Robust Instrumental Variables: Sharp Rates and Inference under Adversarial Conta",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "aa7ef3b52e7d60ed76c09d8848ffab8d": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "A Comparison of High-Dimensional Variable Selection Procedures for Electricity S",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "adc6fe8f9684df457494fa160c12762b": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Asymmetries in Peer Effects",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -244,6 +279,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c855b5c28cc3d5809931450e693dd350": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Local conformal prediction for individual causal effects",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "c986c9d898913ea790d7c415e6800847": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Asymptotics for Treatment Choice with Partial Identification",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d1970727232bee5cdd3344cfd1696f49": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -255,6 +304,13 @@
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
     "title": "Estimating Peer Influence in Multilayer Networks",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ddc7a21389c0ed061ec7dc4fdbae1781": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Partial Homogeneity in Staggered Difference-in-Differences",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -279,10 +335,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e98121770aa379b40db290ea2afd684c": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Generalized AKM: Flexible Controls and Interactions in Wage Decompositions",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "eb228c73402c04400bc6eeedc5b87e8e": {
     "first_seen": "2026-08-04 01:00",
     "source": "arxiv_econ_em",
     "title": "Monotone Response for Random Objects",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ee507ed43a0ad0fc659746efab85dc03": {
+    "first_seen": "2026-08-11 02:30",
+    "source": "arxiv_econ_em",
+    "title": "A framework for assessing value and heterogeneity, illustrated using an early mo",
     "decision": "rejected_L0",
     "promising_file": null
   },
