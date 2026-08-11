@@ -1,0 +1,14 @@
+{
+  "hash": "aa7ef3b52e7d60ed76c09d8848ffab8d",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.09213v1",
+  "title": "A Comparison of High-Dimensional Variable Selection Procedures for Electricity Spot Price Forecasting",
+  "url": "http://arxiv.org/abs/2608.09213v1",
+  "description": "The paper considers the problem of variable selection for forecasting electricity spot prices. High-dimensional methods such as LASSO and Elastic Net are widely used for this purpose, and while they exhibit strong predictive performance, their tendency to select over-parameterized models raises questions about interpretability. We evaluate the performance of six variable selection procedures, includingthe recently proposed Boosting Multiple Testing (BMT) method, using an extensive dataset from six regional electricity markets. We assess their performance in terms of both out-of-sample forecasting ac-curacy and model parsimony. We find that, although LASSO and Elastic Net achieve similar accuracy and outperform most screening alternatives, BMT matches their forecasting performance while using less than one-tenth as many variables. Our results reveal that BMT offers researchers and practitioners a substantially more interpretable and computationally efficient alternative to shrinkage methods, without any loss of forecasting accuracy. These findings suggest that the over-parameterization typically associated with regularization methods is not a necessary price for predictive accuracy in electricity price forecasting.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-08-11 02:30 UTC"
+}

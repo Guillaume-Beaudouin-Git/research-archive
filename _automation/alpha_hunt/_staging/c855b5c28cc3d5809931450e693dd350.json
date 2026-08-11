@@ -1,0 +1,14 @@
+{
+  "hash": "c855b5c28cc3d5809931450e693dd350",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.09612v1",
+  "title": "Local conformal prediction for individual causal effects",
+  "url": "http://arxiv.org/abs/2608.09612v1",
+  "description": "Standard CATE estimators become inadequate under strong treatment-effect heterogeneity: confidence intervals for conditional means need not cover individual counterfactual effects. We propose an Individualized Causal Prediction (ICP) framework that constructs finite-sample valid conformal prediction intervals for the individual causal effect of a specific query unit. The method localizes calibration to a causally relevant neighborhood using cosine similarity weighted by Causal Forest variable importance, augments small local samples synthetically, and calibrates intervals with doubly robust AIPW conformity scores satisfying Neyman orthogonality. Under standard identifying assumptions (SUTVA and strong ignorability) and an outcome-independent calibration-set selection condition, the resulting intervals attain marginal coverage at the nominal level. The local design also supports approximately conditional coverage by making calibration scores more representative of the query unit. Experiments on a high-heterogeneity synthetic dataset and the IHDP benchmark demonstrate that local strategies improve point accuracy over global baselines while maintaining nominal or above-nominal coverage.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-11 02:30 UTC"
+}
