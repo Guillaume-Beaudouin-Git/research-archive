@@ -27,6 +27,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "127fb272b3d6767482381339aca3b179": {
+    "first_seen": "2026-08-12 02:30",
+    "source": "arxiv_econ_em",
+    "title": "A Multinomial Probit Model for Asymmetric Choice Responses",
+    "decision": "rejected_L2_not_accessible",
+    "promising_file": null
+  },
   "1bc01ab3d1f89ab2f29e1dc40e409756": {
     "first_seen": "2026-08-05 03:30",
     "source": "arxiv_econ_em",
@@ -87,6 +94,13 @@
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
     "title": "A Simple Approximation to the Distribution of the Ridge Regression Estimator",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "565b845673b0ecc8070cecb0c4c7d7e6": {
+    "first_seen": "2026-08-12 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Testing Sign Agreement",
     "decision": "accepted",
     "promising_file": null
   },
@@ -290,6 +304,13 @@
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
     "title": "High-Dimensional Panel Data Models with Interactive Fixed Effects: Beyond the Li",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c4f2937411f14f5c5d5b6de22ea32179": {
+    "first_seen": "2026-08-12 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Graph-Laplacian Variance Estimators for Finely Stratified Experiments",
     "decision": "rejected_L0",
     "promising_file": null
   },
