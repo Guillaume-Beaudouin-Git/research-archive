@@ -83,6 +83,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4a026494720d804c7035b507b86ae09b": {
+    "first_seen": "2026-08-12 11:00",
+    "source": "github_python",
+    "title": "paradigmxyz/centaur",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "535786d21f60bd4e20e4a499bd769ad0": {
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
@@ -129,6 +136,20 @@
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
     "title": "blader/humanizer",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "766ba6ddca5d25ba54064477a9b93301": {
+    "first_seen": "2026-08-12 11:00",
+    "source": "github_python",
+    "title": "omnigent-ai/omnigent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7a0a5b30e01aa97f57c04ead1f865982": {
+    "first_seen": "2026-08-12 11:00",
+    "source": "github_python",
+    "title": "index-tts/index-tts",
     "decision": "rejected_L0",
     "promising_file": null
   },
