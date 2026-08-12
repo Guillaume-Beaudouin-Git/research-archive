@@ -1,4 +1,11 @@
 {
+  "0a28420ea3e74b900066f66e7753c55a": {
+    "first_seen": "2026-08-12 06:00",
+    "source": "quantocracy",
+    "title": "Stop Using Pairwise Granger: PCMCI for Financial Causality [Aligrithm]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "0b1f130bb9657595581827ba75425fbc": {
     "first_seen": "2026-08-07 06:00",
     "source": "quantocracy",
@@ -34,6 +41,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "2616af7a0b9df60a7f9572c3810b0db7": {
+    "first_seen": "2026-08-12 06:00",
+    "source": "quantocracy",
+    "title": "Does AI Still Read the News Better Than the Market? [Tommi Johnsen]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "26f5778970ba50c0017a0edccc83e871": {
     "first_seen": "2026-08-01 06:00",
     "source": "quantocracy",
@@ -46,6 +60,20 @@
     "source": "quantocracy",
     "title": "Bid-Ask Spread From OHLC: The GMM Estimator That Beats Roll/CS [Aligrithm]",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "2da5b4b76c9db398d840f88424601670": {
+    "first_seen": "2026-08-12 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/11/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "32365b802e4e5eff98906005fac9d6f9": {
+    "first_seen": "2026-08-12 06:00",
+    "source": "quantocracy",
+    "title": "Autopsy No.003: Buying options for the big win [Morgue Labs]",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "3ebec81535cc07940addcec54611b042": {
@@ -66,6 +94,13 @@
     "first_seen": "2026-08-04 06:00",
     "source": "quantocracy",
     "title": "Quantitativo weekly #4 [Quantitativo]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "635d871321f82975f956dae60dd55573": {
+    "first_seen": "2026-08-12 06:00",
+    "source": "quantocracy",
+    "title": "Excessively Volatile? Or Inexplicably Precise? [Alex Chinco]",
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
