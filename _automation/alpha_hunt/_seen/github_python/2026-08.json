@@ -202,6 +202,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c2ff0879658890d61469e5c07a7f9844": {
+    "first_seen": "2026-08-13 11:30",
+    "source": "github_python",
+    "title": "NVIDIA-NeMo/Automodel",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c5108899895805c469f2aae090111a4c": {
     "first_seen": "2026-08-04 11:00",
     "source": "github_python",
