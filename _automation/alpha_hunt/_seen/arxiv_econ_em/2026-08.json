@@ -300,6 +300,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "bf8bb8b2507e4a6fa6405c62c814224e": {
+    "first_seen": "2026-08-13 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Coarsening Latent-Class Probabilities: Directional Distortion and Coverage Loss",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c3e5672120f58f664ac178a7b08b42e5": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -325,6 +332,13 @@
     "first_seen": "2026-08-11 02:30",
     "source": "arxiv_econ_em",
     "title": "Asymptotics for Treatment Choice with Partial Identification",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "cf0f63b74fa7d3b180d5e64c8d0b25b4": {
+    "first_seen": "2026-08-13 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating the perturbed utility route choice model with trip-level data",
     "decision": "rejected_L0",
     "promising_file": null
   },
