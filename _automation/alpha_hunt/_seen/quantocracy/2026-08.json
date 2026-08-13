@@ -1,4 +1,11 @@
 {
+  "0312abe70dd504a1e61294864107610f": {
+    "first_seen": "2026-08-13 08:00",
+    "source": "quantocracy",
+    "title": "I Scaled Out to Raise My Win Rate. It Didn’t Move     and It Cost Me $115,000 [J",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0a28420ea3e74b900066f66e7753c55a": {
     "first_seen": "2026-08-12 06:00",
     "source": "quantocracy",
@@ -55,6 +62,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "27ec5d0b19c86f49e992da64b867d92b": {
+    "first_seen": "2026-08-13 08:00",
+    "source": "quantocracy",
+    "title": "How to Spot a Fake ML Trading Paper [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "2c6d8e6d3b29c470eed88f153bd4e292": {
     "first_seen": "2026-08-10 06:00",
     "source": "quantocracy",
@@ -76,10 +90,24 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "36be7ba5571463c300774e1fd81e6d7e": {
+    "first_seen": "2026-08-13 08:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/12/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3ebec81535cc07940addcec54611b042": {
     "first_seen": "2026-08-07 06:00",
     "source": "quantocracy",
     "title": "Testing for Mean Reversion: ADF, Hurst Exponent and Half-Life [Quantt]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "44bef5cd3ed14718acc5f0c1a23665a6": {
+    "first_seen": "2026-08-13 08:00",
+    "source": "quantocracy",
+    "title": "Autopsy No.005: The congressional-trading ETF that beats the market [Morgue Labs",
     "decision": "accepted",
     "promising_file": null
   },
@@ -207,6 +235,13 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 08/05/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ef9938b9debbee38328a60846bd1353c": {
+    "first_seen": "2026-08-13 08:00",
+    "source": "quantocracy",
+    "title": "The Rise of CTA ETFs [Concretum Group]",
+    "decision": "accepted",
     "promising_file": null
   },
   "fe70544a6bd761256c10cccd441b8a46": {
