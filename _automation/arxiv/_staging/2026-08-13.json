@@ -1,0 +1,161 @@
+[
+ {
+  "id": "2608.12283",
+  "title": "Large Language Model-Driven Small-Capitalization Trading: Integrating Financial News Sentiment, Macroeconomic Indicators, and Technical Signals",
+  "summary": "Large language models can extract richer signals from financial news than fixed sentiment lexicons, and recent work has explored feeding such signals into portfolio construction. We study an uncertainty-aware construction that feeds model-predicted risk -- decomposed into aleatoric and epistemic components -- directly into the covariance matrix of portfolio allocators, rather than treating portfolio risk as fixed or adjusting only expected returns. We evaluate the pipeline on Russell 2000 equities under three stock-selection regimes: a pure-alpha trigger that isolates abnormal stock moves not explained by macro indicators, a pure-beta trigger that captures macro-indicator moves before the stock itself fires, and a beta trigger in which both channels agree. Across the full holding-period grid, the separated pure-alpha and pure-beta legs usually dominate the beta intersection on Sharpe and return. Two horizons are especially informative. At one day, pure beta can work under low and moderate transaction costs because it captures immediate lead-lag spillovers from liquid macro and sector indicators into exposed small-cap stocks, but this advantage disappears at 100 bps when turnover and microstructure noise dominate. At 40 days, pure beta works for a different reason: slower macro repricing overtakes the firm-specific pure-alpha channel. The strongest conservative row is pure beta with GPT-4o mini sentiment, a Student-t target, a 40-day holding period, and risk parity allocation,",
+  "authors": [
+   "Alireza Kargarzadeh",
+   "Nariman Khaledian",
+   "Navid Parvini",
+   "Arman Khaledian"
+  ],
+  "categories": [
+   "q-fin.PM",
+   "cs.CL"
+  ],
+  "published": "2026-08-12T17:28:03Z",
+  "updated": "2026-08-12T17:28:03Z"
+ },
+ {
+  "id": "2608.12259",
+  "title": "Calibration Bets on the Past: Post-Training Quantization for Financial Time-Series Forecasting",
+  "summary": "Financial forecasting models are typically developed in full precision, yet production deployment often requires low-precision inference to reduce memory and computational cost. Post-training quantization (PTQ) enables such deployment without retraining. However, reliable activation quantization requires calibration: activation ranges are estimated from historical data before deployment and then remain fixed during future inference. The importance of this deployment choice for financial forecasting remains poorly understood. We present a systematic study of activation calibration for PTQ in cross-sectional volatility forecasting on the S&P 500. Our evaluation covers seven representative neural architectures, eight walk-forward test years (2018-2025), and 560 trained models. We find that activation calibration has little effect at 8 bits but becomes the primary determinant of predictive performance at 4 bits. Under default absolute-maximum (abs-max) calibration, static 4-bit quantization of both weights and activations removes 11-62% of the full-precision mean information coefficient in affected architectures. Replacing abs-max with percentile calibration recovers 53-94% of this degradation in the four most affected architectures. The preferred activation range also varies across market periods. Narrow ranges improve resolution under typical market conditions but lose part of their advantage when test-period market dispersion exceeds the calibration history. These findings sho",
+  "authors": [
+   "Junyi Ye",
+   "Ivy Gateri Wanjiku"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.ST"
+  ],
+  "published": "2026-08-12T17:02:06Z",
+  "updated": "2026-08-12T17:02:06Z"
+ },
+ {
+  "id": "2608.12251",
+  "title": "Regime-Gated Residual Mixture-of-Experts for Cross-Sectional Volatility Forecasting",
+  "summary": "Financial volatility is regime dependent, yet incorporating regime information into neural networks can also destabilize training. This paper asks where such information should enter a neural cross-sectional volatility forecasting model. We study five-day realized-volatility forecasts for 1,027 U.S. equities using a rolling walk-forward evaluation framework in which information, model capacity, hyperparameter tuning, and random seeds are matched across architectures. We propose RG-ResMoE, a regime-gated residual mixture-of-experts architecture in which regime information is used only for expert routing rather than for direct forecasting. The base predictor models volatility from stock features, while a gating network uses regime state variables to route residual corrections. RG-ResMoE consistently outperforms a capacity-matched MLP in both forecasting accuracy and training stability in the main U.S. study. Similar gains are observed on an independent Japanese panel. The integration pathway is decisive: appending the same regime variables directly to the forecasting input degrades both predictive performance and training stability, whereas restricting them to the routing gate improves accuracy and Value-at-Risk calibration. Hard routing consistently underperforms soft routing. The results suggest that, in compact neural volatility forecasting models, the primary value of mixture-of-experts models lies less in increasing model capacity than in controlling how nonstationary regi",
+  "authors": [
+   "Junyi Ye",
+   "Gargi Vijay Borde"
+  ],
+  "categories": [
+   "q-fin.ST",
+   "cs.LG"
+  ],
+  "published": "2026-08-12T16:51:51Z",
+  "updated": "2026-08-12T16:51:51Z"
+ },
+ {
+  "id": "2608.12023",
+  "title": "Sectoral inter-dependencies drive the loss of structural balance in signed financial networks",
+  "summary": "Signed graphs provide an effective architecture for portraying a system in which cooperation and conflict coexist. Emerging from the concept of balance in psychological sciences, they have found applications across several domains. Financial markets are one such example that can be modeled using signed networks, where assets exhibit correlations in price movements. During periods of systemic risk, such a signed financial network shows a loss of balance, which has been consistently demonstrated. Here, we explore how this structural imbalance is distributed across scales within the financial network, revealing its mesoscopic origin. Adopting the framework of structural balance theory, we use a measure of polarization based on triadic motifs to investigate the distribution of structural imbalance across varying sectoral scales. We analyze the temporal evolution of global polarization and its sectoral constituents using longitudinal data derived from the S&P 500 index. By decomposing global polarization into intra-sectoral and inter-sectoral constituents, we show that structural imbalance arises predominantly from interactions between sectors rather than within them during periods marked by systemic risk. We employ randomization protocols to confirm that observed imbalance configurations are statistically significant and not artifacts of lower-order interactions. We derive a regression equation demonstrating that the variance in global polarization is well explained by macroecono",
+  "authors": [
+   "Kartik Dahake",
+   "Abhijit Chakraborty"
+  ],
+  "categories": [
+   "physics.soc-ph",
+   "q-fin.GN",
+   "q-fin.RM"
+  ],
+  "published": "2026-08-12T12:59:54Z",
+  "updated": "2026-08-12T12:59:54Z"
+ },
+ {
+  "id": "2608.12016",
+  "title": "Term structure shapes in the Hull-White model with Svensson-parameterized initial yield curves",
+  "summary": "We examine the shapes attainable by the forward and yield curve in the Hull-White model with Svensson-parameterized initial yield curves. For Nelson-Siegel-parameterized initial yield curves, we provide a complete classification of all attainable shapes and partition the parameter space and the state space according to these shapes. Our analysis relies on the theory of Tchebycheff systems and the envelope method. For Bliss- and Svensson-parameterized initial yield curves, we derive lower and upper bounds on the number of attainable local extrema. We examine the asymptotic behavior of the model and demonstrate that the yield curve attains only the shapes normal, inverse and humped with positive probability as $t\\rightarrow\\infty.$",
+  "authors": [
+   "Felix Sachse"
+  ],
+  "categories": [
+   "q-fin.MF"
+  ],
+  "published": "2026-08-12T12:53:09Z",
+  "updated": "2026-08-12T12:53:09Z"
+ },
+ {
+  "id": "2608.11505",
+  "title": "Does a Structural Model Add Anything to the Closing Price? Calibrated forecasting, incremental information, and match leverage in the Italian Serie A",
+  "summary": "Studies of association-football forecasting routinely report three-way accuracy in the low fifties and present it as competitive with the betting market. Accuracy against a uniform benchmark answers the wrong question; the question worth asking is whether a model carries information a margin-free closing price has not already absorbed. We formalise that test as the fitted weight in a logarithmic opinion pool and apply it to nineteen complete Serie A seasons (7,220 matches). The answer is negative and stable. A Dixon-Coles model with tuned exponential decay attains 53.4% accuracy and a Ranked Probability Score of 0.1972 against the market's 0.1905; the paired difference is +0.0067 (95% CI [0.0046, 0.0088]) and the market wins in all seven test seasons. The fitted pooling weight on the structural model is 0.000, and the log-loss profile is monotone increasing in that weight on validation and test alike, so this is a boundary solution, not an optimisation artefact. Refitting the same machinery to shots on target yields a variant earning weight 0.35 against the goals model -- it carries information the goals model lacks -- and 0.000 against the market. Two structural signals, each informative about the other, both priced. The structural model is better calibrated than the market on the home-win margin (slope 0.995 versus 1.103) while clearly less sharp: the market's advantage is discrimination rather than honesty, which accuracy alone cannot distinguish. Value lies not in a bette",
+  "authors": [
+   "Yannik Pitcan"
+  ],
+  "categories": [
+   "stat.AP",
+   "q-fin.ST"
+  ],
+  "published": "2026-08-11T23:40:06Z",
+  "updated": "2026-08-11T23:40:06Z"
+ },
+ {
+  "id": "2608.11344",
+  "title": "Governing Agentic AI in FinTech",
+  "summary": "Financial institutions are delegating consequential decisions to agentic AI systems that decompose goals, coordinate models and tools, and act with little oversight. Yet agentic AI governance in FinTech is under-investigated. We argue the binding governance constraint is not capability but verifiability. We define the Verifiability Gap as the shortfall between the verification delegated authority demands and the explainability and reproducibility retained after a decision. It is indexed to a verifier, evidentiary standard, and audit lag. We develop a multilevel governance theory for agentic AI and test its mechanisms in three studies over nine model versions, from a three-billion-parameter local model to a commercial frontier system. Study 1 shows that provider releases alter historical financial actions, and that the controls replay needs belong to the provider: the frontier model rejects temperature, top_p and top_k outright and exposes no random seed. Under the tightest controls each endpoint allows, a local model reproduced 320 of 320 executions, hosted models 319 of 320 and 959 of 960. Study 2 shows that orchestration is a latent policy layer. Architecture changes final actions, and no execution record repeated in any configuration at any scale. The frontier model reproduces its own actions more often than the local ones, its record no better, and loses a comparable share of its differentiation. Capability buys a higher starting point, not auditability. Study 3 shows two",
+  "authors": [
+   "Henry Han"
+  ],
+  "categories": [
+   "cs.CY",
+   "cs.AI",
+   "q-fin.RM"
+  ],
+  "published": "2026-08-11T18:52:09Z",
+  "updated": "2026-08-11T18:52:09Z"
+ },
+ {
+  "id": "2608.11327",
+  "title": "Long-Horizon Forecasting of Complete Financial Statements with Forma",
+  "summary": "Specialist training beats generalist scale when forecasting financial statements. To our knowledge, no prior work jointly forecasts complete financial statements beyond one year, yet in a discounted-cash-flow valuation most firm value sits past that window. We release ProForma-20Q, a reproducible benchmark for forecasting 78 statement line items 1-20 quarters ahead, for anonymized firms, from past statements and an industry code, scored by change-space $R^2$. On it, Forma, a transformer that reads statements as sets of (account, quarter, value) tuples and maximizes a masked-tuple Gaussian likelihood, beats every competitor we field: classical machine learning, chained gradient boosting, a zero-shot time-series foundation model, and frontier large language models. Its lead widens with horizon, where valuation needs accuracy most, and its Gaussian predictive intervals never under-cover. Forma's forecasts nearly satisfy accounting identities; exact coherence is recoverable at no statistically significant accuracy cost. Its tuple interface supports scenario analysis without retraining, and we show that pinning future revenue paths sharpens the rest of the statement.",
+  "authors": [
+   "Travis L. Johnson",
+   "Jiannan Jiang",
+   "Soumyabrata Chaudhuri",
+   "Yihao Chen",
+   "Lauren Falvey",
+   "Donal O'Cofaigh"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.CP"
+  ],
+  "published": "2026-08-11T18:21:19Z",
+  "updated": "2026-08-11T18:21:19Z"
+ },
+ {
+  "id": "2608.11266",
+  "title": "Bank Run Exposure in a Paycheck-to-Paycheck Economy with Loss-Averse Depositors",
+  "summary": "We develop a behavioural model of bank run exposure in a paycheck-to-paycheck economy with loss averse depositors. Income is received through demand deposits, and consumption ratcheting embeds reference dependence in a parsimonious asset-pricing framework. We show that sufficiently high subjective bad-state probabilities endogenously increase liquidity demand and generate equilibrium stress states supporting bank runs. These states define a Bank Run Exposure State Space and yield a martingale representation for exposure dynamics. A proof-of-concept empirical implementation using Call Report data constructs bank-level exposure proxies from funding and lending composition. A regression-weighted composite measure modestly improves fit relative to a retail-share benchmark, with stronger amplification among small banks and during the post-Silicon Valley Bank (SVB) collapse period. The framework highlights how behavioural liquidity demand alters equilibrium reserve holdings and can crowd out productive lending.",
+  "authors": [
+   "G. Charles-Cadogan"
+  ],
+  "categories": [
+   "econ.TH",
+   "q-fin.RM"
+  ],
+  "published": "2026-08-10T10:17:39Z",
+  "updated": "2026-08-10T10:17:39Z"
+ },
+ {
+  "id": "2608.11250",
+  "title": "AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search",
+  "summary": "Language models can propose many plausible trading factors, but an autonomous research system must also allocate its evaluation budget, verify its own evidence, and preserve how each candidate was produced. We present AgonAlpha, an architecture that searches over frozen research artifacts---hypotheses, executable expressions, platform evidence, rationales, and review status---rather than formulas alone. To our knowledge, AgonAlpha is the first alpha-mining system to combine verified artifact search, a fresh-context adversarial reviewer with re-execution and veto authority, and pending-aware parallel budget allocation, together with a complete public evidence trail. Independent deployments on WorldQuant BRAIN produced SPECTACULAR-grade alphas across five users and six model backends, with Fitness reaching 9.50 and Sharpe reaching 3.48, while retaining prompt-to-expression provenance for every submission.",
+  "authors": [
+   "Weicheng Ye",
+   "Youran Sun",
+   "Xingyu Ren",
+   "Shunyao Yu",
+   "Chugang Yi",
+   "Haizhao Yang"
+  ],
+  "categories": [
+   "cs.AI",
+   "cs.MA",
+   "q-fin.CP",
+   "q-fin.PM"
+  ],
+  "published": "2026-08-04T16:00:35Z",
+  "updated": "2026-08-04T16:00:35Z"
+ }
+]
