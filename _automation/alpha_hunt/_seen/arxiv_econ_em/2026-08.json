@@ -41,6 +41,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2a2398da1f977796dafba6514a193b0a": {
+    "first_seen": "2026-08-14 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Parameter Identification in Autoregressions under Discrete Sampling or Temporal ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "31bd61139259a5a909ff65b4cfc9bc12": {
+    "first_seen": "2026-08-14 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Local Asymptotics for Treatment Choice with Partial Identification",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "34ebe209893184e5d68c34fc519113d8": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -73,6 +87,13 @@
     "first_seen": "2026-08-07 01:30",
     "source": "arxiv_econ_em",
     "title": "Bartlett Couplings of the Onion and Vine LKJ Samplers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "490fcf40e496cfd38f6e38eb2efcc7cb": {
+    "first_seen": "2026-08-14 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimation of distribution functions, their jumps and interval probabilities und",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -223,6 +244,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "949c2319ebe7006851b69386f1a274c8": {
+    "first_seen": "2026-08-14 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Supervised Mixed-Frequency Learning for Macro-Financial Forecasting When Factors",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "a4e87bd25adc3080b276904f2d6c61b3": {
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
@@ -298,6 +326,20 @@
     "source": "arxiv_econ_em",
     "title": "Monotonicity and Rigidity in Gaussian Inverse Regression: The One-Period Kyle Mo",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "b8b670d2716e60b<ACCOUNT_ID>d6c67fcb": {
+    "first_seen": "2026-08-14 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Measuring the Arrow of Time: Identification, Estimation, and Inference for Direc",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bcd7f738b9d29dabee83444acac9fa51": {
+    "first_seen": "2026-08-14 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Experimental Design and Estimation when Potential Outcomes are Bounded",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "bf8bb8b2507e4a6fa6405c62c814224e": {
@@ -409,6 +451,13 @@
     "first_seen": "2026-08-11 02:30",
     "source": "arxiv_econ_em",
     "title": "A framework for assessing value and heterogeneity, illustrated using an early mo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "efdd2bf0ce7640f5a51567c037d79428": {
+    "first_seen": "2026-08-14 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Learning about Treatment Effects in Panels under Unknown Interference",
     "decision": "rejected_L0",
     "promising_file": null
   },
