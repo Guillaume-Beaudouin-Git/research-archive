@@ -69,6 +69,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "3bcc94f365fa729f427318d27cf3f6ac": {
+    "first_seen": "2026-08-15 11:00",
+    "source": "github_python",
+    "title": "sgl-project/sglang-omni",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3c223f0b39b6f7920692214e7d1375df": {
     "first_seen": "2026-08-08 12:00",
     "source": "github_python",
@@ -94,6 +101,13 @@
     "first_seen": "2026-08-12 11:00",
     "source": "github_python",
     "title": "paradigmxyz/centaur",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "514e57c3a5005ef773b10b06cfef964d": {
+    "first_seen": "2026-08-15 11:00",
+    "source": "github_python",
+    "title": "MakazhanAlpamys/Soup",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -237,6 +251,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d28594eb6606f7f8f944909f14230c0e": {
+    "first_seen": "2026-08-15 11:00",
+    "source": "github_python",
+    "title": "whiteguo233/OpenBiliClaw",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "dfd6bd6b78d332c1b01473f8838f25cb": {
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
@@ -290,6 +311,13 @@
     "first_seen": "2026-08-04 11:00",
     "source": "github_python",
     "title": "huangruiteng/loopx",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fa664c05e4c3f74ddb6fe2fbafbadabe": {
+    "first_seen": "2026-08-15 11:00",
+    "source": "github_python",
+    "title": "titanwings/colleague-skill",
     "decision": "rejected_L0",
     "promising_file": null
   },
