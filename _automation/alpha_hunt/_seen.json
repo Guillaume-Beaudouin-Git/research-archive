@@ -701,7 +701,8 @@
     "promising_file": "arxiv_econ_em_optimizing_regret_20260722.md"
   },
   "968cb42ed9190303c2550c3f9a3adcd6": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_engineering_social_networks_how_initial_group_assi_20260721.md"
   },
   "d96f8455c83e23d9f726db617dc93a82": {
     "decision": "accepted",
@@ -768,6 +769,7 @@
     "promising_file": "arxiv_econ_em_rational_bubbles_at_the_spectral_edge_an_operator_20260710.md"
   },
   "e355697a05fadb96f583dcafb9233d09": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "hn_quant_launch_hn_edotenv_yc_s26_quant_trading_rl_envs_to_20260804.md"
   }
 }
