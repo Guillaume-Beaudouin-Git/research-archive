@@ -132,6 +132,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5f168e227fd8c415fef96c2ba129d87e": {
+    "first_seen": "2026-08-16 11:00",
+    "source": "github_python",
+    "title": "xai-org/grok-1",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "622c16101d955e57c91c171c6c52aee5": {
     "first_seen": "2026-08-11 11:30",
     "source": "github_python",
@@ -178,6 +185,13 @@
     "first_seen": "2026-08-12 11:00",
     "source": "github_python",
     "title": "index-tts/index-tts",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7fb53838b1eb00d35a7b6ae5b4be6d96": {
+    "first_seen": "2026-08-16 11:00",
+    "source": "github_python",
+    "title": "0xSero/ai-data-extraction",
     "decision": "rejected_L0",
     "promising_file": null
   },
