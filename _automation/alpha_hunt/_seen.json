@@ -561,22 +561,28 @@
     "promising_file": "quantocracy_lookahead_bias_in_fundamental_backtests_66_days_20260710.md"
   },
   "949c2319ebe7006851b69386f1a274c8": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_supervised_mixed_frequency_learning_for_macro_fina_20260814.md"
   },
   "565b845673b0ecc8070cecb0c4c7d7e6": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_testing_sign_agreement_20260812.md"
   },
   "d09f33d8bd829a9956eb93130348309f": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_ai_governance_for_institutional_readiness_in_finan_20260811.md"
   },
   "9302591dd29a600c64e8b2eaf9520661": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_from_rating_factors_to_crash_mechanisms_a_multisca_20260811.md"
   },
   "aa7ef3b52e7d60ed76c09d8848ffab8d": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_a_comparison_of_high_dimensional_variable_selectio_20260811.md"
   },
   "c855b5c28cc3d5809931450e693dd350": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_local_conformal_prediction_for_individual_causal_e_20260811.md"
   },
   "0c5b6ccce47780ea5d2286eaa9675aa8": {
     "decision": "accepted",
@@ -587,10 +593,12 @@
     "promising_file": "arxiv_econ_em_risk_in_a_data_rich_model_20260807.md"
   },
   "aec62f00d4726dc5605d892c078d1a81": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_soft_noncrossing_bayesian_panel_quantile_regressio_20260806.md"
   },
   "b4fafbc35efa33ccf3b747fc91c57a5d": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_generalized_impulse_responses_of_portfolio_default_20260806.md"
   },
   "3ce0dfa20a1b9b32a100fbe78bc39f1f": {
     "decision": "accepted",
@@ -601,117 +609,147 @@
     "promising_file": "arxiv_econ_em_when_predictions_become_regressors_a_split_sample_20260805.md"
   },
   "4ebe5cf482dc768551b991892f1c5311": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_a_simple_approximation_to_the_distribution_of_the_20260804.md"
   },
   "5c91323c1ed4975430a1568fc2eabf4a": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_ai_governance_for_institutional_readiness_in_finan_20260804.md"
   },
   "7b52baaaf3665faf9fa1c60cd5a8c73f": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_measuring_product_quality_using_images_the_clip_q_20260804.md"
   },
   "b6c114fc355b92939ca0d358f39c0383": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_monotonicity_and_rigidity_in_gaussian_inverse_regr_20260804.md"
   },
   "38bd7ddd1a5f6855de4c9d1e81a866d9": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_conditional_projection_methods_for_large_scale_bay_20260803.md"
   },
   "af633ef3608bb10837a737bc1332d586": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_terranova_a_foundation_model_for_the_anthropocene_20260803.md"
   },
   "69e70bb79de38ff86899722a4cac76a1": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_energy_market_and_carbon_emission_spillovers_in_cr_20260731.md"
   },
   "b7621d39a4ebc167a613f25c957feaf1": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_optimizing_regret_20260731.md"
   },
   "41ce19a13ac5bbedd8f2347e7065b763": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_bootstrap_inference_in_autoregressive_duration_mod_20260731.md"
   },
   "c908f10cf81a967b8f4debafb6582b93": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_the_innate_economic_preferences_of_language_models_20260730.md"
   },
   "f525aeb439c1699c3c2e211bb9047fa7": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_specification_testing_for_dyadic_regression_models_20260730.md"
   },
   "3d34b1d68220a4085e5a83f9d42da874": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_spectral_truncation_in_synthetic_control_20260729.md"
   },
   "c4ce3c6a9ecd6db283185e221574dff6": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_inference_on_counterfactual_distributions_using_ma_20260728.md"
   },
   "6089c633cfb68a3b625c102761d33caa": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_what_should_the_encroaching_supplier_do_a_stackelb_20260728.md"
   },
   "a94f38cb453fe1efebea6b89ab9c816a": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_attenuated_heterogeneity_in_fixed_effects_causal_f_20260728.md"
   },
   "ba793ad4fa31b5e1da1044e6f0c148ab": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_the_one_period_kyle_1985_model_has_a_unique_equili_20260728.md"
   },
   "c65d91a144657beb2c6eea4b18da61f8": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_bitcoin_price_direction_prediction_via_regime_awar_20260728.md"
   },
   "e0b12d56e9e038e3fbc73a96571ed156": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_systemic_methodological_dysfunction_in_statistical_20260728.md"
   },
   "d37ffe6f235abbb7e09f4ba37174ccbd": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_partial_identification_with_auxiliary_moment_restr_20260727.md"
   },
   "eb03cc91cd9846925cd0adfa9319041d": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_nonlinear_boosting_with_multiple_testing_in_high_d_20260727.md"
   },
   "db5379828d1eb373f5a2efdcfb46ca9b": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_using_pre_trends_for_inference_in_difference_in_di_20260724.md"
   },
   "1979043c2c3e258ba7f5b3ae7f439e2f": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_identifying_treatment_and_spillover_effects_with_c_20260723.md"
   },
   "9866430efead9d52c96b9ea43e62d606": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_optimizing_regret_20260722.md"
   },
   "968cb42ed9190303c2550c3f9a3adcd6": {
     "decision": "deferred_to_next_run"
   },
   "d96f8455c83e23d9f726db617dc93a82": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_vector_search_as_nearest_neighbor_matching_rag_bas_20260721.md"
   },
   "04c6c47a6ce1b77289ea104746276b37": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_compositional_synthetic_controls_20260721.md"
   },
   "b136ba74bc14e8c2ac3ae8f8257282cf": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_from_vector_autoregressions_to_ai_based_time_serie_20260717.md"
   },
   "befb540728c4affba737fea849eb18b3": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_aggregation_bias_in_proxy_measurement_nighttime_li_20260717.md"
   },
   "6fcb7976ed9d1f412232ba37437c0076": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_time_preference_effects_in_forecasting_20260716.md"
   },
   "99329c4ae60fb06a38e97f56398eaf30": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_detecting_unusual_trading_patterns_on_cryptocurren_20260716.md"
   },
   "a13aba685d3e7270148f75f284f1b311": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_removable_defects_the_economics_and_limits_of_deli_20260716.md"
   },
   "3bec823647fd3e2c34a385525c62d76a": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_removable_defects_the_economics_and_limits_of_del_20260715.md"
   },
   "431d485199dce0c04292c970e658e923": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_interpreting_and_testing_factor_loadings_20260715.md"
   },
   "8d00bcc8344c9c0a61eaa52097bc5d66": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_q_scm_a_quantum_sequential_choice_model_for_driver_20260715.md"
   },
   "b82caf6b1d307df3b92d51b1cf64c649": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_bivariate_isotonic_regression_by_dynamic_programmi_20260715.md"
   },
   "c132fd8e8cde28f1fba520b5d58464e7": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_modeling_the_dynamic_relationship_between_brent_cr_20260715.md"
   },
   "064f2c098cebb14643e41dc281618af5": {
     "decision": "accepted",
@@ -722,10 +760,12 @@
     "promising_file": "arxiv_econ_em_deep_learning_for_dynamic_programming_with_recursi_20260713.md"
   },
   "fd2226c036e33de3021a96392ba5d718": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_media_measurement_and_the_assisted_own_goal_attrib_20260713.md"
   },
   "f86f90f4a02931545b5a56a48d16fafd": {
-    "decision": "deferred_to_next_run"
+    "decision": "accepted",
+    "promising_file": "arxiv_econ_em_rational_bubbles_at_the_spectral_edge_an_operator_20260710.md"
   },
   "e355697a05fadb96f583dcafb9233d09": {
     "decision": "deferred_to_next_run"
