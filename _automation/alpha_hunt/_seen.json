@@ -283,5 +283,411 @@
   "e5ef08db424181e9451b8a3902b660c8": {
     "decision": "accepted",
     "promising_file": "arxiv_econ_em_revision_risk_real_time_macro_forecasting_20260708.md"
+  },
+  "18cbf63f40fcf42f24c076d07292dffa": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_path_signatures_does_the_shape_of_price_paths_20260730.md"
+  },
+  "287c451100e9428aefaa38cf08c27ac8": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_podcast_why_i_stopped_trying_to_predict_the_market_20260730.md"
+  },
+  "7eb5526236fc9a7944893e91e3bbdcd8": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_a_database_of_historical_macroeconomic_events_20260730.md"
+  },
+  "b2f78cf0d8ca0b9c63e7b267876f1e81": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_when_risk_is_not_rewarded_20260730.md"
+  },
+  "cf0be267630807950ee61134c873cd36": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_does_your_backtest_survive_the_adverse_same_bar_20260730.md"
+  },
+  "0fd77b9bcee25c64a7f07d20b3e19aef": {
+    "decision": "accepted",
+    "promising_file": "quantpedia_is_trend_still_your_friend_a_microstructural_account_20260729.md"
+  },
+  "5e7b446042d437c861b9d4525e9ec3ae": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_naaim_aaii_equities_allocation_spread_smart_money_20260728.md"
+  },
+  "712352e808494a1a8b60315799c0e020": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_inflation_compass_model_20260728.md"
+  },
+  "1f81e68d528a65b3542287a7f9c3acdb": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_supertrend_flipped_to_death_the_most_taught_20260804.md"
+  },
+  "65486b9d754b3ca40eec56713036d06b": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_conformal_prediction_in_quantitative_finance_20260804.md"
+  },
+  "ae189256e7ddc4155af5fba1adedc915": {
+    "decision": "accepted",
+    "promising_file": "quantpedia_quantpedia_in_july_2026_20260803.md"
+  },
+  "769d40e85cd6fcdc544001083488b99c": {
+    "decision": "accepted",
+    "promising_file": "quantpedia_quantpedia_premium_update_july_30th_20260802.md"
+  },
+  "26f5778970ba50c0017a0edccc83e871": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_bitcoin_s_overnight_returns_forecast_the_vix_20260801.md"
+  },
+  "8ea81609beefb990de046a7513570f9c": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_we_tested_the_50_100_ma_ribbon_55_different_ways_20260801.md"
+  },
+  "e89bce0b4d726c5e94fcee126b2e4b7c": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_fair_value_as_an_adaptive_low_pass_filter_lafo_for_20260801.md"
+  },
+  "0cb34cf5e23f7b6bdb2c6205542429ec": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_i_invented_2021_candle_types_to_find_the_one_holy_20260730.md"
+  },
+  "88db3ed63bf902cb23337adc9eff846e": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_moving_averages_and_harness_engineering_for_33_20260715.md"
+  },
+  "35dee411c04b65d04ca20e72b3fb147d": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_how_many_backtests_is_too_many_we_ran_the_same_20260711.md"
+  },
+  "e62587d048b15f8903f47a97d5261fc9": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_skill_or_luck_we_ran_100_million_bitcoin_20260711.md"
+  },
+  "27ec5d0b19c86f49e992da64b867d92b": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_how_to_spot_a_fake_ml_trading_paper_aligrithm_20260813.md"
+  },
+  "44bef5cd3ed14718acc5f0c1a23665a6": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_autopsy_no_005_the_congressional_trading_etf_that_20260813.md"
+  },
+  "ef9938b9debbee38328a60846bd1353c": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_rise_of_cta_etfs_concretum_group_20260813.md"
+  },
+  "0f4c4d0a4ce9e649e6f54eba1c97bafe": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_skewness_as_a_hidden_driver_of_anomaly_returns_20260810.md"
+  },
+  "2c6d8e6d3b29c470eed88f153bd4e292": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_bid_ask_spread_from_ohlc_the_gmm_estimator_that_20260810.md"
+  },
+  "0312abe70dd504a1e61294864107610f": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_i_scaled_out_to_raise_my_win_rate_it_20260813.md"
+  },
+  "1330195c87073075ce9f5a73747026c2": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_58_win_rate_that_was_my_own_code_lying_to_me_20260801.md"
+  },
+  "03f39da381be682cae41a8ff803b839a": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_part_3_3_refiner_trade_a_second_signal_and_the_20260726.md"
+  },
+  "ed1ae6eb9599fc1b20370895ef24ed0c": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_momentum_is_a_ranking_problem_learning_to_rank_vs_20260726.md"
+  },
+  "b0a7b17f47f615768a4b0d5642842027": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_what_should_you_change_first_in_a_crypto_backtest_20260724.md"
+  },
+  "a83e5c5e3e567a5507fe3b3d9b2e7cb0": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_daily_long_short_trend_following_parameters_asset_20260722.md"
+  },
+  "e0f7ba7b75d03e454acd3de62e9130dc": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_i_mastered_chaos_theory_to_develop_a_3_275_sharpe_20260722.md"
+  },
+  "0017d4035d88c21d8899424610c76bce": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_refiner_trade_from_gross_sharpe_to_net_20260719.md"
+  },
+  "ae322b7295f5e1773871aeb43aa105bc": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_150_years_of_global_stock_returns_the_birthplace_20260810.md"
+  },
+  "e822f8063a9b6fc50990f6ef31a97121": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_trading_strategy_comparison_is_b_really_better_than_a_20260810.md"
+  },
+  "3ebec81535cc07940addcec54611b042": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_testing_for_mean_reversion_adf_hurst_exponent_20260807.md"
+  },
+  "894f2815e12d63d96fb674267a09a626": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_taming_the_wildcard_david_varadi_s_inflation_compass_20260807.md"
+  },
+  "bc9d47f0cbb34ec8a80e9a7aada373c1": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_mathematics_of_machine_learning_for_traders_20260807.md"
+  },
+  "8a9824d6b3e22ce848633c586200dafd": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_signal_ceiling_why_no_single_bar_ohlcv_edge_20260806.md"
+  },
+  "b9d54b3e86e27b21a2a396018bb67e57": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_the_statistic_that_passed_every_test_i_had_and_20260806.md"
+  },
+  "e45279f25e7cd430a3e06bf011da65c9": {
+    "decision": "accepted",
+    "promising_file": "quantocracy_quick_5_etf_rotational_strategy_returns_the_upside_20260806.md"
+  },
+  "7a05f2623c9fc018712395e8e070a659": {
+    "decision": "deferred_to_next_run"
+  },
+  "bd1a353827d4d555cae0a1f09b517b76": {
+    "decision": "deferred_to_next_run"
+  },
+  "4c929ed7bf50ec0d5d93582820d4093b": {
+    "decision": "deferred_to_next_run"
+  },
+  "19fd802854f166d3d23f38c5c028d63b": {
+    "decision": "deferred_to_next_run"
+  },
+  "3fe187764e1e2c9d379ff195eea80955": {
+    "decision": "deferred_to_next_run"
+  },
+  "52b7a77e829cacb4d82c745d736bf105": {
+    "decision": "deferred_to_next_run"
+  },
+  "56ebc017a6616340f9eadd3900c4a521": {
+    "decision": "deferred_to_next_run"
+  },
+  "f1f0856abeda186aa4a948844b2d1d8d": {
+    "decision": "deferred_to_next_run"
+  },
+  "002018a63dfdf632019c5a366a7704b7": {
+    "decision": "deferred_to_next_run"
+  },
+  "ac818105bb82f72c9b1186e3960bcbc2": {
+    "decision": "deferred_to_next_run"
+  },
+  "e7114e3042f92acf661bcd7ee7e547ee": {
+    "decision": "deferred_to_next_run"
+  },
+  "2933dac03e3a7fe35654ede342fdcce0": {
+    "decision": "deferred_to_next_run"
+  },
+  "8bcb78bbcd915816d57fbf0b9fdbbdb2": {
+    "decision": "deferred_to_next_run"
+  },
+  "ad256f3af3c1a4f8bf142e7ec1a80fdd": {
+    "decision": "deferred_to_next_run"
+  },
+  "e09b8ac2a8353d1ca71e49d9290c6e45": {
+    "decision": "deferred_to_next_run"
+  },
+  "ff8f309edca745dfe822b23691d4a81e": {
+    "decision": "deferred_to_next_run"
+  },
+  "e8dee00cda23ad97ac7a44664f9c1f17": {
+    "decision": "deferred_to_next_run"
+  },
+  "cb56151da29245c9eb4489b216719111": {
+    "decision": "deferred_to_next_run"
+  },
+  "e6d97d709b51159c9e0ce8770defc040": {
+    "decision": "deferred_to_next_run"
+  },
+  "0a73ab754f723140b87e2fdadaa34c0d": {
+    "decision": "deferred_to_next_run"
+  },
+  "c26128ec9c1887880def47570ed29d42": {
+    "decision": "deferred_to_next_run"
+  },
+  "dd656ed67ab980239240ce8c6d349743": {
+    "decision": "deferred_to_next_run"
+  },
+  "25f0e53a9f097cfb4013dff038f2bf87": {
+    "decision": "deferred_to_next_run"
+  },
+  "a2d48ae5067e16e494a1173e630940ad": {
+    "decision": "deferred_to_next_run"
+  },
+  "1c8c9b74d9a1f85c3cf45de5f13a2de7": {
+    "decision": "deferred_to_next_run"
+  },
+  "864cf59c993228ff86e905862fb7933f": {
+    "decision": "deferred_to_next_run"
+  },
+  "9f838429c0e3d64b5c1dc9bac2736bfc": {
+    "decision": "deferred_to_next_run"
+  },
+  "573462c6c0630befe0dc2c1d1c2bc4ee": {
+    "decision": "deferred_to_next_run"
+  },
+  "6c24646b812dca5cb6c4ee59a9bae5ca": {
+    "decision": "deferred_to_next_run"
+  },
+  "949c2319ebe7006851b69386f1a274c8": {
+    "decision": "deferred_to_next_run"
+  },
+  "565b845673b0ecc8070cecb0c4c7d7e6": {
+    "decision": "deferred_to_next_run"
+  },
+  "d09f33d8bd829a9956eb93130348309f": {
+    "decision": "deferred_to_next_run"
+  },
+  "9302591dd29a600c64e8b2eaf9520661": {
+    "decision": "deferred_to_next_run"
+  },
+  "aa7ef3b52e7d60ed76c09d8848ffab8d": {
+    "decision": "deferred_to_next_run"
+  },
+  "c855b5c28cc3d5809931450e693dd350": {
+    "decision": "deferred_to_next_run"
+  },
+  "0c5b6ccce47780ea5d2286eaa9675aa8": {
+    "decision": "deferred_to_next_run"
+  },
+  "055ca79b8e26861d1fd1fe778e081ce8": {
+    "decision": "deferred_to_next_run"
+  },
+  "aec62f00d4726dc5605d892c078d1a81": {
+    "decision": "deferred_to_next_run"
+  },
+  "b4fafbc35efa33ccf3b747fc91c57a5d": {
+    "decision": "deferred_to_next_run"
+  },
+  "3ce0dfa20a1b9b32a100fbe78bc39f1f": {
+    "decision": "deferred_to_next_run"
+  },
+  "40e2d79ee74eb7193bcd140aacb7cdb7": {
+    "decision": "deferred_to_next_run"
+  },
+  "4ebe5cf482dc768551b991892f1c5311": {
+    "decision": "deferred_to_next_run"
+  },
+  "5c91323c1ed4975430a1568fc2eabf4a": {
+    "decision": "deferred_to_next_run"
+  },
+  "7b52baaaf3665faf9fa1c60cd5a8c73f": {
+    "decision": "deferred_to_next_run"
+  },
+  "b6c114fc355b92939ca0d358f39c0383": {
+    "decision": "deferred_to_next_run"
+  },
+  "38bd7ddd1a5f6855de4c9d1e81a866d9": {
+    "decision": "deferred_to_next_run"
+  },
+  "af633ef3608bb10837a737bc1332d586": {
+    "decision": "deferred_to_next_run"
+  },
+  "69e70bb79de38ff86899722a4cac76a1": {
+    "decision": "deferred_to_next_run"
+  },
+  "b7621d39a4ebc167a613f25c957feaf1": {
+    "decision": "deferred_to_next_run"
+  },
+  "41ce19a13ac5bbedd8f2347e7065b763": {
+    "decision": "deferred_to_next_run"
+  },
+  "c908f10cf81a967b8f4debafb6582b93": {
+    "decision": "deferred_to_next_run"
+  },
+  "f525aeb439c1699c3c2e211bb9047fa7": {
+    "decision": "deferred_to_next_run"
+  },
+  "3d34b1d68220a4085e5a83f9d42da874": {
+    "decision": "deferred_to_next_run"
+  },
+  "c4ce3c6a9ecd6db283185e221574dff6": {
+    "decision": "deferred_to_next_run"
+  },
+  "6089c633cfb68a3b625c102761d33caa": {
+    "decision": "deferred_to_next_run"
+  },
+  "a94f38cb453fe1efebea6b89ab9c816a": {
+    "decision": "deferred_to_next_run"
+  },
+  "ba793ad4fa31b5e1da1044e6f0c148ab": {
+    "decision": "deferred_to_next_run"
+  },
+  "c65d91a144657beb2c6eea4b18da61f8": {
+    "decision": "deferred_to_next_run"
+  },
+  "e0b12d56e9e038e3fbc73a96571ed156": {
+    "decision": "deferred_to_next_run"
+  },
+  "d37ffe6f235abbb7e09f4ba37174ccbd": {
+    "decision": "deferred_to_next_run"
+  },
+  "eb03cc91cd9846925cd0adfa9319041d": {
+    "decision": "deferred_to_next_run"
+  },
+  "db5379828d1eb373f5a2efdcfb46ca9b": {
+    "decision": "deferred_to_next_run"
+  },
+  "1979043c2c3e258ba7f5b3ae7f439e2f": {
+    "decision": "deferred_to_next_run"
+  },
+  "9866430efead9d52c96b9ea43e62d606": {
+    "decision": "deferred_to_next_run"
+  },
+  "968cb42ed9190303c2550c3f9a3adcd6": {
+    "decision": "deferred_to_next_run"
+  },
+  "d96f8455c83e23d9f726db617dc93a82": {
+    "decision": "deferred_to_next_run"
+  },
+  "04c6c47a6ce1b77289ea104746276b37": {
+    "decision": "deferred_to_next_run"
+  },
+  "b136ba74bc14e8c2ac3ae8f8257282cf": {
+    "decision": "deferred_to_next_run"
+  },
+  "befb540728c4affba737fea849eb18b3": {
+    "decision": "deferred_to_next_run"
+  },
+  "6fcb7976ed9d1f412232ba37437c0076": {
+    "decision": "deferred_to_next_run"
+  },
+  "99329c4ae60fb06a38e97f56398eaf30": {
+    "decision": "deferred_to_next_run"
+  },
+  "a13aba685d3e7270148f75f284f1b311": {
+    "decision": "deferred_to_next_run"
+  },
+  "3bec823647fd3e2c34a385525c62d76a": {
+    "decision": "deferred_to_next_run"
+  },
+  "431d485199dce0c04292c970e658e923": {
+    "decision": "deferred_to_next_run"
+  },
+  "8d00bcc8344c9c0a61eaa52097bc5d66": {
+    "decision": "deferred_to_next_run"
+  },
+  "b82caf6b1d307df3b92d51b1cf64c649": {
+    "decision": "deferred_to_next_run"
+  },
+  "c132fd8e8cde28f1fba520b5d58464e7": {
+    "decision": "deferred_to_next_run"
+  },
+  "064f2c098cebb14643e41dc281618af5": {
+    "decision": "deferred_to_next_run"
+  },
+  "3e6d45e571229a87bc563e4e9f7701d2": {
+    "decision": "deferred_to_next_run"
+  },
+  "fd2226c036e33de3021a96392ba5d718": {
+    "decision": "deferred_to_next_run"
+  },
+  "f86f90f4a02931545b5a56a48d16fafd": {
+    "decision": "deferred_to_next_run"
+  },
+  "e355697a05fadb96f583dcafb9233d09": {
+    "decision": "deferred_to_next_run"
   }
 }
