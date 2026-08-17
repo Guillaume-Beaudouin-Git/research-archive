@@ -1,5 +1,62 @@
 {
-  "run_time": "2026-08-16 20:06 UTC",
-  "accepted_count": 0,
-  "by_source": {}
+  "run_time": "2026-08-17 02:00 UTC",
+  "accepted_count": 3,
+  "by_source": {
+    "hn_quant": {
+      "total": 60,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
+      "rej_l2": 0
+    },
+    "hn_algotrading": {
+      "total": 207,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
+      "rej_l2": 0
+    },
+    "quantocracy": {
+      "total": 71,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
+      "rej_l2": 0
+    },
+    "quantinsti": {
+      "total": 15,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
+      "rej_l2": 0
+    },
+    "quantpedia": {
+      "total": 10,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
+      "rej_l2": 0
+    },
+    "github_python": {
+      "total": 80,
+      "new": 0,
+      "accepted": 0,
+      "rej_l0": 0,
+      "rej_l1": 0,
+      "rej_l2": 0
+    },
+    "arxiv_econ_em": {
+      "total": 83,
+      "new": 5,
+      "accepted": 3,
+      "rej_l0": 2,
+      "rej_l1": 0,
+      "rej_l2": 0
+    }
+  }
 }

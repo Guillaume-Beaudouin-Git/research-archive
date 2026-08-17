@@ -83,6 +83,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "48e4eb506222e9d765ac24f8650f8e64": {
+    "first_seen": "2026-08-17 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Scalable likelihood-based inference for limited dependent variable models",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "48fa4e4dcb4a24d508f048c11d642514": {
     "first_seen": "2026-08-07 01:30",
     "source": "arxiv_econ_em",
@@ -102,6 +109,13 @@
     "source": "arxiv_econ_em",
     "title": "Fixed-Effect Saturation Is Not Weak Identification: Certifying Inference under M",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "4ad2f28d6c6a3298594bf16dcd4fb2a5": {
+    "first_seen": "2026-08-17 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Limited-Information Estimation of Heterogeneous Agent Models",
+    "decision": "accepted",
     "promising_file": null
   },
   "4bd48926ae65d48e4d7706fc9a4786fd": {
@@ -349,6 +363,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c2db1c92a76db4a80b42fa440fae0a23": {
+    "first_seen": "2026-08-17 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Macroprudential Policy and Downside Risk: Regime-Dependent Effects of Capital Re",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "c3ce92394d206253810772db67561283": {
+    "first_seen": "2026-08-17 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Handover of In-Context Learning State Across Session Boundaries",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "c3e5672120f58f664ac178a7b08b42e5": {
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
@@ -395,6 +423,13 @@
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
     "title": "A Nonparametric Test for Cross-Unit Spillovers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d646de4c8f9f68ce69b42f4c5ff3dcef": {
+    "first_seen": "2026-08-17 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Sharp Minimax Theory for Randomized Experiments",
     "decision": "rejected_L0",
     "promising_file": null
   },

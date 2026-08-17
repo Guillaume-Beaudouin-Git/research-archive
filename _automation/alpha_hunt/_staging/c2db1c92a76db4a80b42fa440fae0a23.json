@@ -1,0 +1,14 @@
+{
+  "hash": "c2db1c92a76db4a80b42fa440fae0a23",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.14307v1",
+  "title": "Macroprudential Policy and Downside Risk: Regime-Dependent Effects of Capital Regulation",
+  "url": "http://arxiv.org/abs/2608.14307v1",
+  "description": "This paper employs a Threshold Bayesian Vector Autoregression (TBVAR) to estimate the regime-dependent macroeconomic effects of capital regulation in Hungary. Using the Factor-based Index of Systemic Stress (FISS) as the threshold variable, the model identifies normal and stress regimes consistent with the occasionally binding constraints literature. The TBVAR offers a practical multivariate alternative to Growth-at-Risk for data-constrained economies. Generalised impulse responses reveal a pronounced asymmetry: releasing regulatory capital during stress raises GDP growth at the peak, with effects persisting for roughly twenty months, while the cost of accumulating capital in the normal regime is economically negligible. These findings are robust to alternative Cholesky orderings, sample periods, and credit variable definitions, providing direct empirical support for the countercyclical operation of the capital buffer.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-17 02:00 UTC"
+}
