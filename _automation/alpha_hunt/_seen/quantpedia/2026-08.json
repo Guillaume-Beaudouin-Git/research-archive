@@ -1,4 +1,11 @@
 {
+  "5c7e75d4d2e7a4e296795b1188a0915c": {
+    "first_seen": "2026-08-17 10:00",
+    "source": "quantpedia",
+    "title": "Sectoral Intramonth Momentum Cycle: Exploiting Turn-of-the-Month Patterns in Sec",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "769d40e85cd6fcdc544001083488b99c": {
     "first_seen": "2026-08-02 21:30",
     "source": "quantpedia",
