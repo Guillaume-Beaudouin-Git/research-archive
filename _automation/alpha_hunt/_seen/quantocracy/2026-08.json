@@ -6,6 +6,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "063f80a394ff78dd7d29f8df5061156e": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "VIX and Trend Following Revisited: Nearly a Decade of Out-of-Sample Evidence [Al",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0a28420ea3e74b900066f66e7753c55a": {
     "first_seen": "2026-08-12 06:00",
     "source": "quantocracy",
@@ -45,6 +52,13 @@
     "first_seen": "2026-08-04 06:00",
     "source": "quantocracy",
     "title": "Supertrend, flipped to death: the most-taught indicator on the internet [The Ref",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "2548dda58addcad65a66b2912dfaf74b": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Price-Path Convexity: A New Cross-Sectional Anomaly [Aligrithm]",
     "decision": "accepted",
     "promising_file": null
   },
@@ -95,6 +109,20 @@
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 08/12/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3abe82d17b5ffe6aff5b44b19ca7a9cd": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/16/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3b96b8464e4dbd5334e6da0452e06d57": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Your Research Agent Is an Undisclosed Factor Exposure – And So Is Everyone Else’",
+    "decision": "accepted",
     "promising_file": null
   },
   "3ebec81535cc07940addcec54611b042": {
@@ -181,6 +209,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "b9b9caad06f0afe09410fb870bd36c5d": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Dual Momentum Between Gold and Bitcoin (Two Stores of Value) [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "b9d54b3e86e27b21a2a396018bb67e57": {
     "first_seen": "2026-08-06 06:00",
     "source": "quantocracy",
@@ -200,6 +235,27 @@
     "source": "quantocracy",
     "title": "Bond indices and systematic duration management [Macrosynergy]",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "cf046e179890421bca9ae71025280bdc": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Sharpe Ratio Distribution: When Normal’s A No-Go, Why Not SHASHo? [Krzysztof Ozi",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "d50b9f3fce307f5e9287bc23660429bf": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Factor Timing Mostly Fails     the Honest Version [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "d87d3e0fa28f018d69ea63844f83df8f": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Market Regimes and Changing Market Dynamics [Relative Value Arbitrage]",
+    "decision": "accepted",
     "promising_file": null
   },
   "e45279f25e7cd430a3e06bf011da65c9": {
