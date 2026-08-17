@@ -771,5 +771,54 @@
   "e355697a05fadb96f583dcafb9233d09": {
     "decision": "accepted",
     "promising_file": "hn_quant_launch_hn_edotenv_yc_s26_quant_trading_rl_envs_to_20260804.md"
+  },
+  "063f80a394ff78dd7d29f8df5061156e": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "VIX and Trend Following Revisited: Nearly a Decade of Out-of-Sample Evidence [Al",
+    "decision": "accepted",
+    "promising_file": "quantocracy_vix_and_trend_following_revisited_nearly_a_decade_20260817.md"
+  },
+  "2548dda58addcad65a66b2912dfaf74b": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Price-Path Convexity: A New Cross-Sectional Anomaly [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_price_path_convexity_a_new_cross_sectional_anomaly_20260817.md"
+  },
+  "3b96b8464e4dbd5334e6da0452e06d57": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Your Research Agent Is an Undisclosed Factor Exposure – And So Is Everyone Else’",
+    "decision": "accepted",
+    "promising_file": "quantocracy_your_research_agent_is_an_undisclosed_factor_expos_20260817.md"
+  },
+  "b9b9caad06f0afe09410fb870bd36c5d": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Dual Momentum Between Gold and Bitcoin (Two Stores of Value) [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_dual_momentum_between_gold_and_bitcoin_two_stores_20260817.md"
+  },
+  "cf046e179890421bca9ae71025280bdc": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Sharpe Ratio Distribution: When Normal’s A No-Go, Why Not SHASHo? [Krzysztof Ozi",
+    "decision": "accepted",
+    "promising_file": "quantocracy_sharpe_ratio_distribution_when_normals_a_no_go_why_20260817.md"
+  },
+  "d50b9f3fce307f5e9287bc23660429bf": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Factor Timing Mostly Fails     the Honest Version [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_factor_timing_mostly_fails_the_honest_version_alig_20260817.md"
+  },
+  "d87d3e0fa28f018d69ea63844f83df8f": {
+    "first_seen": "2026-08-17 06:30",
+    "source": "quantocracy",
+    "title": "Market Regimes and Changing Market Dynamics [Relative Value Arbitrage]",
+    "decision": "accepted",
+    "promising_file": "quantocracy_market_regimes_and_changing_market_dynamics_relati_20260817.md"
   }
 }
