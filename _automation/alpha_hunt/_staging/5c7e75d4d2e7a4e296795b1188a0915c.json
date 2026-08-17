@@ -1,0 +1,14 @@
+{
+  "hash": "5c7e75d4d2e7a4e296795b1188a0915c",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/sectoral-intramonth-momentum-cycle/",
+  "title": "Sectoral Intramonth Momentum Cycle: Exploiting Turn-of-the-Month Patterns in Sector ETF Strategies",
+  "url": "https://quantpedia.com/sectoral-intramonth-momentum-cycle/",
+  "description": "We document a persistent intramonth momentum cycle in U.S. sector ETFs that yields meaningful risk-adjusted returns when properly sequenced. Using the nine original Select Sector SPDR ETFs and SPY as the market benchmark from December 1998 through June 2026, we show that trailing 252-day sector momentum generates a positive spread on the first trading day of the month—and then sharply reverses on days two and three. A third, independent leg of the cycle emerges in the window from ten to five trading days before month-end, consistent with the intramonth momentum cycle recently documented at the single-stock level by Nathan, Suominen and Tasa (2026). Stitching the three legs together into a single composite strategy delivers 5.99% annualized return at a 0.55 Sharpe ratio for the long-short variant, and 3.77% at 0.54 for the market-neutral variant—all while being invested fewer than half the trading days each month. Our contribution is twofold: we extend the calendar-anomaly literature from individual equities to sector-level portfolios, and we provide practitioners with a transparent, low-turnover framework that translates these academic patterns into actionable trade schedules.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-08-17 10:00 UTC"
+}
