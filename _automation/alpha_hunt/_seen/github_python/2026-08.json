@@ -55,6 +55,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "249e16b2c955915a27ce036d1a8aa681": {
+    "first_seen": "2026-08-17 11:00",
+    "source": "github_python",
+    "title": "anthropics/defending-code-reference-harness",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "29621d79581fba39e7c1c2d794d58c04": {
     "first_seen": "2026-08-14 11:00",
     "source": "github_python",
@@ -178,6 +185,13 @@
     "first_seen": "2026-08-12 11:00",
     "source": "github_python",
     "title": "omnigent-ai/omnigent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "766bcddff71f636536554b1b8dd10f31": {
+    "first_seen": "2026-08-17 11:00",
+    "source": "github_python",
+    "title": "Blaizzy/mlx-audio",
     "decision": "rejected_L0",
     "promising_file": null
   },
