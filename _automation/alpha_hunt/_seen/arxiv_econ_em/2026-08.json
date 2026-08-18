@@ -48,6 +48,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2f85e62b38b421ac4ee96a7c8002e6d8": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Clustered Local Projections for Short and Ultra-Short Time Series -- A Hierarchi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "31bd61139259a5a909ff65b4cfc9bc12": {
     "first_seen": "2026-08-14 02:30",
     "source": "arxiv_econ_em",
@@ -81,6 +88,13 @@
     "source": "arxiv_econ_em",
     "title": "When Predictions Become Regressors: A Split-Sample Correction for Biases in Down",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "43008798f798158c67cd17107b7d56ba": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Regional advantage in rugby sevens: Is there a home effect when nobody is home?",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "48e4eb506222e9d765ac24f8650f8e64": {
@@ -171,6 +185,20 @@
     "first_seen": "2026-08-06 03:30",
     "source": "arxiv_econ_em",
     "title": "Exact Inference in Fixed-Effect Regressions with Concentrated Identifying Variat",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "62d39220962cfa40c8fb4e162bba6db7": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Learning Sequential Mobility Choice: A Review of Route and Activity Choice throu",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "69fb834f7e2142d3fda2cfa5c43d8097": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Control Variates for Survey Sampling and Causal Inference",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -297,6 +325,13 @@
     "first_seen": "2026-08-11 02:30",
     "source": "arxiv_econ_em",
     "title": "A Comparison of High-Dimensional Variable Selection Procedures for Electricity S",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "acd61423d4391024a56e888d4e5a0da3": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Trading Scope for Credibility in Difference-in-Differences",
     "decision": "accepted",
     "promising_file": null
   },
@@ -454,10 +489,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e2734a77b1a4f7619731fac445a793dd": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Estimation and Inference for Peer Effects under Conditional Random Assignment",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e2d9b7b96c97177d5cfc377c0e906061": {
     "first_seen": "2026-08-05 02:00",
     "source": "arxiv_econ_em",
     "title": "Difference-in-differences with \"bad controls\"",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e51c0399026b3328c4a0d5faa52b6b68": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "The Best Are Always the Best: COVID-19 Lockdown Stringency and the Dispersion of",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -479,6 +528,13 @@
     "first_seen": "2026-08-04 01:00",
     "source": "arxiv_econ_em",
     "title": "Monotone Response for Random Objects",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ee3f8ae158675a607c05ed997088c810": {
+    "first_seen": "2026-08-18 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Quantile restrictions, revealed rankings, and the limits of multinomial choice",
     "decision": "rejected_L0",
     "promising_file": null
   },
