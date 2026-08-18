@@ -83,6 +83,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "3f2fd553a65e2961e8ef897b55891131": {
+    "first_seen": "2026-08-18 03:30",
+    "source": "arxiv_econ_em",
+    "title": "How Many Samples Are Needed to Determine Causal Direction? Sharp Minimax Bounds ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "40e2d79ee74eb7193bcd140aacb7cdb7": {
     "first_seen": "2026-08-05 02:00",
     "source": "arxiv_econ_em",
@@ -290,6 +297,13 @@
     "first_seen": "2026-08-14 02:30",
     "source": "arxiv_econ_em",
     "title": "Supervised Mixed-Frequency Learning for Macro-Financial Forecasting When Factors",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "9fa755e488a8fdba917cf5fd6b8b760c": {
+    "first_seen": "2026-08-18 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating and Testing Kinks in Panel Data Models",
     "decision": "accepted",
     "promising_file": null
   },
