@@ -181,6 +181,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "75aaca7ec728621d56d1bb6e5dfcff56": {
+    "first_seen": "2026-08-18 11:00",
+    "source": "github_python",
+    "title": "jewbetcha/openflight",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "766ba6ddca5d25ba54064477a9b93301": {
     "first_seen": "2026-08-12 11:00",
     "source": "github_python",
@@ -286,6 +293,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d297ba5824cb0b9cad27d89ab501a1a1": {
+    "first_seen": "2026-08-18 11:00",
+    "source": "github_python",
+    "title": "pipeshub-ai/pipeshub-ai",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "dfd6bd6b78d332c1b01473f8838f25cb": {
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
@@ -361,6 +375,13 @@
     "source": "github_python",
     "title": "atilaahmettaner/tradingview-mcp",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "fd7e899e0e0d3f2eab7de9c7ae41b6e9": {
+    "first_seen": "2026-08-18 11:00",
+    "source": "github_python",
+    "title": "docling-project/docling",
+    "decision": "rejected_L0",
     "promising_file": null
   }
 }
