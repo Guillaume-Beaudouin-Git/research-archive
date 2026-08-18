@@ -1,0 +1,14 @@
+{
+  "hash": "9fa755e488a8fdba917cf5fd6b8b760c",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.07162v2",
+  "title": "Estimating and Testing Kinks in Panel Data Models",
+  "url": "http://arxiv.org/abs/2608.07162v2",
+  "description": "Many economic and financial relationships may change gradually rather than abruptly. We study panel data models in which the coefficient vector is continuous and piecewise linear in calendar time, with a finite number of unknown kink dates at which its slope changes. We propose a penalised least squares estimator that applies adaptive weighted group penalties to the second differences of the coefficient path, and develop asymptotic theory showing that it recovers both the number and the locations of the kinks with probability approaching one. To our knowledge, this is the first panel framework to estimate an unknown number of common kink dates in a time-varying coefficient path under fixed effects. We establish that endpoint slopes converge at the usual cubic regime-length rate and interior slopes at rates determined by their own and adjacent regime lengths. We also develop a coefficient-by-coefficient extension allowing individual regressors to kink at different dates. Monte Carlo evidence supports the good finite sample properties, and we illustrate the method through an application in macro-finance, specifically the relationship between debt and growth.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-18 03:30 UTC"
+}
