@@ -55,6 +55,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "71e0caf9306ce15fb72f2ea0958c9cac": {
+    "first_seen": "2026-08-19 09:00",
+    "source": "hn_algotrading",
+    "title": "ChatGPT Trading Algorithm Delivers 500% Returns in Stock Market",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "96344729d9137e87e5723149ea8353c8": {
     "first_seen": "2026-08-09 21:30",
     "source": "hn_algotrading",
@@ -87,6 +94,13 @@
     "first_seen": "2026-08-06 17:30",
     "source": "hn_algotrading",
     "title": "Quantum computers do not test every solution at once",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ea035e0f9b9da0a085453b877968e38a": {
+    "first_seen": "2026-08-19 09:00",
+    "source": "hn_algotrading",
+    "title": "ChatGPT Trading Algorithm with 500% Returns in Stock Market Backtesting",
     "decision": "rejected_L0",
     "promising_file": null
   },
