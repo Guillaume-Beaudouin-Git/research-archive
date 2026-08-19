@@ -20,6 +20,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "09804440db8ab85a8bd36de88fb94b0e": {
+    "first_seen": "2026-08-19 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Fixed-Effect Saturation Is Not Weak Identification: Certifying Inference under M",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0c5b6ccce47780ea5d2286eaa9675aa8": {
     "first_seen": "2026-08-10 02:30",
     "source": "arxiv_econ_em",
@@ -101,6 +108,13 @@
     "first_seen": "2026-08-18 02:00",
     "source": "arxiv_econ_em",
     "title": "Regional advantage in rugby sevens: Is there a home effect when nobody is home?",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "444348b7c57a3ca2d54f36f9adf5f88a": {
+    "first_seen": "2026-08-19 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Control Variates for Survey Sampling and Causal Inference",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -300,6 +314,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "98f56e1e06a0537f6fff1e1feec83bc8": {
+    "first_seen": "2026-08-19 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Exact Inference in Fixed-Effect Regressions with Concentrated Identifying Variat",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9fa755e488a8fdba917cf5fd6b8b760c": {
     "first_seen": "2026-08-18 03:30",
     "source": "arxiv_econ_em",
@@ -395,6 +416,13 @@
     "first_seen": "2026-08-14 02:30",
     "source": "arxiv_econ_em",
     "title": "Measuring the Arrow of Time: Identification, Estimation, and Inference for Direc",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bc362baa5b9bab06a1f9f07ede9854fa": {
+    "first_seen": "2026-08-19 03:00",
+    "source": "arxiv_econ_em",
+    "title": "The Limits of Experimental Design: Covariate Balance Beyond Low Dimension",
     "decision": "rejected_L0",
     "promising_file": null
   },
