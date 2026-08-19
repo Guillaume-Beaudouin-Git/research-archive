@@ -76,6 +76,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "38f6335aee383e048b489348310f995b": {
+    "first_seen": "2026-08-19 14:00",
+    "source": "github_python",
+    "title": "marceloprates/prettymaps",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3bcc94f365fa729f427318d27cf3f6ac": {
     "first_seen": "2026-08-15 11:00",
     "source": "github_python",
@@ -237,6 +244,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9261a26a0aabde4693c19351ae1ef9fe": {
+    "first_seen": "2026-08-19 14:00",
+    "source": "github_python",
+    "title": "youssofal/MTPLX",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9e0c300681fe4e7505ca2decbf6e4996": {
     "first_seen": "2026-08-03 11:00",
     "source": "github_python",
@@ -262,6 +276,13 @@
     "first_seen": "2026-08-04 11:00",
     "source": "github_python",
     "title": "spesmilo/electrum",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c17b8e4c4cfca8eb48a9cb813045ef9f": {
+    "first_seen": "2026-08-19 14:00",
+    "source": "github_python",
+    "title": "AgriciDaniel/claude-ads",
     "decision": "rejected_L0",
     "promising_file": null
   },
