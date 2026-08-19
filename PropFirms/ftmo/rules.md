@@ -92,6 +92,38 @@ multi-comptes » a été instruit puis annulé faute d'avoir lu les T&C d'abord.
 - Max Loss = **10 % du capital initial, ancré au capital initial**, jamais recalculé.
 - Max Daily Loss = **5 %** du solde d'ouverture de journée, appliqué sur l'**équité** en intraday.
 
+### Compte FUNDED (post-challenge) — plancher STATIQUE lui aussi
+
+◐ **Déclaration de l'opérateur, 2026-08-17** — vérifiée par lui sur son compte funded réel.
+**Provenance : déclaration d'opérateur, PAS une citation FTMO verbatim.** Le Max Loss funded est
+**STATIQUE**, comme au challenge — 10 % du capital initial, ancré au capital initial, il ne monte
+**jamais** avec les gains.
+
+⚠ **Ce que l'observation ne peut PAS trancher aujourd'hui (relevé par l'audit PR #429).** Au
+solde actuel de **10 003.57**, le plancher statique vaut **9 000.00** et un plancher à cliquet
+vaudrait **9 003.57** : **$3.57 d'écart**. Les deux modèles sont donc **observationnellement
+indiscernables** sur le tableau de bord tant que le solde n'a pas suffisamment dépassé le capital
+initial. La déclaration reste la meilleure information disponible et l'EA est aligné dessus, mais
+elle n'est **pas** confirmée par une observation discriminante.
+
+**Test de falsification, gratuit** : au premier moment où le solde dépasse durablement ~10 200,
+relever le Max Loss affiché. S'il vaut toujours 9 000 ⇒ statique confirmé. S'il a monté ⇒
+cliquet, et `StaticFloor()` sur-estime la marge de ~1 % du dépassement.
+
+- Compte $10 000 ⇒ plancher dur **$9 000**, définitivement.
+- C'est exactement ce que code l'EA (`ftmo_live/mt5/book_executor.mq5`, `StaticFloor()`) ⇒
+  **aucune correction de code n'est requise**, le modèle live était déjà juste.
+- Conséquence structurelle : **le buffer ne grandit jamais**. Les retraits ramènent le solde à
+  10 000, donc le hasard de ruine est CONSTANT et il n'y a pas de compounding. Ce qu'on
+  maximise est `E[Σ payouts avant ruine]`, **ni le Sharpe ni le taux de croissance**.
+
+⚠ Le **périmètre CHALLENGE** est tranché deux fois (2026-07-20, 2026-08-01) et ne se rouvre pas.
+Le périmètre **FUNDED** repose sur la déclaration du 2026-08-17 ci-dessus : il se confirme par le
+test de falsification, pas par répétition. Tout document ou script qui suppose un cliquet sur le
+challenge FTMO est FAUX — à l'exception de
+`Portfolio/risk/trailing_dd_simulator.py`, qui modélise **Tradeify** (firme différente, vrai
+trailing DD) et reste correct dans son périmètre.
+
 ---
 
 ## Leverage — by asset class
