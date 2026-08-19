@@ -1381,6 +1381,57 @@ void MarkDealLogged(long deal_tk)
    g_logged_deals_n++;
   }
 
+//+------------------------------------------------------------------+
+//| v2.9 — ÉCHANTILLONNEUR PASSIF DE SPREAD (mesure de coût NATIVE)   |
+//|                                                                   |
+//| Motif : fills.csv ne journalise ni bid ni ask (COST_AUDIT §6.3),  |
+//| donc le SPREAD et le DÉRAPAGE ne sont pas séparables. Faute de    |
+//| cette série, tout coût est importé d'un autre broker — c'est      |
+//| exactement l'erreur que L33 interdit, et elle a produit un kill   |
+//| erroné de l'ORB le 2026-08-13 (coût pris sur deep_history_utc).   |
+//|                                                                   |
+//| Garanties : n'appelle AUCUNE fonction de trading, ne lit ni       |
+//| n'écrit aucun état partagé, écrit un fichier NEUF (aucun schéma   |
+//| existant modifié), best-effort (un FileOpen raté est ignoré).     |
+//| Rotation mensuelle. Échantillonne aussi quand l'EA est désarmé —  |
+//| c'est le but : mesurer sans risquer un centime.                   |
+//+------------------------------------------------------------------+
+void SampleSpread()
+  {
+   static datetime last_min=0;
+   datetime now=TimeCurrent();
+   datetime m=now-(now%60);
+   if(m==last_min) return;                            // une salve par minute
+   last_min=m;
+
+   MqlDateTime pd; ParisStruct(pd);
+   string fn=StringFormat("spread_log_%04d%02d.csv", pd.year, pd.mon);
+   int h=FileOpen(fn, FILE_READ|FILE_WRITE|FILE_TXT|FILE_ANSI|FILE_SHARE_READ);
+   if(h==INVALID_HANDLE) return;                      // best-effort : jamais bloquant
+   if(FileSize(h)==0)
+      FileWriteString(h, "ts_server,ts_paris,symbol,bid,ask,spread_pts,spread_bps\n");
+   FileSeek(h, 0, SEEK_END);
+
+   for(int k=0;k<N_LEGS;k++)
+     {
+      string s=g_sym[k];
+      if(s=="") continue;
+      // fraîcheur : une cotation figée (marché fermé, flux coupé) n'est pas un prix
+      datetime tq=(datetime)SymbolInfoInteger(s, SYMBOL_TIME);
+      if(tq<=0 || (now-tq)>120) continue;
+      double bid=SymbolInfoDouble(s, SYMBOL_BID);
+      double ask=SymbolInfoDouble(s, SYMBOL_ASK);
+      if(bid<=0.0 || ask<=0.0 || ask<bid) continue;
+      double pt=SymbolInfoDouble(s, SYMBOL_POINT);
+      double mid=0.5*(bid+ask);
+      FileWriteString(h, StringFormat("%s,%s,%s,%.5f,%.5f,%.1f,%.4f\n",
+                      TsServer(), TsParis(), s, bid, ask,
+                      (pt>0.0 ? (ask-bid)/pt : 0.0),
+                      (mid>0.0 ? (ask-bid)/mid*10000.0 : 0.0)));
+     }
+   FileClose(h);
+  }
+
 void LogFill(Pending &p, double fill, double slip_bps, long deal_tk)
   {
    if(DealAlreadyLogged(deal_tk)) return;             // v2.7 : anti double-journalisation
@@ -1649,6 +1700,8 @@ void OnDeinit(const int reason) { EventKillTimer(); WriteState(true); }
 
 void OnTimer()
   {
+   SampleSpread();                                      // v2.9 : passif, AVANT le kill-file —
+                                                        // on veut la mesure même EA désarmé
    if(FileIsExist("FLAT"))                              // kill-file: flatten + disable
      {
       if(!g_killed)
