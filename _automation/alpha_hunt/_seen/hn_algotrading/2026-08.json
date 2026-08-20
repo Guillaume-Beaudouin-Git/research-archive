@@ -69,6 +69,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8576dbf860a22270843e73844d2c65cc": {
+    "first_seen": "2026-08-20 14:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: LilScript makes JavaScript libraries smaller",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "8a5ad3f4ddbb6bf7b2339b7782b5b911": {
     "first_seen": "2026-08-19 16:00",
     "source": "hn_algotrading",
