@@ -209,6 +209,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "60a9b18991ba8eafe7784d453690907a": {
+    "first_seen": "2026-08-20 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Don't Drop the Singletons: Efficient Inference for Pairwise Experiments with Ind",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "62d39220962cfa40c8fb4e162bba6db7": {
     "first_seen": "2026-08-18 02:00",
     "source": "arxiv_econ_em",
@@ -265,6 +272,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "7d15da69c0e8dabb0fa1d22dcb0afc52": {
+    "first_seen": "2026-08-20 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Difference-in-Differences Models in the Presence of Time-Varying Mediators",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "808b6bc76380c526278e8b40d1bb5705": {
     "first_seen": "2026-08-11 04:00",
     "source": "arxiv_econ_em",
@@ -318,6 +332,13 @@
     "first_seen": "2026-08-19 03:00",
     "source": "arxiv_econ_em",
     "title": "Exact Inference in Fixed-Effect Regressions with Concentrated Identifying Variat",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "996f6e5597fb19a4564c68c2bd8b581b": {
+    "first_seen": "2026-08-20 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Limit Theory for U-Statistics under Clustered and Weakly Dependent Data",
     "decision": "rejected_L0",
     "promising_file": null
   },
