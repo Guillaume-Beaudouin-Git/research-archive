@@ -329,3 +329,68 @@ def test_book_engine_line_and_missing_targets(tmp_path, monkeypatch):
     assert "ACTIF" in line
     (tmp_path / "targets.json").unlink()
     assert "illisibles" in supervisor._book_engine_line(tmp_path)   # jamais de crash
+
+
+# ------------------------------------------------- escalade de l'alerte MONO
+def test_book_idle_milestone_fires_only_at_thresholds():
+    """L'alerte MONO ne doit partir qu'aux PALIERS.
+
+    Régression du 2026-08-19 : l'ancienne condition `streak >= 5` a émis 19 alertes
+    quotidiennes IDENTIQUES, toutes reçues, sans rien changer. Un message quotidien
+    qui se répète cesse d'être lu ; la visibilité quotidienne appartient à la ligne
+    passive du rapport, pas à une alerte.
+    """
+    f = supervisor._book_idle_milestone
+    for n in supervisor.BOOK_IDLE_MILESTONES:            # paliers exacts
+        assert f(n) == n
+    for n in (1, 4, 6, 19, 21, 59, 61, 119, 121):        # entre les paliers: silence
+        assert f(n) is None
+    last = supervisor.BOOK_IDLE_MILESTONES[-1]
+    assert f(last + supervisor.BOOK_IDLE_RECUR) == last + supervisor.BOOK_IDLE_RECUR
+    assert f(last + supervisor.BOOK_IDLE_RECUR - 1) is None
+
+
+def test_book_idle_milestone_never_skipped_by_monotonic_streak():
+    """Le streak avance de +1 par jour-brain (supervisor.py:191) : aucun palier sautable.
+
+    C'est ce qui rend l'escalade sûre — sinon un palier manqué serait manqué POUR
+    TOUJOURS, ce qui serait pire que l'alerte quotidienne qu'elle remplace.
+    """
+    hits = [n for n in range(1, 301) if supervisor._book_idle_milestone(n) is not None]
+    assert hits[:4] == list(supervisor.BOOK_IDLE_MILESTONES)
+    assert 180 in hits and 240 in hits and 300 in hits    # rappels tous les 60
+
+
+def test_book_idle_text_never_raises_on_broken_targets(tmp_path):
+    """Une alerte ne doit JAMAIS casser la boucle qui l'émet.
+
+    `_alert` est appelé depuis `evaluate_alerts` sans try/except : une exception ici
+    tuerait toutes les alertes évaluées APRÈS elle. On teste donc des targets.json
+    absents, vides, et à champs malformés — le message doit sortir dégradé, pas lever.
+    """
+    bk = dict(streak=42, engines_on=False, w_xau=0.0, w_jpy=0.0, on_day=False)
+    # 1. fichier absent
+    assert "LIVRE MONO depuis 42" in supervisor._book_idle_text(tmp_path, bk)
+    # 2. audit vide
+    statefiles.atomic_write_json(tmp_path / "targets.json", {"audit": {}})
+    assert "LIVRE MONO" in supervisor._book_idle_text(tmp_path, bk)
+    # 3. champs présents mais NON numériques (le cas qui lèverait ValueError)
+    statefiles.atomic_write_json(tmp_path / "targets.json", {"audit": {
+        "j1_gate": {"suspend": True, "reason": "in_zone", "level": "n/a",
+                    "t_on": None, "n_resume": 10},
+        "signals": {"j1_mom_12_1": "oops"}}})
+    out = supervisor._book_idle_text(tmp_path, bk)
+    assert "LIVRE MONO" in out and "J1" in out
+
+
+def test_book_idle_text_carries_the_cause_when_data_is_there(tmp_path):
+    """Le message doit dire POURQUOI et CE QUI RALLUMERAIT — sinon il n'appelle rien."""
+    statefiles.atomic_write_json(tmp_path / "targets.json", {"audit": {
+        "j1_gate": {"suspend": True, "reason": "in_zone", "level": 159.461,
+                    "t_on": 155.0, "n_resume": 10},
+        "signals": {"j1_mom_12_1": 0.10198}}})
+    out = supervisor._book_idle_text(
+        tmp_path, dict(streak=20, engines_on=False, w_xau=0.0, w_jpy=0.0, on_day=False))
+    assert "159.46" in out and "155" in out and "+4.46" in out   # écart au seuil
+    assert "LONG" in out                      # le signal veut être long: seul le gate tue
+    assert "θ=0.34" in out and "sig" in out   # or: cause + aveu d'absence de diagnostic
