@@ -1,9 +1,9 @@
 {
-  "run_time": "2026-08-21 02:30 UTC",
-  "accepted_count": 0,
+  "run_time": "2026-08-21 06:30 UTC",
+  "accepted_count": 3,
   "by_source": {
     "hn_quant": {
-      "total": 61,
+      "total": 63,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
@@ -11,7 +11,7 @@
       "rej_l2": 0
     },
     "hn_algotrading": {
-      "total": 217,
+      "total": 205,
       "new": 0,
       "accepted": 0,
       "rej_l0": 0,
@@ -19,11 +19,11 @@
       "rej_l2": 0
     },
     "quantocracy": {
-      "total": 70,
-      "new": 0,
-      "accepted": 0,
-      "rej_l0": 0,
-      "rej_l1": 0,
+      "total": 76,
+      "new": 6,
+      "accepted": 3,
+      "rej_l0": 1,
+      "rej_l1": 2,
       "rej_l2": 0
     },
     "quantinsti": {
@@ -52,9 +52,9 @@
     },
     "arxiv_econ_em": {
       "total": 81,
-      "new": 2,
+      "new": 0,
       "accepted": 0,
-      "rej_l0": 2,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     }
