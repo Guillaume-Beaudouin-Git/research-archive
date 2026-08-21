@@ -384,11 +384,25 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "ac6fbcba18f9199a87b933dbdd977b09": {
+    "first_seen": "2026-08-21 02:30",
+    "source": "arxiv_econ_em",
+    "title": "A Privacy Budgeting Framework for Online Experimentation",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "acd61423d4391024a56e888d4e5a0da3": {
     "first_seen": "2026-08-18 02:00",
     "source": "arxiv_econ_em",
     "title": "Trading Scope for Credibility in Difference-in-Differences",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "ad72fe0c365ed2c4496d6dc44a113e00": {
+    "first_seen": "2026-08-21 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Curvature-Calibrated Quasi-Bayesian Updating for Moment-Restricted Models",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "adc6fe8f9684df457494fa160c12762b": {
