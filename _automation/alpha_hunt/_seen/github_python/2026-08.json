@@ -41,6 +41,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0fcfca23457e64f540affa226b063acb": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "google/adk-samples",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "108edb13f39253b81343bfcbf15be73d": {
     "first_seen": "2026-08-20 11:00",
     "source": "github_python",
@@ -73,6 +80,13 @@
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
     "title": "sierra-research/tau2-bench",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2366ecfcd716562bc4977887fed7462f": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "hao-ai-lab/FastVideo",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -258,6 +272,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8beee525fd12f16c291eb159c82aa782": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "MadsLorentzen/ai-job-search",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9222727545d834d0b796cce3bcbd9c17": {
     "first_seen": "2026-08-04 11:00",
     "source": "github_python",
@@ -283,6 +304,13 @@
     "first_seen": "2026-08-07 12:00",
     "source": "github_python",
     "title": "semantica-agi/semantica",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a99c194a2320fd77e4bd59f3fada6159": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "forcedotcom/sf-skills",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -339,6 +367,13 @@
     "first_seen": "2026-08-18 11:00",
     "source": "github_python",
     "title": "pipeshub-ai/pipeshub-ai",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "df6e83566462cada1e0fe95de10f2da4": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "jax-ml/jax",
     "decision": "rejected_L0",
     "promising_file": null
   },
