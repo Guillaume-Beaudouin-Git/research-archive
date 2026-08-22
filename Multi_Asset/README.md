@@ -30,7 +30,9 @@ partial re-audit, not exhaustive; see its own files for scope).
 
 ## Before starting a new study here
 
-Check `_meta/research_active.md` for the current index and `_meta/lessons_registry.md` (especially
-L51-L60, the most recently graved) before opening a new dossier — a large share of the obvious
-angles on overnight futures, mean-reversion intraday (closed: ~1,526 cells tested, zero survivors),
-and calendar-event conditioning have already been tested here.
+Check `_meta/lessons_registry.md` (especially L51-L60, the most recently graved) before opening a
+new dossier — a large share of the obvious angles on overnight futures, mean-reversion intraday
+(closed: ~1,526 cells tested, zero survivors), and calendar-event conditioning have already been
+tested here. **`_meta/research_active.md` predates this entire programme** (verified 2026-05-30,
+only lightly restructured since) and does not index anything under this directory dated 2026-07 or
+later — the table above and a directory listing are the more current sources for what is open here.
