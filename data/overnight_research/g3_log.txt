@@ -1,0 +1,36 @@
+Loaded daily series: 4104 rows  2010-06-08 → 2026-05-29
+
+==============================================================================
+TAIL DISTRIBUTION  (gross then net, midweek vs all-nights)
+==============================================================================
+  MIDWEEK (Tue+Wed open)         GROSS           n= 1653  mean=  +8.06 bps   std=    73   worst=   -623   p1=  -193   p5=  -101   p95= +116
+  MIDWEEK (Tue+Wed open)         NET (Conv A)    n= 1653  mean=  +4.98 bps   std=    73   worst=   -626   p1=  -196   p5=  -104   p95= +113
+  MIDWEEK (Tue+Wed open)         NET (Conv B)    n= 1653  mean=  +4.98 bps   std=    73   worst=   -626   p1=  -196   p5=  -104   p95= +113
+  ALL NIGHTS (Mon-Fri open)      GROSS           n= 4104  mean=  +4.90 bps   std=    78   worst=   -706   p1=  -219   p5=  -112   p95= +116
+  ALL NIGHTS (Mon-Fri open)      NET (Conv A)    n= 4104  mean=  +0.59 bps   std=    78   worst=   -715   p1=  -224   p5=  -115   p95= +111
+  ALL NIGHTS (Mon-Fri open)      NET (Conv B)    n= 4104  mean=  +0.60 bps   std=    78   worst=   -709   p1=  -226   p5=  -116   p95= +112
+
+==============================================================================
+LEVERAGE SUSTAINABILITY  (FTMO DLL 5%, Max Total 10%)
+==============================================================================
+  Midweek net-of-swap (Conv A):  n=1653  mean=+4.98 bps  std=73 bps
+  Worst night: -6.26%   p1: -1.96%   p5: -1.04%   p95: +1.13%
+
+  Lev P(night<−5%) P(EOD MaxDD<−10%) WorstNight    MaxDD   AnnRet_bps   AnnSR  YrsToFunded(10%)
+ 0.25      0.0000%           0.0000%     -1.56%   -4.17%          130    0.68              7.64
+ 0.50      0.0000%           0.0000%     -3.13%   -8.21%          259    0.68              3.87
+ 0.75      0.0000%           1.5595%     -4.69%  -12.10%          389    0.68              2.62
+ 1.00      0.0244%           5.6774%     -6.26%  -15.86%          518    0.68              1.99
+ 1.25      0.0244%          10.4045%     -7.82%  -19.48%          648    0.68              1.62
+ 1.50      0.0244%          13.5965%     -9.39%  -22.98%          777    0.68              1.37
+ 2.00      0.1462%          20.5897%    -12.52%  -29.60%         1037    0.68              1.06
+ 3.00      0.7554%          35.2096%    -18.78%  -41.44%         1555    0.68              0.75
+
+==============================================================================
+HARD LIMITS
+==============================================================================
+  Tightest single-night constraint: L × |worst| < 5%  →  L_max = 0.80×
+  p1 constraint (P>1% of nights):    L × |p1|    < 5%  →  L_max = 2.54×
+  p5 constraint (P>5% of nights):    L × |p5|    < 5%  →  L_max = 4.82×
+
+Saved: data/overnight_research/g3_leverage_sweep.csv

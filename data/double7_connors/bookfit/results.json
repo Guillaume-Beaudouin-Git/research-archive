@@ -1,0 +1,89 @@
+{
+  "combo_verify_max_rel_diff": 1.3091540835464049e-15,
+  "combo_reported": {
+    "cagr": 0.035514881577310975,
+    "sharpe": 0.6603338456181815,
+    "sortino": 0.9380320212006721,
+    "max_drawdown": -0.09667851910864433,
+    "calmar": 0.3673502853038165,
+    "n_trades": 652,
+    "win_rate": 0.7070552147239264,
+    "worst_trade": -0.14105841208260228
+  },
+  "cash_adjust": {
+    "cagr_rf0": 0.035514881577310975,
+    "cagr_cash": 0.04903052564028121,
+    "cagr_uplift_pts": 1.3515644062970233,
+    "sharpe_rf0": 0.6603338456181831,
+    "sharpe_cash_rf0": 0.8966480871493596,
+    "sharpe_cash_excess": 0.5913716807128889,
+    "reimpl_diff": 1.4551915228366852e-10
+  },
+  "weekly": {
+    "primary_W-SUN": {
+      "n_weeks": 331,
+      "pearson": 0.1974216122594919,
+      "spearman": 0.13668470311989916,
+      "pearson_raw": 0.19277018938302745,
+      "start": "2020-02-02",
+      "end": "2026-05-31"
+    },
+    "robust_W-FRI": {
+      "n_weeks": 331,
+      "pearson": 0.1609344047381411,
+      "spearman": 0.12020318137251494,
+      "pearson_raw": 0.1562954016664213,
+      "start": "2020-01-31",
+      "end": "2026-05-29"
+    }
+  },
+  "daily": {
+    "n": 1591,
+    "pearson": 0.1499171263990632,
+    "spearman": 0.14969750711303945
+  },
+  "rolling52w": {
+    "min": -0.19140833125937579,
+    "max": 0.4174480776623631,
+    "mean": 0.12232095520070485,
+    "last": 0.25590415969464125
+  },
+  "tail": {
+    "n_weeks": 331,
+    "decile_A": 34,
+    "decile_D7": 34,
+    "overlap": 6,
+    "overlap_expected": 3.4924471299093653,
+    "hypergeom_p_ge": 0.11870088394678835,
+    "d7_mean_in_A_worst": -0.0032314952743852,
+    "a_mean_in_d7_worst": -0.0012259743543896996,
+    "d7_overall_mean": 0.0004890533594088792,
+    "a_overall_mean": 0.0020647578137311037,
+    "pearson_union_tail": -0.2154504988034812
+  },
+  "bootstrap": {
+    "weekly": {
+      "block": 8,
+      "mean": 0.19231511890130315,
+      "ci": [
+        0.047158187574851185,
+        0.3412919841108908
+      ]
+    },
+    "daily": {
+      "block": 20,
+      "mean": 0.15035996402639276,
+      "ci": [
+        0.10185077354988015,
+        0.2004151212154605
+      ]
+    }
+  },
+  "verdict": {
+    "text": "GO (borderline \u2014 bootstrap CI pierces 0.30)",
+    "go": true,
+    "gate_corr": true,
+    "tail_crash": false,
+    "borderline": true
+  }
+}
