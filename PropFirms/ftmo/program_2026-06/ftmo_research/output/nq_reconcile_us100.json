@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-01T21:13:05.118326+00:00",
+  "window": "2022-01-03 \u2192 2025-12-31",
+  "us100_tz_fix": "panel index re-tz'd from naive to Europe/Athens then UTC",
+  "n_common_minutes": 1319174,
+  "n_orb_days": 1031,
+  "returns_corr_1min": 0.9033073281091166,
+  "returns_corr_5min": 0.9244361786199851,
+  "returns_corr_1hour": 0.9313916135188262,
+  "orb_pct_corr_daily": 0.9526589375398162,
+  "mean_orb_pct_nq_futures": 0.0053112683817744255,
+  "mean_orb_pct_us100_cfd": 0.005088015281343491,
+  "ratio_orb_nq_over_us100": 1.0438782291494975,
+  "verdict": "MATCH",
+  "diagnostic": "Initial reconciliation showed corr=0.04 because m1_panel.parquet index is mis-labeled 'timestamp_utc' but actually contains broker wall-clock (Europe/Athens). After tz fix, correlation recovers."
+}

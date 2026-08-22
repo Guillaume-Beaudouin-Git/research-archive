@@ -1,0 +1,119 @@
+{
+  "H1": {
+    "base_twosided": {
+      "sharpe": 0.5,
+      "cagr": 0.059,
+      "maxdd": -0.259,
+      "skew": -0.76,
+      "corr_es": -0.06,
+      "crisis_alpha": 0.0034,
+      "short_pnl_split": {
+        "2014-2019": {
+          "long": 10733,
+          "short": -2780
+        },
+        "2020-2026": {
+          "long": 121993,
+          "short": -24571
+        }
+      }
+    },
+    "H1a_long_only": {
+      "sharpe": 0.682,
+      "cagr": 0.067,
+      "maxdd": -0.219,
+      "skew": -1.05,
+      "corr_es": 0.46,
+      "crisis_alpha": -0.0104,
+      "short_pnl_split": {
+        "2014-2019": {
+          "long": 8062,
+          "short": 0
+        },
+        "2020-2026": {
+          "long": 116432,
+          "short": 0
+        }
+      }
+    },
+    "H1b_short_CL_only": {
+      "sharpe": 0.868,
+      "cagr": 0.101,
+      "maxdd": -0.186,
+      "skew": -0.11,
+      "corr_es": 0.09,
+      "crisis_alpha": 0.0007,
+      "short_pnl_split": {
+        "2014-2019": {
+          "long": 10052,
+          "short": 39982
+        },
+        "2020-2026": {
+          "long": 185845,
+          "short": -3398
+        }
+      }
+    },
+    "H1d_half_risk_short": {
+      "sharpe": 0.578,
+      "cagr": 0.062,
+      "maxdd": -0.209,
+      "skew": -0.9,
+      "corr_es": 0.06,
+      "crisis_alpha": -0.0005,
+      "short_pnl_split": {
+        "2014-2019": {
+          "long": 2327,
+          "short": 756
+        },
+        "2020-2026": {
+          "long": 118399,
+          "short": -9927
+        }
+      }
+    },
+    "H1bd_shortCL_half": {
+      "sharpe": 0.771,
+      "cagr": 0.079,
+      "maxdd": -0.187,
+      "skew": -0.89,
+      "corr_es": 0.27,
+      "crisis_alpha": -0.0055,
+      "short_pnl_split": {
+        "2014-2019": {
+          "long": 4563,
+          "short": 19766
+        },
+        "2020-2026": {
+          "long": 134301,
+          "short": -1917
+        }
+      }
+    }
+  },
+  "H2_two_sided": {
+    "base": 0.5,
+    "h2": -0.297
+  },
+  "H2_long_only": {
+    "base": 0.682,
+    "h2": -0.118
+  },
+  "H3_two_sided": {
+    "inst7": 0.5,
+    "inst10": 0.285,
+    "ensemble": 0.426,
+    "corr_es_10": -0.04
+  },
+  "H3_long_only": {
+    "inst7": 0.682,
+    "inst10": 0.539,
+    "ensemble": 0.573,
+    "corr_es_10": 0.42
+  },
+  "crypto_short": {
+    "sharpe": 0.53,
+    "cagr": 0.064,
+    "maxdd": -0.263
+  }
+}

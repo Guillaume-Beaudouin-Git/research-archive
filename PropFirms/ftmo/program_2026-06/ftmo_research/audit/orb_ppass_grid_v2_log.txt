@@ -1,0 +1,70 @@
+=== ORB V2+E7 grid v2 (costs=[0.4, 1.0, 2.0, 3.0]) ===
+N_paths=12000 block_size=21 max_steps=1260 min_4j enforced
+Horizons (trades): [5, 10, 20, 40, 60, 130] + terminal=2520
+
+=== COST 0.4 bps RT  (mean_R = +0.0552, std=1.201) ===
+  REAL sizing=1.0% pf@1w=0.0% 4w=0.4% 12w=12.1% 26w=36.0% term=57.2% P1=71.5% med=105tr
+  REAL sizing=1.5% pf@1w=0.0% 4w=4.2% 12w=28.4% 26w=44.9% term=47.8% P1=64.7% med=52tr
+  REAL sizing=2.5% pf@1w=0.0% 4w=16.2% 12w=37.7% 26w=39.2% term=39.3% P1=58.1% med=24tr
+  PLAC sizing=1.0% pf@terminal=44.3% (signal-free)
+  PLAC sizing=1.5% pf@terminal=39.2% (signal-free)
+  PLAC sizing=2.5% pf@terminal=21.2% (signal-free)
+
+=== COST 1.0 bps RT  (mean_R = +0.0417, std=1.200) ===
+  REAL sizing=1.0% pf@1w=0.0% 4w=0.4% 12w=10.7% 26w=31.4% term=50.9% P1=66.7% med=107tr
+  REAL sizing=1.5% pf@1w=0.0% 4w=3.9% 12w=26.4% 26w=41.1% term=43.8% P1=60.9% med=51tr
+  REAL sizing=2.5% pf@1w=0.0% 4w=14.9% 12w=34.8% 26w=36.5% term=36.5% P1=55.9% med=24tr
+  PLAC sizing=1.0% pf@terminal=32.5% (signal-free)
+  PLAC sizing=1.5% pf@terminal=31.3% (signal-free)
+  PLAC sizing=2.5% pf@terminal=17.5% (signal-free)
+
+=== COST 2.0 bps RT  (mean_R = +0.0192, std=1.201) ===
+  REAL sizing=1.0% pf@1w=0.0% 4w=0.4% 12w=8.5% 26w=25.7% term=40.7% P1=57.9% med=105tr
+  REAL sizing=1.5% pf@1w=0.0% 4w=3.2% 12w=22.3% 26w=34.3% term=36.6% P1=55.1% med=51tr
+  REAL sizing=2.5% pf@1w=0.0% 4w=13.7% 12w=30.5% 26w=32.1% term=32.1% P1=51.0% med=23tr
+  PLAC sizing=1.0% pf@terminal=29.8% (signal-free)
+  PLAC sizing=1.5% pf@terminal=28.8% (signal-free)
+  PLAC sizing=2.5% pf@terminal=19.5% (signal-free)
+
+=== COST 3.0 bps RT  (mean_R = -0.0032, std=1.201) ===
+  REAL sizing=1.0% pf@1w=0.0% 4w=0.4% 12w=7.0% 26w=19.4% term=31.0% P1=48.3% med=106tr
+  REAL sizing=1.5% pf@1w=0.0% 4w=3.0% 12w=18.9% 26w=29.2% term=31.0% P1=49.1% med=50tr
+  REAL sizing=2.5% pf@1w=0.0% 4w=12.1% 12w=27.2% 26w=28.4% term=28.4% P1=48.0% med=23tr
+  PLAC sizing=1.0% pf@terminal=33.4% (signal-free)
+  PLAC sizing=1.5% pf@terminal=31.1% (signal-free)
+  PLAC sizing=2.5% pf@terminal=21.2% (signal-free)
+
+=== STRESS REGIME 2015 — P1 pass per (cost, sizing) ===
+2015 sample: n=254
+  cost=0.4bps sz=1.0% P1_pass(2015)=9.3% bust=90.7% mean_R_2015=-0.0867
+  cost=0.4bps sz=1.5% P1_pass(2015)=16.9% bust=83.1% mean_R_2015=-0.0867
+  cost=0.4bps sz=2.5% P1_pass(2015)=31.4% bust=68.6% mean_R_2015=-0.0867
+  cost=1.0bps sz=1.0% P1_pass(2015)=7.2% bust=92.8% mean_R_2015=-0.1006
+  cost=1.0bps sz=1.5% P1_pass(2015)=15.4% bust=84.6% mean_R_2015=-0.1006
+  cost=1.0bps sz=2.5% P1_pass(2015)=29.4% bust=70.6% mean_R_2015=-0.1006
+  cost=2.0bps sz=1.0% P1_pass(2015)=4.5% bust=95.5% mean_R_2015=-0.1239
+  cost=2.0bps sz=1.5% P1_pass(2015)=11.9% bust=88.1% mean_R_2015=-0.1239
+  cost=2.0bps sz=2.5% P1_pass(2015)=25.7% bust=74.3% mean_R_2015=-0.1239
+  cost=3.0bps sz=1.0% P1_pass(2015)=3.2% bust=96.8% mean_R_2015=-0.1472
+  cost=3.0bps sz=1.5% P1_pass(2015)=9.6% bust=90.4% mean_R_2015=-0.1472
+  cost=3.0bps sz=2.5% P1_pass(2015)=22.7% bust=77.3% mean_R_2015=-0.1472
+
+Saved -> orb_ppass_grid_main_v2.csv + orb_ppass_grid_stress2015_v2.csv
+
+================================================================================
+SUMMARY p(funded) TERMINAL — Real vs Placebo zero-μ matched std
+================================================================================
+
+  Cost   Sizing   Real_pf    Plc_pf   SignalLift   P1_2015        Marker
+   0.4     1.0%     57.2%     44.3%       +12.8%      9.3%  
+   0.4     1.5%     47.8%     39.2%        +8.6%     16.9%  
+   0.4     2.5%     39.3%     21.2%       +18.0%     31.4%  
+   1.0     1.0%     50.9%     32.5%       +18.4%      7.2%  
+   1.0     1.5%     43.8%     31.3%       +12.5%     15.4%  
+   1.0     2.5%     36.5%     17.5%       +19.0%     29.4%  
+   2.0     1.0%     40.7%     29.8%       +10.8%      4.5%  
+   2.0     1.5%     36.6%     28.8%        +7.8%     11.9%  
+   2.0     2.5%     32.1%     19.5%       +12.6%     25.7%  
+   3.0     1.0%     31.0%     33.4%        -2.4%      3.2%  ← DEATH FRONTIER
+   3.0     1.5%     31.0%     31.1%        -0.1%      9.6%  ← DEATH FRONTIER
+   3.0     2.5%     28.4%     21.2%        +7.1%     22.7%  

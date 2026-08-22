@@ -1,0 +1,30 @@
+{
+  "n_folds": 5,
+  "cfg": {
+    "train": 6000,
+    "val": 1500,
+    "test": 1500,
+    "n_folds": 5,
+    "epochs": 20,
+    "lr": 0.05,
+    "gamma": 0.99
+  },
+  "agent_mean_test_R": 0.6442773443529071,
+  "agent_pos_folds": 3,
+  "always_long_mean_test_R": -24.568359536555022,
+  "always_long_pos_folds": 0,
+  "agent_gate": {
+    "pass": true,
+    "n_pos": 3,
+    "n": 5,
+    "frac": 0.6
+  },
+  "always_long_gate": {
+    "pass": false,
+    "n_pos": 0,
+    "n": 5,
+    "frac": 0.0
+  },
+  "corr_agent_long": -0.31605644490822943,
+  "gold_bh_mean": -0.02461239012209031
+}

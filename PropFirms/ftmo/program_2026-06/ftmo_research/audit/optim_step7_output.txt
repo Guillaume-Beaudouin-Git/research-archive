@@ -1,0 +1,20 @@
+Data: 1137 days (2022-01-03 -> 2026-05-28)
+==============================================================================================================
+STEP 7 — FTMO 2-STEP UNCAPPED — sweep risk-per-block (in-sample 2022-2026 H1)
+==============================================================================================================
+ risk_per_block_pct  n_resolved  censored_pct  p1_pct  p2_given_p1_pct  p_funded_pct  median_grind_days  mean_grind_days  bust_total_pct_resolved  bust_daily_pct_resolved  fast_bust_pct  slow_bust_pct  median_bust_ttp
+               0.10         249         78.10  100.00           100.00        100.00                852           828.88                     0.00                      0.0           0.00           0.00              NaN
+               0.25         885         22.16  100.00           100.00        100.00                259           320.73                     0.00                      0.0           0.00           0.00              NaN
+               0.50         978         13.98   85.07            93.15         79.24                102           113.26                    14.93                      0.0           0.00          12.84            169.0
+               0.75        1058          6.95   82.80            86.42         71.55                 66            72.62                    17.20                      0.0           0.00          16.01             57.0
+               1.00        1072          5.72   76.87            72.45         55.69                 44            45.41                    23.13                      0.0           0.00          21.81             27.0
+               1.25        1081          4.93   73.54            75.09         55.23                 32            32.63                    26.46                      0.0           0.44          24.71             20.0
+               1.50        1089          4.22   72.08            74.39         53.63                 27            28.24                    27.92                      0.0           1.06          25.68             15.0
+
+Argmax mean p(funded) = 100.0% @ risk=0.10%
+  -> n_resolved=249, censored=78.1%, median grind=852.0d
+
+Failure-mode shift along the sizing axis:
+  - At small sizing (0.10%, 0.25%): bust-floor near-zero, but censure ↑↑ (long grind > data window)
+  - At large sizing (1.25%, 1.5%):  bust-floor dominates, censure near-zero (fast grind in 30-40 days)
+  - 'fast_bust' (≤5 trading days) vs 'slow_bust' (>5) indicates cluster vs drift mode.

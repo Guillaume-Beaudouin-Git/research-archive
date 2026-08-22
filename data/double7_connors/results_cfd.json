@@ -1,0 +1,26 @@
+{
+ "cfd": {
+  "entry_lb": 7.0,
+  "exit_lb": 7.0,
+  "ma_len": 200.0,
+  "slippage_bps": 5.0,
+  "cagr": 0.04674528002766243,
+  "sharpe": 0.6088303462564922,
+  "max_drawdown": -0.10556084819197453,
+  "n_trades": 518.0,
+  "win_rate": 0.7297297297297297,
+  "avg_trade_ret": 0.005105255992793725
+ },
+ "etf_same_window": {
+  "entry_lb": 7.0,
+  "exit_lb": 7.0,
+  "ma_len": 200.0,
+  "slippage_bps": 5.0,
+  "cagr": 0.043777239453469896,
+  "sharpe": 0.5858071766039282,
+  "max_drawdown": -0.16196557345609386,
+  "n_trades": 523.0,
+  "win_rate": 0.7304015296367112,
+  "avg_trade_ret": 0.004995831016993924
+ }
+}

@@ -83,3 +83,75 @@ _automation/arxiv/_raw/
 
 # cache programme actif fx_intraday (régénérable depuis deep_history_utc)
 Forex/research/active/fx_intraday_deepdive/cache/
+
+# --- cleanup fichiers non suivis 2026-08-22 (tri des 846 non-tracked, _meta/cleanup/) ---
+# caches/outputs de pipeline régénérables (dossiers cache/_cache/out/node_modules)
+Multi_Asset/research/active/ath_regime_review_2026-08/ath_test/cache/
+Multi_Asset/research/active/ath_regime_review_2026-08/tail_calendar/out/
+Multi_Asset/research/active/ath_regime_review_2026-08/valuation/cache/
+Multi_Asset/research/active/funded_1y_mono_2026-08/out/
+Multi_Asset/research/active/mr_grille_suite_2026-08/_cache/
+Multi_Asset/research/active/mr_univers_complet_2026-08/_cache/
+Multi_Asset/research/active/orb_cost_funded_2026-08/entry_cost/out/
+Multi_Asset/research/active/orb_cost_funded_2026-08/exit_cost/out/
+Multi_Asset/research/active/orb_cost_funded_2026-08/funded_vm/out/
+Multi_Asset/research/active/orb_cost_funded_2026-08/spread_measure/out/
+Multi_Asset/research/active/reaudit_vehicule_2026-08/funnel_reaudit/out/
+Multi_Asset/research/active/reaudit_vehicule_2026-08/vehicule/out/
+PropFirms/ftmo/program_2026-06/ftmo_research/NQ_ORB_metrics/out/
+PropFirms/ftmo/program_2026-06/ftmo_research/tsmom/out/
+data/ftmo_portfolio/cache/
+data/ftmo_portfolio/node_modules/
+data/vrp/cache/
+# audit_v2_independent : seul cleanroom/engine.py est la lib canonique trackée
+# (CLAUDE.md "Worktree + artefacts locaux") — run_phase*.py + résultats restent locaux
+data/ftmo_portfolio/audit_v2_independent/
+
+# blobs de données binaires épars (parquet), régénérables depuis la source ou le script d'étude
+Multi_Asset/research/active/audit_entree_109_2026-08/*.parquet
+Multi_Asset/research/archived/mtf_a1_tsmom/data/raw/*.parquet
+Multi_Asset/research/archived/mtf_a1_tsmom/outputs/*.parquet
+Multi_Asset/research/archived/oxfordstrat_109_audit/ohlc/*.parquet
+Multi_Asset/research/archived/oxfordstrat_109_audit/real_data/*.parquet
+PropFirms/ftmo/program_2026-06/b1_feasibility/*.parquet
+PropFirms/ftmo/program_2026-06/commodity_carry_feasibility/*.parquet
+PropFirms/ftmo/program_2026-06/ftmo_3strats_audit_2026-06/results/*.parquet
+PropFirms/ftmo/program_2026-06/ftmo_research/*.parquet
+PropFirms/ftmo/program_2026-06/ftmo_research/audit/*.parquet
+PropFirms/ftmo/program_2026-06/s076_replication/daily/*.parquet
+data/double7_connors/*.npy
+data/double7_connors/bookfit/*.parquet
+data/ftmo_portfolio/attribution_timing/*.parquet
+data/overnight_research/*.parquet
+data/seykota_trend/daily/*.parquet
+strategies/trend_futures/daily/*.parquet
+strategies/trend_futures/results/*.parquet
+
+# univers ftmo_universe/ : arborescence de symlinks locaux (référence-sans-copie vers data/panels/,
+# jamais portables en git — chemins absolus machine-spécifiques)
+PropFirms/ftmo/program_2026-06/ftmo_universe/daily_panels/commodities/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/daily_panels/crypto/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/daily_panels/fx/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/daily_panels/indices/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/daily_panels/stocks_proxy/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_m1/crypto/binance
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_m1/indices/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_m5/indices/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_m5/panels/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_m5/panels/*.parquet
+PropFirms/ftmo/program_2026-06/ftmo_universe/news/*.csv
+PropFirms/ftmo/program_2026-06/ftmo_universe/parquets/*.parquet
+
+# panels de marché bruts régénérables (source API), une série = un fichier canonique ailleurs
+data/panels/*.csv
+
+# exports/évidences volumineux ponctuels (>1 Mo), régénérables en relançant le script de l'étude
+Multi_Asset/research/active/audit_entree_109_2026-08/pooled_ambiguous_trades_all_strategies.csv
+Multi_Asset/research/active/funded_1y_mono_2026-08/attribution/daily_raw.csv
+Multi_Asset/research/active/funded_1y_mono_2026-08/risque/drawdowns.csv
+PropFirms/ftmo/program_2026-06/ftmo_research/statarb_audnzd/trades_nq_ou.csv
+data/double7_connors/dm_config_returns.csv
+data/skew_research/session_basic_trend/setup_daily_series.csv
+
+# cache npm interne (jamais utile), régénérable
+data/deep_history_m1/_tool/.npmcache/

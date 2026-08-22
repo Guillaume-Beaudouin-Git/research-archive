@@ -1,0 +1,37 @@
+Trades: 3056; Baseline M: 1033 days
+
+==============================================================================================================
+STEP 3b — WF expanding F1 threshold (time_to_break ≤ q0.5)
+==============================================================================================================
+
+--- Risk per block = 0.50% ---
+  fold1_2022-01-03_2022-10-18    thr=1.0bars retention=50%  BASE=100.0%  FILT=100.0%  Δ= +0.0pt (IN-SAMPLE FALLBACK)
+  fold2_2022-10-19_2023-08-04    thr=1.0bars retention=52%  BASE= 35.2%  FILT=100.0%  Δ=+64.8pt
+  fold3_2023-08-07_2024-05-23    thr=1.0bars retention=49%  BASE=  0.0%  FILT=100.0%  Δ=+100.0pt
+  fold4_2024-05-24_2025-03-11    thr=1.0bars retention=53%  BASE=100.0%  FILT=100.0%  Δ= +0.0pt
+  fold5_2025-03-12_2025-12-31    thr=1.0bars retention=49%  BASE=100.0%  FILT=100.0%  Δ= +0.0pt
+  WF mean Δ = +33.0pt, min Δ = +0.0pt, max Δ = +100.0pt
+
+--- Risk per block = 0.75% ---
+  fold1_2022-01-03_2022-10-18    thr=1.0bars retention=50%  BASE=100.0%  FILT=100.0%  Δ= +0.0pt (IN-SAMPLE FALLBACK)
+  fold2_2022-10-19_2023-08-04    thr=1.0bars retention=52%  BASE= 47.4%  FILT=100.0%  Δ=+52.6pt
+  fold3_2023-08-07_2024-05-23    thr=1.0bars retention=49%  BASE=  0.0%  FILT=100.0%  Δ=+100.0pt
+  fold4_2024-05-24_2025-03-11    thr=1.0bars retention=53%  BASE= 79.9%  FILT=100.0%  Δ=+20.1pt
+  fold5_2025-03-12_2025-12-31    thr=1.0bars retention=49%  BASE= 85.7%  FILT=100.0%  Δ=+14.3pt
+  WF mean Δ = +37.4pt, min Δ = +0.0pt, max Δ = +100.0pt
+
+--- Risk per block = 1.00% ---
+  fold1_2022-01-03_2022-10-18    thr=1.0bars retention=50%  BASE=100.0%  FILT=100.0%  Δ= +0.0pt (IN-SAMPLE FALLBACK)
+  fold2_2022-10-19_2023-08-04    thr=1.0bars retention=52%  BASE= 42.8%  FILT=100.0%  Δ=+57.2pt
+  fold3_2023-08-07_2024-05-23    thr=1.0bars retention=49%  BASE=  0.8%  FILT= 98.9%  Δ=+98.1pt
+  fold4_2024-05-24_2025-03-11    thr=1.0bars retention=53%  BASE= 52.6%  FILT=100.0%  Δ=+47.4pt
+  fold5_2025-03-12_2025-12-31    thr=1.0bars retention=49%  BASE= 41.8%  FILT=100.0%  Δ=+58.2pt
+  WF mean Δ = +52.2pt, min Δ = +0.0pt, max Δ = +98.1pt
+
+--- Risk per block = 1.25% ---
+  fold1_2022-01-03_2022-10-18    thr=1.0bars retention=50%  BASE= 95.9%  FILT=100.0%  Δ= +4.1pt (IN-SAMPLE FALLBACK)
+  fold2_2022-10-19_2023-08-04    thr=1.0bars retention=52%  BASE= 47.7%  FILT=100.0%  Δ=+52.3pt
+  fold3_2023-08-07_2024-05-23    thr=1.0bars retention=49%  BASE=  3.5%  FILT= 93.3%  Δ=+89.7pt
+  fold4_2024-05-24_2025-03-11    thr=1.0bars retention=53%  BASE= 70.7%  FILT=100.0%  Δ=+29.3pt
+  fold5_2025-03-12_2025-12-31    thr=1.0bars retention=49%  BASE= 32.6%  FILT=100.0%  Δ=+67.4pt
+  WF mean Δ = +48.6pt, min Δ = +4.1pt, max Δ = +89.7pt

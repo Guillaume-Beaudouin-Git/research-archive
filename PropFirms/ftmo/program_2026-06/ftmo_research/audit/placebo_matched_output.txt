@@ -1,0 +1,29 @@
+==============================================================================================================
+PLACEBO MATCHED — random with K5's EXACT mean/std, vs shuffled K5
+==============================================================================================================
+2026-06-02 03:45:10,629 INFO Building K5 daily R series...
+2026-06-02 03:45:12,458 INFO   [NQ] Loading instrument...
+2026-06-02 03:45:13,295 INFO   K5 daily R: n_trade_days=3991, mean=0.0221, std=1.0796
+
+config                       mean_R     std_R   floor_OOF   nofloor_OOF  floor_n_resolved  floor_funded
+--------------------------------------------------------------------------------------------------------------
+1_K5_actual                 +0.0221    1.0796     100.00%        77.55%              2762          2762
+2_K5_shuffled               +0.0221    1.0796     100.00%        53.92%              1665          1665
+3_random_matched            +0.0361    1.0848      79.38%        54.46%              2817          2236
+4_random_2x_mean            +0.0234    1.0846      86.20%        48.76%              1123           968
+5_random_half_mean          +0.0045    1.0833      62.01%        34.17%              1490           924
+6_random_zero_mean          +0.0269    1.0717      97.71%        84.42%              2572          2513
+
+==============================================================================================================
+INTERPRETATION
+==============================================================================================================
+
+  K5 actual                : floor OOF = 100.00% (mean = +0.0221)
+  K5 shuffled              : floor OOF = 100.00%
+  Random matched (same mean): floor OOF = 79.38% (sample mean = +0.0361)
+  Random zero mean          : floor OOF = 97.71%
+
+  Δ K5_actual vs shuffled       : +0.00pp  (effect of TIME STRUCTURE)
+  Δ K5_actual vs matched random : +20.62pp  (effect of ORB-specific STRUCTURE)
+
+  → K5 actual > Random matched : ORB has SOME structural advantage beyond mean/std.

@@ -1,0 +1,396 @@
+{
+  "fred": {
+    "files": {
+      "fred_BAMLH0A0_DGS3MO_DTWEXBGS_71618fe470.parquet": {
+        "rows": 4287,
+        "columns": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "data_cols": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "first": "2010-01-01",
+        "last": "2026-05-22",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "bamlh0a0hym2": 0.817,
+          "t10y2y": 0.044,
+          "t10y3m": 0.044,
+          "dtwexbgs": 0.049,
+          "dgs3mo": 0.044
+        }
+      },
+      "fred_BAMLH0A0_DGS3MO_DTWEXBGS_869daaa127.parquet": {
+        "rows": 2201,
+        "columns": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "data_cols": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "first": "2018-01-01",
+        "last": "2026-05-22",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "bamlh0a0hym2": 0.643,
+          "t10y2y": 0.047,
+          "t10y3m": 0.047,
+          "dtwexbgs": 0.051,
+          "dgs3mo": 0.047
+        }
+      },
+      "fred_BAMLH0A0_DGS3MO_DTWEXBGS_b0c9cec0a3.parquet": {
+        "rows": 1679,
+        "columns": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "data_cols": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "first": "2020-01-01",
+        "last": "2026-05-22",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "bamlh0a0hym2": 0.532,
+          "t10y2y": 0.048,
+          "t10y3m": 0.048,
+          "dtwexbgs": 0.051,
+          "dgs3mo": 0.048
+        }
+      },
+      "fred_BAMLH0A0_DGS3MO_DTWEXBGS_d06fce80fc.parquet": {
+        "rows": 5071,
+        "columns": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "data_cols": [
+          "bamlh0a0hym2",
+          "t10y2y",
+          "t10y3m",
+          "dtwexbgs",
+          "dgs3mo"
+        ],
+        "first": "2007-01-01",
+        "last": "2026-05-22",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "bamlh0a0hym2": 0.845,
+          "t10y2y": 0.043,
+          "t10y3m": 0.043,
+          "dtwexbgs": 0.044,
+          "dgs3mo": 0.043
+        }
+      },
+      "fred_BAMLH0A0_fbff3b29e8.parquet": {
+        "rows": 794,
+        "columns": [
+          "bamlh0a0hym2"
+        ],
+        "data_cols": [
+          "bamlh0a0hym2"
+        ],
+        "first": "2023-05-23",
+        "last": "2026-05-21",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "bamlh0a0hym2": 0.01
+        }
+      },
+      "fred_DGS3MO_16fc089f19.parquet": {
+        "rows": 6102,
+        "columns": [
+          "dgs3mo"
+        ],
+        "data_cols": [
+          "dgs3mo"
+        ],
+        "first": "2003-01-01",
+        "last": "2026-05-21",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "dgs3mo": 0.041
+        }
+      },
+      "fred_DTB3_37358bdf84.parquet": {
+        "rows": 6887,
+        "columns": [
+          "dtb3"
+        ],
+        "data_cols": [
+          "dtb3"
+        ],
+        "first": "2000-01-03",
+        "last": "2026-05-26",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "dtb3": 0.041
+        }
+      },
+      "fred_DTB3_c38571a3ea.parquet": {
+        "rows": 774,
+        "columns": [
+          "dtb3"
+        ],
+        "data_cols": [
+          "dtb3"
+        ],
+        "first": "2022-12-26",
+        "last": "2025-12-11",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "dtb3": 0.044
+        }
+      },
+      "fred_DTWEXBGS_ff6045edaa.parquet": {
+        "rows": 5315,
+        "columns": [
+          "dtwexbgs"
+        ],
+        "data_cols": [
+          "dtwexbgs"
+        ],
+        "first": "2006-01-02",
+        "last": "2026-05-15",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "dtwexbgs": 0.039
+        }
+      },
+      "fred_T10Y2Y_4b4c751920.parquet": {
+        "rows": 6103,
+        "columns": [
+          "t10y2y"
+        ],
+        "data_cols": [
+          "t10y2y"
+        ],
+        "first": "2003-01-01",
+        "last": "2026-05-22",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "t10y2y": 0.041
+        }
+      },
+      "fred_VIXCLS_0b68860ebb.parquet": {
+        "rows": 2189,
+        "columns": [
+          "vixcls"
+        ],
+        "data_cols": [
+          "vixcls"
+        ],
+        "first": "2018-01-01",
+        "last": "2026-05-21",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "vixcls": 0.024
+        }
+      },
+      "fred_VIXCLS_14ec2ab193.parquet": {
+        "rows": 5059,
+        "columns": [
+          "vixcls"
+        ],
+        "data_cols": [
+          "vixcls"
+        ],
+        "first": "2007-01-01",
+        "last": "2026-05-21",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "vixcls": 0.03
+        }
+      },
+      "fred_VIXCLS_874d3099dd.parquet": {
+        "rows": 1667,
+        "columns": [
+          "vixcls"
+        ],
+        "data_cols": [
+          "vixcls"
+        ],
+        "first": "2020-01-01",
+        "last": "2026-05-21",
+        "modal_step_days": 1,
+        "nan_frac": {
+          "vixcls": 0.02
+        }
+      }
+    },
+    "series_widest": {
+      "DGS3MO": {
+        "first": "2003-01-01",
+        "last": "2026-05-21",
+        "rows": 6102
+      },
+      "DTWEXBGS": {
+        "first": "2006-01-02",
+        "last": "2026-05-15",
+        "rows": 5315
+      },
+      "BAMLH0A0": {
+        "first": "2007-01-01",
+        "last": "2026-05-22",
+        "rows": 5071
+      },
+      "DTB3": {
+        "first": "2000-01-03",
+        "last": "2026-05-26",
+        "rows": 6887
+      },
+      "T10Y2Y": {
+        "first": "2003-01-01",
+        "last": "2026-05-22",
+        "rows": 6103
+      },
+      "VIXCLS": {
+        "first": "2007-01-01",
+        "last": "2026-05-21",
+        "rows": 5059
+      }
+    }
+  },
+  "calendar_economic": {
+    "exists": true,
+    "rows": 231,
+    "columns": [
+      "date",
+      "time_utc",
+      "event",
+      "currency",
+      "impact",
+      "datetime_utc"
+    ],
+    "first": "2020-01-03 00:00:00",
+    "last": "2026-05-12 00:00:00",
+    "by_year": {
+      "2020": 37,
+      "2021": 36,
+      "2022": 36,
+      "2023": 36,
+      "2024": 36,
+      "2025": 36,
+      "2026": 14
+    },
+    "events_per_year": 36.4,
+    "by_currency": {
+      "USD": 231
+    },
+    "by_impact": {
+      "HIGH": 231
+    },
+    "by_event": {
+      "NFP": 77,
+      "CPI": 77,
+      "FOMC": 52,
+      "GDP": 25
+    }
+  },
+  "calendar_economic_dup_ftmo_universe": {
+    "exists": true,
+    "rows": 231,
+    "columns": [
+      "date",
+      "time_utc",
+      "event",
+      "currency",
+      "impact",
+      "datetime_utc"
+    ],
+    "first": "2020-01-03 00:00:00",
+    "last": "2026-05-12 00:00:00",
+    "by_year": {
+      "2020": 37,
+      "2021": 36,
+      "2022": 36,
+      "2023": 36,
+      "2024": 36,
+      "2025": 36,
+      "2026": 14
+    },
+    "events_per_year": 36.4,
+    "by_currency": {
+      "USD": 231
+    },
+    "by_impact": {
+      "HIGH": 231
+    },
+    "by_event": {
+      "NFP": 77,
+      "CPI": 77,
+      "FOMC": 52,
+      "GDP": 25
+    }
+  },
+  "calendar_news_events_f2": {
+    "exists": true,
+    "rows": 760,
+    "columns": [
+      "date",
+      "time_utc",
+      "event_type",
+      "currencies_affected",
+      "source"
+    ],
+    "first": "2020-01-03 00:00:00",
+    "last": "2025-12-19 00:00:00",
+    "by_year": {
+      "2020": 131,
+      "2021": 127,
+      "2022": 127,
+      "2023": 127,
+      "2024": 124,
+      "2025": 124
+    },
+    "events_per_year": 127.5,
+    "by_currency": {
+      "GBP": 338,
+      "USD": 193,
+      "EUR": 120,
+      "AUD": 61,
+      "JPY": 48
+    },
+    "by_event": {
+      "NFP_US": 72,
+      "CPI_US": 72,
+      "UK_CPI": 72,
+      "UK_EMPLOYMENT": 72,
+      "UK_GDP_MONTHLY": 72,
+      "UK_RETAIL_SALES": 72,
+      "GERMAN_IFO": 72,
+      "RBA_RATE": 61,
+      "BOE_RATE": 50,
+      "FOMC": 49,
+      "ECB_RATE": 48,
+      "BOJ_RATE": 48
+    }
+  }
+}

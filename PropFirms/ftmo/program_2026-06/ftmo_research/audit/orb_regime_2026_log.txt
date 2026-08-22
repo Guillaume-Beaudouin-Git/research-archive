@@ -1,0 +1,110 @@
+================================================================================
+ORB V2+E7 @ 0.4 bps RT — n_trades=4013 from 2010-06-07 to 2026-05-29
+================================================================================
+
+Months in ledger (with ≥5 trades): 192 months from 2010-06-01 to 2026-05-01
+
+Regime distribution (monthly):
+regime
+favorable      86
+unfavorable    83
+neutral        23
+Name: count, dtype: int64
+
+████████████████████████████████████████████████████████████████████████████████
+STAGE 1 — NOWCAST
+████████████████████████████████████████████████████████████████████████████████
+
+Monthly mean_R distribution (full sample n=192 months):
+  p 5 = -0.3305
+  p10 = -0.2727
+  p25 = -0.1270
+  p50 = +0.0364
+  p75 = +0.2240
+  p90 = +0.3738
+  p95 = +0.4943
+  mean  = +0.0542
+  std   = 0.2569
+
+  Last 3 months (2026-03 → 2026-05):
+    n_trades = 63  unweighted mean_R per month = +0.0494
+    weighted (per-trade) mean_R = +0.0494
+    Position in historical distribution: 52e percentile
+    Regime: **NEUTRAL**
+
+  Last 6 months (2025-12 → 2026-05):
+    n_trades = 125  unweighted mean_R per month = +0.0769
+    weighted (per-trade) mean_R = +0.0761
+    Position in historical distribution: 54e percentile
+    Regime: **NEUTRAL**
+
+  Last 12 months (2025-06 → 2026-05):
+    n_trades = 252  unweighted mean_R per month = +0.0554
+    weighted (per-trade) mean_R = +0.0624
+    Position in historical distribution: 52e percentile
+    Regime: **NEUTRAL**
+
+Last 12 months — month-by-month:
+year_month  n_trades    mean_R      hit      regime
+2025-06-01        19 -0.335564 0.315789 unfavorable
+2025-07-01        23 -0.080669 0.434783 unfavorable
+2025-08-01        21  0.175380 0.523810   favorable
+2025-09-01        21 -0.029927 0.523810 unfavorable
+2025-10-01        23  0.636059 0.565217   favorable
+2025-11-01        20 -0.161973 0.450000 unfavorable
+2025-12-01        21 -0.004261 0.428571 unfavorable
+2026-01-01        21  0.147244 0.571429   favorable
+2026-02-01        20  0.170023 0.750000   favorable
+2026-03-01        21  0.078022 0.476190     neutral
+2026-04-01        21  0.296070 0.523810   favorable
+2026-05-01        21 -0.225953 0.380952 unfavorable
+
+--- p(funded) FTMO 2-step MC conditional on CURRENT regime (last 6 months) ---
+
+  Sample sizes:
+    Last 6mo trades: 145  mean_R=+0.0433  std=0.942
+    Last 12mo trades: 274  mean_R=+0.0460  std=1.111
+    Full 16y trades: 4013  mean_R=+0.0552  std=1.201
+  (Using block_size=21 for recent-regime bootstrap, vs 21 for full)
+
+  p(funded) MC by sample (12000 paths, no time limit):
+            Sample   sizing 1.0%   sizing 1.5%   sizing 2.5%
+          Full 16y         57.1%         47.4%         40.0%
+         Last 12mo         66.8%         53.1%         41.4%
+          Last 6mo         94.5%         83.4%         63.9%
+
+████████████████████████████████████████████████████████████████████████████████
+STAGE 2 — FORWARD PREDICTABILITY (falsification, prior ≪0)
+████████████████████████████████████████████████████████████████████████████████
+
+Feature panel: 192 months ; complete features for 181 rows (after lead)
+Sample period: 2010-06-01 → 2026-05-01
+
+--- Forward regression: mean_R(M+1) ~ feature(M) ---
+Predictor                                  beta    t_HAC6       R²     n      flag
+VIX_eom                                +0.00074     +0.30   0.0004   191          
+VIX_term_slope (VIX/VIX3M)             -0.08142     -0.31   0.0006   184          
+NQ_vol_20d                             +0.03345     +0.23   0.0002   182          
+NQ_dist_MA200                          +0.12351     +0.56   0.0013   182          
+NQ_above_MA200 (binary)                -0.00242     -0.06   0.0000   182          
+ORB_mean_R_M (auto-persistence)        -0.12044     -2.12   0.0146   191      weak
+
+--- Forward regression: mean_R(M+2) ~ feature(M) ---
+Predictor                                  beta    t_HAC6       R²     n      flag
+VIX_eom                                -0.00113     -0.49   0.0008   190          
+VIX_term_slope (VIX/VIX3M)             -0.12553     -0.57   0.0014   183          
+NQ_vol_20d                             +0.05907     +0.38   0.0006   181          
+NQ_dist_MA200                          +0.31592     +1.31   0.0088   181          
+NQ_above_MA200 (binary)                +0.03976     +0.77   0.0035   181          
+ORB_mean_R_M (auto-persistence)        -0.02749     -0.37   0.0008   190          
+
+--- OOS split — train month <2019, test ≥2019 (M+1 only) ---
+Predictor                             beta_IS    t_IS   R²_IS   beta_OOS    t_OOS   R²_OOS    hold
+VIX_eom                              +0.00277   +0.60   0.003   -0.00293    -1.17    0.008        
+VIX_term_slope (VIX/VIX3M)           +0.26394   +0.94   0.005   -0.39111    -1.21    0.019        
+NQ_vol_20d                           -0.35615   -1.31   0.011   +0.05119    +0.34    0.001        
+NQ_dist_MA200                        +0.26619   +0.75   0.003   +0.03723    +0.18    0.000        
+NQ_above_MA200 (binary)              +0.07252   +1.57   0.009   -0.04502    -1.15    0.006        
+ORB_mean_R_M (auto-persistence)      -0.15808   -2.01   0.025   -0.12108    -1.65    0.014       ✓
+
+Saved -> orb_regime_ppass_conditional.csv + orb_regime_forward_predictors.csv

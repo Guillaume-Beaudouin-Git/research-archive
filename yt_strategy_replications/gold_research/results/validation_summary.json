@@ -1,0 +1,65 @@
+{
+  "candidate": "ON_22_8 (VT long gold 22:00-06:00 UTC overnight)",
+  "full_sample": {
+    "sharpe_net_2bp": 1.85,
+    "hac_t": 6.92,
+    "dsr": 1.0,
+    "bootstrap_p": 0.0,
+    "ann_ret": 0.115,
+    "ann_vol": 0.062,
+    "maxdd": -0.117,
+    "wf_folds": [
+      1.94,
+      1.63,
+      2.97,
+      0.47,
+      2.13
+    ],
+    "mean_bps": 4.58
+  },
+  "oos_train_test": {
+    "train_best_window": "22:8",
+    "selected_oos_sharpe": 1.08,
+    "ON_22_8_oos_sharpe": 1.08
+  },
+  "walk_forward": [
+    {
+      "fold": 1,
+      "win": "22:8",
+      "test_sharpe": 1.51
+    },
+    {
+      "fold": 2,
+      "win": "22:8",
+      "test_sharpe": 3.1
+    },
+    {
+      "fold": 3,
+      "win": "22:8",
+      "test_sharpe": 0.33
+    },
+    {
+      "fold": 4,
+      "win": "22:8",
+      "test_sharpe": 2.1
+    }
+  ],
+  "cost_grid_sharpe": {
+    "0": 2.68,
+    "1": 2.26,
+    "1.5": 2.05,
+    "2": 1.85,
+    "3": 1.43,
+    "5": 0.59
+  },
+  "leverage": {
+    "avg": 1.05,
+    "median": 1.04,
+    "pct_at_cap": 0.0
+  },
+  "benchmark_buyhold_gold": {
+    "sharpe": 0.58,
+    "maxdd": -0.449
+  },
+  "n_trials_dsr": 60
+}

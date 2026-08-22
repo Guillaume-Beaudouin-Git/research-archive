@@ -1,0 +1,40 @@
+At block-cap 1.5%, annual vol = 47.5%
+Vol-target 10% sizing => risk per block ≈ 0.316%
+==========================================================================================
+STEP 6 — Personal book DD profile (compounded, no-reset)
+==========================================================================================
+                                label  risk_per_block_pct  n_days  annual_vol_pct  annual_ret_pct  total_return_pct  daily_mean_pct  daily_std_pct  sharpe_ann  t_HAC_lag6  max_dd_pct  worst_month_pct  best_month_pct  time_underwater_pct
+ Propfirm-optim (1.25%, full 2022-25)                1.25    1033           39.61           70.44            789.80            0.24           2.49        1.54        3.37      -41.82           -14.93           37.04                88.96
+ Propfirm-optim (1.25%, full 2022-26)                1.25    1137           39.18           71.70           1046.14            0.24           2.47        1.57        3.67      -41.82           -14.93           37.04                88.74
+Vol-target 10% (~0.32%, full 2022-25)                0.32    1033           10.00           16.06             84.16            0.06           0.63        1.54        3.37      -11.92            -3.94            8.46                88.58
+Vol-target 10% (~0.32%, full 2022-26)                0.32    1137            9.89           16.25             97.23            0.06           0.62        1.57        3.67      -11.92            -3.94            8.46                88.30
+  Audit baseline (1.5%, full 2022-25)                1.50    1033           47.53           86.30           1181.21            0.29           2.99        1.54        3.37      -48.44           -17.70           45.64                89.16
+
+Saved -> optim_step6_personal_book.csv
+
+==========================================================================================
+STEP 6 — Per-year breakdown at vol-target sizing (0.316%)
+==========================================================================================
+  label  annual_ret_pct  annual_vol_pct  sharpe_ann  max_dd_pct  worst_month_pct
+VT 2022           30.83           10.52        2.61       -4.46            -0.90
+VT 2023           -1.53            9.66       -0.11       -9.24            -3.92
+VT 2024           15.73            9.87        1.53       -5.26            -3.17
+VT 2025           21.71            9.90        2.03       -4.99            -3.94
+VT 2026           18.07            8.80        1.93       -1.74             0.06
+
+==========================================================================================
+STEP 6 — 3-sleeve ORB as a personal book line, marginal cost: zero
+==========================================================================================
+  Vol-target 10%/yr requires block-cap ≈ 0.316% (vs propfirm 1.25%).
+  At that sizing, Sharpe-ann ≈ 1.54, MaxDD ≈ -11.9%,
+  worst month -3.9%, TUW 89%.
+
+  This 3-sleeve ORB is uncorrelated to:
+    Strategy A (TSMOM crypto weekly) — no overlap, different asset class & frequency
+    Strategy B (HL delta-neutral 8h)  — funding rate edge, structurally orthogonal
+    Strategy C (NQ ORB iter_10)       — SAME instrument family but C is paper-only on $25K
+
+  Marginal infra cost: zero (3-sleeve uses CFD broker M1 data already fetched).
+  Recommendation: viable as personal-book add at vol-target sizing IF (a) Sharpe-ann
+  survives DSR deflation (Step 3.2 of audit: 0.70 at n_trials=18, FAIL PROPFIRM 1.0).
+  Personal-book gate L8 is research (>0.7), not propfirm (>1.0); so it's borderline.

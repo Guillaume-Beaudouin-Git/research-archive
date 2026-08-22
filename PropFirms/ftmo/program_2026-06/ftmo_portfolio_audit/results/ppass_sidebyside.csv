@@ -1,0 +1,13 @@
+scenario,window,horizon_mo,REPORT_ppass,indep_author_method,indep_corrected,indep_corrected_ci90
+reportSharpe_full_L2.5,full,3,0.485,0.345,0.202,"[0.198,0.206]"
+reportSharpe_full_L2.5,full,6,0.58,0.597,0.505,"[0.501,0.510]"
+reportSharpe_full_L2.5,full,9,0.531,0.665,0.632,"[0.628,0.637]"
+reportSharpe_oos_L2.5,oos,3,0.549,0.309,0.175,"[0.172,0.178]"
+reportSharpe_oos_L2.5,oos,6,0.55,0.578,0.467,"[0.464,0.471]"
+reportSharpe_oos_L2.5,oos,9,0.531,0.673,0.62,"[0.617,0.625]"
+steelman_full_L2.5,full,3,,0.248,0.141,"[0.136,0.145]"
+steelman_full_L2.5,full,6,,0.462,0.377,"[0.374,0.381]"
+steelman_full_L2.5,full,9,,0.536,0.496,"[0.492,0.502]"
+steelman_oos_L2.5,oos,3,,0.319,0.18,"[0.177,0.183]"
+steelman_oos_L2.5,oos,6,,0.593,0.48,"[0.478,0.485]"
+steelman_oos_L2.5,oos,9,,0.686,0.634,"[0.631,0.638]"

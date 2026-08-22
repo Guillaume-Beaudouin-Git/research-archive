@@ -1,0 +1,22 @@
+ticker,name,asset_type,calc_mode,industry,digits,contract_size,margin_currency,profit_currency,swap_long,swap_short,swap_type,swap_3x_day,commission,margin_init_usd_per_lot_buy,margin_init_usd_per_lot_sell,volume_min,volume_max,volume_step,session
+USDJPY,US Dollar vs Japanese Yen,FX,Forex,,3,100000 USD,USD,JPY,2.95,-23.94,points,Wednesday,2.5 USD/lot,1000.00,1000.00,0.01,50,0.01,00:05-23:55
+USDSEK,US Dollar vs Swedish Krona,FX,Forex,,5,100000 USD,USD,SEK,9.27,-94.65,points,Wednesday,2.5 USD/lot,1000.00,1000.00,0.01,50,0.01,00:05-23:55
+USDCNH,US Dollar vs Chinese Yuan,FX,Forex,,5,100000 USD,USD,CNH,10.23,-104.30,points,Wednesday,2.5 USD/lot,1500.00,1500.00,0.01,50,0.01,00:05-23:55
+USDCHF,US Dollar vs Swiss Franc,FX,Forex,,5,100000 USD,USD,CHF,1.64,-15.68,points,Wednesday,2.5 USD/lot,1000.00,1000.00,0.01,50,0.01,00:05-23:55
+USDCAD,US Dollar vs Canadian Dollar,FX,Forex,,5,100000 USD,USD,CAD,0.68,-13.62,points,Wednesday,2.5 USD/lot,1000.00,1000.00,0.01,50,0.01,00:05-23:55
+EURUSD,Euro vs United States Dollar,FX,Forex,,5,100000 EUR,EUR,USD,-12.17,0.59,points,Wednesday,2.5 USD/lot,1165.26,1165.02,0.01,50,0.01,00:05-23:55
+EURGBP,Euro vs Great Britain Pound,FX,Forex,,5,100000 EUR,EUR,GBP,-10.02,0.39,points,Wednesday,2.5 USD/lot,,,0.01,50,0.01,00:05-23:55
+EURJPY,Euro vs Japanese Yen,FX,Forex,,3,100000 EUR,EUR,JPY,0.93,-11.68,points,Wednesday,2.5 USD/lot,1165.26,1165.02,0.01,50,0.01,00:05-23:55
+AUDJPY,Australian Dollar vs Japanese Yen,FX,Forex,,3,100000 AUD,AUD,JPY,3.04,-16.10,points,Wednesday,2.5 USD/lot,,,0.01,50,0.01,00:05-23:55
+GBPJPY,Great Britain Pound vs Japanese Yen,FX,Forex,,3,100000 GBP,GBP,JPY,4.25,-32.73,points,Wednesday,2.5 USD/lot,,,0.01,50,0.01,00:05-23:55
+US100.cash,NASDAQ 100 Index Spot CFD,Index CFD,Levier CFD,,2,1,USD,USD,-662.40,28.58,points,Friday,0,604.85,604.82,0.01,1000,0.01,01:05-23:50
+XAGUSD,Silver vs US Dollar Spot CFD,Metal CFD,Levier CFD,Precious Metals,3,5000,USD,USD,-20.65,0.70,points,Wednesday,0.0007%,,,0.01,100,0.01,01:05-23:50
+XAUUSD,Gold vs US Dollar Spot CFD,Metal CFD,Levier CFD,Precious Metals,2,100,USD,USD,-88.00,-3.40,points,Wednesday,0.0007%,,,0.01,100,0.01,01:05-23:50
+XPDUSD,Palladium vs US Dollar Spot CFD,Metal CFD,Levier CFD,Precious Metals,2,100,USD,USD,-55.16,-16.20,points,Wednesday,0.0007%,,,0.01,100,0.01,01:05-23:50
+XPTUSD,Platinum vs US Dollar Spot CFD,Metal CFD,Levier CFD,Precious Metals,2,100,USD,USD,-71.07,-22.32,points,Wednesday,0.0007%,,,0.01,100,0.01,01:05-23:50
+UKOIL.cash,Crude Oil Brent Spot CFD,Energy CFD,Levier CFD,,3,100,USD,USD,27.62,-129.90,points,Friday,0,2.00,2.00,0.01,1000,0.01,03:05-23:50
+USOIL.cash,WTI Crude Oil Spot CFD,Energy CFD,Levier CFD,,3,100,USD,USD,36.55,-168.14,points,Friday,0,2.00,2.00,0.01,1000,0.01,01:05-23:50
+COCOA.c,Cocoa vs US Dollar Spot CFD,Soft CFD,Levier CFD,Agriculture,1,1,USD,USD,-15.52,2.58,points,Friday,0 USD/lot,30.00,30.00,1,1000,1,11:50-20:30
+COFFEE.c,Coffee vs US Dollar Spot CFD,Soft CFD,Levier CFD,Agriculture,2,1,USD,USD,1.70,-10.32,points,Friday,0 USD/lot,30.00,30.00,1,1000,1,11:20-20:30
+SOYBEAN.c,Soybean vs US Dollar Spot CFD,Soft CFD,Levier CFD,Agriculture,2,1,USD,USD,-39.12,6.10,points,Friday,0 USD/lot,30.00,30.00,1,1000,1,"03:05-15:45, 16:35-21:20"
+WHEAT.c,Wheat vs US Dollar Spot CFD,Soft CFD,Levier CFD,Agriculture,2,1,USD,USD,-20.84,3.28,points,Friday,0 USD/lot,30.00,30.00,1,1000,1,"03:05-15:45, 16:35-21:20"

@@ -1,0 +1,84 @@
+2026-06-02 00:29:07,018 INFO Loading NQ 1-min RTH...
+2026-06-02 00:29:07,607 INFO   1551866 bars, 2010-06-07 09:30:00-04:00 -> 2026-05-29 15:59:00-04:00
+2026-06-02 00:29:07,607 INFO Precomputing vwap_rth (HLC3×vol cumulative from 09:31)...
+2026-06-02 00:29:08,351 INFO   vwap_rth NaN: 4041
+2026-06-02 00:29:08,351 INFO Building opening features...
+2026-06-02 00:57:09,457 INFO   3827 day-features
+2026-06-02 00:57:09,515 INFO Building iter_10 signals (filters: vwap_ok + gap ≤ 1.2% + rng ≥ 30 pts)...
+2026-06-02 00:57:09,552 INFO   765 signals retained after filters
+2026-06-02 00:57:09,552 INFO   Retention rate: 20.0%
+
+==========================================================================================
+FULL SAMPLE (2010-2026) — iter_10 spec
+==========================================================================================
+  n_trades                 : 765
+  win_rate                 : 0.2444
+  avg_trade_usd            : 57.36
+  avg_winner_usd           : 1488.98
+  avg_loser_usd            : -405.81
+  profit_factor            : 1.1871
+  sharpe_daily_hac         : 0.5096
+  max_dd_pct               : -0.2435
+  max_dd_dollar            : -12005.0
+  best_day_usd             : 5186.0
+  worst_day_usd            : -419.0
+  avg_bars_held            : 28.9
+  total_pnl_usd            : 43882.5
+
+==========================================================================================
+WALK-FORWARD — 12m train / 6m test on full sample
+==========================================================================================
+  n_windows: 23
+  wf_pct_positive: 65.2
+Traceback (most recent call last):
+  File "<HOME>/Desktop/Algo_claude/data/ftmo_research/audit/iter10_validation.py", line 447, in <module>
+    print(f"  wf_pct_positive: {wf.get('wf_pct_positive', float('nan'))}")
+TypeError: unsupported format string passed to NoneType.__format__
+
+WALK-FORWARD — 12m train / 6m test on full sample
+==========================================================================================
+  n_windows: 23
+  wf_pct_positive: 65.2
+  2013-12-07 -> 2014-06-07: n=2, pnl=$614, SR=N/A
+  2014-12-07 -> 2015-06-07: n=5, pnl=$-712, SR=-1.12
+  2015-06-07 -> 2015-12-07: n=1, pnl=$-386, SR=N/A
+  2015-12-07 -> 2016-06-07: n=4, pnl=$1,052, SR=+3.31
+  2016-06-07 -> 2016-12-07: n=1, pnl=$-346, SR=N/A
+  2016-12-07 -> 2017-06-07: n=1, pnl=$546, SR=N/A
+  2017-06-07 -> 2017-12-07: n=2, pnl=$1,282, SR=+1.79
+  2017-12-07 -> 2018-06-07: n=12, pnl=$-2,180, SR=-2.32
+  2018-06-07 -> 2018-12-07: n=19, pnl=$3,154, SR=+1.56
+  2018-12-07 -> 2019-06-07: n=16, pnl=$2,328, SR=+1.29
+  2019-06-07 -> 2019-12-07: n=16, pnl=$6,004, SR=+2.23
+  2019-12-07 -> 2020-06-07: n=25, pnl=$1,992, SR=+0.79
+  2020-06-07 -> 2020-12-07: n=45, pnl=$-6,875, SR=-2.53
+  2020-12-07 -> 2021-06-07: n=45, pnl=$11,352, SR=+2.68
+  2021-06-07 -> 2021-12-07: n=54, pnl=$1,792, SR=+0.45
+  2021-12-07 -> 2022-06-07: n=56, pnl=$-1,214, SR=-0.26
+  2022-06-07 -> 2022-12-07: n=60, pnl=$-4,842, SR=-1.31
+  2022-12-07 -> 2023-06-07: n=50, pnl=$982, SR=+0.28
+  2023-06-07 -> 2023-12-07: n=58, pnl=$4,893, SR=+0.90
+  2023-12-07 -> 2024-06-07: n=47, pnl=$-1,093, SR=-0.31
+  2024-06-07 -> 2024-12-07: n=60, pnl=$14,820, SR=+2.01
+  2024-12-07 -> 2025-06-07: n=51, pnl=$11,928, SR=+2.18
+  2025-06-07 -> 2025-12-07: n=68, pnl=$3,696, SR=+0.85
+
+==========================================================================================
+RECONCILIATION ANCHOR — 2022-2025 only
+==========================================================================================
+  feats: 1003 day-candidates, signals retained: 451
+  n_trades                 : 451
+  win_rate                 : 0.2195
+  avg_trade_usd            : 55.44
+  avg_winner_usd           : 1712.87
+  avg_loser_usd            : -410.71
+  profit_factor            : 1.173
+  sharpe_daily_hac         : 0.6186
+  max_dd_pct               : -0.4713
+  max_dd_dollar            : -11586.0
+  best_day_usd             : 5186.0
+  worst_day_usd            : -419.0
+  avg_bars_held            : 22.1
+  total_pnl_usd            : 25003.5
+
+  REPORTED iter_10 (CLAUDE.md): Sharpe 1.52, MaxDD -13.4%, WF 78%, N=346

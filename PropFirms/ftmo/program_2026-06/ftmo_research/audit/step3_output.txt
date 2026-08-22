@@ -1,0 +1,47 @@
+================================================================================
+STEP 3 — Block-bootstrap multi-attempts + phase chaining
+================================================================================
+
+--- Regime autocorrelation diagnostics (full 2022-2025) ---
+  VR_q5           = 0.907
+  VR_q10          = 0.827
+  VR_q20          = 0.702
+  VR_q40          = 0.685
+  VR_q60          = 0.690
+  RV_AC_lag1      = 0.944
+  RV_AC_lag20     = -0.138
+  RV_AC_lag60     = -0.079
+  (VR > 1 => positive autocorrelation; VR<1 => mean reversion)
+  (RV_AC > 0 => realised vol is persistent across that lag in days)
+
+--- iid vs block-bootstrap pass rates (target +10%, 40 days) ---
+                method |   pass% | fail_total% |   2 attempts (indep)
+  iid (report's model) |   61.1% |       31.9% |                84.8%
+block_len=  5        |   62.7% |       29.3% |                86.1%
+block_len= 10        |   63.7% |       28.5% |                86.8%
+block_len= 20        |   65.4% |       27.4% |                88.0%
+block_len= 30        |   67.0% |       27.1% |                89.1%
+block_len= 40        |   68.8% |       28.7% |                90.3%
+
+--- Real-path challenges, conditional on regime at start (rv20 tercile) ---
+    low_vol (rv20≈2.20%, n=325): pass= 72.6% bust= 23.1%
+    mid_vol (rv20≈2.74%, n=324): pass= 66.4% bust= 32.7%
+   high_vol (rv20≈nan%, n=345): pass= 67.2% bust= 30.4%
+
+--- p(2 attempts | start in chop = low_vol or 2023-style) ---
+  Single attempt starting in 2023 chop: 38.8%
+  2 attempts (assuming iid, conservative): 62.6%
+  Report's 80% in 2 attempts assumed: 1-(1-0.58)^2 = 82.4%
+
+--- Phase 1 (+10%) + Phase 2 (+5%) chain — full 2022-25 R-pool ---
+  p(Phase 1 +10% in 40d)     = 62.1%
+  p(Phase 2 +5%  in 40d)     = 71.9%
+  p(funded) = p1 * p2        = 44.6%
+  Report headline (P1 only) : ~58% (single attempt)
+  Report "80% in 2 attempts" : assumes P1 only AND independence
+
+--- N-effective for 2026 weekly-overlapping samples ---
+  21 weekly challenges on ~104 trading days, each 40 days long.
+  Effective independent samples ≈ 104 / 40 ≈ 2.6 (i.e. ~3 blocks).
+  Reading the 93% as a probability is statistical malpractice; 
+  it's one realisation across ~3 independent blocks.
