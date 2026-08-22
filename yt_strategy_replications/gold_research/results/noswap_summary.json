@@ -1,0 +1,195 @@
+{
+  "on_22_8_swap": {
+    "label": "ON_22_8_swap",
+    "sharpe": 0.46,
+    "hac_t": 1.75,
+    "dsr": 0.265,
+    "mean_bps": 1.14,
+    "maxdd": -0.251,
+    "wf": 0.8
+  },
+  "leaderboard": [
+    {
+      "label": "ASIA_23_3",
+      "sharpe": 0.19,
+      "hac_t": 0.74,
+      "dsr": 0.045,
+      "mean_bps": 0.34,
+      "maxdd": -0.174,
+      "wf": 0.6
+    },
+    {
+      "label": "ASIA_23_4",
+      "sharpe": 0.59,
+      "hac_t": 2.33,
+      "dsr": 0.467,
+      "mean_bps": 1.17,
+      "maxdd": -0.148,
+      "wf": 0.6
+    },
+    {
+      "label": "ASIA_23_6",
+      "sharpe": 0.43,
+      "hac_t": 1.67,
+      "dsr": 0.227,
+      "mean_bps": 0.99,
+      "maxdd": -0.215,
+      "wf": 0.6
+    },
+    {
+      "label": "ASIA_23_8",
+      "sharpe": 0.98,
+      "hac_t": 3.87,
+      "dsr": 0.931,
+      "mean_bps": 2.58,
+      "maxdd": -0.156,
+      "wf": 1.0
+    },
+    {
+      "label": "ASIA_23_10",
+      "sharpe": 0.66,
+      "hac_t": 2.59,
+      "dsr": 0.566,
+      "mean_bps": 2.14,
+      "maxdd": -0.225,
+      "wf": 1.0
+    },
+    {
+      "label": "ASIA_0_3",
+      "sharpe": -0.28,
+      "hac_t": -1.11,
+      "dsr": 0.0,
+      "mean_bps": -0.48,
+      "maxdd": -0.246,
+      "wf": 0.4
+    },
+    {
+      "label": "ASIA_0_4",
+      "sharpe": -0.3,
+      "hac_t": -1.16,
+      "dsr": 0.0,
+      "mean_bps": -0.59,
+      "maxdd": -0.315,
+      "wf": 0.4
+    },
+    {
+      "label": "ASIA_0_6",
+      "sharpe": 0.21,
+      "hac_t": 0.83,
+      "dsr": 0.051,
+      "mean_bps": 0.46,
+      "maxdd": -0.23,
+      "wf": 0.8
+    },
+    {
+      "label": "ASIA_0_8",
+      "sharpe": 0.2,
+      "hac_t": 0.83,
+      "dsr": 0.051,
+      "mean_bps": 0.58,
+      "maxdd": -0.234,
+      "wf": 0.8
+    },
+    {
+      "label": "ASIA_0_10",
+      "sharpe": -0.04,
+      "hac_t": -0.16,
+      "dsr": 0.005,
+      "mean_bps": -0.13,
+      "maxdd": -0.432,
+      "wf": 0.6
+    },
+    {
+      "label": "ASIA_1_3",
+      "sharpe": -0.41,
+      "hac_t": -1.55,
+      "dsr": 0.0,
+      "mean_bps": -0.65,
+      "maxdd": -0.303,
+      "wf": 0.0
+    },
+    {
+      "label": "ASIA_1_4",
+      "sharpe": -0.42,
+      "hac_t": -1.63,
+      "dsr": 0.0,
+      "mean_bps": -0.75,
+      "maxdd": -0.347,
+      "wf": 0.2
+    },
+    {
+      "label": "ASIA_1_6",
+      "sharpe": 0.29,
+      "hac_t": 1.17,
+      "dsr": 0.097,
+      "mean_bps": 0.65,
+      "maxdd": -0.213,
+      "wf": 0.6
+    },
+    {
+      "label": "ASIA_1_8",
+      "sharpe": 0.15,
+      "hac_t": 0.58,
+      "dsr": 0.03,
+      "mean_bps": 0.44,
+      "maxdd": -0.281,
+      "wf": 0.6
+    },
+    {
+      "label": "ASIA_1_10",
+      "sharpe": -0.16,
+      "hac_t": -0.63,
+      "dsr": 0.001,
+      "mean_bps": -0.57,
+      "maxdd": -0.472,
+      "wf": 0.6
+    },
+    {
+      "label": "MOM_preUS",
+      "sharpe": -0.01,
+      "hac_t": -0.07,
+      "dsr": 0.006,
+      "mean_bps": -0.08,
+      "maxdd": -0.571,
+      "wf": 0.6
+    },
+    {
+      "label": "MOM_preUScond",
+      "sharpe": 0.27,
+      "hac_t": 1.25,
+      "dsr": 0.107,
+      "mean_bps": 1.02,
+      "maxdd": -0.341,
+      "wf": 0.6
+    },
+    {
+      "label": "MOM_asia",
+      "sharpe": -0.15,
+      "hac_t": -0.7,
+      "dsr": 0.001,
+      "mean_bps": -0.79,
+      "maxdd": -0.597,
+      "wf": 0.6
+    },
+    {
+      "label": "MOM_asiacond",
+      "sharpe": 0.13,
+      "hac_t": 0.6,
+      "dsr": 0.032,
+      "mean_bps": 0.48,
+      "maxdd": -0.275,
+      "wf": 0.6
+    },
+    {
+      "label": "US_long",
+      "sharpe": -0.73,
+      "hac_t": -3.21,
+      "dsr": 0.0,
+      "mean_bps": -3.77,
+      "maxdd": -0.886,
+      "wf": 0.2
+    }
+  ],
+  "best": "ASIA_23_8",
+  "best_oos_sharpe": 0.88
+}
