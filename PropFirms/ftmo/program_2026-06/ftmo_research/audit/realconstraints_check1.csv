@@ -1,0 +1,4 @@
+config,in_sample_p_funded_pct,in_sample_strict_pct,in_sample_censored_pct,oof_p_funded_pct,oof_strict_pct,oof_censored_pct,oof_n_total,oof_n_resolved,oof_n_funded
+K1_V2E7_lever_a,56.58,50.72,10.4,75.02,65.01,13.3,3238,2806,2105
+K2_V2E7_floor,68.77,60.89,11.5,90.43,77.08,14.8,3238,2760,2496
+K5_V2E7_floor_vol_high,97.4,86.28,11.4,100.0,85.3,14.7,3238,2762,2762

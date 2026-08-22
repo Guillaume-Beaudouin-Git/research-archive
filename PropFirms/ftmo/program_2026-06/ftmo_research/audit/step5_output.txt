@@ -1,0 +1,34 @@
+================================================================================
+5-A — Ex-ante regime gate (features computed <= J-1)
+================================================================================
+feature tercile  median_feat   n  pass_pct  bust_total_pct  bust_daily_pct  timeout_pct
+   rv20     low     0.133606 541 68.576710       29.020333             0.0     2.402957
+   rv20     mid     0.168246 262 72.137405       26.717557             0.0     1.145038
+   rv20    high     0.305791 119 52.941176       44.537815             0.0     2.521008
+    vr5     low     0.725068 358 75.139665       21.508380             0.0     3.351955
+    vr5     mid     0.865372 212 66.509434       33.490566             0.0     0.000000
+    vr5    high     1.019529 352 60.511364       37.500000             0.0     1.988636
+   vr10     low     0.534068 343 67.930029       28.571429             0.0     3.498542
+   vr10     mid     0.772674 213 68.075117       31.924883             0.0     0.000000
+   vr10    high     1.029792 366 66.939891       31.147541             0.0     1.912568
+trend20     low     0.397679 320 61.875000       34.687500             0.0     3.437500
+trend20     mid     0.770563 261 74.329502       25.287356             0.0     0.383142
+trend20    high     1.281371 341 67.741935       30.205279             0.0     2.052786
+
+--- Best tercile per feature (favourable regime → pass rate?) ---
+  rv20: best=mid (72.1%, n=262)  worst=high (52.9%, n=119)  spread=+19.2pts  BEAT 70%? YES
+  vr5: best=low (75.1%, n=358)  worst=high (60.5%, n=352)  spread=+14.6pts  BEAT 70%? YES
+  vr10: best=mid (68.1%, n=213)  worst=high (66.9%, n=366)  spread=+1.1pts  BEAT 70%? no
+  trend20: best=mid (74.3%, n=261)  worst=low (61.9%, n=320)  spread=+12.5pts  BEAT 70%? YES
+
+================================================================================
+5-B — Regime episode persistence
+================================================================================
+  # of distinct 'chop' (rv20 bottom-tercile) episodes: 18
+  Episode durations (days): min=1 median=13 max=183 mean=32.6
+  vs challenge horizon = 40 days; median TTP ≈ 14-19 days
+  Long episodes (≥40d): 5
+
+  --- Comparison: 2023 chop year — single big episode? ---
+    Chop days in 2023: 245 / 258 (95%)
+

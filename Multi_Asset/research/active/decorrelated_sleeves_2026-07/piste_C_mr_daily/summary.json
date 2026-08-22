@@ -1,0 +1,21 @@
+{
+  "n_trials": 84,
+  "short_leg_netpos": "19/84",
+  "short_leg_netpos_significant": "0/84",
+  "long_beats_uncond_drift": "49/84",
+  "best_two_sided": {
+    "sym": "US100",
+    "defn": "RSI14",
+    "tight": true,
+    "exit": "revert",
+    "net_sharpe": 0.3583489650431929,
+    "hac_t": 1.8212597071117855,
+    "short_mean_bps": 0.023768834091637422,
+    "short_t": 0.0052345770563650106,
+    "long_mean_bps": 74.12191610156084,
+    "uncond_bps": 6.023775699879599,
+    "n_trades": 54,
+    "maxdd": -0.15969587512472072
+  },
+  "best_dsr": 0.8477246361841428
+}

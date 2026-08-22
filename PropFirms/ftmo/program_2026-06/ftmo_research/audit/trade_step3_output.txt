@@ -1,0 +1,88 @@
+Loading trade dataset...
+  3056 trades 2022-2025
+
+==========================================================================================
+F1 — time_to_break_5min ≤ Xth quantile (KEEP fast breakouts)
+==========================================================================================
+ quantile  cutoff  n_keep  trade_retention_pct  mean_R  delta_mean_R  top_decile_in_bin_pct  top_decile_capture_pct  hit_rate_pct
+      0.2     0.0    1224               40.052   0.445         0.341                 13.807                  55.229        53.105
+      0.3     0.0    1224               40.052   0.445         0.341                 13.807                  55.229        53.105
+      0.4     0.0    1224               40.052   0.445         0.341                 13.807                  55.229        53.105
+      0.5     1.0    1550               50.720   0.436         0.333                 13.742                  69.608        52.968
+      0.6     3.0    1889               61.813   0.398         0.295                 13.129                  81.046        51.826
+      0.7     6.0    2232               73.037   0.363         0.260                 12.903                  94.118        50.672
+      0.8    11.0    2473               80.923   0.299         0.195                 12.091                  97.712        48.564
+      0.9    25.0    2752               90.052   0.207         0.104                 11.083                  99.673        45.422
+
+==========================================================================================
+F2 — or_range_atr_ratio ≤ Xth quantile (KEEP small-range)
+==========================================================================================
+ quantile  cutoff  n_keep  trade_retention_pct  mean_R  delta_mean_R  top_decile_in_bin_pct  top_decile_capture_pct  hit_rate_pct
+      0.2   0.236     612               20.026   0.215         0.112                 16.340                  32.680        35.458
+      0.3   0.275     917               30.007   0.212         0.109                 16.467                  49.346        37.077
+      0.4   0.307    1223               40.020   0.178         0.075                 14.881                  59.477        37.449
+      0.5   0.343    1528               50.000   0.153         0.050                 14.332                  71.569        37.827
+      0.6   0.383    1834               60.013   0.146         0.043                 13.686                  82.026        38.822
+      0.7   0.434    2139               69.993   0.137         0.034                 12.482                  87.255        39.878
+      0.8   0.499    2445               80.007   0.118         0.015                 11.575                  92.484        40.286
+      0.9   0.597    2750               89.987   0.106         0.002                 10.655                  95.752        40.764
+
+==========================================================================================
+F3 — time_to_break_5min ≤ qa  AND  or_range_atr_ratio ≤ qb
+==========================================================================================
+                f1  q1  c1                 f2  q2    c2  n_keep  trade_retention_pct  mean_R  delta_mean_R  top_decile_capture_pct  hit_rate_pct
+time_to_break_5min 0.3 0.0 or_range_atr_ratio 0.3 0.275     364               11.911   0.798         0.694                  31.046        51.648
+time_to_break_5min 0.3 0.0 or_range_atr_ratio 0.5 0.343     598               19.568   0.635         0.532                  41.830        50.836
+time_to_break_5min 0.3 0.0 or_range_atr_ratio 0.7 0.434     836               27.356   0.547         0.444                  49.346        52.033
+time_to_break_5min 0.5 1.0 or_range_atr_ratio 0.3 0.275     463               15.151   0.750         0.647                  36.928        51.188
+time_to_break_5min 0.5 1.0 or_range_atr_ratio 0.5 0.343     766               25.065   0.606         0.502                  51.961        50.783
+time_to_break_5min 0.5 1.0 or_range_atr_ratio 0.7 0.434    1082               35.406   0.537         0.434                  62.418        52.126
+time_to_break_5min 0.7 6.0 or_range_atr_ratio 0.3 0.275     698               22.840   0.544         0.441                  48.039        46.418
+time_to_break_5min 0.7 6.0 or_range_atr_ratio 0.5 0.343    1145               37.467   0.459         0.356                  68.627        46.900
+time_to_break_5min 0.7 6.0 or_range_atr_ratio 0.7 0.434    1601               52.389   0.417         0.314                  83.007        48.657
+
+==========================================================================================
+STEP 3b — FTMO uncapped p(funded) with the FILTER (real-path, contigu)
+==========================================================================================
+  Baseline M shape = (1033, 3)
+
+risk_pct                           0.50   0.75   1.00   1.25
+config                                                      
+BASELINE (no filter)               78.0   67.6   52.0   51.8
+F1_q0.5 (time_to_break ≤ median)  100.0  100.0   96.8   96.5
+F1_q0.4                           100.0  100.0   95.5   91.6
+F1_q0.6                           100.0   98.8   96.9   94.6
+F2_q0.5 (or_range_atr ≤ median)    91.1   73.3   57.4   52.4
+F2_q0.7                            76.2   72.8   63.0   55.8
+F3 AND (ttb ≤0.5 AND or ≤0.5)     100.0  100.0  100.0  100.0
+F4 OR (ttb ≤0.5 OR or ≤0.5)       100.0   89.9   80.8   70.7
+
+L19 ABLATION — Δ p_funded vs BASELINE at same sizing
+  F1_q0.5 (time_to_break ≤ median)              risk=0.50% p_funded=100.0% Δ=+22.0pt (n_trades=1550, top10_cap=70%, cens=7.0%, med_grind=71)
+  F1_q0.5 (time_to_break ≤ median)              risk=0.75% p_funded=100.0% Δ=+32.4pt (n_trades=1550, top10_cap=70%, cens=5.5%, med_grind=51)
+  F1_q0.5 (time_to_break ≤ median)              risk=1.00% p_funded=96.8% Δ=+44.9pt (n_trades=1550, top10_cap=70%, cens=4.7%, med_grind=38)
+  F1_q0.5 (time_to_break ≤ median)              risk=1.25% p_funded=96.5% Δ=+44.6pt (n_trades=1550, top10_cap=70%, cens=3.9%, med_grind=31)
+  F1_q0.4                                       risk=0.50% p_funded=100.0% Δ=+22.0pt (n_trades=1224, top10_cap=55%, cens=7.3%, med_grind=86)
+  F1_q0.4                                       risk=0.75% p_funded=100.0% Δ=+32.4pt (n_trades=1224, top10_cap=55%, cens=5.7%, med_grind=60)
+  F1_q0.4                                       risk=1.00% p_funded=95.5% Δ=+43.5pt (n_trades=1224, top10_cap=55%, cens=5.5%, med_grind=45)
+  F1_q0.4                                       risk=1.25% p_funded=91.6% Δ=+39.7pt (n_trades=1224, top10_cap=55%, cens=4.8%, med_grind=38)
+  F1_q0.6                                       risk=0.50% p_funded=100.0% Δ=+22.0pt (n_trades=1889, top10_cap=81%, cens=10.0%, med_grind=62)
+  F1_q0.6                                       risk=0.75% p_funded=98.8% Δ=+31.2pt (n_trades=1889, top10_cap=81%, cens=5.8%, med_grind=41)
+  F1_q0.6                                       risk=1.00% p_funded=96.9% Δ=+45.0pt (n_trades=1889, top10_cap=81%, cens=5.5%, med_grind=32)
+  F1_q0.6                                       risk=1.25% p_funded=94.6% Δ=+42.7pt (n_trades=1889, top10_cap=81%, cens=5.5%, med_grind=26)
+  F2_q0.5 (or_range_atr ≤ median)               risk=0.50% p_funded=91.1% Δ=+13.1pt (n_trades=1528, top10_cap=72%, cens=20.5%, med_grind=169)
+  F2_q0.5 (or_range_atr ≤ median)               risk=0.75% p_funded=73.3% Δ=+5.7pt (n_trades=1528, top10_cap=72%, cens=10.7%, med_grind=98)
+  F2_q0.5 (or_range_atr ≤ median)               risk=1.00% p_funded=57.4% Δ=+5.4pt (n_trades=1528, top10_cap=72%, cens=9.1%, med_grind=55)
+  F2_q0.5 (or_range_atr ≤ median)               risk=1.25% p_funded=52.4% Δ=+0.5pt (n_trades=1528, top10_cap=72%, cens=5.3%, med_grind=39)
+  F2_q0.7                                       risk=0.50% p_funded=76.2% Δ=-1.8pt (n_trades=2139, top10_cap=87%, cens=13.5%, med_grind=104)
+  F2_q0.7                                       risk=0.75% p_funded=72.8% Δ=+5.2pt (n_trades=2139, top10_cap=87%, cens=9.6%, med_grind=67)
+  F2_q0.7                                       risk=1.00% p_funded=63.0% Δ=+11.0pt (n_trades=2139, top10_cap=87%, cens=5.6%, med_grind=43)
+  F2_q0.7                                       risk=1.25% p_funded=55.8% Δ=+4.0pt (n_trades=2139, top10_cap=87%, cens=4.3%, med_grind=35)
+  F3 AND (ttb ≤0.5 AND or ≤0.5)                 risk=0.50% p_funded=100.0% Δ=+22.0pt (n_trades=766, top10_cap=52%, cens=8.9%, med_grind=110)
+  F3 AND (ttb ≤0.5 AND or ≤0.5)                 risk=0.75% p_funded=100.0% Δ=+32.4pt (n_trades=766, top10_cap=52%, cens=5.5%, med_grind=76)
+  F3 AND (ttb ≤0.5 AND or ≤0.5)                 risk=1.00% p_funded=100.0% Δ=+48.0pt (n_trades=766, top10_cap=52%, cens=5.5%, med_grind=57)
+  F3 AND (ttb ≤0.5 AND or ≤0.5)                 risk=1.25% p_funded=100.0% Δ=+48.2pt (n_trades=766, top10_cap=52%, cens=5.3%, med_grind=50)
+  F4 OR (ttb ≤0.5 OR or ≤0.5)                   risk=0.50% p_funded=100.0% Δ=+22.0pt (n_trades=2312, top10_cap=89%, cens=10.1%, med_grind=90)
+  F4 OR (ttb ≤0.5 OR or ≤0.5)                   risk=0.75% p_funded=89.9% Δ=+22.3pt (n_trades=2312, top10_cap=89%, cens=9.0%, med_grind=59)
+  F4 OR (ttb ≤0.5 OR or ≤0.5)                   risk=1.00% p_funded=80.8% Δ=+28.8pt (n_trades=2312, top10_cap=89%, cens=5.9%, med_grind=41)
+  F4 OR (ttb ≤0.5 OR or ≤0.5)                   risk=1.25% p_funded=70.7% Δ=+18.8pt (n_trades=2312, top10_cap=89%, cens=4.5%, med_grind=32)

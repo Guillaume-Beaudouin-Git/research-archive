@@ -1,0 +1,33 @@
+Loaded buggy dataset: 3056 trades
+
+==========================================================================================
+PLACEBO #1 — Permute ttb on the BUGGY EXEC_0 dataset (n=1000 perms)
+==========================================================================================
+         observed_F1_mean_R : 0.4358764771890626
+         observed_advantage : 0.332575680081547
+               perm_mean_F1 : 0.10315603488356569
+                perm_std_F1 : 0.02855725164218078
+                   perm_q05 : 0.055548795678753385
+                   perm_q95 : 0.151416106477849
+          p_value_one_sided : 0.0
+                    z_score : 11.650996618107634
+
+  z-score (obs vs perm distribution) : 11.65
+  one-sided p-value                  : 0.0000
+  -> observed F1 mean R is in the >95th percentile of placebo → REAL signal
+
+==========================================================================================
+PLACEBO #2 — Permute ttb on CLEAN EXEC_NEXT_OPEN dataset (n=1000 perms)
+==========================================================================================
+Running placebo on EXEC_NEXT_OPEN (clean execution)...
+         observed_F1_mean_R : 0.3549181524661406
+         observed_advantage : 0.29736066056112864
+               perm_mean_F1 : 0.057432537457291516
+                perm_std_F1 : 0.025811276279310718
+                   perm_q05 : 0.01398411622100339
+                   perm_q95 : 0.10017258635831852
+          p_value_one_sided : 0.0
+                    z_score : 11.52541283854691
+
+  z-score : 11.53, one-sided p-value : 0.0000
+  -> REAL signal under clean execution

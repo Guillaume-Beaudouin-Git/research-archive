@@ -1,0 +1,77 @@
+Trades: 4013, sessions: 4041
+
+====================================================================================================
+A. HEADLINE p_funded by (cost model × sizing) — full 2010-2026
+====================================================================================================
+p_funded_pct by (cost model × risk%):
+risk_pct               0.50  0.75  1.00  1.25
+cost_model                                   
+gross                  67.3  59.9  50.0  53.0
+1bps_aggressive        55.6  46.0  42.4  44.2
+2bps_median            41.8  36.7  30.5  27.9
+3bps_conservative      36.0  33.0  29.2  24.0
+futures_1pt_realistic  51.5  38.7  35.6  38.9
+3pts_fixed_v1bug       37.2  34.4  26.0  22.4
+
+====================================================================================================
+B. p_funded by REGIME under realistic costs (risk=0.75%)
+====================================================================================================
+cost_model                    gross  2bps_median  3bps_conservative  futures_1pt_realistic
+tag       regime                                                                          
+chop      2015-16_china_chop    0.0          0.0                0.0                    0.0
+          2023_chop           100.0        100.0              100.0                  100.0
+trending  2010-12_recovery     36.4         14.4                3.9                    0.6
+          2013-14_qe_trend      2.0          0.0                0.0                    0.0
+          2016H2-17_trend      99.4         20.0                0.0                   22.2
+          2019_dovish_pivot    86.7          0.0                0.0                    0.0
+          2022_bear           100.0        100.0              100.0                  100.0
+          2024-26_bull         91.4         79.6               73.1                   90.6
+vol_shock 2018_vol_shock        NaN          0.0                0.0                    NaN
+          2020_covid            0.0          0.0                0.0                    0.0
+
+
+p_funded weighted-mean by tag (= average over regimes in that tag):
+cost_model  gross  2bps_median  3bps_conservative  futures_1pt_realistic
+tag                                                                     
+chop         50.0         50.0               50.0                   50.0
+trending     69.3         35.7               29.5                   35.6
+vol_shock     0.0          0.0                0.0                    0.0
+
+====================================================================================================
+C. WF MAXIMIN per regime — sizing sweep × cost models
+====================================================================================================
+       cost_model  risk_pct  FULL_p_funded  WF_mean  WF_min  n_regimes_zero
+            gross      0.50          67.29    61.34    0.00               2
+            gross      0.75          59.85    57.31    0.00               2
+            gross      1.00          49.96    51.98    0.28               0
+            gross      1.25          53.04    56.47    4.12               0
+      2bps_median      0.50          41.83    25.00    0.00               3
+      2bps_median      0.75          36.73    31.40    0.00               5
+      2bps_median      1.00          30.54    31.40    0.00               3
+      2bps_median      1.25          27.89    28.35    0.00               2
+3bps_conservative      0.50          36.02    13.22    0.00               5
+3bps_conservative      0.75          33.00    27.70    0.00               6
+3bps_conservative      1.00          29.17    26.01    0.00               4
+3bps_conservative      1.25          23.95    23.04    0.00               2
+
+====================================================================================================
+D. rv20 gate retest under realistic costs (2bps, 3bps, futures 1pt)
+====================================================================================================
+
+--- cost: 2bps_median ---
+  risk=0.50% BASE= 41.8% LOW= 41.6% (Δ -0.3) MID= 46.4% (Δ +4.5) HIGH= 39.7% (Δ -2.1)
+  risk=0.75% BASE= 36.7% LOW= 30.8% (Δ -6.0) MID= 41.8% (Δ +5.0) HIGH= 39.1% (Δ +2.3)
+  risk=1.00% BASE= 30.5% LOW= 21.6% (Δ -9.0) MID= 38.5% (Δ +7.9) HIGH= 31.7% (Δ +1.2)
+  risk=1.25% BASE= 27.9% LOW= 20.1% (Δ -7.8) MID= 35.8% (Δ +7.9) HIGH= 26.8% (Δ -1.1)
+
+--- cost: 3bps_conservative ---
+  risk=0.50% BASE= 36.0% LOW= 33.4% (Δ -2.6) MID= 40.5% (Δ +4.5) HIGH= 35.8% (Δ -0.2)
+  risk=0.75% BASE= 33.0% LOW= 28.3% (Δ -4.7) MID= 36.0% (Δ +3.0) HIGH= 35.9% (Δ +2.9)
+  risk=1.00% BASE= 29.2% LOW= 24.4% (Δ -4.8) MID= 33.4% (Δ +4.2) HIGH= 30.1% (Δ +0.9)
+  risk=1.25% BASE= 24.0% LOW= 18.2% (Δ -5.7) MID= 29.2% (Δ +5.3) HIGH= 23.6% (Δ -0.4)
+
+--- cost: futures_1pt_realistic ---
+  risk=0.50% BASE= 51.5% LOW= 52.4% (Δ +0.9) MID= 54.6% (Δ +3.1) HIGH= 50.0% (Δ -1.5)
+  risk=0.75% BASE= 38.7% LOW= 38.3% (Δ -0.3) MID= 42.1% (Δ +3.4) HIGH= 37.4% (Δ -1.3)
+  risk=1.00% BASE= 35.6% LOW= 31.0% (Δ -4.6) MID= 41.6% (Δ +5.9) HIGH= 35.9% (Δ +0.3)
+  risk=1.25% BASE= 38.9% LOW= 37.6% (Δ -1.4) MID= 45.1% (Δ +6.1) HIGH= 35.2% (Δ -3.7)

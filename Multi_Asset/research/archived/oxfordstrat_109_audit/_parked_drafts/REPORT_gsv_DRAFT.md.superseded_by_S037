@@ -1,0 +1,32 @@
+# Rapport stratégie 20/109 — Greatest Swing Value (Exits) — *court (héritage)*
+
+**Statut :** ❌ **DISCARD (1/4)** — *héritage cluster ORB-stop (S001/S002) : artefact de fill intrabar (Gate 1).* · **Source :** https://oxfordstrat.com/trading-strategies/greatest-swing-value/ (Larry Williams, rating **D**). · **Registre :** #20. · 2026-06-05.
+
+> Démonstration la plus **pure** du piège ORB-stop : passe 3 gates sur 4, tué uniquement par le délai+1.
+
+## Spec & archétype (1 ligne)
+**Même archétype que la #1 (Crabel ORB) sans le filtre NR** : entrée **stop intrabar** `Open ± GSV` (GSV = SMA du *noise directionnel* sur 10 × 2), tous les jours ; sorties Target_Index × Time_Index (+ GSV/ATR). La fiche la pose en *« benchmark GSV vs ORB »*. Réutilise **`ftmo_lab.simulate_bracket` TEL QUEL** (setup = toujours vrai, stretch = GSV).
+
+## Résultats (réf. Target=3R, Time=10)
+**12 548 trades · win 44,6 % · expR +0,0193 · PF 1,140 · Sharpe 1,03 · MaxDD −70,7 %** (fill optimiste).
+
+## LES 2 CHIFFRES DÉCISIFS + gates — `results/s020_gates.csv`
+
+> **DÉLAI+1 :** natif(stop) Sharpe **+1,03** (expR +0,0193) → réaliste open[i+1] Sharpe **−0,47** (expR −0,0085). **→ inversion complète.**
+> **TWO-SIDED :** long **+0,0719** / short **+0,0103** (les deux positifs).
+
+| # | Gate | Résultat | Verdict |
+|---|---|---|---|
+| 1 | **Délai+1** | **+1,03 → −0,47** | ❌ **FAIL — artefact de fill intrabar** |
+| 2 | Two-sided | long +0,072 / short +0,010 | ✅ PASS |
+| 3 | DSR (N=20) | SR 3,15 > 1,87 | ✅ PASS |
+| 4 | OOS | train +0,019 → test +0,020 | ✅ PASS |
+
+## Verdict
+❌ **DISCARD (1/4).** Tag : *artefact de fill intrabar (héritage ORB-stop).* **Cas pédagogique :** sous le fill optimiste (au niveau du stop), le GSV a l'air **excellent** — Sharpe 1,03, symétrique (les deux côtés positifs), DSR significatif, robuste OOS : il passerait **3 gates sur 4**. Mais **tout l'edge est l'exécution au niveau exact du stop** ; au fill réaliste (open suivant), le Sharpe passe de **+1,03 à −0,47**. C'est exactement le mode de mort de S001/S002 — ici à l'état pur (ORB sans filtre NR). Plus MaxDD −71 % (intradeable). 20ᵉ traitée, **20ᵉ DISCARD**.
+
+## Suite
+**#21 (Greatest Swing Value – Trend, Filter & Exit)** = variante GSV avec filtre de tendance → même archétype ORB-stop → héritage attendu (Gate 1).
+
+## Repro
+`cd oxfordstrat_109/code && python strat_s020_gsv.py` (Python 3.10.12 ; numpy 2.2.6 ; pandas 2.3.3). Moteur `ftmo_lab.py` partagé/inchangé (réutilise `simulate_bracket`). Code faisant foi : `code/strat_s020_gsv.py`.

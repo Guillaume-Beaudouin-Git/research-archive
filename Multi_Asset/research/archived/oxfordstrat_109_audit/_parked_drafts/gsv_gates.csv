@@ -1,0 +1,5 @@
+gate,pass,tag
+delay1 (L26),False,artefact de fill intrabar
+twosided (L25),True,
+dsr,True,
+oos (L31),True,

@@ -1,0 +1,102 @@
+{
+  "NQ": {
+    "yf": "NQ=F",
+    "micro": "MNQ",
+    "mult": 2.0,
+    "tick": 0.25,
+    "comm_side": 0.37,
+    "roll": "index_q",
+    "n_rolls": 4,
+    "cluster": "equity"
+  },
+  "ES": {
+    "yf": "ES=F",
+    "micro": "MES",
+    "mult": 5.0,
+    "tick": 0.25,
+    "comm_side": 0.37,
+    "roll": "index_q",
+    "n_rolls": 4,
+    "cluster": "equity"
+  },
+  "GC": {
+    "yf": "GC=F",
+    "micro": "MGC",
+    "mult": 10.0,
+    "tick": 0.1,
+    "comm_side": 0.37,
+    "roll": "gold",
+    "n_rolls": 6,
+    "cluster": "metal"
+  },
+  "CL": {
+    "yf": "CL=F",
+    "micro": "MCL",
+    "mult": 100.0,
+    "tick": 0.01,
+    "comm_side": 0.37,
+    "roll": "crude",
+    "n_rolls": 12,
+    "cluster": "energy"
+  },
+  "6E": {
+    "yf": "6E=F",
+    "micro": "M6E",
+    "mult": 12500.0,
+    "tick": 0.0001,
+    "comm_side": 0.37,
+    "roll": "fx_q",
+    "n_rolls": 4,
+    "cluster": "fx"
+  },
+  "6A": {
+    "yf": "6A=F",
+    "micro": "M6A",
+    "mult": 10000.0,
+    "tick": 0.0001,
+    "comm_side": 0.37,
+    "roll": "fx_q",
+    "n_rolls": 4,
+    "cluster": "fx"
+  },
+  "6B": {
+    "yf": "6B=F",
+    "micro": "M6B",
+    "mult": 6250.0,
+    "tick": 0.0001,
+    "comm_side": 0.37,
+    "roll": "fx_q",
+    "n_rolls": 4,
+    "cluster": "fx"
+  },
+  "RTY": {
+    "yf": "RTY=F",
+    "micro": "M2K",
+    "mult": 5.0,
+    "tick": 0.1,
+    "comm_side": 0.37,
+    "roll": "index_q",
+    "n_rolls": 4,
+    "cluster": "equity"
+  },
+  "SI": {
+    "yf": "SI=F",
+    "micro": "SIL",
+    "mult": 1000.0,
+    "tick": 0.005,
+    "comm_side": 0.37,
+    "roll": "silver",
+    "n_rolls": 5,
+    "cluster": "metal"
+  },
+  "ZN": {
+    "yf": "ZN=F",
+    "micro": "MZN",
+    "mult": 1000.0,
+    "tick": 0.015625,
+    "comm_side": 0.37,
+    "roll": "zn_q",
+    "n_rolls": 4,
+    "cluster": "rates"
+  }
+}

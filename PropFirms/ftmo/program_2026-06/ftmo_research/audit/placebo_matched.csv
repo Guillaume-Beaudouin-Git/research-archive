@@ -1,0 +1,7 @@
+config,mean_R,std_R,floor_OOF_pct,nofloor_OOF_pct,floor_n_resolved,floor_n_funded,floor_censored
+1_K5_actual,0.0221,1.0796,100.0,77.55,2762,2762,14.7
+2_K5_shuffled,0.0221,1.0796,100.0,53.92,1665,1665,48.6
+3_random_matched,0.0361,1.0848,79.38,54.46,2817,2236,13.0
+4_random_2x_mean,0.0234,1.0846,86.2,48.76,1123,968,65.3
+5_random_half_mean,0.0045,1.0833,62.01,34.17,1490,924,54.0
+6_random_zero_mean,0.0269,1.0717,97.71,84.42,2572,2513,20.6

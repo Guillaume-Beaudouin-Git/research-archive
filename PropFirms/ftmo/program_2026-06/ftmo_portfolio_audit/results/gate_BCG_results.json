@@ -1,0 +1,224 @@
+{
+  "gate_B": {
+    "unconditional_corr": {
+      "A": {
+        "A": 1.0,
+        "B": -0.067,
+        "C": 0.061
+      },
+      "B": {
+        "A": -0.067,
+        "B": 1.0,
+        "C": -0.069
+      },
+      "C": {
+        "A": 0.061,
+        "B": -0.069,
+        "C": 1.0
+      }
+    },
+    "conditional_corr": {
+      "vol_shock(top10% |US500 daily|)": {
+        "n": 115,
+        "AC": 0.132,
+        "AB": -0.222,
+        "BC": -0.043
+      },
+      "worst_decile_port_days": {
+        "n": 161,
+        "AC": -0.188,
+        "AB": -0.39,
+        "BC": -0.471
+      },
+      "down_days_US500": {
+        "n": 524,
+        "AC": 0.156,
+        "AB": -0.097,
+        "BC": -0.064
+      }
+    },
+    "co_breach": {
+      "p_ge2_empirical": 0.0261,
+      "p_ge2_independent": 0.028,
+      "p_ge3_empirical": 0.0,
+      "ratio_vs_indep": 0.93
+    },
+    "rolling63_AC": {
+      "median": NaN,
+      "min": NaN,
+      "max": NaN,
+      "p05": NaN,
+      "p95": NaN
+    }
+  },
+  "gate_C": {
+    "1.5": {
+      "steel_full": {
+        "corrected_3mo": 0.015,
+        "author_3mo": 0.053
+      },
+      "steel_oos": {
+        "corrected_3mo": 0.037,
+        "author_3mo": 0.109
+      },
+      "repSh_full": {
+        "corrected_3mo": 0.025,
+        "author_3mo": 0.093
+      },
+      "repSh_oos": {
+        "corrected_3mo": 0.049,
+        "author_3mo": 0.159
+      }
+    },
+    "2.0": {
+      "steel_full": {
+        "corrected_3mo": 0.066,
+        "author_3mo": 0.152
+      },
+      "steel_oos": {
+        "corrected_3mo": 0.1,
+        "author_3mo": 0.218
+      },
+      "repSh_full": {
+        "corrected_3mo": 0.1,
+        "author_3mo": 0.23
+      },
+      "repSh_oos": {
+        "corrected_3mo": 0.14,
+        "author_3mo": 0.305
+      }
+    },
+    "2.5": {
+      "steel_full": {
+        "corrected_3mo": 0.147,
+        "author_3mo": 0.245
+      },
+      "steel_oos": {
+        "corrected_3mo": 0.186,
+        "author_3mo": 0.324
+      },
+      "repSh_full": {
+        "corrected_3mo": 0.207,
+        "author_3mo": 0.341
+      },
+      "repSh_oos": {
+        "corrected_3mo": 0.254,
+        "author_3mo": 0.424
+      }
+    },
+    "3.0": {
+      "steel_full": {
+        "corrected_3mo": 0.226,
+        "author_3mo": 0.311
+      },
+      "steel_oos": {
+        "corrected_3mo": 0.267,
+        "author_3mo": 0.384
+      },
+      "repSh_full": {
+        "corrected_3mo": 0.297,
+        "author_3mo": 0.408
+      },
+      "repSh_oos": {
+        "corrected_3mo": 0.348,
+        "author_3mo": 0.479
+      }
+    },
+    "3.5": {
+      "steel_full": {
+        "corrected_3mo": 0.269,
+        "author_3mo": 0.328
+      },
+      "steel_oos": {
+        "corrected_3mo": 0.295,
+        "author_3mo": 0.38
+      },
+      "repSh_full": {
+        "corrected_3mo": 0.337,
+        "author_3mo": 0.41
+      },
+      "repSh_oos": {
+        "corrected_3mo": 0.375,
+        "author_3mo": 0.469
+      }
+    },
+    "4.0": {
+      "steel_full": {
+        "corrected_3mo": 0.31,
+        "author_3mo": 0.351
+      },
+      "steel_oos": {
+        "corrected_3mo": 0.344,
+        "author_3mo": 0.41
+      },
+      "repSh_full": {
+        "corrected_3mo": 0.379,
+        "author_3mo": 0.426
+      },
+      "repSh_oos": {
+        "corrected_3mo": 0.425,
+        "author_3mo": 0.49
+      }
+    },
+    "5.0": {
+      "steel_full": {
+        "corrected_3mo": 0.288,
+        "author_3mo": 0.297
+      },
+      "steel_oos": {
+        "corrected_3mo": 0.383,
+        "author_3mo": 0.416
+      },
+      "repSh_full": {
+        "corrected_3mo": 0.35,
+        "author_3mo": 0.36
+      },
+      "repSh_oos": {
+        "corrected_3mo": 0.451,
+        "author_3mo": 0.478
+      }
+    },
+    "_optimalL_steel_full": 4.0
+  },
+  "gate_G": {
+    "per_year_combined_sharpe": {
+      "2022": 0.76,
+      "2023": 0.63,
+      "2024": 0.76,
+      "2025": 1.0,
+      "2026": 2.54
+    },
+    "regime_year_ppass": {
+      "2022": {
+        "n": 363,
+        "ann_sharpe": 0.76,
+        "p3mo_L2.5_corrected": 0.109,
+        "p3mo_L2.5_author": 0.191
+      },
+      "2023": {
+        "n": 364,
+        "ann_sharpe": 0.63,
+        "p3mo_L2.5_corrected": 0.134,
+        "p3mo_L2.5_author": 0.214
+      },
+      "2024": {
+        "n": 365,
+        "ann_sharpe": 0.76,
+        "p3mo_L2.5_corrected": 0.147,
+        "p3mo_L2.5_author": 0.266
+      },
+      "2025": {
+        "n": 361,
+        "ann_sharpe": 1.0,
+        "p3mo_L2.5_corrected": 0.156,
+        "p3mo_L2.5_author": 0.26
+      },
+      "2026": {
+        "n": 154,
+        "ann_sharpe": 2.54,
+        "p3mo_L2.5_corrected": 0.274,
+        "p3mo_L2.5_author": 0.468
+      }
+    }
+  }
+}

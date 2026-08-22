@@ -1,0 +1,102 @@
+{
+  "spec": "two-sided RSI2 daily, 11 instruments, inverse-vol(90d), EET, markup2, swap0.5bp/night",
+  "report_claim": {
+    "daily_sharpe": 0.97,
+    "excess_kurtosis": 14,
+    "positive_every_year": true
+  },
+  "full_2022_2026": {
+    "n_days": 1153,
+    "mean_daily": -0.00029992026683683265,
+    "sigma_daily": 0.008631640579410313,
+    "daily_sharpe": -0.03474661208116734,
+    "ann_sharpe": -0.5515853668128075,
+    "ann_return": -0.07557990724288183,
+    "win_rate": 0.40503035559410233,
+    "win_loss_ratio": 1.1286442639855918,
+    "excess_kurtosis": 10.962582098562818,
+    "skew": 0.5657336790328056,
+    "max_dd": 0.37637073899649065,
+    "worst_day": -0.05861771704202738,
+    "best_day": 0.06618127176499425
+  },
+  "oos_2025_2026": {
+    "n_days": 372,
+    "mean_daily": -1.6262464983998338e-05,
+    "sigma_daily": 0.009046090034113986,
+    "daily_sharpe": -0.0017977341506297704,
+    "ann_sharpe": -0.02853814491584582,
+    "ann_return": -0.004098141175967581,
+    "win_rate": 0.3844086021505376,
+    "win_loss_ratio": 1.2370619473165956,
+    "excess_kurtosis": 15.025414336365614,
+    "skew": 0.5266679562839399,
+    "max_dd": 0.17297762324919463,
+    "worst_day": -0.05861771704202738,
+    "best_day": 0.06618127176499425
+  },
+  "per_year_sharpe_full": {
+    "2022": -1.3825884302048554,
+    "2023": -0.03250559528972012,
+    "2024": -0.8978772032420885,
+    "2025": 0.6207565166587272,
+    "2026": -1.4340827980572932
+  },
+  "instr_diag": {
+    "EURUSD": {
+      "ann_sharpe": -0.075,
+      "n_days": 1305,
+      "ann_ret": -0.0035
+    },
+    "GBPUSD": {
+      "ann_sharpe": -0.133,
+      "n_days": 1306,
+      "ann_ret": -0.0068
+    },
+    "AUDUSD": {
+      "ann_sharpe": -0.091,
+      "n_days": 1307,
+      "ann_ret": -0.0054
+    },
+    "NZDUSD": {
+      "ann_sharpe": -0.776,
+      "n_days": 1306,
+      "ann_ret": -0.0467
+    },
+    "USDCHF": {
+      "ann_sharpe": -1.148,
+      "n_days": 1306,
+      "ann_ret": -0.0592
+    },
+    "USDJPY": {
+      "ann_sharpe": -0.214,
+      "n_days": 1307,
+      "ann_ret": -0.0131
+    },
+    "US500": {
+      "ann_sharpe": 0.529,
+      "n_days": 1297,
+      "ann_ret": 0.0551
+    },
+    "US100": {
+      "ann_sharpe": 0.497,
+      "n_days": 1297,
+      "ann_ret": 0.0683
+    },
+    "US30": {
+      "ann_sharpe": 0.41,
+      "n_days": 1297,
+      "ann_ret": 0.0405
+    },
+    "GER40": {
+      "ann_sharpe": 0.416,
+      "n_days": 1285,
+      "ann_ret": 0.0467
+    },
+    "XAUUSD": {
+      "ann_sharpe": -0.522,
+      "n_days": 1295,
+      "ann_ret": -0.0643
+    }
+  }
+}

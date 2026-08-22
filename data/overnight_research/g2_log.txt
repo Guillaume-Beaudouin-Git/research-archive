@@ -1,0 +1,111 @@
+Specs columns: ['ticker', 'name', 'asset_type', 'calc_mode', 'industry', 'digits', 'contract_size', 'margin_currency', 'profit_currency', 'swap_long', 'swap_short', 'swap_type', 'swap_3x_day', 'commission', 'margin_init_usd_per_lot_buy', 'margin_init_usd_per_lot_sell', 'volume_min', 'volume_max', 'volume_step', 'session']
+    ticker  digits contract_size  swap_long  swap_short swap_type swap_3x_day
+    USDJPY       3    100000 USD       2.95      -23.94    points   Wednesday
+    USDSEK       5    100000 USD       9.27      -94.65    points   Wednesday
+    USDCNH       5    100000 USD      10.23     -104.30    points   Wednesday
+    USDCHF       5    100000 USD       1.64      -15.68    points   Wednesday
+    USDCAD       5    100000 USD       0.68      -13.62    points   Wednesday
+    EURUSD       5    100000 EUR     -12.17        0.59    points   Wednesday
+    EURGBP       5    100000 EUR     -10.02        0.39    points   Wednesday
+    EURJPY       3    100000 EUR       0.93      -11.68    points   Wednesday
+    AUDJPY       3    100000 AUD       3.04      -16.10    points   Wednesday
+    GBPJPY       3    100000 GBP       4.25      -32.73    points   Wednesday
+US100.cash       2             1    -662.40       28.58    points      Friday
+    XAGUSD       3          5000     -20.65        0.70    points   Wednesday
+    XAUUSD       2           100     -88.00       -3.40    points   Wednesday
+    XPDUSD       2           100     -55.16      -16.20    points   Wednesday
+    XPTUSD       2           100     -71.07      -22.32    points   Wednesday
+UKOIL.cash       3           100      27.62     -129.90    points      Friday
+USOIL.cash       3           100      36.55     -168.14    points      Friday
+   COCOA.c       1             1     -15.52        2.58    points      Friday
+  COFFEE.c       2             1       1.70      -10.32    points      Friday
+ SOYBEAN.c       2             1     -39.12        6.10    points      Friday
+   WHEAT.c       2             1     -20.84        3.28    points      Friday
+
+US100.cash row:
+ticker                                         US100.cash
+name                            NASDAQ 100 Index Spot CFD
+asset_type                                      Index CFD
+calc_mode                                      Levier CFD
+industry                                              NaN
+digits                                                  2
+contract_size                                           1
+margin_currency                                       USD
+profit_currency                                       USD
+swap_long                                          -662.4
+swap_short                                          28.58
+swap_type                                          points
+swap_3x_day                                        Friday
+commission                                              0
+margin_init_usd_per_lot_buy                        604.85
+margin_init_usd_per_lot_sell                       604.82
+volume_min                                           0.01
+volume_max                                           1000
+volume_step                                          0.01
+session                                       01:05-23:50
+Name: 10, dtype: object
+
+==============================================================================
+CANONICAL — point_size derived from digits (MT5 standard)
+==============================================================================
+US100.cash    swap_long=  -662.4 pts  digits=2  cs=        1  point_size=0.01  swap_money=    -6.624 USD/lot/night  swap_bps= -3.081 bps/night  (ref px 21500)
+EURUSD        swap_long=  -12.17 pts  digits=5  cs=   100000  point_size=1e-05  swap_money=   -12.170 USD/lot/night  swap_bps= -1.106 bps/night  (ref px 1.1)
+XAUUSD        swap_long=   -88.0 pts  digits=2  cs=      100  point_size=0.01  swap_money=   -88.000 USD/lot/night  swap_bps= -2.933 bps/night  (ref px 3000)
+USDJPY        swap_long=    2.95 pts  digits=3  cs=   100000  point_size=0.001  swap_money=  +295.000 USD/lot/night  swap_bps= +0.197 bps/night  (ref px 150)
+GBPJPY        swap_long=    4.25 pts  digits=3  cs=   100000  point_size=0.001  swap_money=  +425.000 USD/lot/night  swap_bps= +0.213 bps/night  (ref px 200)
+
+Industry-reference cross-checks:
+  EURUSD swap_long  bps/night — industry sees ~ −1 to −2 bps (carry: USD>EUR)  → our number should be within that band.
+  XAUUSD swap_long  bps/night — industry sees ~ −2 to −5 bps   (gold financing)  → our number should be within that band.
+
+==============================================================================
+SENSITIVITY GRID — US100.cash point_size assumed value
+==============================================================================
+  point_size  swap_money $/lot/night   bps/night (1x)
+      0.0010                  -0.662           -0.308
+      0.0100                  -6.624           -3.081
+      0.1000                 -66.240          -30.809
+      1.0000                -662.400         -308.093
+
+Digits-implied point_size for US100.cash: 10^-2 = 0.01
+→ At digits=2, MT5 *forces* point_size = 0.01. Other values would contradict the symbol spec.
+
+==============================================================================
+SWAP_3X_DAY = Friday — TWO possible conventions impact on per-weekday net
+==============================================================================
+  Convention A (industry-common for CFD indices):
+    Friday rollover charge covers Sat+Sun → night Fri→Mon (open-day Mon) is 3x
+  Convention B (literal MT5 reading 'day when calculated', used by the report):
+    Friday open-day shows the 3x charge → night Thu→Fri (open-day Fri) is 3x
+  Both yield identical WEEKLY total swap (4×1x + 1×3x = 7x per Mon-Fri week).
+  Midweek-only (Tue+Wed open-days) is INVARIANT to A/B: always 1x in both.
+
+  swap_1x = 3.081 bps/night ;  swap_3x = 9.243 bps/night
+
+  Convention A — Mon-open = 3x swap:
+weekday  swap_x  gross_bps  swap_charge_bps  net_bps
+    Mon       3     +3.178           +9.243   -6.065
+    Tue       1     +7.441           +3.081   +4.360
+    Wed       1     +8.690           +3.081   +5.609
+    Thu       1     +2.936           +3.081   -0.145
+    Fri       1     +2.156           +3.081   -0.925
+
+  Convention B — Fri-open = 3x swap (dossier):
+weekday  swap_x  gross_bps  swap_charge_bps  net_bps
+    Mon       1     +3.178           +3.081   +0.097
+    Tue       1     +7.441           +3.081   +4.360
+    Wed       1     +8.690           +3.081   +5.609
+    Thu       1     +2.936           +3.081   -0.145
+    Fri       3     +2.156           +9.243   -7.087
+
+  ALL-nights mean (1/5 weighting):
+    Conv A: gross +4.880  swap +4.313  net +0.567 bps/night
+    Conv B: gross +4.880  swap +4.313  net +0.567 bps/night
+
+  MIDWEEK (Tue+Wed open) — INVARIANT to A/B:
+weekday  swap_x  gross_bps  swap_charge_bps  net_bps
+    Tue       1     +7.441           +3.081   +4.360
+    Wed       1     +8.690           +3.081   +5.609
+    mean midweek net = +4.985 bps/night
+
+Saved: data/overnight_research/g2_swap_summary.csv

@@ -1,0 +1,43 @@
+====================================================================================================
+STEP 1 — NQ 2010-2026 sizing sweep (single sleeve, FTMO 2-step uncapped)
+====================================================================================================
+
+--- EXEC_0 | cost=CFD_3pts ---
+ risk_pct  n_total  n_resolved  censored_pct  p_phase1  p_phase2_given_p1  p_funded_pct  median_grind_p1  bust_total_pct_resolved  fail_p2_total_pct_resolved  mean_R  hit_rate_pct
+     0.50     4041        3670          9.18      37.2              100.0         37.19              220                    62.81                        0.00   -0.08         41.32
+     0.75     4041        3831          5.20      36.0               95.5         34.40              133                    63.98                        1.62   -0.08         41.32
+     1.00     4041        3880          3.98      38.5               67.6         26.01               69                    61.55                       12.45   -0.08         41.32
+     1.25     4041        3911          3.22      40.6               55.3         22.42               45                    59.45                       18.13   -0.08         41.32
+
+--- EXEC_0 | cost=Futures_0.11pts ---
+ risk_pct  n_total  n_resolved  censored_pct  p_phase1  p_phase2_given_p1  p_funded_pct  median_grind_p1  bust_total_pct_resolved  fail_p2_total_pct_resolved  mean_R  hit_rate_pct
+     0.50     4041        3718          7.99      74.3               87.7         65.22              206                    25.66                        9.12    0.04         44.63
+     0.75     4041        3846          4.83      70.3               81.8         57.51              100                    29.67                       12.82    0.04         44.63
+     1.00     4041        3885          3.86      65.7               74.5         48.93               59                    34.31                       16.76    0.04         44.63
+     1.25     4041        3929          2.77      66.1               77.5         51.18               46                    33.93                       14.89    0.04         44.63
+
+--- EXEC_NEXT_OPEN | cost=CFD_3pts ---
+ risk_pct  n_total  n_resolved  censored_pct  p_phase1  p_phase2_given_p1  p_funded_pct  median_grind_p1  bust_total_pct_resolved  fail_p2_total_pct_resolved  mean_R  hit_rate_pct
+     0.50     4041        3539         12.42      30.3              100.0         30.29              281                    69.71                        0.00   -0.11         43.19
+     0.75     4041        3717          8.02      28.4               89.2         25.37              165                    71.56                        3.07   -0.11         43.19
+     1.00     4041        3862          4.43      29.4               81.6         24.03              103                    70.56                        5.41   -0.11         43.19
+     1.25     4041        3882          3.93      29.8               62.5         18.65               61                    70.17                       11.18   -0.11         43.19
+
+--- EXEC_NEXT_OPEN | cost=Futures_0.11pts ---
+ risk_pct  n_total  n_resolved  censored_pct  p_phase1  p_phase2_given_p1  p_funded_pct  median_grind_p1  bust_total_pct_resolved  fail_p2_total_pct_resolved  mean_R  hit_rate_pct
+     0.50     4041        3592         11.11      61.0               85.9         52.37              267                    39.00                        8.63    0.02         46.95
+     0.75     4041        3799          5.99      56.4               71.6         40.41              124                    43.56                       16.03    0.02         46.95
+     1.00     4041        3879          4.01      60.4               64.5         38.90               74                    39.65                       21.45    0.02         46.95
+     1.25     4041        3920          2.99      59.8               54.4         32.53               48                    40.18                       27.30    0.02         46.95
+
+Saved -> nq_step1_sizing_sweep.csv
+
+====================================================================================================
+HEADLINE — p_funded by (exec_model × cost × sizing)
+====================================================================================================
+risk_pct                        0.50  0.75  1.00  1.25
+exec_model     cost_label                             
+EXEC_0         CFD_3pts         37.2  34.4  26.0  22.4
+               Futures_0.11pts  65.2  57.5  48.9  51.2
+EXEC_NEXT_OPEN CFD_3pts         30.3  25.4  24.0  18.7
+               Futures_0.11pts  52.4  40.4  38.9  32.5

@@ -1,0 +1,5 @@
+gate,pass,tag
+delay1 (L26),False,artefact de fill intrabar
+twosided (L25),True,
+dsr,False,"grille = bruit (multiple testing, DSR<0)"
+oos (L31),True,

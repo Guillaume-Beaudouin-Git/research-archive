@@ -1,0 +1,7 @@
+subset,ttb_def,n_total,n_kept,thr,mean_R_baseline,mean_R_F1,delta_R
+ALL,buggy,4013,2225,2.0,-0.0105,0.2577,0.2683
+ALL,correct,4013,2417,1.0,-0.0105,0.0038,0.0143
+LONG,buggy,2156,1302,1.0,0.0097,0.0282,0.0185
+LONG,correct,2156,1302,1.0,0.0097,0.0282,0.0185
+SHORT,buggy,1857,974,5.0,-0.034,0.6296,0.6636
+SHORT,correct,1857,1115,1.0,-0.034,-0.0247,0.0093

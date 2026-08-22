@@ -1,0 +1,19 @@
+{
+  "oos_window": "2025-01-01..2026-06-05",
+  "T_oos": 369,
+  "oos_excess_kurt": 21.45,
+  "se_analytic_gaussian": 0.826,
+  "se_perm_blocksign": 0.79,
+  "se_perm_circshift": 0.845,
+  "SE0_frozen": 0.845,
+  "perm_blocksign_p99": 1.847,
+  "perm_blocksign_max": 2.638,
+  "threshold_by_N": {
+    "70": 2.031,
+    "100": 2.139,
+    "110": 2.168,
+    "120": 2.193,
+    "130": 2.216
+  },
+  "note": "A v2 candidate must EXCEED threshold_by_N[cumulative_N] OOS Sharpe to beat noise. SE0 frozen pre-search; only N updates with the honest v2 count."
+}

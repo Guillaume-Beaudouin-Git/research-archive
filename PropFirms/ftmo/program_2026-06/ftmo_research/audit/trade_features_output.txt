@@ -1,0 +1,49 @@
+Extracting all trades 2022-2025...
+Total trades: 3056
+By sleeve:
+sleeve
+GER40_1000_30m    1012
+GER40_1630_15m    1017
+US100_1630_30m    1027
+dtype: int64
+
+Mean R by sleeve:
+                    mean       std  count
+sleeve                                   
+GER40_1000_30m  0.083252  1.585373   1012
+GER40_1630_15m  0.133401  1.725499   1017
+US100_1630_30m  0.093250  1.269298   1027
+
+Outcome distribution:
+outcome
+TIME_STOP    1631
+STOP         1425
+Name: count, dtype: int64
+
+R distribution overall:
+count    3056.000000
+mean        0.103301
+std         1.537366
+min        -1.206897
+25%        -1.031217
+50%        -0.491488
+75%         0.896128
+max        16.504065
+Name: r_realised, dtype: float64
+
+Feature availability (% non-null):
+  or_range_atr_ratio       : 100.0%
+  gap_abs                  : 99.9%
+  gap_pct                  : 99.9%
+  dist_twap_at_break_R     : 100.0%
+  time_to_break_5min       : 100.0%
+  or_touches               : 100.0%
+  or_vol_5m_std            : 100.0%
+  dist_to_pdh_R            : 100.0%
+  dist_to_pdl_R            : 100.0%
+  overnight_range_ratio    : 99.9%
+  prior_day_return         : 100.0%
+  gap_concord              : 99.9%
+  prior_day_concord        : 100.0%
+
+Saved -> trade_dataset.parquet (3056 rows)

@@ -1,0 +1,150 @@
+[
+  {
+    "sym": "XAGUSD",
+    "year": 2003,
+    "status": "cached",
+    "rows": 30070
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2004,
+    "status": "cached",
+    "rows": 136570
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2005,
+    "status": "cached",
+    "rows": 199970
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2006,
+    "status": "cached",
+    "rows": 238128
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2007,
+    "status": "cached",
+    "rows": 291697
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2008,
+    "status": "cached",
+    "rows": 327866
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2009,
+    "status": "ok",
+    "rows": 332805,
+    "ohlc_viol": 0,
+    "ohlc_viol_frac": 0.0,
+    "start": "2009-01-01 00:01:00",
+    "end": "2009-12-31 23:53:00"
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2010,
+    "status": "cached",
+    "rows": 349823
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2011,
+    "status": "cached",
+    "rows": 360776
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2012,
+    "status": "cached",
+    "rows": 361212
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2013,
+    "status": "cached",
+    "rows": 347250
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2014,
+    "status": "cached",
+    "rows": 344788
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2015,
+    "status": "cached",
+    "rows": 352810
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2016,
+    "status": "cached",
+    "rows": 348805
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2017,
+    "status": "cached",
+    "rows": 329673
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2018,
+    "status": "cached",
+    "rows": 340269
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2019,
+    "status": "cached",
+    "rows": 334957
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2020,
+    "status": "cached",
+    "rows": 352619
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2021,
+    "status": "cached",
+    "rows": 351631
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2022,
+    "status": "cached",
+    "rows": 351367
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2023,
+    "status": "cached",
+    "rows": 348528
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2024,
+    "status": "cached",
+    "rows": 354456
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2025,
+    "status": "cached",
+    "rows": 353705
+  },
+  {
+    "sym": "XAGUSD",
+    "year": 2026,
+    "status": "cached",
+    "rows": 150718
+  }
+]

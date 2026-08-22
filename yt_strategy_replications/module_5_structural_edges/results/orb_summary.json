@@ -1,0 +1,15 @@
+{
+  "n_days": 4015,
+  "follow_rate": 0.5038605230386052,
+  "directional_skew": 0.003860523038605179,
+  "win_rate": 0.5068493150684932,
+  "expectancy_R_net": -0.03215503692626953,
+  "expectancy_pts_net": 1.4808841943740845,
+  "sharpe_net": -0.572570877347536,
+  "hac_t": -2.3105426153139095,
+  "cost_pts": 1.5,
+  "frac_tp": 0.3820672478206725,
+  "frac_sl": 0.3549190535491905,
+  "total_pts_net": 5945.75,
+  "expectancy_pts_gross": 2.9808841943740845
+}

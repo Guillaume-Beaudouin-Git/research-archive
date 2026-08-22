@@ -1,0 +1,68 @@
+====================================================================================================
+STEP 5 — REGIME GATE × ftmo_2phase @ risk=1.25%
+====================================================================================================
+  Baseline (no gate, FULL 2022-25): p_funded=52.4%, p1=68.4%, n=954
+
+  Gate: vr5 low tercile
+    FULL: p_funded=54.1% (Δ=+1.7pt), p1=73.3%, n_selected=318/954
+    WF per-fold:
+      fold1_2022-01-03_2022-10-18    nogate=90.6% gated=94.3% Δ=+3.7pt n_gated=35
+      fold2_2022-10-19_2023-08-04    nogate=40.2% gated=50.0% Δ=+9.8pt n_gated=62
+      fold3_2023-08-07_2024-05-23    nogate=0.0% gated=0.0% Δ=+0.0pt n_gated=22
+      fold4_2024-05-24_2025-03-11    nogate=73.2% gated=75.0% Δ=+1.8pt n_gated=20
+      fold5_2025-03-12_2025-12-31    nogate=42.3% gated=28.0% Δ=-14.3pt n_gated=50
+    WF mean gated = 49.5% vs WF mean nogate = 49.2%
+
+  Gate: trend20 mid tercile
+    FULL: p_funded=58.1% (Δ=+5.7pt), p1=74.4%, n_selected=246/954
+    WF per-fold:
+      fold1_2022-01-03_2022-10-18    nogate=90.6% gated=100.0% Δ=+9.4pt n_gated=24
+      fold2_2022-10-19_2023-08-04    nogate=40.2% gated=42.9% Δ=+2.7pt n_gated=42
+      fold3_2023-08-07_2024-05-23    nogate=0.0% gated=0.0% Δ=+0.0pt n_gated=18
+      fold4_2024-05-24_2025-03-11    nogate=73.2% gated=77.1% Δ=+3.9pt n_gated=35
+      fold5_2025-03-12_2025-12-31    nogate=42.3% gated=75.0% Δ=+32.7pt n_gated=36
+    WF mean gated = 59.0% vs WF mean nogate = 49.2%
+
+  Gate: rv20 mid tercile
+    FULL: p_funded=53.7% (Δ=+1.3pt), p1=76.6%, n_selected=244/954
+    WF per-fold:
+      fold1_2022-01-03_2022-10-18    nogate=90.6% gated=89.3% Δ=-1.3pt n_gated=28
+      fold2_2022-10-19_2023-08-04    nogate=40.2% gated=50.0% Δ=+9.8pt n_gated=18
+      fold3_2023-08-07_2024-05-23    nogate=0.0% gated=0.0% Δ=+0.0pt n_gated=19
+      fold4_2024-05-24_2025-03-11    nogate=73.2% gated=66.7% Δ=-6.6pt n_gated=42
+      fold5_2025-03-12_2025-12-31    nogate=42.3% gated=16.3% Δ=-26.0pt n_gated=43
+    WF mean gated = 44.4% vs WF mean nogate = 49.2%
+====================================================================================================
+STEP 5 — REGIME GATE × 1phase_static @ risk=1.25%
+====================================================================================================
+  Baseline (no gate, FULL 2022-25): p_funded=69.3%, p1=69.3%, n=994
+
+  Gate: vr5 low tercile
+    FULL: p_funded=75.1% (Δ=+5.8pt), p1=75.1%, n_selected=358/994
+    WF per-fold:
+      fold1_2022-01-03_2022-10-18    nogate=95.2% gated=94.3% Δ=-0.9pt n_gated=35
+      fold2_2022-10-19_2023-08-04    nogate=60.5% gated=54.5% Δ=-6.0pt n_gated=101
+      fold3_2023-08-07_2024-05-23    nogate=25.7% gated=65.9% Δ=+40.2pt n_gated=44
+      fold4_2024-05-24_2025-03-11    nogate=80.8% gated=86.7% Δ=+5.8pt n_gated=30
+      fold5_2025-03-12_2025-12-31    nogate=68.8% gated=77.8% Δ=+9.0pt n_gated=90
+    WF mean gated = 75.8% vs WF mean nogate = 66.2%
+
+  Gate: trend20 mid tercile
+    FULL: p_funded=75.1% (Δ=+5.8pt), p1=75.1%, n_selected=261/994
+    WF per-fold:
+      fold1_2022-01-03_2022-10-18    nogate=95.2% gated=100.0% Δ=+4.8pt n_gated=35
+      fold2_2022-10-19_2023-08-04    nogate=60.5% gated=60.0% Δ=-0.5pt n_gated=55
+      fold3_2023-08-07_2024-05-23    nogate=25.7% gated=34.5% Δ=+8.7pt n_gated=29
+      fold4_2024-05-24_2025-03-11    nogate=80.8% gated=84.1% Δ=+3.3pt n_gated=44
+      fold5_2025-03-12_2025-12-31    nogate=68.8% gated=84.3% Δ=+15.5pt n_gated=51
+    WF mean gated = 72.6% vs WF mean nogate = 66.2%
+
+  Gate: rv20 mid tercile
+    FULL: p_funded=76.7% (Δ=+7.4pt), p1=76.7%, n_selected=262/994
+    WF per-fold:
+      fold1_2022-01-03_2022-10-18    nogate=95.2% gated=94.7% Δ=-0.5pt n_gated=38
+      fold2_2022-10-19_2023-08-04    nogate=60.5% gated=72.2% Δ=+11.7pt n_gated=18
+      fold3_2023-08-07_2024-05-23    nogate=25.7% gated=57.9% Δ=+32.1pt n_gated=19
+      fold4_2024-05-24_2025-03-11    nogate=80.8% gated=82.4% Δ=+1.5pt n_gated=68
+      fold5_2025-03-12_2025-12-31    nogate=68.8% gated=54.1% Δ=-14.7pt n_gated=61
+    WF mean gated = 72.3% vs WF mean nogate = 66.2%

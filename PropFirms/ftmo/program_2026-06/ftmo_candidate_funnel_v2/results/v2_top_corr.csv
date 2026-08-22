@@ -1,0 +1,7 @@
+,A.xsmom_idxgold_k60,B.tsmom_trendstr0.5,B.tsmom100_trendstr1,B.tsmom_dow_TWT,A.xsmom_idxgold_k20,B.tsmom_monthend
+A.xsmom_idxgold_k60,1.0,0.14,0.15,0.06,0.48,0.09
+B.tsmom_trendstr0.5,0.14,1.0,0.55,0.63,0.08,0.46
+B.tsmom100_trendstr1,0.15,0.55,1.0,0.37,0.11,0.25
+B.tsmom_dow_TWT,0.06,0.63,0.37,1.0,-0.01,0.4
+A.xsmom_idxgold_k20,0.48,0.08,0.11,-0.01,1.0,0.04
+B.tsmom_monthend,0.09,0.46,0.25,0.4,0.04,1.0

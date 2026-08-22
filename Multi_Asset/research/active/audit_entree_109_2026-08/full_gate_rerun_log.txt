@@ -1,0 +1,96 @@
+
+======================================================================
+S037_gsv
+======================================================================
+[ORIGINAL] verdict=DISCARD  reason=artefact de fill intrabar
+  base: expR=+0.01934 sharpe=+1.03 win=44.6% n=12548
+  Gate1 delay1: FAIL  natif exp=+0.01934 Sh=+1.03  -> real exp=-0.00846 Sh=-0.47
+  Gate2 twosided: PASS  long=+0.07191(n5253) short=+0.01031(n5179) dom=88%(long)
+  Gate3 DSR: PASS  SR_obs=3.152 E[max]=1.871 z=38.49
+  Gate4 OOS: PASS  train=+0.01899(n5919) -> test=+0.01966(n6629)
+[CORRECTED] verdict=KEEP  reason=edge positif ET 4 gates OK
+  base: expR=+0.02725 sharpe=+1.45 win=45.5% n=12548
+  Gate1 delay1: PASS  natif exp=+0.02725 Sh=+1.45  -> real exp=+0.00645 Sh=+0.36
+  Gate2 twosided: PASS  long=+0.07191(n5253) short=+0.01031(n5179) dom=88%(long)
+  Gate3 DSR: PASS  SR_obs=5.435 E[max]=1.871 z=61.16
+  Gate4 OOS: PASS  train=+0.02595(n5919) -> test=+0.02840(n6629)
+
+======================================================================
+S061_orb
+======================================================================
+[ORIGINAL] verdict=DISCARD  reason=artefact de fill intrabar
+  base: expR=+0.02063 sharpe=+1.17 win=42.8% n=13272
+  Gate1 delay1: FAIL  natif exp=+0.02063 Sh=+1.17  -> real exp=-0.01117 Sh=-0.65
+  Gate2 twosided: PASS  long=+0.07752(n5338) short=+0.01661(n5160) dom=83%(long)
+  Gate3 DSR: PASS  SR_obs=3.696 E[max]=2.157 z=39.70
+  Gate4 OOS: PASS  train=+0.02336(n6281) -> test=+0.01818(n6991)
+[CORRECTED] verdict=KEEP  reason=edge positif ET 4 gates OK
+  base: expR=+0.02933 sharpe=+1.66 win=43.8% n=13272
+  Gate1 delay1: PASS  natif exp=+0.02933 Sh=+1.66  -> real exp=+0.00538 Sh=+0.31
+  Gate2 twosided: PASS  long=+0.07752(n5338) short=+0.01661(n5160) dom=83%(long)
+  Gate3 DSR: PASS  SR_obs=6.532 E[max]=2.157 z=62.92
+  Gate4 OOS: PASS  train=+0.03203(n6281) -> test=+0.02690(n6991)
+
+======================================================================
+S096_wide_range
+======================================================================
+[ORIGINAL] verdict=DISCARD  reason=artefact de fill intrabar | grille = bruit (multiple testing, DSR<0)
+  base: expR=+0.03335 sharpe=+1.04 win=41.5% n=4434
+  Gate1 delay1: FAIL  natif exp=+0.03335 Sh=+1.04  -> real exp=-0.00348 Sh=-0.11
+  Gate2 twosided: PASS  long=+0.11195(n1701) short=+0.04368(n1516) dom=74%(long)
+  Gate3 DSR: FAIL  SR_obs=0.892 E[max]=1.519 z=-32.85
+  Gate4 OOS: PASS  train=+0.02827(n2090) -> test=+0.03788(n2344)
+[CORRECTED] verdict=DISCARD  reason=grille = bruit (multiple testing, DSR<0)
+  base: expR=+0.04521 sharpe=+1.41 win=42.9% n=4434
+  Gate1 delay1: PASS  natif exp=+0.04521 Sh=+1.41  -> real exp=+0.02062 Sh=+0.68
+  Gate2 twosided: PASS  long=+0.11195(n1701) short=+0.04368(n1516) dom=74%(long)
+  Gate3 DSR: FAIL  SR_obs=1.168 E[max]=1.519 z=-14.81
+  Gate4 OOS: PASS  train=+0.03884(n2090) -> test=+0.05090(n2344)
+
+======================================================================
+S056_nr7
+======================================================================
+[ORIGINAL] verdict=DISCARD  reason=artefact de fill intrabar | grille = bruit (multiple testing, DSR<0) | régime-dépendant / décayé (flip OOS)
+  base: expR=+0.00601 sharpe=+0.26 win=43.9% n=7504
+  Gate1 delay1: FAIL  natif exp=+0.00601 Sh=+0.26  -> real exp=-0.02187 Sh=-0.98
+  Gate2 twosided: PASS  long=+0.04412(n3212) short=+0.00306(n3187) dom=94%(long)
+  Gate3 DSR: FAIL  SR_obs=0.478 E[max]=1.088 z=-52.80
+  Gate4 OOS: FAIL  train=+0.01491(n3595) -> test=-0.00218(n3909)
+[CORRECTED] verdict=DISCARD  reason=artefact de fill intrabar | grille = bruit (multiple testing, DSR<0)
+  base: expR=+0.01294 sharpe=+0.56 win=44.2% n=7504
+  Gate1 delay1: FAIL  natif exp=+0.01294 Sh=+0.56  -> real exp=-0.00815 Sh=-0.37
+  Gate2 twosided: PASS  long=+0.04412(n3212) short=+0.00306(n3187) dom=94%(long)
+  Gate3 DSR: FAIL  SR_obs=0.981 E[max]=1.088 z=-6.96
+  Gate4 OOS: PASS  train=+0.02174(n3595) -> test=+0.00486(n3909)
+
+======================================================================
+S062_orb_weekly
+======================================================================
+[ORIGINAL] verdict=DISCARD  reason=beta déguisé (long-dominé) — re-tester vs buy&hold timé | grille = bruit (multiple testing, DSR<0)
+  base: expR=+0.10127 sharpe=+0.52 n=669
+  Gate1: PASS natif=+0.10127/+0.52 -> real=+0.01983/+0.11
+  Gate2: FAIL long=+0.37852 short=-0.16446 dom=100%
+  Gate3: FAIL z=-10.53
+  Gate4: PASS train=+0.07094 test=+0.12975
+[CORRECTED] verdict=DISCARD  reason=beta déguisé (long-dominé) — re-tester vs buy&hold timé | grille = bruit (multiple testing, DSR<0)
+  base: expR=+0.12488 sharpe=+0.63 n=669
+  Gate1: PASS natif=+0.12488/+0.63 -> real=+0.04244/+0.22
+  Gate2: FAIL long=+0.37852 short=-0.16446 dom=100%
+  Gate3: FAIL z=-6.19
+  Gate4: PASS train=+0.09790 test=+0.15023
+
+======================================================================
+S002_crabel_nr_setupexit
+======================================================================
+[ORIGINAL] verdict=DISCARD  reason=artefact de fill intrabar | grille = bruit (multiple testing, DSR<0)
+  base: expR=+0.02249 sharpe=+1.11 n=4366
+  Gate1: FAIL natif=+0.02249/+1.11 -> real=-0.00667/-0.35
+  Gate2: PASS long=+0.05659 short=+0.02626 dom=70%
+  Gate3: FAIL z=-3.10
+  Gate4: PASS train=+0.03029 test=+0.01531
+[CORRECTED] verdict=DISCARD  reason=grille = bruit (multiple testing, DSR<0)
+  base: expR=+0.02249 sharpe=+1.11 n=4366
+  Gate1: PASS natif=+0.02249/+1.11 -> real=+0.01060/+0.55
+  Gate2: PASS long=+0.05659 short=+0.02626 dom=70%
+  Gate3: FAIL z=-3.10
+  Gate4: PASS train=+0.03029 test=+0.01531

@@ -1,0 +1,26 @@
+==============================================================================
+COST SENSITIVITY — V2+E7 mean_R and p(funded) across cost
+==============================================================================
+
+ cost_bps   mean_R           sizing 1.0%           sizing 1.5%           sizing 2.5%
+                      p_fund   p_bust_P1    p_fund   p_bust_P1    p_fund   p_bust_P1
+      0.4  +0.0552   +57.8%   +27.7%       +48.5%   +34.9%       +41.1%   +40.6%
+      1.0  +0.0417   +51.3%   +33.0%       +44.4%   +38.5%       +38.4%   +43.1%
+      2.0  +0.0192   +41.1%   +42.2%       +37.6%   +44.6%       +33.9%   +47.3%
+      3.0  -0.0032   +31.5%   +51.1%       +30.9%   +51.0%       +29.6%   +51.7%
+      4.0  -0.0257   +23.4%   +60.1%       +24.8%   +57.4%       +25.9%   +55.3%
+      6.0  -0.0706   +11.6%   +74.7%       +15.9%   +68.0%       +19.1%   +63.3%
+
+Reference placebo p(funded) — Gaussian zero-μ, std=1.20 (signal-free container math):
+  sizing=1.0%  p(funded)=29.3%  p1_bust=53.4%  → 'free lunch' from container math alone
+  sizing=1.5%  p(funded)=27.4%  p1_bust=55.0%  → 'free lunch' from container math alone
+  sizing=2.5%  p(funded)=20.5%  p1_bust=62.8%  → 'free lunch' from container math alone
+
+==============================================================================
+WORST-YEAR STRESS — 2015 alone (worst year @ 0.4 bps, mean_R = −0.0867)
+==============================================================================
+  2015 sample: n=254  mean=-0.0867  std=1.127
+  sizing=1.0%  P1 pass=9.5%  P1 bust=90.5%
+  sizing=1.5%  P1 pass=18.1%  P1 bust=81.9%
+  sizing=2.5%  P1 pass=32.2%  P1 bust=67.8%
+  → if a candidate starts during a regime like 2015, P1 pass collapses well below ceiling.

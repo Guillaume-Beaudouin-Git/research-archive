@@ -1,0 +1,15 @@
+seances=3299  2013-09-25 -> 2026-06-05
+mois=154  2013-09 -> 2026-06
+N trades: {'on_us100': 1316, 'on_ger40': 970, 'orb': 3191, 'portefeuille': 3236}
+notionnel ORB en position: moyen=0.5782x  median=0.4882x  (jambes ON = 0.35x)
+jours ON sans jambe GER40 (trous 2018-2021): 349
+OR range NUL (controle L60): 1 / 3260
+
+--- decomposition par jambe ON (en % d'equite, cumule sur la vie) ---
+on_us100: gross=  37.02%  cout=  -4.81%  swap_panel=  -8.09%  swap_mesure=  -7.38%  net=  24.12%
+on_ger40: gross=  23.16%  cout=  -3.45%  swap_panel=  -4.53%  swap_mesure=  -4.72%  net=  15.18%
+orb   : net(era-coste)=  17.41%
+
+--- part du swap dans le gross (L36) ---
+on_us100: swap/gross =  21.8% (panel) /  19.9% (mesure)  cout/gross =  13.0%
+on_ger40: swap/gross =  19.6% (panel) /  20.4% (mesure)  cout/gross =  14.9%

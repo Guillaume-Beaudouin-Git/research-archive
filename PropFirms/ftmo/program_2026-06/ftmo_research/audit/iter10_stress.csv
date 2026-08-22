@@ -1,0 +1,4 @@
+n_trades,win_rate,avg_trade_usd,avg_winner_usd,avg_loser_usd,profit_factor,sharpe_daily_hac,max_dd_pct,max_dd_dollar,best_day_usd,worst_day_usd,avg_bars_held,total_pnl_usd,cost_mult,cost_usd
+765,0.2444,57.36,1488.98,-405.81,1.1871,0.5096,-0.2435,-12005.0,5186.0,-419.0,28.9,43882.5,1.0,19.0
+765,0.2444,47.86,1479.48,-415.31,1.1525,0.4256,-0.2855,-13388.5,5176.5,-428.5,28.9,36615.0,1.5,28.5
+765,0.2431,19.36,1458.9,-443.08,1.0577,0.1724,-0.4665,-18512.0,5148.0,-457.0,28.9,14812.5,3.0,57.0

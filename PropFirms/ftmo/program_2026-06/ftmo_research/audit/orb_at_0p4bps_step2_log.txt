@@ -1,0 +1,52 @@
+Trade R-distribution: n=4013  mean=+0.0552  std=1.2005  skew=+1.6576  kurt=+6.73  min=-1.094  max=+13.744
+  p1=-1.007  p5=-0.999  p50=-0.203  p95=+2.181
+
+==============================================================================
+FTMO 2-step MC — ORB V2+E7 @ 0.4 bps (real)
+==============================================================================
+  sizing=1.0%  P1 pass=72.3%  P1 bust=27.7%  funded=57.8%  overall_bust=42.2%  med_days_P1=   63  med_days_total= 89.0
+  sizing=1.5%  P1 pass=64.4%  P1 bust=35.6%  funded=48.2%  overall_bust=51.8%  med_days_P1=   31  med_days_total= 44.0
+  sizing=2.5%  P1 pass=58.2%  P1 bust=41.8%  funded=40.1%  overall_bust=59.9%  med_days_P1=   13  med_days_total= 19.0
+
+Placebo A (Gauss zero-mean, std=1.2005): mean=-0.0209
+
+==============================================================================
+FTMO 2-step MC — Placebo A — Gaussian zero-mean
+==============================================================================
+  sizing=1.0%  P1 pass=42.0%  P1 bust=58.0%  funded=24.4%  overall_bust=75.6%  med_days_P1=   55  med_days_total= 80.0
+  sizing=1.5%  P1 pass=43.8%  P1 bust=56.2%  funded=26.0%  overall_bust=74.0%  med_days_P1=   27  med_days_total= 39.0
+  sizing=2.5%  P1 pass=35.4%  P1 bust=64.6%  funded=19.6%  overall_bust=80.4%  med_days_P1=    9  med_days_total= 14.0
+
+Placebo B (Gauss mean=0.0552, std=1.2005): mean=+0.0452
+
+==============================================================================
+FTMO 2-step MC — Placebo B — Gaussian mean+std matched
+==============================================================================
+  sizing=1.0%  P1 pass=67.5%  P1 bust=32.5%  funded=52.1%  overall_bust=47.9%  med_days_P1=   58  med_days_total= 81.0
+  sizing=1.5%  P1 pass=62.0%  P1 bust=38.0%  funded=44.3%  overall_bust=55.7%  med_days_P1=   28  med_days_total= 40.0
+  sizing=2.5%  P1 pass=43.2%  P1 bust=56.8%  funded=25.8%  overall_bust=74.2%  med_days_P1=   10  med_days_total= 15.0
+
+Placebo C (Skew-normal fit, α=111.12): mean=+0.2532  std=0.9917  skew=+1.0136
+
+==============================================================================
+FTMO 2-step MC — Placebo C — Skew-normal mean+vol+skew matched
+==============================================================================
+  sizing=1.0%  P1 pass=99.7%  P1 bust=0.3%  funded=99.5%  overall_bust=0.5%  med_days_P1=   37  med_days_total= 54.0
+  sizing=1.5%  P1 pass=98.7%  P1 bust=1.3%  funded=97.5%  overall_bust=2.5%  med_days_P1=   23  med_days_total= 35.0
+  sizing=2.5%  P1 pass=93.8%  P1 bust=6.2%  funded=88.4%  overall_bust=11.6%  med_days_P1=   13  med_days_total= 19.0
+
+Saved -> orb_at_0p4bps_mc.csv
+
+==============================================================================
+DECOMPOSITION — signal contribution vs container math
+==============================================================================
+
+  Sizing    Real ORB    Placebo B (μ-matched)    Placebo A (zero-μ)  Real − PlcB (signal)  PlcB − PlcA (mean-drift)
+   1.0%       57.8%                    52.1%                 24.4%                 +5.7%                    +27.6%
+   1.5%       48.2%                    44.3%                 26.0%                 +3.9%                    +18.2%
+   2.5%       40.1%                    25.8%                 19.6%                +14.2%                     +6.2%
+
+  Interpretation:
+  • Real − PlcB (μ-matched)  = lift from non-Gaussian features (skew, fat tails, regime clustering)
+  • PlcB − PlcA (zero-μ)     = lift from positive mean drift (the 'edge' if normally distributed)
+  • PlcA itself              = pure container math (no edge, just unlimited-time no-bust)

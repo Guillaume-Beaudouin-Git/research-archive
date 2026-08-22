@@ -1,0 +1,221 @@
+[V] grille de departs : 305 dates, 2013-10-01 -> 2025-06-13 (pas = 10 jours trades)
+[V] cohortes : {'0.96_mesure': 280, '2.17_allin': 280, 'ORB_OFF': 280}
+[V] busts    : {'0.96_mesure': 3, '2.17_allin': 4, 'ORB_OFF': 0}
+[V] payouts.csv : 9001 lignes
+[V] drawdowns.csv : 24046 lignes ({'solde': 5092, 'valeur_eco': 18954})
+[V] resume_risque.csv : 12 lignes
+
+====================================================================================================
+RETRAITS
+====================================================================================================
+
+-- 0.96_mesure
+   n retraits 1an  : med 7  p10 2  p90 11  moy 6.57  min 0 max 16
+   n retraits 2ans : med 14  p10 4  p90 18  moy 12.69  min 0 max 22
+   montant BRUT/retrait : med $75  p10 $13  p25 $36  p75 $133  p90 $194  max $551  (N=3554)
+   montant NET trader   : med $60  p90 $156
+   delai 1er retrait (jours trades) : med 14  p25 14  p75 42  p90 70  max 504  jamais: 7/280
+   intervalle entre 2 retraits : med 14  p75 42  p90 84  max 420
+   fenetres de 14j SANS retrait : 64.7 % (med par cohorte 61.1 %)
+
+-- ORB_OFF
+   n retraits 1an  : med 5  p10 1  p90 10  moy 5.22  min 0 max 17
+   n retraits 2ans : med 9  p10 3  p90 17  moy 9.33  min 0 max 23
+   montant BRUT/retrait : med $45  p10 $7  p25 $20  p75 $82  p90 $124  max $283  (N=2612)
+   montant NET trader   : med $36  p90 $100
+   delai 1er retrait (jours trades) : med 14  p25 14  p75 42  p90 126  max 476  jamais: 5/280
+   intervalle entre 2 retraits : med 14  p75 42  p90 112  max 476
+   fenetres de 14j SANS retrait : 74.1 % (med par cohorte 75.0 %)
+
+-- 2.17_allin
+   n retraits 1an  : med 5  p10 1  p90 10  moy 5.42  min 0 max 14
+   n retraits 2ans : med 11  p10 2  p90 15  moy 10.12  min 0 max 21
+   montant BRUT/retrait : med $70  p10 $14  p25 $35  p75 $129  p90 $190  max $532  (N=2835)
+   montant NET trader   : med $56  p90 $152
+   delai 1er retrait (jours trades) : med 14  p25 14  p75 42  p90 98  max 504  jamais: 11/280
+   intervalle entre 2 retraits : med 14  p75 42  p90 98  max 476
+   fenetres de 14j SANS retrait : 71.9 % (med par cohorte 69.4 %)
+
+====================================================================================================
+DRAWDOWNS — distributions (toutes cohortes, 2 ans)
+====================================================================================================
+
+### base = solde
+scenario        N_dd   /an  amp med    p75    p90     p99     max  amp% med   p90%  dur med   p90   max  rec med   p90  %non rec
+--------------------------------------------------------------------------------------------------------------------------------
+0.96_mesure     1767   3.2      115    368    582    1012    1227      1.14   5.63       11   312   504        3    55     15.8%
+ORB_OFF         1667   3.0       85    216    416     750     875      0.85   4.09       11   340   504        1    31     16.8%
+2.17_allin      1658   3.0      113    362    616    1152    1218      1.12   6.01       10   355   504        3    57     16.9%
+
+### base = valeur_eco
+scenario        N_dd   /an  amp med    p75    p90     p99     max  amp% med   p90%  dur med   p90   max  rec med   p90  %non rec
+--------------------------------------------------------------------------------------------------------------------------------
+0.96_mesure     7449  13.3       51    130    256     449    1073      0.48   2.36        4    58   504        2    16      3.4%
+ORB_OFF         5458   9.7       10     72    152     477     744      0.10   1.49        4    52   504        1    16      4.7%
+2.17_allin      6047  10.8       52    141    298     623    1100      0.49   2.91        4    70   504        2    26      4.3%
+
+--- PIRE drawdown par cohorte (max drawdown), par horizon [serie tronquee a H]
+scenario     base        hor        med     p75     p90     p99     max   med%   p90%
+-------------------------------------------------------------------------------------
+0.96_mesure  solde       3m         298     369     463     621     728   2.94   4.53
+0.96_mesure  solde       6m         425     495     586     794     854   4.18   5.71
+0.96_mesure  solde       1an        516     639     740     986    1032   5.06   7.15
+0.96_mesure  solde       2ans       614     746     926    1089    1227   5.97   9.19
+0.96_mesure  valeur_eco  3m         214     293     361     519     658   2.13   3.53
+0.96_mesure  valeur_eco  6m         311     373     454     659     660   2.98   4.46
+0.96_mesure  valeur_eco  1an        349     448     604     834     838   3.44   5.81
+0.96_mesure  valeur_eco  2ans       396     449     869     987    1073   3.67   8.36
+ORB_OFF      solde       3m         160     221     282     393     466   1.59   2.79
+ORB_OFF      solde       6m         230     302     385     486     503   2.26   3.80
+ORB_OFF      solde       1an        314     407     511     627     656   3.10   5.10
+ORB_OFF      solde       2ans       447     533     718     855     875   4.39   7.12
+ORB_OFF      valeur_eco  3m         126     185     240     338     375   1.26   2.38
+ORB_OFF      valeur_eco  6m         184     241     307     408     449   1.82   3.07
+ORB_OFF      valeur_eco  1an        225     354     408     560     599   2.22   3.96
+ORB_OFF      valeur_eco  2ans       384     408     620     743     744   3.63   6.19
+2.17_allin   solde       3m         304     384     479     647     731   3.01   4.66
+2.17_allin   solde       6m         442     529     629     832     897   4.38   6.17
+2.17_allin   solde       1an        550     669     838    1109    1179   5.40   8.03
+2.17_allin   solde       2ans       649     838    1062    1214    1218   6.31  10.54
+2.17_allin   valeur_eco  3m         229     303     387     552     703   2.27   3.85
+2.17_allin   valeur_eco  6m         346     408     503     709     711   3.38   4.95
+2.17_allin   valeur_eco  1an        406     464     693     967     993   3.85   6.93
+2.17_allin   valeur_eco  2ans       439     465    1013    1068    1100   4.16   9.81
+
+--- % du temps sous le plus-haut / sous 10 000 (mediane des cohortes, 2 ans)
+  0.96_mesure   sous plus-haut SOLDE  98.0% [p10 97 p90 99] | sous plus-haut ECO  89.9% | solde<10k  68.3% | eco<10k   6.7%
+  ORB_OFF       sous plus-haut SOLDE  97.4% [p10 96 p90 99] | sous plus-haut ECO  92.3% | solde<10k  79.2% | eco<10k  15.1%
+  2.17_allin    sous plus-haut SOLDE  98.0% [p10 97 p90 99] | sous plus-haut ECO  92.3% | solde<10k  74.6% | eco<10k  10.8%
+
+====================================================================================================
+RUINE
+====================================================================================================
+scenario           3m      6m     1an    2ans   (P(bust) %, N=280)
+0.96_mesure      0.00    0.00    0.00    1.07
+ORB_OFF          0.00    0.00    0.00    0.00
+2.17_allin       0.00    0.00    0.00    1.43
+
+--- anatomie des busts (N total = 7)
+  0.96_mesure   coh  31 (depart 2014-12-09) | bust jour  500/504 | solde ouverture     9262 | lim_eff     9000 (statique) | eq au bust     8985 | perte du jour     277 | cash deja retire $   283 | jours sous 9500 avant: 307
+  0.96_mesure   coh  32 (depart 2014-12-23) | bust jour  490/504 | solde ouverture     9130 | lim_eff     9000 (statique) | eq au bust     8967 | perte du jour     163 | cash deja retire $   230 | jours sous 9500 avant: 353
+  0.96_mesure   coh  35 (depart 2015-02-04) | bust jour  460/504 | solde ouverture     9233 | lim_eff     9000 (statique) | eq au bust     8971 | perte du jour     262 | cash deja retire $     0 | jours sous 9500 avant: 314
+  2.17_allin    coh  33 (depart 2015-01-07) | bust jour  480/504 | solde ouverture     9006 | lim_eff     9000 (statique) | eq au bust     8998 | perte du jour       9 | cash deja retire $     5 | jours sous 9500 avant: 386
+  2.17_allin    coh  34 (depart 2015-01-21) | bust jour  470/504 | solde ouverture     9018 | lim_eff     9000 (statique) | eq au bust     8996 | perte du jour      21 | cash deja retire $     0 | jours sous 9500 avant: 371
+  2.17_allin    coh  36 (depart 2015-02-18) | bust jour  450/504 | solde ouverture     9052 | lim_eff     9000 (statique) | eq au bust     8987 | perte du jour      66 | cash deja retire $     0 | jours sous 9500 avant: 263
+  2.17_allin    coh  37 (depart 2015-03-04) | bust jour  440/504 | solde ouverture     9093 | lim_eff     9000 (statique) | eq au bust     8976 | perte du jour     117 | cash deja retire $     0 | jours sous 9500 avant: 234
+
+--- equite MINIMALE atteinte (point le plus proche de la mort), 2 ans
+scenario           med      p25      p10      p05      p01      min  buf med
+----------------------------------------------------------------------------
+0.96_mesure       9596     9550     9152     9125     9011     8967      40%
+      P(eq_min < 9750) = 100.0%      P(eq_min < 9500) =  24.3%      P(eq_min < 9250) =  13.6%      P(eq_min < 9100) =   2.1%      P(eq_min < 9050) =   1.8%
+ORB_OFF           9651     9601     9357     9292     9229     9229      35%
+      P(eq_min < 9750) =  78.2%      P(eq_min < 9500) =  17.5%      P(eq_min < 9250) =   1.8%      P(eq_min < 9100) =   0.0%      P(eq_min < 9050) =   0.0%
+2.17_allin        9564     9509     9002     9000     8997     8976      44%
+      P(eq_min < 9750) = 100.0%      P(eq_min < 9500) =  25.0%      P(eq_min < 9250) =  18.2%      P(eq_min < 9100) =  13.9%      P(eq_min < 9050) =  13.9%
+
+--- pire perte INTRADAY d'une seule journee (bal_open - eq_min du jour), hors journees de bust
+  0.96_mesure   dip med $   33 p90 $   55 p99 $  118 p999 $  201 max $  302 | % de la marge du jour consommee : med  6.5% p99  24.4% max  94.1%
+  ORB_OFF       dip med $    0 p90 $   33 p99 $   97 p999 $  181 max $  296 | % de la marge du jour consommee : med  0.1% p99  19.4% max  59.1%
+  2.17_allin    dip med $   33 p90 $   53 p99 $  118 p999 $  196 max $  302 | % de la marge du jour consommee : med  6.5% p99  26.8% max  92.6%
+
+====================================================================================================
+SERIES OPERATIONNELLES — combien de temps l'ecran reste rouge
+====================================================================================================
+  0.96_mesure   plus longue serie SOLDE<10k : med 89 j p75 155  p90 378  max 504
+                plus longue serie VALEUR ECO<10k : med 17 j p90 218  max 504
+                1er jour ou la valeur eco repasse >0 : med 2 j p75 5  p90 22  jamais 4/280
+  ORB_OFF       plus longue serie SOLDE<10k : med 172 j p75 239  p90 405  max 504
+                plus longue serie VALEUR ECO<10k : med 40 j p90 317  max 504
+                1er jour ou la valeur eco repasse >0 : med 5 j p75 11  p90 49  jamais 2/280
+  2.17_allin    plus longue serie SOLDE<10k : med 97 j p75 175  p90 407  max 504
+                plus longue serie VALEUR ECO<10k : med 32 j p90 304  max 504
+                1er jour ou la valeur eco repasse >0 : med 2 j p75 5  p90 22  jamais 5/280
+
+--- cash NET encaisse (cumul, part trader) par horizon
+scenario     hor         p10      p25      med      p75      p90      moy
+-------------------------------------------------------------------------
+0.96_mesure  3m            0       47      133      210      313      145
+0.96_mesure  6m           40      142      240      377      576      275
+0.96_mesure  1an         112      263      445      727      907      493
+0.96_mesure  2ans        324      692     1059     1276     1490      974
+ORB_OFF      3m            0        8       39      116      196       79
+ORB_OFF      6m            0       32       98      226      328      147
+ORB_OFF      1an          25       87      201      349      478      243
+ORB_OFF      2ans        139      258      381      505      918      440
+2.17_allin   3m            0       29      117      188      294      128
+2.17_allin   6m            6       93      196      316      519      232
+2.17_allin   1an          49      171      346      603      834      398
+2.17_allin   2ans        191      432      814     1068     1247      761
+[V] trajectoires_quantiles.csv : 1512 lignes (eventail par jour, pour trace)
+
+====================================================================================================
+ALIGNEMENT CALENDAIRE — les cohortes se CHEVAUCHENT, quelle est la vraie taille d'echantillon ?
+====================================================================================================
+[V] indice marche : 3295 jours trades, 2013-10-01 -> 2026-06-05
+[V] les 280 cohortes couvrent 3294 jours trades = 13.1 ans => 6.5 fenetres de 2 ans INDEPENDANTES (et non 280)
+[V] deux cohortes voisines partagent 98.0 % de leurs jours
+
+-- 0.96_mesure : 6 PIRES journees calendaires (P&L moyen sur les cohortes vivantes)
+   2016-01-20  moy $ -158.08  med $ -155.56  pire $ -163.20  N cohortes  50
+   2015-09-01  moy $ -153.87  med $ -152.55  pire $ -163.55  N cohortes  50
+   2026-03-03  moy $ -152.59  med $ -152.59  pire $ -152.59  N cohortes   7
+   2022-05-24  moy $ -140.61  med $ -140.60  pire $ -140.63  N cohortes  50
+   2018-10-23  moy $ -139.89  med $ -139.66  pire $ -140.91  N cohortes  50
+   2025-11-04  moy $ -139.72  med $ -141.31  pire $ -141.31  N cohortes  16
+   journees a P&L moyen < -$100 : 21 sur 3294 (0.64 %)
+
+-- ORB_OFF : 6 PIRES journees calendaires (P&L moyen sur les cohortes vivantes)
+   2016-01-20  moy $ -137.71  med $ -137.86  pire $ -137.86  N cohortes  50
+   2015-09-01  moy $ -135.40  med $ -135.00  pire $ -139.67  N cohortes  50
+   2026-03-03  moy $ -127.64  med $ -127.64  pire $ -127.64  N cohortes   7
+   2022-05-24  moy $ -125.36  med $ -125.35  pire $ -125.38  N cohortes  50
+   2016-11-09  moy $ -122.45  med $ -122.29  pire $ -122.64  N cohortes  50
+   2018-10-23  moy $ -115.95  med $ -115.96  pire $ -115.96  N cohortes  50
+   journees a P&L moyen < -$100 : 8 sur 3294 (0.24 %)
+
+-- 2.17_allin : 6 PIRES journees calendaires (P&L moyen sur les cohortes vivantes)
+   2026-03-03  moy $ -153.00  med $ -153.00  pire $ -153.00  N cohortes   7
+   2022-05-24  moy $ -140.81  med $ -140.80  pire $ -140.83  N cohortes  50
+   2018-10-23  moy $ -140.15  med $ -140.10  pire $ -141.34  N cohortes  50
+   2025-11-04  moy $ -140.08  med $ -141.67  pire $ -141.67  N cohortes  16
+   2018-11-20  moy $ -128.08  med $ -128.04  pire $ -128.82  N cohortes  50
+   2018-06-19  moy $ -117.72  med $ -117.72  pire $ -118.48  N cohortes  50
+   journees a P&L moyen < -$100 : 16 sur 3294 (0.49 %)
+
+--- la nuit qui tue : 2016-11-09 (soir d'election US)
+  0.96_mesure   N cohortes vivantes ce jour-la :  50 | perte intraday med $   287 p90 $   296 max $   302 | solde d'ouverture necessaire pour survivre : > $9302 | cohortes mortes : 3
+                solde d'ouverture ce jour : med $9698 p10 $9426 min $9130 | deja sous 9500 : 7/50
+  ORB_OFF       N cohortes vivantes ce jour-la :  50 | perte intraday med $   294 p90 $   296 max $   296 | solde d'ouverture necessaire pour survivre : > $9296 | cohortes mortes : 0
+                solde d'ouverture ce jour : med $9925 p10 $9909 min $9909 | deja sous 9500 : 0/50
+  2.17_allin    N cohortes vivantes ce jour-la :  50 | perte intraday med $   285 p90 $   296 max $   302 | solde d'ouverture necessaire pour survivre : > $9302 | cohortes mortes : 4
+                solde d'ouverture ce jour : med $9557 p10 $9049 min $9000 | deja sous 9500 : 18/50
+
+--- decomposition de P(bust) : exposition a la date fatale x mortalite conditionnelle
+  0.96_mesure   cohortes couvrant 2016-11-09 : 50/280 = 17.9 % | mortes 3 => P(mort | exposee) = 6.0 % => produit 1.07 %
+  ORB_OFF       cohortes couvrant 2016-11-09 : 50/280 = 17.9 % | mortes 0 => P(mort | exposee) = 0.0 % => produit 0.00 %
+  2.17_allin    cohortes couvrant 2016-11-09 : 50/280 = 17.9 % | mortes 4 => P(mort | exposee) = 8.0 % => produit 1.43 %
+
+--- ou se trouve le solde d'ouverture (toutes cohortes x tous jours)
+  0.96_mesure   med $9935 p25 $9831 p10 $9653 p05 $9472 p01 $9291 min $9024 | P(<9302 = seuil fatal 2016-11-09) 1.14 % des journees | P(<9500) 5.77 %
+  ORB_OFF       med $9942 p25 $9850 p10 $9730 p05 $9584 p01 $9435 min $9257 | P(<9302 = seuil fatal 2016-11-09) 0.03 % des journees | P(<9500) 2.64 %
+  2.17_allin    med $9905 p25 $9784 p10 $9544 p05 $9202 p01 $9002 min $9000 | P(<9302 = seuil fatal 2016-11-09) 6.03 % des journees | P(<9500) 9.02 %
+
+--- distribution du P&L QUOTIDIEN (valeur economique, brut avant split)
+  0.96_mesure   N=140778 moy $+2.09 med $-2.00 sd $37.51 | p01 $-77 p05 $-41 p95 $67 p99 $124 | min $-277 max $346 | skew 1.12 kurt 5.6 | jours + 45.0% / plats 2.4% / - 52.6%
+  ORB_OFF       N=140840 moy $+0.81 med $+0.00 sd $22.44 | p01 $-74 p05 $-29 p95 $33 p99 $79 | min $-140 max $285 | skew 1.18 kurt 16.4 | jours + 21.8% / plats 39.9% / - 38.2%
+  2.17_allin    N=140664 moy $+1.43 med $-1.56 sd $36.40 | p01 $-76 p05 $-41 p95 $64 p99 $122 | min $-164 max $344 | skew 1.18 kurt 6.0 | jours + 44.3% / plats 2.7% / - 53.2%
+
+--- trajectoire mediane / p10 de la valeur economique nette (part trader)
+scenario           j21      j42      j63     j126     j189     j252     j378     j504
+0.96_mesure         25       80       89      170      280      391      647      996
+ORB_OFF              5       18       20       54       95      143      215      297
+2.17_allin          13       57       63       94      179      252      445      725
+  (p10)
+0.96_mesure        -97     -139     -136     -121     -125     -181     -180     -197
+ORB_OFF            -68      -85      -95     -131     -127     -159     -191     -171
+2.17_allin        -109     -160     -178     -192     -232     -322     -479     -432
+  (p90)
+0.96_mesure        165      232      321      542      713      877     1160     1394
+ORB_OFF             98      162      205      311      388      476      765      823
+2.17_allin         153      212      294      485      647      768     1005     1149

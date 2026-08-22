@@ -1,0 +1,15 @@
+{
+  "cost_rt": 0.0003,
+  "params": {
+    "wick_ratio": 2.0,
+    "body_max_frac": 0.33,
+    "ema_fast": 50,
+    "ema_slow": 200,
+    "atr_n": 14,
+    "atr_mult": 1.5,
+    "rr": 2.0,
+    "max_hold": 50
+  },
+  "median_cross_sharpe": -0.6877405214173136,
+  "frac_instruments_positive": 0.125
+}

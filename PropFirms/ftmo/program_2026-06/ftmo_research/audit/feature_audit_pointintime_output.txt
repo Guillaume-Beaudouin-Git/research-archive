@@ -1,0 +1,85 @@
+Loading trade dataset: <HOME>/Desktop/Algo_claude/data/ftmo_research/audit/trade_dataset_nq.parquet
+  4013 trades, 2010-06-07 00:00:00 -> 2026-05-29 00:00:00
+
+Loading raw NQ for point-in-time reconstruction...
+  310416 bars, 2010-06-07 09:30:00 -> 2026-05-29 15:55:00
+
+==========================================================================================
+A. Point-in-time reconstruction vs stored
+==========================================================================================
+  Reconstructed 4013 rows.
+              feature  n_compare  n_diff  pct_diff  max_abs_diff verdict
+              or_high       4013       0       0.0           0.0      OK
+               or_low       4013       0       0.0           0.0      OK
+             or_range       4013       0       0.0           0.0      OK
+              twap_or       4013       0       0.0           0.0      OK
+         vwap_or_true       4013       0       0.0           0.0      OK
+         or_vol_total       4013       0       0.0           0.0      OK
+        or_vol_5m_std       4013       0       0.0           0.0      OK
+           or_touches       4013       0       0.0           0.0      OK
+   time_to_break_5min       4013       0       0.0           0.0      OK
+ dist_twap_at_break_R       4013       0       0.0           0.0      OK
+ dist_vwap_at_break_R       4013       0       0.0           0.0      OK
+        dist_to_pdh_R       4012       0       0.0           0.0      OK
+        dist_to_pdl_R       4012       0       0.0           0.0      OK
+   or_range_atr_ratio       3993       0       0.0           0.0      OK
+     or_vol_ratio_20d       3993       0       0.0           0.0      OK
+              gap_abs       4012       0       0.0           0.0      OK
+              gap_dir       4012       0       0.0           0.0      OK
+          gap_concord       3996       0       0.0           0.0      OK
+    prior_day_concord       3999       0       0.0           0.0      OK
+overnight_range_ratio       3996       0       0.0           0.0      OK
+
+==========================================================================================
+B. Direction symmetry (mean +/- std by long/short)
+==========================================================================================
+              feature  mean_long   std_long  mean_short  std_short  abs_asym_score
+             or_range    56.2229    56.1863     58.8110    58.2798           0.045
+   or_range_atr_ratio     0.4409     0.2011      0.4572     0.2098           0.079
+        or_vol_5m_std     0.0013     0.0010      0.0014     0.0009           0.068
+         or_vol_total 51026.9481 22430.2823  52931.0781 23858.1124           0.082
+     or_vol_ratio_20d     0.1714     0.0578      0.1757     0.0605           0.074
+          or_vol_skew     0.0166     0.3216      0.0135     0.3246           0.009
+       or_vol_concord     0.0166     0.3216     -0.0135     0.3246           0.093
+           or_touches     1.0942     0.3432      1.0711     0.2830           0.073
+   time_to_break_5min     3.5353     7.6419      3.3667     7.6785           0.022
+  time_to_break_buggy     3.5353     7.6419     13.9612    19.0913           0.717
+ dist_twap_at_break_R     0.4569     0.0889      0.4871     0.0909           0.336
+ dist_vwap_at_break_R     0.4593     0.0988      0.4830     0.0988           0.240
+        dist_to_pdh_R    -0.3068     1.5541      1.4818     1.5670           1.146
+        dist_to_pdl_R     2.2915     2.0443     -1.0571     1.8622           1.712
+overnight_range_ratio     4.4627    22.6607      4.8569    15.1492           0.020
+     prior_day_return     0.0006     0.0127      0.0010     0.0130           0.027
+              gap_abs     3.9618    95.1188      5.9008    94.3104           0.020
+              gap_pct     0.0004     0.0082      0.0006     0.0078           0.025
+              gap_dir     0.1262     0.9901      0.1389     0.9887           0.013
+          gap_concord     0.5634     0.4961      0.4303     0.4952           0.269
+    prior_day_concord     0.5592     0.4966      0.4372     0.4962           0.246
+        vol_pre_break 15090.0733 28735.2583  15333.2908 30766.2501           0.008
+    pre_break_range_R     0.3018     0.3284      0.3127     0.3271           0.033
+
+==========================================================================================
+C. F1 reproduction (ttb ≤ median): buggy vs correct, by subset
+==========================================================================================
+Target = r_exec_nextopen (clean exec)
+subset ttb_def  n_total  n_kept  thr  mean_R_baseline  mean_R_F1  delta_R
+   ALL   buggy     4013    2225  2.0          -0.0105     0.2577   0.2683
+   ALL correct     4013    2417  1.0          -0.0105     0.0038   0.0143
+  LONG   buggy     2156    1302  1.0           0.0097     0.0282   0.0185
+  LONG correct     2156    1302  1.0           0.0097     0.0282   0.0185
+ SHORT   buggy     1857     974  5.0          -0.0340     0.6296   0.6636
+ SHORT correct     1857    1115  1.0          -0.0340    -0.0247   0.0093
+
+Target = r_exec_level (legacy same-bar)
+subset ttb_def  n_total  n_kept  thr  mean_R_baseline  mean_R_F1  delta_R
+   ALL   buggy     4013    2225  2.0           0.0058     0.2737   0.2680
+   ALL correct     4013    2417  1.0           0.0058     0.0143   0.0085
+  LONG   buggy     2156    1302  1.0           0.0155     0.0238   0.0083
+  LONG correct     2156    1302  1.0           0.0155     0.0238   0.0083
+ SHORT   buggy     1857     974  5.0          -0.0056     0.6707   0.6762
+ SHORT correct     1857    1115  1.0          -0.0056     0.0032   0.0088
+
+==========================================================================================
+Summary of mismatches (BUG verdict only)
+==========================================================================================
+  No mismatches > 0.5% — point-in-time reconstruction matches stored.

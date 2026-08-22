@@ -1,0 +1,13 @@
+{
+  "pair": "BRK-B / MSFT",
+  "full_return_corr": 0.4883532049465934,
+  "empirical_top_pair": "SPY/BRK-B",
+  "empirical_top_corr": 0.7667575372998835,
+  "EG_hedge_beta_full": 0.8192994815980411,
+  "EG_resid_ADF_p_full": 0.0005024646771151604,
+  "coint_p_full": 0.002852332517064362,
+  "per_year_coint_p_median": 0.38694281018515153,
+  "per_year_frac_coint_5pct": 0.0625,
+  "universe_pairs_tested": 66,
+  "universe_pairs_cointegrated_5pct": 7
+}

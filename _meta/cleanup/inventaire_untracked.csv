@@ -1,0 +1,846 @@
+chemin,taille,destination,motif,cite_ailleurs
+Multi_Asset/research/active/ath_regime_review_2026-08/,9Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:24f/307Ko, IGNORE:183f/8Mo",oui
+Multi_Asset/research/active/audit_entree_109_2026-08/,5Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:32f/2Mo, IGNORE:9f/3Mo",non
+Multi_Asset/research/active/audit_moteur_bracket_2026-08/,101Ko,COMMIT,"10 fichiers, tous commit",oui
+Multi_Asset/research/active/carto_reouverture_2026-08/,35Ko,COMMIT,"2 fichiers, tous commit",oui
+Multi_Asset/research/active/decorrelated_sleeves_2026-07/,856Ko,COMMIT,"58 fichiers, tous commit",oui
+Multi_Asset/research/active/funded_1y_mono_2026-08/,11Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:25f/1Mo, IGNORE:20f/10Mo",non
+Multi_Asset/research/active/mr_grille_suite_2026-08/,157Ko,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:18f/156Ko, IGNORE:1f/673o",oui
+Multi_Asset/research/active/mr_intraday_grille_2026-08/,249Ko,COMMIT,"10 fichiers, tous commit",oui
+Multi_Asset/research/active/mr_univers_complet_2026-08/,331Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:12f/127Ko, IGNORE:18f/331Mo",non
+Multi_Asset/research/active/orb_cost_funded_2026-08/,4Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:27f/249Ko, IGNORE:49f/4Mo",oui
+Multi_Asset/research/active/reaudit_vehicule_2026-08/,1Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:18f/199Ko, IGNORE:31f/1Mo",oui
+Multi_Asset/research/archived/mtf_a1_tsmom/code/,53Ko,COMMIT,"7 fichiers, tous commit",oui
+Multi_Asset/research/archived/mtf_a1_tsmom/data/,5Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:8f/82Ko, IGNORE:24f/5Mo",oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/.gitignore,29o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/AUDIT_DOSSIER_S060.md,16Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/AUDIT_DOSSIER_S076.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/AUDIT_REAUDIT_all.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/AUDIT_S012_bollinger_pctb.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/AUDIT_S012_deepdive.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/AUDIT_S060_deepdive.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/PIPELINE_v2_gates.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/RAPPORT_A1_decorrelation_RossHook.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/RAPPORT_INSTITUTIONNEL_S076_RossHook.pdf,481Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S001_crabel_nr_orb.md,40Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S002_crabel_nr_setupexit.md,17Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S003_3bar_momentum.md,18Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S004_kaufman_ama.md,17Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S005_kaufman_ama_setup.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S006_adx_donchian.md,16Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S007_aroon_breakout.md,12Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S008_aroon_newhigh.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S009_aroon_slow.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S010_aroon_crossover.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S011_adx_lookback.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S012_bollinger_pctb.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S013_bollinger_filter.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S014_bollinger_momentum.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S015_directional_movement.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S016_doji_reversal.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S017_doji_reversal_exit.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S018_doji_trend.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S019_doji_trend_exit.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S020_donchian.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S021_donchian_atr.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S022_combined_donchian.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S023_dow_mtf.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S024_dow_trend.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S025_dual_momentum_roc.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S026_dual_momentum_vortex.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S027_engulfing.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S028_engulfing_bull.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S029_engulfing_bull_a.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S030_engulfing_bull_a_filter.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S031_false_breakout.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S032_false_breakout_trail.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S033_frama.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S034_friday_momentum.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S035_gap_pattern.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S036_gap_pattern_b.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S037_gsv.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S038_gsv_trend.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S039_heikin_ashi.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S040_heikin_ashi_filter.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S041_hikkake.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S042_hikkake_modified.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S043_hook.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S044_hook_bear.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S045_hook_bull.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S046_hull_ma.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S047_keltner_2phase.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S048_keltner_3phase.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S049_lr_slope.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S050_lr_slope_norm.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S051_long_equity.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S052_macd.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S053_macd2.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S054_mtf.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S055_narrow_range.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S056_nr7.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S057_one_night_stand.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S058_oops.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S059_oops_bear.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S060_oops_bull.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S061_orb.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S062_orb_weekly.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S063_orbp_ct.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S064_orbp_trend.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S065_orbp_channel.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S066_pathfinder.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S067_pricebreak_nr7.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S068_pricebreak_nr7_entry.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S069_price_momentum.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S070_profit_taking.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S071_profit_taking_p2.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S072_rsi2.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S073_rsi2_exits.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S074_reversal.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S075_reversal2.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S077_ross_hook_setupfilter.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S078_ross_hook_filter.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S079_ross_hook_exit2.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S080_sma.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S081_smashday_a.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S082_smashday_a_exits.md,822o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S083_smashday_b.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S084_smashday_b_exits.md,911o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S085_smashday_c.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S086_td_sequential.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S087_livermore.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S088_livermore2.md,920o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S089_turtle_soup.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S090_turtle_soup2.md,983o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S091_vol_squeeze.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S092_volume_filters.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S093_volume_filters2.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S094_volume_filters3.md,830o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S095_vortex.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S096_wide_range.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S097_wilder_vol.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S098_wyckoff.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S099_wyckoff_rr.md,757o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S100_wyckoff_time.md,943o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S101_zlma.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S102_zlma_filter.md,808o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S103_td_seq_adjusted.md,845o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S104_td_setup_trend.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S105_td_seq_countdown.md,758o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S106_data.md,716o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S107_data.md,705o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S108_data.md,705o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/REPORT_S109_data.md,705o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/SPEC_S076_ross_hook.md,13Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/SYNTHESE_FINALE.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/SYNTHESE_S024_S030.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/TEMPLATE_report.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/_INDEX.md,42Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/_parked_drafts/,8Ko,COMMIT,"5 fichiers, tous commit",oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/audit_s012.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/beta_bench.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/build_index.py,29Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/build_ohlc_store.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/build_s076_report.py,18Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/ftmo_lab.py,16Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/orb_filtered.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/pricebreak.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/reaudit_scan.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/reaudit_tier2.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/results/,142Ko,COMMIT,"5 fichiers, tous commit",oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/rosshook.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s012_deepdive.py,14Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s012_deepdive2.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s012_deepdive_fig.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s060_audit.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s060_deepdive.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s060_deepdive2.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s060_real_audit.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s060_stats.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s076_A1_decorrelation.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s076_A1_figure.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s076_causality.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s076_deepdive.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/s076_report_analytics.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/smashday.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s001_crabel_nr_orb.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s002_crabel_nr_setupexit.py,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s003_3bar_momentum.py,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s004_kaufman_ama.py,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s005_kaufman_ama_setup.py,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s006_adx_donchian.py,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s007_aroon_breakout.py,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s008_aroon_newhigh.py,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s009_aroon_slow.py,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s010_aroon_crossover.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s011_adx_lookback.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s012_bollinger_pctb.py,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s013_bollinger_filter.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s014_bollinger_momentum.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s015_directional_movement.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s016_doji_reversal.py,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s017_doji_reversal_exit.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s018_doji_trend.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s019_doji_trend_exit.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s020_donchian.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s021_donchian_atr.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s022_combined_donchian.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s023_dow_mtf.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s024_dow_trend.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s025_dual_momentum_roc.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s026_dual_momentum_vortex.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s027_engulfing.py,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s028_engulfing_bull.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s029_engulfing_bull_a.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s030_engulfing_bull_a_filter.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s031_false_breakout.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s032_false_breakout_trail.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s033_frama.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s034_friday_momentum.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s035_gap_pattern.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s036_gap_pattern_b.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s037_gsv.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s038_gsv_trend.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s039_heikin_ashi.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s040_heikin_ashi_filter.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s041_hikkake.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s042_hikkake_modified.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s043_hook.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s044_hook_bear.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s045_hook_bull.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s046_hull_ma.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s047_keltner_2phase.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s048_keltner_3phase.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s049_lr_slope.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s050_lr_slope_norm.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s051_long_equity.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s052_macd.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s053_macd2.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s054_mtf.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s055_narrow_range.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s056_nr7.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s058_oops.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s059_oops_bear.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s060_oops_bull.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s061_orb.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s062_orb_weekly.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s063_orbp_ct.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s064_orbp_trend.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s065_orbp_channel.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s066_pathfinder.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s067_pricebreak_nr7.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s068_pricebreak_nr7_entry.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s069_price_momentum.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s070_profit_taking.py,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s072_rsi2.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s073_rsi2_exits.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s074_reversal.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s075_reversal2.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s076_ross_hook.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s077_ross_hook_setupfilter.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s078_ross_hook_filter.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s079_ross_hook_exit2.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s080_sma.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s081_smashday_a.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s082_smashday_a_exits.py,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s083_smashday_b.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s084_smashday_b_exits.py,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s085_smashday_c.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s086_td_sequential.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s087_livermore.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s088_livermore2.py,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s089_turtle_soup.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s090_turtle_soup2.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s091_vol_squeeze.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s092_volume_filters.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s095_vortex.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s096_wide_range.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s097_wilder_vol.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s098_wyckoff.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s099_wyckoff_rr.py,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s100_wyckoff_time.py,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s101_zlma.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/strat_s104_td_setup_trend.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/td_seq.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/trend_lab.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/turtlesoup.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/code/wyckoff.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/ohlc/,4Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:1f/2Ko, IGNORE:30f/4Mo",oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/real_data/,169Ko,IGNORE,"1 fichiers, tous ignore",oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/reaudit_scan.csv,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s001_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s001_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s001_sensitivity.png,87Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s001_sensitivity_expectancy.csv,914o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s002_gates.csv,106o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s002_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s002_sensitivity.png,93Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s002_sensitivity_expectancy.csv,923o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s003_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s003_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s003_sensitivity.png,100Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s003_sensitivity_expectancy.csv,943o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s004_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s004_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s004_sensitivity.png,100Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s004_sensitivity_expectancy.csv,970o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s005_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s005_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s005_sensitivity.png,99Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s005_sensitivity_expectancy.csv,939o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s006_gates.csv,142o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s006_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s006_sensitivity.png,93Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s006_sensitivity_expectancy.csv,914o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s007_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s007_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s007_sensitivity.png,95Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s007_sensitivity_expectancy.csv,950o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s008_gates.csv,211o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s008_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s008_sensitivity.png,77Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s008_sensitivity_expectancy.csv,464o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s009_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s009_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s009_sensitivity.png,74Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s009_sensitivity_expectancy.csv,461o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s010_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s011_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s011_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s011_sensitivity_expectancy.csv,446o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s012_deepdive.png,193Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s012_deepdive2_candidates.csv,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s012_deepdive_battery.csv,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s012_gates.csv,123o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s012_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s012_sensitivity.png,76Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s012_sensitivity_expectancy.csv,453o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s013_gates.csv,123o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s013_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s013_sensitivity.png,72Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s013_sensitivity_expectancy.csv,458o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s014_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s014_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s014_sensitivity_expectancy.csv,458o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s015_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s015_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s015_sensitivity_expectancy.csv,459o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s016_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s016_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s016_sensitivity.png,68Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s016_sensitivity_expectancy.csv,479o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s017_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s017_sensitivity_expectancy.csv,386o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s018_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s018_per_instrument.csv,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s018_sensitivity_expectancy.csv,477o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s019_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s019_sensitivity_expectancy.csv,386o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s020_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s020_run.log,898o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s020_sensitivity_expectancy.csv,206o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s021_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s021_run.log,899o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s021_sensitivity_expectancy.csv,196o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s022_gates.csv,142o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s022_run.log,840o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s022_sensitivity_expectancy.csv,222o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s023_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s023_run.log,917o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s023_sensitivity_expectancy.csv,215o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s024_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s024_run.log,897o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s024_sensitivity_expectancy.csv,211o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s025_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s025_run.log,894o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s025_sensitivity_expectancy.csv,215o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s026_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s026_run.log,897o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s026_sensitivity_expectancy.csv,218o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s027_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s027_run.log,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s027_sensitivity_expectancy.csv,162o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s028_gates.csv,227o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s028_run.log,694o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s029_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s029_run.log,724o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s030_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s030_run.log,732o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s031_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s031_sensitivity_expectancy.csv,219o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s032_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s032_sensitivity_expectancy.csv,231o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s033_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s033_sensitivity_expectancy.csv,222o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s034_gates.csv,149o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s034_sensitivity_expectancy.csv,209o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s035_gates.csv,123o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s035_sensitivity_expectancy.csv,209o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s036_gates.csv,123o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s036_sensitivity_expectancy.csv,210o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s037_gates.csv,106o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s037_sensitivity_expectancy.csv,445o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s038_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s038_sensitivity_expectancy.csv,217o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s039_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s039_sensitivity_expectancy.csv,228o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s040_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s040_sensitivity_expectancy.csv,237o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s041_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s041_sensitivity_expectancy.csv,224o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s042_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s042_sensitivity_expectancy.csv,221o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s043_gates.csv,123o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s043_sensitivity_expectancy.csv,213o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s044_gates.csv,253o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s045_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s046_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s046_sensitivity_expectancy.csv,149o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s047_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s047_sensitivity_expectancy.csv,224o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s048_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s048_sensitivity_expectancy.csv,225o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s049_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s049_sensitivity_expectancy.csv,222o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s050_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s050_sensitivity_expectancy.csv,218o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s051_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s051_sensitivity_expectancy.csv,207o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s052_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s052_sensitivity_expectancy.csv,144o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s053_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s053_sensitivity_expectancy.csv,148o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s054_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s054_sensitivity_expectancy.csv,192o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s055_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s055_sensitivity_expectancy.csv,214o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s056_gates.csv,190o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s056_sensitivity_expectancy.csv,216o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s058_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s058_sensitivity_expectancy.csv,209o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s059_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s060_deepdive.png,167Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s060_deepdive_daily.csv,694Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s060_gates.csv,142o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s061_gates.csv,106o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s061_sensitivity_expectancy.csv,440o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s062_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s062_sensitivity_expectancy.csv,358o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s063_gates.csv,168o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s063_sensitivity_expectancy.csv,458o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s064_gates.csv,142o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s064_sensitivity_expectancy.csv,363o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s065_gates.csv,211o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s065_sensitivity_expectancy.csv,366o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s066_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s066_sensitivity_expectancy.csv,276o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s067_gates.csv,106o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s067_sensitivity_expectancy.csv,363o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s068_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s068_sensitivity_expectancy.csv,368o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s069_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s069_sensitivity_expectancy.csv,268o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s070_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s070_sensitivity_expectancy.csv,277o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s072_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s072_sensitivity_expectancy.csv,280o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s073_gates.csv,142o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s073_sensitivity_expectancy.csv,193o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s074_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s074_sensitivity_expectancy.csv,223o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s075_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s075_sensitivity_expectancy.csv,218o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_A1_blend_CommoditySeason.csv,487o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_A1_blend_TSMOM_P1.csv,469o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_A1_blend_TSMOM_deployed.csv,484o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_A1_corr.csv,460o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_A1_decorrelation.png,140Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_deepdive.png,164Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_fig_perf.png,190Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_fig_risk.png,133Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_gates.csv,80o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_metrics.csv,181o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s076_sensitivity_expectancy.csv,365o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s077_gates.csv,80o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s077_sensitivity_expectancy.csv,201o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s078_gates.csv,80o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s078_sensitivity_expectancy.csv,357o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s079_gates.csv,80o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s079_sensitivity_expectancy.csv,198o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s080_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s080_sensitivity_expectancy.csv,203o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s081_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s081_sensitivity_expectancy.csv,383o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s082_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s082_sensitivity_expectancy.csv,201o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s083_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s083_sensitivity_expectancy.csv,387o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s084_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s084_sensitivity_expectancy.csv,202o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s085_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s085_sensitivity_expectancy.csv,101o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s086_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s086_sensitivity_expectancy.csv,217o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s087_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s087_sensitivity_expectancy.csv,100o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s088_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s088_sensitivity_expectancy.csv,75o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s089_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s089_sensitivity_expectancy.csv,294o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s090_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s090_sensitivity_expectancy.csv,196o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s091_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s091_sensitivity_expectancy.csv,208o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s092_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s092_sensitivity_expectancy.csv,102o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s095_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s095_sensitivity_expectancy.csv,98o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s096_gates.csv,149o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s096_sensitivity_expectancy.csv,194o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s097_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s097_sensitivity_expectancy.csv,208o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s098_gates.csv,252o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s098_sensitivity_expectancy.csv,220o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s099_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s099_sensitivity_expectancy.csv,189o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s100_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s100_sensitivity_expectancy.csv,67o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s101_gates.csv,185o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s101_sensitivity_expectancy.csv,75o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s104_gates.csv,226o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Multi_Asset/research/archived/oxfordstrat_109_audit/results/s104_sensitivity_expectancy.csv,198o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+N_ledger.md,18Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/b1_feasibility/,1Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:5f/22Ko, IGNORE:1f/1Mo",oui
+PropFirms/ftmo/program_2026-06/commodity_carry_feasibility/,77Ko,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:4f/20Ko, IGNORE:1f/58Ko",oui
+PropFirms/ftmo/program_2026-06/container_eval/,22Ko,COMMIT,"4 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/edge_improvement/PRE_REGISTRATION.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/edge_improvement/README.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/edge_improvement/results/,8Ko,COMMIT,"1 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/edge_improvement/run_improvements.py,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_3strats_audit_2026-06/results/nq_1m_rth_2010_2026.parquet,26Mo,IGNORE,"blob de donnees binaire (parquet), jamais commite par gouvernance du depot",non
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/LIMITATIONS.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/LONGLIST.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/README.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/SHORTLIST.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/STEP2_VALIDATION.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/build_cache.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/funnel_lib.py,16Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/results/all_trials.json,73Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/results/chosen_pfunded_sweep.json,438o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/results/step2_corr.csv,551o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/results/step2_validation.json,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/results/summary.json,855o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/results/watchlist_corr.csv,315o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/results/watchlist_tailcorr.csv,317o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/run_funnel.py,16Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel/step2_validation.py,13Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/LIMITATIONS.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/LONGLIST.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/NOISE_FLOOR.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/README.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/SHORTLIST.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/build_intraday_cache.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/gate0_noise_floor.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/results/noise_floor.json,539o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/results/v2_all_trials.json,25Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/results/v2_summary.json,361o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/results/v2_top_corr.csv,403o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/run_v2.py,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_candidate_funnel_v2/v2_lib.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_portfolio_audit/README.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_portfolio_audit/code/,63Ko,COMMIT,"12 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_portfolio_audit/figures/,139Ko,COMMIT,"1 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_portfolio_audit/results/,573Ko,COMMIT,"16 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ALPHA_hunt_ftmo.md,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/AUDIT_VERDICT_ftmo_orb.md,25Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/CHALLENGE_METRICS_2026.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/CHALLENGE_REPORT_FINAL.md,12Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/CHARTE_methodo_trendfollowing.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/DATA_NQ_cleaned_report.md,13Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/EURUSD_m1.parquet,34Mo,IGNORE,"blob de donnees binaire (parquet), jamais commite par gouvernance du depot",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/EURUSD_m15.parquet,4o,IGNORE,"blob de donnees binaire (parquet), jamais commite par gouvernance du depot",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/EURUSD_m5.parquet,8Mo,IGNORE,"blob de donnees binaire (parquet), jamais commite par gouvernance du depot",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/F1_verification.md,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/FEATURE_BUILDER_audit.md,20Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/FETCH_NQ_2008_plan.md,19Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/FTMO_RECAP.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/FTMO_decision_memo.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/FTMO_game_plan.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_1A_AUDNZD.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_1B_EURGBP.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_2B_NQ_intraday_OU.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_3A_4A_ratio.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_5B_xsec_reversion.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_PEAD.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_TOM_seasonality.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/IDEA_TSMOM.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/INTRADAY_decorrelated_search_NQ.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/J1_USDJPY_trend_findings.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/MEMO_SYNTHESE_strategie_finale.md,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/MEMO_book_trend_deployment.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/MR_deepdive_ftmo.md,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/NQ_ORB_metrics/,785Ko,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:8f/507Ko, IGNORE:3f/278Ko",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/NQ_overnight_metrics/,482Ko,COMMIT,"19 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/OPTIM_execution_realism.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/OPTIM_ftmo_2step_uncapped.md,28Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/OPTIM_regime_landscape_freedata.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/OPTIM_regime_timing_intraday.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_1step_improvement.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_2mois_diagnostic_2026-06.md,13Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_at_0p4bps_2026-06.md,12Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_deepening_NQ.md,23Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_feasibility_audit_2026-06.md,20Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_launch_recap.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_ppass_grid_2026-06.md,12Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_pushpass_NQ.md,22Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_realconstraints_NQ.md,13Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_reconciliation_2026-06.md,21Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_regime_2026-06.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/ORB_structure_diagnostic_2026-06.md,15Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/OVERNIGHT_drift_findings.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/OVERNIGHT_drift_hardening.md,16Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/RAPPORT_institutionnel_FTMO_ORB.md,16Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/RAPPORT_monday_sleeve_stresstest.md,12Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/RAPPORT_replication_trend.md,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/REGIME_modeling_NQ.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/REPORT_strategy1.md,14Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/REPORT_strategy2_FINAL.md,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/REPORT_strategy2_indices.md,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/RESEARCH_PROTOCOL_statarb.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/RESEARCH_no_time_limit.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/RISK_REVIEW_ensemble.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/SCAN_ftmo_families.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/STATARB_IDEAS.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/STATARB_VERDICT.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/STRATEGY_monday_intraday_US100.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/STRESS_TEST_strategy2.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/TRADE_MICROSTRUCTURE_filter.md,22Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/TREND_BOOK_progress.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/VALIDATION_baseline_2010_2026.md,14Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/VALIDATION_baseline_2010_2026_v2.md,19Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/_CANONICAL_STATE.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/_FTMO_ETAT_CANONIQUE.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/_HANDOFF.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/_RECONCILIATION_overnight.md,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/audit/,14Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:281f/1Mo, IGNORE:30f/12Mo",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/breakout_deepdive_multiinstr.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/code/,132Ko,COMMIT,"19 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/commod_carry_makeorbreak.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/commod_extended_signals_ftmo.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/commodities_deepdive_ftmo.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/dedale_eval_ftmo.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/directional_deepdive_grid.csv,56Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/eurusd_m1_spread.parquet,22Mo,IGNORE,"blob de donnees binaire (parquet), jamais commite par gouvernance du depot",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/eurusd_spread_profile_by_hour.csv,764o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/figures/,3Mo,COMMIT,"26 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ftmo_specs.csv,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/ftmo_specs_full.csv,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/hurst_sizing_orb.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_research/momentum_deepdive_ftmo.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/mr_deepdive_grid.csv,41Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/mr_deepdive_halflife.csv,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/output/,792o,COMMIT,"1 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/pead/,8Ko,COMMIT,"2 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/seasonality_tom/,6Ko,COMMIT,"1 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/statarb_audnzd/,9Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:10f/70Ko, IGNORE:1f/9Mo",oui
+PropFirms/ftmo/program_2026-06/ftmo_research/statarb_coint_screen.csv,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/statarb_deepdive_ftmo.md,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/statarb_grid.csv,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/swing_carry_deepdive_ftmo.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_research/tsmom/,2Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:17f/2Mo, IGNORE:1f/0o",oui
+PropFirms/ftmo/program_2026-06/ftmo_survivors_book/README.md,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_survivors_book/code/,20Ko,COMMIT,"3 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_survivors_book/figures/,108Ko,COMMIT,"1 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_survivors_book/results/,989Ko,COMMIT,"9 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_survivors_book/swap_sensitivity/,110Ko,COMMIT,"5 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_3_strategies_rapport.docx,283Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_3_strategies_rapport.pdf,644Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_LOG_class3_statarb_candidate.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_LOG_overnight_candidate.md,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_Research_Report.docx,262Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_Research_Report_RECONCILIATION.md,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_rapport_final_consolide.docx,159Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_rapport_final_consolide.pdf,278Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_vague2_pivot_fade.docx,154Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_universe/FTMO_vague2_pivot_fade.pdf,491Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/ftmo_universe/INDEX.md,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/OVERNIGHT_VERIFICATION_REPORT.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/code/,4Ko,COMMIT,"2 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/daily_panels/,0o,IGNORE,"11 fichiers, tous ignore",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/eurusd_extras/,0o,DELETE,"3 fichiers, tous delete",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/ftmo_orb_1step/,256Ko,COMMIT,"16 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_m1/,0o,MIXTE(DELETE+IGNORE),"dossier mixte — IGNORE:2f/0o, DELETE:16f/0o",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_m5/,0o,MIXTE(DELETE+IGNORE),"dossier mixte — IGNORE:9f/0o, DELETE:7f/0o",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/intraday_orb_study/,2Mo,COMMIT,"33 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/news/,0o,IGNORE,"2 fichiers, tous ignore",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/parquets/,0o,IGNORE,"5 fichiers, tous ignore",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/specs/,0o,DELETE,"2 fichiers, tous delete",oui
+PropFirms/ftmo/program_2026-06/ftmo_universe/verify_overnight.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/paper_triage/PAPER_TRIAGE.md,14Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/paper_triage/build_daily_commod.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/paper_triage/commodity_tsmom_backtest.py,14Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/paper_triage/commodity_tsmom_results.json,12Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/propfirm_scan/,20Ko,COMMIT,"1 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/s076_replication/REPLICATION_REPORT_S076.md,12Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/s076_replication/daily/,4Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:1f/893o, IGNORE:17f/4Mo",oui
+PropFirms/ftmo/program_2026-06/s076_replication/decorr_check/,7Ko,COMMIT,"3 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/s076_replication/make_report.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/s076_replication/plots/,170Ko,COMMIT,"3 fichiers, tous commit",oui
+PropFirms/ftmo/program_2026-06/s076_replication/prep_daily.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/s076_replication/results/comparison.csv,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/s076_replication/results/mtm_commodity.csv,108Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/s076_replication/results/mtm_crypto.csv,57Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/s076_replication/results/mtm_fx.csv,165Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/s076_replication/results/mtm_index.csv,108Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/s076_replication/results/per_class.csv,306o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/s076_replication/results/per_instrument.csv,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/s076_replication/results/trades_all.csv,535Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+PropFirms/ftmo/program_2026-06/s076_replication/results/validation.json,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/s076_replication/rosshook_replication.py,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+PropFirms/ftmo/program_2026-06/s076_replication/rosshook_run.py,11Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+Rapport_BTC_intraday_FTMO.docx,18Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+Rapport_Regime_Rotation_BTC.docx,17Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+SLEEVE_month_end_bounce.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+_audit/2026-06_instrument_schema/,168Ko,COMMIT,"12 fichiers, tous commit",oui
+_audit/postmortem_breach_<ACCOUNT_ID>_2026-07-02.md,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+_meta/roadmap_ftmo_2026.md,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/crypto_intraday/,37Ko,COMMIT,"4 fichiers, tous commit",oui
+data/deep_history_m1/PLAN.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/deep_history_m1/_tool/,4Mo,MIXTE(COMMIT+DELETE),"dossier mixte — COMMIT:2f/10Ko, DELETE:101f/4Mo",oui
+data/deep_history_m1/assemble_commodities.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/calendar_fetch.py,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/duka_commodities.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/finalize_B.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/gate1_decoder_check.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/make_manifest.py,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/reports/commodity_assembly.json,10Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/reports/download_status_COMM.json,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/deep_history_m1/spotcheck.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/double7_connors/,12Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:73f/4Mo, IGNORE:8f/8Mo",oui
+data/ftmo_portfolio/.~lock.RAPPORT_INSTITUTIONNEL_FTMO.pdf#,102o,DELETE,lock file LibreOffice,non
+data/ftmo_portfolio/.~lock.RAPPORT_INSTITUTIONNEL_FTMO_v2.pdf#,102o,DELETE,lock file LibreOffice,non
+data/ftmo_portfolio/AUDIT.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/CHECKUP_2026-07-20.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/METRICS_COCKPIT_2026-07-20.md,6Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/PORTFOLIOS.md,21Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/RAPPORT_INSTITUTIONNEL_FTMO.docx,23Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/RAPPORT_INSTITUTIONNEL_FTMO.pdf,230Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/RAPPORT_INSTITUTIONNEL_FTMO_v2.docx,21Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/RAPPORT_INSTITUTIONNEL_FTMO_v2.pdf,198Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/REPORT.md,20Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/attribution_timing/,1Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:43f/773Ko, IGNORE:1f/563Ko",oui
+data/ftmo_portfolio/audit_stack.py,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/audit_v2_independent/AUDIT_V2.md,16Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,non
+data/ftmo_portfolio/audit_v2_independent/author_rerun/,546o,IGNORE,"1 fichiers, tous ignore",non
+data/ftmo_portfolio/audit_v2_independent/claims.csv,9Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,oui
+data/ftmo_portfolio/audit_v2_independent/cleanroom/run_phase1.py,2Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,non
+data/ftmo_portfolio/audit_v2_independent/cleanroom/run_phase1b.py,5Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,non
+data/ftmo_portfolio/audit_v2_independent/cleanroom/run_phase2.py,5Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,non
+data/ftmo_portfolio/audit_v2_independent/cleanroom/run_phase3.py,7Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,non
+data/ftmo_portfolio/audit_v2_independent/cleanroom/run_phase4.py,3Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,non
+data/ftmo_portfolio/audit_v2_independent/cleanroom/run_phase5.py,6Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,non
+data/ftmo_portfolio/audit_v2_independent/results/,103Ko,IGNORE,"33 fichiers, tous ignore",oui
+data/ftmo_portfolio/audit_v2_independent/run_author_cmd5.py,2Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,oui
+data/ftmo_portfolio/audit_v2_independent/run_phase0_checks.py,3Ko,IGNORE,decision actee CLAUDE.md: seul cleanroom/engine.py est la lib canonique trackee; run_phase*.py + resultats locaux restent locaux,oui
+data/ftmo_portfolio/cache/,273Mo,IGNORE,"67 fichiers, tous ignore",oui
+data/ftmo_portfolio/check-08.jpg,54Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/commo_research.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/costs.py,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/dataio.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/fix_overnight.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/funded.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/it_runner.py,849o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/lu391sysf.tmp,230Ko,DELETE,"fichier temporaire LibreOffice (autosave PDF ouvert), doublon du PDF reel",non
+data/ftmo_portfolio/lu48aeo89.tmp,198Ko,DELETE,"fichier temporaire LibreOffice (autosave PDF ouvert), doublon du PDF reel",non
+data/ftmo_portfolio/ml_vol_governor.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/node_modules/,9Mo,IGNORE,"383 fichiers, tous ignore",oui
+data/ftmo_portfolio/package-lock.json,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/package.json,49o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/page-03.jpg,58Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/path_bootstrap.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/prep_signals.py,2Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/regen_all.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/repair_data.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/report_gen.js,19Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/research_panel.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/run_phase0.py,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/run_phase1.py,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/run_phase1b.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/run_phase1c.py,4Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/run_phase3.py,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+data/ftmo_portfolio/simulator.py,15Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/sleeves.py,7Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/ftmo_portfolio/swaps_billed_live.csv,396o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/overnight_research/,229Ko,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:17f/81Ko, IGNORE:1f/149Ko",oui
+data/panels/btc_full.csv,111Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/commodity_panel.csv,843Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/crypto_panel.csv,570Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/earnings_dates.csv,140Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/economic_calendar.csv,11Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/equity_close2.csv,2Mo,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/equity_open.csv,2Mo,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/equity_panel.csv,2Mo,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/factor_etf_panel.csv,389Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/ff5.csv,31Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/fx_panel.csv,674Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/fx_rates_3m.csv,21Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/macro_etf_panel.csv,536Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/merger_arb.csv,172Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/momentum.csv,19Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/single_stocks.csv,7Mo,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/softs_metals.csv,437Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/vix.csv,223Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/vix_term_structure.csv,179Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/panels/vol_etf_panel.csv,194Ko,IGNORE,"panel de marche brut regenerable (source API), pattern data/panels/*.csv",oui
+data/seykota_trend/,3Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:52f/3Mo, IGNORE:6f/873Ko",non
+data/skew_research/MERGE_correlations.csv,759o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/skew_research/MERGE_portfolio.py,19Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/skew_research/MERGE_portfolio_2026-06.md,14Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/skew_research/MERGE_portfolio_log.txt,9Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/skew_research/MERGE_portfolio_returns.csv,293Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/skew_research/MERGE_ppass.csv,3Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+data/skew_research/session_3/,43Ko,COMMIT,"9 fichiers, tous commit",oui
+data/skew_research/session_A_filters/,10Ko,COMMIT,"2 fichiers, tous commit",non
+data/skew_research/session_B_selectivity/,13Ko,COMMIT,"3 fichiers, tous commit",non
+data/skew_research/session_C_combos/,10Ko,COMMIT,"2 fichiers, tous commit",non
+data/skew_research/session_D_survival_overlays/,12Ko,COMMIT,"3 fichiers, tous commit",non
+data/skew_research/session_E2_seasonal_book/,10Ko,COMMIT,"2 fichiers, tous commit",non
+data/skew_research/session_E3_commodity_deepdive/,12Ko,COMMIT,"2 fichiers, tous commit",non
+data/skew_research/session_E_event_calendar_sleeves/,12Ko,COMMIT,"2 fichiers, tous commit",oui
+data/skew_research/session_F_integration/,268Ko,COMMIT,"7 fichiers, tous commit",oui
+data/skew_research/session_G_intraday_flat/,8Ko,COMMIT,"2 fichiers, tous commit",oui
+data/skew_research/session_basic_trend/,1Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:6f/108Ko, IGNORE:1f/1013Ko",oui
+data/skew_research/session_cowork/,1Mo,COMMIT,"14 fichiers, tous commit",oui
+data/skew_research/session_crossasset_leadlag/,10Ko,COMMIT,"2 fichiers, tous commit",oui
+data/skew_research/session_regime_filters/,10Ko,COMMIT,"2 fichiers, tous commit",oui
+data/skew_research/session_reversion_levels/,11Ko,COMMIT,"2 fichiers, tous commit",non
+data/skew_research/session_structural_dislocations/,13Ko,COMMIT,"2 fichiers, tous commit",oui
+data/skew_research/session_vol_tail/,8Ko,COMMIT,"2 fichiers, tous commit",oui
+data/trend_research/,4Mo,COMMIT,"16 fichiers, tous commit",oui
+data/vrp/cache/ETH_dvol_1d.parquet,30Ko,IGNORE,"dossier cache/output regenerable (./cache/), convention deja etablie dans le depot (.gitignore locaux existants)",oui
+data/vrp/code/,3Ko,COMMIT,"1 fichiers, tous commit",oui
+ftmo_live/_tmp_new4_plugin.py,227o,DELETE,"plugin pytest de scratch (nom _tmp_, 5 lignes), zero reference dans le depot, jamais vu par le VPS (untracked)",non
+ftmo_profile_study/,128Ko,COMMIT,"7 fichiers, tous commit",oui
+package.json,864o,DELETE,"artefact npm init isole a la racine, aucune ref (grep vide), pas de node_modules/lock associe, description perimee (321 tests, CADUC)",oui
+strategies/trend_futures/,2Mo,MIXTE(COMMIT+IGNORE),"dossier mixte — COMMIT:6f/16Ko, IGNORE:15f/2Mo",non
+yt_strategy_replications/.gitignore,85o,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+yt_strategy_replications/README.md,8Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+yt_strategy_replications/VALIDATED_EDGES.md,5Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+yt_strategy_replications/archived/,2Ko,COMMIT,"1 fichiers, tous commit",oui
+yt_strategy_replications/breakout_ftmo/,33Ko,COMMIT,"8 fichiers, tous commit",oui
+yt_strategy_replications/build_report.py,17Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,non
+yt_strategy_replications/download_crypto.sh,1Ko,COMMIT,livrable (code / rapport / resultat leger) du dossier de recherche,oui
+yt_strategy_replications/engine/,31Ko,COMMIT,"6 fichiers, tous commit",oui
+yt_strategy_replications/event_driven_ftmo/,26Ko,COMMIT,"5 fichiers, tous commit",non
+yt_strategy_replications/gold_research/,1Mo,COMMIT,"30 fichiers, tous commit",oui
+yt_strategy_replications/intraday_mr_ftmo/,44Ko,COMMIT,"8 fichiers, tous commit",oui
+yt_strategy_replications/metals_energy_research/,206Ko,COMMIT,"6 fichiers, tous commit",oui
+yt_strategy_replications/module_1_crypto_scalping/,272Ko,COMMIT,"11 fichiers, tous commit",oui
+yt_strategy_replications/module_2_pinbar_gold/,135Ko,COMMIT,"5 fichiers, tous commit",oui
+yt_strategy_replications/module_3_rl_gold/,123Ko,COMMIT,"9 fichiers, tous commit",oui
+yt_strategy_replications/module_4_pairs_trading/,370Ko,COMMIT,"6 fichiers, tous commit",oui
+yt_strategy_replications/module_5_structural_edges/,345Ko,COMMIT,"7 fichiers, tous commit",oui
+yt_strategy_replications/mr_subscale_ftmo/,20Ko,COMMIT,"5 fichiers, tous commit",non
+yt_strategy_replications/nonovernight_research/,10Ko,COMMIT,"3 fichiers, tous commit",oui
+yt_strategy_replications/reports/,351Ko,COMMIT,"13 fichiers, tous commit",oui
+yt_strategy_replications/soybean_research/,548Ko,COMMIT,"10 fichiers, tous commit",oui
+yt_strategy_replications/tests/,4Ko,COMMIT,"1 fichiers, tous commit",oui
