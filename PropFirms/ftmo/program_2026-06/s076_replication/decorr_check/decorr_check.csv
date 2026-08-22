@@ -1,0 +1,8 @@
+metric,all_common,both_active
+Pearson,0.2616,0.2988
+Spearman,0.227,0.279
+n_days,5769,3920
+window,2007-01-03..2026-05-28,2007-02-08..2026-05-28
+shift_diag_pearson(both_active),rh-1d:-0.046,rh+1d:-0.0229
+rosshook_series,research/s076_replication/results/mtm_deployable.csv,"col=ret (deployable MTM, EET server-day)"
+tsmom_series,data/ftmo_research/tsmom/chosen_returns.csv,col=0 (Cowork phase2_3.py:46)

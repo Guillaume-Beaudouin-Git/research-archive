@@ -1,0 +1,32 @@
+==========================================================================================
+CHECK 3 — DSR Bailey-LdP on F1 filtered strategy
+==========================================================================================
+
+BASELINE (no filter): n=1033 days, Sharpe_ann=1.540, skew=1.84, kurt=6.67
+F1 (ttb ≤ med):      n=1033 days, Sharpe_ann=4.386, skew=2.99, kurt=20.68
+
+==========================================================================================
+DSR scenarios (varying n_trials to reflect search budget)
+==========================================================================================
+
+Scenario                                                 n_trials   SR0 thr   SR_def      z  P(real)
+Just-F1 (1 trial)                                               1      -inf      inf    inf    1.000
+Microstructure-only                                            60     0.860    3.526   9.62    1.000
+Microstructure + 18 prior families                             78     0.895    3.491   9.52    1.000
+Pessimistic (cover sleeves × directions × interactions)       200     1.014    3.372   9.20    1.000
+Very pessimistic                                              500     1.119    3.267   8.91    1.000
+
+--- Baseline DSR (no filter) ---
+Baseline 18 families                                           18     0.837    0.703   1.56    0.940
+Baseline 78 (incl micro)                                       78     1.103    0.437   0.97    0.833
+
+==========================================================================================
+CHECK 3 — VERDICT
+==========================================================================================
+
+F1 raw Sharpe_ann = 4.386
+F1 deflated (n_trials=78) = 3.491
+F1 deflated (n_trials=200) = 3.372
+F1 deflated (n_trials=500) = 3.267
+
+✓ F1 SURVIVES DSR at n_trials=78 (deflated SR ≥ 1.0, PROPFIRM gate)

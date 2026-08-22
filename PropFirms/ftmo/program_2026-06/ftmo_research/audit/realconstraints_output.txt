@@ -1,0 +1,47 @@
+==============================================================================================================
+REAL CONSTRAINTS CHECK + PLACEBO TEST
+==============================================================================================================
+FTMO 2026 rules: P1+10% / P2+5%, DD daily 5% total 10%, min 4 trading days, NO time limit, NO consistency rule (2-Step)
+
+==============================================================================================================
+CHECK 1 — K5 + V2+E7 under FTMO 2026 (NO time limit, simulator already matches)
+==============================================================================================================
+Reporting both 'standard' (excludes censored) AND 'strict' (censored=FAIL = worst case).
+
+                config  in_sample_p_funded_pct  in_sample_strict_pct  in_sample_censored_pct  oof_p_funded_pct  oof_strict_pct  oof_censored_pct  oof_n_total  oof_n_resolved  oof_n_funded
+       K1_V2E7_lever_a                   56.58                 50.72                    10.4             75.02           65.01              13.3         3238            2806          2105
+         K2_V2E7_floor                   68.77                 60.89                    11.5             90.43           77.08              14.8         3238            2760          2496
+K5_V2E7_floor_vol_high                   97.40                 86.28                    11.4            100.00           85.30              14.7         3238            2762          2762
+
+==============================================================================================================
+CHECK 2 — PLACEBO: floor_taper+vol_high with ORB / random / long-bias entries
+==============================================================================================================
+If random/long-bias ≈ ORB → the ORB SIGNAL contributes nothing; gains are 100% bêta+floor.
+
+                config  n_days  n_trade_days  mean_R  std_R  floor_in_sample_pct  floor_OOF_pct  floor_OOF_strict_pct  floor_OOF_censored_pct  no_floor_OOF_pct  no_floor_OOF_strict_pct
+              a_K5_ORB    4170          3991  0.0221 1.0796                97.40         100.00                 85.30                    14.7             77.55                    66.58
+          b_random_iid    4170          3991  0.0022 1.0794                39.18          55.36                 38.57                    30.3             49.39                    38.79
+c_long_bias_open_close    4170          4040 -0.0089 2.0897                 1.55           1.97                  1.51                    23.3              5.83                     5.59
+   d_long_bias_no_cost    4170          4040  0.0252 2.0896                24.98          21.45                 14.82                    30.9             15.22                    14.61
+
+==============================================================================================================
+CHECK 3 — V2+E7 (Lever A SEUL) regime decomposition
+==============================================================================================================
+
+V2+E7 alone (no floor, no vol scaling) — regime buckets:
+    block  n_days  n_resolved  n_funded  p_funded_pct  p_funded_strict_pct  censored_pct
+2010-2012     671         671        10          1.49                 1.49           0.0
+2013-2015     783         783         0          0.00                 0.00           0.0
+2016-2018     782         782       643         82.23                82.23           0.0
+2019-2021     784         784       784        100.00               100.00           0.0
+2022-2023     520         520       520        100.00               100.00           0.0
+2024-2026     630         198       158         79.80                25.08          68.6
+
+V2+E7 alone — vol regime tercile (NOWCAST):
+vol_regime  n_starts  n_resolved  n_funded  p_funded_pct  p_funded_strict_pct  censored_pct
+       low      1550        1414       886         62.66                57.16           8.8
+       mid      1312        1161       538         46.34                41.01          11.5
+      high      1308        1163       691         59.42                52.83          11.1
+
+  Current regime: **mid**
+  V2+E7 alone today (régime=mid): p_funded = 46.3% (strict = 41.0%)

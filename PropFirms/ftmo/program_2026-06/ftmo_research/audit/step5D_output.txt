@@ -1,0 +1,25 @@
+================================================================================
+STEP 5-D — Regime gate + end-to-end P1+P2 chained
+================================================================================
+
+NO GATE (all starts, n=953):
+  p(P1) = 68.8%, p(P2|P1) = 74.1%, p(funded) = 51.0%
+
+VR5-LOW TERCILE GATE (n_selected=317):
+  p(P1) = 76.3%, p(P2|P1) = 74.8%, p(funded) = 57.1%
+
+RV20-MID TERCILE GATE (n_selected=244):
+  p(P1) = 74.2%, p(P2|P1) = 61.3%, p(funded) = 45.5%
+
+TREND20-MID TERCILE GATE (n_selected=246):
+  p(P1) = 75.6%, p(P2|P1) = 73.7%, p(funded) = 55.7%
+
+COMBINED GATE (vr5_low OR trend20_mid, n_selected=461):
+  p(P1) = 74.4%, p(P2|P1) = 73.2%, p(funded) = 54.4%
+
+================================================================================
+DECISION GATE: does any regime filter clear p(funded) > 70% ?
+================================================================================
+All gates returned p(funded) <= ~60% — the regime filter buys ~10pts on P1,
+but the P2 multiplication erodes it. The 70% funded gate is unreachable
+from this strategy on this data.

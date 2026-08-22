@@ -1,0 +1,15 @@
+{
+  "cumulative_N": 97,
+  "burned_N": 70,
+  "v2_N": 27,
+  "SE0_frozen": 0.845,
+  "noise_floor_threshold_oos_sharpe": 2.129,
+  "raw_oos_sharpe_dispersion": 2.205,
+  "edge_oos_sharpe_dispersion": 0.69,
+  "max_oos_sharpe": 1.503,
+  "n_beating_floor": 0,
+  "n_top_oos_with_positive_is": 1,
+  "n_dsr_survivors": 0,
+  "survivors": [],
+  "exhaustion_confirmed": true
+}

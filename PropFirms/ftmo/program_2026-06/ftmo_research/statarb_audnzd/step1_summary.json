@@ -1,0 +1,59 @@
+{
+  "period": "2015-01-01..2026-05-20",
+  "n_days": 2962,
+  "reversion": {
+    "hurst_logpx": 0.481,
+    "VR5": 0.978,
+    "VR10": 0.967,
+    "half_life_dev_days": 24.2,
+    "interpretation": "H<0.5 & VR<1 & finite half-life => mean-reverting"
+  },
+  "baseline": {
+    "label": "baseline",
+    "n_trades": 80,
+    "mean_R": -1.3213,
+    "win_rate": 0.35,
+    "avg_win": 3.45,
+    "avg_loss": -3.89,
+    "skew": -2.84,
+    "sharpe_per_trade": -0.212,
+    "med_days": 9,
+    "tot_R": -105.7
+  },
+  "delay": {
+    "label": "delay",
+    "n_trades": 72,
+    "mean_R": -0.794,
+    "win_rate": 0.431,
+    "avg_win": 3.56,
+    "avg_loss": -4.09,
+    "skew": -1.74,
+    "sharpe_per_trade": -0.119,
+    "med_days": 9,
+    "tot_R": -57.2
+  },
+  "IS": {
+    "label": "IS",
+    "n_trades": 32,
+    "mean_R": -0.3844,
+    "win_rate": 0.469,
+    "avg_win": 2.45,
+    "avg_loss": -2.89,
+    "skew": -0.89,
+    "sharpe_per_trade": -0.109,
+    "med_days": 9,
+    "tot_R": -12.3
+  },
+  "OOS": {
+    "label": "OOS",
+    "n_trades": 48,
+    "mean_R": -1.9459,
+    "win_rate": 0.271,
+    "avg_win": 4.61,
+    "avg_loss": -4.38,
+    "skew": -2.47,
+    "sharpe_per_trade": -0.259,
+    "med_days": 7,
+    "tot_R": -93.4
+  }
+}

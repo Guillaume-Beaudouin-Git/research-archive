@@ -1,0 +1,106 @@
+Model is not converging.  Current: 239.19663230491878 is not greater than 239.19765416487215. Delta is -0.0010218599533686756
+Model is not converging.  Current: 326.0493804960603 is not greater than 326.0500861233824. Delta is -0.0007056273221337506
+Model is not converging.  Current: 321.4223058888482 is not greater than 321.4225067766574. Delta is -0.00020088780922833394
+Model is not converging.  Current: -91.90844869925982 is not greater than -91.8957172499602. Delta is -0.012731449299622
+Model is not converging.  Current: -92.16229069157941 is not greater than -92.13517623457675. Delta is -0.02711445700266779
+Model is not converging.  Current: -79.42784314382355 is not greater than -79.42354331362978. Delta is -0.004299830193772891
+Model is not converging.  Current: -68.33338024216557 is not greater than -68.3144650446457. Delta is -0.018915197519874027
+Model is not converging.  Current: -39.06670826161531 is not greater than -39.04887232667957. Delta is -0.017835934935739317
+Model is not converging.  Current: -7.0657836753181105 is not greater than -7.051846571508177. Delta is -0.013937103809933404
+Model is not converging.  Current: -19.932055314849297 is not greater than -19.930787779379. Delta is -0.001267535470297787
+Model is not converging.  Current: 11.845407108678017 is not greater than 11.845914198853587. Delta is -0.0005070901755690471
+Model is not converging.  Current: 37.13253322186545 is not greater than 37.14795266386292. Delta is -0.01541944199746581
+================================================================================
+5-C — Walk-forward HMM (filtered probabilities, ablation L19)
+================================================================================
+  HMM features: (1568, 3)
+  Walk-forward HMM output: (1316, 3)
+
+  Training-period (≤2022) edge per state: {np.int64(1): 0.001988473509348569, np.int64(0): 0.003934643067632446}
+  -> good state = 0 (mean PnL/day = 0.393%)
+  -> bad  state = 1 (mean PnL/day = 0.199%)
+
+--- Pass rate conditional on filtered HMM state at start (info ≤ J-1) ---
+  state=0 (good): n=448, pass=70.5%, bust_total=26.8%
+  state=1 ( bad): n=534, pass=67.2%, bust_total=30.5%
+
+--- Pass rate conditional on P(good_state) >= 0.5 / 0.7 / 0.9 (FILTERED) ---
+   threshold | n_selected |  pass% |  bust%
+        0.00 |        982 |  68.7% |  28.8%
+        0.30 |        473 |  71.0% |  26.4%
+        0.50 |        448 |  70.5% |  26.8%
+        0.70 |        433 |  70.4% |  26.8%
+        0.90 |        418 |  71.1% |  26.3%
+
+================================================================================
+L19 ABLATION — HMM-gate vs Threshold-gate (same selection count)
+================================================================================
+  Both gates select n=358 challenge starts
+
+        gate |  pass% |  bust% | median TTP
+   Threshold |  75.1% |  21.5% |   (TTP not tracked here)
+    HMM filt |  72.6% |  24.6% |   (TTP not tracked here)
+
+  Overlap between gates: 130/358 = 36%
+
+--- HMM transition matrix (training ≤2022) — episode persistence ---
+  P(state=0 | prev=0) = 0.491  (n=111/226)
+  P(state=1 | prev=0) = 0.509  (n=115/226)
+  P(state=0 | prev=1) = 0.513  (n=116/226)
+  P(state=1 | prev=1) = 0.487  (n=110/226)
+
+  Expected dwell in good state = 2.0 days
+  P(stay good ≥14 consecutive days) = 0.000
+  P(stay good ≥40 consecutive days) = 0.000
+
+================================================================================
+Running n_states=3 for comparison...
+================================================================================
+================================================================================
+5-C — Walk-forward HMM (filtered probabilities, ablation L19)
+================================================================================
+  HMM features: (1568, 3)
+  Walk-forward HMM output: (1316, 4)
+
+  Training-period (≤2022) edge per state: {np.int64(2): 0.0037945854210447495, np.int64(0): 0.004125827398740255, np.int64(1): -0.0017109580553007493}
+  -> good state = 0 (mean PnL/day = 0.413%)
+  -> bad  state = 1 (mean PnL/day = -0.171%)
+
+--- Pass rate conditional on filtered HMM state at start (info ≤ J-1) ---
+  state=0 (good): n=381, pass=77.4%, bust_total=20.2%
+  state=1 ( bad): n=305, pass=71.1%, bust_total=27.5%
+  state=2 ( bad): n=296, pass=55.1%, bust_total=41.2%
+
+--- Pass rate conditional on P(good_state) >= 0.5 / 0.7 / 0.9 (FILTERED) ---
+   threshold | n_selected |  pass% |  bust%
+        0.00 |        982 |  68.7% |  28.8%
+        0.30 |        405 |  76.3% |  21.2%
+        0.50 |        381 |  77.4% |  20.2%
+        0.70 |        365 |  77.3% |  20.5%
+        0.90 |        355 |  77.7% |  20.3%
+
+================================================================================
+L19 ABLATION — HMM-gate vs Threshold-gate (same selection count)
+================================================================================
+  Both gates select n=358 challenge starts
+
+        gate |  pass% |  bust% | median TTP
+   Threshold |  75.1% |  21.5% |   (TTP not tracked here)
+    HMM filt |  77.9% |  20.1% |   (TTP not tracked here)
+
+  Overlap between gates: 135/358 = 38%
+
+--- HMM transition matrix (training ≤2022) — episode persistence ---
+  P(state=0 | prev=0) = 0.464  (n=97/209)
+  P(state=1 | prev=0) = 0.172  (n=36/209)
+  P(state=2 | prev=0) = 0.364  (n=76/209)
+  P(state=0 | prev=1) = 0.457  (n=37/81)
+  P(state=1 | prev=1) = 0.457  (n=37/81)
+  P(state=2 | prev=1) = 0.086  (n=7/81)
+  P(state=0 | prev=2) = 0.469  (n=76/162)
+  P(state=1 | prev=2) = 0.049  (n=8/162)
+  P(state=2 | prev=2) = 0.481  (n=78/162)
+
+  Expected dwell in good state = 1.9 days
+  P(stay good ≥14 consecutive days) = 0.000
+  P(stay good ≥40 consecutive days) = 0.000

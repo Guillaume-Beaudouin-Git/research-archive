@@ -1,0 +1,227 @@
+{
+  "deployable_portfolio": {
+    "n_trades": 1216,
+    "expR": 0.0291,
+    "mtm_sharpe": 0.439,
+    "maxdd": -0.0423,
+    "skew": 0.368,
+    "pct_days_invested": 0.686
+  },
+  "covered_alpha": {
+    "vs_market": {
+      "alpha_ann": 0.015117418930327723,
+      "alpha_t": 2.682192783617585,
+      "betas": {
+        "mkt": -0.0397
+      },
+      "n": 3719
+    },
+    "vs_market_tsmom": {
+      "alpha_ann": 0.013984434161683915,
+      "alpha_t": 2.5847905682918086,
+      "betas": {
+        "mkt": -0.0383,
+        "tsmom": 0.058
+      },
+      "n": 3719
+    },
+    "note": "deployable (indices+commodity+crypto) MTM daily returns; benchmark report real-data t=4.0"
+  },
+  "delay_robustness": {
+    "delay+0": {
+      "n": 1251,
+      "expR": 0.0371,
+      "sharpe_trade": 0.841
+    },
+    "delay+1": {
+      "n": 1216,
+      "expR": 0.0291,
+      "sharpe_trade": 0.656
+    },
+    "delay+2": {
+      "n": 1151,
+      "expR": 0.0293,
+      "sharpe_trade": 0.647
+    },
+    "delay+3": {
+      "n": 1104,
+      "expR": 0.0328,
+      "sharpe_trade": 0.71
+    },
+    "delay+5": {
+      "n": 1009,
+      "expR": 0.0443,
+      "sharpe_trade": 0.881
+    }
+  },
+  "placebo": {
+    "placebo_expR": 0.0159,
+    "placebo_n": 1579,
+    "strat_expR": 0.0291,
+    "hook_adds": 0.0131,
+    "hook_pct": 45.2
+  },
+  "truncation_causality": {
+    "T": "2020-01-01",
+    "common_trades": 2293,
+    "genuine_disagreements": 0,
+    "straddling_edge": 2,
+    "note": "genuine_disagreements=0 => strictly causal; straddling = positions open at T force-closed at the truncation edge (expected, not a leak)"
+  },
+  "oos_primary_2016": {
+    "index": {
+      "train_expR": -0.0095,
+      "train_n": 149,
+      "test_expR": 0.0205,
+      "test_n": 664
+    },
+    "commodity": {
+      "train_expR": 0.0419,
+      "train_n": 123,
+      "test_expR": 0.0346,
+      "test_n": 145
+    },
+    "crypto": {
+      "train_expR": null,
+      "train_n": 0,
+      "test_expR": 0.0963,
+      "test_n": 135
+    },
+    "fx": {
+      "train_expR": 0.0284,
+      "train_n": 1187,
+      "test_expR": -0.0022,
+      "test_n": 1335
+    }
+  },
+  "oos_secondary_2021": {
+    "index": {
+      "train_expR": 0.0202,
+      "train_n": 459,
+      "test_expR": 0.0081,
+      "test_n": 354
+    },
+    "commodity": {
+      "train_expR": 0.0436,
+      "train_n": 187,
+      "test_expR": 0.025,
+      "test_n": 81
+    },
+    "crypto": {
+      "train_expR": 0.1588,
+      "train_n": 34,
+      "test_expR": 0.0752,
+      "test_n": 101
+    },
+    "fx": {
+      "train_expR": 0.0185,
+      "train_n": 1834,
+      "test_expR": -0.0048,
+      "test_n": 688
+    }
+  },
+  "subperiod_2007_2011": {
+    "index": {
+      "n": 0,
+      "expR": null,
+      "mtm_sharpe": null
+    },
+    "commodity": {
+      "n": 66,
+      "expR": 0.05,
+      "mtm_sharpe": 0.546
+    },
+    "crypto": {
+      "n": 0,
+      "expR": null,
+      "mtm_sharpe": null
+    },
+    "fx": {
+      "n": 650,
+      "expR": 0.0318,
+      "mtm_sharpe": 0.71
+    }
+  },
+  "subperiod_2012_2018": {
+    "index": {
+      "n": 322,
+      "expR": 0.0023,
+      "mtm_sharpe": 0.045
+    },
+    "commodity": {
+      "n": 98,
+      "expR": 0.0263,
+      "mtm_sharpe": 0.299
+    },
+    "crypto": {
+      "n": 1,
+      "expR": -0.0249,
+      "mtm_sharpe": -3.385
+    },
+    "fx": {
+      "n": 934,
+      "expR": 0.0197,
+      "mtm_sharpe": 0.558
+    }
+  },
+  "subperiod_2019_2026": {
+    "index": {
+      "n": 491,
+      "expR": 0.0233,
+      "mtm_sharpe": 0.329
+    },
+    "commodity": {
+      "n": 104,
+      "expR": 0.0414,
+      "mtm_sharpe": 0.469
+    },
+    "crypto": {
+      "n": 134,
+      "expR": 0.0972,
+      "mtm_sharpe": 0.923
+    },
+    "fx": {
+      "n": 938,
+      "expR": -0.0089,
+      "mtm_sharpe": -0.21
+    }
+  },
+  "cost_sensitivity": {
+    "real+0bps": 0.0291,
+    "real+3bps": 0.0255,
+    "real+6bps": 0.0219,
+    "real+10bps": 0.0171,
+    "flat+0bps": 0.0289,
+    "flat+3bps": 0.0253,
+    "flat+6bps": 0.0217,
+    "flat+10bps": 0.0169
+  },
+  "fill_compare": {
+    "optimistic_expR": 0.0231,
+    "optimistic_n": 1339,
+    "realistic_expR": 0.0291,
+    "realistic_n": 1216
+  },
+  "utc_sensitivity": {
+    "per_class": {
+      "index": {
+        "expR_utc": 0.0224,
+        "mtm_sharpe_utc": 0.35
+      },
+      "commodity": {
+        "expR_utc": 0.0371,
+        "mtm_sharpe_utc": 0.411
+      },
+      "crypto": {
+        "expR_utc": 0.0676,
+        "mtm_sharpe_utc": 0.679
+      },
+      "fx": {
+        "expR_utc": 0.0165,
+        "mtm_sharpe_utc": 0.429
+      }
+    },
+    "deployable_sharpe_utc": 0.488,
+    "deployable_sharpe_eet": 0.439
+  }
+}

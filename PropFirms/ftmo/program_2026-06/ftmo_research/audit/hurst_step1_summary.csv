@@ -1,0 +1,14 @@
+h_regime,v_regime,n,mean_R,WR,cum_R
+anti_persistent,unknown,24,0.2894,45.8333,6.9459
+anti_persistent,vol_high,122,0.0643,39.3443,7.8453
+anti_persistent,vol_low,659,0.1194,43.0956,78.6738
+anti_persistent,vol_mid,456,0.3029,48.4649,138.1447
+neutral,unknown,35,0.5089,54.2857,17.8101
+neutral,vol_high,198,0.1342,40.9091,26.5647
+neutral,vol_low,906,0.1134,44.5916,102.7356
+neutral,vol_mid,769,0.1474,45.6437,113.3645
+persistent,unknown,14,-0.1801,35.7143,-2.521
+persistent,vol_high,68,0.2295,44.1176,15.6066
+persistent,vol_low,389,0.0349,39.0746,13.5682
+persistent,vol_mid,302,0.1961,46.3576,59.2119
+unknown,unknown,3,0.0323,33.3333,0.0968

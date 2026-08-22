@@ -1,0 +1,17 @@
+book,Lstar_IS,window,horizon,p_pass,ci90_lo,ci90_hi
+HONEST_2sleeve(RH+TSMOMswapnet),2.0,IS,6mo,0.205,0.158,0.26
+HONEST_2sleeve(RH+TSMOMswapnet),2.0,IS,12mo,0.305,0.242,0.392
+HONEST_2sleeve(RH+TSMOMswapnet),2.0,OOS,6mo,0.243,0.062,0.533
+HONEST_2sleeve(RH+TSMOMswapnet),2.0,OOS,12mo,0.343,0.076,0.69
+incl_C_show(RH+TSMOMnet+C),3.0,IS,6mo,0.194,0.127,0.254
+incl_C_show(RH+TSMOMnet+C),3.0,IS,12mo,0.218,0.143,0.294
+incl_C_show(RH+TSMOMnet+C),3.0,OOS,6mo,0.268,0.11,0.477
+incl_C_show(RH+TSMOMnet+C),3.0,OOS,12mo,0.3,0.12,0.513
+optimistic_swapFREE_TSMOM,1.5,IS,6mo,0.247,0.187,0.321
+optimistic_swapFREE_TSMOM,1.5,IS,12mo,0.464,0.355,0.589
+optimistic_swapFREE_TSMOM,1.5,OOS,6mo,0.314,0.098,0.572
+optimistic_swapFREE_TSMOM,1.5,OOS,12mo,0.492,0.198,0.824
+swapnet_crypto0_TSMOM,2.0,IS,6mo,0.21,0.131,0.317
+swapnet_crypto0_TSMOM,2.0,IS,12mo,0.293,0.196,0.429
+swapnet_crypto0_TSMOM,2.0,OOS,6mo,0.334,0.122,0.579
+swapnet_crypto0_TSMOM,2.0,OOS,12mo,0.449,0.173,0.722

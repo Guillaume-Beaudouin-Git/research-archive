@@ -1,0 +1,44 @@
+{
+  "N_trials": 66,
+  "sigma_SR_oos": 0.7289435019746238,
+  "sigma_SR_full": 0.35005351171692467,
+  "sr_benchmark_primary": 1.7354587261052508,
+  "n_certified": 0,
+  "certified": [],
+  "n_conditional": 5,
+  "conditional": [
+    "B1.tsmom.k200",
+    "B2.tsmom100.XAUUSD",
+    "A1.zfade10.AUDUSD",
+    "A1.zfade10.USDJPY",
+    "B1.tsmom.k100"
+  ],
+  "chosen": [
+    "B1.tsmom.k200",
+    "A1.zfade10.AUDUSD",
+    "A1.zfade10.USDJPY",
+    "B2.tsmom100.XAUUSD",
+    "B1.tsmom.k100"
+  ],
+  "chosen_from": "conditional",
+  "oos_start": "2025-01-01",
+  "markup": 3.0,
+  "artifacts_nulled": {
+    "EURUSD": 0,
+    "GBPUSD": 0,
+    "USDJPY": 0,
+    "AUDUSD": 0,
+    "USDCHF": 2,
+    "USDCAD": 0,
+    "NZDUSD": 0,
+    "EURGBP": 0,
+    "EURJPY": 0,
+    "AUDJPY": 2,
+    "US500": 1,
+    "US100": 1,
+    "US30": 0,
+    "GER40": 1,
+    "XAUUSD": 0,
+    "BTCUSD": 0
+  }
+}

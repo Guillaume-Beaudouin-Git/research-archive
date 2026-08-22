@@ -1,0 +1,73 @@
+===============================================================================================
+HURST STEP 1 v3 — fully vectorized
+===============================================================================================
+  310,416 bars RTH 5-min, range 2010-06-07 13:30:00+00:00 → 2026-05-29 19:55:00+00:00
+
+Computing global rolling RV25...
+Computing rolling mean/std of RV25 over 6000 bars...
+
+Loading V2+E7 trades...
+  3945 trades
+
+Mapping trade dates to last-prior-bar indices...
+
+  H valid: 3942/3945
+  vol_z valid: 3869/3945
+  H stats: mean=0.484, std=0.076, p10=0.384, p50=0.488, p90=0.578
+  vol_z stats: mean=-0.337, std=0.713, p10=-0.974, p50=-0.507, p90=0.502
+  H regime counts: {'neutral': 1908, 'anti_persistent': 1261, 'persistent': 773, 'unknown': 3}
+  v regime counts: {'vol_low': 1954, 'vol_mid': 1527, 'vol_high': 388, 'unknown': 76}
+
+===============================================================================================
+TABLE 3 — Gradient WR/R par régime sur V2+E7 (ORB 30-min + trail_BE@1R)
+===============================================================================================
+
+--- V2+E7 (col=r_net_v2e7) ---
+  By H regime:
+            h_regime     n   mean_R    WR%    cum_R  t-stat
+          persistent   773  +0.1111  42.3%   +85.87   +2.85
+             neutral  1908  +0.1365  44.8%  +260.47   +5.42
+     anti_persistent  1261  +0.1837  44.7%  +231.61   +5.82
+  By vol_z regime:
+      v_regime     n   mean_R    WR%    cum_R  t-stat
+      vol_high   388  +0.1289  41.0%   +50.02   +2.12
+       vol_mid  1527  +0.2035  46.6%  +310.72   +6.87
+       vol_low  1954  +0.0998  43.0%  +194.98   +4.25
+  Combined 3×3 mean_R:
+v_regime         vol_high  vol_mid  vol_low
+h_regime                                   
+persistent         0.2295   0.1961   0.0349
+neutral            0.1342   0.1474   0.1134
+anti_persistent    0.0643   0.3029   0.1194
+  Combined 3×3 count:
+v_regime         vol_high  vol_mid  vol_low
+h_regime                                   
+persistent           68.0    302.0    389.0
+neutral             198.0    769.0    906.0
+anti_persistent     122.0    456.0    659.0
+
+--- EOD baseline (sanity) (col=r_net_EOD) ---
+  By H regime:
+            h_regime     n   mean_R    WR%    cum_R  t-stat
+          persistent   773  +0.1172  48.0%   +90.59   +2.72
+             neutral  1908  +0.1385  49.9%  +264.18   +5.01
+     anti_persistent  1261  +0.1684  50.9%  +212.38   +4.95
+  By vol_z regime:
+      v_regime     n   mean_R    WR%    cum_R  t-stat
+      vol_high   388  +0.1094  46.4%   +42.47   +1.69
+       vol_mid  1527  +0.1897  51.5%  +289.61   +6.06
+       vol_low  1954  +0.1087  48.9%  +212.30   +4.07
+  Combined 3×3 mean_R:
+v_regime         vol_high  vol_mid  vol_low
+h_regime                                   
+persistent         0.2148   0.1910   0.0502
+neutral            0.1216   0.1226   0.1423
+anti_persistent    0.0311   0.3018   0.0968
+  Combined 3×3 count:
+v_regime         vol_high  vol_mid  vol_low
+h_regime                                   
+persistent           68.0    302.0    389.0
+neutral             198.0    769.0    906.0
+anti_persistent     122.0    456.0    659.0
+
+Saved: hurst_step1_trades_with_features.parquet, hurst_step1_summary.csv

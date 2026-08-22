@@ -1,0 +1,147 @@
+2026-06-02 00:34:50,785 INFO Loading Databento NQ RTH...
+2026-06-02 00:34:51,154 INFO   1551866 bars
+2026-06-02 00:34:51,154 INFO Computing VWAP and features...
+2026-06-02 00:34:52,835 INFO   3827 day-features
+2026-06-02 00:34:52,862 INFO   765 signals after filters
+2026-06-02 00:34:52,862 INFO Running base iter_10 on full sample...
+
+==========================================================================================
+FULL SAMPLE 2010-2026 (Databento, cost $19 RT)
+==========================================================================================
+  n_trades                 : 765
+  win_rate                 : 0.2444
+  avg_trade_usd            : 57.36
+  avg_winner_usd           : 1488.98
+  avg_loser_usd            : -405.81
+  profit_factor            : 1.1871
+  sharpe_daily_hac         : 0.5096
+  max_dd_pct               : -0.2435
+  max_dd_dollar            : -12005.0
+  best_day_usd             : 5186.0
+  worst_day_usd            : -419.0
+  avg_bars_held            : 28.9
+  total_pnl_usd            : 43882.5
+
+==========================================================================================
+REGIME DECOMPOSITION (5 buckets) — iter_10 by period
+==========================================================================================
+
+ALL trades by regime:
+    block  n_trades  win_rate_pct  mean_pnl_usd  mean_pnl_pts  std_pnl_pts  skew_pnl  kurt_pnl  profit_factor  sharpe_daily_ann  total_pnl_usd  best_day_usd  worst_day_usd
+2010-2012         0           NaN           NaN           NaN          NaN       NaN       NaN            NaN               NaN            NaN           NaN            NaN
+2013-2015         8          25.0        -60.56        -2.078       27.436     1.191    -0.495          0.772               NaN         -484.5         941.0         -411.5
+2016-2018        42          38.1         86.06         5.253       31.810     0.827    -0.986          1.377             2.147         3614.5        1466.0         -419.0
+2019-2021       203          30.5        104.25         6.163       41.464     1.335     0.449          1.377             1.995        21163.0        2733.5         -419.0
+2022-2026       512          20.9         38.26         2.863       47.252     2.070     3.856          1.117             0.662        19589.5        5186.0         -419.0
+
+LONG trades by regime:
+         block  n_trades  win_rate_pct  mean_pnl_usd  mean_pnl_pts  std_pnl_pts  skew_pnl  kurt_pnl  profit_factor  sharpe_daily_ann  total_pnl_usd  best_day_usd  worst_day_usd
+2010-2012_LONG         0           NaN           NaN           NaN          NaN       NaN       NaN            NaN               NaN            NaN           NaN            NaN
+2013-2015_LONG         3          33.3         14.33         1.667       29.734     0.707    -1.500          1.065               NaN           43.0         701.0         -329.0
+2016-2018_LONG        20          35.0        -15.62         0.169       27.801     1.083    -0.340          0.937            -0.446         -312.5        1248.5         -419.0
+2019-2021_LONG       109          36.7        176.30         9.765       41.623     1.041    -0.313          1.699             3.311        19216.5        2651.0         -419.0
+2022-2026_LONG       259          25.5        119.32         6.916       48.559     1.627     1.638          1.391             2.108        30904.0        3921.0         -419.0
+
+SHORT trades by regime:
+          block  n_trades  win_rate_pct  mean_pnl_usd  mean_pnl_pts  std_pnl_pts  skew_pnl  kurt_pnl  profit_factor  sharpe_daily_ann  total_pnl_usd  best_day_usd  worst_day_usd
+2010-2012_SHORT         0           NaN           NaN           NaN          NaN       NaN       NaN            NaN               NaN            NaN           NaN            NaN
+2013-2015_SHORT         5          20.0       -105.50        -4.325       29.299     1.488     0.234          0.641               NaN         -527.5         941.0         -411.5
+2016-2018_SHORT        22          40.9        178.50         9.875       35.060     0.581    -1.431          1.844             4.041         3927.0        1466.0         -419.0
+2019-2021_SHORT        94          23.4         20.71         1.985       41.105     1.721     1.660          1.068             0.376         1946.5        2733.5         -419.0
+2022-2026_SHORT       253          16.2        -44.72        -1.286       45.600     2.628     7.091          0.871            -0.755       -11314.5        5186.0         -419.0
+
+==========================================================================================
+EPISODE DECOMPOSITION — specific market regimes
+==========================================================================================
+          block  n_trades  win_rate_pct  mean_pnl_usd  mean_pnl_pts  std_pnl_pts  skew_pnl  kurt_pnl  profit_factor  sharpe_daily_ann  total_pnl_usd  best_day_usd  worst_day_usd
+  2011_eurozone         0           NaN           NaN           NaN          NaN       NaN       NaN            NaN               NaN            NaN           NaN            NaN
+       2012_QE3         0           NaN           NaN           NaN          NaN       NaN       NaN            NaN               NaN            NaN           NaN            NaN
+     2014_taper         2          50.0        307.25        16.312       44.813     0.000    -2.000          2.882               NaN          614.5         941.0         -326.5
+2015_China_bust         5          40.0        133.00         7.600       36.206     0.408    -1.831          1.560               NaN          665.0         941.0         -419.0
+   2017_low_vol         3          66.7        364.33        19.167       31.371     0.360    -1.500          6.783               NaN         1093.0        1046.0         -189.0
+ 2018_vol_shock        33          33.3         38.50         2.875       32.133     1.037    -0.613          1.154             0.951         1270.5        1466.0         -419.0
+  2019_recovery        32          40.6        219.12        11.906       40.487     1.110     0.460          2.023             4.296         7012.0        2651.0         -419.0
+     2020_COVID        44          20.5        -87.35        -3.418       33.463     1.893     2.205          0.726            -2.072        -3843.5        1983.5         -419.0
+ 2021_postCOVID        97          32.0        165.20         9.210       45.277     1.172    -0.114          1.594             2.876        16024.5        2733.5         -419.0
+      2022_bear       121          16.5        -71.02        -2.601       40.702     2.278     4.358          0.794            -1.680        -8594.0        3573.5         -419.0
+  2023_AI_rally       330          23.9        101.81         6.041       49.304     1.840     2.907          1.327             1.651        33597.5        5186.0         -419.0
+
+==========================================================================================
+ANNUAL BREAKDOWN — iter_10 vs do-nothing baseline
+==========================================================================================
+block  n_trades  win_rate_pct  mean_pnl_usd  mean_pnl_pts  std_pnl_pts  skew_pnl  kurt_pnl  profit_factor  sharpe_daily_ann  total_pnl_usd  best_day_usd  worst_day_usd  year
+ 2014         2          50.0        307.25        16.312       44.813     0.000    -2.000          2.882               NaN          614.5         941.0         -326.5  2014
+ 2015         6          16.7       -183.17        -8.208       21.721     1.765     1.158          0.389               NaN        -1099.0         701.0         -411.5  2015
+ 2016         6          50.0        208.50        11.375       33.120     0.117    -1.859          2.091               NaN         1251.0         941.0         -419.0  2016
+ 2017         3          66.7        364.33        19.167       31.371     0.360    -1.500          6.783               NaN         1093.0        1046.0         -189.0  2017
+ 2018        33          33.3         38.50         2.875       32.133     1.037    -0.613          1.154             0.951         1270.5        1466.0         -419.0  2018
+ 2019        32          40.6        219.12        11.906       40.487     1.110     0.460          2.023             4.296         7012.0        2651.0         -419.0  2019
+ 2020        74          24.3        -25.32        -0.316       36.001     1.691     1.487          0.916            -0.554        -1873.5        2118.5         -419.0  2020
+ 2021        97          32.0        165.20         9.210       45.277     1.172    -0.114          1.594             2.876        16024.5        2733.5         -419.0  2021
+ 2022       121          16.5        -71.02        -2.601       40.702     2.278     4.358          0.794            -1.680        -8594.0        3573.5         -419.0  2022
+ 2023       102          22.5         21.02         2.001       41.111     1.499     0.514          1.067             0.342         2144.5        2343.5         -419.0  2023
+ 2024       111          26.1        145.08         8.204       52.564     2.035     4.503          1.478             2.300        16103.5        5186.0         -419.0  2024
+ 2025       117          23.1        131.19         7.510       52.744     1.669     1.377          1.416             2.281        15349.5        3656.0         -419.0  2025
+ 2026        61          13.1        -88.75        -3.488       47.079     3.043     8.805          0.756            -1.903        -5414.0        3921.0         -419.0  2026
+
+==========================================================================================
+DIRECTION SPLIT — full sample 2010-2026
+==========================================================================================
+
+LONG only:
+  block                    : LONG_full
+  n_trades                 : 391
+  win_rate_pct             : 29.2
+  mean_pnl_usd             : 127.5
+  mean_pnl_pts             : 7.325
+  std_pnl_pts              : 45.678
+  skew_pnl                 : 1.529
+  kurt_pnl                 : 1.441
+  profit_factor            : 1.444
+  sharpe_daily_ann         : 2.346
+  total_pnl_usd            : 49851.0
+  best_day_usd             : 3921.0
+  worst_day_usd            : -419.0
+
+SHORT only:
+  block                    : SHORT_full
+  n_trades                 : 374
+  win_rate_pct             : 19.5
+  mean_pnl_usd             : -15.96
+  mean_pnl_pts             : 0.152
+  std_pnl_pts              : 43.733
+  skew_pnl                 : 2.365
+  kurt_pnl                 : 5.814
+  profit_factor            : 0.951
+  sharpe_daily_ann         : -0.282
+  total_pnl_usd            : -5968.5
+  best_day_usd             : 5186.0
+  worst_day_usd            : -419.0
+
+==========================================================================================
+STRESS — cost multipliers (×1, ×1.5, ×3)
+==========================================================================================
+ cost_mult  cost_usd  n_trades  win_rate  avg_trade_usd  profit_factor  sharpe_daily_hac  max_dd_pct  total_pnl_usd
+       1.0      19.0       765    0.2444          57.36         1.1871            0.5096     -0.2435        43882.5
+       1.5      28.5       765    0.2444          47.86         1.1525            0.4256     -0.2855        36615.0
+       3.0      57.0       765    0.2431          19.36         1.0577            0.1724     -0.4665        14812.5
+
+==========================================================================================
+LUMPY METRICS — for L24 / propfirm conversion analysis
+==========================================================================================
+  hit_rate         : 24.44%
+  win/loss ratio   : 3.67
+  skew             : 1.904
+  excess kurt      : 3.266
+  best trade  $    : 5186
+  worst trade $    : -419
+  P90 trade $      : 1523
+  P10 trade $      : -419
+  Std trade $      : 897
+  Median trade $   : -419
+
+  Comparison to L24 FTMO-suitable profile (target):
+  - hit_rate         > 55%  → iter_10 = 24.4%  → FAIL
+  - win/loss ratio   ≈ 1    → iter_10 = 3.67    → LUMPY
+  - skew low         < 1    → iter_10 = 1.90   → FAIL (lumpy)
+  - kurt low         < 3    → iter_10 = 3.27  → FAIL (fat tails)

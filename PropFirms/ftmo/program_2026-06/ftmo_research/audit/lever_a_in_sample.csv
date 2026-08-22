@@ -1,0 +1,13 @@
+config,in_sample_p_funded_pct
+C00_E0_at_close,41.55
+C01_E1_tp_1R,42.76
+C02_E2_tp_1.5R,44.83
+C03_E3_tp_2R,53.63
+C04_E4_tp_3R,45.58
+C05_E5_scale_1R,43.18
+C06_E6_scale_2R,48.13
+C07_E7_trail_1R,52.84
+C08_E8_trail_2R,49.1
+C09_E9_time_3h,49.69
+C10_V2+E3,55.5
+C11_V2+E7,56.58

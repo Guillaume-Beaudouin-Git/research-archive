@@ -1,0 +1,114 @@
+================================================================================
+ORB V2+E7 @ 0.4 bps RT — n_trades= 4013  mean_R= 0.0552
+================================================================================
+
+
+████████████████████████████████████████████████████████████████████████████████
+PART 1 — HARD CAP 8 SEMAINES (=40 trades total P1+P2)
+████████████████████████████████████████████████████████████████████████████████
+  Sizing   % PASSED ≤8w   % BUST ≤8w   % NI-NI ≤8w
+--------------------------------------------------
+   1.0%          4.97%        7.63%        87.40%  (check sum=100.00%, bust_P1=7.40% bust_P2=0.23%)
+   1.5%         16.72%       25.63%        57.66%  (check sum=100.00%, bust_P1=21.94% bust_P2=3.68%)
+   2.5%         33.43%       52.37%        14.20%  (check sum=100.00%, bust_P1=37.48% bust_P2=14.89%)
+   3.0%         34.48%       59.23%         6.29%  (check sum=100.00%, bust_P1=41.68% bust_P2=17.56%)
+   4.0%         32.35%       66.72%         0.92%  (check sum=100.00%, bust_P1=46.58% bust_P2=20.15%)
+
+
+████████████████████████████████████████████████████████████████████████████████
+PART 2 — DIAGNOSTIC DESCRIPTIF (no mining, no tuning)
+████████████████████████████████████████████████████████████████████████████████
+
+--- 2.1 Distribution R par trade ---
+  n=4013  mean=+0.0552  std=1.201  median=-0.2030
+  skew=+1.658  kurt(excess)=+6.73
+  hit_rate=45.00%
+  p 1 = -1.007 R
+  p 5 = -0.999 R
+  p10 = -0.996 R
+  p25 = -0.992 R
+  p50 = -0.203 R
+  p75 = +0.768 R
+  p90 = +1.615 R
+  p95 = +2.181 R
+  p99 = +3.765 R
+  Max win:  +13.744 R  (1 trade)
+  Max loss: -1.094 R
+
+  Total P&L (in R): +221.4 R sur 4013 trades
+  Top 5% trades (winners by R, n=200): contrib = +649.2 R  = 293% du P&L total
+  Top 1% (n=40): contrib = +206.6 R  = 93% du P&L total
+  Bottom 5% (losers by R): contrib = -201.1 R
+
+  P&L SANS le top 5% winners: -427.8 R = mean -0.1122 R/trade
+  P&L SANS le top 1% winners: +14.9 R = mean +0.0037 R/trade
+
+--- 2.2 Mécanisme de bust (MC paths busted ≤ 8 sem @ sizing 2.5%) ---
+  Sizing 2.5% → bust paths: 4497 sur 12000 (37.5%)
+
+  Trade trigger (last R before bust):
+    mean=-0.950  median=-0.994  min=-1.094  max=-0.022
+    P(trigger ≤ -1R) = 13.0%  (c'est un stop normal 2.5%×1R=2.5% loss/account → no single-trade DLL breach possible @ this sizing since DLL=5%, 1R=2.5%)
+    P(trigger ≤ -1.5R) = 0.0%  (gap fail beyond stop)
+    P(trigger ≤ -2R) = 0.0%  (extreme gap)
+
+  Consecutive losses just before bust (run length):
+    P(≥ 1 consec losses just before bust) = 100.0%
+    P(≥ 2 consec losses just before bust) = 89.9%
+    P(≥ 3 consec losses just before bust) = 70.6%
+    P(≥ 5 consec losses just before bust) = 36.4%
+    P(≥ 8 consec losses just before bust) = 2.1%
+    mean=3.7  median=4
+
+  Cumulative R at bust (= total drawdown in R):
+    mean=-4.44 R  median=-4.40 R  min=-5.08
+    At sizing 2.5%, cumsum -3.33R triggers 10% MaxDD bust (one possible mechanism).
+    P(bust via accumulation, cumsum ≤ -3R) = 100.0%
+
+  Mechanism breakdown:
+    Single-trade trigger (R ≤ -1.5):       0.0%
+    Accumulation (cumsum ≤ -2.5R only):    100.0%
+    Mixed / other:                          0.0%
+
+--- 2.3 Corrélations descriptives R vs variables observables avant entrée ---
+
+Variable                             corr(R,X)   t_HAC6      n      flag
+or_range_bps                            -0.018    -1.10   4013          
+bi (mins after OR close)                -0.022    -2.29   4013      weak
+ttb_5min                                -0.022    -2.29   4013      weak
+gap_overnight_bps                       +0.028    +1.80   4012      weak
+weekday (0=Mon..4=Fri)                  +0.038    +2.55   4013**STRONG**
+VIX_prev                                -0.006    -0.37   3925          
+direction (1=long,-1=short)             +0.009    +0.55   4013          
+
+--- 2.4 Structure des 3 pires années (2010, 2013, 2015) vs 3 meilleures (2022, 2023, 2024) ---
+        n  mean_R    hit   skew  p95_R  p99_R  or_range_med  or_range_p90  or_range_bps_med  ttb_5min_med  gap_overnight_bps_med  vix_med
+year                                                                                                                                     
+2010  144  -0.004  0.472  1.036  1.536  2.992        11.250     20.174999         59.243999           0.0                  9.313   22.350
+2011  253   0.054  0.466  1.390  2.246  3.863        13.000     22.650000         56.528000           1.0                  0.000   20.635
+2012  247   0.088  0.433  1.225  2.562  4.146        11.750     19.500000         45.523998           1.0                  4.762   17.500
+2013  244  -0.027  0.418  1.239  2.232  3.574        12.500     18.000000         41.034000           0.5                  6.401   13.760
+2014  244   0.009  0.430  1.282  2.074  2.747        16.375     29.250000         42.264000           1.0                  9.711   13.690
+2015  254  -0.087  0.386  1.221  2.113  2.942        22.500     38.099998         50.867001           1.0                  7.614   15.290
+2016  251   0.022  0.410  1.661  2.391  4.446        20.000     36.000000         43.969002           1.0                  3.691   14.410
+2017  253   0.087  0.443  4.416  2.123  3.384        18.250     31.000000         31.584000           1.0                  8.619   10.850
+2018  252   0.030  0.393  1.465  2.281  4.631        40.500     74.425003         57.966999           1.0                  9.813   15.460
+2019  249   0.044  0.458  1.314  2.002  3.133        33.750     61.049999         44.949001           1.0                 11.520   14.910
+2020  254   0.006  0.449  1.246  2.151  3.548        76.125    134.899994         71.218002           1.0                 24.920   26.515
+2021  253   0.075  0.506  0.427  1.672  2.091        81.000    130.350006         56.542000           0.0                 11.206   18.690
+2022  253   0.129  0.486  1.132  2.174  3.295       123.750    192.500000         98.662003           0.0                 -7.134   25.445
+2023  251   0.132  0.466  0.873  2.435  3.317        78.750    122.000000         55.353001           0.0                  2.714   16.975
+2024  255   0.192  0.482  1.560  2.600  4.924        91.250    153.199997         47.844002           0.0                  7.291   14.570
+2025  252   0.087  0.472  2.426  1.789  3.711       124.125    219.149994         54.106998           0.0                 10.319   17.225
+2026  104   0.092  0.538  0.779  1.981  2.682       171.250    259.225006         64.295998           0.0                  5.721   18.405
+
+  Means structurelles:
+  Variable             worst(2010,2013,2015)    best(2022,2023,2024)   Δ (best - worst)
+    mean_R                         -0.039               0.151            +0.190
+    hit                             0.425               0.478            +0.053
+    skew                            1.165               1.188            +0.023
+    p95_R                           1.960               2.403            +0.443
+    or_range_med                   15.417              97.917           +82.500
+    or_range_bps_med               50.382              67.286           +16.905
+    ttb_5min_med                    0.500               0.000            -0.500
+    vix_med                        17.133              18.997            +1.863

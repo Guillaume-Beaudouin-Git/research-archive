@@ -1,0 +1,41 @@
+==============================================================================================================
+STEP 10 — REGIME GATE × FTMO 2-step UNCAPPED
+==============================================================================================================
+
+p_funded by (risk × gate):
+gate      NONE (baseline)  rv20_mid  trend20_mid  vr5_low
+risk_pct                                                 
+0.50                 79.2      95.5         76.5     73.7
+0.75                 71.6      88.7         70.9     70.2
+1.00                 55.7      60.2         58.8     50.8
+1.25                 55.2      53.0         58.2     51.6
+
+censored_pct by (risk × gate):
+gate      NONE (baseline)  rv20_mid  trend20_mid  vr5_low
+risk_pct                                                 
+0.50                 14.0      23.6         15.8     14.7
+0.75                  6.9      12.4          7.7      7.2
+1.00                  5.7       8.7          6.4      6.2
+1.25                  4.9       6.8          4.4      5.2
+
+L19 ABLATION (Δ vs baseline at SAME risk):
+
+  risk=0.50% baseline p(funded) = 79.2%
+    +      vr5_low: p_funded=73.7% Δ=-5.6pt censure=14.7% (Δcens=+0.7pt)
+    +  trend20_mid: p_funded=76.5% Δ=-2.7pt censure=15.8% (Δcens=+1.8pt)
+    +     rv20_mid: p_funded=95.5% Δ=+16.3pt censure=23.6% (Δcens=+9.6pt)
+
+  risk=0.75% baseline p(funded) = 71.6%
+    +      vr5_low: p_funded=70.2% Δ=-1.4pt censure=7.2% (Δcens=+0.3pt)
+    +  trend20_mid: p_funded=70.9% Δ=-0.6pt censure=7.7% (Δcens=+0.8pt)
+    +     rv20_mid: p_funded=88.7% Δ=+17.1pt censure=12.4% (Δcens=+5.5pt)
+
+  risk=1.00% baseline p(funded) = 55.7%
+    +      vr5_low: p_funded=50.8% Δ=-4.9pt censure=6.2% (Δcens=+0.5pt)
+    +  trend20_mid: p_funded=58.8% Δ=+3.1pt censure=6.4% (Δcens=+0.7pt)
+    +     rv20_mid: p_funded=60.2% Δ=+4.5pt censure=8.7% (Δcens=+3.0pt)
+
+  risk=1.25% baseline p(funded) = 55.2%
+    +      vr5_low: p_funded=51.6% Δ=-3.6pt censure=5.2% (Δcens=+0.3pt)
+    +  trend20_mid: p_funded=58.2% Δ=+3.0pt censure=4.4% (Δcens=-0.6pt)
+    +     rv20_mid: p_funded=53.0% Δ=-2.2pt censure=6.8% (Δcens=+1.9pt)
