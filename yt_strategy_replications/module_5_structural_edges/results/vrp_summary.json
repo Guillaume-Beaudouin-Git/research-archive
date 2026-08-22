@@ -1,0 +1,13 @@
+{
+  "n_months": 268,
+  "iv_gt_rv_freq": 0.8368655387355298,
+  "mean_premium_var": 0.008734607867682605,
+  "pct_months_positive": 0.832089552238806,
+  "sharpe_annual": 0.5217083234585177,
+  "skew": -4.861548772490738,
+  "kurtosis": 45.40428725460632,
+  "worst_month": -0.5574150746428225,
+  "best_month": 0.3105941148032154,
+  "worst_to_mean_ratio": -63.81684021617233,
+  "cum_maxdd_proxy": -0.5271026435813562
+}

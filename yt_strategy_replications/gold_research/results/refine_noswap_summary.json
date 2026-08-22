@@ -1,0 +1,75 @@
+{
+  "leaderboard": [
+    {
+      "label": "base_long",
+      "sharpe": 0.98,
+      "oos_sharpe": 0.878,
+      "hac_t": 3.87,
+      "dsr": 0.925,
+      "mean_bps": 2.58,
+      "maxdd": -0.156,
+      "wf": 1.0
+    },
+    {
+      "label": "MR_USdown_flat",
+      "sharpe": 0.844,
+      "oos_sharpe": 0.602,
+      "hac_t": 3.25,
+      "dsr": 0.817,
+      "mean_bps": 1.6,
+      "maxdd": -0.09,
+      "wf": 0.8
+    },
+    {
+      "label": "MR_USdown_scaled",
+      "sharpe": 0.784,
+      "oos_sharpe": 0.695,
+      "hac_t": 3.1,
+      "dsr": 0.744,
+      "mean_bps": 2.34,
+      "maxdd": -0.125,
+      "wf": 1.0
+    },
+    {
+      "label": "MR_blend",
+      "sharpe": 0.93,
+      "oos_sharpe": 0.852,
+      "hac_t": 3.63,
+      "dsr": 0.896,
+      "mean_bps": 3.31,
+      "maxdd": -0.153,
+      "wf": 1.0
+    },
+    {
+      "label": "trend_up_only",
+      "sharpe": 0.683,
+      "oos_sharpe": 0.965,
+      "hac_t": 2.78,
+      "dsr": 0.592,
+      "mean_bps": 1.41,
+      "maxdd": -0.094,
+      "wf": 0.8
+    },
+    {
+      "label": "MR_blend_vt10",
+      "sharpe": 0.89,
+      "oos_sharpe": 0.819,
+      "hac_t": 3.54,
+      "dsr": 0.859,
+      "mean_bps": 3.21,
+      "maxdd": -0.196,
+      "wf": 1.0
+    },
+    {
+      "label": "MR_blend_vt40",
+      "sharpe": 0.972,
+      "oos_sharpe": 0.911,
+      "hac_t": 3.8,
+      "dsr": 0.923,
+      "mean_bps": 3.52,
+      "maxdd": -0.159,
+      "wf": 1.0
+    }
+  ],
+  "best": "trend_up_only"
+}

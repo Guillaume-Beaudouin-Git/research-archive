@@ -1,0 +1,6 @@
+data_cache/
+**/results/*.parquet
+**/results/*.csv
+**/__pycache__/
+*.pyc
+download.log
