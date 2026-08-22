@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "318fdeb2521efbaa85384dc94791763c": {
+    "first_seen": "2026-08-20 13:00",
+    "source": "hn_algotrading",
+    "title": "Algorithm Interview: a conversation between two parrots",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "31a2762974c50f34122fccbab70eb3c3": {
     "first_seen": "2026-08-12 07:30",
     "source": "hn_algotrading",
@@ -62,6 +69,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8576dbf860a22270843e73844d2c65cc": {
+    "first_seen": "2026-08-20 14:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: LilScript makes JavaScript libraries smaller",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "8a5ad3f4ddbb6bf7b2339b7782b5b911": {
+    "first_seen": "2026-08-19 16:00",
+    "source": "hn_algotrading",
+    "title": "Flowroute locked my account after passing identity verification, won't say why",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "96344729d9137e87e5723149ea8353c8": {
     "first_seen": "2026-08-09 21:30",
     "source": "hn_algotrading",
@@ -97,10 +118,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e0f84a5d8148fb2c0881d0d64bf53173": {
+    "first_seen": "2026-08-22 01:00",
+    "source": "hn_algotrading",
+    "title": "Plotter Related Algorithms",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ea035e0f9b9da0a085453b877968e38a": {
     "first_seen": "2026-08-19 09:00",
     "source": "hn_algotrading",
     "title": "ChatGPT Trading Algorithm with 500% Returns in Stock Market Backtesting",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f49bbdbcc0f990192677f20cebfc1efd": {
+    "first_seen": "2026-08-19 16:30",
+    "source": "hn_algotrading",
+    "title": "Show HN: nanoAlphaZero – Train a grandmaster-level chess model in 24h with TPUs",
     "decision": "rejected_L0",
     "promising_file": null
   },

@@ -1,4 +1,11 @@
 {
+  "5753666ba838eb36f8fe2cb6086f8678": {
+    "first_seen": "2026-08-20 20:00",
+    "source": "hn_quant",
+    "title": "Qwen3.8 Fetches Weird URLs",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e355697a05fadb96f583dcafb9233d09": {
     "first_seen": "2026-08-04 19:00",
     "source": "hn_quant",

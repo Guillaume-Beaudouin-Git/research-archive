@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "08d67d9303aacb6276aa5206fe996a23": {
+    "first_seen": "2026-08-20 11:00",
+    "source": "github_python",
+    "title": "pipecat-ai/pipecat",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0c2c8cc3a7e8d1a37c8c40bd271b397d": {
     "first_seen": "2026-08-08 12:00",
     "source": "github_python",
@@ -31,6 +38,27 @@
     "first_seen": "2026-08-06 11:30",
     "source": "github_python",
     "title": "goauthentik/authentik",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "0fcfca23457e64f540affa226b063acb": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "google/adk-samples",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "108edb13f39253b81343bfcbf15be73d": {
+    "first_seen": "2026-08-20 11:00",
+    "source": "github_python",
+    "title": "Osmantic/ODS",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "12e0c343da24cad5b689876a548cdc95": {
+    "first_seen": "2026-08-20 11:00",
+    "source": "github_python",
+    "title": "Tencent/AI-Infra-Guard",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -55,6 +83,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2366ecfcd716562bc4977887fed7462f": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "hao-ai-lab/FastVideo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "249e16b2c955915a27ce036d1a8aa681": {
     "first_seen": "2026-08-17 11:00",
     "source": "github_python",
@@ -66,6 +101,13 @@
     "first_seen": "2026-08-14 11:00",
     "source": "github_python",
     "title": "exo-explore/exo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2a818dc53e7a48e3f778db2bd0a76561": {
+    "first_seen": "2026-08-22 11:00",
+    "source": "github_python",
+    "title": "debpalash/VoiceStudio",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -118,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4a8a3d087c33dab2255f4d35b4f18352": {
+    "first_seen": "2026-08-22 13:30",
+    "source": "github_python",
+    "title": "browser-use/browser-harness",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "514e57c3a5005ef773b10b06cfef964d": {
     "first_seen": "2026-08-15 11:00",
     "source": "github_python",
@@ -143,6 +192,13 @@
     "first_seen": "2026-08-03 11:00",
     "source": "github_python",
     "title": "kovidgoyal/calibre",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5e3fbd5b1295e3df72fb855d5e5f09e8": {
+    "first_seen": "2026-08-22 13:30",
+    "source": "github_python",
+    "title": "anthropics/claude-plugins-community",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -237,6 +293,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "8beee525fd12f16c291eb159c82aa782": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "MadsLorentzen/ai-job-search",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9222727545d834d0b796cce3bcbd9c17": {
     "first_seen": "2026-08-04 11:00",
     "source": "github_python",
@@ -262,6 +325,13 @@
     "first_seen": "2026-08-07 12:00",
     "source": "github_python",
     "title": "semantica-agi/semantica",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a99c194a2320fd77e4bd59f3fada6159": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "forcedotcom/sf-skills",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -293,6 +363,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "c381d1411a7abe950acdba91604fdc94": {
+    "first_seen": "2026-08-22 13:30",
+    "source": "github_python",
+    "title": "shy3130/tickflow-stock-panel",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c5108899895805c469f2aae090111a4c": {
     "first_seen": "2026-08-04 11:00",
     "source": "github_python",
@@ -318,6 +395,13 @@
     "first_seen": "2026-08-18 11:00",
     "source": "github_python",
     "title": "pipeshub-ai/pipeshub-ai",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "df6e83566462cada1e0fe95de10f2da4": {
+    "first_seen": "2026-08-21 22:00",
+    "source": "github_python",
+    "title": "jax-ml/jax",
     "decision": "rejected_L0",
     "promising_file": null
   },

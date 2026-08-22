@@ -209,6 +209,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "60a9b18991ba8eafe7784d453690907a": {
+    "first_seen": "2026-08-20 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Don't Drop the Singletons: Efficient Inference for Pairwise Experiments with Ind",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "62d39220962cfa40c8fb4e162bba6db7": {
     "first_seen": "2026-08-18 02:00",
     "source": "arxiv_econ_em",
@@ -263,6 +270,13 @@
     "source": "arxiv_econ_em",
     "title": "Distance Profile Embedding for Independence and Conditional Independence Testing",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7d15da69c0e8dabb0fa1d22dcb0afc52": {
+    "first_seen": "2026-08-20 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Difference-in-Differences Models in the Presence of Time-Varying Mediators",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "808b6bc76380c526278e8b40d1bb5705": {
@@ -321,6 +335,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "996f6e5597fb19a4564c68c2bd8b581b": {
+    "first_seen": "2026-08-20 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Limit Theory for U-Statistics under Clustered and Weakly Dependent Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "9fa755e488a8fdba917cf5fd6b8b760c": {
     "first_seen": "2026-08-18 03:30",
     "source": "arxiv_econ_em",
@@ -363,11 +384,25 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "ac6fbcba18f9199a87b933dbdd977b09": {
+    "first_seen": "2026-08-21 02:30",
+    "source": "arxiv_econ_em",
+    "title": "A Privacy Budgeting Framework for Online Experimentation",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "acd61423d4391024a56e888d4e5a0da3": {
     "first_seen": "2026-08-18 02:00",
     "source": "arxiv_econ_em",
     "title": "Trading Scope for Credibility in Difference-in-Differences",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "ad72fe0c365ed2c4496d6dc44a113e00": {
+    "first_seen": "2026-08-21 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Curvature-Calibrated Quasi-Bayesian Updating for Moment-Restricted Models",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "adc6fe8f9684df457494fa160c12762b": {

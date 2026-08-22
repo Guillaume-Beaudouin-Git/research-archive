@@ -53,7 +53,8 @@ MARGIN_ALERT_PCT = 50.0
 BRAIN_STALE_H = 25.0
 CAMPAIGN_BUDGET_USD = 400.0   # yaml live_gates: « budget 4+ fees (~$400) »
 
-BOOK_IDLE_ALERT_DAYS = 5      # ~1 semaine de séances sans moteur piloté par signal
+BOOK_IDLE_MILESTONES = (5, 20, 60, 120)   # paliers d'alerte, en jours-brain
+BOOK_IDLE_RECUR = 60                      # au-delà du dernier palier: rappel tous les 60
 
 ALERTS_STATE = RUNTIME / "alerts_state.json"
 BOOK_STATE = RUNTIME / "book_state.json"
@@ -201,7 +202,7 @@ def book_engine_streak(files_dir: Path) -> Optional[dict]:
 def _book_engine_line(files_dir: Path) -> str:
     """Ligne de rapport « le livre porte-t-il du risque ? » — visibilité PASSIVE.
 
-    L'alerte (seuil BOOK_IDLE_ALERT_DAYS) ne suffit pas : c'est de voir cette ligne
+    L'alerte (paliers BOOK_IDLE_MILESTONES) ne suffit pas : c'est de voir cette ligne
     chaque jour qui aurait fait remarquer les ~38-60 séances de moteurs coupés.
     """
     bk = book_engine_streak(files_dir)
@@ -213,6 +214,73 @@ def _book_engine_line(files_dir: Path) -> str:
                 f"livre ACTIF{onl}")
     return (f"Moteurs: gold {bk['w_xau']:+.2f} | J1 {bk['w_jpy']:+.2f} — "
             f"⚠ LIVRE MONO depuis {bk['streak']} j{onl}")
+
+
+def _book_idle_milestone(streak: int) -> Optional[int]:
+    """Palier atteint EXACTEMENT à ce streak, sinon None.
+
+    Constaté le 2026-08-19 : l'alerte `book_idle` avait été émise **19 jours de suite**
+    (19 clés dans alerts_state.json), reçue chaque jour par l'opérateur, sans rien
+    changer — les sleeves étaient éteintes depuis 88 et 101 séances et le livre a été
+    diagnostiqué MONO par un audit, pas par l'alerte. Un message quotidien identique
+    n'est plus une alerte, c'est du papier peint.
+
+    On n'alerte donc qu'aux PALIERS (5, 20, 60, 120, puis tous les 60). La visibilité
+    QUOTIDIENNE reste assurée par `_book_engine_line()` dans les deux rapports : c'est
+    le bon endroit pour une répétition, parce qu'elle y est passive et contextualisée.
+    """
+    if streak in BOOK_IDLE_MILESTONES:
+        return streak
+    last = BOOK_IDLE_MILESTONES[-1]
+    if streak > last and (streak - last) % BOOK_IDLE_RECUR == 0:
+        return streak
+    return None
+
+
+def _num(v) -> Optional[float]:
+    """float(v) ou None — JAMAIS d'exception.
+
+    `_alert` est appelé depuis `evaluate_alerts` SANS try/except : une ValueError dans
+    la construction d'un message tuerait toutes les alertes évaluées ensuite. Un champ
+    d'audit malformé doit dégrader le texte, pas désarmer la surveillance.
+    """
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def _book_idle_text(files_dir: Path, bk: dict) -> str:
+    """Message d'alerte ACTIONNABLE : pour chaque sleeve, la cause et ce qui la rallume.
+
+    L'ancien texte citait p(campagne) et « le challenge en cours » — périmé depuis le
+    passage en funded (2026-08-17). Et il ne disait pas POURQUOI chaque moteur est à
+    zéro, donc il n'appelait aucune action.
+    """
+    t = statefiles.read_json(files_dir / "targets.json") or {}
+    a = t.get("audit", {}) or {}
+    g = a.get("j1_gate", {}) or {}
+    s = a.get("signals", {}) or {}
+    out = [f"LIVRE MONO depuis {bk['streak']} jours-brain — gold ET J1 à 0. Le livre ne "
+           f"porte que les jambes ON (lun/mar) + l'ORB."]
+
+    if g.get("suspend"):
+        lvl, t_on, mom = _num(g.get("level")), _num(g.get("t_on")), _num(s.get("j1_mom_12_1"))
+        msg = f"J1: gate '{g.get('reason', '?')}'"
+        if lvl is not None and t_on is not None:
+            msg += (f" à {lvl:.2f} — rouvre après {g.get('n_resume', '?')} clôtures "
+                    f"≤ {t_on:.0f} (écart {lvl - t_on:+.2f})")
+        if mom is not None:
+            msg += (f". ⚠ momentum 12-1 = {mom:+.1%} : le SIGNAL est "
+                    f"{'LONG' if mom > 0 else 'nul'}, seul le gate l'éteint")
+        out.append(msg + ".")
+
+    # Or : le deadband est la cause connue, mais aucune valeur de sig n'est publiée.
+    out.append("Gold: deadband θ=0.34 sur la moyenne des signes {60,120,250} — comme "
+               "|±1/3| = 0.333 < 0.34, l'UNANIMITÉ des 3 lookbacks est requise. ⚠ Aucun "
+               "sig n'est exposé dans targets.json : cause non vérifiable depuis ici.")
+    out.append("Conséquence: la diversification que suppose le sizing n'existe pas.")
+    return " ".join(out)
 
 
 def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
@@ -370,13 +438,12 @@ def evaluate_alerts(files_dir: Path, now: Optional[datetime] = None) -> list:
                             f"({(bs or {}).get('error', '')})", now)
 
     bk = book_engine_streak(files_dir)
-    if bk and not bk["engines_on"] and bk["streak"] >= BOOK_IDLE_ALERT_DAYS:
-        fired.append("book_idle")
-        _alert(f"book_idle_{day}", 24 * 60,
-               f"LIVRE MONO depuis {bk['streak']} jours-brain — moteurs gold ET J1 à 0 "
-               f"(le livre ne tourne que sur les jambes ON lun/mar + micro-ORB). "
-               f"p(campagne) mesuré ~53.7% vs ~82.5% livre complet : le challenge en "
-               f"cours coûte le même prix pour un ticket bien moins bon.", now)
+    if bk and not bk["engines_on"]:
+        ms = _book_idle_milestone(bk["streak"])
+        if ms is not None:                         # clé par PALIER, pas par jour
+            fired.append("book_idle")
+            _alert(f"book_idle_at_{ms}", 7 * 24 * 60,
+                   _book_idle_text(files_dir, bk), now)
 
     # Divergence marge MODÈLE <-> BROKER (LOT B). L'EA enforce au taux serveur
     # (OrderCalcMargin) : c'est le MODÈLE qui mentirait, pas l'exécution — ni le sizing

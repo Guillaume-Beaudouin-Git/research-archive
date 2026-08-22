@@ -7,6 +7,21 @@
 
 ---
 
+## MISSION STATUS (updated 2026-07-10) — EXHAUSTED on free data
+
+| Leg | Verdict | Ref |
+|---|---|---|
+| **S_TSMOM** (dual vs single momentum) | **FALSIFIED** — all 16 configs net-negative; commodity XS momentum is reversal over 2005-2026 (IC t −3.4) | `results/PHASE_B_RESULTS_dual_momentum.md` (PR #390) |
+| **XS reversal** (by-product) | **ARCHIVED** — one-sided losers-rebound (long-leg only, short-winners loses), DSR 0.588 fail after AMTP; not an FTMO sleeve. Revisit only for a future FUTURES book | `results/REVERSAL_RESULTS.md` (PR #391) |
+| **S_BASIS** (Erb-Harvey carry) | **DATA-BLOCKED (free)** — roll-gap proxy breadth 3/month & 96% stale; yfinance drops expired contracts. Needs paid term-structure data | `results/S_BASIS_DATABLOCKED.md` |
+
+**Conclusion:** the economically-live axis is basis/roll-yield, but it is **paywalled**.
+Park as **BACKLOG(paid-data)**; reopen only if a term-structure source is acquired. Routing
+if ever unblocked: invest-long / personal / future FUTURES prop book — **not** the FTMO-CFD
+book (L24 lumpy; L32 CFD carry).
+
+---
+
 ## Research Motivation
 
 Portfolio currently has propfirm book (Strategy C = NQ momentum). Strategy D candidate
