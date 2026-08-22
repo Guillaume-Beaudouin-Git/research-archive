@@ -1,0 +1,139 @@
+================================================================================
+ORB V2+E7 @ 0.4 bps — n_trades=4013  mean_R=+0.0552  std=1.201  hit=45.00%
+================================================================================
+
+Top 1%: n=40  threshold R≥+3.821  contrib_R=+206.6  (93% of total P&L)
+Rest:    n=3973  contrib_R=+14.9  mean_R=+0.0037
+
+
+████████████████████████████████████████████████████████████████████████████████
+ANGLE A — anatomy of TOP 1% (40 jackpots) vs rest (3973)
+████████████████████████████████████████████████████████████████████████████████
+
+Variable                           top_mean  rest_mean       Δ   KS_stat     KS_p   Welch_t   Welch_p        flag
+weekday (0=Mon..4=Fri)               +2.150     +1.988  +0.162     0.097    0.819     +0.81    0.4205            
+bi (mins after OR close)             +7.375     +9.478  -2.103     0.163    0.218     -5.84    0.0000    **SIGN**
+ttb_5min                             +1.375     +3.478  -2.103     0.163    0.218     -5.84    0.0000    **SIGN**
+or_range_bps                        +43.195    +59.697 -16.503     0.369    0.000     -3.32    0.0019    **SIGN**
+or_range_pts                        +41.719    +57.579 -15.860     0.202    0.068     -1.72    0.0936            
+gap_overnight_bps                   +12.394     +4.832  +7.562     0.152    0.286     +0.76    0.4493            
+VIX_prev                            +18.367    +18.358  +0.009     0.084    0.929     +0.01    0.9942            
+direction (1=long,-1=short)          -0.400     +0.079  -0.479     0.240    0.017     -3.25    0.0024    **SIGN**
+year                              +2017.625  +2017.951  -0.326     0.073    0.972     -0.43    0.6689            
+
+
+Year breakdown of top 1% (40 trades):
+  Year   n_top1%   n_total  share_top1%  expected_iid(%)
+  2010         1       144        0.69%            3.59%
+  2011         4       253        1.58%            6.30%
+  2012         3       247        1.21%            6.15%
+  2013         2       244        0.82%            6.08%
+  2014         2       244        0.82%            6.08%
+  2015         2       254        0.79%            6.33%
+  2016         4       251        1.59%            6.25%
+  2017         2       253        0.79%            6.30%
+  2018         4       252        1.59%            6.28%
+  2019         2       249        0.80%            6.20%
+  2020         3       254        1.18%            6.33%
+  2021         0       253        0.00%            6.30%
+  2022         1       253        0.40%            6.30%
+  2023         1       251        0.40%            6.25%
+  2024         7       255        2.75%            6.35%
+  2025         2       252        0.79%            6.28%
+  2026         0       104        0.00%            2.59%
+(expected_iid = if jackpots distributed uniformly, share = n_year / n_total)
+
+Weekday breakdown of top 1%:
+  wd name  n_top   n_all  share_top(%)   exp_iid(%)
+   0  Mon      4     785         0.51%       19.56%
+   1  Tue     10     822         1.22%       20.48%
+   2  Wed      8     823         0.97%       20.51%
+   3  Thu     12     816         1.47%       20.33%
+   4  Fri      6     767         0.78%       19.11%
+
+Direction breakdown of top 1%:
+  dir=-1: top= 28/1857 = 1.51%  (iid baseline 1%)
+  dir=+1: top= 12/2156 = 0.56%  (iid baseline 1%)
+
+OR range bps quintiles:
+  Quintile 1 (or_range_bps 4..34): top1%= 19/ 803 = 2.37%  (iid 1%)
+  Quintile 2 (or_range_bps 34..45): top1%= 11/ 802 = 1.37%  (iid 1%)
+  Quintile 3 (or_range_bps 45..59): top1%=  1/ 803 = 0.12%  (iid 1%)
+  Quintile 4 (or_range_bps 59..79): top1%=  7/ 802 = 0.87%  (iid 1%)
+  Quintile 5 (or_range_bps 79..409): top1%=  2/ 803 = 0.25%  (iid 1%)
+
+Break time bucket (bi = minutes after OR close):
+  bi=[6-15]: top1%= 39/3632 = 1.07%
+  bi=[16-30]: top1%=  1/ 286 = 0.35%
+  bi=[31-60]: top1%=  0/  77 = 0.00%
+  bi=[61+]: top1%=  0/  18 = 0.00%
+
+
+████████████████████████████████████████████████████████████████████████████████
+ANGLE B — Cluster mechanism (autocorr, runs obs vs iid, jackpots post-cluster)
+████████████████████████████████████████████████████████████████████████████████
+
+P(loss) = 0.5500  (2207 losses on 4013 trades)
+P(win)  = 0.4500
+
+--- B.1 Autocorrélation des R ---
+  lag    corr(R_t, R_{t-k})   t-stat (HAC6)
+    1               -0.0657           -4.65
+    2               -0.0096           -0.59
+    3               +0.0128           +0.79
+    5               +0.0189           +1.13
+   10               +0.0148           +0.89
+
+Ljung-Box on R (H0 = no autocorr):
+    lb_stat  lb_pvalue
+5   19.8456     0.0013
+10  27.0168     0.0026
+20  35.1734     0.0192
+
+Ljung-Box on loss indicator (1 if R<0):
+    lb_stat  lb_pvalue
+5    5.2318     0.3882
+10  11.3452     0.3313
+20  20.1933     0.4459
+
+--- B.2 Run-length distribution: observed vs iid (p_loss compound) ---
+  Total of 1027 loss-runs in 4013 trades.
+  Run lengths: max=13, mean=2.15, median=2
+
+  len(k)   observed   iid_expected    ratio_obs/iid
+  (iid expected = N × p^k × (1-p) ; assumes independent trades with constant p_loss)
+       1        485          993.2            +0.49x
+       2        253          546.2            +0.46x
+       3        140          300.4            +0.47x
+       4         62          165.2            +0.38x
+       5         36           90.9            +0.40x
+       6         22           50.0            +0.44x
+       7         14           27.5            +0.51x
+       8          6           15.1            +0.40x
+      10          0            4.6            +0.00x
+
+  P(4 consec losses anywhere):
+    ≥2 consec : observed positions =  1180  ;  iid expected =   1213.5  ;  ratio = 0.97x
+    ≥3 consec : observed positions =   638  ;  iid expected =    667.2  ;  ratio = 0.96x
+    ≥4 consec : observed positions =   349  ;  iid expected =    366.8  ;  ratio = 0.95x
+    ≥5 consec : observed positions =   200  ;  iid expected =    201.7  ;  ratio = 0.99x
+    ≥6 consec : observed positions =   113  ;  iid expected =    110.9  ;  ratio = 1.02x
+
+--- B.3 DECISIVE TEST: do jackpots arrive after loss clusters? ---
+  Top 1% jackpots: n=40
+
+  TEST: jackpot at position t — preceded (in trades t-3, t-2, t-1) by a ≥2 consec losses cluster?
+    window 1 trades before jackpot:    0/40 jackpots (0.0%)  (rough iid expected if random: 30.2%)
+    window 2 trades before jackpot:   15/40 jackpots (37.5%)  (rough iid expected if random: 30.2%)
+    window 3 trades before jackpot:   18/40 jackpots (45.0%)  (rough iid expected if random: 51.3%)
+    window 5 trades before jackpot:   27/40 jackpots (67.5%)  (rough iid expected if random: 76.3%)
+
+  Single-trade view:
+    Jackpot immediately after a loss (t-1 < 0): 31/40 (77.5%)
+    Jackpot immediately after a win   (t-1 > 0): 9/40 (22.5%)
+  iid baseline: P(loss prev) = 55.00%  — so any jackpot bias toward post-win/loss is informative.
+
+  P&L SPLIT — jackpot R-sum by precedence pattern:
+    Window 1: jackpots after ≥2-consec cluster contribute +0.0 R  (0.0% of jackpot R-sum)
+    Window 2: jackpots after ≥2-consec cluster contribute +81.8 R  (39.6% of jackpot R-sum)
+    Window 3: jackpots after ≥2-consec cluster contribute +98.7 R  (47.8% of jackpot R-sum)

@@ -1,0 +1,4 @@
+vol_regime,n_starts,n_resolved,n_funded,p_phase1_pct,p_funded_pct,censored_pct
+low,1550,1412,1390,98.44,98.44,8.9
+mid,1312,1155,1139,98.61,98.61,12.0
+high,1308,1127,1069,94.85,94.85,13.8

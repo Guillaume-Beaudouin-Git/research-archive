@@ -1,0 +1,171 @@
+{
+  "geometries_verified_vs_scan": {
+    "FundedNext_Stellar2": "P1 8%/P2 5%, 10% STATIC DD, 5% daily, wknd YES (daily bal-vs-eq granularity UNVERIFIED)",
+    "FTMO_Swing": "P1 10%/P2 5%, 10% STATIC DD, 5% daily (equity intraday), wknd YES",
+    "FTMO_Standard": "same 10/5 barrier but weekend holds PROHIBITED -> book (holds wknds) non-compliant as-is"
+  },
+  "geometry_ppass": {
+    "FTMO_Standard(10/5,no-wknd)": {
+      "P1": 0.1,
+      "P2": 0.05,
+      "weekend_legal": false,
+      "Lstar_IS": 2.0,
+      "ppass": {
+        "IS_6mo": {
+          "p": 0.202,
+          "ci90": [
+            0.158,
+            0.264
+          ]
+        },
+        "IS_12mo": {
+          "p": 0.304,
+          "ci90": [
+            0.237,
+            0.394
+          ]
+        },
+        "OOS_6mo": {
+          "p": 0.234,
+          "ci90": [
+            0.06,
+            0.573
+          ]
+        },
+        "OOS_12mo": {
+          "p": 0.329,
+          "ci90": [
+            0.076,
+            0.709
+          ]
+        }
+      },
+      "monotone_OOS": {
+        "63": 0.09,
+        "126": 0.205,
+        "189": 0.266,
+        "252": 0.29
+      },
+      "L_sweep_OOS12mo": {
+        "1.5": 0.248,
+        "2.0": 0.29,
+        "2.5": 0.276,
+        "3.0": 0.25,
+        "3.5": 0.262
+      },
+      "OOS_CI_clears_0.50": false,
+      "deployable_as_is": false
+    },
+    "FundedNext_Stellar2(8/5,wknd)": {
+      "P1": 0.08,
+      "P2": 0.05,
+      "weekend_legal": true,
+      "Lstar_IS": 2.0,
+      "ppass": {
+        "IS_6mo": {
+          "p": 0.246,
+          "ci90": [
+            0.195,
+            0.312
+          ]
+        },
+        "IS_12mo": {
+          "p": 0.344,
+          "ci90": [
+            0.259,
+            0.434
+          ]
+        },
+        "OOS_6mo": {
+          "p": 0.282,
+          "ci90": [
+            0.078,
+            0.622
+          ]
+        },
+        "OOS_12mo": {
+          "p": 0.371,
+          "ci90": [
+            0.099,
+            0.754
+          ]
+        }
+      },
+      "monotone_OOS": {
+        "63": 0.118,
+        "126": 0.25,
+        "189": 0.31,
+        "252": 0.331
+      },
+      "L_sweep_OOS12mo": {
+        "1.5": 0.305,
+        "2.0": 0.331,
+        "2.5": 0.323,
+        "3.0": 0.298,
+        "3.5": 0.306
+      },
+      "OOS_CI_clears_0.50": false,
+      "deployable_as_is": true
+    },
+    "FTMO_Swing(10/5,wknd)": {
+      "P1": 0.1,
+      "P2": 0.05,
+      "weekend_legal": true,
+      "Lstar_IS": 2.0,
+      "ppass": {
+        "IS_6mo": {
+          "p": 0.202,
+          "ci90": [
+            0.158,
+            0.264
+          ]
+        },
+        "IS_12mo": {
+          "p": 0.304,
+          "ci90": [
+            0.237,
+            0.394
+          ]
+        },
+        "OOS_6mo": {
+          "p": 0.234,
+          "ci90": [
+            0.06,
+            0.573
+          ]
+        },
+        "OOS_12mo": {
+          "p": 0.329,
+          "ci90": [
+            0.076,
+            0.709
+          ]
+        }
+      },
+      "monotone_OOS": {
+        "63": 0.09,
+        "126": 0.205,
+        "189": 0.266,
+        "252": 0.29
+      },
+      "L_sweep_OOS12mo": {
+        "1.5": 0.248,
+        "2.0": 0.29,
+        "2.5": 0.276,
+        "3.0": 0.25,
+        "3.5": 0.262
+      },
+      "OOS_CI_clears_0.50": false,
+      "deployable_as_is": true
+    }
+  },
+  "weekend_recost": {
+    "validate_replication_corr_vs_verbatim": 1.0,
+    "TSMOM_weekend_HOLD_Sharpe_full": 0.025,
+    "TSMOM_weekend_HOLD_Sharpe_OOS": 0.945,
+    "TSMOM_weekend_FLAT_Sharpe_full": -0.078,
+    "TSMOM_weekend_FLAT_Sharpe_OOS": 0.27,
+    "delta_full(hold-flat)": 0.103,
+    "note": "survivors book TSMOM ALREADY holds weekends + charges WEEKEND_MULT=1.45 swap (verbatim). FLAT = zero Monday holds + swap mult 1.0 (conservative: over-penalizes by missing all Monday, not just the Fri->Mon-open gap). RH weekend dependence is an uncosted residual (fixed series)."
+  }
+}

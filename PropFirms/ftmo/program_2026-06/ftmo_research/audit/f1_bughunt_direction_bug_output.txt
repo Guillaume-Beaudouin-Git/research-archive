@@ -1,0 +1,39 @@
+Re-extracting trades with both buggy and corrected ttb...
+Trades: 3056
+  long: 1570
+  short: 1486
+
+==========================================================================================
+Sanity — ttb_buggy vs ttb_correct mismatch by direction
+==========================================================================================
+  Trades where buggy != correct: 709/3056 = 23.2%
+  Of those: long: 0, short: 709
+
+==========================================================================================
+F1 effect by subset and ttb definition
+==========================================================================================
+    subset     ttb_def n_total n_F1 threshold mean_R_baseline mean_R_F1   delta_R hit_rate_baseline hit_rate_F1
+       ALL   ttb_buggy    3056 1550       1.0        0.103301  0.435876  0.332576         41.753927   52.967742
+       ALL ttb_correct    3056 1626       0.0        0.103301  0.077853 -0.025448         41.753927     39.9754
+ LONG only   ttb_buggy    1570  836       0.0        0.126585  0.127379  0.000795          44.77707   43.779904
+ LONG only ttb_correct    1570  836       0.0        0.126585  0.127379  0.000795          44.77707   43.779904
+SHORT only   ttb_buggy    1486  764       5.0        0.078701   0.79337  0.714669         38.559892   62.958115
+SHORT only ttb_correct    1486  790       0.0        0.078701  0.025442 -0.053259         38.559892   35.949367
+
+==========================================================================================
+KEY COMPARISON
+==========================================================================================
+
+LONG-only F1 effect:
+  buggy   : meanR base=+0.127, F1=+0.127, Δ=+0.001
+  correct : meanR base=+0.127, F1=+0.127, Δ=+0.001
+  → for LONG, the two should be ~identical (buggy == correct for longs)
+
+SHORT-only F1 effect:
+  buggy (LOOK-AHEAD)  : meanR base=+0.079, F1=+0.793, Δ=+0.715
+  correct             : meanR base=+0.079, F1=+0.025, Δ=-0.053
+  → if buggy F1 effect is much larger than correct, BUG CONFIRMED
+
+ALL trades F1 effect:
+  buggy   : meanR base=+0.103, F1=+0.436, Δ=+0.333
+  correct : meanR base=+0.103, F1=+0.078, Δ=-0.025

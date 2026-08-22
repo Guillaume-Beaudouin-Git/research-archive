@@ -1,0 +1,63 @@
+2026-06-02 00:38:42,138 INFO Loading iter_10 full trade log (Databento 2010-2026)...
+2026-06-02 00:38:45,622 INFO   765 trades, 2014-03-27 09:46:00-04:00 -> 2026-05-29 09:46:00-04:00
+2026-06-02 00:38:46,201 INFO   Daily PnL (MNQ x2): 3177 days, mean=$2.64, std=$88.12, sum=$8,394
+2026-06-02 00:38:46,204 INFO   2022-2026 only: 1150 days, mean=$3.18, std=$126.10
+
+====================================================================================================
+TRADEIFY SELECT FLEX $25K — p(pass) simulation
+====================================================================================================
+  Config: capital=$25K, eval DD=$1K trailing, profit target=$1.5K, consistency cap 40%, min trading days=3
+  Sizing: 2 MNQ contracts (per config.py PHASE_CONTRACTS)
+  Bootstrap block size: 20 days, 20,000 MC paths each scenario
+
+2026-06-02 00:38:46,204 INFO Scenario A: Full sample 2010-2026 block bootstrap...
+  [A] Full sample 2010-2026 (n_trades=765, mean_R_daily=$2.64):
+      p(eval_pass): 24.38%
+      p(bust):      36.43%
+      p(timeout):   39.20%
+      E[days to target | passed]: 100.9
+      E[funded PnL 180d | passed]: $372.58
+
+2026-06-02 00:39:19,736 INFO Scenario B: 2022-2026 only block bootstrap (matches Kaggle period)...
+  [B] 2022-2026 sample only (n_trades=512 cherry-pick window):
+      p(eval_pass): 33.76%
+      p(bust):      61.54%
+      p(timeout):   4.71%
+      E[days to target | passed]: 73.4
+      E[funded PnL 180d | passed]: $334.53
+
+2026-06-02 00:40:02,383 INFO Scenario C: Reference using reported iter_10 stats...
+  [C] Reference (reported iter_10 stats: win_rate=27.75%, avg_winner=$1572, avg_loser=-$421, trade_freq=45.8%):
+      p(eval_pass): 62.64%
+      p(bust):      34.14%
+      p(timeout):   3.21%
+      E[days to target | passed]: 72.4
+      E[funded PnL 180d | passed]: $1677.44
+
+====================================================================================================
+STRESS — cost × {1.5, 3} via raw cost adjustment in trade log
+====================================================================================================
+  cost × 1.5: extra $9.50/trade NQ = $1.9000/trade MNQ. p(pass)=22.13%, p(bust)=39.88%, E[funded]=327.26
+  cost × 3.0: extra $38.00/trade NQ = $7.6000/trade MNQ. p(pass)=18.16%, p(bust)=48.42%, E[funded]=81.11
+
+====================================================================================================
+DSR — Bailey-Lopez de Prado deflated Sharpe
+====================================================================================================
+  iter_10 family mining depth (honest):
+    - iter_1 family (3 variants 1a-1c)        ~3 trials
+    - iter_2 family (a, b, c, d variants)     ~4 trials
+    - iter_3-5 (gap, ETH, dollar stops, ...)  ~6 trials
+    - iter_7-9 (VWAP, vol_ratio, 8a/b/c)      ~8 trials
+    - iter_10 + variants 11a-11e              ~5 trials
+    = total ≥ 26 honest trials
+
+  [Full sample 2010-2026] per-trade: n=765, mean=$57.36, std=$897.04, SR=0.0639, skew=1.90, kurt=6.27
+    n_trials=10: SR_norm= 1.880, emax=1.575, z=+0.306, DSR_p=0.6201
+    n_trials=26: SR_norm= 1.880, emax=2.014, z=-0.133, DSR_p=0.4469
+    n_trials=50: SR_norm= 1.880, emax=2.276, z=-0.396, DSR_p=0.3461
+
+  [2022-2026 only] per-trade: n=512, mean=$38.26, std=$945.05, SR=0.0405, skew=2.07, kurt=6.86
+    n_trials=10: SR_norm= 0.955, emax=1.575, z=-0.620, DSR_p=0.2677
+    n_trials=26: SR_norm= 0.955, emax=2.014, z=-1.059, DSR_p=0.1448
+    n_trials=50: SR_norm= 0.955, emax=2.276, z=-1.321, DSR_p=0.0932
+

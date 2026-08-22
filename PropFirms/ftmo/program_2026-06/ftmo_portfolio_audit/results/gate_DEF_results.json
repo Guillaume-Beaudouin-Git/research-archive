@@ -1,0 +1,127 @@
+{
+  "gate_D": {
+    "baseline(B as-is)": {
+      "combined_ann_sharpe": 0.95,
+      "p3mo_L2.5": {
+        "corrected": 0.147,
+        "author": 0.245
+      },
+      "p3mo_L3.0": {
+        "corrected": 0.226,
+        "author": 0.311
+      }
+    },
+    "B_net_zero": {
+      "combined_ann_sharpe": 0.9,
+      "p3mo_L2.5": {
+        "corrected": 0.041,
+        "author": 0.101
+      },
+      "p3mo_L3.0": {
+        "corrected": 0.078,
+        "author": 0.146
+      }
+    },
+    "B_net_negative(ann -0.5)": {
+      "combined_ann_sharpe": 0.36,
+      "p3mo_L2.5": {
+        "corrected": 0.085,
+        "author": 0.146
+      },
+      "p3mo_L3.0": {
+        "corrected": 0.147,
+        "author": 0.199
+      }
+    }
+  },
+  "gate_E": {
+    "lag0": {
+      "B_annSh": 0.35,
+      "C_annSh": 0.53,
+      "combined_annSh": 0.95,
+      "p3mo_L2.5": {
+        "corrected": 0.147,
+        "author": 0.245
+      }
+    },
+    "lag1": {
+      "B_annSh": -0.06,
+      "C_annSh": 0.67,
+      "combined_annSh": 0.73,
+      "p3mo_L2.5": {
+        "corrected": 0.117,
+        "author": 0.203
+      }
+    }
+  },
+  "gate_F": {
+    "steelman_combined(ann~0.95)": {
+      "N=20": {
+        "ann_sharpe": 0.951,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 0.736,
+        "DSR_prob": 0.711
+      },
+      "N=100": {
+        "ann_sharpe": 0.951,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 0.98,
+        "DSR_prob": 0.47
+      },
+      "N=500": {
+        "ann_sharpe": 0.951,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 1.182,
+        "DSR_prob": 0.275
+      },
+      "N=1000": {
+        "ann_sharpe": 0.951,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 1.261,
+        "DSR_prob": 0.212
+      }
+    },
+    "report_claimed(ann1.39)": {
+      "N=20": {
+        "ann_sharpe": 1.39,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 0.73,
+        "DSR_prob": 0.957
+      },
+      "N=100": {
+        "ann_sharpe": 1.39,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 0.972,
+        "DSR_prob": 0.862
+      },
+      "N=500": {
+        "ann_sharpe": 1.39,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 1.173,
+        "DSR_prob": 0.714
+      },
+      "N=1000": {
+        "ann_sharpe": 1.39,
+        "T": 1607,
+        "skew": 0.85,
+        "kurt_excess": 5.7,
+        "E_maxSR_ann": 1.25,
+        "DSR_prob": 0.642
+      }
+    }
+  }
+}

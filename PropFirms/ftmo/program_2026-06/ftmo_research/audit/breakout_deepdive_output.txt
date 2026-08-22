@@ -1,0 +1,94 @@
+==============================================================================================================
+PHASE 1 — Broad scan, breakout/trend family on NQ 2010-2026 (cost 1 bp RT)
+==============================================================================================================
+
+10 variants × NQ 5-min, EOD exit, same-bar fill (EXEC_0)
+
+
+--- ORB_30min ---
+  n=3945 (long=2121, short=1824)
+  Net mean R (EXEC_0): total=+0.1438, long=+0.1549 (t=+8.35), short=+0.1309 (t=+5.77)
+  Delay-1 short mean R: -0.0352 (t=-1.56)
+  Skew: 1.54, hit rate: 49.9%
+
+--- ORB_15min ---
+  n=4010 (long=2085, short=1925)
+  Net mean R (EXEC_0): total=+0.2140, long=+0.2365 (t=+9.92), short=+0.1897 (t=+6.30)
+  Delay-1 short mean R: -0.0163 (t=-0.55)
+  Skew: 1.67, hit rate: 44.9%
+
+--- ORB_60min ---
+  n=3732 (long=2059, short=1673)
+  Net mean R (EXEC_0): total=+0.0935, long=+0.1063 (t=+8.13), short=+0.0778 (t=+4.57)
+  Delay-1 short mean R: -0.0345 (t=-1.86)
+  Skew: 1.24, hit rate: 54.4%
+
+--- Donchian_20 ---
+  n=3978 (long=2232, short=1746)
+  Net mean R (EXEC_0): total=+0.1136, long=+0.0997 (t=+6.90), short=+0.1313 (t=+6.06)
+  Delay-1 short mean R: +0.0069 (t=+0.32)
+  Skew: 2.37, hit rate: 51.8%
+
+--- Donchian_60 ---
+  n=1848 (long=1103, short=745)
+  Net mean R (EXEC_0): total=+0.0475, long=+0.0302 (t=+4.41), short=+0.0731 (t=+6.56)
+  Delay-1 short mean R: -0.0012 (t=-0.11)
+  Skew: 0.37, hit rate: 57.8%
+
+--- Vol_break_1.5ATR ---
+  n=574 (long=235, short=339)
+  Net mean R (EXEC_0): total=+0.0368, long=+0.0460 (t=+4.25), short=+0.0304 (t=+2.85)
+  Delay-1 short mean R: -0.0177 (t=-1.65)
+  Skew: 0.45, hit rate: 56.3%
+
+--- Squeeze ---
+  No trades extracted
+
+--- PDH_PDL ---
+  n=3439 (long=2034, short=1405)
+  Net mean R (EXEC_0): total=+0.2446, long=+0.2390 (t=+18.30), short=+0.2525 (t=+13.97)
+  Delay-1 short mean R: -0.0272 (t=-1.53)
+  Skew: 1.84, hit rate: 61.5%
+
+--- Bollinger_20_2sigma ---
+  n=4009 (long=2104, short=1905)
+  Net mean R (EXEC_0): total=+0.1384, long=+0.1214 (t=+6.26), short=+0.1571 (t=+5.83)
+  Delay-1 short mean R: +0.0062 (t=+0.23)
+  Skew: 3.02, hit rate: 47.9%
+
+--- Range_expansion_1.5 ---
+  n=3996 (long=1656, short=2340)
+  Net mean R (EXEC_0): total=-1.0586, long=-1.0605 (t=-1489.03), short=-1.0572 (t=-2156.61)
+  Delay-1 short mean R: -0.0342 (t=-1.28)
+  Skew: -2.46, hit rate: 0.0%
+
+==============================================================================================================
+PHASE 1 SUMMARY TABLE
+==============================================================================================================
+            variant  n_total  n_long  n_short  mean_R_total  mean_R_long  mean_R_short  t_stat_total  t_stat_long  t_stat_short  mean_R_short_delay1  t_stat_short_delay1   skew
+          ORB_30min     3945    2121     1824         0.144        0.155         0.131         9.824        8.354         5.765               -0.035               -1.560  1.544
+          ORB_15min     4010    2085     1925         0.214        0.236         0.190        11.448        9.920         6.296               -0.016               -0.554  1.671
+          ORB_60min     3732    2059     1673         0.094        0.106         0.078         8.659        8.130         4.568               -0.035               -1.857  1.235
+        Donchian_20     3978    2232     1746         0.114        0.100         0.131         8.803        6.905         6.063                0.007                0.325  2.371
+        Donchian_60     1848    1103      745         0.048        0.030         0.073         7.524        4.414         6.564               -0.001               -0.112  0.372
+   Vol_break_1.5ATR      574     235      339         0.037        0.046         0.030         4.735        4.250         2.848               -0.018               -1.653  0.446
+            PDH_PDL     3439    2034     1405         0.245        0.239         0.253        21.644       18.301        13.972               -0.027               -1.532  1.837
+Bollinger_20_2sigma     4009    2104     1905         0.138        0.121         0.157         8.695        6.263         5.831                0.006                0.227  3.024
+Range_expansion_1.5     3996    1656     2340        -1.059       -1.061        -1.057     -2618.091    -1489.030     -2156.609               -0.034               -1.275 -2.455
+
+==============================================================================================================
+TWO-SIDED filter (L25): short leg mean_R_net ≥ -0.02 AND short t-stat > -1
+==============================================================================================================
+
+Survivors: 8/9
+            variant  mean_R_total  mean_R_long  mean_R_short  t_stat_total  t_stat_short  n_total
+          ORB_30min         0.144        0.155         0.131         9.824         5.765     3945
+          ORB_15min         0.214        0.236         0.190        11.448         6.296     4010
+          ORB_60min         0.094        0.106         0.078         8.659         4.568     3732
+        Donchian_20         0.114        0.100         0.131         8.803         6.063     3978
+        Donchian_60         0.048        0.030         0.073         7.524         6.564     1848
+   Vol_break_1.5ATR         0.037        0.046         0.030         4.735         2.848      574
+            PDH_PDL         0.245        0.239         0.253        21.644        13.972     3439
+Bollinger_20_2sigma         0.138        0.121         0.157         8.695         5.831     4009
+
+Saved trade datasets for 8 survivors

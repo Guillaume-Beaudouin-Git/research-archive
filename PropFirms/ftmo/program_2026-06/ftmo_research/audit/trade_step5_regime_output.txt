@@ -1,0 +1,21 @@
+==============================================================================================================
+STEP 5 — Decomposition by fold (regime). F1 = time_to_break ≤ in-sample median.
+==============================================================================================================
+                       fold  n_baseline  n_filtered  retention_pct  mean_R_baseline  mean_R_filtered  delta_mean_R  max_dd_baseline_pct  max_dd_filtered_pct  p_funded_baseline_pct  p_funded_filtered_pct  cens_base_pct  cens_filt_pct
+fold1_2022-01-03_2022-10-18         613         307          50.08             0.18             0.56          0.38                -4.85                -2.07                 100.00                  100.0          35.92          39.32
+fold2_2022-10-19_2023-08-04         611         315          51.55             0.06             0.39          0.34               -11.04                -2.74                  35.16                  100.0          55.83          49.03
+fold3_2023-08-07_2024-05-23         610         301          49.34            -0.01             0.23          0.25               -15.10                -5.67                   0.00                  100.0          83.01          19.90
+fold4_2024-05-24_2025-03-11         610         326          53.44             0.17             0.48          0.31                -8.23                -2.48                 100.00                  100.0          38.35          24.27
+fold5_2025-03-12_2025-12-31         612         301          49.18             0.13             0.51          0.38                -7.84                -2.77                 100.00                  100.0          53.59          34.45
+
+
+LEGEND:
+  fold1 = 2022 H1-H2 (Russia war, bear trending)
+  fold2 = late 2022 → 2023 (CHOP fold)
+  fold3 = late 2023 → 2024 (chop tail + trending)
+  fold4 = 2024 (trending)
+  fold5 = 2025 (trending)
+
+The chop fold is where slow_bust dominates. If the filter reduces DD here 
+AND lifts p_funded, it's attacking the right mechanism. But beware N≈1: 
+the filter is fitted on 2022-25 which contains this single chop episode.

@@ -1,0 +1,54 @@
+Loading NQ 5-min...
+Total trades: 4013
+Date range: 2010-06-07 00:00:00 -> 2026-05-29 00:00:00
+
+Direction balance:
+breakout_dir
+ 1    2156
+-1    1857
+
+Mean R baseline (EXEC_LEVEL vs EXEC_NEXTOPEN):
+       r_exec_level  r_exec_nextopen
+count     4013.0000        4012.0000
+mean         0.0058          -0.0105
+std          1.2020           1.1784
+min         -1.6667          -2.4206
+25%         -1.0200          -0.9779
+50%         -0.2500          -0.2506
+75%          0.7279           0.6935
+max         13.6207          12.6897
+
+Mean R by direction (EXEC_NEXTOPEN):
+breakout_dir
+-1   -0.0340
+ 1    0.0097
+Name: r_exec_nextopen, dtype: float64
+
+== ttb sanity ==
+  ttb_correct vs ttb_buggy mismatch: 751 trades
+  Of those, by direction: {-1: 751}
+
+Feature availability (% non-null):
+  or_range_atr_ratio       : 99.5%
+  gap_abs                  : 100.0%
+  gap_pct                  : 100.0%
+  dist_twap_at_break_R     : 100.0%
+  dist_vwap_at_break_R     : 100.0%
+  time_to_break_5min       : 100.0%
+  time_to_break_buggy      : 100.0%
+  or_touches               : 100.0%
+  or_vol_5m_std            : 100.0%
+  or_vol_total             : 100.0%
+  or_vol_ratio_20d         : 99.5%
+  or_vol_skew              : 100.0%
+  or_vol_concord           : 100.0%
+  dist_to_pdh_R            : 100.0%
+  dist_to_pdl_R            : 100.0%
+  overnight_range_ratio    : 99.6%
+  prior_day_return         : 100.0%
+  gap_concord              : 99.6%
+  prior_day_concord        : 99.7%
+  vol_pre_break            : 100.0%
+  pre_break_range_R        : 100.0%
+
+Saved -> <HOME>/Desktop/Algo_claude/data/ftmo_research/audit/trade_dataset_nq.parquet (4013 rows)

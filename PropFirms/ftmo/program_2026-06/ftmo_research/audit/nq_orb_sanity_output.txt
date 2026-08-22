@@ -1,0 +1,47 @@
+==========================================================================================
+NQ ORB backtest sanity check — 2010-2026, single sleeve (US cash open)
+==========================================================================================
+
+Loaded 310,416 5-min RTH bars across 310416 days
+Date range: 2010-06-07 13:30:00+00:00 -> 2026-05-29 19:55:00+00:00
+Sample bars per day at start: [78, 78, 78, 78, 78]
+Sample bars per day later   : [42, 78, 78, 78, 78]
+
+--- EXEC_0 (cost=3 pts CFD) ---
+  Total trades: 4013
+  Date range: 2010-06-07 -> 2026-05-29
+  Mean R: -0.0811
+  Median R: -0.3333
+  Hit rate: 41.32%
+  Mean R by regime:
+    2010-12_recovery         : n= 644, meanR=-0.219, hit=37.4%
+    2013-14_qe_trend         : n= 488, meanR=-0.252, hit=36.9%
+    2015-16_china_chop       : n= 379, meanR=-0.226, hit=35.4%
+    2016H2-17_trend          : n= 379, meanR=-0.106, hit=39.3%
+    2018_vol_shock           : n= 252, meanR=-0.063, hit=37.7%
+    2019_dovish_pivot        : n= 249, meanR=-0.060, hit=42.6%
+    2020_covid               : n= 254, meanR=-0.050, hit=42.5%
+    2021_recovery            : n= 253, meanR=+0.026, hit=48.2%
+    2022_bear                : n= 253, meanR=+0.092, hit=47.4%
+    2023_chop                : n= 251, meanR=+0.081, hit=45.8%
+    2024-26_bull             : n= 611, meanR=+0.095, hit=47.1%
+
+--- EXEC_NEXT_OPEN (cost=3 pts CFD) ---
+  Total trades: 3955
+  Date range: 2010-06-07 -> 2026-05-29
+  Mean R: -0.1078
+  Median R: -0.2169
+  Hit rate: 43.19%
+  Mean R by regime:
+    2010-12_recovery         : n= 637, meanR=-0.260, hit=37.4%
+    2013-14_qe_trend         : n= 485, meanR=-0.275, hit=39.0%
+    2015-16_china_chop       : n= 373, meanR=-0.211, hit=38.9%
+    2016H2-17_trend          : n= 371, meanR=-0.158, hit=39.6%
+    2018_vol_shock           : n= 247, meanR=-0.069, hit=40.5%
+    2019_dovish_pivot        : n= 243, meanR=-0.096, hit=43.2%
+    2020_covid               : n= 253, meanR=-0.088, hit=43.5%
+    2021_recovery            : n= 245, meanR=+0.009, hit=50.6%
+    2022_bear                : n= 249, meanR=+0.093, hit=51.8%
+    2023_chop                : n= 248, meanR=+0.026, hit=49.6%
+    2024-26_bull             : n= 604, meanR=+0.067, hit=49.3%
+

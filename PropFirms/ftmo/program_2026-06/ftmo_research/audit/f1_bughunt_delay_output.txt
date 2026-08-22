@@ -1,0 +1,39 @@
+===============================================================================================
+Comparing 4 exec models on F1 filter (ttb ≤ q0.5)
+===============================================================================================
+
+Extracting EXEC_0...
+
+Extracting EXEC_DELAY_1...
+
+Extracting EXEC_DELAY_2...
+
+Extracting EXEC_NEXT_OPEN...
+
+===============================================================================================
+BUG HUNT — execution model effect on F1
+===============================================================================================
+                n_total    n_F1  retention  threshold  mean_R_baseline  std_R_baseline  mean_R_F1  std_R_F1  delta_mean_R  hit_rate_baseline  hit_rate_F1  top10_pct_baseline
+EXEC_0           3056.0  1550.0     50.720        1.0            0.103           1.537      0.436     1.659         0.333             41.754       52.968               1.982
+EXEC_DELAY_1     3036.0  1534.0     50.527        1.0            0.081           1.510      0.420     1.626         0.339             41.041       52.738               1.924
+EXEC_DELAY_2     2982.0  1495.0     50.134        1.0            0.070           1.480      0.398     1.599         0.328             41.482       53.712               1.847
+EXEC_NEXT_OPEN   3037.0  1682.0     55.384        4.0            0.058           1.543      0.355     1.683         0.297             44.090       53.092               1.901
+
+===============================================================================================
+Delta F1 vs baseline by exec model
+===============================================================================================
+
+  EXEC_0 (BUGGY same-bar at level):
+     baseline meanR = +0.103, F1 meanR = +0.436, ratio = 4.22× baseline
+
+  EXEC_DELAY_1:
+     baseline meanR = +0.081, F1 meanR = +0.420, ratio = 5.17× baseline
+     F1 collapse vs EXEC_0: 96.4% of original F1 effect
+
+  EXEC_DELAY_2:
+     baseline meanR = +0.070, F1 meanR = +0.398, ratio = 5.66× baseline
+     F1 collapse vs EXEC_0: 91.4% of original F1 effect
+
+  EXEC_NEXT_OPEN:
+     baseline meanR = +0.058, F1 meanR = +0.355, ratio = 6.17× baseline
+     F1 collapse vs EXEC_0: 81.4% of original F1 effect

@@ -1,0 +1,13 @@
+dimension,report,replication,our_mtm_sharpe,tag
+expR index,"+0.028 [+0.019,+0.039] sig","+0.0150 [-0.0075,+0.0379]",0.214,WEAKER-BUT-DIRECTIONALLY-CONSISTENT
+expR commodity,"+0.059 [+0.038,+0.082] sig","+0.0380 [+0.0008,+0.0755]",0.429,REPLICATED
+expR crypto,"+0.086 [+0.040,+0.156] sig","+0.0963 [+0.0206,+0.1842]",0.905,REPLICATED
+expR fx,"+0.012 [-0.015,+0.040] NS","+0.0122 [+0.0001,+0.0244]",0.305,"REPLICATED (neg-control: weakest class, decays OOS)"
+MTM Sharpe (portfolio),0.7 real / 0.96 proxy,"0.439 (deployable, 7 inst)",,WEAKER (breadth 7<<21; not directly comparable)
+Covered alpha t (mkt+TSMOM),5.4 proxy / 4.0 real,"t=2.58, alpha 1.4%/yr, beta_mkt=-0.0383, beta_tsmom=0.058",,"WEAKER-BUT-CONSISTENT (sig, market-neutral)"
+Hook contribution,"placebo 0.0235, hook +~40%","placebo 0.0159, hook +45.2%",,REPLICATED
+Anti-look-ahead (truncation),0 trades changed,0 genuine disagreements / 2293 common (2 straddling=expected),,REPLICATED
+Entry-delay robustness,Sharpe 1.78/1.53/1.49/1.58/1.68 (stable→rises),expR 0.037/0.029/0.029/0.033/0.044 (stable→rises),,REPLICATED (no collapse → no entry-bar leak)
+Cost robustness +0/3/6/10bps,0.04/0.037/0.033/0.028,0.0291/0.0255/0.0219/0.0171 (real spread),,REPLICATED (positive at +10bps)
+Sub-period 2019-2026 (recent),still alive (Sharpe ~1.05),"idx expR 0.0233, comm 0.0414, crypto 0.0972 (all+); fx -0.0089 (neg)",,REPLICATED (deployable alive recent; FX dead)
+Daily boundary EET vs UTC,(deployment = EET server day),deployable Sharpe 0.439 EET / 0.488 UTC,,ROBUST (sign+ordering stable; crypto magnitude ~25% boundary-sensitive)
