@@ -1,0 +1,18 @@
+{
+  "n_trials": 48,
+  "cells_net_sharpe_gt_0p5": 0,
+  "cells_gross_cost_ge3": 0,
+  "cells_twosided_and_sharpe": 0,
+  "best_net_sharpe": 0.45757670523788296,
+  "best": {
+    "sym": "XAUUSD",
+    "band": 2.5,
+    "adx": 25,
+    "amp_k": 8.0,
+    "net_sharpe": 0.45757670523788296,
+    "gross_cost_ratio": 2.5709193857281596,
+    "n_trades": 1428,
+    "short_bps": 0.8573403213277934,
+    "two_sided": true
+  }
+}

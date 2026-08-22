@@ -1,0 +1,127 @@
+{
+  "downloaded_at": "2026-06-05T22:59:47.678901+00:00",
+  "tickers": {
+    "ES=F": {
+      "rows": 6493,
+      "start": "2000-09-18",
+      "end": "2026-06-05"
+    },
+    "NQ=F": {
+      "rows": 6493,
+      "start": "2000-09-18",
+      "end": "2026-06-05"
+    },
+    "YM=F": {
+      "rows": 6084,
+      "start": "2002-04-05",
+      "end": "2026-06-05"
+    },
+    "RTY=F": {
+      "rows": 2243,
+      "start": "2017-07-10",
+      "end": "2026-06-05"
+    },
+    "ZT=F": {
+      "rows": 6521,
+      "start": "2000-06-02",
+      "end": "2026-06-05"
+    },
+    "ZF=F": {
+      "rows": 6467,
+      "start": "2000-09-21",
+      "end": "2026-06-05"
+    },
+    "ZN=F": {
+      "rows": 6455,
+      "start": "2000-09-21",
+      "end": "2026-06-05"
+    },
+    "ZB=F": {
+      "rows": 6461,
+      "start": "2000-09-21",
+      "end": "2026-06-05"
+    },
+    "6E=F": {
+      "rows": 6495,
+      "start": "2000-09-12",
+      "end": "2026-06-05"
+    },
+    "6J=F": {
+      "rows": 6418,
+      "start": "2000-09-13",
+      "end": "2026-06-05"
+    },
+    "6B=F": {
+      "rows": 6409,
+      "start": "2000-10-05",
+      "end": "2026-06-05"
+    },
+    "6A=F": {
+      "rows": 6398,
+      "start": "2000-11-08",
+      "end": "2026-06-05"
+    },
+    "6C=F": {
+      "rows": 6515,
+      "start": "2000-05-23",
+      "end": "2026-06-05"
+    },
+    "6S=F": {
+      "rows": 6403,
+      "start": "2000-11-10",
+      "end": "2026-06-05"
+    },
+    "CL=F": {
+      "rows": 6474,
+      "start": "2000-08-23",
+      "end": "2026-06-05"
+    },
+    "NG=F": {
+      "rows": 6471,
+      "start": "2000-08-30",
+      "end": "2026-06-05"
+    },
+    "GC=F": {
+      "rows": 6465,
+      "start": "2000-08-30",
+      "end": "2026-06-05"
+    },
+    "SI=F": {
+      "rows": 6467,
+      "start": "2000-08-30",
+      "end": "2026-06-05"
+    },
+    "HG=F": {
+      "rows": 6470,
+      "start": "2000-08-30",
+      "end": "2026-06-05"
+    },
+    "ZC=F": {
+      "rows": 6477,
+      "start": "2000-07-17",
+      "end": "2026-06-05"
+    },
+    "ZW=F": {
+      "rows": 6489,
+      "start": "2000-07-17",
+      "end": "2026-06-05"
+    },
+    "ZS=F": {
+      "rows": 6469,
+      "start": "2000-09-15",
+      "end": "2026-06-05"
+    },
+    "KC=F": {
+      "rows": 6625,
+      "start": "2000-01-03",
+      "end": "2026-06-05"
+    },
+    "SB=F": {
+      "rows": 6588,
+      "start": "2000-03-01",
+      "end": "2026-06-05"
+    }
+  },
+  "dtb3_error": "HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",
+  "aqr_error": "AQR TSMOM download failed: https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Time-Series-Momentum-Factor-Monthly.xlsx: Excel file format cannot be determined, you must specify an engine manually."
+}

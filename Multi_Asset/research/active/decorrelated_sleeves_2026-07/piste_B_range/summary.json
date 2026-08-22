@@ -1,0 +1,10 @@
+{
+  "n_trials": 56,
+  "gross_two_sided_pos": 8,
+  "causal_gross_sharpe_median": -0.0642952404859386,
+  "oracle_gross_sharpe_median": 2.6565122456849783,
+  "cells_gross_cost_ratio_ge3": 0,
+  "best_net_sharpe": 0.5737255684238507,
+  "n_two_sided_and_costgate": 0,
+  "best_qualifying": null
+}
