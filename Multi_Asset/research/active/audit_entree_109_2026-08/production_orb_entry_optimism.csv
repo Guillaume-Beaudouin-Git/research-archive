@@ -1,0 +1,17 @@
+quantity,value,unit,source,note
+gross_mean_R_zero_cost,0.0492,R/trade,orb_cost_funded_2026-08/RESULTS.md Table 1 (t=2.74 N=4013),
+leverage_median,195,entry/risk_distance,orb_cost_funded_2026-08/PREREGISTRATION.md,1bps RT = lev*1e-4 = 0.0195 R
+entry_slippage_live_fills,2.169,bps,orb_cost_funded_2026-08/RESULTS.md Section 3 (N=12 live FTMO fills; OTHER BROKER per Amendement n1),measured on a different broker than FTMO (L33 violation flagged in Amendement n1) -- decomposition (entry vs exit split) not yet re-measured natively at FTMO
+exit_slippage_live_fills,-0.374,bps,orb_cost_funded_2026-08/RESULTS.md Section 3 (N=12),small FAVORABLE contribution
+total_RT_live_fills,1.795,bps,orb_cost_funded_2026-08/RESULTS.md Section 3,matches independent spread-cache measurement (1.804bps) to 0.5%
+entry_only_cost_in_R,0.0423,R/trade,derived (2.169 * 0.0195),= 86.0% of the ENTIRE gross edge (0.0492R) consumed by the entry leg alone
+total_RT_cost_in_R_other_broker,0.0350,R/trade,derived (1.795 * 0.0195),= 71.1% of gross edge
+entry_share_of_total_RT,120.8,pct,derived (2.169/1.795),exit is a small net credit so entry alone exceeds 100% of the total
+native_FTMO_total_RT_cost_range,"0.962-1.045",bps,orb_cost_funded_2026-08/PREREGISTRATION.md AMENDEMENT n1 (2026-08-21) -- passive spread logger N>13000 rows n~3280/symbol,corrects the 1.80bps other-broker figure used in the frozen R2 test (L33 violation)
+entry_only_cost_deduced_native_FTMO,"1.162-1.263",bps,DEDUCED (ratio-transfer: native_total * entry_share_of_total_RT_other_broker),NOT directly measured at FTMO -- assumes the entry/exit SPLIT observed on the other broker transfers; labeled [D]
+entry_only_cost_deduced_native_FTMO_in_R,"0.0227-0.0246",R/trade,derived,= 46.1-50.0% of gross edge
+R2_threshold_bps,0.588,bps,orb_cost_funded_2026-08/RESULTS.md (t HAC = 2.0 crossing),
+breakeven_mean_bps,2.189,bps,orb_cost_funded_2026-08/RESULTS.md,
+t_at_1.80bps_other_broker,0.48,t-stat,orb_cost_funded_2026-08/RESULTS.md Table 1,ORB_KILL under frozen R2 rule
+t_at_0.94bps_native_FTMO,1.56,t-stat,orb_cost_funded_2026-08/PREREGISTRATION.md AMENDEMENT n1,still < 2.0 threshold -- ORB_KILL stands
+sleeve_share_of_funded_EV,57,pct (approx),orb_cost_funded_2026-08/PREREGISTRATION.md AMENDEMENT n1 Section 3,cited verbatim ("~57% de la valeur funded simulee")

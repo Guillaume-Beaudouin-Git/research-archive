@@ -1,0 +1,88 @@
+==============================================================================
+1. TRAJECTOIRE $ SUR UN COMPTE FUNDED ($10 000, plancher STATIQUE $9 000,
+   perte quotidienne max 5% = $500). Sizing en % d'equite, gains RETIRES
+   => trajectoire ARITHMETIQUE (le buffer ne grandit jamais, cf. MEMORY).
+==============================================================================
+on_us100       eq_min=$  9958.34  eq_fin=$ 12412.00  DD_max=$ -536.04 ( -5.36%)  pire_jour=$-104.23  jours<-5%: 0
+on_ger40       eq_min=$  9915.04  eq_fin=$ 11517.57  DD_max=$ -241.28 ( -2.41%)  pire_jour=$-100.81  jours<-5%: 0
+orb            eq_min=$  7813.42  eq_fin=$ 11740.90  DD_max=$-2407.22 (-24.07%)  pire_jour=$ -57.28  jours<-5%: 0
+portefeuille   eq_min=$  8745.45  eq_fin=$ 15670.48  DD_max=$-1660.19 (-16.60%)  pire_jour=$-160.71  jours<-5%: 0
+
+Note : la trajectoire ci-dessus IGNORE le breaker M5 et le plancher (elle
+mesure le signal, pas le compte). Un compte funded reel serait TERMINE a la
+premiere touche de $9 000.
+portefeuille : seances sous $9 000 = 93 / 3299 ; premiere le 2015-09-03
+
+==============================================================================
+2. DECOUPAGE ANNUEL (rendement en % d'equite, somme arithmetique)
+==============================================================================
+      on_us100  on_ger40    orb  portefeuille  bh_us100  bh_ger40  N_on  N_ger40
+date                                                                            
+2013     -0.29     -0.48  -0.08         -0.85      4.02      3.79    28       28
+2014      2.36      2.00  -6.77         -2.41      6.43      1.28   104      104
+2015      1.50      2.57  -8.76         -4.69      3.40      4.03   104      104
+2016      0.02      1.09  -2.06         -0.96      2.18      3.18   104      104
+2017      1.22      1.36   1.53          4.11      9.77      4.30   104      104
+2018      2.63      0.81   0.12          3.56      0.44     -6.47   103       55
+2019      3.22      0.04   0.53          3.79     11.72      8.32   104       10
+2020     11.96      0.00  -1.07         10.89     15.61      0.00   104        0
+2021     -1.19     -0.09   3.44          2.16      9.05      6.76   104        1
+2022      3.32      1.77   7.39         12.48    -12.19     -3.74   104      104
+2023     -1.02     -0.68   6.68          4.98     15.57      6.99   103      103
+2024     -1.89      0.78  10.53          9.42      8.37      6.08   105      105
+2025     -0.48      2.73   4.04          6.29      7.33      8.14   104      104
+2026      2.78      3.28   1.87          7.93      4.91      0.26    44       44
+
+Stabilite : moyenne mensuelle du portefeuille par sous-periode
+  2013-2017:   -9.07 $/mois  t_HAC6(journalier)=-0.42  N=1111
+  2018-2021:   41.27 $/mois  t_HAC6(journalier)= 2.16  N=1038
+  2022-2026:   75.06 $/mois  t_HAC6(journalier)= 3.29  N=1150
+
+==============================================================================
+3. TEST DE TIMING (le coeur de la question beta-vs-alpha)
+   Sur les MEMES jours ON, comparer la fenetre tenue au buy-and-hold 24h
+   couvrant le meme intervalle, AU MEME NOTIONNEL. Prix bruts, sans cout :
+   si la fenetre ne bat pas le 24h, il n'y a pas de timing, juste moins de beta.
+==============================================================================
+US100: N=1316
+   fenetre tenue         8.04 bps/jour-ON  t_HAC6= 4.39  vol=   73.8 bps
+   24h meme intervalle  11.58 bps/jour-ON  t_HAC6= 3.68  vol=  126.3 bps
+   DIFFERENCE           -3.54 bps          t_HAC6=-1.28   => PAS de timing significatif
+   part de la variance 24h captee par la fenetre :  34.1%  ; corr(fenetre,24h)=0.422
+GER40: N=970
+   fenetre tenue         6.82 bps/jour-ON  t_HAC6= 3.83  vol=   60.1 bps
+   24h meme intervalle   8.12 bps/jour-ON  t_HAC6= 2.57  vol=  109.8 bps
+   DIFFERENCE           -1.30 bps          t_HAC6=-0.43   => PAS de timing significatif
+   part de la variance 24h captee par la fenetre :  29.9%  ; corr(fenetre,24h)=0.275
+
+==============================================================================
+4. BOOTSTRAP PAR BLOCS (blocs de 21 seances, 5 000 tirages) — IC95 sur la
+   moyenne journaliere, convertie en $/mois. Jamais d'iid (clusters de trades).
+==============================================================================
+on_us100       vie   moy=   15.35 $/mois  IC95=[    5.57,    26.37]  t_HAC6= 2.81  exclut zero
+on_us100       2ans  moy=   14.34 $/mois  IC95=[  -11.28,    40.99]  t_HAC6= 0.97  contient zero
+on_ger40       vie   moy=    9.66 $/mois  IC95=[    2.61,    17.60]  t_HAC6= 2.44  exclut zero
+on_ger40       2ans  moy=   26.88 $/mois  IC95=[    0.71,    59.12]  t_HAC6= 1.99  exclut zero
+orb            vie   moy=   11.08 $/mois  IC95=[   -8.57,    30.56]  t_HAC6= 1.10  contient zero
+orb            2ans  moy=   55.00 $/mois  IC95=[    9.57,   114.40]  t_HAC6= 2.13  exclut zero
+portefeuille   vie   moy=   36.10 $/mois  IC95=[   12.34,    59.56]  t_HAC6= 2.90  exclut zero
+portefeuille   2ans  moy=   96.22 $/mois  IC95=[   28.05,   176.26]  t_HAC6= 2.69  exclut zero
+
+==============================================================================
+5. GER40 : sous-echantillon SANS les trous de donnees 2018-2021
+==============================================================================
+jours ON total=1319 ; sans jambe GER40=349 (26.5%)
+  par annee : {2018: 48, 2019: 94, 2020: 104, 2021: 103}
+on_ger40 hors 2018-2021 :   13.38 $/mois  t_HAC6= 2.37  IC95=[3.00, 24.39]  N=2261
+on_ger40 tout l'echantillon :    9.66 $/mois  t_HAC6= 2.44
+
+==============================================================================
+6. SENSIBILITE AU COUT (le gate qui a tue toutes les familles precedentes)
+==============================================================================
+on_us100: gross/trade =   8.04 bps de notionnel ; cout RT mesure = 1.045 bps ; swap/nuit = 1.756 bps
+   ratio gross/cout_total =  2.87  (gate L11b : > 3 requis ; gate pre-vol L43 : > 1.5)
+   cout total qui annule l'edge : 8.04 bps/trade (actuel 2.80, marge x2.87)
+on_ger40: gross/trade =   6.82 bps de notionnel ; cout RT mesure = 1.017 bps ; swap/nuit = 1.335 bps
+   ratio gross/cout_total =  2.90  (gate L11b : > 3 requis ; gate pre-vol L43 : > 1.5)
+   cout total qui annule l'edge : 6.82 bps/trade (actuel 2.35, marge x2.90)
+orb   : net/trade = 0.55 bps d'equite (ledger deja coste, era)

@@ -1,0 +1,8 @@
+{
+  "aqr_blob": "<HOME>/Desktop/Algo_claude/data/mtf_survey/raw/aqr_tsmom_original_paper.xlsx",
+  "aqr_sheets": [
+    "TSMOM factors",
+    "Disclosures"
+  ],
+  "dtb3_error": "('Connection aborted.', TimeoutError(60, 'Operation timed out'))"
+}
