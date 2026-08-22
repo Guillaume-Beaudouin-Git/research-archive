@@ -20,6 +20,13 @@
     "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
+  "0a75c476af61325cd531a451602efab6": {
+    "first_seen": "2026-08-21 06:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/20/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0b1f130bb9657595581827ba75425fbc": {
     "first_seen": "2026-08-07 06:00",
     "source": "quantocracy",
@@ -52,6 +59,13 @@
     "first_seen": "2026-08-04 06:00",
     "source": "quantocracy",
     "title": "Supertrend, flipped to death: the most-taught indicator on the internet [The Ref",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "22e7007456d0aff7ce839040470c5173": {
+    "first_seen": "2026-08-21 06:30",
+    "source": "quantocracy",
+    "title": "Sectoral Intramonth Momentum Cycle: Exploiting Turn-of-the-Month Patterns in Sec",
     "decision": "accepted",
     "promising_file": null
   },
@@ -139,6 +153,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "4663fb238ea4472042ee8ec6b382c768": {
+    "first_seen": "2026-08-21 06:30",
+    "source": "quantocracy",
+    "title": "Model-Based or Data-Mined: Lotter’s Framing of the Whole Problem [Aligrithm]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "5019d5313d1f23b480eccbefb8cecaa6": {
     "first_seen": "2026-08-10 06:00",
     "source": "quantocracy",
@@ -178,6 +199,13 @@
     "first_seen": "2026-08-06 06:00",
     "source": "quantocracy",
     "title": "The Signal Ceiling: Why No Single-Bar OHLCV Edge Beats Costs in MNQ [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "8c209a5ca5fda026f9a8d4e35313d003": {
+    "first_seen": "2026-08-21 06:30",
+    "source": "quantocracy",
+    "title": "Momentum Mini-Portfolio Development – Part 2: USA Pullback Momentum [TradeQuanti",
     "decision": "accepted",
     "promising_file": null
   },
@@ -244,6 +272,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "d265c3c4a8a0276dfc7ca7522bbf1afd": {
+    "first_seen": "2026-08-21 06:30",
+    "source": "quantocracy",
+    "title": "Two Strategies Past 80 Meaningless Versions of Themselves. Control Group Told Th",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "d50b9f3fce307f5e9287bc23660429bf": {
     "first_seen": "2026-08-17 06:30",
     "source": "quantocracy",
@@ -263,6 +298,13 @@
     "source": "quantocracy",
     "title": "Quick 5 ETF Rotational Strategy Returns the Upside of Stocks with Half the Risk ",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "e59f4eac0be7e162975d72be81d63f86": {
+    "first_seen": "2026-08-21 06:30",
+    "source": "quantocracy",
+    "title": "Metaheuristics for Rule Optimization     With Diversity as the Guardrail [Aligri",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "e6c887abbcf287b05b13c4cfab6677bf": {
