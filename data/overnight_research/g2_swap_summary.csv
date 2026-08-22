@@ -1,0 +1,15 @@
+,value
+swap_long_points,-662.4
+swap_short_points,28.58
+digits,2
+contract_size,1.0
+point_size_implied,0.01
+ref_price_used,21500
+swap_long_bps_1x,-3.0809302325581394
+swap_long_bps_3x,-9.242790697674419
+swap_3x_day,Friday
+convention_A_assumption,Fri-night→Mon-open is 3x (CFD industry-standard)
+convention_B_assumption,Thu-night→Fri-open is 3x (dossier interpretation)
+midweek_net_bps_mean,4.98456976744186
+all_nights_net_bps_convA,0.5668976744186046
+all_nights_net_bps_convB,0.5668976744186051

@@ -1,0 +1,163 @@
+================================================================================
+LOADING SLEEVES
+================================================================================
+LONGVOL_VXX:  n=2094  2018-01-26 → 2026-05-27  mean=-10.0bp std=465bp skew=+1.86
+LONG_US500:   n=8098  2000-01-04 → 2026-05-28
+VIXTERM:      n=3871  2011-01-04 → 2026-05-27  mean=-55.5bp std=832bp skew=+0.00
+MR_REVERSAL:  n=8097  2000-01-05 → 2026-05-28  mean=+4.31bp std=104bp skew=+0.64  ⚠ artefact délai+1
+Building Pré-FOMC sleeve (full-day proxy from nq_rth_daily)...
+  FOMC events available (2020+): 52
+PREFOMC:      n=4104  events=51  2010-06-08 → 2026-05-29
+  event-only:   mean=+29.8bp/event  skew=-0.07  hit=56.86%
+  full-series (with zeros): mean=+0.37bp/day  std=20bp
+  Note: 'full-day RTH NQ on FOMC' proxy (vs 'prior_close→14:00 ET' in session_3 — proxy more conservative)
+TSMOM_PROXY:  n=8037  2000-03-29 → 2026-05-28  mean=+0.42bp/day  std=69bp  skew=-0.68
+
+================================================================================
+ALIGNING ON COMMON WINDOW
+================================================================================
+<HOME>/Desktop/Algo_claude/data/skew_research/MERGE_portfolio.py:111: Pandas4Warning: Sorting by default when concatenating all DatetimeIndex is deprecated.  In the future, pandas will respect the default of `sort=False`. Specify `sort=True` or `sort=False` to silence this message. If you see this warnings when not directly calling concat, report a bug to pandas.
+  all_s = pd.concat([vxx, vixterm, mr, prefomc_sleeve, tsmom, us500], axis=1)
+Pre-join coverage by series:
+  LONGVOL_VXX         n= 2094  2018-01-26 → 2026-05-27
+  VIXTERM             n= 3871  2011-01-04 → 2026-05-27
+  MR_REVERSAL         n= 8097  2000-01-05 → 2026-05-28
+  PREFOMC             n= 4104  2010-06-08 → 2026-05-29
+  TSMOM_PROXY         n= 8037  2000-03-29 → 2026-05-28
+  LONG_US500          n= 8098  2000-01-04 → 2026-05-28
+
+*** COMMON WINDOW: n=2094 days  2018-01-26 → 2026-05-27  (8.3 years) ***
+
+================================================================================
+CORRELATION MATRIX (common window)
+================================================================================
+             LONGVOL_VXX  VIXTERM  MR_REVERSAL  PREFOMC  TSMOM_PROXY  LONG_US500
+LONGVOL_VXX        1.000   -0.357       -0.123   -0.134       -0.197      -0.748
+VIXTERM           -0.357    1.000       -0.061    0.154        0.441       0.224
+MR_REVERSAL       -0.123   -0.061        1.000    0.038       -0.068       0.184
+PREFOMC           -0.134    0.154        0.038    1.000        0.037       0.165
+TSMOM_PROXY       -0.197    0.441       -0.068    0.037        1.000       0.080
+LONG_US500        -0.748    0.224        0.184    0.165        0.080       1.000
+
+Daily skew per sleeve (common window):
+  LONGVOL_VXX         skew_daily = +1.859  std_daily =   465 bp  mean_daily = -9.99 bp
+  VIXTERM             skew_daily = +0.333  std_daily =   879 bp  mean_daily = -61.73 bp
+  MR_REVERSAL         skew_daily = +0.793  std_daily =   107 bp  mean_daily = +3.47 bp
+  PREFOMC             skew_daily = +2.611  std_daily =    28 bp  mean_daily = +0.73 bp
+  TSMOM_PROXY         skew_daily = -0.862  std_daily =    86 bp  mean_daily = +1.08 bp
+  LONG_US500          skew_daily = -0.347  std_daily =   122 bp  mean_daily = +5.40 bp
+
+Skew at HOLDING HORIZON (event/trade-level for event sleeves; weekly for daily continuous):
+  LONGVOL_VXX  — daily holding, daily skew already correct
+  VIXTERM      — daily rebalance, daily skew correct
+  MR_REVERSAL  — daily (1-day), daily correct ⚠ artefact délai+1
+  PREFOMC      — per-event (~7 events/yr): skew on event-only series:
+    n=51  skew_per_event = -0.065  mean_per_event = +29.8 bp
+  TSMOM_PROXY  — held positions ~1-3 months; resample to monthly:
+    n_months=101  skew_monthly = -0.583
+
+================================================================================
+CANDIDATE PORTFOLIOS — simple weights only (ERC + inverse-vol)
+================================================================================
+
+Portfolio                          AnnRet   AnnVol   Sharpe    MaxDD   WorstDay   WorstMon   Skew_d   Skew_m
+P1_TSMOM_only                      +2.72%  +13.68%     0.20  -33.61%     -6.29%    -10.04%    -0.86    -0.58
+  weights: {'TSMOM_PROXY': 1.0}
+P2_TSMOM+FOMC                      +2.05%   +4.89%     0.42  -10.52%     -4.08%     -4.01%    -0.48    -0.36
+  weights: {'TSMOM_PROXY': 0.24822378770261028, 'PREFOMC': 0.7517762122973898}
+P3_TSMOM+VXX_invol                 -1.65%  +14.62%    -0.11  -43.32%     -6.24%     -7.96%    +1.22    +0.70
+  weights: {'TSMOM_PROXY': 0.8436839925482522, 'LONGVOL_VXX': 0.15631600745174787}
+P3b_TSMOM+VXX_10pct                -0.07%  +13.05%    -0.01  -34.72%     -5.28%     -8.43%    +0.61    +0.09
+  weights: {'TSMOM_PROXY': 0.9, 'LONGVOL_VXX': 0.1}
+P4_triple_invol                    +0.85%   +5.04%     0.17  -13.81%     -3.16%     -3.35%    +0.83    -0.10
+  weights: {'TSMOM_PROXY': 0.2373098178673261, 'PREFOMC': 0.7187219148836064, 'LONGVOL_VXX': 0.043968267249067564}
+P4b_TSMOM+FOMC+VXX_80_10_10        -0.16%  +11.92%    -0.01  -31.58%     -4.92%     -7.46%    +0.75    +0.17
+  weights: {'TSMOM_PROXY': 0.8, 'PREFOMC': 0.1, 'LONGVOL_VXX': 0.1}
+
+================================================================================
+TAIL-HEDGE DECISIVE TEST — long-vol VXX
+================================================================================
+
+  Définition 'krach' : LONG_US500 ≤ p5 = -1.79% (n=105 days, 5.0%)
+  VXX mean return:
+    on crash days:   +10.674%/day  (105 days)
+    on normal days:  -0.669%/day  (1989 days)
+    overall:         -0.100%/day  (the theta bleed)
+
+  TSMOM_PROXY mean return:
+    on crash days:   -0.170%/day
+    on normal days:  +0.020%/day
+
+  IMPACT of adding 10% VXX to TSMOM:
+    Annual return drag/lift: -2.79%/year   (negative = pure cost)
+    Contribution to total over 8.3 years: -23.18%
+    MaxDD TSMOM only: -33.61%  →  MaxDD TSMOM+10%VXX: -34.72%   (DD réduit de 1.11pp)
+    Worst day TSMOM only: -6.29%  →  Worst day TSMOM+10%VXX: -5.28%
+
+  Décomposition cost/benefit (10% VXX overlay):
+    Annual theta cost (full year):                   +2.52%/year
+    Annual benefit on crash days (excess over norm): +14.30%/year
+    Net = benefit − cost:                            +11.78%/year
+    → if net ≤ 0: tail-hedge plombe le portefeuille (assurance trop chère)
+    → if net > 0: tail-hedge rentable même hors-stress
+
+================================================================================
+FTMO 2-step MC — portfolio vs TSMOM only
+================================================================================
+
+Portfolio                         lev   p_funded    p1_pass
+-----------------------------------------------------------------
+P1_TSMOM_only                     1.0      39.8%      55.8%
+P1_TSMOM_only                     2.0      33.7%      50.4%
+P1_TSMOM_only                     3.0      28.6%      46.2%
+P1_TSMOM_only                     5.0      18.7%      37.4%
+
+P2_TSMOM+FOMC                     1.0      59.7%      68.2%
+P2_TSMOM+FOMC                     2.0      49.1%      64.3%
+P2_TSMOM+FOMC                     3.0      39.9%      56.4%
+P2_TSMOM+FOMC                     5.0      38.0%      54.8%
+
+P3_TSMOM+VXX_invol                1.0      26.1%      42.9%
+P3_TSMOM+VXX_invol                2.0      25.0%      42.5%
+P3_TSMOM+VXX_invol                3.0      19.9%      37.5%
+P3_TSMOM+VXX_invol                5.0      18.4%      36.9%
+
+P3b_TSMOM+VXX_10pct               1.0      34.0%      49.9%
+P3b_TSMOM+VXX_10pct               2.0      30.0%      48.6%
+P3b_TSMOM+VXX_10pct               3.0      25.1%      43.5%
+P3b_TSMOM+VXX_10pct               5.0      20.1%      39.6%
+
+P4_triple_invol                   1.0      34.9%      48.3%
+P4_triple_invol                   2.0      39.4%      56.2%
+P4_triple_invol                   3.0      35.4%      52.5%
+P4_triple_invol                   5.0      33.0%      51.2%
+
+P4b_TSMOM+FOMC+VXX_80_10_10       1.0      33.5%      50.5%
+P4b_TSMOM+FOMC+VXX_80_10_10       2.0      29.1%      46.9%
+P4b_TSMOM+FOMC+VXX_80_10_10       3.0      26.3%      45.0%
+P4b_TSMOM+FOMC+VXX_80_10_10       5.0      21.2%      39.1%
+
+
+Saved → MERGE_ppass.csv + MERGE_portfolio_returns.csv + MERGE_correlations.csv
+
+================================================================================
+PRÉ-FOMC — corrélations sur full window vs 2023-2026 (test décay)
+================================================================================
+  Full common: PRÉ-FOMC corrs vs others:
+LONGVOL_VXX   -0.134
+VIXTERM        0.154
+MR_REVERSAL    0.038
+PREFOMC        1.000
+TSMOM_PROXY    0.037
+LONG_US500     0.165
+  2023+ (852 days): PRÉ-FOMC corrs vs others:
+LONGVOL_VXX   -0.147
+VIXTERM        0.245
+MR_REVERSAL    0.059
+PREFOMC        1.000
+TSMOM_PROXY    0.185
+LONG_US500     0.188
+
+  PRÉ-FOMC event-only mean (bp/event):
+    Full: n=51  mean=+29.8 bp
+    2023+: n=27  mean=+6.1 bp

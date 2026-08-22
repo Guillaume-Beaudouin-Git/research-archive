@@ -1,0 +1,67 @@
+Loading parquet ...
+
+Days after RTH grouping: 4105
+First trading day: 2010-06-07 00:00:00  bars=390  2010-06-07 09:30:00-04:00 → 2010-06-07 15:59:00-04:00
+Last  trading day: 2026-05-29 00:00:00  bars=390  2026-05-29 09:30:00-04:00 → 2026-05-29 15:59:00-04:00
+Bars per day median=390  min=41  max=390
+
+=== INVARIANT (a) close[t-1] = veille via shift(1) ===
+  i=50  date=2010-08-17  o=1833.00  pc=1820.75
+         prev_close (date 2010-08-16) = 1820.75  match_prev=True
+         next_close (date 2010-08-18) = 1850.75  not_next=True
+  i=500  date=2012-05-15  o=2595.75  pc=2587.25
+         prev_close (date 2012-05-14) = 2587.25  match_prev=True
+         next_close (date 2012-05-16) = 2560.75  not_next=True
+  i=2000  date=2018-04-03  o=6456.75  pc=6399.50
+         prev_close (date 2018-04-02) = 6399.50  match_prev=True
+         next_close (date 2018-04-04) = 6568.75  not_next=True
+✓ (a) close[t-1] is veille, NOT j+1
+
+=== INVARIANT (b) weekday = OPEN day t (not previous day) ===
+  date=2010-06-08  cur=Tuesday(wd=1)  prev_date_dow=Monday  o=1801.50  pc(=prev close)=1797.25
+  date=2010-06-15  cur=Tuesday(wd=1)  prev_date_dow=Monday  o=1855.25  pc(=prev close)=1845.25
+  date=2010-06-22  cur=Tuesday(wd=1)  prev_date_dow=Monday  o=1902.50  pc(=prev close)=1894.75
+✓ (b) Tue-open day has wd==1, previous close is from Monday
+
+=== INVARIANT (c) 'Tue-open = Mon-night hold' ===
+  Tue open day:  2012-05-08  (open=2617.75)
+  Held overnight: bought at close of 2012-05-07 (Monday, c=2635.75)
+  Sold at open of 2012-05-08 (Tuesday, o=2617.75)
+  ov_bps = (o/pc-1)*1e4 = (2617.75/2635.75-1)*1e4 = -68.29 bps
+✓ (c) Mardi-open ov = (Tue open / Mon close - 1)
+
+=== CANONICAL: weekday = OPEN day, pc = shift(1) ===
+
+--- OVERNIGHT (canonical) (bps) ---
+wd         n      mean    t_HAC6   IN<2019  OOS≥2019
+Mon      816     3.178      1.09     3.643     2.649
+Tue      828     7.441      2.50     5.287     9.907
+Wed      825     8.690      3.31     7.923     9.574
+Thu      824     2.936      0.97     4.187     1.502
+Fri      811     2.156      0.94     3.272     0.865
+ALL     4104     4.895      4.45     4.872     4.922
+
+--- INTRADAY (canonical) (bps) ---
+wd         n      mean    t_HAC6   IN<2019  OOS≥2019
+Mon      816     7.960      2.50    -0.444    17.507
+Tue      828     4.077      1.25     8.388    -0.860
+Wed      825     3.435      1.00     1.133     6.091
+Thu      824    -0.802     -0.21     0.680    -2.501
+Fri      811    -0.604     -0.18    -2.567     1.667
+ALL     4104     2.815      1.97     1.458     4.372
+
+overnight positive years: 15/17  worst -8.91 best 11.95
+
+=== FALSIFICATION PROBE: WRONG mapping (pc=shift(-1)) — should NOT replicate ===
+  shift(-1) overnight ALL = -7.945 bps  t=-2.65  → contaminated by look-ahead
+
+=== FALSIFICATION PROBE: SHIFTED weekday label (Mon-open mislabeled as Tue) ===
+shifted_wd        n      mean    t_HAC6
+Mon             828     7.441      2.50
+Tue             825     8.690      3.31
+Wed             824     2.936      0.97
+Thu             811     2.156      0.94
+Fri             816     3.178      1.09
+  ↑ If we mislabel, Tue/Wed peaks slide to Mon/Tue → confirms mapping matters.
+
+Saved: data/overnight_research/nq_rth_daily.parquet
