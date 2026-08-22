@@ -160,6 +160,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4a8a3d087c33dab2255f4d35b4f18352": {
+    "first_seen": "2026-08-22 13:30",
+    "source": "github_python",
+    "title": "browser-use/browser-harness",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "514e57c3a5005ef773b10b06cfef964d": {
     "first_seen": "2026-08-15 11:00",
     "source": "github_python",
@@ -185,6 +192,13 @@
     "first_seen": "2026-08-03 11:00",
     "source": "github_python",
     "title": "kovidgoyal/calibre",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5e3fbd5b1295e3df72fb855d5e5f09e8": {
+    "first_seen": "2026-08-22 13:30",
+    "source": "github_python",
+    "title": "anthropics/claude-plugins-community",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -346,6 +360,13 @@
     "first_seen": "2026-08-13 11:30",
     "source": "github_python",
     "title": "NVIDIA-NeMo/Automodel",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c381d1411a7abe950acdba91604fdc94": {
+    "first_seen": "2026-08-22 13:30",
+    "source": "github_python",
+    "title": "shy3130/tickflow-stock-panel",
     "decision": "rejected_L0",
     "promising_file": null
   },
