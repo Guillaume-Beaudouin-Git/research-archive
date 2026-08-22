@@ -126,6 +126,47 @@ trailing DD) et reste correct dans son périmètre.
 
 ---
 
+## Scaling Plan — LE SEUL canal de compounding
+
+> ✓ **Source primaire ftmo.com, relevée par l'opérateur le 2026-08-20** (verbatim FR) :
+> _« Le plan de scaling de FTMO est un programme incitatif basé sur la performance qui récompense
+> la régularité des traders en augmentant le solde de leur compte de 25 % tous les 4 mois. Pour
+> bénéficier de cette croissance, le trader doit remplir trois conditions principales sur une
+> période de 4 mois consécutifs : générer au moins 10 % de profit net simulé au-dessus du solde
+> initial, avoir fait traiter au moins deux retraits de récompenses, et conserver un solde de
+> compte positif au moment du passage au palier supérieur. En remplissant ces critères avec succès,
+> un trader peut faire évoluer progressivement la taille de son compte jusqu'à atteindre une
+> allocation maximale de 2 000 000 $ tous comptes FTMO confondus. Ce plan d'évolution permet
+> également aux traders de maximiser leurs gains en atteignant un ratio de récompense où ils
+> conservent 90 % de leurs profits simulés. »_
+
+| paramètre | valeur |
+|---|---|
+| Croissance | **+25 % du solde tous les 4 mois** |
+| Condition 1 | **≥ 10 % de profit net** sur 4 mois consécutifs |
+| Condition 2 | **≥ 2 retraits traités** sur la période |
+| Condition 3 | solde positif au moment du passage |
+| **Allocation MAXIMALE** | **$2 000 000 tous comptes FTMO confondus** |
+| Split au palier haut | **90 %** (contre 80 % au départ) |
+
+### ⚠ Ce que ça implique pour NOTRE livre — la condition 1 est éliminatoire
+
+| | chiffre |
+|---|---|
+| Production mesurée du livre déployé | médiane **$1 046 sur 2 ANS** ⇒ **~1.7 % par période de 4 mois** |
+| Même livre à `on_w 0.60` (+44 %) | **~2.5 % / 4 mois** |
+| **Exigence du plan** | **10 % / 4 mois** ⇒ il faudrait **~30 %/an** |
+| ⇒ éligibilité | **hors d'atteinte d'un facteur ~4 à 6** |
+
+**Conséquence stratégique** : le scaling plan est inaccessible **par le sizing**. Aucun réglage de
+`vm` ou de `on_w` ne comble un facteur 4-6 — et les monter dégrade la survie bien avant
+(cf. sweeps). **La seule voie vers le scaling est une amélioration du PORTEFEUILLE** :
+des moteurs supplémentaires réellement productifs, pas un re-réglage de ceux qui existent.
+
+**Ce que ça NE change pas** : l'allocation max de $2M n'est PAS une contrainte pour nous — on est
+à $10k. Et elle n'autorise toujours pas plusieurs comptes pilotés par le **même EA**
+(interdit, `rules.md` §Prohibited, *group strategies sharing identical EA*).
+
 ## Leverage — by asset class
 
 | Asset class | Standard (Normal) | Swing | Source |
