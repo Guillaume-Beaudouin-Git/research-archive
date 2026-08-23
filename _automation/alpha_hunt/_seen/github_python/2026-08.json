@@ -475,6 +475,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "fc737d38abd351a8ee743cd68271599f": {
+    "first_seen": "2026-08-23 11:30",
+    "source": "github_python",
+    "title": "davepoon/buildwithclaude",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "fd0b3c9553518ec9ae445e310cc6dbe7": {
     "first_seen": "2026-08-01 11:30",
     "source": "github_python",
