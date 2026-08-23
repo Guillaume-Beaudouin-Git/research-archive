@@ -426,6 +426,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "eba6f89f313ab1a6bd3bda18e4f76be7": {
+    "first_seen": "2026-08-23 05:00",
+    "source": "github_python",
+    "title": "shy3130/tick-stock-panel",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ebf2af1f1918e87e6b382c3a6ccdd90c": {
     "first_seen": "2026-08-06 11:30",
     "source": "github_python",
