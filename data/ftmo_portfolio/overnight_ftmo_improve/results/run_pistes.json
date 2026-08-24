@@ -1,0 +1,194 @@
+{
+  "book_only_survive252": 0.9791,
+  "PISTE1": {
+    "gold_full": {
+      "label": "gold_full",
+      "n": 3962,
+      "sharpe": 1.01,
+      "maxdd": -15.9,
+      "worst_low": -4.0,
+      "dsr160": 0.905,
+      "mean_bp": 2.58,
+      "frac_traded": 1.0
+    },
+    "gold_overlay": {
+      "label": "gold_overlay",
+      "n": 2047,
+      "sharpe": 0.88,
+      "maxdd": -15.4,
+      "worst_low": -2.9,
+      "dsr160": 0.431,
+      "mean_bp": 2.26,
+      "frac_traded": 0.517
+    },
+    "gate_frac_on": 0.517,
+    "funded_gold_full_K1.0": {
+      "survive252": 0.4764,
+      "d_surv": -0.5026,
+      "fundedV": 1549.0,
+      "K": 1.0
+    },
+    "funded_gold_full_K2.0": {
+      "survive252": 0.3927,
+      "d_surv": -0.5864,
+      "fundedV": 718.0,
+      "K": 2.0
+    },
+    "funded_gold_overlay_K1.0": {
+      "survive252": 0.5707,
+      "d_surv": -0.4084,
+      "fundedV": 1348.0,
+      "K": 1.0
+    },
+    "funded_gold_overlay_K2.0": {
+      "survive252": 0.4241,
+      "d_surv": -0.555,
+      "fundedV": 489.0,
+      "K": 2.0
+    },
+    "chal_gold_full": {
+      "p_pass": 0.039,
+      "attempts": 1.06,
+      "p_bust": 0.052,
+      "K": 2.0
+    },
+    "chal_gold_overlay": {
+      "p_pass": 0.0,
+      "attempts": 1.04,
+      "p_bust": 0.034,
+      "K": 2.0
+    }
+  },
+  "PISTE2": {
+    "beta_silver_gold": 1.065,
+    "spread": {
+      "label": "spread",
+      "n": 2547,
+      "sharpe": -0.99,
+      "maxdd": -57.7,
+      "worst_low": -4.6,
+      "dsr160": 0.0,
+      "mean_bp": -2.84,
+      "frac_traded": 1.0
+    },
+    "silver_solo": {
+      "label": "silver_solo",
+      "n": 2508,
+      "sharpe": 1.01,
+      "maxdd": -14.7,
+      "worst_low": -6.7,
+      "dsr160": 0.686,
+      "mean_bp": 3.71,
+      "frac_traded": 1.0
+    },
+    "corr_spread_goldtrend": 0.023,
+    "funded_spread_K1": {
+      "survive252": 0.1623,
+      "d_surv": -0.8168,
+      "fundedV": 341.0,
+      "K": 1.0
+    },
+    "funded_silver_solo_K1": {
+      "survive252": 0.4555,
+      "d_surv": -0.5236,
+      "fundedV": 1289.0,
+      "K": 1.0
+    },
+    "chal_spread": {
+      "p_pass": 0.032,
+      "attempts": 1.29,
+      "p_bust": 0.29,
+      "K": 2.0
+    }
+  },
+  "PISTE3": {
+    "GOLD_full": {
+      "label": "GOLD_full",
+      "n": 3962,
+      "sharpe": 1.01,
+      "maxdd": -15.9,
+      "worst_low": -4.0,
+      "dsr160": 0.905,
+      "mean_bp": 2.58,
+      "frac_traded": 1.0
+    },
+    "GOLD_early05": {
+      "label": "GOLD_early05",
+      "n": 3962,
+      "sharpe": 0.39,
+      "maxdd": -21.8,
+      "worst_low": -3.2,
+      "dsr160": 0.125,
+      "mean_bp": 0.83,
+      "frac_traded": 1.0
+    },
+    "funded_GOLD_full_K1": {
+      "survive252": 0.4764,
+      "d_surv": -0.5026,
+      "fundedV": 1549.0,
+      "K": 1.0
+    },
+    "funded_GOLD_early05_K1": {
+      "survive252": 0.3822,
+      "d_surv": -0.5969,
+      "fundedV": 1063.0,
+      "K": 1.0
+    },
+    "chal_GOLD_full": {
+      "p_pass": 0.039,
+      "attempts": 1.06,
+      "p_bust": 0.052,
+      "K": 2.0
+    },
+    "chal_GOLD_early05": {
+      "p_pass": 0.004,
+      "attempts": 1.07,
+      "p_bust": 0.067,
+      "K": 2.0
+    },
+    "WTI_full": {
+      "label": "WTI_full",
+      "n": 2661,
+      "sharpe": 0.61,
+      "maxdd": -19.5,
+      "worst_low": -7.1,
+      "dsr160": 0.237,
+      "mean_bp": 1.98,
+      "frac_traded": 1.0
+    },
+    "WTI_early05": {
+      "label": "WTI_early05",
+      "n": 2661,
+      "sharpe": 0.52,
+      "maxdd": -17.7,
+      "worst_low": -7.0,
+      "dsr160": 0.156,
+      "mean_bp": 1.6,
+      "frac_traded": 1.0
+    },
+    "funded_WTI_full_K1": {
+      "survive252": 0.4817,
+      "d_surv": -0.4974,
+      "fundedV": 1667.0,
+      "K": 1.0
+    },
+    "funded_WTI_early05_K1": {
+      "survive252": 0.4764,
+      "d_surv": -0.5026,
+      "fundedV": 1391.0,
+      "K": 1.0
+    },
+    "chal_WTI_full": {
+      "p_pass": 0.084,
+      "attempts": 1.31,
+      "p_bust": 0.244,
+      "K": 2.0
+    },
+    "chal_WTI_early05": {
+      "p_pass": 0.041,
+      "attempts": 1.27,
+      "p_bust": 0.209,
+      "K": 2.0
+    }
+  }
+}
