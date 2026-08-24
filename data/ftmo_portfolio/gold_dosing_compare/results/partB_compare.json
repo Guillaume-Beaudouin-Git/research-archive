@@ -1,0 +1,85 @@
+{
+  "standalone": {
+    "ortrend": {
+      "sharpe_full": 0.3,
+      "sharpe_active": 0.4,
+      "ann_ret_pct": 2.52,
+      "maxdd_pct": -30.4,
+      "skew": 0.12,
+      "active_pct": 56.9
+    },
+    "asia": {
+      "sharpe_full": 1.14,
+      "sharpe_active": 1.14,
+      "ann_ret_pct": 7.76,
+      "maxdd_pct": -19.0,
+      "skew": 0.41,
+      "active_pct": 99.2
+    }
+  },
+  "correlation": {
+    "full_bothactive": {
+      "n": 2854,
+      "pearson": 0.107,
+      "spearman": 0.103
+    },
+    "all_days": {
+      "pearson": 0.084
+    },
+    "IS_2013_19": {
+      "n": 1786,
+      "pearson": 0.037,
+      "spearman": 0.034
+    },
+    "OOS_2020_26": {
+      "n": 1068,
+      "pearson": 0.226,
+      "spearman": 0.221
+    },
+    "regime_2018_19": {
+      "n": 271,
+      "pearson": 0.011,
+      "spearman": -0.052
+    }
+  },
+  "temporal": {
+    "2018_19_ASIAdead": {
+      "n": 512,
+      "ortrend_ann": 5.4,
+      "asia_ann": -7.7,
+      "ortrend_sharpe": 0.68,
+      "asia_sharpe": -1.22,
+      "asia_pos_frac": 0.457
+    },
+    "ortrend_OFF": {
+      "n": 2164,
+      "ortrend_ann": 0.0,
+      "asia_ann": 8.8,
+      "ortrend_sharpe": NaN,
+      "asia_sharpe": 1.36,
+      "asia_pos_frac": 0.517
+    },
+    "ortrend_ON": {
+      "n": 2854,
+      "ortrend_ann": 4.4,
+      "asia_ann": 7.0,
+      "ortrend_sharpe": 0.4,
+      "asia_sharpe": 0.98,
+      "asia_pos_frac": 0.529
+    }
+  },
+  "hypothetical_swap": {
+    "book[or-trend] std": {
+      "challenge": 0.8701,
+      "funded_survive252": 0.9791
+    },
+    "book[ASIA replaces or-trend]": {
+      "challenge": 0.8095,
+      "funded_survive252": 0.7225
+    },
+    "book[BOTH or-trend+ASIA]": {
+      "challenge": 0.8745,
+      "funded_survive252": 0.6545
+    }
+  }
+}
