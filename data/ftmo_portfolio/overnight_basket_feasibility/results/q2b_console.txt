@@ -1,0 +1,16 @@
+
+=== canonical_2013-17+2020-24  (n=191 cohorts) ===
+  book_only: survive252 97.9%  fundedV $1442
+  book+B3 K=1.0: survive252 60.7% (Δ-37.2)  fundedV $1769
+  book+B3 K=2.0: survive252 48.2% (Δ-49.7)  fundedV $1694
+  book+B4 K=1.0: survive252 71.2% (Δ-26.7)  fundedV $2245
+  book+B4 K=2.0: survive252 52.4% (Δ-45.5)  fundedV $961
+
+=== soyfavorable_2018-2024  (n=132 cohorts) ===
+  book_only: survive252 100.0%  fundedV $2144
+  book+B3 K=1.0: survive252 84.8% (Δ-15.2)  fundedV $2696
+  book+B3 K=2.0: survive252 78.0% (Δ-22.0)  fundedV $2610
+  book+B4 K=1.0: survive252 93.2% (Δ-6.8)  fundedV $3518
+  book+B4 K=2.0: survive252 71.2% (Δ-28.8)  fundedV $1737
+
+written q2b_funded_windows.json

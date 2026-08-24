@@ -1,0 +1,19 @@
+=== (a) swap-free timing (rollover 21:00 summer / 22:00 winter UTC) ===
+  GOLD     23:00->07:00 UTC  crosses rollover? summer False / winter False  -> swap-free True
+  SILVER   23:00->07:00 UTC  crosses rollover? summer False / winter False  -> swap-free True
+  WTI      23:00->07:00 UTC  crosses rollover? summer False / winter False  -> swap-free True
+  SOYBEAN  01:00->07:00 UTC  crosses rollover? summer False / winter False  -> swap-free True
+
+=== (b) swap counterfactual (if a leg were NOT swap-free, -3.5 bp/night) ===
+  GOLD     gross 5.00 bp/day -> if swap -3.5: +1.50 bp  survives
+  SILVER   gross 5.30 bp/day -> if swap -3.5: +1.80 bp  survives
+  WTI      gross 3.51 bp/day -> if swap -3.5: +0.01 bp  DEAD (edge wiped)
+  SOYBEAN  gross 5.92 bp/day -> if swap -3.5: +2.42 bp  survives
+  => WTI (thinnest, 3.51bp) is wiped by a 3.5bp swap; swap-free is LOAD-BEARING for WTI.
+
+=== (c) margin footprint (basket margin / equity), assumed Swing rates ===
+  B3: margin/equity  K1.0: 0.10  K2.0: 0.21  K3.0: 0.31
+  B4: margin/equity  K1.0: 0.10  K2.0: 0.20  K3.0: 0.31
+  book live already holds XAU (or-trend, continuous Swing) + GER40 overnight (Mon/Tue, 17:35->09:00) during 23:00-07:00 UT...
+
+written q4_basket.json
