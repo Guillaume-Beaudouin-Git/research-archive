@@ -1,0 +1,12 @@
+=== (a) basket maxDD: report -3.5% vs realistic ===
+  report-style (gross/winsor/inv-vol/common 1627d): maxDD -3.5%  (claim -3.5)
+  realistic B3 (net2bp/eq-wt/full 3962d): maxDD(close) -7.7%  worst intraday-low -2.67%
+  realistic B4 (net2bp/eq-wt/full 4337d): maxDD(close) -5.8%  worst intraday-low -2.57%
+  MC maxDD B3 (raw net): median -8.3%  5th-worst -13.3%  1st-worst -15.9%
+
+=== (b) effective bets + common-factor stress ===
+  PC1 46%  eigs [46.0, 25.0, 19.0, 10.0]  N_eff 3.15/4  avg corr 0.26  GOLD-SILVER 0.58
+  vol diversification ratio 1.50x | common-down days 11.4% (basket -43.2bp)
+  basket worst day -168bp vs mean-sleeve-worst-day -221bp (if √N-diversified, basket worst << sleeve worst)
+
+written q3_basket.json

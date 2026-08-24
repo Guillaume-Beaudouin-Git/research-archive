@@ -1,0 +1,56 @@
+{
+  "canonical_2013-17+2020-24": {
+    "book_only": {
+      "survive252": 0.9791,
+      "fundedV": 1442.0
+    },
+    "n": 191,
+    "B3_K1.0": {
+      "survive252": 0.6073,
+      "d_surv": -0.3717,
+      "fundedV": 1769.0
+    },
+    "B3_K2.0": {
+      "survive252": 0.4817,
+      "d_surv": -0.4974,
+      "fundedV": 1694.0
+    },
+    "B4_K1.0": {
+      "survive252": 0.712,
+      "d_surv": -0.267,
+      "fundedV": 2245.0
+    },
+    "B4_K2.0": {
+      "survive252": 0.5236,
+      "d_surv": -0.4555,
+      "fundedV": 961.0
+    }
+  },
+  "soyfavorable_2018-2024": {
+    "book_only": {
+      "survive252": 1.0,
+      "fundedV": 2144.0
+    },
+    "n": 132,
+    "B3_K1.0": {
+      "survive252": 0.8485,
+      "d_surv": -0.1515,
+      "fundedV": 2696.0
+    },
+    "B3_K2.0": {
+      "survive252": 0.7803,
+      "d_surv": -0.2197,
+      "fundedV": 2610.0
+    },
+    "B4_K1.0": {
+      "survive252": 0.9318,
+      "d_surv": -0.0682,
+      "fundedV": 3518.0
+    },
+    "B4_K2.0": {
+      "survive252": 0.7121,
+      "d_surv": -0.2879,
+      "fundedV": 1737.0
+    }
+  }
+}
