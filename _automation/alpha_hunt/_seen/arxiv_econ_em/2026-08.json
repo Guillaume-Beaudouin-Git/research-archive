@@ -202,6 +202,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "5e55f86c5d9b1c87f03ff3cfa2b3b3ee": {
+    "first_seen": "2026-08-24 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Across-Design Uncertainty in Short Pricing Panels: Evidence from Simulated Price",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "5ec9086d8c08d2b0eaac30638f244c3b": {
     "first_seen": "2026-08-06 03:30",
     "source": "arxiv_econ_em",
@@ -433,6 +440,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "b35cd25664a927ae8d6d2ec64de49a7e": {
+    "first_seen": "2026-08-24 02:00",
+    "source": "arxiv_econ_em",
+    "title": "A Privacy Budgeting Framework for Online Experimentation",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b4fafbc35efa33ccf3b747fc91c57a5d": {
     "first_seen": "2026-08-06 03:30",
     "source": "arxiv_econ_em",
@@ -640,6 +654,13 @@
     "first_seen": "2026-08-04 03:30",
     "source": "arxiv_econ_em",
     "title": "A Structural Matrix Autoregression Framework for International Spillovers",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f8c1c5c52cda5531e5d854a97f048859": {
+    "first_seen": "2026-08-24 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Candidate Set Size and Voting Behavior: A Front-Door Approach to Causal Moderati",
     "decision": "rejected_L0",
     "promising_file": null
   }
