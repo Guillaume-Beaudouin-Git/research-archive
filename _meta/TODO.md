@@ -1,6 +1,7 @@
-# TODO — état au 2026-08-22
+# TODO — état au 2026-08-24
 
-Consolidé après la session du 17-22 août. Chaque entrée porte : qui fait, quel effort, quel
+Consolidé après la session du 17-24 août. Le nettoyage du dépôt est **terminé** ; ce qui
+reste est de la recherche, de la dette de méthode, et deux gestes opérateur. Chaque entrée porte : qui fait, quel effort, quel
 critère de fin. Classé par urgence réelle, pas par facilité.
 
 ---
@@ -29,6 +30,7 @@ critère de fin. Classé par urgence réelle, pas par facilité.
 
 | # | tâche | pourquoi |
 |---|---|---|
+| 7bis | ✅ **FAIT** — trou de réconciliation ORB (PR #435). Le sleeve funded n'était modélisé **nulle part** : `replay.py` ne simulait que le micro-ORB (`micro_orb: false` en FUNDED) et le filtre `reason.startswith("micro")` de `reconcile.py` excluait `funded_orb_*` par construction. **Les 4 jours du compte funded étaient aveugles** ; 3 « OK » étaient des faux négatifs passés sous tolérance par chance. Correctif + 3 tests. | — | — |
 | 7 | **Graver L61-L63** dans le registre : (a) le sizing dépendant du chemin fabrique du t positif sur du bruit, invisible au HAC ; (b) un placebo bloc-bootstrap fabrique une géométrie de barres inexistante — 10× trop d'ambiguïté intra-barre ; (c) une mesure empruntée est acceptable si la marge au seuil dépasse l'erreur plausible de la source, sinon non. | trois artefacts mesurés cette semaine, aucun encore dans le registre |
 | 8 | **Auditer la résolution des jours à double touche du ledger ORB** — 4 013 jours, 1 direction/jour, mais on ignore comment les journées où les deux niveaux étaient touchés ont été tranchées. Le corpus 109 les score « assume loser » (le pire cas) ; le ledger funded a `entry == level` 4013/4013 (le meilleur cas). Le verdict R2 et le point mort à 1.94 bps reposent dessus. | inconnue neuve, jamais auditée |
 | 9 | **Mesure native du coût COPPER** — seul des 4 commodités dont la marge (×27) n'est pas hors d'atteinte d'une erreur de source. NGAS/USOIL/UKOIL sont à ×179-780, hors de portée. | ferme proprement le kill énergie |
@@ -37,19 +39,28 @@ critère de fin. Classé par urgence réelle, pas par facilité.
 
 ---
 
-## 🟢 Nettoyage du dépôt — reste à faire
+## ✅ Nettoyage du dépôt — TERMINÉ (2026-08-22 → 24)
 
-Fait : **442 → 67** branches distantes, **99 → 64** locales, **7 → 0** PR ouvertes, README réécrit,
-journal de mai archivé dans `docs/`.
+| | départ | final |
+|---|---|---|
+| branches distantes | 448 | **17** |
+| branches locales | 99 | 22 |
+| PR ouvertes | 7 | **0** |
+| fichiers non suivis | 846 | **0** |
+
+Fait : 460 branches supprimées avec preuve de contenu · 3 035 fichiers triés (1 899 commités,
+1 001 gitignorés, 135 supprimés) · README racine réécrit (l'ancien, 138 Ko et périmé de trois
+mois, archivé dans `docs/`) · `docs/ARCHITECTURE.md` + `docs/RESEARCH_METHOD.md` · 11 README de
+dossier · **19 branches non mergées remontées** (PR #434), dont ZN Baltussen que `CLAUDE.md`
+citait comme actif alors que `main` n'en contenait aucun fichier · **4 incohérences de vérité
+corrigées** (PR #433).
+
+**Reste, non bloquant :**
 
 | # | tâche | risque |
 |---|---|---|
-| 12 | **26 branches à PR fermée non mergée** + **37 sans aucune PR** — à juger une par une. Une branche sans PR peut porter du travail jamais remonté. | faible, mais irréversible |
-| 13 | **846 fichiers non suivis** (509 `Multi_Asset`, 188 `PropFirms`, 115 `data`) — trier : les **rapports markdown** ont vocation à être commités, les **caches régénérables** à être gitignorés. C'est le premier obstacle à la lisibilité. | faible |
-| 14 | **Revue du `.gitignore`** (85 lignes) une fois le tri fait. | nul |
-| 15 | **Restructuration de la racine** (25+ dossiers) — ⚠ **DIFFÉRÉ**. Le VPS pull `main` toutes les 30 min et des pins référencent des chemins absolus : déplacer `ftmo_live/`, `data/ftmo_portfolio/v22/`, `Portfolio/` ou `strategies/` **casse la production**. À ne faire qu'avec un plan de déploiement coordonné. | **ÉLEVÉ** |
-
----
+| 12 | **Restructuration de la racine** (25+ dossiers) — ⚠ **DIFFÉRÉ**. Le VPS pull `main` toutes les 30 min et des pins référencent des chemins absolus : déplacer `ftmo_live/`, `data/ftmo_portfolio/v22/`, `Portfolio/` ou `strategies/` **casse la production**. Exige un plan de déploiement coordonné. | **ÉLEVÉ** |
+| 13 | 3 worktrees encore montés (`_fixdoctruth`, `_rescue`, `_reconcile`) + un `stash@{0}` devenu redondant. Nettoyage cosmétique. | nul |
 
 ## 🔵 Projets futurs — par ordre d'espérance
 
