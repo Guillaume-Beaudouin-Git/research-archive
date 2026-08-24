@@ -1,0 +1,101 @@
+{
+  "n_tests": 691,
+  "candidates": [
+    {
+      "id": "P4.3_SPY_NR4",
+      "phase": "4.3",
+      "description": "SPY NR4 squeeze breakout",
+      "params": {
+        "ticker": "SPY",
+        "nr": 4
+      },
+      "sr_is": 2.2782988499073116,
+      "mdd_is": -0.07590492272413218,
+      "sr_oos": 1.839498595869058,
+      "mdd_oos": -0.045724820542295985,
+      "sr_hold": 1.1776554148454055,
+      "mdd_hold": -0.05192559224214055,
+      "n_tests_at_eval": 668
+    },
+    {
+      "id": "P4.3_SPY_NR7",
+      "phase": "4.3",
+      "description": "SPY NR7 squeeze breakout",
+      "params": {
+        "ticker": "SPY",
+        "nr": 7
+      },
+      "sr_is": 1.8034662449912469,
+      "mdd_is": -0.045132570831037055,
+      "sr_oos": 0.8140197344877586,
+      "mdd_oos": -0.06473555221645466,
+      "sr_hold": 1.1796793125044511,
+      "mdd_hold": -0.03253766713240125,
+      "n_tests_at_eval": 669
+    },
+    {
+      "id": "P4.3_QQQ_NR4",
+      "phase": "4.3",
+      "description": "QQQ NR4 squeeze breakout",
+      "params": {
+        "ticker": "QQQ",
+        "nr": 4
+      },
+      "sr_is": 2.642770610850501,
+      "mdd_is": -0.0666379939924795,
+      "sr_oos": 2.0874807802392374,
+      "mdd_oos": -0.07930765448121524,
+      "sr_hold": 1.159971385078904,
+      "mdd_hold": -0.05295090928763624,
+      "n_tests_at_eval": 672
+    },
+    {
+      "id": "P4.3_QQQ_NR7",
+      "phase": "4.3",
+      "description": "QQQ NR7 squeeze breakout",
+      "params": {
+        "ticker": "QQQ",
+        "nr": 7
+      },
+      "sr_is": 1.9906212085579915,
+      "mdd_is": -0.05304295587517849,
+      "sr_oos": 1.3959827502029658,
+      "mdd_oos": -0.03683204878020019,
+      "sr_hold": 1.0386098722283406,
+      "mdd_hold": -0.05029764226381761,
+      "n_tests_at_eval": 673
+    },
+    {
+      "id": "P4.3_IWM_NR4",
+      "phase": "4.3",
+      "description": "IWM NR4 squeeze breakout",
+      "params": {
+        "ticker": "IWM",
+        "nr": 4
+      },
+      "sr_is": 2.6326060965872475,
+      "mdd_is": -0.05384373882053295,
+      "sr_oos": 2.22278962457568,
+      "mdd_oos": -0.040367379167494666,
+      "sr_hold": 1.1812401629706624,
+      "mdd_hold": -0.04956180952930023,
+      "n_tests_at_eval": 676
+    },
+    {
+      "id": "P4.3_IWM_NR7",
+      "phase": "4.3",
+      "description": "IWM NR7 squeeze breakout",
+      "params": {
+        "ticker": "IWM",
+        "nr": 7
+      },
+      "sr_is": 2.0536515387082503,
+      "mdd_is": -0.042855022771219664,
+      "sr_oos": 1.4074094341498455,
+      "mdd_oos": -0.038012851396263314,
+      "sr_hold": 0.6154648708380309,
+      "mdd_hold": -0.06388478376232187,
+      "n_tests_at_eval": 677
+    }
+  ]
+}

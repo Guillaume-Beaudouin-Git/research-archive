@@ -1,0 +1,167 @@
+{
+  "n_tests": 763,
+  "candidates": [
+    {
+      "id": "P6_GBM_SPY_d3_lr5",
+      "phase": "6",
+      "description": "ML P6_GBM_SPY_d3_lr5 SPY",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.05
+      },
+      "sr_is": 3.7224360591620647,
+      "mdd_is": -0.07508761629346061,
+      "sr_oos": 0.03641668859405382,
+      "mdd_oos": -0.3321409775105518,
+      "sr_hold": 0.42727180404717713,
+      "mdd_hold": -0.09627731438366294
+    },
+    {
+      "id": "P6_GBM_SPY_d3_lr2",
+      "phase": "6",
+      "description": "ML P6_GBM_SPY_d3_lr2 SPY",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.02
+      },
+      "sr_is": 3.4368580826602444,
+      "mdd_is": -0.08953719067684218,
+      "sr_oos": 0.11481867735678401,
+      "mdd_oos": -0.3090680607564624,
+      "sr_hold": 0.6517590399264739,
+      "mdd_hold": -0.09530434615114558
+    },
+    {
+      "id": "P6_GBM_SPY_d4_lr5",
+      "phase": "6",
+      "description": "ML P6_GBM_SPY_d4_lr5 SPY",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 4,
+        "learning_rate": 0.05
+      },
+      "sr_is": 4.9962070849296705,
+      "mdd_is": -0.05199205138678176,
+      "sr_oos": -0.006479860357204463,
+      "mdd_oos": -0.22286849599632252,
+      "sr_hold": -0.3161529628675802,
+      "mdd_hold": -0.22621050968900835
+    },
+    {
+      "id": "P6_GBM_QQQ_d3_lr5",
+      "phase": "6",
+      "description": "ML P6_GBM_QQQ_d3_lr5 QQQ",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.05
+      },
+      "sr_is": 4.274320298548668,
+      "mdd_is": -0.1002751122654042,
+      "sr_oos": 0.1274894655240382,
+      "mdd_oos": -0.31276072713330094,
+      "sr_hold": 0.755856720765107,
+      "mdd_hold": -0.2783780117060254
+    },
+    {
+      "id": "P6_GBM_QQQ_d3_lr2",
+      "phase": "6",
+      "description": "ML P6_GBM_QQQ_d3_lr2 QQQ",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.02
+      },
+      "sr_is": 3.7410210262153942,
+      "mdd_is": -0.12964468177839727,
+      "sr_oos": 0.01642261855222327,
+      "mdd_oos": -0.36168370655754833,
+      "sr_hold": 1.0303344250203998,
+      "mdd_hold": -0.2715847473045603
+    },
+    {
+      "id": "P6_GBM_QQQ_d4_lr5",
+      "phase": "6",
+      "description": "ML P6_GBM_QQQ_d4_lr5 QQQ",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 4,
+        "learning_rate": 0.05
+      },
+      "sr_is": 5.804562415483575,
+      "mdd_is": -0.07690675720209528,
+      "sr_oos": 0.5199122589938253,
+      "mdd_oos": -0.235165991652884,
+      "sr_hold": 1.2001023492323213,
+      "mdd_hold": -0.09891567805937707
+    },
+    {
+      "id": "P6_RF_SPY_d4_n100",
+      "phase": "6",
+      "description": "ML P6_RF_SPY_d4_n100 SPY",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 4,
+        "n_jobs": -1
+      },
+      "sr_is": 2.1899811093018675,
+      "mdd_is": -0.13812526501348688,
+      "sr_oos": 0.24920238723608387,
+      "mdd_oos": -0.2734652542653512,
+      "sr_hold": 0.8312839320165379,
+      "mdd_hold": -0.1869505546873006
+    },
+    {
+      "id": "P6_RF_SPY_d3_n200",
+      "phase": "6",
+      "description": "ML P6_RF_SPY_d3_n200 SPY",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "n_jobs": -1
+      },
+      "sr_is": 2.009369466041755,
+      "mdd_is": -0.17129337298454295,
+      "sr_oos": 0.3174942833832989,
+      "mdd_oos": -0.26782869856277336,
+      "sr_hold": 1.0814247304222688,
+      "mdd_hold": -0.1869505546873006
+    },
+    {
+      "id": "P6_RF_QQQ_d4_n100",
+      "phase": "6",
+      "description": "ML P6_RF_QQQ_d4_n100 QQQ",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 4,
+        "n_jobs": -1
+      },
+      "sr_is": 2.4928221473373617,
+      "mdd_is": -0.14101199290707156,
+      "sr_oos": 0.08207354379349717,
+      "mdd_oos": -0.39804321705883605,
+      "sr_hold": 0.9597413956215427,
+      "mdd_hold": -0.2497089166743146
+    },
+    {
+      "id": "P6_RF_QQQ_d3_n200",
+      "phase": "6",
+      "description": "ML P6_RF_QQQ_d3_n200 QQQ",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "n_jobs": -1
+      },
+      "sr_is": 2.224679872525461,
+      "mdd_is": -0.21074573632783922,
+      "sr_oos": 0.35245151535895947,
+      "mdd_oos": -0.3424972335943014,
+      "sr_hold": 1.0436130254237097,
+      "mdd_hold": -0.2276831359305408
+    }
+  ],
+  "oos_passes": [],
+  "hold_passes": []
+}
