@@ -1,0 +1,51 @@
+trial_id,phase,name,sharpe,cagr,maxdd,n_trades,dsr_count,notes
+1,P2,base_cash_frac,0.5001,0.0593,-0.2591,492,True,"pre-registered primary (EMA100/20bk/3ATR/0.5pyr, two-sided)"
+2,P2,base_cash_int,0.3128,0.0337,-0.291,502,False,integer-micro execution variant of base (not a new signal)
+3,P3,grid_ema50_bk10,0.3722,0.0444,-0.2926,,True,"(50, 10, 3.0, 0.5, 3, False, True)"
+4,P3,grid_ema50_bk20,0.4674,0.0554,-0.2411,,True,"(50, 20, 3.0, 0.5, 3, False, True)"
+5,P3,grid_ema50_bk40,0.5254,0.0627,-0.2107,,True,"(50, 40, 3.0, 0.5, 3, False, True)"
+6,P3,grid_ema50_bk55,0.4788,0.0567,-0.1938,,True,"(50, 55, 3.0, 0.5, 3, False, True)"
+7,P3,grid_ema100_bk10,0.3424,0.0386,-0.2651,,True,"(100, 10, 3.0, 0.5, 3, False, True)"
+8,P3,grid_ema100_bk20,0.5001,0.0593,-0.2591,,True,"(100, 20, 3.0, 0.5, 3, False, True)"
+9,P3,grid_ema100_bk40,0.52,0.0616,-0.2278,,True,"(100, 40, 3.0, 0.5, 3, False, True)"
+10,P3,grid_ema100_bk55,0.4531,0.053,-0.2106,,True,"(100, 55, 3.0, 0.5, 3, False, True)"
+11,P3,grid_ema150_bk10,0.4635,0.0541,-0.2204,,True,"(150, 10, 3.0, 0.5, 3, False, True)"
+12,P3,grid_ema150_bk20,0.517,0.0617,-0.1755,,True,"(150, 20, 3.0, 0.5, 3, False, True)"
+13,P3,grid_ema150_bk40,0.6119,0.076,-0.234,,True,"(150, 40, 3.0, 0.5, 3, False, True)"
+14,P3,grid_ema150_bk55,0.4555,0.0537,-0.2307,,True,"(150, 55, 3.0, 0.5, 3, False, True)"
+15,P3,grid_ema200_bk10,0.4958,0.0595,-0.2145,,True,"(200, 10, 3.0, 0.5, 3, False, True)"
+16,P3,grid_ema200_bk20,0.5554,0.0665,-0.2022,,True,"(200, 20, 3.0, 0.5, 3, False, True)"
+17,P3,grid_ema200_bk40,0.6577,0.0803,-0.218,,True,"(200, 40, 3.0, 0.5, 3, False, True)"
+18,P3,grid_ema200_bk55,0.4912,0.0573,-0.2353,,True,"(200, 55, 3.0, 0.5, 3, False, True)"
+19,P3,grid_stop2.0_pyr0.5,0.4358,0.0503,-0.2489,,True,"(100, 20, 2.0, 0.5, 3, False, True)"
+20,P3,grid_stop2.0_pyr1.0,0.4178,0.0465,-0.2225,,True,"(100, 20, 2.0, 1.0, 3, False, True)"
+21,P3,grid_stop3.0_pyr1.0,0.4801,0.0559,-0.2515,,True,"(100, 20, 3.0, 1.0, 3, False, True)"
+22,P3,grid_stop4.0_pyr0.5,0.1402,0.0098,-0.2693,,True,"(100, 20, 4.0, 0.5, 3, False, True)"
+23,P3,grid_stop4.0_pyr1.0,0.0904,0.0036,-0.3138,,True,"(100, 20, 4.0, 1.0, 3, False, True)"
+24,P3,no_ema_filter,0.4166,0.0492,-0.2219,,True,"(100, 20, 3.0, 0.5, 3, False, False)"
+25,P3,no_pyramid,0.2321,0.0164,-0.2027,,True,"(100, 20, 3.0, 0.5, 0, False, True)"
+26,P3,long_only,0.6821,0.067,-0.2185,,True,"(100, 20, 3.0, 0.5, 3, True, True)"
+27,P3,long_only_no_pyr,0.6691,0.0411,-0.1741,,True,"(100, 20, 3.0, 0.5, 0, True, True)"
+28,P3,base_twosided_cost_x2,0.4814,,,,False,cost stress
+29,P3,base_twosided_cost_x3,0.4727,,,,False,cost stress
+30,P3,long_only_cost_x2,0.6649,,,,False,cost stress
+31,P3,long_only_cost_x3,0.6467,,,,False,cost stress
+32,P4,H1a_long_only,0.6821,0.067,-0.2185,,True,H1 conditional short
+33,P4,H1b_short_CL_only,0.8683,0.1012,-0.1855,,True,H1 conditional short
+34,P4,H1d_half_risk_short,0.5775,0.0619,-0.2094,,True,H1 conditional short
+35,P4,H1bd_shortCL_half,0.7707,0.0785,-0.1866,,True,H1 conditional short
+36,P4,H2_voltarget_two_sided,-0.2971,,,,False,H2 re-sizing overlay
+37,P4,H2_voltarget_long_only,-0.1176,,,,False,H2 re-sizing overlay
+38,P4,H3_ens_two_sided_bk20_st2.0,0.2973,,,,True,H3 ensemble member
+39,P4,H3_ens_two_sided_bk20_st3.0,0.2851,,,,True,H3 ensemble member
+40,P4,H3_ens_two_sided_bk40_st2.0,0.4321,,,,True,H3 ensemble member
+41,P4,H3_ens_two_sided_bk40_st3.0,0.402,,,,True,H3 ensemble member
+42,P4,H3_ens_two_sided_bk55_st2.0,0.5052,,,,True,H3 ensemble member
+43,P4,H3_ens_two_sided_bk55_st3.0,0.3485,,,,True,H3 ensemble member
+44,P4,H3_ens_long_only_bk20_st2.0,0.4258,,,,True,H3 ensemble member
+45,P4,H3_ens_long_only_bk20_st3.0,0.5392,,,,True,H3 ensemble member
+46,P4,H3_ens_long_only_bk40_st2.0,0.4183,,,,True,H3 ensemble member
+47,P4,H3_ens_long_only_bk40_st3.0,0.6502,,,,True,H3 ensemble member
+48,P4,H3_ens_long_only_bk55_st2.0,0.42,,,,True,H3 ensemble member
+49,P4,H3_ens_long_only_bk55_st3.0,0.6756,,,,True,H3 ensemble member
+50,P4,crypto_short_only,0.5301,,,,False,bear-convexity ablation
