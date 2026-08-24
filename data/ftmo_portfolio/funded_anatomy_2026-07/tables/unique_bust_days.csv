@@ -1,0 +1,4 @@
+date,kind,dom_leg,daily_loss,at_open,gap_day,volpct_dom
+2015-08-24,daily,USDJPY,661.7010456591615,False,True,0.4126984126984127
+2021-01-07,daily,XAUUSD,500.1705414056159,False,False,0.0
+2023-12-07,daily,USDJPY,509.5386695740617,False,False,0.35912698412698413

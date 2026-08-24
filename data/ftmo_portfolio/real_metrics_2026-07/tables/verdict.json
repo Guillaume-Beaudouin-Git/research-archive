@@ -1,0 +1,71 @@
+{
+  "account3": {
+    "p_pass": 69.7,
+    "attempts_per_campaign": 3.29,
+    "med_t_fund": 38.0,
+    "EV": 678.0,
+    "E_campaigns": 1.44,
+    "E_challenges": 4.74,
+    "E_total_days": 88.0
+  },
+  "baseline": {
+    "p_pass": 71.43,
+    "EV": 740.0
+  },
+  "decomp": {
+    "gate": [
+      -0.43,
+      -1.3,
+      0.0
+    ],
+    "lowcheck": [
+      -1.3,
+      -4.11,
+      1.52
+    ],
+    "combined": [
+      -1.73,
+      -4.76,
+      1.08
+    ]
+  },
+  "sleeve_attrib": {
+    "swing_ON_low": {
+      "by_dominant_leg": {
+        "GER40": 48,
+        "US100": 147,
+        "USDJPY": 179,
+        "XAUUSD": 158
+      },
+      "n_bust_events": 532
+    },
+    "swing_ON_low_dom": {
+      "by_dominant_leg": {
+        "GER40": 49,
+        "US100": 146,
+        "USDJPY": 167,
+        "XAUUSD": 152
+      },
+      "n_bust_events": 514
+    },
+    "swing_OFF_low": {
+      "by_dominant_leg": {
+        "GER40": 46,
+        "US100": 147,
+        "USDJPY": 184,
+        "XAUUSD": 157
+      },
+      "n_bust_events": 534
+    },
+    "swing_ON_low_both": {
+      "by_dominant_leg": {
+        "GER40": 40,
+        "US100": 134,
+        "USDJPY": 122,
+        "XAUUSD": 181
+      },
+      "n_bust_events": 477
+    }
+  },
+  "N_eff": 73.3
+}

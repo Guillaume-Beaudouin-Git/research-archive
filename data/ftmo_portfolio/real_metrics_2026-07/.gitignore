@@ -1,0 +1,5 @@
+# regenerable caches (from deep_history_utc via build_lohi_panel.py) + probe slices
+data/lohi_m5_paris.parquet
+data/*_2024*.csv
+data/*_probe_*.csv
+__pycache__/
