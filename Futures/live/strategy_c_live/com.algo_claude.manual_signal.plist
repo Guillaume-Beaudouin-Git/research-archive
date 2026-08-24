@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.algo_claude.manual_signal.plist — launchd agent for iter_10 manual signal
+  ==============================================================================
+  Fires run_manual_signal.sh Mon-Fri at 15:43 local time.
+
+  DST note:
+    Summer (UTC+2, ~Mar-Oct): 15:43 Paris = 09:43 ET  ← CORRECT
+    Winter (UTC+1, ~Oct-Mar): 15:43 Paris = 14:43 UTC = 09:43 ET still — but
+      launchd uses local system time, so if Mac clock shows Paris time:
+      Summer: Hour=15  ← use this plist
+      Winter: change Hour to 14 in all five <dict> blocks below.
+
+  Install:
+    cp com.algo_claude.manual_signal.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.algo_claude.manual_signal.plist
+
+  Uninstall:
+    launchctl unload ~/Library/LaunchAgents/com.algo_claude.manual_signal.plist
+    rm ~/Library/LaunchAgents/com.algo_claude.manual_signal.plist
+
+  Check status:
+    launchctl list | grep algo_claude
+
+  Manual trigger (test):
+    launchctl start com.algo_claude.manual_signal
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.algo_claude.manual_signal</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string><HOME>/Desktop/Algo_claude/Futures/live/strategy_c_live/run_manual_signal.sh</string>
+    </array>
+
+    <!-- Mon-Fri at 15:43 Paris (summer UTC+2 = 09:43 ET). Change Hour to 14 in winter. -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>15</integer><key>Minute</key><integer>43</integer></dict>
+        <dict><key>Weekday</key><integer>3</integer><key>Hour</key><integer>15</integer><key>Minute</key><integer>43</integer></dict>
+        <dict><key>Weekday</key><integer>4</integer><key>Hour</key><integer>15</integer><key>Minute</key><integer>43</integer></dict>
+        <dict><key>Weekday</key><integer>5</integer><key>Hour</key><integer>15</integer><key>Minute</key><integer>43</integer></dict>
+        <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>15</integer><key>Minute</key><integer>43</integer></dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string><HOME>/Desktop/Algo_claude/Futures/live/strategy_c_live/logs/manual_signal_launchd.log</string>
+    <key>StandardErrorPath</key>
+    <string><HOME>/Desktop/Algo_claude/Futures/live/strategy_c_live/logs/manual_signal_launchd.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
