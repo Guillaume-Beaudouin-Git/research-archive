@@ -1,0 +1,50 @@
+{
+  "VARIANT_A": {
+    "variant": "VARIANT_A",
+    "canary": true,
+    "period_start": "2024-01-02",
+    "period_end": "2024-12-31",
+    "n_trades": 4905,
+    "n_trading_days": 259,
+    "win_rate": 0.3672,
+    "avg_win_pts": 19.332,
+    "avg_loss_pts": -13.416,
+    "avg_bars_held": 11.5,
+    "sharpe_naive": -2.987,
+    "sharpe_hac": -3.512,
+    "t_hac": -4.226,
+    "max_dd_pts": -6895.5,
+    "total_pnl_pts": -6827.0,
+    "total_pnl_usd": -13654.0,
+    "exit_reasons": {
+      "SL": 3528,
+      "TIME": 745,
+      "TP": 625,
+      "EOD": 7
+    }
+  },
+  "VARIANT_B": {
+    "variant": "VARIANT_B",
+    "canary": true,
+    "period_start": "2024-01-02",
+    "period_end": "2024-12-31",
+    "n_trades": 5862,
+    "n_trading_days": 259,
+    "win_rate": 0.3733,
+    "avg_win_pts": 19.975,
+    "avg_loss_pts": -13.991,
+    "avg_bars_held": 11.5,
+    "sharpe_naive": -2.904,
+    "sharpe_hac": -3.857,
+    "t_hac": -4.642,
+    "max_dd_pts": -7734.35,
+    "total_pnl_pts": -7696.05,
+    "total_pnl_usd": -15392.1,
+    "exit_reasons": {
+      "SL": 4145,
+      "TIME": 876,
+      "TP": 832,
+      "EOD": 9
+    }
+  }
+}
