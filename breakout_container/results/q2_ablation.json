@@ -1,0 +1,141 @@
+{
+ "baseline": {
+  "survive252": 0.9790575916230366,
+  "fundedV": 1442.0,
+  "min_eq": 9010.418088640728,
+  "reproduced": true
+ },
+ "curve": {
+  "lb_primary_0.1": {
+   "survive252": 0.7225130890052356,
+   "d_surv": -0.25654450261780104,
+   "fundedV": 1193.0,
+   "d_extract": -249.0,
+   "min_eq": 9008.8392360087,
+   "net_positive": false
+  },
+  "lb_primary_0.25": {
+   "survive252": 0.5078534031413613,
+   "d_surv": -0.47120418848167533,
+   "fundedV": 826.0,
+   "d_extract": -616.0,
+   "min_eq": 8998.711620193555,
+   "net_positive": false
+  },
+  "lb_primary_0.5": {
+   "survive252": 0.39267015706806285,
+   "d_surv": -0.5863874345549738,
+   "fundedV": 746.0,
+   "d_extract": -696.0,
+   "min_eq": 8994.21194838185,
+   "net_positive": false
+  },
+  "lb_primary_1.0": {
+   "survive252": 0.2513089005235602,
+   "d_surv": -0.7277486910994764,
+   "fundedV": 430.0,
+   "d_extract": -1012.0,
+   "min_eq": 8990.564332585045,
+   "net_positive": false
+  },
+  "lb_combined_0.1": {
+   "survive252": 0.743455497382199,
+   "d_surv": -0.23560209424083767,
+   "fundedV": 1292.0,
+   "d_extract": -150.0,
+   "min_eq": 9007.894430680215,
+   "net_positive": false
+  },
+  "lb_combined_0.25": {
+   "survive252": 0.5235602094240838,
+   "d_surv": -0.45549738219895286,
+   "fundedV": 857.0,
+   "d_extract": -585.0,
+   "min_eq": 8998.825936554713,
+   "net_positive": false
+  },
+  "lb_combined_0.5": {
+   "survive252": 0.43455497382198954,
+   "d_surv": -0.544502617801047,
+   "fundedV": 790.0,
+   "d_extract": -652.0,
+   "min_eq": 8998.342098666193,
+   "net_positive": false
+  },
+  "lb_combined_1.0": {
+   "survive252": 0.3036649214659686,
+   "d_surv": -0.675392670157068,
+   "fundedV": 289.0,
+   "d_extract": -1153.0,
+   "min_eq": 8992.020200588468,
+   "net_positive": false
+  },
+  "rl_primary_0.1": {
+   "survive252": 0.7172774869109948,
+   "d_surv": -0.26178010471204183,
+   "fundedV": 1114.0,
+   "d_extract": -328.0,
+   "min_eq": 9003.54002582337,
+   "net_positive": false
+  },
+  "rl_primary_0.25": {
+   "survive252": 0.5340314136125655,
+   "d_surv": -0.4450261780104712,
+   "fundedV": 817.0,
+   "d_extract": -625.0,
+   "min_eq": 8998.579915810644,
+   "net_positive": false
+  },
+  "rl_primary_0.5": {
+   "survive252": 0.3769633507853403,
+   "d_surv": -0.6020942408376964,
+   "fundedV": 675.0,
+   "d_extract": -767.0,
+   "min_eq": 8994.5851748049,
+   "net_positive": false
+  },
+  "rl_primary_1.0": {
+   "survive252": 0.15706806282722513,
+   "d_surv": -0.8219895287958114,
+   "fundedV": 209.0,
+   "d_extract": -1233.0,
+   "min_eq": 8985.445624358632,
+   "net_positive": false
+  },
+  "rl_combined_0.1": {
+   "survive252": 0.7329842931937173,
+   "d_surv": -0.24607329842931935,
+   "fundedV": 1121.0,
+   "d_extract": -321.0,
+   "min_eq": 9002.666677700323,
+   "net_positive": false
+  },
+  "rl_combined_0.25": {
+   "survive252": 0.5235602094240838,
+   "d_surv": -0.45549738219895286,
+   "fundedV": 820.0,
+   "d_extract": -622.0,
+   "min_eq": 8998.612312396814,
+   "net_positive": false
+  },
+  "rl_combined_0.5": {
+   "survive252": 0.3717277486910995,
+   "d_surv": -0.6073298429319371,
+   "fundedV": 699.0,
+   "d_extract": -743.0,
+   "min_eq": 8992.99226296307,
+   "net_positive": false
+  },
+  "rl_combined_1.0": {
+   "survive252": 0.2617801047120419,
+   "d_surv": -0.7172774869109948,
+   "fundedV": 200.0,
+   "d_extract": -1242.0,
+   "min_eq": 8987.273553556934,
+   "net_positive": false
+  }
+ },
+ "netpos": [],
+ "rl_primary_netpos": [],
+ "verdict": "(b) DILUTES like the overnight family"
+}
