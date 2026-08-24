@@ -1,0 +1,19 @@
+=== (a) correlation soybean vs real-book legs + hypothetical gold-ASIA ===
+  full                 n=1461 | book_trend ρ=+0.00 | gold_trend ρ=-0.03 | J1 ρ=+0.03 | gold_asia ρ=+0.07
+  IS_2013_19           n= 412 | book_trend ρ=-0.05 | gold_trend ρ=-0.13 | J1 ρ=+0.10 | gold_asia ρ=+0.01
+  OOS_2020_26          n=1049 | book_trend ρ=+0.01 | gold_trend ρ=+0.00 | J1 ρ=+0.02 | gold_asia ρ=+0.09
+  soy_strong_2018_21   n= 742 | book_trend ρ=-0.03 | gold_trend ρ=-0.08 | J1 ρ=+0.06 | gold_asia ρ=+0.06
+  soy_weak_2022_25     n= 656 | book_trend ρ=+0.02 | gold_trend ρ=+0.02 | J1 ρ=+0.02 | gold_asia ρ=+0.11
+
+=== (b) ablation CHALLENGE (book vs book+soy V1-stop) ===
+  book_only: p 87.01%  att 3.24  fundedSurv252 100.0%  fundedV $2144  EV $1554
+  book+soy K=1.0: p 87.01% (Δ+0.00)  att 3.22  fundedSurv252 72.0% (book 100.0)  fundedV $2311  EV $1702 (Δ$+148)
+  book+soy K=2.0: p 88.96% (Δ+1.95)  att 3.11  fundedSurv252 50.0% (book 100.0)  fundedV $1692  EV $1207 (Δ$-347)
+  book+soy K=3.0: p 90.69% (Δ+3.68)  att 3.10  fundedSurv252 46.2% (book 100.0)  fundedV $1918  EV $1443 (Δ$-111)
+  book+soy K=4.0: p 90.91% (Δ+3.90)  att 3.12  fundedSurv252 43.2% (book 100.0)  fundedV $1773  EV $1312 (Δ$-242)
+
+=== (d) soybean margin footprint (frac of equity) ===
+  cfd_1to10 (10%): K1.0: p50 0.09/p99 0.20  K2.0: p50 0.18/p99 0.40  K3.0: p50 0.27/p99 0.60  K4.0: p50 0.36/p99 0.80
+  futures_~5pct (5%): K1.0: p50 0.04/p99 0.10  K2.0: p50 0.09/p99 0.20  K3.0: p50 0.14/p99 0.30  K4.0: p50 0.18/p99 0.40
+
+written q5_book.json  [28s]

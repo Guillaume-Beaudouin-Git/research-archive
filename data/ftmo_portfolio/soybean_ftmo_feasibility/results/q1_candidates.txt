@@ -1,0 +1,23 @@
+soybean trading days: 2041  (2017-12-01 -> 2026-06-05)
+
+=== candidates: gross vs net (26 bp RT spread) ===
+             name  sharpe_gross  sharpe_net26  bps_gross  bps_net26  gross_hac_t  breakeven_spread_bps
+  SEAS_reopen_1_2          2.05         -5.10       7.22     -18.09         5.58                  7.22
+  SEAS_reopen_1_3          1.84         -5.07       6.75     -18.57         5.05                  6.75
+    SEAS_elec_1_7          1.98         -4.53       7.52     -17.33         5.46                  7.52
+     MOM_elec->US         -0.06         -4.56      -0.37     -26.63        -0.18                 -0.37
+    MOM_preUS->US         -0.10         -4.60      -0.59     -26.86        -0.30                 -0.59
+          US_long         -0.92         -5.40      -5.32     -31.58        -2.65                 -5.32
+         US_short          0.92         -3.61       5.32     -20.95         2.65                  5.32
+FULLDAY_long_1_18         -0.06         -3.65      -0.42     -25.70        -0.17                 -0.42
+
+binding cost: round-trip CFD spread ~26.0 bp.  A candidate is viable only if
+its GROSS edge per trade (breakeven_spread_bps) exceeds the RT spread.
+
+=== spread sensitivity — best-gross candidate 'SEAS_elec_1_7' (net Sharpe) ===
+  spread  0 bp RT -> Sharpe +1.98 | mean +7.52 bp/day
+  spread  3 bp RT -> Sharpe +1.22 | mean +4.65 bp/day
+  spread  5 bp RT -> Sharpe +0.72 | mean +2.74 bp/day
+  spread  8 bp RT -> Sharpe -0.03 | mean -0.13 bp/day
+  spread 13 bp RT -> Sharpe -1.29 | mean -4.91 bp/day
+  spread 26 bp RT -> Sharpe -4.53 | mean -17.33 bp/day

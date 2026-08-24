@@ -1,0 +1,198 @@
+{
+  "spread_bp": 2.0,
+  "correlation": {
+    "full": {
+      "n": 1461,
+      "gold_trend": {
+        "pearson": -0.026,
+        "spearman": -0.043
+      },
+      "J1": {
+        "pearson": 0.028,
+        "spearman": 0.006
+      },
+      "book_trend": {
+        "pearson": 0.0,
+        "spearman": -0.017
+      },
+      "gold_asia": {
+        "pearson": 0.07,
+        "spearman": 0.118
+      }
+    },
+    "IS_2013_19": {
+      "n": 412,
+      "gold_trend": {
+        "pearson": -0.132,
+        "spearman": -0.041
+      },
+      "J1": {
+        "pearson": 0.1,
+        "spearman": 0.103
+      },
+      "book_trend": {
+        "pearson": -0.048,
+        "spearman": 0.011
+      },
+      "gold_asia": {
+        "pearson": 0.009,
+        "spearman": 0.04
+      }
+    },
+    "OOS_2020_26": {
+      "n": 1049,
+      "gold_trend": {
+        "pearson": 0.001,
+        "spearman": -0.039
+      },
+      "J1": {
+        "pearson": 0.017,
+        "spearman": -0.017
+      },
+      "book_trend": {
+        "pearson": 0.013,
+        "spearman": -0.02
+      },
+      "gold_asia": {
+        "pearson": 0.09,
+        "spearman": 0.145
+      }
+    },
+    "soy_strong_2018_21": {
+      "n": 742,
+      "gold_trend": {
+        "pearson": -0.084,
+        "spearman": -0.071
+      },
+      "J1": {
+        "pearson": 0.058,
+        "spearman": 0.043
+      },
+      "book_trend": {
+        "pearson": -0.032,
+        "spearman": -0.027
+      },
+      "gold_asia": {
+        "pearson": 0.057,
+        "spearman": 0.096
+      }
+    },
+    "soy_weak_2022_25": {
+      "n": 656,
+      "gold_trend": {
+        "pearson": 0.017,
+        "spearman": -0.011
+      },
+      "J1": {
+        "pearson": 0.017,
+        "spearman": -0.026
+      },
+      "book_trend": {
+        "pearson": 0.024,
+        "spearman": -0.004
+      },
+      "gold_asia": {
+        "pearson": 0.107,
+        "spearman": 0.174
+      }
+    }
+  },
+  "ablation": {
+    "book_only": {
+      "p_funded": 0.8701,
+      "attempts": 3.24,
+      "funded_survive252": 1.0,
+      "funded_value": 2144.0,
+      "EV": 1554.0
+    },
+    "book+soy_K1.0": {
+      "p_funded": 0.8701,
+      "attempts": 3.22,
+      "d_p": 0.0,
+      "funded_survive252": 0.7197,
+      "funded_value": 2311.0,
+      "EV": 1702.0,
+      "d_EV": 148.0
+    },
+    "book+soy_K2.0": {
+      "p_funded": 0.8896,
+      "attempts": 3.11,
+      "d_p": 0.0195,
+      "funded_survive252": 0.5,
+      "funded_value": 1692.0,
+      "EV": 1207.0,
+      "d_EV": -347.0
+    },
+    "book+soy_K3.0": {
+      "p_funded": 0.9069,
+      "attempts": 3.1,
+      "d_p": 0.0368,
+      "funded_survive252": 0.4621,
+      "funded_value": 1918.0,
+      "EV": 1443.0,
+      "d_EV": -111.0
+    },
+    "book+soy_K4.0": {
+      "p_funded": 0.9091,
+      "attempts": 3.12,
+      "d_p": 0.039,
+      "funded_survive252": 0.4318,
+      "funded_value": 1773.0,
+      "EV": 1312.0,
+      "d_EV": -242.0
+    }
+  },
+  "margin_soy": {
+    "rates": {
+      "cfd_1to10": 0.1,
+      "futures_~5pct": 0.05
+    },
+    "footprint": {
+      "cfd_1to10": {
+        "1.0": {
+          "p50": 0.09,
+          "p99": 0.201,
+          "max": 0.234
+        },
+        "2.0": {
+          "p50": 0.18,
+          "p99": 0.402,
+          "max": 0.469
+        },
+        "3.0": {
+          "p50": 0.27,
+          "p99": 0.602,
+          "max": 0.703
+        },
+        "4.0": {
+          "p50": 0.361,
+          "p99": 0.803,
+          "max": 0.938
+        }
+      },
+      "futures_~5pct": {
+        "1.0": {
+          "p50": 0.045,
+          "p99": 0.1,
+          "max": 0.117
+        },
+        "2.0": {
+          "p50": 0.09,
+          "p99": 0.201,
+          "max": 0.234
+        },
+        "3.0": {
+          "p50": 0.135,
+          "p99": 0.301,
+          "max": 0.352
+        },
+        "4.0": {
+          "p50": 0.18,
+          "p99": 0.402,
+          "max": 0.469
+        }
+      }
+    },
+    "book_note": "book metal (XAU swing 1:9) already binds 60% cap ~56% of days (asia Q3 spec p50 0.687); soybean is a SEPARATE instrument -> its margin ADDS to the book's during the 01:00-07:00 overlap."
+  }
+}

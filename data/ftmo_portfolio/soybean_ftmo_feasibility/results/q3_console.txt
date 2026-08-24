@@ -1,0 +1,38 @@
+=== (a) calendar validation (|window move|, bp) ===
+    report_R: n=  91  mean |move|   39.3bp  median   27.7bp
+   day_after: n=  59  mean |move|   48.7bp  median   46.4bp
+       other: n=1311  mean |move|   46.1bp  median   32.1bp
+  day_after/other elevation = 1.06x -> NOT elevated
+
+=== (b) worst 15 days (net @2bp) — attribution ===
+        date    net%      bucket dFromRpt     nearRpt
+  2022-06-23   -6.65       other       -7  2022-06-30
+  2023-06-23   -5.51       other       -7  2023-06-30
+  2024-07-24   -4.35       other       12  2024-07-12
+  2025-07-07   -4.01       other       -4  2025-07-11
+  2022-08-24   -3.86       other       12  2022-08-12
+  2019-08-05   -3.12       other       -7  2019-08-12
+  2021-07-23   -2.54       other       11  2021-07-12
+  2025-04-03   -2.52       other        3  2025-03-31
+  2020-03-09   -2.45       other       -1  2020-03-10
+  2022-07-22   -2.05       other       10  2022-07-12
+  2022-04-22   -2.03       other       14  2022-04-08
+  2019-05-06   -1.66       other       -4  2019-05-10
+  2026-03-16   -1.49       other        6  2026-03-10
+  2020-07-28   -1.49       other      -15  2020-08-12
+  2021-06-14   -1.48       other        4  2021-06-10
+  worst-15 within +-2d of a scheduled report: 1/15 (7%)
+
+=== tail by bucket ===
+    report_R: n=  91 mean +11.19bp worst  -0.80% p1  -0.71% skew +1.30 #<-3% 0
+   day_after: n=  59 mean  -2.27bp worst  -1.22% p1  -1.09% skew +0.21 #<-3% 0
+       other: n=1311 mean  +4.25bp worst  -6.65% p1  -1.48% skew -1.81 #<-3% 6
+         all: n=1461 mean  +4.42bp worst  -6.65% p1  -1.45% skew -1.67 #<-3% 6
+
+=== (c) edge with/without USDA skip (skip removes 150 days) ===
+    all_days: n=1461 Sharpe 1.16 OOS 0.51 mean +4.42bp maxDD -18.5% worst -6.65% skew -1.67
+   skip_usda: n=1311 Sharpe 1.09 OOS 0.62 mean +4.25bp maxDD -18.6% worst -6.65% skew -1.81
+
+  at K=4.0: worst day scaled all -26.6% vs skip -26.6%  (daily barrier -5%); Sharpe ratio post/pre skip = 0.944
+
+written q3_usda.json
