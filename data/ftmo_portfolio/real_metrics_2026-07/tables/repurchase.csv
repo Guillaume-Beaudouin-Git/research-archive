@@ -1,0 +1,6 @@
+tag,campaigns_mean,campaigns_med,campaigns_p90,challenges_mean,challenges_med,challenges_p90,totaldays_mean,totaldays_med,totaldays_p90,geometric_1overp
+swing_OFF_close,1.39695,1.0,2.0,4.1621,3.0,9.0,84.57825,53.0,187.0,1.4
+swing_ON_close,1.41345,1.0,2.0,4.24285,3.0,9.0,86.4214,54.0,190.0,1.4085365853658536
+swing_ON_low,1.43695,1.0,2.0,4.7373,3.0,10.0,88.46745,56.0,195.0,1.434782608695652
+swing_ON_low_dom,1.42665,1.0,2.0,4.6525,3.0,10.0,87.6903,56.0,192.0,1.4215384615384616
+swing_ON_low_both,1.47945,1.0,3.0,4.8564,3.0,11.0,94.06165,61.0,217.0,1.4807692307692308

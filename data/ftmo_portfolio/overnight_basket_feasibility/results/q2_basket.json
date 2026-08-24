@@ -1,0 +1,318 @@
+{
+  "spread_bp": 2.0,
+  "n_cohorts": 462,
+  "n_funded_cohorts": 132,
+  "challenge_sweep": {
+    "B3_gsw": {
+      "1.0": {
+        "K": 1.0,
+        "p_pass": 0.0,
+        "p_is": 0.0,
+        "p_oos": 0.0,
+        "attempts": 1.0,
+        "bust": 0.0,
+        "bust_daily": 0.0,
+        "bust_floor": 0.0,
+        "med_t": null,
+        "dd_p5": -3.97,
+        "low_worst": -2.67,
+        "vol": 5.8
+      },
+      "2.0": {
+        "K": 2.0,
+        "p_pass": 0.0152,
+        "p_is": 0.0215,
+        "p_oos": 0.0087,
+        "attempts": 1.03,
+        "bust": 0.0322,
+        "bust_daily": 0.0189,
+        "bust_floor": 0.0133,
+        "med_t": 68.0,
+        "dd_p5": -7.57,
+        "low_worst": -5.34,
+        "vol": 11.6
+      },
+      "3.0": {
+        "K": 3.0,
+        "p_pass": 0.0844,
+        "p_is": 0.1159,
+        "p_oos": 0.0524,
+        "attempts": 1.26,
+        "bust": 0.2078,
+        "bust_daily": 0.1537,
+        "bust_floor": 0.054,
+        "med_t": 63.0,
+        "dd_p5": -8.98,
+        "low_worst": -8.01,
+        "vol": 17.4
+      },
+      "4.0": {
+        "K": 4.0,
+        "p_pass": 0.1926,
+        "p_is": 0.2361,
+        "p_oos": 0.1485,
+        "attempts": 1.59,
+        "bust": 0.3868,
+        "bust_daily": 0.2243,
+        "bust_floor": 0.1625,
+        "med_t": 64.0,
+        "dd_p5": -10.7,
+        "low_worst": -10.68,
+        "vol": 23.2
+      }
+    },
+    "B4_gsws": {
+      "1.0": {
+        "K": 1.0,
+        "p_pass": 0.0,
+        "p_is": 0.0,
+        "p_oos": 0.0,
+        "attempts": 1.0,
+        "bust": 0.0,
+        "bust_daily": 0.0,
+        "bust_floor": 0.0,
+        "med_t": null,
+        "dd_p5": -3.53,
+        "low_worst": -2.57,
+        "vol": 4.7
+      },
+      "2.0": {
+        "K": 2.0,
+        "p_pass": 0.0043,
+        "p_is": 0.0086,
+        "p_oos": 0.0,
+        "attempts": 1.02,
+        "bust": 0.0171,
+        "bust_daily": 0.0171,
+        "bust_floor": 0.0,
+        "med_t": 78.0,
+        "dd_p5": -6.67,
+        "low_worst": -5.14,
+        "vol": 9.5
+      },
+      "3.0": {
+        "K": 3.0,
+        "p_pass": 0.0974,
+        "p_is": 0.103,
+        "p_oos": 0.0917,
+        "attempts": 1.14,
+        "bust": 0.1056,
+        "bust_daily": 0.0709,
+        "bust_floor": 0.0347,
+        "med_t": 73.0,
+        "dd_p5": -8.05,
+        "low_worst": -7.71,
+        "vol": 14.2
+      },
+      "4.0": {
+        "K": 4.0,
+        "p_pass": 0.21,
+        "p_is": 0.2017,
+        "p_oos": 0.2183,
+        "attempts": 1.35,
+        "bust": 0.2586,
+        "bust_daily": 0.1653,
+        "bust_floor": 0.0933,
+        "med_t": 66.0,
+        "dd_p5": -9.25,
+        "low_worst": -10.29,
+        "vol": 19.0
+      }
+    },
+    "B2_sw": {
+      "1.0": {
+        "K": 1.0,
+        "p_pass": 0.0,
+        "p_is": 0.0,
+        "p_oos": 0.0,
+        "attempts": 1.0,
+        "bust": 0.0,
+        "bust_daily": 0.0,
+        "bust_floor": 0.0,
+        "med_t": null,
+        "dd_p5": -4.9,
+        "low_worst": -3.72,
+        "vol": 6.7
+      },
+      "2.0": {
+        "K": 2.0,
+        "p_pass": 0.0281,
+        "p_is": 0.0429,
+        "p_oos": 0.0131,
+        "attempts": 1.16,
+        "bust": 0.1514,
+        "bust_daily": 0.1159,
+        "bust_floor": 0.0354,
+        "med_t": 83.0,
+        "dd_p5": -8.31,
+        "low_worst": -7.44,
+        "vol": 13.5
+      },
+      "3.0": {
+        "K": 3.0,
+        "p_pass": 0.1537,
+        "p_is": 0.206,
+        "p_oos": 0.1004,
+        "attempts": 1.46,
+        "bust": 0.318,
+        "bust_daily": 0.2151,
+        "bust_floor": 0.1028,
+        "med_t": 70.0,
+        "dd_p5": -9.55,
+        "low_worst": -11.16,
+        "vol": 20.2
+      },
+      "4.0": {
+        "K": 4.0,
+        "p_pass": 0.2532,
+        "p_is": 0.3219,
+        "p_oos": 0.1834,
+        "attempts": 1.99,
+        "bust": 0.5013,
+        "bust_daily": 0.3379,
+        "bust_floor": 0.1634,
+        "med_t": 60.0,
+        "dd_p5": -10.66,
+        "low_worst": -14.88,
+        "vol": 27.0
+      }
+    },
+    "B3_stop": {
+      "1.0": {
+        "K": 1.0,
+        "p_pass": 0.0,
+        "p_is": 0.0,
+        "p_oos": 0.0,
+        "attempts": 1.0,
+        "bust": 0.0,
+        "bust_daily": 0.0,
+        "bust_floor": 0.0,
+        "med_t": null,
+        "dd_p5": -4.0,
+        "low_worst": -2.67,
+        "vol": 5.8
+      },
+      "2.0": {
+        "K": 2.0,
+        "p_pass": 0.013,
+        "p_is": 0.0172,
+        "p_oos": 0.0087,
+        "attempts": 1.01,
+        "bust": 0.0136,
+        "bust_daily": 0.0,
+        "bust_floor": 0.0136,
+        "med_t": 79.0,
+        "dd_p5": -7.96,
+        "low_worst": -5.34,
+        "vol": 11.8
+      },
+      "3.0": {
+        "K": 3.0,
+        "p_pass": 0.0649,
+        "p_is": 0.0944,
+        "p_oos": 0.0349,
+        "attempts": 1.15,
+        "bust": 0.1371,
+        "bust_daily": 0.0,
+        "bust_floor": 0.1371,
+        "med_t": 62.0,
+        "dd_p5": -9.57,
+        "low_worst": -8.01,
+        "vol": 17.8
+      },
+      "4.0": {
+        "K": 4.0,
+        "p_pass": 0.1407,
+        "p_is": 0.1931,
+        "p_oos": 0.0873,
+        "attempts": 1.32,
+        "bust": 0.2586,
+        "bust_daily": 0.0,
+        "bust_floor": 0.2586,
+        "med_t": 65.0,
+        "dd_p5": -10.15,
+        "low_worst": -10.68,
+        "vol": 23.2
+      }
+    }
+  },
+  "ev_bestK": {
+    "B3_gsw": {
+      "bestK": 4.0,
+      "p_pass": 0.1926,
+      "attempts": 1.59,
+      "funded_value": 96.0,
+      "EV": -134.0
+    },
+    "B4_gsws": {
+      "bestK": 4.0,
+      "p_pass": 0.21,
+      "attempts": 1.35,
+      "funded_value": 175.0,
+      "EV": -93.0
+    },
+    "B2_sw": {
+      "bestK": 4.0,
+      "p_pass": 0.2532,
+      "attempts": 1.99,
+      "funded_value": 96.0,
+      "EV": -167.0
+    },
+    "B3_stop": {
+      "bestK": 4.0,
+      "p_pass": 0.1407,
+      "attempts": 1.32,
+      "funded_value": 96.0,
+      "EV": -113.0
+    }
+  },
+  "funded_ablation": {
+    "book_only": {
+      "challenge": 0.8701,
+      "survive252": 1.0,
+      "funded_value": 2144.0
+    },
+    "B3_gsw_K1.0": {
+      "challenge": 0.8766,
+      "d_chal": 0.0065,
+      "survive252": 0.8485,
+      "d_surv": -0.1515,
+      "funded_value": 2696.0
+    },
+    "B3_gsw_K2.0": {
+      "challenge": 0.8442,
+      "d_chal": -0.026,
+      "survive252": 0.7803,
+      "d_surv": -0.2197,
+      "funded_value": 2610.0
+    },
+    "B3_gsw_K3.0": {
+      "challenge": 0.8442,
+      "d_chal": -0.026,
+      "survive252": 0.303,
+      "d_surv": -0.697,
+      "funded_value": 96.0
+    },
+    "B4_gsws_K1.0": {
+      "challenge": 0.8571,
+      "d_chal": -0.013,
+      "survive252": 0.9318,
+      "d_surv": -0.0682,
+      "funded_value": 3518.0
+    },
+    "B4_gsws_K2.0": {
+      "challenge": 0.8398,
+      "d_chal": -0.0303,
+      "survive252": 0.7121,
+      "d_surv": -0.2879,
+      "funded_value": 1737.0
+    },
+    "B4_gsws_K3.0": {
+      "challenge": 0.8701,
+      "d_chal": 0.0,
+      "survive252": 0.447,
+      "d_surv": -0.553,
+      "funded_value": 1097.0
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "correlation": {
+    "full": {
+      "n": 4979,
+      "pearson": 0.0835,
+      "spearman": 0.0726
+    },
+    "IS": {
+      "n": 1605,
+      "pearson": -0.0726,
+      "spearman": -0.0756
+    },
+    "OOS": {
+      "n": 1658,
+      "pearson": 0.1877,
+      "spearman": 0.1653
+    },
+    "dead_regime_2018_19": {
+      "n": 512,
+      "pearson": 0.0068,
+      "spearman": -0.0345
+    },
+    "gold_trend_long_frac": 0.258,
+    "asia_always_long": true
+  },
+  "margin_swing": {
+    "rate_xau_swing": 0.1111111111111111,
+    "asia_margin_frac_of_equity": {
+      "0.5": {
+        "p50": 0.057,
+        "p99": 0.122,
+        "max": 0.143
+      },
+      "1.0": {
+        "p50": 0.115,
+        "p99": 0.245,
+        "max": 0.287
+      },
+      "1.5": {
+        "p50": 0.172,
+        "p99": 0.367,
+        "max": 0.43
+      },
+      "2.0": {
+        "p50": 0.229,
+        "p99": 0.49,
+        "max": 0.574
+      },
+      "2.5": {
+        "p50": 0.286,
+        "p99": 0.612,
+        "max": 0.717
+      }
+    },
+    "book_swing_margin_spec": {
+      "p50": 0.687,
+      "p99": 3.946,
+      "p999": 5.112,
+      "bind_frac": 0.56,
+      "cap": 0.6
+    },
+    "note": "book already binds the 60% cap 56% of the time under swing; ASIA adds the above metal margin during 01:00-09:00 CET (engine does NOT model intra-window margin -> real-account stop-out risk). gold_trend held continuously -> the two gold legs ALWAYS coexist during the ASIA window whenever gold_trend is long (26% of days)."
+  },
+  "ablation": {
+    "book_only": {
+      "p_funded": 0.8701,
+      "attempts": 3.24,
+      "funded_value": 1442.0,
+      "EV": 943.0
+    },
+    "book+ASIA_K0.5": {
+      "p_funded": 0.8333,
+      "attempts": 3.31,
+      "funded_value": 1470.0,
+      "EV": 908.0,
+      "d_p": -0.0368,
+      "d_EV": -36.0
+    },
+    "book+ASIA_K1.0": {
+      "p_funded": 0.8745,
+      "attempts": 3.15,
+      "funded_value": 2124.0,
+      "EV": 1554.0,
+      "d_p": 0.0043,
+      "d_EV": 611.0
+    },
+    "book+ASIA_K1.5": {
+      "p_funded": 0.8463,
+      "attempts": 3.33,
+      "funded_value": 2126.0,
+      "EV": 1479.0,
+      "d_p": -0.0238,
+      "d_EV": 536.0
+    },
+    "book+ASIA_K2.0": {
+      "p_funded": 0.8701,
+      "attempts": 3.39,
+      "funded_value": 1538.0,
+      "EV": 1013.0,
+      "d_p": 0.0,
+      "d_EV": 70.0
+    }
+  }
+}

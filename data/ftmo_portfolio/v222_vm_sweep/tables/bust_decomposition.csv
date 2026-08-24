@@ -1,0 +1,4 @@
+arm,n_attempts,n_bust_events,att_bust_daily,att_bust_floor,att_abandon,att_timeout,share_first_bar,share_gap_monday,share_first_bar_AND_gap,share_first_bar_intraweek,share_triple_dow,fb_among_busts_on_gap
+vm_inf,2058,302,10.4,5.73,37.61,0.0,20.86,41.39,11.26,9.6,22.85,53.97
+vm30,2002,276,9.29,6.04,36.16,0.0,21.74,45.29,14.49,7.25,24.28,66.67
+vm_inf_wgap1.5,2066,291,10.6,6.05,36.25,0.0,18.21,43.99,13.75,4.47,25.09,75.47

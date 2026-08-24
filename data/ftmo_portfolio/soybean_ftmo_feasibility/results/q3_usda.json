@@ -1,0 +1,208 @@
+{
+  "spread_bp": 2.0,
+  "n": 1461,
+  "calendar_validation": {
+    "by_bucket": {
+      "report_R": {
+        "n": 91,
+        "mean_abs_move_bp": 39.3,
+        "median_abs_move_bp": 27.7
+      },
+      "day_after": {
+        "n": 59,
+        "mean_abs_move_bp": 48.7,
+        "median_abs_move_bp": 46.4
+      },
+      "other": {
+        "n": 1311,
+        "mean_abs_move_bp": 46.1,
+        "median_abs_move_bp": 32.1
+      }
+    },
+    "day_after_vs_other_elevation": 1.06,
+    "verdict": "NOT elevated"
+  },
+  "worst_15_days": [
+    {
+      "date": "2022-06-23",
+      "net_pct": -6.65,
+      "bucket": "other",
+      "days_from_report": -7,
+      "nearest_report": "2022-06-30",
+      "near": false
+    },
+    {
+      "date": "2023-06-23",
+      "net_pct": -5.51,
+      "bucket": "other",
+      "days_from_report": -7,
+      "nearest_report": "2023-06-30",
+      "near": false
+    },
+    {
+      "date": "2024-07-24",
+      "net_pct": -4.35,
+      "bucket": "other",
+      "days_from_report": 12,
+      "nearest_report": "2024-07-12",
+      "near": false
+    },
+    {
+      "date": "2025-07-07",
+      "net_pct": -4.01,
+      "bucket": "other",
+      "days_from_report": -4,
+      "nearest_report": "2025-07-11",
+      "near": false
+    },
+    {
+      "date": "2022-08-24",
+      "net_pct": -3.86,
+      "bucket": "other",
+      "days_from_report": 12,
+      "nearest_report": "2022-08-12",
+      "near": false
+    },
+    {
+      "date": "2019-08-05",
+      "net_pct": -3.12,
+      "bucket": "other",
+      "days_from_report": -7,
+      "nearest_report": "2019-08-12",
+      "near": false
+    },
+    {
+      "date": "2021-07-23",
+      "net_pct": -2.54,
+      "bucket": "other",
+      "days_from_report": 11,
+      "nearest_report": "2021-07-12",
+      "near": false
+    },
+    {
+      "date": "2025-04-03",
+      "net_pct": -2.52,
+      "bucket": "other",
+      "days_from_report": 3,
+      "nearest_report": "2025-03-31",
+      "near": false
+    },
+    {
+      "date": "2020-03-09",
+      "net_pct": -2.45,
+      "bucket": "other",
+      "days_from_report": -1,
+      "nearest_report": "2020-03-10",
+      "near": true
+    },
+    {
+      "date": "2022-07-22",
+      "net_pct": -2.05,
+      "bucket": "other",
+      "days_from_report": 10,
+      "nearest_report": "2022-07-12",
+      "near": false
+    },
+    {
+      "date": "2022-04-22",
+      "net_pct": -2.03,
+      "bucket": "other",
+      "days_from_report": 14,
+      "nearest_report": "2022-04-08",
+      "near": false
+    },
+    {
+      "date": "2019-05-06",
+      "net_pct": -1.66,
+      "bucket": "other",
+      "days_from_report": -4,
+      "nearest_report": "2019-05-10",
+      "near": false
+    },
+    {
+      "date": "2026-03-16",
+      "net_pct": -1.49,
+      "bucket": "other",
+      "days_from_report": 6,
+      "nearest_report": "2026-03-10",
+      "near": false
+    },
+    {
+      "date": "2020-07-28",
+      "net_pct": -1.49,
+      "bucket": "other",
+      "days_from_report": -15,
+      "nearest_report": "2020-08-12",
+      "near": false
+    },
+    {
+      "date": "2021-06-14",
+      "net_pct": -1.48,
+      "bucket": "other",
+      "days_from_report": 4,
+      "nearest_report": "2021-06-10",
+      "near": false
+    }
+  ],
+  "worst15_near_report_frac": 0.07,
+  "tail_by_bucket": {
+    "report_R": {
+      "n": 91,
+      "mean_bp": 11.19,
+      "worst_pct": -0.8,
+      "p1_pct": -0.71,
+      "skew": 1.3,
+      "n_lt_m3pct": 0
+    },
+    "day_after": {
+      "n": 59,
+      "mean_bp": -2.27,
+      "worst_pct": -1.22,
+      "p1_pct": -1.09,
+      "skew": 0.21,
+      "n_lt_m3pct": 0
+    },
+    "other": {
+      "n": 1311,
+      "mean_bp": 4.25,
+      "worst_pct": -6.65,
+      "p1_pct": -1.48,
+      "skew": -1.81,
+      "n_lt_m3pct": 6
+    },
+    "all": {
+      "n": 1461,
+      "mean_bp": 4.42,
+      "worst_pct": -6.65,
+      "p1_pct": -1.45,
+      "skew": -1.67,
+      "n_lt_m3pct": 6
+    }
+  },
+  "edge_with_without_skip": {
+    "all_days": {
+      "n": 1461,
+      "sharpe": 1.156,
+      "oos_sharpe": 0.508,
+      "mean_bp": 4.42,
+      "maxdd_pct": -18.5,
+      "worst_pct": -6.65,
+      "skew": -1.67
+    },
+    "skip_usda": {
+      "n": 1311,
+      "sharpe": 1.091,
+      "oos_sharpe": 0.619,
+      "mean_bp": 4.25,
+      "maxdd_pct": -18.6,
+      "worst_pct": -6.65,
+      "skew": -1.81
+    }
+  },
+  "skip_rescues_daily5": {
+    "K": 4.0,
+    "worst_day_scaled_all": -26.6,
+    "worst_day_scaled_skip": -26.6,
+    "sharpe_ratio_post_skip": 0.944
+  }
+}

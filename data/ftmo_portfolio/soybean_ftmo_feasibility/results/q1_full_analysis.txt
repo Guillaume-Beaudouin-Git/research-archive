@@ -1,0 +1,46 @@
+=== TEAR SHEET (gross edge) ===
+  n=1500 days  2017-12-01->2026-06-05
+  Sharpe 1.56 | Sortino 1.44 | OOS Sharpe 0.97
+  annret +14.9% | annvol 9.6% | maxDD -12.4% | Calmar 1.21
+  daily hit 53.9% | monthly hit 56.3% | skew -1.87 | kurt 27.4
+  best/worst day +3.67%/-6.88% | best/worst month +6.65%/-7.30%
+  HAC t 3.76 | DSR(20) 0.96
+
+=== NET performance by round-trip spread (the decision variable) ===
+  spread_bp  Sharpe   annret   maxDD
+     0.0    +1.56   +14.9%   -12.4%
+     2.0    +1.08   +10.4%   -19.7%
+     3.0    +0.84   +8.1%   -23.5%
+     5.0    +0.37   +3.5%   -31.1%
+     9.0    -0.59   -5.6%   -45.2%
+
+=== code audit ===
+  no-VT constant-long gross Sharpe 1.53 (edge not a VT artefact)
+  SHORT null gross Sharpe -1.56 (should be clearly negative)
+  beta vs soybean +0.239 | R^2 0.265 | alpha t +4.63
+
+=== per-year (gross Sharpe / raw drift bp) ===
+  2018:+1.6/+4 2019:+4.5/+16 2020:+3.0/+12 2021:+2.9/+14 2022:-0.3/-1 2023:+0.6/+5 2024:-0.7/-4 2025:+1.1/+5 2026:+5.0/+15
+  positive years 7/9
+
+=== parameter neighbourhood (gross Sharpe) ===
+  start 01:00   1.57  1.52  1.64  1.56  1.17  1.13
+  start 02:00   0.90  1.31  1.32  0.78  0.75  0.77
+
+=== execution-time robustness (gross Sharpe) ===
+  base 01-07             Sharpe +1.56
+  enter 1h late 02-07    Sharpe +1.32
+  exit 1h early 01-06    Sharpe +1.64
+  exit 1h late 01-08     Sharpe +1.17
+
+=== drawdown episodes (gross) + outliers ===
+  max DD -12.4%
+  drop top  5 days -> Sharpe 1.35
+  drop top 10 days -> Sharpe 1.18
+  drop top 20 days -> Sharpe 0.88
+
+=== Monte-Carlo (stationary bootstrap, 2000x, gross) ===
+  Sharpe median 1.58 [5th 0.84] | P(SR>1) 90% | P(SR>0.5) 99%
+  maxDD median -11.3% [5th worst -19.4%]
+
+saved fig_soybean_stress.png + fig_soybean_monthly.png
