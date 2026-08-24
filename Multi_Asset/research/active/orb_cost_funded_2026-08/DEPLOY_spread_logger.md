@@ -79,8 +79,13 @@ actuellement flat-latché, donc sans ce placement le logger ne produirait rien.
 5. Mettre à jour le pin `v22_ea_build` dans `ftmo_live/lib/__init__.py` avec le commit de merge.
 6. **Ne jamais squash-merger** un lot touchant la chaîne de spec.
 
-**CI** : `ftmo_live/` est un chemin **hard-fail** ⇒ la PR sera étiquetée `needs-human-review` et
-**ne s'auto-mergera pas**. C'est le comportement attendu, pas une panne.
+**CI** — corrigé 2026-08-24, voir `AUDIT_PR429_2026-08-18.md` §F/E4 (même dossier) : `ftmo_live/`
+n'est **pas** dans le regex hard-fail de GARDE 1 (`auto-merge.yml:56`) ; c'est l'extension `*.mq5`
+qui bloque ici, puisque le patch touche `book_executor.mq5`. GARDE 1 sort en `exit 1` **avant**
+GARDE 3 (seule étape qui pose un label) ⇒ **la PR ne s'auto-mergera pas, mais ne sera PAS
+étiquetée `needs-human-review`** (vérifié sur PR 429 : `gh pr view --json labels` → `[]`). C'est le
+comportement attendu, pas une panne — mais ne pas attendre un label pour confirmer le blocage,
+vérifier directement `gh pr checks`.
 
 ---
 

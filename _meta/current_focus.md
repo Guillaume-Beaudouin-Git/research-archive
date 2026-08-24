@@ -28,11 +28,20 @@
 - Dossier prêt pour archivage + POSTMORTEM après validation L34
 - Détail : `Forex/research/active/fix_reversal/FIX_REVERSAL_TZ_MIGRATION.md`
 
-### Portefeuille personnel — re-référencé 2026-06-10
-- Book référence = A+B : SR analytique 2.31 ; C dilutif (breakeven SR_C≈0.81) ;
-  gate D = 2.54 ; MaxDD book à mesurer sur B mainnet (L14)
-- A frozen (Propr breach 05-11) ; HL testnet place encore des fills
-- Détail : `_audit/portfolio_recalc_2026-06-10.md`
+### Portefeuille personnel — re-référencé 2026-06-10, chiffre CADUC (corrigé 2026-08-24)
+- ⚠ **Le « SR analytique 2.31 » et le « gate D = 2.54 » ci-dessous sont CADUCS**, rétractés par le
+  recalcul du 2026-07-29 (`CLAUDE.md` §Portfolio context). Le 2.31 combinait SR_A gross-of-RF sur
+  un univers de 14 coins avec un SR_B tiré d'un backtest non représentatif de la rotation live
+  (cf. Strategy B). Le gate D à 2.54 (1.10×2.31) est lui aussi **ABANDONNÉ** — pas seulement son
+  antécédent numérique : le critère d'admission est désormais ΔSR_book > 0 au poids ERC
+  (`Portfolio/admission/`).
+- **Chiffre courant : book de référence = A seul, SR 0.57** (rendements EXCESS, IC95
+  [-0.50, 1.63] — contient zéro). Fourchette défendable 0.57 (A seul) → 1.85 (A + proxy B
+  optimiste). B reste hors du book chiffré : Sharpe non citable (WF 3 folds < 5, config live 8h
+  négative — voir `CLAUDE.md` §Strategy B).
+- A frozen (Propr breach 05-11) ; HL testnet place encore des fills.
+- Détail historique (calcul d'origine, CADUC) : `_audit/portfolio_recalc_2026-06-10.md`. Recalcul
+  courant : `Portfolio/admission/`, `CLAUDE.md` §Portfolio context.
 
 ### Automation
 - alpha_hunt : distillation VPS depuis 2026-06-10, chaîne saine (pushes /30 min)
