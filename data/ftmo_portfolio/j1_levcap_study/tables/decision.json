@@ -1,0 +1,43 @@
+{
+  "verdict": "NULL \u2014 J1 stays",
+  "best": null,
+  "decisions": [
+    {
+      "arm": "LCAP8",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": 1.3116883116883118,
+      "dp": -0.015151515151515152
+    },
+    {
+      "arm": "LCAP10",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": -16.025974025974026,
+      "dp": -0.021645021645021644
+    },
+    {
+      "arm": "LCAP12",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": -65.42857142857143,
+      "dp": -0.047619047619047616
+    },
+    {
+      "arm": "COMPRESS",
+      "gate_pass": false,
+      "bust_adverse": false,
+      "monday_adverse": false,
+      "qualifies": false,
+      "dEV": -10.987012987012987,
+      "dp": -0.012987012987012988
+    }
+  ],
+  "VAL": 1422.0
+}
