@@ -212,17 +212,25 @@ def _decompose(day: str, *, anchor: float, pos0, avg0, eod_balance: float, eod_p
     d_costmb = sum(float(t.get("cost_model_usd", 0.0)) for t in mod["trades"])
     d_cost = d_exec + d_costmb
 
+    # micro (challenge, magic MAGIC_MICRO) et funded ORB (funded, magic MAGIC_FORB)
+    # partagent le même symbole/mécanique V2+E7 et sont mutuellement exclusifs par
+    # phase (mq5:170-171) -> même pairing entrée/sortie, comparé à mod["micro"] +
+    # mod["funded_orb"] (avant ce correctif, funded_orb n'existait pas et son PnL
+    # réel finissait entièrement dans le résiduel inexpliqué, cf. 2026-08-21).
     micro_real = 0.0
-    mf = fills[fills["reason"].astype(str).str.startswith("micro")] if len(fills) else fills
+    mf = fills[fills["reason"].astype(str).str.startswith(("micro", "funded_orb"))] \
+        if len(fills) else fills
     if len(mf):
-        ent = mf[mf["reason"] == "micro_entry"]
-        ext = mf[mf["reason"].isin(["micro_stop", "micro_be", "micro_time"])]
+        ent = mf[mf["reason"].isin(["micro_entry", "funded_orb_entry"])]
+        ext = mf[mf["reason"].isin(["micro_stop", "micro_be", "micro_time", "funded_orb_exit"])]
         if len(ent) and len(ext):
             e0, x0 = ent.iloc[0], ext.iloc[-1]
             side = 1.0 if str(e0["side"]).upper() == "BUY" else -1.0
             micro_real = (float(x0["fill_price"]) - float(e0["fill_price"])) * side \
                 * float(e0["lots"]) * replay.US100_USD_PER_PT_PER_LOT
-    d_micro = micro_real - float(mod["micro"]["pnl_usd"])
+    mod_micro_pnl = float(mod["micro"]["pnl_usd"]) \
+        + float(mod.get("funded_orb", {}).get("pnl_usd", 0.0))
+    d_micro = micro_real - mod_micro_pnl
 
     gross_book = float(np.abs(pos0).sum())
     tol = 5.0 + 1e-4 * turnover + 0.5e-4 * gross_book
