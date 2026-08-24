@@ -1,0 +1,14 @@
+book-only (canonical, n=191): survive252 97.9%  fundedV $1442
+
+  dose standaloneSurv book+ASIA surv   Δsurv  fundedV  Δextract  net-positive?
+  0.10         100.0%          85.3%  -12.6     1274      -168             no
+  0.25          97.4%          67.5%  -30.4     1020      -422             no
+  0.50          90.1%          68.6%  -29.3     1470       +28             no
+  0.75          80.1%          64.9%  -33.0     1736      +294             no
+  1.00          74.9%          65.4%  -32.5     2124      +682             no
+
+net-positive doses (Δsurv≥−2.5pt AND Δextract>0): NONE
+first dose that contributes (Δextract>0): 0.5 | first dose that dilutes (Δsurv<−2.5pt): 0.1
+VERDICT Part A: DOSING DILEMMA (no net-positive dose)
+
+written partA_dosing.json  [76s]

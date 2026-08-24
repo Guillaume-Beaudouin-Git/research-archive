@@ -1,0 +1,62 @@
+{
+  "window": "canonical FUNDED_WINDOWS",
+  "n_funded": 191,
+  "stop_pct": 2.5,
+  "book_only": {
+    "survive252": 0.9791,
+    "fundedV": 1442.0
+  },
+  "dose_curve": {
+    "0.1": {
+      "standalone_surv": 1.0,
+      "book_asia_surv": 0.8534,
+      "d_surv": -0.1257,
+      "fundedV": 1274.0,
+      "d_extract": -168.0,
+      "trig_frac": 0.0,
+      "net_positive": false
+    },
+    "0.25": {
+      "standalone_surv": 0.9738,
+      "book_asia_surv": 0.6754,
+      "d_surv": -0.3037,
+      "fundedV": 1020.0,
+      "d_extract": -422.0,
+      "trig_frac": 0.0,
+      "net_positive": false
+    },
+    "0.5": {
+      "standalone_surv": 0.9005,
+      "book_asia_surv": 0.6859,
+      "d_surv": -0.2932,
+      "fundedV": 1470.0,
+      "d_extract": 28.0,
+      "trig_frac": 0.0004,
+      "net_positive": false
+    },
+    "0.75": {
+      "standalone_surv": 0.801,
+      "book_asia_surv": 0.6492,
+      "d_surv": -0.3298,
+      "fundedV": 1736.0,
+      "d_extract": 294.0,
+      "trig_frac": 0.0004,
+      "net_positive": false
+    },
+    "1.0": {
+      "standalone_surv": 0.7487,
+      "book_asia_surv": 0.6545,
+      "d_surv": -0.3246,
+      "fundedV": 2124.0,
+      "d_extract": 682.0,
+      "trig_frac": 0.0014,
+      "net_positive": false
+    }
+  },
+  "verdict": {
+    "net_positive_doses": [],
+    "first_dose_contributing": 0.5,
+    "first_dose_diluting": 0.1,
+    "dosing_dilemma": true
+  }
+}

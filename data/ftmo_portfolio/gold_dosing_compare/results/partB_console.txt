@@ -1,0 +1,19 @@
+common dates 5018  2007-01-02->2026-06-05
+
+(a) standalone (common period):
+  ortrend  Sharpe(full/active) 0.3/0.4  annret 2.52%  maxDD -30.4%  skew 0.12  active 56.9%
+  asia     Sharpe(full/active) 1.14/1.14  annret 7.76%  maxDD -19.0%  skew 0.41  active 99.2%
+
+(b) corr or-trend vs ASIA: all-days ρ=0.084  both-active ρ=0.107  2018-19 ρ=0.011
+
+(c) temporal complementarity (annualized return contribution in each window):
+  2018_19_ASIAdead   n= 512  or-trend +5.4%/Sh0.68  ASIA -7.7%/Sh-1.22  (ASIA pos 46%)
+  ortrend_OFF        n=2164  or-trend +0.0%/Shnan  ASIA +8.8%/Sh1.36  (ASIA pos 52%)
+  ortrend_ON         n=2854  or-trend +4.4%/Sh0.4  ASIA +7.0%/Sh0.98  (ASIA pos 53%)
+
+(e) hypothetical book swap (challenge p_funded / funded survive252):
+  book[or-trend] std               challenge 87.01%  funded252 97.9%
+  book[ASIA replaces or-trend]     challenge 80.95%  funded252 72.3%
+  book[BOTH or-trend+ASIA]         challenge 87.45%  funded252 65.4%
+
+written partB_compare.json  [29s]
