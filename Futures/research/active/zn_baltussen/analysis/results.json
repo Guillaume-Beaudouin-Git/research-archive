@@ -1,0 +1,41 @@
+{
+  "canary": {
+    "mode": "canary",
+    "start": "2024-07-01",
+    "end": "2025-12-31",
+    "source": "LOCAL_1H",
+    "n_sessions": 371,
+    "n_event_days": 64,
+    "h1_metrics": {
+      "label": "canary_H1",
+      "n_trades": 347,
+      "sharpe_hac": -11.7,
+      "sharpe_t_stat": -10.29,
+      "max_dd": -19.32,
+      "ann_return_pct": -15.62,
+      "win_rate": 0.159,
+      "avg_win_usd": 18.49,
+      "avg_loss_usd": -40.31,
+      "dsr": 0.0,
+      "dsr_verdict": "FAIL",
+      "pct_pos_months": 0.0,
+      "n_trials_dsr": 1
+    },
+    "h2_metrics": {
+      "label": "canary_H2",
+      "n_trades": 61,
+      "sharpe_hac": -10.736,
+      "sharpe_t_stat": -7.615,
+      "max_dd": -4.31,
+      "ann_return_pct": -18.15,
+      "win_rate": 0.213,
+      "avg_win_usd": 23.27,
+      "avg_loss_usd": -52.06,
+      "dsr": 0.0,
+      "dsr_verdict": "FAIL",
+      "pct_pos_months": 0.0,
+      "n_trials_dsr": 1
+    },
+    "note": "1h approximation \u2014 SL intra-bar, exit proxy midpoint"
+  }
+}
