@@ -1,0 +1,166 @@
+{
+  "n_trials_dsr": 100,
+  "K": 1.0,
+  "variants": {
+    "V_nostop": {
+      "stop_pct": null,
+      "trig_frac": 0.0,
+      "alpha_given_up_pct": 0.0,
+      "protection_pct": 0.0,
+      "sharpe": 1.136,
+      "oos_sharpe": 1.0,
+      "dsr100": 0.995,
+      "mean_bp": 3.08,
+      "maxdd": -19.01,
+      "survive_6m": {
+        "p_survive": 0.9246575342465754,
+        "n": 146,
+        "ann_ret_pct": 7.74,
+        "ann_ret_med_pct": 6.47,
+        "maxdd_p5": -10.09,
+        "maxdd_worst": -13.41
+      },
+      "survive_12m": {
+        "p_survive": 0.8413793103448276,
+        "n": 145,
+        "ann_ret_pct": 6.64,
+        "ann_ret_med_pct": 6.27,
+        "maxdd_p5": -12.94,
+        "maxdd_worst": -13.41
+      }
+    },
+    "V_stop_1.5": {
+      "stop_pct": 1.5,
+      "trig_frac": 0.008,
+      "alpha_given_up_pct": 17.4,
+      "protection_pct": 9.2,
+      "sharpe": 1.08,
+      "oos_sharpe": 0.953,
+      "dsr100": 0.99,
+      "mean_bp": 2.92,
+      "maxdd": -20.19,
+      "survive_6m": {
+        "p_survive": 0.958904109589041,
+        "n": 146,
+        "ann_ret_pct": 7.79,
+        "ann_ret_med_pct": 6.46,
+        "maxdd_p5": -8.11,
+        "maxdd_worst": -10.9
+      },
+      "survive_12m": {
+        "p_survive": 0.9172413793103448,
+        "n": 145,
+        "ann_ret_pct": 6.84,
+        "ann_ret_med_pct": 6.61,
+        "maxdd_p5": -10.1,
+        "maxdd_worst": -10.9
+      }
+    },
+    "V_stop_2.5": {
+      "stop_pct": 2.5,
+      "trig_frac": 0.0014,
+      "alpha_given_up_pct": 2.7,
+      "protection_pct": 1.6,
+      "sharpe": 1.125,
+      "oos_sharpe": 1.0,
+      "dsr100": 0.994,
+      "mean_bp": 3.06,
+      "maxdd": -19.01,
+      "survive_6m": {
+        "p_survive": 0.9657534246575342,
+        "n": 146,
+        "ann_ret_pct": 7.79,
+        "ann_ret_med_pct": 6.47,
+        "maxdd_p5": -8.76,
+        "maxdd_worst": -10.52
+      },
+      "survive_12m": {
+        "p_survive": 0.9241379310344827,
+        "n": 145,
+        "ann_ret_pct": 6.88,
+        "ann_ret_med_pct": 6.5,
+        "maxdd_p5": -10.1,
+        "maxdd_worst": -11.07
+      }
+    },
+    "V_stop_3.5": {
+      "stop_pct": 3.5000000000000004,
+      "trig_frac": 0.0004,
+      "alpha_given_up_pct": 1.6,
+      "protection_pct": 0.3,
+      "sharpe": 1.122,
+      "oos_sharpe": 1.0,
+      "dsr100": 0.994,
+      "mean_bp": 3.05,
+      "maxdd": -19.01,
+      "survive_6m": {
+        "p_survive": 0.958904109589041,
+        "n": 146,
+        "ann_ret_pct": 7.82,
+        "ann_ret_med_pct": 6.63,
+        "maxdd_p5": -9.69,
+        "maxdd_worst": -10.52
+      },
+      "survive_12m": {
+        "p_survive": 0.896551724137931,
+        "n": 145,
+        "ann_ret_pct": 6.85,
+        "ann_ret_med_pct": 6.58,
+        "maxdd_p5": -10.19,
+        "maxdd_worst": -11.07
+      }
+    }
+  },
+  "k_sensitivity": {
+    "nostop_K0.5": {
+      "p_survive12m": 1.0,
+      "ann_ret_pct": 1.74,
+      "dd_worst": -4.5
+    },
+    "nostop_K1.5": {
+      "p_survive12m": 0.31,
+      "ann_ret_pct": 12.06,
+      "dd_worst": -26.72
+    },
+    "stop_2.5_K0.5": {
+      "p_survive12m": 1.0,
+      "ann_ret_pct": 1.71,
+      "dd_worst": -4.5
+    },
+    "stop_2.5_K1.5": {
+      "p_survive12m": 0.338,
+      "ann_ret_pct": 12.67,
+      "dd_worst": -13.02
+    }
+  },
+  "ablation": {
+    "best_stop_pct": 2.5,
+    "book_only": {
+      "p_survive12m": 0.986,
+      "ann_ret": 9.57,
+      "funded_sharpe": 0.426,
+      "funded_maxdd": -13.63
+    },
+    "book_plus_asia": {
+      "p_survive12m": 0.69,
+      "ann_ret": 13.62,
+      "funded_sharpe": 0.744,
+      "funded_maxdd": -15.18
+    },
+    "book_plus_asia_Khalf": {
+      "p_survive12m": 0.752,
+      "ann_ret": 10.04,
+      "maxdd_worst": -11.6
+    },
+    "d_p_survive": -0.2966,
+    "d_p_survive_Khalf": -0.2345,
+    "d_funded_sharpe": 0.318,
+    "rho_asia_goldtrend": 0.0848,
+    "combined_gold_margin_swing": {
+      "p50": 0.136,
+      "p99": 0.355,
+      "max": 0.425,
+      "cap": 0.6
+    }
+  }
+}
