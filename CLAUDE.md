@@ -172,8 +172,14 @@ Convention + milestones séquentiels (83/142/159/170/175/180/321, règle d'incr�
 - Delta-neutral carry HL (Strategy B) — ⚠ Sharpe NON CITABLE (2026-07-29) : backtest = rotation lente, config live 8h négative, WF 3 folds < 5
 - NQ opening momentum iter_10 (Strategy C) — ⚠ re-baseline 2026-06-07 : Sharpe 0.41 ($29 RT, Databento 2014-2026) ; le 1.52 historique (Kaggle, $19 RT) est périmé. Tradeify annulé 2026-06-10.
 
-### Active research (in progress) — inventaire vérifié 2026-05-30
-Détail complet (chemins, n_test, métriques, caveats) → `_meta/research_active.md`. Chantiers ouverts : **Strategy D** D3+D5 portfolio (`Futures/research/active/strategy_d/`, budget 3 mods 0 consumed) ; **Commodities XS Basis+TSMOM** (`Commodities/research/active/xs_basis_tsmom/`, n≤279, phase A incomplète) ; **Voie B FTMO** (`Futures/research/active/voie_b_ftmo/`, sous-jacent [À CONFIRMER MANUELLEMENT]) ; **sector_hothand_propfirm** (`Equities/research/active/sector_hothand_propfirm/` — t_HAC 10.38 = drapeau rouge, MDD -13.3% > limite FTMO 10% ⇒ BREACH en l'état, audit obligatoire) ; **FX intraday deepdive** (`Forex/research/active/fx_intraday_deepdive/`) ; **ZN Baltussen** (`Futures/research/active/zn_baltussen/`) ; **Token unlocks** + **VRP short gamma** (bootstrap vides). ARCHIVÉS : CIP-EOQ (`Forex/research/archived/cip_eoq/`), NQ intraday VWAP (`Futures/research/archived/nq_intraday_vwap/`, N=19 insuffisant).
+### Active research (in progress)
+⚠ **Le chantier le plus actif est `Multi_Asset/research/active/`** (48 dossiers 2026-07/2026-08,
+source des leçons L51-L60) — indexé dans `_meta/research_active.md` §Tronc Multi_Asset (ajouté
+2026-08-24 ; absent de la liste ci-dessous, restée à l'inventaire 2026-05-30). Vue narrative :
+`Multi_Asset/README.md`.
+
+Inventaire 2026-05-30 (hors Multi_Asset) — détail complet (chemins, n_test, métriques, caveats) →
+`_meta/research_active.md`. Chantiers ouverts : **Strategy D** D3+D5 portfolio (`Futures/research/active/strategy_d/`, budget 3 mods 0 consumed) ; **Commodities XS Basis+TSMOM** (`Commodities/research/active/xs_basis_tsmom/`, n≤279, phase A incomplète) ; **Voie B FTMO** (`Futures/research/active/voie_b_ftmo/`, sous-jacent [À CONFIRMER MANUELLEMENT]) ; **sector_hothand_propfirm** (`Equities/research/active/sector_hothand_propfirm/` — t_HAC 10.38 = drapeau rouge, MDD -13.3% > limite FTMO 10% ⇒ BREACH en l'état, audit obligatoire) ; **FX intraday deepdive** (`Forex/research/active/fx_intraday_deepdive/`) ; **ZN Baltussen** (`Futures/research/active/zn_baltussen/`) ; **Token unlocks** + **VRP short gamma** (bootstrap vides). ARCHIVÉS : CIP-EOQ (`Forex/research/archived/cip_eoq/`), NQ intraday VWAP (`Futures/research/archived/nq_intraday_vwap/`, N=19 insuffisant).
 
 ### ✗ Archived / Deferred / Untested — inventaire complet
 → voir `research_history.md` (racine du repo ; registre « DO NOT re-propose » : Crypto n=159, FX n=181, Equities/ETF/Futures, Options n=1, Deferred, Untested paid-data/new-infra). Sorti de ce fichier constitutionnel pour tenir sous la limite Claude Code ; consulté à l'évaluation d'une nouvelle idée, pas à chaque session. Aucune info perdue.
