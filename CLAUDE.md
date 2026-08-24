@@ -72,10 +72,25 @@ M1 IEF (Ingénierie Économique et Financière), Univ. Rennes 1. Solo algo resea
 - Aucune cron NQ paper (`25 13 * * 1-5` / `25 14 * * 1-5`) n'existe → Strategy C non automatisée. Cleanup proposé non appliqué : `_audit/lot7_crontab_diff_2026-05-30.txt` + wrapper `scripts/run_with_env.sh`.
 
 ## CI / GitHub Actions
-- `.github/workflows/auto-merge.yml` (170 lignes) : squash-merge automatique des PR `claude/*` après tous checks verts.
-- **Hard-fail paths** (PR étiquetée `needs-human-review` au lieu d'auto-merge si les changements touchent) : `Futures/live/`, `Portfolio/`, `strategies/`, `.github/`, `*.mq5`.
-- **Restriction `_automation/`-only** : une PR modifiant HORS `_automation/` n'est pas éligible.
-- Notification Telegram on failure (lignes 158-170). Source vérité `_audit/verification_2026-05-30.md` V12.
+- `.github/workflows/auto-merge.yml` (201 lignes) : squash-merge automatique des PR `claude/*` après tous checks verts.
+- **GARDE 1 — chemins sensibles = échec dur, PAS d'étiquetage.** Si les changements touchent
+  `Futures/live/`, `Portfolio/`, `strategies/`, `.github/`, `*.mq5` (regex `auto-merge.yml:56`), le
+  step sort en `exit 1` (`auto-merge.yml:48-69`) : le job échoue, la PR n'est pas auto-mergée. **Il
+  n'y a aucun appel `addLabels` à cette étape** — la PR n'est PAS étiquetée `needs-human-review`
+  (contrairement à ce qu'une version antérieure de cette section affirmait). Le blocage est réel ;
+  seule sa description était fausse.
+- ⚠ **`ftmo_live/` est absent de ce regex** (GARDE 1 ne liste que les 4 chemins ci-dessus + `.mq5`)
+  alors que c'est le code Python réellement déployé par le pull VPS toutes les 30 min. En pratique
+  il reste bloqué quand même, mais par un garde différent : voir GARDE 2.
+- **GARDE 2 — restriction `_automation/`-only** (`auto-merge.yml:71-96`) : une PR modifiant un
+  fichier HORS `_automation/` n'est pas éligible à l'auto-merge — c'est ce garde, pas GARDE 1, qui
+  bloque de fait toute PR touchant `ftmo_live/`.
+- **GARDE 3 — étiquetage `needs-human-review`** (`auto-merge.yml:98-118`) : seul endroit du workflow
+  qui pose ce label + commente la PR, déclenché par GARDE 2 (fichiers hors `_automation/`), pas par
+  GARDE 1.
+- Notification Telegram sur échec de rebase/squash-merge (`auto-merge.yml:186-201`). Source vérité
+  `_audit/verification_2026-05-30.md` V12 (description du mécanisme depuis corrigée par audit de
+  navigabilité 2026-08-22, `_meta/cleanup/RAPPORT_navigabilite.md` §1).
 
 ## Code style
 Production-quality Python: typed, vectorized, pandas/numpy. No matplotlib in core logic — separate plotting module. Tests for any function in strategies/ or Portfolio/. No comments stating the obvious; docstrings for public APIs.
