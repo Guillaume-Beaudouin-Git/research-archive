@@ -1,0 +1,12 @@
+{
+  "asym0": {
+    "n_bust": 30,
+    "busts_within_10d_of_peak": 0.033,
+    "median_days_since_peak": 42.0
+  },
+  "asym1": {
+    "n_bust": 25,
+    "busts_within_10d_of_peak": 0.0,
+    "median_days_since_peak": 37.0
+  }
+}

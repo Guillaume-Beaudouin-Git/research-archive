@@ -1,0 +1,19 @@
+=== is the gross edge real? ===
+  n=1500 | gross Sharpe 1.56 | HAC t 3.76 | DSR 0.96
+  OOS(40%) gross Sharpe 0.97
+  no-VT constant-long gross Sharpe 1.53 (edge not a VT artefact)
+  SHORT-the-window gross Sharpe -1.56 (should be clearly negative)
+  per-year gross Sharpe positive: 7/9  ->  2018:+1.6 2019:+4.5 2020:+3.0 2021:+2.9 2022:-0.3 2023:+0.6 2024:-0.7 2025:+1.1 2026:+5.0
+  beta vs soybean +0.239, R^2 0.265, alpha t +4.63
+
+=== THE COST VERDICT: net Sharpe by round-trip spread ===
+    0.0 bp RT -> Sharpe +1.56 | mean +5.92 bp/day
+    1.5 bp RT -> Sharpe +1.20 | mean +4.56 bp/day   <- futures (ZS) tier
+    3.0 bp RT -> Sharpe +0.84 | mean +3.20 bp/day
+    5.0 bp RT -> Sharpe +0.37 | mean +1.39 bp/day
+    8.0 bp RT -> Sharpe -0.35 | mean -1.32 bp/day
+   13.0 bp RT -> Sharpe -1.54 | mean -5.85 bp/day
+   26.0 bp RT -> Sharpe -4.61 | mean -17.61 bp/day   <- FTMO CFD reality
+  break-even spread ~ gross edge = 5.9 bp/trade gross  (need RT spread below this)
+
+saved fig_soybean_cost.png

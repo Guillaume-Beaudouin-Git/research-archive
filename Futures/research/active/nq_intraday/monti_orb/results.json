@@ -1,0 +1,140 @@
+{
+  "T0": {
+    "test": "T0",
+    "n_trades": 495,
+    "n_ref_prorated": 564.0,
+    "win_rate": 0.5838,
+    "profit_factor": 1.2937,
+    "sharpe_hac": 1.3151,
+    "max_dd_pct": -0.2351,
+    "total_net_usd": 97245.0,
+    "exit_counts": {
+      "no_signal": 269,
+      "time": 235,
+      "tp": 137,
+      "sl": 123,
+      "insufficient_orb": 10
+    },
+    "reproduction_ok": true
+  },
+  "T1": {
+    "test": "T1",
+    "folds": [
+      {
+        "fold": 1,
+        "test_start": "2023-06-26",
+        "test_end": "2023-12-20",
+        "n_trades": 82,
+        "sharpe_hac": 0.9694,
+        "total_net_usd": 8767.0,
+        "win_rate": 0.561
+      },
+      {
+        "fold": 2,
+        "test_start": "2023-12-26",
+        "test_end": "2024-06-21",
+        "n_trades": 82,
+        "sharpe_hac": 1.9279,
+        "total_net_usd": 15587.0,
+        "win_rate": 0.5488
+      },
+      {
+        "fold": 3,
+        "test_start": "2024-06-24",
+        "test_end": "2024-12-17",
+        "n_trades": 82,
+        "sharpe_hac": 0.0134,
+        "total_net_usd": 1327.0,
+        "win_rate": 0.4878
+      },
+      {
+        "fold": 4,
+        "test_start": "2024-12-18",
+        "test_end": "2025-06-06",
+        "n_trades": 82,
+        "sharpe_hac": 2.9948,
+        "total_net_usd": 48297.0,
+        "win_rate": 0.6463
+      },
+      {
+        "fold": 5,
+        "test_start": "2025-06-09",
+        "test_end": "2025-12-05",
+        "n_trades": 82,
+        "sharpe_hac": 0.5179,
+        "total_net_usd": 6367.0,
+        "win_rate": 0.6341
+      }
+    ],
+    "wf_pass_rate": 1.0,
+    "mean_sharpe": 1.2847,
+    "worst_sharpe": 0.0134,
+    "n_positive": 5,
+    "n_folds": 5,
+    "wf_gate_pass": true
+  },
+  "T2": {
+    "test": "T2",
+    "atr_median_pts": 252.77,
+    "target_dollar_risk": 5055.5,
+    "contracts_mean_B": 1.002,
+    "sharpe_A": 1.3151,
+    "sharpe_B": 1.33,
+    "delta_sharpe": 0.0149,
+    "bootstrap_t": 1.0,
+    "vt_adds_value": false
+  },
+  "T3": {
+    "test": "T3",
+    "n_trades": 495,
+    "trades_per_year": 167.7,
+    "avg_gross_usd": 210.45,
+    "cost_per_trade": 14.0,
+    "gross_cost_ratio": 15.032,
+    "annual_cost_usd": 2348.0,
+    "annual_cost_bps": 469.6,
+    "gate_pass": true
+  },
+  "T4": {
+    "test": "T4",
+    "sr_monti": 1.3151,
+    "sr_iter10": 1.4408,
+    "pearson_r": 0.0437,
+    "spearman_r": 0.1338,
+    "overlap_pct": 0.9758,
+    "sr_blend_50": 1.7552,
+    "sr_blend_erc": 1.9402,
+    "erc_weights": {
+      "monti": 0.283,
+      "iter10": 0.717
+    },
+    "verdict": "ORTHOGONAL"
+  },
+  "T5": {
+    "test": "T5",
+    "worst_day_mnq_usd": -2124.46,
+    "max_hist_dd_mnq": -1981.61,
+    "mc_trade_p_pass": 0.4406,
+    "mc_trade_p_bust": 0.5594,
+    "mc_daily_p_pass": 0.4233,
+    "mc_daily_p_bust": 0.5693,
+    "iter10_ref_p_pass": 0.27,
+    "better_than_iter10": true
+  },
+  "T6": {
+    "test": "T6",
+    "n_obs": 771,
+    "n_trials": 275,
+    "sr_annual": 1.3151,
+    "t_hac": 2.3003,
+    "skewness": 0.4575,
+    "excess_kurt": 6.6,
+    "p_raw": 0.021434,
+    "p_holm": 1.0,
+    "amtp_pass": false,
+    "dsr": 0.2825,
+    "e_max_sr": 1.6397,
+    "dsr_pass": false,
+    "sr_needed_dsr95": 2.58
+  }
+}

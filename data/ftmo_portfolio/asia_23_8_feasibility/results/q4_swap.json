@@ -1,0 +1,36 @@
+{
+  "server_rollover": {
+    "summer_EEST_utc+3": {
+      "rollover_utc": 21,
+      "prev_roll_axis": 21,
+      "next_roll_axis": 45,
+      "entry_axis": 23,
+      "exit_axis": 31,
+      "rollover_inside_holding": false,
+      "gap_entry_to_prev_roll_h": 2
+    },
+    "winter_EET_utc+2": {
+      "rollover_utc": 22,
+      "prev_roll_axis": 22,
+      "next_roll_axis": 46,
+      "entry_axis": 23,
+      "exit_axis": 31,
+      "rollover_inside_holding": false,
+      "gap_entry_to_prev_roll_h": 1
+    }
+  },
+  "swap_nights_charged": 0,
+  "swap_free_confirmed": true,
+  "xau_swap_spec": {
+    "swap_long_pts": -65.68,
+    "swap_long_bps_per_night": -1.518,
+    "triple_dow": 2,
+    "triple_dow_name": "Wednesday(=2)",
+    "note": "triple charged Wed; N/A while swap-free (window never crosses rollover)"
+  },
+  "counterfactual_sharpe": {
+    "swap_free": 1.136,
+    "swap_1x_everyday": 0.554,
+    "swap_avg_with_wed_triple": 0.408
+  }
+}

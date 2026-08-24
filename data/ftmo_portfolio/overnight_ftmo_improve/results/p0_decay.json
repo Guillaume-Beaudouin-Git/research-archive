@@ -1,0 +1,54 @@
+{
+  "SILVER": {
+    "name": "SILVER",
+    "n": 2508,
+    "start": "2014-03-13",
+    "end": "2026-06-05",
+    "split": "2020-01-01",
+    "full_sharpe": 1.12,
+    "full_bp": 5.6,
+    "full_t": 3.58,
+    "pre_sharpe": 2.12,
+    "pre_t": 4.16,
+    "pre_n": 1189,
+    "post_sharpe": 0.67,
+    "post_bp": 4.08,
+    "post_t": 1.62,
+    "post_n": 1319,
+    "recent2y_sharpe": 0.82,
+    "recent2y_t": 1.23,
+    "recent2y_sharpe_ci90": [
+      -0.33,
+      1.86
+    ],
+    "roll12m_last": 1.01,
+    "roll12m_min_last3y": -0.25,
+    "VERDICT": "VIVANT"
+  },
+  "SOYBEAN": {
+    "name": "SOYBEAN",
+    "n": 2002,
+    "start": "2018-02-13",
+    "end": "2026-06-05",
+    "split": "2022-01-01",
+    "full_sharpe": 2.52,
+    "full_bp": 9.35,
+    "full_t": 6.84,
+    "pre_sharpe": 3.26,
+    "pre_t": 6.09,
+    "pre_n": 932,
+    "post_sharpe": 1.95,
+    "post_bp": 7.59,
+    "post_t": 3.87,
+    "post_n": 1070,
+    "recent2y_sharpe": 1.34,
+    "recent2y_t": 1.95,
+    "recent2y_sharpe_ci90": [
+      0.18,
+      2.42
+    ],
+    "roll12m_last": 3.29,
+    "roll12m_min_last3y": -0.53,
+    "VERDICT": "VIVANT"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "rule": "FROZEN asymmetric (PREREGISTRATION.md): tail improves AND \u0394p CI not <-2pt AND \u0394EV CI not <-$40; pick lowest cap",
+  "per_arm": {
+    "LCAP8": {
+      "worst_gap": -1128.95282843696,
+      "gap_busts": 29,
+      "dp": -0.0151515151515151,
+      "dp_ci": [
+        -0.0627705627705627,
+        0.0281385281385281
+      ],
+      "dEV": 1.3116883116883118,
+      "dEV_ci": [
+        -75.46883116883116,
+        76.04090909090908
+      ],
+      "tail_improves": true,
+      "guard_pass": true,
+      "adopt_eligible": true
+    },
+    "LCAP10": {
+      "worst_gap": -1411.1910355461998,
+      "gap_busts": 26,
+      "dp": -0.0216450216450216,
+      "dp_ci": [
+        -0.0735930735930736,
+        0.0281385281385281
+      ],
+      "dEV": -16.025974025974026,
+      "dEV_ci": [
+        -105.58766233766232,
+        70.66363636363629
+      ],
+      "tail_improves": true,
+      "guard_pass": true,
+      "adopt_eligible": true
+    },
+    "LCAP12": {
+      "worst_gap": -1792.2126151436737,
+      "gap_busts": 18,
+      "dp": -0.0476190476190476,
+      "dp_ci": [
+        -0.1017316017316017,
+        0.0064935064935064
+      ],
+      "dEV": -65.42857142857143,
+      "dEV_ci": [
+        -156.58896103896103,
+        25.2896103896103
+      ],
+      "tail_improves": true,
+      "guard_pass": true,
+      "adopt_eligible": true
+    },
+    "COMPRESS": {
+      "worst_gap": -2822.3820710923997,
+      "gap_busts": 26,
+      "dp": -0.0129870129870129,
+      "dp_ci": [
+        -0.0346320346320346,
+        0.0043290043290043
+      ],
+      "dEV": -10.987012987012989,
+      "dEV_ci": [
+        -47.79285714285714,
+        22.363636363636363
+      ],
+      "tail_improves": false,
+      "guard_pass": true,
+      "adopt_eligible": false
+    }
+  },
+  "eligible_hardcaps": [
+    "LCAP8",
+    "LCAP10",
+    "LCAP12"
+  ],
+  "ADOPT": "LCAP8",
+  "note": "COMPRESS rejected: tail does NOT improve (worst gap unchanged -2822). decision.json (from inherited aggregate.py) uses the v2.3 IMPROVEMENT gate and is NOT this study's rule."
+}

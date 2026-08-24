@@ -1,0 +1,79 @@
+{
+  "swap_free": {
+    "GOLD": {
+      "window": "23:00->07:00 UTC",
+      "crosses_summer": false,
+      "crosses_winter": false,
+      "swap_free": true
+    },
+    "SILVER": {
+      "window": "23:00->07:00 UTC",
+      "crosses_summer": false,
+      "crosses_winter": false,
+      "swap_free": true
+    },
+    "WTI": {
+      "window": "23:00->07:00 UTC",
+      "crosses_summer": false,
+      "crosses_winter": false,
+      "swap_free": true
+    },
+    "SOYBEAN": {
+      "window": "01:00->07:00 UTC",
+      "crosses_summer": false,
+      "crosses_winter": false,
+      "swap_free": true
+    }
+  },
+  "all_swap_free": true,
+  "swap_counterfactual": {
+    "GOLD": {
+      "gross_bp": 5.0,
+      "net_if_swap_m3_5": 1.5,
+      "survives": true
+    },
+    "SILVER": {
+      "gross_bp": 5.3,
+      "net_if_swap_m3_5": 1.8,
+      "survives": true
+    },
+    "WTI": {
+      "gross_bp": 3.51,
+      "net_if_swap_m3_5": 0.01,
+      "survives": false
+    },
+    "SOYBEAN": {
+      "gross_bp": 5.92,
+      "net_if_swap_m3_5": 2.42,
+      "survives": true
+    }
+  },
+  "margin": {
+    "B3": {
+      "rates": {
+        "GOLD": 0.111,
+        "SILVER": 0.111,
+        "WTI": 0.1
+      },
+      "margin_frac_by_K": {
+        "1.0": 0.103,
+        "2.0": 0.207,
+        "3.0": 0.31
+      }
+    },
+    "B4": {
+      "rates": {
+        "GOLD": 0.111,
+        "SILVER": 0.111,
+        "WTI": 0.1,
+        "SOYBEAN": 0.1
+      },
+      "margin_frac_by_K": {
+        "1.0": 0.103,
+        "2.0": 0.205,
+        "3.0": 0.308
+      }
+    }
+  },
+  "margin_note": "book live already holds XAU (or-trend, continuous Swing) + GER40 overnight (Mon/Tue, 17:35->09:00) during 23:00-07:00 UTC; the basket ADDS XAU(again, double-count)+XAG+USOIL(+soybean). Book binds the 60% cap ~56% of days (asia spec) -> basket stacks on top -> combined >60% at K>=2 during the overlap -> forced de-lever (engine does not model intra-window margin). XAU is held TWICE (book or-trend + basket gold leg)."
+}

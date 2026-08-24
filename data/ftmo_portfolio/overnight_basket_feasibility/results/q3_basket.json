@@ -1,0 +1,46 @@
+{
+  "report_style_gross_winsor_invvol_commonwin": {
+    "n": 1627,
+    "sharpe": 2.5,
+    "maxDD": -3.5
+  },
+  "realistic": {
+    "B3": {
+      "n": 3962,
+      "sharpe": 1.07,
+      "maxDD_close": -7.7,
+      "worst_intraday_low": -2.67
+    },
+    "B4": {
+      "n": 4337,
+      "sharpe": 1.38,
+      "maxDD_close": -5.8,
+      "worst_intraday_low": -2.57
+    }
+  },
+  "mc_maxDD_B3": {
+    "median": -8.3,
+    "p5_worst": -13.3,
+    "p1_worst": -15.9
+  },
+  "pca": {
+    "pc1_pct": 46.0,
+    "eigs_pct": [
+      46.0,
+      25.0,
+      19.0,
+      10.0
+    ],
+    "effective_bets": 3.15,
+    "n_sleeves": 4,
+    "avg_pairwise_corr": 0.26,
+    "gold_silver": 0.58
+  },
+  "diversification_ratio_vol": 1.5,
+  "common_down": {
+    "frac_days": 0.114,
+    "basket_mean_on_commondown_bp": -43.2,
+    "basket_worst_day_bp": -167.8,
+    "mean_sleeve_worst_day_bp": -220.5
+  }
+}
