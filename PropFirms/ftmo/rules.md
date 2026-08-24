@@ -126,6 +126,73 @@ trailing DD) et reste correct dans son périmètre.
 
 ---
 
+## Allocation maximale & mécanique exacte — relevé opérateur 2026-08-25
+
+> ◐ **Source : relevé de l'opérateur sur ftmo.com, 2026-08-25.** Provenance = déclaration
+> d'opérateur, pas citation verbatim. Complète et **corrige** la section Scaling Plan ci-dessous.
+
+### Plafonds d'allocation simultanée
+
+| mode | plafond |
+|---|---|
+| **Normal** (le nôtre) | **400 000 USD** (≈ 400 000 EUR · 320 000 GBP · 480 000 CAD · 520 000 AUD · 320 000 CHF) |
+| Agressif | 200 000 USD |
+| **Plafond absolu via scaling** | **2 000 000 USD** |
+
+**Règle de cumul (merge)** : plusieurs comptes peuvent être achetés puis **fusionnés**
+(ex. 4 × 100 000 $). Mais toute évaluation achetée qui ferait **dépasser 400 000 $ en cours** ne
+sera **pas financée**.
+
+⚠ **Contrainte croisée** : mener plusieurs challenges *simultanés* avec le **même EA** reste
+interdit (*group strategy sharing identical EA*, §Prohibited). La route « acheter 4 × 100k puis
+fusionner » impose donc de les passer **séquentiellement**, ou avec des stratégies distinctes.
+
+### Scaling — l'ajout n'est PAS composé
+
++25 % **du solde initial de base**, pas du solde courant. Un compte de 400 000 $ reçoit exactement
+**+100 000 $ tous les 4 mois** jusqu'à 2 M. Conditions : **4 mois consécutifs**, **+10 % de profit
+net** (+20 % en agressif), **≥ 2 retraits reçus**, solde positif au passage.
+
+⚠ **Conséquence arithmétique, corrige l'estimation antérieure** : sans composition, un compte de
+**10 000 $** gagne **+2 500 $ par période**. Pour atteindre 200 000 $ il faudrait **76 périodes,
+soit ~25 ans**. La route du scaling depuis un petit compte est **arithmétiquement morte** —
+l'estimation « 4,5 ans » d'une note antérieure supposait à tort une composition.
+**La seule route vers la taille est l'ACHAT**, plafonné à 400 000 $ simultanés.
+
+### ⚠ Perte journalière : l'ancre est max(solde, ÉQUITÉ) — l'EA ne l'implémente PAS
+
+> Calculée sur le **solde OU l'équité — le plus ÉLEVÉ des deux** — arrêté à **00:00 CE(S)T**.
+> Le flottant négatif en cours compte dans le calcul.
+
+**Ce que fait l'EA** [V] `ftmo_live/mt5/book_executor.mq5:1212` :
+`g_anchor_balance = AccountInfoDouble(ACCOUNT_BALANCE)` — **le solde seul**, puis
+`DailyFloor() = g_anchor_balance − DailyBudget()` (`:175`).
+
+**L'écart** = le **gain latent à minuit**, quand il est positif :
+
+| | solde 10 000, équité 10 200 à 00:00 |
+|---|---|
+| plancher FTMO | 10 200 − 500 = **9 700** |
+| plancher EA | 10 000 − 500 = **9 500** |
+| **exposition** | **l'EA autorise $200 de plus que FTMO** |
+
+**Portée réelle** : ne mord que sur **position gagnante** tenue à minuit — donc dans un état où
+l'on est plus *loin* du plancher. Les jambes ON (≈ $7 170 de notionnel, US100 22:05 + GER40 17:35)
+sont ouvertes à 00:00 les nuits de lundi et mardi ; un mouvement overnight de 30-60 bps donne un
+écart typique de **$20-45** sur un budget de $500. Le breaker EA, armé à `DailyFloor + 0.30 ×
+budget` (= $150 de marge), l'absorbe en régime normal — **pas** dans le cas d'un gain overnight
+important suivi d'un renversement.
+
+**Non corrigé à ce jour.** Corriger exige un ré-gel de spec (`g_anchor_balance` →
+`max(balance, equity)` au rollover). À grouper avec le ré-ancrage des swaps.
+
+### Perte totale — statique, confirmée une 4ᵉ fois
+
+10 % du capital initial, **statique**. Compte 400 000 $ ⇒ l'équité **positions ouvertes incluses**
+ne doit jamais descendre sous **360 000 $**, même après être montée à 420 000 $.
+
+---
+
 ## Scaling Plan — LE SEUL canal de compounding
 
 > ✓ **Source primaire ftmo.com, relevée par l'opérateur le 2026-08-20** (verbatim FR) :
