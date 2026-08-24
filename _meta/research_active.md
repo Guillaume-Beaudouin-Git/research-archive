@@ -29,8 +29,11 @@ ici. État courant / blockers : `_meta/current_focus.md`. Familles fermées : `r
   par le decision memo FTMO 2026-06-08
   (`PropFirms/ftmo/program_2026-06/PROGRAM_DECISION_MEMO.md` : do-not-fund sur free price data /
   16 instruments / N≈100).
-- **ZN Baltussen (Futures)** — bond futures momentum. `Futures/research/active/zn_baltussen/`
-  (tests/, sigma_estimation/).
+- **ZN Baltussen (Futures)** — last-30-min momentum en ZN, Baltussen-Da-Lammers-Martens 2021 JFE.
+  `Futures/research/active/zn_baltussen/` (prespec.md, feasibility.py, data_setup.py, analysis/,
+  tests/ — remonté 2026-08-24, absent de main depuis le nettoyage de branches ; canary 1h yfinance
+  Sharpe HAC -11.7, full backtest 1-min jamais lancé faute des données payantes FirstRateData).
+  Statut réel : FEASIBILITY, pas de résultat exploitable pour l'instant.
 - **NQ intraday VWAP (Strategy D iter_01)** — **ARCHIVÉ en P2** :
   `Futures/research/archived/nq_intraday_vwap/` (verdict « FAIL — INSUFFICIENT SAMPLE, N=19 over
   3 years », n_tests=130).
