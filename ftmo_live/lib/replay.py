@@ -67,6 +67,8 @@ def replay_day(date: pd.Timestamp, phase: str, attempt_start: pd.Timestamp,
     flat_today = False
     opened = bool(on_day)                       # sémantique 605f4a4 (s=3 marque opened)
     micro = _micro_model(m5_paris.get("US100", []), micro_on, on_day)
+    forb = _funded_orb_model(m5_paris.get("US100", []), cfg.get("orb_risk", 0.0),
+                             float(sod_balance), cfg.get("taper", 0.02), init)
 
     def seg_target(s_idx: int, px_row: np.ndarray):
         wt = (weights[0], weights[1])
@@ -81,6 +83,9 @@ def replay_day(date: pd.Timestamp, phase: str, attempt_start: pd.Timestamp,
         seg = px[a:b]
         if s == 4 and micro["fired"] and not opened:
             bal += micro["pnl_usd"]
+            opened = True
+        if s == 4 and forb["fired"]:            # FundedOrbOn(): pas de garde opened_today
+            bal += forb["pnl_usd"]
             opened = True
         if not flat_today:
             tgt = None
@@ -125,7 +130,7 @@ def replay_day(date: pd.Timestamp, phase: str, attempt_start: pd.Timestamp,
     eod_px = px[-1]
     return dict(model_balance=bal, model_equity=bal + E._mtm(pos, avg, eod_px),
                 model_pos_usd={l: float(pos[k]) for k, l in enumerate(LEGS)},
-                trades=trades, events=events, micro=micro,
+                trades=trades, events=events, micro=micro, funded_orb=forb,
                 lim_eff=lim, breaker_line=brk,
                 eod_px={l: float(eod_px[k]) for k, l in enumerate(LEGS)})
 
@@ -157,4 +162,49 @@ def _micro_model(m5_us100: list, micro_on: bool, on_day: bool) -> dict:
         * US100_USD_PER_PT_PER_LOT
     out.update(fired=True, pnl_usd=round(pnl, 4), or_hi=or_hi, or_lo=or_lo,
                direction=brk["direction"], entry=brk["level"], exit=ex)
+    return out
+
+
+def _funded_orb_model(m5_us100: list, orb_risk_cfg: float, sod_balance: float,
+                      taper_frac: float, initial: float) -> dict:
+    """Miroir FundedOrbOn() (book_executor.mq5:1058-1071, Do2200TimeStop:1140-1156) —
+    ABSENT avant ce correctif (2026-08-24 audit reconcile) : le funded ORB (magic
+    MAGIC_FORB, fills `funded_orb_entry`/`funded_orb_exit`) n'était simulé nulle
+    part, donc son PnL réel entrait entièrement dans le résiduel inexpliqué
+    (case 2026-08-21 : résiduel -$23.11 == PnL ORB -$23.37, jour sans aucune
+    autre jambe).
+
+    Même OR/break/exit V2+E7 que `_micro_model` (invariants.orb_break/e7_exit) ;
+    seul le sizing diffère — risk-based (invariants.funded_orb_lots), pas un lot
+    fixe — et il n'y a PAS de garde `not on_day` : contrairement au micro-ORB
+    challenge (compteur de jours, exclu les jours ON), le FORB funded arme
+    indépendamment de IsONDay()/g_opened_today (mq5:1058, un seul `&& !g_flat_today`)."""
+    out = dict(armed=False, fired=False, pnl_usd=0.0)
+    if orb_risk_cfg <= 0.0 or len(m5_us100) < 10:
+        return out
+    closes = {int(t[:2]) * 60 + int(t[3:5]): float(v) for t, v in m5_us100}
+    or_keys = [m for m in closes if E.SCHED_MIN[1] <= m < E.SCHED_MIN[1] + 30]
+    post_keys = sorted(m for m in closes if E.SCHED_MIN[1] + 30 <= m <= 22 * 60)
+    if len(or_keys) < 4 or len(post_keys) < 3:
+        return out
+    vals = [closes[m] for m in sorted(or_keys)]
+    or_hi, or_lo = inv.or_levels(vals, vals)
+    if not inv.v2_width_ok(or_hi, or_lo, vals[-1]):
+        return out
+    out["armed"] = True
+    taper0 = inv.orb_taper0(sod_balance, taper_frac, initial)
+    risk_usd = orb_risk_cfg * initial * taper0
+    lots = inv.funded_orb_lots(risk_usd, or_hi - or_lo, US100_USD_PER_PT_PER_LOT)
+    if lots < inv.LOT_STEP:
+        return out
+    hh = [closes[m] for m in post_keys]
+    brk = inv.orb_break(hh, hh, or_hi, or_lo)
+    if brk is None:
+        return out
+    ex = inv.e7_exit(hh[brk["bar"]:], hh[brk["bar"]:], hh[brk["bar"]:],
+                     brk["level"], brk["stop"], brk["direction"])
+    pnl = (ex["exit_px"] - brk["level"]) * brk["direction"] * lots \
+        * US100_USD_PER_PT_PER_LOT
+    out.update(fired=True, pnl_usd=round(pnl, 4), or_hi=or_hi, or_lo=or_lo,
+               direction=brk["direction"], entry=brk["level"], exit=ex, lots=lots)
     return out
