@@ -111,6 +111,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "30027eb243bc47f4ac3a4ee42eae7c6a": {
+    "first_seen": "2026-08-25 11:30",
+    "source": "github_python",
+    "title": "NVIDIA/Megatron-LM",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "308c54aea93eef94b83e38361dbc8718": {
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
