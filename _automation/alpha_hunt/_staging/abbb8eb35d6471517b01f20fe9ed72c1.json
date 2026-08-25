@@ -1,0 +1,14 @@
+{
+  "hash": "abbb8eb35d6471517b01f20fe9ed72c1",
+  "source": "quantinsti",
+  "canonical_id": "https://blog.quantinsti.com/sec-form-4-insider-trading-python-event-study/",
+  "title": "SEC Form 4 Insider Purchases in Python: A Filing-Date Event Study with Free EDGAR Data",
+  "url": "https://blog.quantinsti.com/sec-form-4-insider-trading-python-event-study/",
+  "description": "Build a Form 4 insider trading event study in Python with free EDGAR data. Covers SPY-adjusted CARs, clustered inference, cumulative abnormal returns and fully reproducible code.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "trading_topic"
+  ],
+  "captured": "2026-08-25 14:00 UTC"
+}
