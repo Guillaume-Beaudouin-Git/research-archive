@@ -6,6 +6,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0105892d31d15bfb1257472cb1e1ab3b": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Double/Debiased Machine Learning for Functional-Form-Robust Spatial Autoregressi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "055ca79b8e26861d1fd1fe778e081ce8": {
     "first_seen": "2026-08-07 01:30",
     "source": "arxiv_econ_em",
@@ -24,6 +31,13 @@
     "first_seen": "2026-08-19 03:00",
     "source": "arxiv_econ_em",
     "title": "Fixed-Effect Saturation Is Not Weak Identification: Certifying Inference under M",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "0a2e35a3f2cf0630a559ab811e9660e5": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Uniformly Valid Inference Under Interactive and High-Dimensional Constraints",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -48,6 +62,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "27eb5a1667617588c280bfe751093904": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Identification and Inference for Causal Effects in Extremes under General Condit",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2a2398da1f977796dafba6514a193b0a": {
     "first_seen": "2026-08-14 02:30",
     "source": "arxiv_econ_em",
@@ -67,6 +88,13 @@
     "source": "arxiv_econ_em",
     "title": "Local Asymptotics for Treatment Choice with Partial Identification",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "33be87a11971fcbc78b7d6335cbcef37": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "How Replicable Are Statistically Significant Findings?",
+    "decision": "accepted",
     "promising_file": null
   },
   "34ebe209893184e5d68c34fc519113d8": {
@@ -258,6 +286,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "74374da9e17e91ba8cb7c1e604c8917c": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Exact Rejection Sampling for Non-Gaussian State Space Models",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "745b2590f771be0c9dc6394e5726d411": {
     "first_seen": "2026-08-06 03:30",
     "source": "arxiv_econ_em",
@@ -290,6 +325,20 @@
     "first_seen": "2026-08-11 04:00",
     "source": "arxiv_econ_em",
     "title": "Optimal Experimental Design and Estimation when Potential Outcomes are Bounded",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "816aa1e62eb87d29d40b016a08e8f74d": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Systematic Bias in Green Patent Classification: Silent Green and False Green",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "8954e87bcbdd9f74ba3e13d54f6fe373": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimating Pathway Treatment Effects in the Presence of Intermediate Events with",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -354,6 +403,13 @@
     "source": "arxiv_econ_em",
     "title": "Estimating and Testing Kinks in Panel Data Models",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "a17b877d7e5f95566228a4aa0bba573a": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Closed-form estimation and uniform inference in additively separable triangular ",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "a4e87bd25adc3080b276904f2d6c61b3": {
@@ -461,6 +517,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "b6d3f8394d71e6f318fa77b2e420418e": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Testing selection on observables in parametric models with refreshment samples",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "b8b670d2716e60b<ACCOUNT_ID>d6c67fcb": {
     "first_seen": "2026-08-14 02:30",
     "source": "arxiv_econ_em",
@@ -472,6 +535,13 @@
     "first_seen": "2026-08-19 03:00",
     "source": "arxiv_econ_em",
     "title": "The Limits of Experimental Design: Covariate Balance Beyond Low Dimension",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "bc97cb6b958a4fcb74893313497ce2cc": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Fixed-$T$ Dynamic Spatial Panel Model with Common Shocks",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -566,6 +636,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "da1769879b52e63143b46b1a6747f5a1": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Uniform Inference on Quantile Effects under Network Interference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "ddc7a21389c0ed061ec7dc4fdbae1781": {
     "first_seen": "2026-08-11 02:30",
     "source": "arxiv_econ_em",
@@ -608,6 +685,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e7d773ac0609024abaf<ACCOUNT_ID>d105": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Classification testing: A new framework for drawing qualitative conclusions from",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e98121770aa379b40db290ea2afd684c": {
     "first_seen": "2026-08-11 02:30",
     "source": "arxiv_econ_em",
@@ -641,6 +725,13 @@
     "source": "arxiv_econ_em",
     "title": "Learning about Treatment Effects in Panels under Unknown Interference",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "f0eb9d275f31e941a1caa817700b6c41": {
+    "first_seen": "2026-08-25 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Sequentially valid inference for probabilistic inflation forecasts",
+    "decision": "accepted",
     "promising_file": null
   },
   "f3e5c1442f8e23bd2964c9fe06989279": {
