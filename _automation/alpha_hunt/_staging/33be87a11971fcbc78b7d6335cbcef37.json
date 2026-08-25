@@ -1,0 +1,14 @@
+{
+  "hash": "33be87a11971fcbc78b7d6335cbcef37",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.23257v1",
+  "title": "How Replicable Are Statistically Significant Findings?",
+  "url": "http://arxiv.org/abs/2608.23257v1",
+  "description": "In the empirical sciences, significance thresholds often determine whether findings are treated as evidence of an effect. This paper studies how likely findings that just meet conventional significance thresholds are to remain significant in replications of the same sample size. To answer this question, we estimate the expected replication probability conditional on a given p-value among published studies for experimental economics, psychology, and social science. We validate this measure by showing it accurately predicts actual replication outcomes, outperforming prediction markets. A finding with a p-value of 0.05 has an expected replication probability ranging from 0.10 to 0.25 across fields. Low replicability reflects low power in original studies rather than publication bias. We then develop a nonparametric estimator and apply it to economics literatures that use larger samples, finding higher but still low replication probabilities. These results indicate that statistical significance in a single study provides only suggestive evidence of an effect. Stronger conclusions require cumulative evidence.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-25 02:30 UTC"
+}

@@ -1,0 +1,14 @@
+{
+  "hash": "74374da9e17e91ba8cb7c1e604c8917c",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.21619v1",
+  "title": "Exact Rejection Sampling for Non-Gaussian State Space Models",
+  "url": "http://arxiv.org/abs/2608.21619v1",
+  "description": "Rejection sampling requires a proposal that dominates the target by a known constant, generally unavailable for non-Gaussian state space models. We construct such a proposal for the latent state path, yielding independent exact smoothing draws and an unbiased likelihood estimator whose relative variance is at most $1/p-1$ per draw at acceptance probability $p$. The method covers scalar states with affine Gaussian dynamics and log-concave observation densities, including multivariate observations. Transition twisting makes the log target-to-proposal ratio separable, and tangent-line twists make each term nonpositive, producing an attained, sharp dominating constant. With a companding node placement, the accumulated envelope error is $O(T/G^2)$ for a sample of length $T$ with $G$ nodes per date, so $G\\propto\\sqrt{T}$ keeps acceptance bounded away from zero; for stochastic volatility, the required conditions hold almost surely. A simpler mode-centered grid shows the same scaling empirically. At $T=2{,}000$, acceptance is $75\\%$, versus roughly $10^{-16}$ for the Gaussian envelope.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-25 02:30 UTC"
+}

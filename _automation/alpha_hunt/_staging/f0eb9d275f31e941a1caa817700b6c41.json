@@ -1,0 +1,14 @@
+{
+  "hash": "f0eb9d275f31e941a1caa817700b6c41",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.23064v1",
+  "title": "Sequentially valid inference for probabilistic inflation forecasts",
+  "url": "http://arxiv.org/abs/2608.23064v1",
+  "description": "Traditional statistical tests are poorly suited for the sequential evaluation of probabilistic forecast calibration. We address this limitation in macroeconomic forecasting by applying a new sequential testing method based on e-values. The e-value-based methodology enables anytime-valid inference. It allows practitioners to test against calibration continuously without invalidating statistical guarantees. To illustrate the framework's practical value, we apply it to probabilistic inflation forecasts for the United States, the Euro Area, and Switzerland. Our analysis shows that the sequential approach gives detailed insights into the timing and nature of forecast misspecification. We find these diagnostics are particularly insightful during major structural breaks. During these events, we find evidence against calibration that static, full-sample tests often miss. Therefore, this work shows that e-value-based tests are a practical method for the evaluation of forecast calibration in empirical macroeconomics.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-25 02:30 UTC"
+}
