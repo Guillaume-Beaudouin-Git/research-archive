@@ -1,0 +1,14 @@
+{
+  "hash": "70a12aa0370cf26efb168c7716fbcb5f",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.23925v1",
+  "title": "Repairing Locally Misspecified GMM: An Empirical Bayes Approach",
+  "url": "http://arxiv.org/abs/2608.23925v1",
+  "description": "Econometric models offer parsimonious but inexact approximations to data-generating processes. This paper studies the generalized method of moments (GMM) when exchangeable specification errors of order $n^{-1/2}$ contaminate the moment conditions. I develop estimators for the mean and variance of these specification errors, establishing their consistency in an asymptotic framework where the number of overidentifying restrictions grows with the sample size. These hyperparameter estimates are used to develop a feasible bias-corrected estimator of target parameters. I also propose an empirical Bayes estimator that weakly improves precision by subtracting a best linear predictor of the first-order estimation error from the bias-corrected estimator. Using a combinatorial central limit theorem, I establish asymptotic normality of both estimators and provide variance estimators that enable misspecification-aware frequentist inference. Simulation exercises indicate the procedures can meaningfully improve on standard two-stage least squares estimation when exclusion violations are present. Revisiting the influential study of Angrist and Krueger (1991), I consider an instrument set where exchangeable excludability violations are plausible. Repairing the two-stage least squares estimates of the returns to schooling moves them in the direction of ordinary least squares and reduces sensitivity to the specification of controls.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-26 02:30 UTC"
+}

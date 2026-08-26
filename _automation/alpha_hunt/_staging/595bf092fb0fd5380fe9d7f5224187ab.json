@@ -1,0 +1,14 @@
+{
+  "hash": "595bf092fb0fd5380fe9d7f5224187ab",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.23796v1",
+  "title": "Accelerating the Adoption of Residential Solar Power Systems: Policy Analysis using a Dynamic Structural Model",
+  "url": "http://arxiv.org/abs/2608.23796v1",
+  "description": "Problem definition: Solar electricity generation is a strategic component of energy portfolios designed to meet growing demand and reduce carbon emissions. Governments and municipalities encourage household photovoltaic (PV) adoption through upfront rebates and tax credits. Limited budgets require principled, data-driven policies that account for the drivers of adoption and the effects of incentives on adoption rates. Methodology/results: We develop a dynamic structural model of residential PV diffusion based on adoption decisions by forward-looking households that weigh the economic trade-offs between installing now and later. Adoption depends on return on investment and influence from neighboring adopters. The model segments households by home value and urbanization level, incorporates unobserved heterogeneity, and captures spatiotemporal installation dynamics. We estimate the model using Bayesian methods and detailed household-level data from Austin, Texas. In out-of-sample tests, it predicts installations more accurately than contemporary alternatives. We simulate counterfactual policies within the dynamic equilibrium of PV diffusion to evaluate rebate designs. The framework can also be adapted to study the adoption of other durable technologies. Managerial implications: A rebate offered for a limited period generates more adoption and emissions reductions than a prolonged, costlier program. This counterintuitive result arises from forward-looking behavior, neighbor influence, and accelerated adoption before the rebate expires. We also evaluate phased reductions and rebates differentiated by household segment. A two-step reduction outperforms multiple small reductions. Geographic differentiation improves policy performance, whereas differentiation by home value offers little advantage over a uniform rebate.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "methodology"
+  ],
+  "captured": "2026-08-26 02:30 UTC"
+}
