@@ -1,0 +1,14 @@
+{
+  "hash": "1a1a301ae19aacf8e12e0b37a3d69d15",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/quantpedia-api-for-peer-group-strategy-analysis/",
+  "title": "Quantpedia API for Peer Group Strategy Analysis",
+  "url": "https://quantpedia.com/quantpedia-api-for-peer-group-strategy-analysis/",
+  "description": "A single backtest can show that strategy was profitable, but it does not always show whether the strategy was competitive. This is especially true for systematic futures strategies. A trend-following strategy can have a positive Sharpe ratio, a long live-like performance history, and a reasonable drawdown, but those numbers are difficult to interpret without a relevant comparison group. A broad equity index is often not the right benchmark for this type of strategy. A monthly rebalanced multi-asset futures strategy has a different objective, different risk profile, and different return drivers than a long-only stock index. A more useful question is whether the strategy performs well compared with other systematic trend-following futures strategies. This case study shows how the Quantpedia API can be used to build a custom peer group benchmark for strategy evaluation. The workflow has two steps. First, Quantpedia strategy metadata is used to screen and define a comparable peer group. Second, the historical equity curves of the selected strategies are downloaded, converted into daily returns, and aggregated into an equal-weighted peer group benchmark.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-08-26 18:00 UTC"
+}
