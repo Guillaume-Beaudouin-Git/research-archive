@@ -153,6 +153,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "4161809f8eb04354688f997bb402825b": {
+    "first_seen": "2026-08-26 05:30",
+    "source": "quantocracy",
+    "title": "Form 4 Insider Trading in Python: A Filing-Date Event Study [Quant Insti]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "44bef5cd3ed14718acc5f0c1a23665a6": {
     "first_seen": "2026-08-13 08:00",
     "source": "quantocracy",
@@ -188,6 +195,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "5d795a4a4123ee43a539ce66dcc0cddf": {
+    "first_seen": "2026-08-26 05:30",
+    "source": "quantocracy",
+    "title": "The Crash Switch Worked and the Strategy Starved Anyway: Keller’s Menu Tested [Q",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "63133a0de9db060a3ee86597570f7cb2": {
     "first_seen": "2026-08-04 06:00",
     "source": "quantocracy",
@@ -213,6 +227,13 @@
     "first_seen": "2026-08-24 07:00",
     "source": "quantocracy",
     "title": "Does Complexity Actually Help? The Virtue-of-Complexity Autopsy [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "883e0bd29306b31703e9c59bb6a74e08": {
+    "first_seen": "2026-08-26 05:30",
+    "source": "quantocracy",
+    "title": "FX Edge Lives in Other Markets (cross-asset series) [Aligrithm]",
     "decision": "accepted",
     "promising_file": null
   },
@@ -314,6 +335,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "d42a9d5d9b870bb50d44818989e85b58": {
+    "first_seen": "2026-08-26 05:30",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/25/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "d50b9f3fce307f5e9287bc23660429bf": {
     "first_seen": "2026-08-17 06:30",
     "source": "quantocracy",
@@ -353,6 +381,13 @@
     "first_seen": "2026-08-10 06:00",
     "source": "quantocracy",
     "title": "Trading Strategy Comparison: Is B Really Better Than A? [Krzysztof Ozimek]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "e83501bc590f99f4a5c82808c47f9a31": {
+    "first_seen": "2026-08-26 05:30",
+    "source": "quantocracy",
+    "title": "The Sharpe Stability Ratio: Evaluating the Sharpe Ratio Temporal Consistency [Po",
     "decision": "accepted",
     "promising_file": null
   },
