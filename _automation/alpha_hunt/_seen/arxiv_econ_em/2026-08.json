@@ -118,6 +118,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "3e17f422158033f8382408213a31e8a4": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "How does hazard exposure influence job choice? Evaluating time-dependent tradeof",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "3f2fd553a65e2961e8ef897b55891131": {
     "first_seen": "2026-08-18 03:30",
     "source": "arxiv_econ_em",
@@ -195,10 +202,24 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "50d0fbd975e22c391de16fadaed5821a": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Principal Component Analysis for a Mix of Stationary and Nonstationary Variables",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "565b845673b0ecc8070cecb0c4c7d7e6": {
     "first_seen": "2026-08-12 02:30",
     "source": "arxiv_econ_em",
     "title": "Testing Sign Agreement",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "595bf092fb0fd5380fe9d7f5224187ab": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Accelerating the Adoption of Residential Solar Power Systems: Policy Analysis us",
     "decision": "accepted",
     "promising_file": null
   },
@@ -286,6 +307,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "70a12aa0370cf26efb168c7716fbcb5f": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Repairing Locally Misspecified GMM: An Empirical Bayes Approach",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "74374da9e17e91ba8cb7c1e604c8917c": {
     "first_seen": "2026-08-25 02:30",
     "source": "arxiv_econ_em",
@@ -312,6 +340,13 @@
     "source": "arxiv_econ_em",
     "title": "Distance Profile Embedding for Independence and Conditional Independence Testing",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7caa75b1de014ea66812c95834d97902": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Systematic Bias in Green Patent Classification: Silent Green and False Green",
+    "decision": "accepted",
     "promising_file": null
   },
   "7d15da69c0e8dabb0fa1d22dcb0afc52": {
@@ -370,6 +405,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "932e08cd7cb3d9f1e1c6aa8af8806077": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Dynamic Discrete Choice and Inverse Reinforcement Learning: Inferring Preference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "934220a66e597d1e238b6ab2c5596277": {
     "first_seen": "2026-08-11 04:00",
     "source": "arxiv_econ_em",
@@ -405,10 +447,24 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "a0ee1d7eeb1ef16075027d12ad83bab1": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Randomization tests for model specification in causal inference under network in",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "a17b877d7e5f95566228a4aa0bba573a": {
     "first_seen": "2026-08-25 02:30",
     "source": "arxiv_econ_em",
     "title": "Closed-form estimation and uniform inference in additively separable triangular ",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a208ec1a7339ab8aaba19e3dc24eb5c5": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Estimation of Random-Coefficient Dynamic Panel Data Models with a Fixed T",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -717,6 +773,13 @@
     "first_seen": "2026-08-11 02:30",
     "source": "arxiv_econ_em",
     "title": "A framework for assessing value and heterogeneity, illustrated using an early mo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "ef787605bdc9a9138b943ce1c3545d35": {
+    "first_seen": "2026-08-26 02:30",
+    "source": "arxiv_econ_em",
+    "title": "Across-Design Uncertainty in Short Pricing Panels: Inference and Identification",
     "decision": "rejected_L0",
     "promising_file": null
   },

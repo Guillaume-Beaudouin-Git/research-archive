@@ -1,0 +1,14 @@
+{
+  "hash": "7caa75b1de014ea66812c95834d97902",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.23420v2",
+  "title": "Systematic Bias in Green Patent Classification: Silent Green and False Green",
+  "url": "http://arxiv.org/abs/2608.23420v2",
+  "description": "Green-patent indicators based on Cooperative Patent Classification Y02 tags increasingly inform research, industrial policy, and climate-oriented investment, yet their construct validity has not been evaluated at corpus scale. We ask whether Y02 classification errors are random measurement noise or systematic, direction-specific bias. We introduce an Error-as-Signal framework in which disagreement between an administrative label and an independent model is treated as evidence of potential measurement error. Screening 9,075,421 USPTO granted patents from 1962-2024 with a fine-tuned domain model identifies 517,772 disagreements. Two independent open-weight large language models then assess whether each flagged invention has a direct climate-mitigation or adaptation function. Cross-model consensus identifies 180,384 administrative Type I errors (False Green) and 29,465 Type II errors (Silent Green). Correcting these errors reduces the measured green-patent population by 25.5%, from 592,387 to 441,468 patents. Misclassification is systematic rather than random. Atypicality predicts Silent Green in an inverted-U pattern, while reflection complexity independently increases under-recognition: controlling for atypicality and filing year, a one-standard-deviation increase is associated with 1.61 times the odds of Silent Green. Structural complexity has the opposite association. Among consensus-attributed errors, the same increase in reflection complexity is associated with 2.45 times the odds that an error is Silent Green rather than False Green. Event tests show no discrete rise in misclassification when green classification became more salient and only limited evidence of increased explicit green framing after the 2013 CPC launch. The evidence is more consistent with bounded classification capacity than with applicant gaming.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-26 02:30 UTC"
+}
