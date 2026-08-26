@@ -34,6 +34,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0e699d1e95c13a6f8f1c0affeaba2e5b": {
+    "first_seen": "2026-08-26 12:00",
+    "source": "github_python",
+    "title": "aiming-lab/AutoResearchClaw",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0f18c69c5bc3b2a6d09f2258ff201c0f": {
     "first_seen": "2026-08-06 11:30",
     "source": "github_python",
@@ -122,6 +129,13 @@
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
     "title": "Huanshere/VideoLingo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "36292e9d296404aa80ecd20918e26bdc": {
+    "first_seen": "2026-08-26 12:00",
+    "source": "github_python",
+    "title": "ai-dynamo/aiperf",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -514,6 +528,13 @@
     "first_seen": "2026-08-18 11:00",
     "source": "github_python",
     "title": "docling-project/docling",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fec19edd375ece0ecbc928e3664ceefa": {
+    "first_seen": "2026-08-26 12:00",
+    "source": "github_python",
+    "title": "netbox-community/netbox",
     "decision": "rejected_L0",
     "promising_file": null
   }
