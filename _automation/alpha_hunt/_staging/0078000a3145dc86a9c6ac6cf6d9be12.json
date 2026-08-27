@@ -1,0 +1,14 @@
+{
+  "hash": "0078000a3145dc86a9c6ac6cf6d9be12",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.25009v1",
+  "title": "Theory as data compression",
+  "url": "http://arxiv.org/abs/2608.25009v1",
+  "description": "Comparing economic models requires balancing fit against flexibility. Yet standard selection criteria often proxy flexibility using parameter counts, overlooking differences due to functional form and experimental design. This paper introduces a data compression approach for evaluating economic models. Following the Minimum Description Length principle, models are interpreted as codes and evaluated by how effectively they compress data. This perspective yields compression-based analogues of Selten's predictive success and Fudenberg et al.'s completeness and restrictiveness. Unlike Selten's measure, its analogue unifies deterministic and stochastic models in a likelihood framework; unlike Fudenberg et al.'s measures, the proposed framework provides a complete selection criterion. Applications to social preferences, risky choice, and intertemporal choice illustrate the relevance of the approach. In simulations, accounting for flexibility differences due to functional form and experimental design improves model recovery relative to AIC, BIC, and cross-validation. In empirical reanalyses, MDL changes model rankings in favor of more parsimonious specifications.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-27 03:00 UTC"
+}

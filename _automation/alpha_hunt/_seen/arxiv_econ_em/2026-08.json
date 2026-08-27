@@ -1,4 +1,11 @@
 {
+  "0078000a3145dc86a9c6ac6cf6d9be12": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Theory as data compression",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "00e7073d2417ca970423a0ac8cc76213": {
     "first_seen": "2026-08-06 03:30",
     "source": "arxiv_econ_em",
@@ -62,6 +69,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2665c66c4f79d75411c5f7dbd67cb6ac": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "SAUSS: Stochastic Approximation with Unbiased Simulated Scores for Limited Depen",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "27eb5a1667617588c280bfe751093904": {
     "first_seen": "2026-08-25 02:30",
     "source": "arxiv_econ_em",
@@ -80,6 +94,13 @@
     "first_seen": "2026-08-18 02:00",
     "source": "arxiv_econ_em",
     "title": "Clustered Local Projections for Short and Ultra-Short Time Series -- A Hierarchi",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "310ad2bd6270122aff0149810f5ceb27": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Cross-Section Estimation of Long-Run Relations Using Time-Compressed Data",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -307,6 +328,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6ed57cde8b165d8e0127210628df5eb3": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Limit Theory for U-Statistics under Clustered and Weakly Dependent Data",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "70a12aa0370cf26efb168c7716fbcb5f": {
     "first_seen": "2026-08-26 02:30",
     "source": "arxiv_econ_em",
@@ -452,6 +480,13 @@
     "source": "arxiv_econ_em",
     "title": "Randomization tests for model specification in causal inference under network in",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a125de83f8262d08744ab5ac6dbe446a": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Trading Scope for Credibility in Difference-in-Differences",
+    "decision": "accepted",
     "promising_file": null
   },
   "a17b877d7e5f95566228a4aa0bba573a": {
@@ -657,6 +692,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "cb596be36763ed4913f1aba11ac0e974": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Endogenous Selection and Spillovers: Bayesian Inference for Policy-Relevant Caus",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "cf0f63b74fa7d3b180d5e64c8d0b25b4": {
     "first_seen": "2026-08-13 02:30",
     "source": "arxiv_econ_em",
@@ -741,6 +783,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "e7668dce85f54560bca6a76ffcab31cd": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Efficient tensor bases for pairwise comparisons",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e7d773ac0609024abaf<ACCOUNT_ID>d105": {
     "first_seen": "2026-08-25 02:30",
     "source": "arxiv_econ_em",
@@ -816,6 +865,13 @@
     "source": "arxiv_econ_em",
     "title": "Candidate Set Size and Voting Behavior: A Front-Door Approach to Causal Moderati",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fa7360af8a695b84d9bf05f00a1f502a": {
+    "first_seen": "2026-08-27 03:00",
+    "source": "arxiv_econ_em",
+    "title": "Nonparametric Bayesian Inference for Partially Identified Discrete Response Mode",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   }
 }
