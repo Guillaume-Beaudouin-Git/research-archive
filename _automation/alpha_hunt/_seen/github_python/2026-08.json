@@ -62,6 +62,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "11daed889db961da8a5df997ca144c89": {
+    "first_seen": "2026-08-27 11:00",
+    "source": "github_python",
+    "title": "RVC-Boss/GPT-SoVITS",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "12e0c343da24cad5b689876a548cdc95": {
     "first_seen": "2026-08-20 11:00",
     "source": "github_python",
@@ -129,6 +136,13 @@
     "first_seen": "2026-08-02 11:00",
     "source": "github_python",
     "title": "Huanshere/VideoLingo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "356aa405be337959f2229abf62ff1439": {
+    "first_seen": "2026-08-27 11:00",
+    "source": "github_python",
+    "title": "yashmulgaonkar/FlightScnr_Pi",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -248,6 +262,13 @@
     "first_seen": "2026-08-05 11:00",
     "source": "github_python",
     "title": "Comfy-Org/workflow_templates",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "67f0a1b424beef6391b5593f8961ebcf": {
+    "first_seen": "2026-08-27 11:00",
+    "source": "github_python",
+    "title": "htdt/godogen",
     "decision": "rejected_L0",
     "promising_file": null
   },
