@@ -1,0 +1,141 @@
+[
+ {
+  "id": "2608.27374",
+  "title": "Distribution-constrained optimal multiple stopping: the Root-type solution",
+  "summary": "We consider the distribution-constrained optimal stopping problem introduced by Bayraktar and Miller (Mathematical Finance, 2019) and Beiglbock et al. (PTRF, 2018). Motivated by the multi-marginal Skorokhod embedding problems (SEP) and applications in mathematical finance, we generalize (a class of) its solution to the multi-marginal case. First, we give a probabilistic characterization of the solution as the first hitting times of barrier sets by some time-reversed process, in the same spirit as Cox et al. (PTRF, 2019). Then, we prove the optimality results using martingale inequality arguments, which extends the type of cost functions considered in Beiglbock et al. (PTRF, 2018).",
+  "authors": [
+   "Shuoqing Deng",
+   "Daxin Huang"
+  ],
+  "categories": [
+   "math.PR",
+   "q-fin.MF"
+  ],
+  "published": "2026-08-27T17:11:08Z",
+  "updated": "2026-08-27T17:11:08Z"
+ },
+ {
+  "id": "2608.27295",
+  "title": "A Temporal Multiplex Graph Neural Network for Systemic Risk Transmission in Global Banking",
+  "summary": "This paper develops a unified framework for assessing systemic risk and identifying contagion channels in the global banking system using a Temporal Heterogeneous Multiplex Graph Neural Network. We construct a harmonised quarterly panel combining bank fundamentals, CDS spreads, and macroeconomic indicators, and represent these data as dynamic multiplex networks linking banks through financial similarity and liquidity co-movement, augmented with country-level macroeconomic relationships. The model integrates graph convolutional layers with recurrent GRU dynamics and incorporates a learnable fusion gate to capture time-varying reliance on alternative contagion channels. Empirical results show that the framework outperforms conventional econometric, machine learning, and graph-based benchmarks for short-term changes in CDS spreads. Beyond forecasting, we provide an interpretable framework to quantify bank-level systemic importance via stress testing, assess country-level spillovers under macroeconomic shocks, and uncover transmission pathways through edge perturbation analysis. Robustness tests confirm the stability of both predictive accuracy and systemic risk rankings.",
+  "authors": [
+   "Nneka Umeorah",
+   "Tolulope Fadina"
+  ],
+  "categories": [
+   "q-fin.CP"
+  ],
+  "published": "2026-08-27T16:01:11Z",
+  "updated": "2026-08-27T16:01:11Z"
+ },
+ {
+  "id": "2608.27229",
+  "title": "On the approximation of posterior laws in compound loss models by conditional Wasserstein GANs",
+  "summary": "Bayesian inference in compound loss models must often be repeated across policies, market scenarios, and prior specifications. Outside conjugate cases, this may require repeated numerical integration or Markov chain Monte Carlo (MCMC). We formulate this problem as amortized posterior approximation and construct a conditional Wasserstein generative adversarial network conditioned on sufficient statistics, prior mean and coefficient of variation, and mixture weights of prior families. Notably, a single shared generator is able to approximate the posterior laws of both the Poisson intensity and the Pareto shape parameter under mixtures of Gamma, inverse-Gaussian, and lognormal priors. We assess the approximation by simulation-based calibration and by comparisons with analytical posteriors, deterministic quadrature, and extensive MCMC simulations. In an application to data on extreme natural catastrophe losses, we produce rolling one-year posterior predictive distributions, and examine the effects of heavy-tailed severity and prior-family uncertainty on aggregate tail risk.",
+  "authors": [
+   "Aleksandar Arandjelovic",
+   "Pavel V. Shevchenko",
+   "George Tzougas"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "stat.ML"
+  ],
+  "published": "2026-08-27T15:15:56Z",
+  "updated": "2026-08-27T15:15:56Z"
+ },
+ {
+  "id": "2608.27156",
+  "title": "Traveling Waves in Equity Markets with Rank-Based Entry and Exit",
+  "summary": "We model equity markets using geometric Brownian particles entering and exiting at rank-dependent intensities. In the many-firm limit, the capital distribution converges to the solution of a reaction-diffusion equation with reaction term built from the intensities. Calibrated on CRSP data, the reaction term is bistable, and the long-run distribution is a traveling wave: we prove existence, uniqueness, and, for constant coefficients, exponential relaxation. Turnover, not drift, stabilizes the calibrated market. With measured volatility, the wave tracks the empirical capital distribution in every decade, determines the capitalization growth of diversity-weighted portfolios, and places the market just inside the boundary of the diverse phase. Turnover reclaims most of what rebalancing gains.",
+  "authors": [
+   "Graeme Baker",
+   "Caroline Smyth"
+  ],
+  "categories": [
+   "math.PR",
+   "q-fin.MF"
+  ],
+  "published": "2026-08-27T14:08:08Z",
+  "updated": "2026-08-27T14:08:08Z"
+ },
+ {
+  "id": "2608.27076",
+  "title": "Tabular Deep Learning for Algorithmic Trading: Cross-Regime Bayesian Optimisation for Equity Signal Generation",
+  "summary": "Algorithmic trading now represents a market exceeding $20 billion, where even marginal gains in signal robustness can translate into economically significant returns. Existing evaluations of equity prediction models do not explicitly target regime robustness during hyperparameter selection. Five model classes are trained on daily observations from approximately 300 large-cap US equities over eleven years, with Bayesian optimisation configured to target trading performance across three statistically different market regimes. Regime-robust hyperparameter selection is associated with out-of-sample generalisation, as signal precision remains above the random baseline across all four quarters of the test period, and portfolio performance slowly degrades under simulated input noise before collapsing beyond a defined threshold. No individual tabular deep learning architecture outperforms gradient-boosted trees, but combining XGBoost and TabNet using rank aggregation produces a Hybrid ensemble with an annualised return of 51.26%, a Sharpe ratio of 2.44, and a statistically significant CAPM alpha of 0.423 (p = 0.011). A near-zero beta indicates this outperformance is driven by stock selection, not market exposure. Alternative data plays a secondary role once technical and fundamental features are accounted for, as well as contributing more strongly on the short side than the long, and varies by model class. An interactive application makes these results explorable in real time, with l",
+  "authors": [
+   "Joshua Le Grice"
+  ],
+  "categories": [
+   "cs.LG",
+   "q-fin.CP",
+   "q-fin.TR"
+  ],
+  "published": "2026-08-27T13:01:32Z",
+  "updated": "2026-08-27T13:01:32Z"
+ },
+ {
+  "id": "2608.26837",
+  "title": "Interpretable hybrid credit scoring for thin-file and underbanked populations",
+  "summary": "We extend a residual-learning hybrid credit scoring framework (logistic regression scorecard plus a gradient-boosting correction on its residuals, decomposed at each prediction into an interpretability ratio $ρ(x)$ that measures the share attributable to the linear branch) along three axes: an East African empirical instantiation on the Zindi Financial Inclusion in Africa data (Kenya, Rwanda, Tanzania, Uganda); a fairness audit at the granularity of the framework's three interpretability regions; and a thin-file segmentation analysis. On the Taiwan Credit Default benchmark retained for continuity, the calibrated hybrid attains AUC $= 0.776$ ($Δ\\mathrm{AUC} = +0.057$ vs.\\ standalone logistic regression, $+0.001$ vs.\\ standalone XGBoost), reduces Brier Score by 23\\%, and concentrates the highest-default-rate borrowers (69.5\\%) in the fully interpretable region. On Zindi, the calibrated hybrid attains AUC $= 0.869$ ($Δ\\mathrm{AUC} = +0.015$ vs.\\ LR, $p < 0.001$; $-0.004$ vs.\\ XGBoost), cuts Brier from $0.158$ to $0.085$ (a 46\\% reduction), and replicates the regional routing pattern. The fairness audit detects severe routing into the opaque ML-driven region along socioeconomic axes: rural respondents by 18 percentage points relative to urban, primary-or-less-educated by 32 points relative to secondary-and-above, and Ugandan respondents by 22 points relative to Kenyan, while gender shows essentially no routing disparity. The audit pipeline surfaces subgroup-routing violations tha",
+  "authors": [
+   "Belise Kanziga",
+   "Yaé U. Gaba",
+   "Olivier Kanamugire"
+  ],
+  "categories": [
+   "q-fin.RM"
+  ],
+  "published": "2026-08-27T09:09:50Z",
+  "updated": "2026-08-27T09:09:50Z"
+ },
+ {
+  "id": "2608.26473",
+  "title": "DTD-VAE: Disentangled Temporal Dependencies VAE for Credit Risk Prediction",
+  "summary": "Evaluating customer creditworthiness is crucial for retail banking operations, as it impacts marketing strategies, customer relationship management, and credit risk control. Traditional methods often struggle to capture complex temporal dependencies and extract pertinent information from customer data, crucial for accurate risk assessment. Specifically, they fail to differentiate between temporal patterns indicative of credit risk and those reflecting general customer behavior or preferences, leading to suboptimal risk predictions. In this study, we introduce the Disentangled Temporal Dependencies Variational Autoencoder (DTD-VAE), an advancement over conventional VAE, designed to disentangle temporal dependencies and distinguish credit risk-related features from past customer preferences. The feature inference module of the DTD-VAE incorporates an autoregressive temporal dependency learning mechanism that adeptly captures the temporal dependencies among latent variables, enriching the model's comprehension of the inherent data structure. Furthermore, the feature generative module utilizes an element-wise gating mechanism that assigns independent weights to each dimension of the expert models, enabling a finer-grained disentanglement of latent variables, particularly those relevant to credit risk prediction. Extensive experiments on six real-world datasets demonstrate that the proposed framework consistently outperforms existing methods, achieving performance gains of 3.2%-4.",
+  "authors": [
+   "Xiaobo Guo",
+   "Lu-an Dong",
+   "Yanbo Wang",
+   "Peng Zhang",
+   "Cai Zhi",
+   "Youru Li"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "stat.ML"
+  ],
+  "published": "2026-08-27T00:02:52Z",
+  "updated": "2026-08-27T00:02:52Z"
+ },
+ {
+  "id": "2608.25844",
+  "title": "Output-Only Identification and Spectral Monitoring of Coupled Feedback Networks with Known Time-Varying Actuation",
+  "summary": "Coupled feedback networks are often monitored channel by channel even though cross-channel paths alter both stability margins and transmitted disturbances. We study identification of a structured feedback matrix L_t = Phi diag(gamma_t) in an output-only setting: no commanded, probing, or reference input exists -- only temporally separated outputs and the scheduling gains gamma_t are observed, while the coupling response Phi and the clearing-window inputs are not. Identification rests jointly on the persistent excitation of the observed pre-window output and on two structural features separating coupling from confounds: the known time variation of the gains, which modulates the closed-loop response in a predictable pattern, and a partial-reversal moment by which a known fraction of transient displacement is corrected in a subsequent window. We give a hierarchy of results: exact local identification of the coupling under a Jacobian rank condition on the gain regimes; a first-order interaction estimator whose identification strength is the minimum eigenvalue of the residualized interaction information matrix (provably unidentified under constant gains); and a characterization of the estimand as a resolvent sensitivity -- the right object for screening transmitted disturbances and a first-stage input to spectral-margin recovery -- with sqrt(T) asymptotics for the first-order estimator, a cross-identification theorem mapping each varying gain to exactly identified resolvent rows a",
+  "authors": [
+   "Jihwan Woo"
+  ],
+  "categories": [
+   "eess.SP",
+   "q-fin.TR"
+  ],
+  "published": "2026-08-26T14:20:08Z",
+  "updated": "2026-08-26T14:20:08Z"
+ },
+ {
+  "id": "2608.25223",
+  "title": "On the hedging problem in general 1D diffusion markets",
+  "summary": "We develop a PDE-based methodology for pricing and hedging European contingent claims in general one-dimensional diffusion markets characterized solely by their scale function and speed measure, possibly without a classical SDE representation, and with constant interest rate. We derive a hedging equation whose solution generates a self-financing hedging strategy and provide sufficient conditions on scale, speed, and interest rate, under which this strategy achieves the minimal hedging capital, expressed through the no free lunch with vanishing risk (NFLVR) condition. We further prove necessary and sufficient conditions for NFLVR and characterize the class of equivalent local martingale measures through an auxiliary diffusion whose scale and speed characteristics are determined by those of the real-world diffusion and by the interest rate. When the NFLVR condition fails, the framework may produce multiple hedging equations corresponding to non-minimal strategies, whose associated prices can exceed the minimal hedging capital. We illustrate both the effectiveness and limitations of the approach through numerical experiments involving diffusion models with irregular features.",
+  "authors": [
+   "Alexis Anagnostakis",
+   "David Criens",
+   "Mikhail Urusov"
+  ],
+  "categories": [
+   "q-fin.MF",
+   "math.PR"
+  ],
+  "published": "2026-08-25T23:22:52Z",
+  "updated": "2026-08-25T23:22:52Z"
+ }
+]
