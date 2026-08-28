@@ -349,6 +349,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "85d871c90d4acaf6faeeb2ce723b7906": {
+    "first_seen": "2026-08-28 17:00",
+    "source": "github_python",
+    "title": "rlaope/oh-my-hermes",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "8beee525fd12f16c291eb159c82aa782": {
     "first_seen": "2026-08-21 22:00",
     "source": "github_python",
