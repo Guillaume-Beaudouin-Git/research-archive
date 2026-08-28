@@ -13,6 +13,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "0980aa0cb6f05fb5f6b1d9f9e0a4906c": {
+    "first_seen": "2026-08-28 06:00",
+    "source": "quantocracy",
+    "title": "Crypto Isn’t Structurally Alien: Roll/VPIN/Amihud Predict Distribution Shifts [A",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "0a28420ea3e74b900066f66e7753c55a": {
     "first_seen": "2026-08-12 06:00",
     "source": "quantocracy",
@@ -46,6 +53,13 @@
     "source": "quantocracy",
     "title": "Skewness as a Hidden Driver of Anomaly Returns [Alpha Architect]",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "109bdb25871313cd3ec15117da7e6766": {
+    "first_seen": "2026-08-28 06:00",
+    "source": "quantocracy",
+    "title": "Magic Formula tested against each half: quality alone beat the combination [Quan",
+    "decision": "rejected_L1_no_signal",
     "promising_file": null
   },
   "1330195c87073075ce9f5a73747026c2": {
@@ -195,6 +209,13 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "56f68217d32bf7338d644e5328bcf13f": {
+    "first_seen": "2026-08-28 06:00",
+    "source": "quantocracy",
+    "title": "What Happens After Congress Buys or Sells a Stock? Evidence… [Equibles]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "5d795a4a4123ee43a539ce66dcc0cddf": {
     "first_seen": "2026-08-26 05:30",
     "source": "quantocracy",
@@ -227,6 +248,13 @@
     "first_seen": "2026-08-24 07:00",
     "source": "quantocracy",
     "title": "Does Complexity Actually Help? The Virtue-of-Complexity Autopsy [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "8137fccc6e7104cec51a7dce9bfb0208": {
+    "first_seen": "2026-08-28 06:00",
+    "source": "quantocracy",
+    "title": "Markowitz, Estimation Error and 1/N [Spatium Novum]",
     "decision": "accepted",
     "promising_file": null
   },
@@ -312,6 +340,13 @@
     "source": "quantocracy",
     "title": "Bond indices and systematic duration management [Macrosynergy]",
     "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "c88c284136bc55bc7e6332f12e0c10b4": {
+    "first_seen": "2026-08-28 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 08/27/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "cad6e3d381bbbb22d01daf2d42e4f0ae": {
