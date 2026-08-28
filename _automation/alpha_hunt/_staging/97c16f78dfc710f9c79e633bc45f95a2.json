@@ -1,0 +1,14 @@
+{
+  "hash": "97c16f78dfc710f9c79e633bc45f95a2",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/boundaries-of-time-series-momentum/",
+  "title": "Boundaries of Time Series Momentum",
+  "url": "https://quantpedia.com/boundaries-of-time-series-momentum/",
+  "description": "Time-series momentum stands as one of the most reliable and heavily backtested anomalies in quantitative finance, serving as a foundational alpha source for modern managed futures and trend-following strategies. However, a recent academic paper by Matti Suominen and Erik Hjalmarsson, titled \"Boundaries of Time Series Momentum,\" uncovers a structural vulnerability that every practitioner must account for. The authors demonstrate that while equity market trends persist reliably during normal business cycles, they systematically break down and aggressively reverse when market valuations reach historical extremes. This phenomenon establishes clear macro \"boundaries\" where chasing the trend shifts from a highly profitable strategy to a severe drawdown risk.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-08-28 15:30 UTC"
+}
