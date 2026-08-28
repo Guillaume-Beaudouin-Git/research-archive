@@ -69,6 +69,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "1c7315b21e27c4f2bdcc5907bae1d774": {
+    "first_seen": "2026-08-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Analyzing Within-Subject Experiments: Identification, Testing, and Sensitivity",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "250461bdbb0c1cec7b73fc7ac488c540": {
+    "first_seen": "2026-08-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "DIRECT: Decomposing Audience Preference and Creative Effect in Visual Content An",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "2665c66c4f79d75411c5f7dbd67cb6ac": {
     "first_seen": "2026-08-27 03:00",
     "source": "arxiv_econ_em",
@@ -367,6 +381,13 @@
     "first_seen": "2026-08-03 03:30",
     "source": "arxiv_econ_em",
     "title": "Distance Profile Embedding for Independence and Conditional Independence Testing",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "7c5ef7ab64c2d0e70563ae7106313a2a": {
+    "first_seen": "2026-08-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Inference for High-Dimensional Network Data",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -738,6 +759,13 @@
     "first_seen": "2026-08-25 02:30",
     "source": "arxiv_econ_em",
     "title": "Uniform Inference on Quantile Effects under Network Interference",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "dcc7bb89968b7694f84f0f6e7f5e0ac1": {
+    "first_seen": "2026-08-28 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Nonparametric Identification of Two-Way Unobserved Heterogeneity",
     "decision": "rejected_L0",
     "promising_file": null
   },
