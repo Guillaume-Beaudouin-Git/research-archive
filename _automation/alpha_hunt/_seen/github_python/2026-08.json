@@ -90,6 +90,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "19a6524625137695f317170c47e1fb04": {
+    "first_seen": "2026-08-29 20:00",
+    "source": "github_python",
+    "title": "alchaincyf/nuwa-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "1a469181fa0c4f0ee75f28e4fb4c40bf": {
     "first_seen": "2026-08-28 11:30",
     "source": "github_python",
@@ -136,6 +143,13 @@
     "first_seen": "2026-08-22 11:00",
     "source": "github_python",
     "title": "debpalash/VoiceStudio",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2ad70a87db327fb46040336624569c88": {
+    "first_seen": "2026-08-29 20:00",
+    "source": "github_python",
+    "title": "warpdotdev/common-skills",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -293,6 +307,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "6c56993792b0eb7fdbe771c964bb3c92": {
+    "first_seen": "2026-08-29 20:00",
+    "source": "github_python",
+    "title": "kaifcodec/user-scanner",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "6d0dd5ec3f98a3ee60b06c06ba1d3d53": {
     "first_seen": "2026-08-14 11:00",
     "source": "github_python",
@@ -374,6 +395,13 @@
     "first_seen": "2026-08-19 14:00",
     "source": "github_python",
     "title": "youssofal/MTPLX",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "957d82f0230611adb2d3c96b7ac496a1": {
+    "first_seen": "2026-08-29 20:00",
+    "source": "github_python",
+    "title": "apirrone/Open_Duck_Mini",
     "decision": "rejected_L0",
     "promising_file": null
   },
