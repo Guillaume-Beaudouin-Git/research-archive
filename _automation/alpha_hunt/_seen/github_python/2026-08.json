@@ -34,6 +34,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "0e26d15430bf9f8954aba5a1b82e24b3": {
+    "first_seen": "2026-08-30 11:00",
+    "source": "github_python",
+    "title": "taoufik123-collab/claude-watch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "0e699d1e95c13a6f8f1c0affeaba2e5b": {
     "first_seen": "2026-08-26 12:00",
     "source": "github_python",
@@ -52,6 +59,13 @@
     "first_seen": "2026-08-21 22:00",
     "source": "github_python",
     "title": "google/adk-samples",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "1059fef762cac7abb41360c2ad7f2c2a": {
+    "first_seen": "2026-08-30 11:00",
+    "source": "github_python",
+    "title": "shootthesound/Fizgig",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -216,6 +230,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4966c2f03063bfc6782aa0ecd135ff3f": {
+    "first_seen": "2026-08-30 11:00",
+    "source": "github_python",
+    "title": "handsomestWei/patent-disclosure-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4a026494720d804c7035b507b86ae09b": {
     "first_seen": "2026-08-12 11:00",
     "source": "github_python",
@@ -230,10 +251,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "4ebc743e2f70c1cb799626f2f4749d92": {
+    "first_seen": "2026-08-30 11:00",
+    "source": "github_python",
+    "title": "agent0ai/agent-zero",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "514e57c3a5005ef773b10b06cfef964d": {
     "first_seen": "2026-08-15 11:00",
     "source": "github_python",
     "title": "MakazhanAlpamys/Soup",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "5311083f4bb6f78790d8eda13ec5eb1e": {
+    "first_seen": "2026-08-30 11:00",
+    "source": "github_python",
+    "title": "pollen-robotics/microduck_rl",
     "decision": "rejected_L0",
     "promising_file": null
   },
@@ -353,6 +388,13 @@
     "first_seen": "2026-08-16 11:00",
     "source": "github_python",
     "title": "0xSero/ai-data-extraction",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "81d6ffa36aaec9caee2ab667086ff556": {
+    "first_seen": "2026-08-30 11:00",
+    "source": "github_python",
+    "title": "happycola233/tchMaterial-parser",
     "decision": "rejected_L0",
     "promising_file": null
   },
