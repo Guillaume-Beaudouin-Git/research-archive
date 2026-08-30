@@ -97,6 +97,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "9378a85a4affe5fd07c2cd29005c31d7": {
+    "first_seen": "2026-08-30 11:00",
+    "source": "hn_algotrading",
+    "title": "Show HN: Train 300M/32-Layer Model in 1.5GB RAM on Base M1 Mac",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "96344729d9137e87e5723149ea8353c8": {
     "first_seen": "2026-08-09 21:30",
     "source": "hn_algotrading",
