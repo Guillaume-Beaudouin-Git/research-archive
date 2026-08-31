@@ -552,6 +552,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "d7eaed75d8ecd2ae90f9f7c96f642b03": {
+    "first_seen": "2026-08-31 11:00",
+    "source": "github_python",
+    "title": "securo-finance/securo",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "df6e83566462cada1e0fe95de10f2da4": {
     "first_seen": "2026-08-21 22:00",
     "source": "github_python",
@@ -626,6 +633,13 @@
     "first_seen": "2026-08-15 11:00",
     "source": "github_python",
     "title": "titanwings/colleague-skill",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fb24cdc0dd36eea61ec8455c4bf2e093": {
+    "first_seen": "2026-08-31 11:00",
+    "source": "github_python",
+    "title": "mukul975/cve-mcp-server",
     "decision": "rejected_L0",
     "promising_file": null
   },
