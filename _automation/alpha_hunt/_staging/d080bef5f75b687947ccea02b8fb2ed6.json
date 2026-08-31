@@ -1,0 +1,14 @@
+{
+  "hash": "d080bef5f75b687947ccea02b8fb2ed6",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.28087v1",
+  "title": "A Design Concept of Forecasting Software for Normalized Vector Autoregressions with Fat Tails and Stochastic Volatility",
+  "url": "http://arxiv.org/abs/2608.28087v1",
+  "description": "We present a suite of R packages for macroeconomic forecasting that leverages advanced Bayesian, structural, multivariate, dynamic, hierarchical, non-linear, and non-Gaussian models. The suite enables both structural and predictive analyses, and is adapted to time series data across various types, dimensions, and sampling frequencies. Each additional feature increases computational complexity. To address this challenge, our software design incorporates a carefully curated selection of models, efficient algorithms implemented in C++, advanced econometric and numerical methods, robust handling of complex input and output objects, and standardised workflows. This approach combines the computational efficiency of C++ with the convenience of working with data in R. We demonstrate that our packages facilitate original research contributions in forecasting, as illustrated by our example in which vector autoregressions with non-centred stochastic volatility enhance density and point predictions relative to models with centred stochastic volatility.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-08-31 01:30 UTC"
+}
