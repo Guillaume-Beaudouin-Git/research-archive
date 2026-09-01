@@ -1,0 +1,8 @@
+real_max_abs_t=4.2897379722144615
+real_max_variant=retest
+placebo_max_p50=2.372731829738929
+placebo_max_p90=3.1294938250032267
+placebo_max_p95=3.3503977149030475
+placebo_max_p99=4.454755645493147
+percentile_of_real=98.8
+n_pooled_variants=39

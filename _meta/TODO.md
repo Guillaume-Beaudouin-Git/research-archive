@@ -1,98 +1,88 @@
-# TODO — état au 2026-08-24
+# TODO — état au 2026-09-01
 
-Consolidé après la session du 17-24 août. Le nettoyage du dépôt est **terminé** ; ce qui
-reste est de la recherche, de la dette de méthode, et deux gestes opérateur. Chaque entrée porte : qui fait, quel effort, quel
-critère de fin. Classé par urgence réelle, pas par facilité.
-
----
-
-## 🔴 Bloquant — rien ne se décide sans ça
-
-| # | tâche | qui | effort | fin |
-|---|---|---|---|---|
-| 1 | **Lire la *maximum capital allocation rule*** sur ftmo.com. Le scaling plan dit $2 M tous comptes confondus ; la règle d'allocation elle-même n'est pas citée en source primaire. Elle conditionne toute décision de taille. | **toi** | 10 min | gravée dans `PropFirms/ftmo/rules.md` |
-| 2 | **Dérapage ORB, N=30 fills décomposés** — `(ask_au_déclenchement − niveau)` + `(fill − ask)`. Tranche **trois** décisions d'un coup : garder two-sided (<1.94 bps), passer long-only (1.94-2.5), désarmer (>2.5). | automatique | ~1 fill/jour ouvré | **~octobre 2026** |
+Consolidé après la session desk (dossiers ORB + overnight, diagnostic de régime, contexte macro,
+enquête Dédale). Le nettoyage du dépôt est **terminé** ; ce qui reste est de la décision, de la
+dette de méthode et deux gestes opérateur. Classé par échéance réelle.
 
 ---
 
-## 🟠 Sous quinze jours
+## 🔴 Septembre — échéances dures
 
-| # | tâche | qui | note |
+| # | tâche | qui | critère de fin |
 |---|---|---|---|
-| 3 | **Profil de spread à 2 semaines** — 22 500+ lignes déjà collectées. Confirme ou infirme le 1.045 bps RT sur un échantillon incluant heures creuses et ouvertures. | automatique | ~2 sept. |
-| 4 | **Premier retrait** + remboursement des €89. Balance > 10 000 à la frontière des 14 jours de trading. | toi | ~début sept. |
-| 5 | **Ré-ancrer les 4 swaps** (`spec_bounds_breach = 1` sur 4/4). Impact P&L négligeable (~$15/2 ans) mais **le swap de l'or est DANS le signal** (prix carry-ajusté). À grouper avec un autre ré-gel de spec. | moi (prépa) + toi (déploiement) | chaîne complète : config → yaml → sha → mqh → recompile → re-dépôt |
-| 6 | **Suite des résurrections S037 / S061** — l'audit d'ambiguïté d'entrée les fait passer DISCARD → KEEP. S061 est fragile au contrôle L60 (Sharpe +0.32 → +0.09), S037 tient mieux. Décider : dossier complet ou classement. | moi | Δn_tests = 0 (correction) |
+| 1 | **Premier payout** — repasser **au-dessus de 10 000** avant la frontière des 14 jours de trading (`open_days`=10 au 01/09). Déclenche le retrait ET les **99 €** de remboursement du challenge. Balance au 01/09 : **9 931,55**. | **toi** | payout demandé |
+| 2 | **Compléter la mesure de dérapage ORB** — 12 observations restantes (18/30 faites), ~1/jour ouvré ⇒ **~18 septembre**. Décide QUAND désarmer, pas SI. | automatique | N=30 |
+| 3 | **Ré-ancrer les 4 swaps** (`spec_bounds_breach = 1`, dérive > 25 % sur les 4 jambes). Impact P&L faible mais **le swap de l'or est DANS le signal**. Chaîne complète : config → yaml → sha → mqh → recompile → dépôt. **Fenêtre SAMEDI, binaire AVANT le merge.** | moi (prépa) + toi (déploiement) | pins à jour |
+| 4 | **Merger les branches de la session** — `desk-orb`, `desk-overnight`, `regime-diag`, `macro-context`, `funded-numbers`, `macro-deepdive`, `dedale-{strategy,config,audit,broker,data,notebooks}`, `brieuc-replication`, `orb-variants`, `momentum-intraday`, `audit-ledger-orb`. | toi | 0 branche en attente |
 
 ---
 
-## 🟡 Dette de méthode — à solder pendant que c'est frais
+## 🟠 Octobre — la décision ORB
 
-| # | tâche | pourquoi |
+**Cadre déjà établi, il ne manque que le coût final.**
+
+| coût final tout-compris | action | justification |
 |---|---|---|
-| 7bis | ✅ **FAIT** — trou de réconciliation ORB (PR #435). Le sleeve funded n'était modélisé **nulle part** : `replay.py` ne simulait que le micro-ORB (`micro_orb: false` en FUNDED) et le filtre `reason.startswith("micro")` de `reconcile.py` excluait `funded_orb_*` par construction. **Les 4 jours du compte funded étaient aveugles** ; 3 « OK » étaient des faux négatifs passés sous tolérance par chance. Correctif + 3 tests. | — | — |
-| 7 | **Graver L61-L63** dans le registre : (a) le sizing dépendant du chemin fabrique du t positif sur du bruit, invisible au HAC ; (b) un placebo bloc-bootstrap fabrique une géométrie de barres inexistante — 10× trop d'ambiguïté intra-barre ; (c) une mesure empruntée est acceptable si la marge au seuil dépasse l'erreur plausible de la source, sinon non. | trois artefacts mesurés cette semaine, aucun encore dans le registre |
-| 8 | **Auditer la résolution des jours à double touche du ledger ORB** — 4 013 jours, 1 direction/jour, mais on ignore comment les journées où les deux niveaux étaient touchés ont été tranchées. Le corpus 109 les score « assume loser » (le pire cas) ; le ledger funded a `entry == level` 4013/4013 (le meilleur cas). Le verdict R2 et le point mort à 1.94 bps reposent dessus. | inconnue neuve, jamais auditée |
-| 9 | **Mesure native du coût COPPER** — seul des 4 commodités dont la marge (×27) n'est pas hors d'atteinte d'une erreur de source. NGAS/USOIL/UKOIL sont à ×179-780, hors de portée. | ferme proprement le kill énergie |
-| 10 | **Corriger `DOC_SIGNAL_PIPELINE.md:37`** (affirme « ≥2 des 3 lookbacks » alors que le code exige l'unanimité) et **documenter le duty cycle réel de l'or** (43.9 % des séances éteintes, jamais rapporté). | la doc affirme le contraire du code |
-| 11 | **Ajouter `ftmo_live/` au regex hard-fail de `auto-merge.yml:57`** — aujourd'hui seul `*.mq5` bloque, alors que `ftmo_live/brain.py` est du Python **réellement déployé** par le pull. GARDE 2 le rattrape, mais la défense documentée n'existe pas. | 1 ligne, PR dédiée (`.github/` est lui-même hard-fail) |
+| < 1,69 bps | *(improbable)* long-only | il faudrait ≤ 0,098 bps sur les 6 AR restants |
+| **1,69 – 2,17** | **long-only, dérogation resserrée** | position actuelle (2,11 bps) |
+| > 2,17 | **désarmer** | il suffit de 1,298 bps, soit **+13 %** du dérapage observé |
+
+**La jambe courte est déjà condamnée indépendamment du coût** : t = 1,246 en **brut** (coût nul),
+la rupture 2022 qui la justifiait est au 73ᵉ percentile du bruit (p = 0,266), puissance 12 % sur
+2022-2026, effet sous son propre MDE, DSR ≈ 0,0000. Le bêta de la jambe longue est réel
+(β = +31,7, R² 17,8 %) mais **sous** le seuil disqualifiant de 30 %.
+
+- [ ] Trancher ORB à N=30 observations de dérapage
+- [ ] Nettoyer les worktrees (`.worktrees/`) une fois les branches mergées
 
 ---
 
-## ✅ Nettoyage du dépôt — TERMINÉ (2026-08-22 → 24)
+## 🟡 Novembre-décembre — construction
 
-| | départ | final |
-|---|---|---|
-| branches distantes | 448 | **17** |
-| branches locales | 99 | 22 |
-| PR ouvertes | 7 | **0** |
-| fichiers non suivis | 846 | **0** |
+- [ ] **Ouvrir le compte IBKR** — **chemin critique de ~2 semaines**. La fenêtre month-end est
+      mensuelle : chaque mois d'attente coûte une occasion.
+- [ ] **Déployer le month-end ZN** — 1 contrat, marge ~$1 800 (**14 %** d'un compte de €13k),
+      **+17,6 %/an**, Sharpe 0,92 net, pire événement historique **−15,5 %**, exposé 14 % des jours.
+      Plan complet : `_meta/plan_book_perso_2026-08.md`.
+- [ ] **Session dédiée FX carry (« Dédale revisité »)** — rejouer l'idée avec (a) swaps historiques
+      réels, (b) filtre de carry par trade et non figé, (c) two-sided réellement autorisé,
+      (d) sous les différentiels de 2026. Mémoire : `fx_carry_dedale_2026-08`.
 
-Fait : 460 branches supprimées avec preuve de contenu · 3 035 fichiers triés (1 899 commités,
-1 001 gitignorés, 135 supprimés) · README racine réécrit (l'ancien, 138 Ko et périmé de trois
-mois, archivé dans `docs/`) · `docs/ARCHITECTURE.md` + `docs/RESEARCH_METHOD.md` · 11 README de
-dossier · **19 branches non mergées remontées** (PR #434), dont ZN Baltussen que `CLAUDE.md`
-citait comme actif alors que `main` n'en contenait aucun fichier · **4 incohérences de vérité
-corrigées** (PR #433).
+---
 
-**Reste, non bloquant :**
+## 🔵 Dette de méthode — sans échéance
 
-| # | tâche | risque |
-|---|---|---|
-| 12 | **Restructuration de la racine** (25+ dossiers) — ⚠ **DIFFÉRÉ**. Le VPS pull `main` toutes les 30 min et des pins référencent des chemins absolus : déplacer `ftmo_live/`, `data/ftmo_portfolio/v22/`, `Portfolio/` ou `strategies/` **casse la production**. Exige un plan de déploiement coordonné. | **ÉLEVÉ** |
-| 13 | 3 worktrees encore montés (`_fixdoctruth`, `_rescue`, `_reconcile`) + un `stash@{0}` devenu redondant. Nettoyage cosmétique. | nul |
+- [ ] **Résurrections S037 / S061** du corpus 109 (l'audit d'ambiguïté les fait passer DISCARD → KEEP ;
+      S061 fragile au contrôle L60). Δn_tests = 0.
+- [ ] **Coût natif COPPER** — seule des 4 commodités dont la marge (×27) n'est pas hors d'atteinte
+      d'une erreur de source. Ferme proprement le kill énergie.
+- [ ] **CI** : `GARDE 1` de `auto-merge.yml` sort en `exit 1` **avant** l'étape qui pose le label
+      `needs-human-review` ⇒ une PR bloquée n'est jamais étiquetée. Le blocage est réel, seule la
+      signalisation manque.
 
-## 🔵 Projets futurs — par ordre d'espérance
+---
 
-### En attente explicite (hors session en cours)
+## ✅ Clos pendant cette session
 
-| projet | pourquoi il attend |
-|---|---|
-| **Commodity TSMOM sur futures** | Le meilleur candidat de la cartographie : testé sur **12 ETF dont USO et UNG** alors que le papier cité (Hurst-Ooi-Pedersen) opère sur ~60 **futures**. Trois violations simultanées des règles maison (instrument, breadth 12 < 30, pénalité de multiple testing sur un test sous-puissant par construction). **Δn_tests = 0**. Pré-enregistrement déjà rédigé. |
-| **Carry cross-asset (Koijen et al. 2018)** | Le repo a fermé le carry **FX** et le carry **commodités CFD**, mais jamais la construction **multi-classe** du papier — écart de breadth mesuré à **1/6**. Nouvel essai, donc déflate. |
+- **Calendrier overnight lundi+mardi** — dette DSR 0,29 ouverte depuis le 2026-06-03 et signalée
+  dans 5+ documents : **TRANCHÉE ET CLOSE** (`_meta/decision_calendrier_overnight_2026-09.md`).
+  Restriction maintenue : c'est une **contrainte de coût**, pas une sélection de signal
+  (toutes-nuits = **−0,17 bps** sur GER40, **+0,36** sur US100 ; lundi+mardi = **+5,11/+4,49**).
+- **L64 et L65 gravées** au registre (48 leçons) : rupture temporelle **estimée et non imposée**,
+  corrigée du balayage ; MDE calculé avec la **puissance** (facteur 1,40).
+- **Enquête Dédale** — mécanisme entièrement compris, biais d'anticipation démontré, version non
+  biaisée chiffrée (+16-21 % contre +60,33 % revendiqués).
 
-Les deux sont sur **futures/IBKR**, exclus de la session FTMO en cours par décision explicite.
+---
 
-### Famille neuve, jamais ouverte
+## 📌 Rappels de contexte
 
-| projet | note |
-|---|---|
-| **Momentum intraday (Gao-Han-Li-Zhou)** — première et dernière demi-heure | Famille **différente** du retour à la moyenne (momentum, pas reversion). Identifiée pendant la revue de littérature et volontairement non repliée dans le kill MR. Mérite son propre pré-enregistrement. |
-
-### Univers MR non couvert
-
-**HK50, AUS200, UK100, FRA40, ESP35, EUSTX50, crypto CFD.** L'infrastructure de téléchargement est
-en place, la reprise est peu coûteuse. ⚠ Espérance faible : l'invariance est déjà démontrée sur
-indices, FX, métaux et 7 nouveaux crosses (t moyen −1.03 à −1.28 partout). À ne faire que pour
-clore formellement.
-
-### Le débat de fond, non tranché
-
-**FTMO contre IBKR.** Sur 118 edges inventoriés, **11 nomment le compte personnel comme voie de
-ré-ouverture, zéro ne nomme FTMO**. Le scaling plan FTMO est hors d'atteinte d'un facteur 4-6 par
-construction (10 %/4 mois exigés contre ~1.7 % produits). Le compte perso porte déjà un book
-validé (trend + bond month-end, ρ 0.01, SR 1.02), sans barrière, sans horloge, avec compounding
-réel et 100 % du P&L.
-
-Les deux ne sont pas exclusifs — instruments et horizons différents, corrélation faible. Mais si
-l'effort marginal doit aller quelque part, **les chiffres disent IBKR**.
+- **Le livre est MONO depuis 27 jours-cerveau** : or éteint par vote 2-1 des lookbacks
+  (|sig| 0,3333 < 0,34, unanimité requise), USDJPY éteint par porte à hystérésis
+  (coupe 160 / rallume **155** après 10 clôtures ; niveau 160,09). **Rien à forcer** — ce sont
+  des états de régime, pas des pannes.
+- **Un drawdown de 1 % touche 100 % des cohortes**, ~12×/an, **94 % se recouvrent en 22 j**.
+  Le seuil qui change de nature est **−5 %** (24 % des cohortes, seulement 40 % en reviennent, 206 j).
+- **Si le risque doit baisser : réduire `ea_on_w`, jamais retirer un jour** (L54 — le dé-levier
+  plat domine tout conditionnement, vérifié sur ce sleeve).
+- **n_tests cumulé ≈ 1 999**, seuil Šidák |t| ≈ 4,21.

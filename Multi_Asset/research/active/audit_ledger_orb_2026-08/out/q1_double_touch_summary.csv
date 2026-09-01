@@ -1,0 +1,11 @@
+metric,value,pct
+n_days_ledger,4013,
+n_days_measured,4013,
+n_single,2402,59.855469723398954
+n_single_up,1316,32.79342138051333
+n_single_dn,1086,27.06204834288562
+n_double_total,1611,40.144530276601046
+n_double_ord,1610,40.11961126339397
+n_double_ambig,1,0.024919013207076998
+n_neither,0,0.0
+concordance_resolved_pct,3970,98.9531405782652
