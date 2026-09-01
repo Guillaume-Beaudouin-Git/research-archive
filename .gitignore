@@ -155,3 +155,7 @@ data/skew_research/session_basic_trend/setup_daily_series.csv
 
 # cache npm interne (jamais utile), régénérable
 data/deep_history_m1/_tool/.npmcache/
+.worktrees/
+
+# blob regenerable (104 Mo) — ledger de trades reproductible par code/
+Forex/research/active/brieuc_replication_2026-08/trades_detail.csv
