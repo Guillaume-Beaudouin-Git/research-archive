@@ -1,0 +1,14 @@
+{
+  "hash": "56c6761daebca30c889ba78c99769a35",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.30225v1",
+  "title": "Redefining Stablecoins from Nominal to Real Value: A Maximum Likelihood Approach",
+  "url": "http://arxiv.org/abs/2608.30225v1",
+  "description": "Stablecoins, typically pegged to fiat currencies, cannot achieve true stability because they inherit fluctuations in the underlying unit of account. To overcome this limitation, we introduce a stablecoin pegged to the Maximum Likelihood Value (MLV), a newly defined unit of account derived as the most probable configuration of latent real-value movements that explains observed nominal-value (price) changes. Grounded in inferential statistics and modern portfolio theory, MLV represents the most stable unit of account, as it enforces a zero real return on the minimum-variance portfolio. Empirical results confirm the operational viability of an MLV-pegged stablecoin: MLV can be computed in real time from 500 asset price series and improves annualized returns and Sharpe ratios while substantially reducing turnover in portfolio optimization.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "metrics"
+  ],
+  "captured": "2026-09-01 04:30 UTC"
+}

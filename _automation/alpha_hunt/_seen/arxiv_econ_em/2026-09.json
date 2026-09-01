@@ -5,5 +5,26 @@
     "title": "Content Exploration Beyond the Feed: Creator Supply and the Shared Corpus",
     "decision": "accepted",
     "promising_file": null
+  },
+  "56c6761daebca30c889ba78c99769a35": {
+    "first_seen": "2026-09-01 04:30",
+    "source": "arxiv_econ_em",
+    "title": "Redefining Stablecoins from Nominal to Real Value: A Maximum Likelihood Approach",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "95482284f8d5714de5df176d6a51724b": {
+    "first_seen": "2026-09-01 04:30",
+    "source": "arxiv_econ_em",
+    "title": "Moments of Random Coefficients in Short Panels",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "c8cf93558e3a<ACCOUNT_ID>bee1f8004e7": {
+    "first_seen": "2026-09-01 04:30",
+    "source": "arxiv_econ_em",
+    "title": "When Can We Work in Embedding Space? What Text Embeddings Preserve",
+    "decision": "rejected_L0",
+    "promising_file": null
   }
 }
