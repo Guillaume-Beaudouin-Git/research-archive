@@ -1,0 +1,14 @@
+{
+  "hash": "0b2001dd7ca5d313dc111cb902c722a8",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2608.29430v1",
+  "title": "Content Exploration Beyond the Feed: Creator Supply and the Shared Corpus",
+  "url": "http://arxiv.org/abs/2608.29430v1",
+  "description": "Industrial recommenders give new content initial views through budgeted exploration, then use early performance to decide further delivery. On many short-video platforms, exploration is the primary way new videos reach viewers. Viewer-side tests measure consumption; the published budget objectives we review omit creator response. We analyze four experiments on a major short-video platform. An eight-month creator ablation finds production exploration raises videos posted per creator by 8.55% and creators posting at least once by 7.10% relative to a minimal floor. A budget-matched reallocation raises creator participation with no detectable short-run viewer-side change. A year-long viewer ablation finds 1.74% more video views but 2.13% less view time. A delivered view creates immediate feed value, can trigger organic take-up, and can induce creator supply. Take-up and supply replenish a shared corpus, creating two measurement limits. Viewer-side A/B tests cancel the corpus effect when both arms consume the same corpus. Giving each arm its own corpus avoids cancellation, but turnover still controls the horizon. If the corpus turns over at rate w per posting cycle, a t-cycle experiment expresses at most wt of the eventual corpus effect. More users reduce noise but do not speed turnover. Before the corpus path visibly bends, data cannot distinguish a modest fast effect from an arbitrarily large slow one, so a valid confidence interval may lack a finite upper endpoint. As predicted, the three-week co-diverted experiment cannot determine the sign of the eventual corpus effect. Within the window, it identifies the direct feed effect, and an exploratory cohort analysis detects organic lift after exploration ends. The experiments establish a positive creator response, measure the gross corpus flow visible within three weeks, and show the design and duration needed to identify total value.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-09-01 02:00 UTC"
+}
