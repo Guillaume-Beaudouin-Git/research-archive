@@ -1,0 +1,61 @@
+==============================================================================
+PARTIE C -- proxy de dispersion de cloture (pas de volume dans le M1 cache ;
+proxy = range de la derniere demi-heure (bps) + ecart close-vs-TWAP30 (bps),
+PAS un vrai order-imbalance -- limite honnete, pas de volume disponible)
+==============================================================================
+
+--- US100: proxy annuel moyen (lundi+mardi), Mon+Tue seulement ---
+      range30_bps  twap_dev_bps
+year                           
+2013        23.44         -0.38
+2014        25.26         -1.10
+2015        34.51         -2.59
+2016        28.31         -0.85
+2017        17.92          1.01
+2018        42.43          1.98
+2019        27.92          2.01
+2020        69.75         -2.78
+2021        37.07         -0.11
+2022        58.26          2.85
+2023        32.12          2.08
+2024        32.66          2.88
+2025        36.69          1.46
+2026        29.85          1.92
+  pente range30_bps/an = +0.9812  |  pente |twap_dev_bps|/an = +0.0870
+  corr(range30_bps, overnight signe) = +0.2153  |  corr(range30_bps, |overnight|) = +0.5113  n=1306
+
+--- GER40: proxy annuel moyen (lundi+mardi), Mon+Tue seulement ---
+      range30_bps  twap_dev_bps
+year                           
+2013        14.81          0.47
+2014        30.68          1.81
+2015        43.15         -2.44
+2016        33.55          2.53
+2017        19.21         -0.30
+2018        29.31         -0.42
+2019        22.24         -0.13
+2020        47.52         -0.10
+2021        21.76         -0.93
+2022        37.50         -2.99
+2023        18.25          1.30
+2024        18.04          0.37
+2025        23.88         -0.64
+2026        30.92         -0.89
+  pente range30_bps/an = -0.2293  |  pente |twap_dev_bps|/an = -0.0431
+  corr(range30_bps, overnight signe) = +0.2008  |  corr(range30_bps, |overnight|) = +0.4550  n=1296
+
+--- alignement transatlantique ---
+GER40 'nuit' (17:35 Berlin -> 09:00 Berlin j+1) COUVRE l'intégralité de la séance
+US100 (14:30-21:00 UTC environ) ; US100 'nuit' (close 16:00 NY -> open 9:30 NY j+1)
+COUVRE l'intégralité de la séance Xetra du jour suivant. Les deux fenêtres ne sont
+PAS simultanées : un 'même jour calendaire' ne veut pas dire 'même fenêtre horaire'.
+Une corrélation brute date-a-date des proxies de clôture ne testerait donc PAS un
+canal commun (elle comparerait la dispersion de clôture de Francfort à 17:30 à celle
+de New York à 22:00 le même jour, deux moments sans lien de flux direct) --
+JE NE FABRIQUE PAS cette corrélation : le canal 'commun vs distinct' n'est pas
+proprement testable avec des proxies de clôture sans horodatage d'imbalance réel.
+Ce qui EST testable proprement : la corrélation des rendements overnight eux-mêmes
+(memes dates calendaires d'ENTREE, Mon+Tue) : corr(US100_ov, GER40_ov) = +0.4857  n=1224
+Une correlation faible confirmerait des chocs largement IDIOSYNCRATIQUES par marche
+(pas un canal transatlantique commun au sens d'un facteur partage) ; une correlation
+forte suggererait un facteur de risque commun (ex: risk-on/risk-off global overnight).
