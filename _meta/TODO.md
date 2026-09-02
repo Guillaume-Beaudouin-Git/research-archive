@@ -62,6 +62,26 @@ la rupture 2022 qui la justifiait est au 73ᵉ percentile du bruit (p = 0,266), 
 
 ---
 
+## ⚪ Pistes documentees — relire avant de rouvrir
+
+- [ ] **Carry cross-asset (Koijen-Moskowitz-Pedersen-Vrugt 2018)** — ⚠ **DEJA ETUDIE**, verdict
+      existant : `Forex/research/active/g2d_carry_cross_asset/report_v1.md` (795 lignes, 2026-05-26,
+      **recupere le 2026-09-02** d'une branche non mergee ; main ne portait que le v0 preliminaire).
+      **CONDITIONNEL OUI** : passe le gate IJR sur **futures** (gross/3×cost **3-10×** contre **0,98**
+      pour le FX spot retail — les futures CME coûtent 10-20× moins en bps de notionnel). MAIS
+      capital minimum **$50-100k** (granularite sur 12-18 positions micro-CME), Sharpe OOS degrade a
+      **0,45-0,75** post-2012 (contre 1,2 in-sample 1983-2012), et **seule la commodity carry
+      (roll yield) survit robustement** — equity carry negatif 2022-24 (fed funds > dividend yield),
+      bond carry nul en courbe inversee. ⇒ **Ne PAS lancer les 4 classes a €13k.**
+- [ ] **Commodity TSMOM sur vrais futures** — teste sur **12 ETF** (dont USO/UNG) alors que
+      Hurst-Ooi-Pedersen opere sur **~60 futures** : trois violations simultanees des regles maison
+      (instrument, breadth 12 < 30, penalite de multiple testing sur un test sous-puissant par
+      construction). **Δn_tests = 0**, pre-enregistrement deja redige.
+- [ ] **Repo pour le CV** — le nettoyage est fait ; reste a ecrire ce que le depot raconte a
+      quelqu'un qui ne connait pas le projet (stage M2 IEF).
+
+---
+
 ## ✅ Clos pendant cette session
 
 - **Calendrier overnight lundi+mardi** — dette DSR 0,29 ouverte depuis le 2026-06-03 et signalée
