@@ -1,4 +1,11 @@
 {
+  "06c1264dad3152c843136df08407c6a4": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Foundation models for electricity price forecasting and battery arbitrage: Can t",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0b2001dd7ca5d313dc111cb902c722a8": {
     "first_seen": "2026-09-01 02:00",
     "source": "arxiv_econ_em",
@@ -13,6 +20,20 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "633c41fc79e62d648f9d1ad3b5a48b3f": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Uniform Pricing for Multi-Interval Dispatch without Make-Whole Uplifts",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "72045c1baba9895db1fd21310c492a8d": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Illiquidity at Risk",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "95482284f8d5714de5df176d6a51724b": {
     "first_seen": "2026-09-01 04:30",
     "source": "arxiv_econ_em",
@@ -24,6 +45,13 @@
     "first_seen": "2026-09-01 04:30",
     "source": "arxiv_econ_em",
     "title": "When Can We Work in Embedding Space? What Text Embeddings Preserve",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d6f0f0ca771109fd6f2d4036f3ba043a": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Manipulation Testing in Boundary Discontinuity Designs",
     "decision": "rejected_L0",
     "promising_file": null
   }
