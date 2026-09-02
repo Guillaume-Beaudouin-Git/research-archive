@@ -1,0 +1,14 @@
+{
+  "hash": "633c41fc79e62d648f9d1ad3b5a48b3f",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2609.00541v1",
+  "title": "Optimal Uniform Pricing for Multi-Interval Dispatch without Make-Whole Uplifts",
+  "url": "http://arxiv.org/abs/2609.00541v1",
+  "description": "In a network with ramp-limited generators and inaccurate net-demand forecasts, practical rolling-window dispatch can drive locational marginal prices (LMPs) below generators' bid-in offers. In such cases, out-of-market (OOM) settlements are used to compensate generators and maintain dispatch-following incentives, but OOM can have negative consequences, including nontransparent real-time price signals, discriminatory compensation, and incentives for untruthful bidding. This paper presents an optimal uniform pricing rule that minimizes demand payments, eliminates OOM make-whole payments, preserves LMP-based congestion charges, and ensures revenue adequacy. We derive the proposed pricing rule in closed form and relate it to existing pricing schemes. Numerical comparisons demonstrate favorable generator profits and reduced price volatility. However, higher generator profits are accompanied by increased demand payments, reflecting the in-market, uniform allocation of ramping costs while preserving the LMP-based congestion charges widely used in real-time market settlements. The numerical results also show that, under LMP with OOM settlement, a price-taking generator has an incentive to inflate its offer, whereas this incentive is absent under the proposed pricing rule within the tested bid range.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-09-02 01:30 UTC"
+}
