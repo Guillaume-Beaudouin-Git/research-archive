@@ -1,4 +1,25 @@
 {
+  "05673ebc5888032da0f148006c3c78fc": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "shaxiu/XianyuAutoAgent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "34e48e412261c50c464f891585fbb887": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "hacksider/Deep-Live-Cam",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "35df9fe09e8f646cdbf6edb169254e0f": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "lipku/LiveTalking",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7711442baaa9819938516d172c18a180": {
     "first_seen": "2026-09-01 11:00",
     "source": "github_python",
@@ -6,10 +27,24 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "a2a824cdddc2f81dd655bdd02449550e": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "sngyai/Sequoia-X",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e038fcbac8f6251235a0b4818172c9ea": {
     "first_seen": "2026-09-01 11:00",
     "source": "github_python",
     "title": "noonghunna/club-3090",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e05a23be76bc15de38fa9280da575cd1": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "PDFMathTranslate/PDFMathTranslate",
     "decision": "rejected_L0",
     "promising_file": null
   }
