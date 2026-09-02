@@ -1,0 +1,354 @@
+{
+  "per_weekday": {
+    "US100": {
+      "lundi": {
+        "mean_bps": 8.32,
+        "t_hac6": 2.271,
+        "n": 621
+      },
+      "mardi": {
+        "mean_bps": 8.637,
+        "t_hac6": 2.905,
+        "n": 685
+      },
+      "mercredi": {
+        "mean_bps": 1.233,
+        "t_hac6": 0.331,
+        "n": 676
+      },
+      "jeudi": {
+        "mean_bps": 0.513,
+        "t_hac6": 0.195,
+        "n": 664
+      },
+      "vendredi": {
+        "mean_bps": 1.943,
+        "t_hac6": 0.588,
+        "n": 653
+      }
+    },
+    "GER40": {
+      "lundi": {
+        "mean_bps": 8.14,
+        "t_hac6": 2.291,
+        "n": 639
+      },
+      "mardi": {
+        "mean_bps": 6.749,
+        "t_hac6": 2.657,
+        "n": 657
+      },
+      "mercredi": {
+        "mean_bps": -0.322,
+        "t_hac6": -0.111,
+        "n": 648
+      },
+      "jeudi": {
+        "mean_bps": 2.348,
+        "t_hac6": 0.999,
+        "n": 648
+      },
+      "vendredi": {
+        "mean_bps": 1.966,
+        "t_hac6": 0.511,
+        "n": 639
+      }
+    }
+  },
+  "monday_tuesday": {
+    "US100_lundi_full": {
+      "mean": 8.320120218035427,
+      "se": 3.664349513977205,
+      "t": 2.270558576986001,
+      "n": 621,
+      "p_block_bootstrap": 0.04275,
+      "n_boot": 4000,
+      "block": 20
+    },
+    "US100_mardi_full": {
+      "mean": 8.636533620145984,
+      "se": 2.9726803870416383,
+      "t": 2.905301780101869,
+      "n": 685,
+      "p_block_bootstrap": 0.00425,
+      "n_boot": 4000,
+      "block": 20
+    },
+    "GER40_lundi_full": {
+      "mean": 8.140093015649452,
+      "se": 3.5532755629097608,
+      "t": 2.290870176413666,
+      "n": 639,
+      "p_block_bootstrap": 0.05225,
+      "n_boot": 4000,
+      "block": 20
+    },
+    "GER40_mardi_full": {
+      "mean": 6.7487967785388125,
+      "se": 2.5402660225298677,
+      "t": 2.6567283578503487,
+      "n": 657,
+      "p_block_bootstrap": 0.012,
+      "n_boot": 4000,
+      "block": 20
+    }
+  },
+  "breaks": {
+    "US100_lundi": {
+      "k": 470,
+      "t": -1.929852727028473,
+      "mean_pre": 11.438323362553191,
+      "mean_post": -1.3855451986754972,
+      "n_pre": 470,
+      "n_post": 151,
+      "p_break_bootstrap": 0.43333333333333335,
+      "n_boot": 300,
+      "break_date": "2023-03-20"
+    },
+    "US100_mardi": {
+      "k": 580,
+      "t": 1.657627128796976,
+      "mean_pre": 6.672350816896553,
+      "mean_post": 19.486305295238097,
+      "n_pre": 580,
+      "n_post": 105,
+      "p_break_bootstrap": 0.6133333333333333,
+      "n_boot": 300,
+      "break_date": "2024-05-28"
+    },
+    "GER40_lundi": {
+      "k": 420,
+      "t": -1.829758733852767,
+      "mean_pre": 12.339471061904762,
+      "mean_post": 0.08649128310502291,
+      "n_pre": 420,
+      "n_post": 219,
+      "p_break_bootstrap": 0.46,
+      "n_boot": 300,
+      "break_date": "2022-02-07"
+    },
+    "GER40_mardi": {
+      "k": 540,
+      "t": 1.7303492089725927,
+      "mean_pre": 4.012485952777777,
+      "mean_post": 19.37792366666667,
+      "n_pre": 540,
+      "n_post": 117,
+      "p_break_bootstrap": 0.5,
+      "n_boot": 300,
+      "break_date": "2024-03-12"
+    }
+  },
+  "net_of_cost": {
+    "US100_lundi": {
+      "gross_mean": 8.32,
+      "gross_t": 2.271,
+      "net_recent_cost_mean": 5.149,
+      "net_recent_cost_t": 1.405,
+      "net_spec_cost_mean": 3.994,
+      "net_spec_cost_t": 1.09,
+      "n": 621
+    },
+    "US100_mardi": {
+      "gross_mean": 8.637,
+      "gross_t": 2.905,
+      "net_recent_cost_mean": 5.466,
+      "net_recent_cost_t": 1.839,
+      "net_spec_cost_mean": 4.311,
+      "net_spec_cost_t": 1.45,
+      "n": 685
+    },
+    "GER40_lundi": {
+      "gross_mean": 8.14,
+      "gross_t": 2.291,
+      "net_recent_cost_mean": 5.559,
+      "net_recent_cost_t": 1.564,
+      "net_spec_cost_mean": 4.376,
+      "net_spec_cost_t": 1.232,
+      "n": 639
+    },
+    "GER40_mardi": {
+      "gross_mean": 6.749,
+      "gross_t": 2.657,
+      "net_recent_cost_mean": 4.168,
+      "net_recent_cost_t": 1.641,
+      "net_spec_cost_mean": 2.985,
+      "net_spec_cost_t": 1.175,
+      "n": 657
+    }
+  },
+  "economic": {
+    "US100": {
+      "lundi": {
+        "sum_usd": 1119.23,
+        "n": 621,
+        "mean_usd_per_night": 1.802
+      },
+      "mardi": {
+        "sum_usd": 1310.43,
+        "n": 685,
+        "mean_usd_per_night": 1.913
+      },
+      "mercredi": {
+        "sum_usd": -458.49,
+        "n": 676,
+        "mean_usd_per_night": -0.678
+      },
+      "jeudi": {
+        "sum_usd": -617.68,
+        "n": 664,
+        "mean_usd_per_night": -0.93
+      },
+      "vendredi": {
+        "sum_usd": -280.52,
+        "n": 653,
+        "mean_usd_per_night": -0.43
+      }
+    },
+    "GER40": {
+      "lundi": {
+        "sum_usd": 1243.29,
+        "n": 639,
+        "mean_usd_per_night": 1.946
+      },
+      "mardi": {
+        "sum_usd": 958.38,
+        "n": 657,
+        "mean_usd_per_night": 1.459
+      },
+      "mercredi": {
+        "sum_usd": -658.49,
+        "n": 648,
+        "mean_usd_per_night": -1.016
+      },
+      "jeudi": {
+        "sum_usd": -52.75,
+        "n": 648,
+        "mean_usd_per_night": -0.081
+      },
+      "vendredi": {
+        "sum_usd": -137.5,
+        "n": 639,
+        "mean_usd_per_night": -0.215
+      }
+    },
+    "totals_usd": {
+      "US100": 1072.9699999999998,
+      "GER40": 1352.93
+    },
+    "share_mon_tue_only": {
+      "combined_mon_usd": 2362.52,
+      "combined_tue_usd": 2268.81,
+      "mon_share_pct": 51.0,
+      "tue_share_pct": 49.0
+    }
+  },
+  "n_tests": 26,
+  "joint": {
+    "US100": {
+      "gross": {
+        "mean": 8.486079774272588,
+        "se": 1.82359961172394,
+        "t": 4.653477506638791,
+        "n": 1306,
+        "p_block_bootstrap": 0.0,
+        "n_boot": 4000,
+        "block": 20
+      },
+      "net": {
+        "mean": 5.315379774272588,
+        "se": 1.82359961172394,
+        "t": 2.914773473354545,
+        "n": 1306,
+        "p_block_bootstrap": 0.00875,
+        "n_boot": 4000,
+        "block": 20
+      }
+    },
+    "GER40": {
+      "gross": {
+        "mean": 7.4347831176697525,
+        "se": 1.7802082792507055,
+        "t": 4.1763557693367614,
+        "n": 1296,
+        "p_block_bootstrap": 0.0005,
+        "n_boot": 4000,
+        "block": 20
+      },
+      "net": {
+        "mean": 4.853783117669754,
+        "se": 1.7802082792507052,
+        "t": 2.72652541516812,
+        "n": 1296,
+        "p_block_bootstrap": 0.0155,
+        "n_boot": 4000,
+        "block": 20
+      }
+    }
+  },
+  "sidak_local": 3.0945865403085184,
+  "sidak_cumulative": 4.211283377305139,
+  "n_cumulative": 2020,
+  "options_D": {
+    "US100": {
+      "per_day": {
+        "lundi": {
+          "mean_net_bps": 5.149,
+          "std_net_bps": 75.709,
+          "sharpe_ann_L47": 0.49,
+          "p1_bps": -192.74,
+          "p5_bps": -104.54,
+          "worst_bps": -298.53,
+          "n": 621
+        },
+        "mardi": {
+          "mean_net_bps": 5.466,
+          "std_net_bps": 72.541,
+          "sharpe_ann_L47": 0.543,
+          "p1_bps": -196.2,
+          "p5_bps": -106.3,
+          "worst_bps": -486.84,
+          "n": 685
+        }
+      },
+      "pool_sharpe": 0.732,
+      "tue_only_sharpe": 0.543,
+      "pool_mean": 5.315,
+      "pool_std": 74.065,
+      "pool_n": 1306,
+      "tue_mean": 5.466,
+      "tue_std": 72.541,
+      "tue_n": 685
+    },
+    "GER40": {
+      "per_day": {
+        "lundi": {
+          "mean_net_bps": 5.559,
+          "std_net_bps": 67.184,
+          "sharpe_ann_L47": 0.597,
+          "p1_bps": -160.3,
+          "p5_bps": -92.52,
+          "worst_bps": -362.39,
+          "n": 639
+        },
+        "mardi": {
+          "mean_net_bps": 4.168,
+          "std_net_bps": 65.131,
+          "sharpe_ann_L47": 0.461,
+          "p1_bps": -161.97,
+          "p5_bps": -81.39,
+          "worst_bps": -378.31,
+          "n": 657
+        }
+      },
+      "pool_sharpe": 0.748,
+      "tue_only_sharpe": 0.461,
+      "pool_mean": 4.854,
+      "pool_std": 66.155,
+      "pool_n": 1296,
+      "tue_mean": 4.168,
+      "tue_std": 65.131,
+      "tue_n": 657
+    }
+  }
+}
