@@ -20,6 +20,13 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "48e276f935ce1d4870ef4aed3ff374e5": {
+    "first_seen": "2026-09-03 11:00",
+    "source": "github_python",
+    "title": "datacurve-ai/deep-swe",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7711442baaa9819938516d172c18a180": {
     "first_seen": "2026-09-01 11:00",
     "source": "github_python",
@@ -45,6 +52,13 @@
     "first_seen": "2026-09-02 12:00",
     "source": "github_python",
     "title": "PDFMathTranslate/PDFMathTranslate",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e3d43db1c0163fa41fd22f258386125e": {
+    "first_seen": "2026-09-03 11:00",
+    "source": "github_python",
+    "title": "netalertx/NetAlertX",
     "decision": "rejected_L0",
     "promising_file": null
   }
