@@ -1,366 +1,545 @@
 # Contexte complet — projets quant de Guillaume Beaudouin (au 2026-09-04)
 
-> Message à transmettre au chat Claude dédié à la recherche de stage / CV.
-> Rédigé par l'assistant qui travaille sur le dépôt depuis avril 2026, à partir du dépôt lui-même
-> (chiffres vérifiés par `git`, pas de mémoire approximative). Tout ce qui n'est pas vérifiable est
-> marqué **[À COMPLÉTER PAR GUILLAUME]**.
+> À transmettre au chat Claude dédié à la recherche de stage M2.
+> Rédigé par l'assistant qui travaille sur le dépôt depuis avril 2026, à partir du code et des
+> rapports eux-mêmes. Ce qui n'est pas vérifiable est marqué **[À COMPLÉTER PAR GUILLAUME]**.
 
 ---
 
-## 0. Ce qu'il faut comprendre avant de lire le reste
+## 0. Les quatre projets, en une phrase chacun
 
-Le CV de Guillaume ne doit **pas** se vendre sur des stratégies gagnantes. Il doit se vendre sur
-**la discipline avec laquelle il a tué les siennes**.
+1. **Book FTMO** *(le projet principal — 5 mois, en production)* — construction d'un portefeuille
+   multi-sleeves sous barrière de propfirm, exécuté par un EA MQL5 piloté par un moteur Python sur
+   VPS ; challenge $10 000 passé en 23 jours, **compte funded réel depuis le 17 août 2026**.
+2. **Book personnel IBKR** — sélection de véhicule et construction d'un book à €13k sous contrainte
+   de granularité de contrat ; une sleeve validée (flow month-end sur le 10 ans US), déploiement
+   prévu fin 2026.
+3. **Crypto — Strategy A (TSMOM) et Strategy B (carry delta-neutre)** — deux stratégies écrites,
+   backtestées et **déployées en live** sur Hyperliquid / Binance, avec leur infrastructure
+   d'exécution.
+4. **Futures — Strategy C (ORB Nasdaq)** — cycle complet recherche → re-baselining honnête →
+   annulation, qui est la meilleure démonstration de rigueur du dossier.
 
-Tu as écrit toi-même : *« un quant qui ouvre ton GitHub cherche une seule chose — est-ce que ce type
-sait ce qu'est un backtest honnête »*. C'est précisément l'actif principal ici. Le dépôt
-`Algo_claude` contient environ **350 hypothèses de stratégie testées** sur cinq classes d'actifs, dont
-la quasi-totalité ont été **rejetées**, chaque rejet étant documenté avec sa cause mécanique. Il y a un
-registre formel de leçons méthodologiques numérotées, un ledger de comptage de tests pour la
-correction de multiple testing, et une politique écrite de ré-ouverture des familles archivées.
-
-C'est un profil de **chercheur qui sait détruire ses propres résultats**. C'est rare et c'est
-exactement ce qu'un desk de recherche systématique cherche. Le positionnement du CV et du repo doit
-partir de là, pas de « j'ai une stratégie à Sharpe X ».
+Autour : un corpus de recherche de ~350 hypothèses testées, un registre de leçons méthodologiques,
+et l'infrastructure qui fait tourner le tout.
 
 ---
 
-## 1. Profil académique et linguistique
+## 1. Profil académique
 
 - **M2 IEF** (Ingénierie Économique et Financière), Université de Rennes 1 — rentrée septembre 2026.
-- **M1 IEF** Rennes 1, validé.
-- **Double diplôme Universität Augsburg** — **[À COMPLÉTER : années exactes, intitulé du diplôme
-  allemand, statut (obtenu / en cours)]**.
-- Langues : français (natif), anglais, **allemand** (niveau **[À COMPLÉTER]**).
-- Recherche : **stage de fin de M2, semestre 2** (soit **[À COMPLÉTER : dates exactes, durée
-  minimale validante selon la scolarité]**). Cette contrainte de durée est le premier filtre à
-  vérifier — tu l'as bien identifié.
+- **Double diplôme Universität Augsburg** — **[À COMPLÉTER : années, intitulé, statut]**.
+- Langues : français, anglais, **allemand** (niveau **[À COMPLÉTER]**).
+- Recherche : **stage de fin de M2, semestre 2** — **[À COMPLÉTER : dates, durée minimale validante]**.
 
 ---
 
-## 2. L'actif principal : le dépôt de recherche `Algo_claude`
+# PROJET 1 — Book FTMO (le cœur du dossier)
 
-### Volumétrie vérifiée (`git`, 2026-09-04)
+## 1.1 Le problème posé
 
-| métrique | valeur |
+Une propfirm loue du capital contre un examen : passer deux phases (+10 % puis +5 %) sans jamais
+violer deux barrières — perte journalière max 5 % du capital initial (vérifiée sur l'**équité**, pas
+la balance) et plancher statique absolu à 90 % du capital initial. Une seule violation efface tout.
+Une fois financé, le compte verse 80 % du P&L au trader tous les 14 jours de trading, mais **le
+buffer ne grandit jamais** : le plancher reste à 9 000 quel que soit le profit accumulé.
+
+Ce dernier point a une conséquence structurelle que Guillaume a formalisée et qui gouverne tout le
+reste : **en funded, il n'y a pas de capitalisation, donc pas de raison de maximiser le Sharpe.** On
+maximise le rendement par unité de temps sous un hasard de ruine constant. Ce n'est pas de la
+gestion de portefeuille classique, c'est un problème de **franchissement de barrière**.
+
+## 1.2 Le résultat de recherche central, et il est contre-intuitif
+
+Après avoir passé au crible **164 stratégies candidates** dans un programme dédié (avec correction
+de multiple testing), le constat est que **presque aucune ne meurt sur son alpha — elles meurent
+sur la géométrie et sur le coût de portage.**
+
+Trois découvertes chiffrées, chacune gravée comme leçon :
+
+**(a) La probabilité de passer dépend de la FORME de la distribution quotidienne face à une barrière
+symétrique, pas de la taille du compte** ni du Sharpe annuel. Une stratégie à trades rares et gros
+(taux de réussite 27,75 %, ratio gain/perte 3,7×) plafonne à **44-54 % de chance de passer** quelle
+que soit sa performance moyenne, parce que la barrière tue avant que la moyenne ne se réalise. Le
+profil réellement compatible est : **Sharpe quotidien élevé, taux de réussite > 55 %, gain/perte
+proche de 1, kurtosis basse, et assez de fréquence pour que l'edge se manifeste en ≤ 40 séances.**
+
+**(b) Le portage overnight agrégé pré-tue toute prime tenue.** Mesuré sur le book complet : environ
+**6,75 %/an de swap + 1,25 % de commission**, contre une prime de trend multi-actifs d'environ
+**8 %/an**. Net : **Sharpe ≈ 0**. Les seules échappatoires sont d'être plat la nuit, ou d'avoir une
+prime très supérieure au portage. Corollaire mesuré ensuite : les swaps sont **asymétriques par
+jambe** — sur le compte réel, US100 long coûte **−2,126 bps/nuit** quand US100 short **rapporte
++0,092**. Une stratégie market-neutral sur CFD paie donc deux fois le markup.
+
+**(c) Le sizing optimal au sens de la croissance est un PLAFOND, pas un levier.** Une optimisation
+par programmation dynamique du sizing sur le challenge plafonne à **33 %** de chance de passer en
+échantillon complet. Autrement dit : le money management ne crée pas d'edge, il ne fait que ne pas
+en détruire.
+
+Ces trois résultats expliquent pourquoi le book final ne ressemble pas à ce qu'un débutant
+construirait.
+
+## 1.3 Le book construit — spécification v2.2
+
+Le book déployé est spécifié dans un **YAML unique, versionné et scellé par sha256**, qui sert de
+source de vérité unique au simulateur, au moteur de signal et à l'EA. Quatre sleeves :
+
+| Sleeve | Instrument | Signal |
+|---|---|---|
+| **gold_trend** | XAUUSD | TSMOM, mélange des signes sur 60/120/250 jours, appliqué au **rendement total ajusté du portage** (pas au prix nu), zone morte `\|s\| < 0,34`, vol-target instrument 10 %, plus une **porte d'équité** : exposition pleine si l'équité est au-dessus de sa moyenne mobile 100 jours, ×0,4 sinon |
+| **j1** | USDJPY | Momentum 12-1 classique (`p[t-21]/p[t-252] − 1 > 0`), long-only, vol-target 10 % |
+| **overnight_midweek** | US100 + GER40 | Long, tenu **uniquement les nuits de lundi et mardi**, sessions calées sur l'horloge de l'échange |
+| **ORB** | US100 | Opening range breakout 09:30-10:00 ET, stop au côté opposé de la fourchette, pas de take-profit, sortie au stop ou à la clôture. **Éteint pendant le challenge, allumé en funded** |
+
+Il y a en plus un **micro-ORB à 0,01 lot** dont le rôle n'est pas le P&L : c'est le **compteur de
+jours de trading** exigé par la règle des 4 jours minimum. Détail qui montre le niveau de soin : un
+*backstop* déclenche une position symbolique si aucun signal n'est apparu, que rien n'est ouvert,
+que le minimum de jours n'est pas atteint et que la cible est déjà franchie — cas qui survient dans
+**50 jours-tentatives sur 13 068** en simulation.
+
+## 1.4 Le moteur de risque — la partie la plus originale
+
+Ce n'est pas un simple stop-loss. C'est un gouverneur qui module l'exposition en fonction de la
+position dans la course :
+
+- **Multiplicateur de volatilité** `vm = 14` en challenge, `vm = 1` en funded. Le même book, deux
+  régimes de risque, parce que les deux problèmes sont différents (franchir une cible vs durer).
+- **Breaker** : mise à plat immédiate si la marge restante sous la barrière journalière descend sous
+  30 % du budget, vérifié toutes les 5 minutes.
+- **Taper** : plancher d'exposition à 2 % quand on approche du plancher statique.
+- **Glide** : exposition ×0,5 une fois 80 % de la cible atteinte — on ne joue pas les prolongations.
+- **Pacing** : exposition ×`clip(1 + retard, 0,8, 2,0)` — on accélère si on est en retard sur le
+  rythme, dans une bande bornée.
+- **Règle d'abandon** : si l'équité stagne à moins de 2 % au-dessus du plancher pendant 5 jours, on
+  relance une tentative plutôt que d'agoniser.
+- **Cap de marge à 60 % de l'équité**, avec les taux de marge réels par instrument, appliqué par
+  scaling proportionnel de toutes les jambes.
+- **Cap de levier par jambe**, ajouté en v2.8 comme overlay de risque.
+
+**La bascule challenge → funded est un événement unique et atomique** : `vm 14→1`, poids overnight
+`0,6→0,35`, ORB allumé, micro-ORB éteint, pacing/glide/abandon désarmés. Un seul déclencheur, pas
+une dérive de paramètres.
+
+## 1.5 L'architecture d'exécution
+
+```
+EA (21:45)  ──▶ export du marché (D1 520 jours × 4 jambes, specs contrats, swaps réels)
+                        │
+                brain.py (cron 21:50 Paris)
+                  charge le YAML épinglé, vérifie le sha, contrôle de dérive,
+                  calcule les signaux, applique le gouverneur
+                        │
+                 targets.json ──▶ book_executor.mq5 (22:05)
+                                    ZÉRO logique de signal
+                                    invariants en dur : plancher journalier 5 %,
+                                    plancher 9 000 + taper, breaker 30 %, marge 60 %
+                        │
+        ┌───────────────┼────────────────┐
+   supervisor.py    fills.csv      reconcile.py (23:00)
+   (daemon 60 s,   swaps_billed    rejoue la journée en simulation,
+    alertes TG)                    décompose l'écart, STOP après 3 jours de dérive
+```
+
+Points d'ingénierie qui méritent d'être racontés en entretien :
+
+- **L'EA refuse de trader** si le sha256 de la spec déposée sur le terminal ne correspond pas à
+  celui compilé dans le binaire. Impossible de faire tourner un EA sur une spec qui a dérivé.
+- **Le simulateur et le live partagent la même bibliothèque d'invariants** (`ftmo_live/lib/`), et
+  une suite de **145 tests** vérifie notamment que le miroir est identique à l'oracle de simulation.
+  Le risque classique « le backtest et le live ne calculent pas la même chose » est traité
+  structurellement, pas par la confiance.
+- **Réconciliation quotidienne automatique** : chaque soir, la journée réelle est rejouée en
+  simulation et l'écart est décomposé par cause (signal, exécution, swap, slippage). Trois jours de
+  dérive inexpliquée déclenchent un arrêt.
+- **Le modèle de swap a été validé au centime** : sur la nuit du 10 au 11 juin (mercredi, portage
+  triple sur métaux et FX), les 4 jambes facturées ont été reconstruites exactement à partir des
+  spécifications lues sur le serveur.
+- **Kill-file** : déposer un fichier `FLAT` met tout à plat et désactive le trading, sans toucher au
+  code.
+- **Les coûts ne sont jamais supposés.** Les ancres sont mesurées sur le compte réel : coût
+  round-trip par jambe (XAUUSD 1,84 bps, USDJPY 1,36, US100 et GER40 2,2) et swap par nuit **et par
+  sens**. Une sonde de slippage tourne en continu sur les fills ORB.
+
+## 1.6 Résultats
+
+**Challenge** : phase 1 **+10,06 %**, phase 2 **+5,39 %**, **passé en 23 jours** — avec l'honnêteté
+statistique de noter que c'est dans la queue droite de la distribution simulée (la probabilité de
+passer la phase 2 en 7 jours était de 33,5 %).
+
+**Compte funded livré le 2026-08-17**, actif, $10 000, sur lequel le book tourne aujourd'hui.
+
+**Simulation du book réellement déployé** (or et USDJPY à poids nul dans le régime actuel, coût ORB
+au niveau mesuré en live), sur cohortes historiques 2013-2025 :
+
+| Horizon | P(net > 0) | Net médian | p10 | Risque de ruine | Nature |
+|---|---|---|---|---|---|
+| 1 an | **94,8 %** | +$379 | +$57 | **0 %** (0/305) | — |
+| 5 ans | **95,1 %** | +$1 991 | +$183 | **3,9 %** (8/204) | **100 % via le plancher statique**, jamais la barrière journalière |
+
+Et le caveat que le rapport impose lui-même, qui vaut plus que les chiffres : **les 305 cohortes ne
+sont pas 305 tirages indépendants.** Elles démarrent tous les 14 jours sur ~12,7 ans d'historique et
+se recouvrent à 95-99 %. Le nombre effectif d'histoires indépendantes est **≈13 à un an et ≈2,6 à
+cinq ans**. Le rapport écrit noir sur blanc : *« ne présente jamais le bust% à 5 ans comme une
+fréquence sur 204 tirages — c'est une fréquence sur 2-3 »*. C'est ce genre de réflexe qu'un desk
+cherche.
+
+**État actuel, sans maquillage** : le compte est en drawdown (solde 9 931,55 au 1er septembre contre
+10 000). Deux décisions sont planifiées et **pré-enregistrées**, ce qui est le vrai point à mettre
+en avant.
+
+## 1.7 Les deux décisions ouvertes — et pourquoi elles valorisent le dossier
+
+**(a) La sleeve ORB, tranchée en octobre sur un critère écrit à l'avance.**
+
+Les points morts ont été calculés par jambe, en appliquant le coût trade par trade au levier réel de
+chaque trade (et non un levier médian uniforme) sur un ledger de **4 013 trades, 2010-2026** :
+
+| jambe | coût round-trip au-delà duquel l'espérance passe sous zéro |
 |---|---|
-| Commits | **2 115** |
-| Période | 2026-04-14 → aujourd'hui (**~5 mois**) |
-| Fichiers trackés | 5 994 |
-| Fichiers Python | 1 591 (**~303 000 lignes**) |
-| Fichiers Markdown (rapports de recherche) | 1 950 |
-| Fichiers MQL5 (EA MetaTrader) | 13 (~5 000 lignes) |
-| Fichiers de tests | 49 |
+| SHORT | 1,694 bps |
+| ALL (agrégé) | 2,189 bps |
+| LONG | 2,610 bps |
+
+Le coût réellement mesuré en live vaut **2,11 bps** [IC95 bootstrap 1,56–2,62]. D'où une matrice de
+décision à trois bandes, arrêtée avant de connaître le résultat : en dessous de 1,69 on garde les
+deux jambes, entre 1,69 et 2,17 on passe long-only, au-dessus de 2,17 on désarme.
+
+Deux résultats de robustesse s'ajoutent : **la jambe short échoue à coût nul** (t = 1,26 en brut) —
+elle n'a donc jamais eu d'edge, indépendamment du coût ; et la « rupture de régime 2022 » qui la
+justifiait **ne survit pas à un test de rupture endogène** (Bai-Perron ajusté du nombre de dates
+balayées : p = 0,266, soit le 73ᵉ percentile du bruit). Enfin, l'objection « long-only = simple
+exposition au marché » a été testée et **partiellement confirmée** : β annuel de +31,7 (t = 3,03,
+significatif), R² 17,8 % — sous le seuil disqualifiant de 30 %, mais réel, et le rapport le dit.
+
+**(b) La restriction du calendrier overnight aux nuits de lundi et mardi.**
+
+C'était une **dette méthodologique assumée** : la concentration en milieu de semaine avait été
+découverte *post-hoc*, sans pré-enregistrement, et gravée dans la spec en portant un échec de
+Deflated Sharpe Ratio (0,29) sur sa propre grille de sélection à 40 cellules. Signalée « à trancher
+avant signature » dans cinq documents pendant deux mois.
+
+La résolution est un bon exemple de raisonnement : la restriction n'est **pas une sélection de
+signal, c'est une contrainte de coût**. La haie à franchir (swap + spread) vaut 3,17 bps sur US100 et
+2,58 sur GER40, elle est **mesurée sur le compte et connue avant de regarder les rendements**. Or les
+nuits de mercredi et jeudi rapportent 1,26 et 1,48 bps — il leur faudrait tripler. Il n'y a pas de
+choix entre plusieurs bons candidats : **une seule configuration franchit la haie**. Le DSR punit la
+recherche parmi des alternatives positives ; ici « toutes les nuits » rapporte **−0,17 bps sur GER40**.
+La restriction est maintenue, et la justification est désormais écrite.
+
+---
+
+# PROJET 2 — Book personnel IBKR
+
+## 2.1 Le problème
+
+Faire croître ~€13k le plus vite possible sans risque de ruine, hors propfirm. La difficulté n'est
+pas de trouver un edge, c'est que **la granularité des contrats** rend la plupart des stratégies
+indéployables : un contrat ou rien, donc pas de vol-targeting.
+
+## 2.2 Une contradiction interne, et sa résolution — bon exemple de raisonnement
+
+Deux études du dépôt se contredisaient frontalement :
+
+| | verdict |
+|---|---|
+| Étude « growth engine » (18 juillet) | **NO-GO à €13k** — meilleure config Sharpe 0,25, +2,8 %/an ; le flow month-end est **plat** (+$208 sur 7 ans) |
+| Étude « month-end vehicle » (30 juillet) | **+17,6 %/an, Sharpe 0,92**, marge $1 800 = 14 % du compte |
+
+Ce n'était pas une divergence statistique mais **une divergence de véhicule**. La première étude
+avait supposé que le contrat ZN (10 ans US) était inaccessible à €13k et s'était rabattue sur un
+micro-contrat de rendement au DV01 de $10/point de base — trop petit pour que l'effet existe. Or ZN
+est trop gros **en notionnel** ($115k), pas **en marge** : les futures de taux ont une marge faible
+parce que leur volatilité est faible, soit **~$1 800, c'est-à-dire 14 % du compte**. Son DV01 vaut
+6,5× celui du micro.
+
+La leçon qui en est sortie : **si la marge du lot minimum tient dans le capital personnel, un
+propfirm n'apporte rien** — il vend du levier sur du capital qu'on n'a pas. Chiffré sur cette même
+stratégie : compte personnel **+$2 275/an à 100 % du P&L**, sans barrière ni horloge ; route
+propfirm, 11 mois, $639, 80 % du P&L d'un seul contrat, sous une barrière qu'un événement historique
+a déjà franchie. **Strictement dominée.** Corollaire de process : la matrice de véhicule passe
+**avant** le backtest.
+
+## 2.3 La sleeve validée
+
+**Flow month-end sur le 10 ans américain** — long 1 ZN sur les trois derniers jours ouvrés du mois.
+
+| | |
+|---|---|
+| Validation | t HAC **4,76**, 24 ans (2002-2026), placebo apparié **p = 0,000** |
+| Décroissance | **aucune** — Sharpe 0,90 avant 2022, **0,89** après (le « déclin » observé ailleurs était un artefact de l'ETF TLT) |
+| Contrôle | les autres jours du mois rapportent **−0,71 bps** ⇒ effet concentré = flux, pas exposition au marché |
+| Espérance | **+$2 275/an (+17,6 %)**, Sharpe **0,92 net de coûts** |
+| Pire événement historique | −$2 009 (−15,5 %) |
+| Exposition | **14 % des jours** — plat 86 % du temps |
+
+Le point analytique intéressant : **c'est l'intermittence qui autorise le levier, pas le money
+management.** Un book continu levé 8× encaisse −73 % de drawdown ; une sleeve exposée 14 % du temps
+reste peu profonde à levier comparable.
+
+Et une contrainte honnête : **c'est tout le book déployable à €13k. Une sleeve.** Le book diversifié
+(ZN + ZF + trend simultanément) exige €30-50k. La formulation exacte du problème est donc : *on ne
+peut pas activer le book diversifié à €13k, mais on peut activer sa meilleure sleeve.*
+
+## 2.4 Vérification du courtier Eightcap
+
+Demandée parce qu'un ami la recommandait. Conclusion nuancée : **le courtier est réellement bon
+marché** — EURUSD à ~0,11 pip de spread + $7 de commission par lot round-trip, soit **~0,75 bps**,
+contre 2,48 bps mesurés chez FTMO. Mais **il n'a pas de futures CME**, donc il ne peut pas héberger
+la seule sleeve validée, et il ne ressuscite pas le FX intraday (le critère `gross/coût ≥ 1,5` reste
+inatteignable). Recommandation du courtier juste, sans effet sur le plan.
+
+---
+
+# PROJET 3 — Crypto : deux stratégies en production
+
+## 3.1 Strategy A — TSMOM crypto
+
+Momentum de série temporelle sur BTC/ETH/SOL, avec un signal continu plutôt que binaire :
+
+```
+vol_28d(t) = std(log_returns[t-28 : t-1]) × √365
+t_stat(t)  = cum_log_ret(t) / (vol_28d(t) × √28)
+signal(t)  = tanh(t_stat(t))          puis clip à [0, +∞) pour la version long-only
+```
+
+L'idée (d'après Zarattini 2025) est que le t-stat continu dimensionne naturellement la position
+selon la conviction : tendance faible → position partielle. Gain mesuré contre le `sign()` binaire :
+Sharpe out-of-sample **1,33 contre 1,22**, drawdown max **−6,9 % contre −12,7 %**, 3 folds de
+walk-forward sur 4.
+
+La docstring du module contient une **garantie explicite d'absence de look-ahead** — le `.shift(1)`
+dans les fenêtres glissantes est documenté et justifié ligne à ligne. C'est le genre de détail qu'un
+relecteur technique remarque.
+
+Autour du signal : un module de sizing, un filtre de pics de volatilité, un simulateur de challenge
+propfirm, et un optimiseur de paramètres de challenge.
+
+**Statut et honnêteté** : déployée en live (compte propfirm crypto + testnet Hyperliquid), **gelée
+depuis mai 2026** après avoir touché un plafond structurel identifié — le bêta crypto rend le respect
+d'une limite de drawdown journalière de 3 % improbable, taux de passage plafonné à **39 %**. Et le
+Sharpe de 1,33 a été **rétracté par Guillaume lui-même** : c'est un brut avant taux sans risque sur
+un univers de 14 coins, alors que la configuration réellement déployée (3 coins) donne **0,57 en
+excès, avec un intervalle de confiance à 95 % qui contient zéro**.
+
+## 3.2 Strategy B — Carry delta-neutre sur funding
+
+Arbitrage de taux de financement : **long le spot sur Binance, short le perpétuel équivalent sur
+Hyperliquid**, exposition directionnelle nulle par construction, revenu = les paiements de funding
+toutes les 8 heures.
+
+**Sélection d'univers** : actifs cotés sur les deux plateformes, ≥ $10M de volume 24h, ≥ 180 jours
+d'historique de funding, et un carry sur 7 jours supérieur à **0,34 %** — seuil qui n'est pas
+arbitraire, c'est exactement ce qu'il faut pour couvrir les deux round-trips (0,17 % spot + 0,17 %
+perp).
+
+**Le contrôle de risque le plus intéressant du dossier** est la prévention des positions à une seule
+jambe, qui est le vrai danger de cette stratégie (si une jambe passe et pas l'autre, on se retrouve
+avec une exposition directionnelle non voulue). L'ordre des opérations est explicite et asymétrique :
+
+- **À l'ouverture** : achat spot d'abord, puis short perp. Si l'achat échoue → rien à défaire. Si le
+  short échoue → **revente immédiate au marché du spot**.
+- **À la fermeture** : fermeture du short d'abord, puis vente du spot. Si la fermeture du short
+  échoue → **on garde le spot ouvert** (ce qui préserve la couverture) et on alerte. Si la vente du
+  spot échoue → alerte d'urgence, l'état reste ouvert pour revue manuelle.
+
+C'est du raisonnement d'exécution, pas du backtest. Avec en plus un kill switch par fichier, un
+capital borné ($50 par actif, 5 actifs max), et un rebalancement en cron décalé de 5 minutes de
+celui de la Strategy A pour éviter la contention de ressources.
+
+**Statut et honnêteté** : live sur testnet Hyperliquid depuis mai 2026. **Le Sharpe backtest de 4,10
+a été rétracté** : le backtest décrivait une rotation lente, alors que la configuration live tourne
+en 8 heures — aux coûts réels, la seuil de rentabilité exige une tenue ≥ 10 jours, et à la rotation
+de 8 h le Sharpe est très négatif. Le walk-forward disponible (3 folds) est sous la règle maison de
+5 folds. **Conclusion assumée : aucun Sharpe n'est citable pour cette stratégie.** L'hypothèse
+vivante est une variante à rotation lente, les données sont là.
+
+---
+
+# PROJET 4 — Futures : Strategy C (ORB Nasdaq), le cycle complet
+
+Momentum d'ouverture sur le Nasdaq : direction de la fourchette 09:30-09:45, confirmation VWAP,
+filtre de gap ≤ 1,2 %, fourchette minimale de 30 points, plafond de stop à $400, take-profit à 1,5R,
+sortie forcée à 12:30 ET.
+
+**Backtest initial** : Sharpe **1,52**, drawdown −13,4 %, walk-forward 78 %, N = 346, sur données
+Kaggle 2022-2025.
+
+**Re-baselining honnête** : après achat de données Databento propres 2014-2026 et mesure réelle du
+slippage ($29 round-trip au lieu de $19 supposé), le Sharpe tombe à **0,41** sur l'échantillon
+complet (0,69 sur la fenêtre Kaggle d'origine), drawdown −53,9 %, N = 765. Les deux causes sont
+isolées : **fenêtre d'échantillon favorable + hypothèse de coût optimiste**. En parallèle, la
+déflation du Sharpe pour tenir compte du nombre de modifications testées ramenait déjà le 1,52 à
+1,0-1,1 avant même de changer les données.
+
+**Annulation en juin 2026**, non pas sur la performance mais sur le **véhicule** : FTMO ne supporte
+pas les futures CME, donc il n'existait pas de compte pour l'héberger. Le code et l'infrastructure
+sont conservés.
+
+C'est probablement **la meilleure histoire courte du dossier pour un entretien** : elle montre un
+chercheur qui achète des données pour vérifier son propre résultat, isole proprement les deux causes
+de l'écart, et tue son propre projet.
+
+---
+
+# CE QUI SOUTIENT TOUT ÇA
+
+## 5.1 Le dépôt, en chiffres vérifiés (`git`, 2026-09-04)
+
+| | |
+|---|---|
+| Commits | **2 115** en 5 mois (depuis le 2026-04-14) |
+| Python | 1 591 fichiers, **~303 000 lignes** |
+| Rapports de recherche (Markdown) | 1 950 fichiers |
+| MQL5 | 13 fichiers, ~5 000 lignes |
+| Tests | 49 fichiers (dont 145 tests sur le seul module live) |
 | Dossiers de recherche | **115** (78 actifs, 37 archivés) |
-| Classes d'actifs couvertes | Crypto, FX, Futures, Actions, Commodités, Multi-Asset |
+| Classes d'actifs | Crypto, FX, Futures, Actions, Commodités, Multi-Asset |
 
-Ce n'est pas un dépôt de notebooks. C'est une infrastructure de recherche avec une constitution
-écrite (`CLAUDE.md`), une gouvernance de données, une CI, et du code en production.
+## 5.2 Le registre de leçons — l'artefact le plus distinctif
 
-### Ce que contient l'arborescence
+Une **soixantaine de leçons numérotées (L11 → L67)**, chacune un verdict + un chiffre opérationnel +
+un chemin vers sa dérivation. Ce ne sont pas des généralités de manuel : ce sont des pièges
+**mesurés sur ce dépôt**. Échantillon utile pour un entretien technique :
 
-- `Crypto/ Forex/ Futures/ Equities/ Commodities/ Multi_Asset/` — chacun avec
-  `research/active/` et `research/archived/`. Chaque dossier de recherche contient code, données de
-  sortie, et un rapport écrit avec verdict.
-- `Portfolio/` — bibliothèque maison : `risk/` (sizing, corrélation, simulateur de drawdown
-  propfirm), `validation/` (CPCV, multi-test, pipeline), `admission/` (critère d'admission d'une
-  sleeve dans un book : ΔSharpe au poids ERC, barrières, p(pass)), `reporting/` (tearsheets).
-- `ftmo_live/` — code de production réellement déployé (voir §3).
-- `_automation/` — pipelines automatisés : scraping d'idées (Reddit/HN/Quantocracy/SSRN/GitHub),
-  scan arXiv q-fin quotidien, synthèse cross-papers hebdomadaire, orchestrateur de faisabilité à
-  3 niveaux (gate A : IC ; gate B : walk-forward + bootstrap + DSR ; gate C : sanity checks).
-- `_meta/` — le registre de leçons, le ledger de tests, les décisions.
-- `PropFirms/` — spécifications de règles de propfirms, simulations d'achat.
-- `tools/check_register_integrity.py` — un vérificateur d'intégrité qui **échoue bruyamment** si un
-  rapport cite un chemin qui n'existe pas ou n'est pas tracké par git, ou si la chaîne de comptage
-  de tests n'est pas monotone. Lancé à la clôture de chaque session.
-
----
-
-## 3. Track record live et vérifiable
-
-### FTMO — compte funded réel (le plus solide à mettre en avant)
-
-- Véhicule : **FTMO $10 000 Swing, 2-step** (challenge → vérification → funded).
-- **Challenge passé en 23 jours** : phase 1 **+10,06 %**, phase 2 **+5,39 %**.
-- **Compte funded depuis le 2026-08-17**, toujours actif.
-- Exécution : **Expert Advisor MQL5 v2.8** développé en propre, tournant sur MetaTrader 5 sur un
-  **VPS Linux Hetzner** sous supervision (superviseur Python, watchdog, keepalive, réconciliation
-  EOD, kill-file d'arrêt d'urgence).
-- Le book déployé combine plusieurs sleeves : **drift overnight sur indices** (GER40 / US100,
-  restreint aux nuits lundi et mardi), **or** (XAUUSD), **ORB sur indices**, un moteur **USDJPY**
-  (désactivé). Chaque sleeve a été validée séparément puis auditée en portefeuille.
-- Honnêteté nécessaire : le compte est **en drawdown au 1er septembre** (solde 9 931,55 contre
-  10 000 initial), et une décision de désarmement de la sleeve ORB est planifiée en octobre sur un
-  critère pré-enregistré de coût de transaction mesuré. **Ce point est un atout en entretien, pas une
-  faiblesse** — il montre un critère d'arrêt écrit à l'avance.
-
-**Ce que ça démontre concrètement** : capacité à faire passer une stratégie de la recherche à
-l'exécution réelle sous contrainte de risque dure (perte journalière max 5 %, floor statique à
-−10 %), avec du capital tiers, du code en production, et de la supervision opérationnelle.
-
-### Crypto — Hyperliquid
-
-- **Strategy A — TSMOM crypto** (time-series momentum, signal `tanh(rendement cumulé / vol
-  annualisée)`, BTC/ETH/SOL), déployée en live sur testnet Hyperliquid + un compte propfirm crypto.
-  Gelée depuis mai 2026 après avoir touché un plafond structurel identifié (le bêta crypto rend le
-  respect d'une limite de drawdown journalière de 3 % improbable — taux de passage ~39 %).
-- **Strategy B — carry delta-neutre** sur perpétuels Hyperliquid (collecte de funding, jambes
-  spot/perp neutralisées), live sur testnet depuis mai 2026, rebalancement toutes les 8 h, kill
-  switch, sélection d'univers par volume et plancher de carry.
-  **Honnêteté** : le Sharpe backtest de 4,10 a été **rétracté par Guillaume lui-même** après avoir
-  découvert que le backtest décrivait une rotation lente alors que la config live tourne en 8 h — aux
-  coûts réels la config live est négative. Le walk-forward disponible (3 folds) est sous la règle
-  maison de 5 folds, donc **aucun Sharpe n'est citable**. C'est exactement le genre d'auto-réfutation
-  à raconter en entretien.
-- API REST/WebSocket Hyperliquid, gestion d'ordres, réconciliation d'état.
-
-### Futures
-
-- **Strategy C — momentum d'ouverture NQ** (opening range breakout sur le Nasdaq). Backtest initial
-  Sharpe 1,52 sur données Kaggle 2022-2025 → **re-baseliné à 0,41** après ré-achat de données
-  Databento propres 2014-2026 et mesure honnête du slippage. Projet annulé faute de véhicule
-  (FTMO ne supporte pas les futures CME). **Le passage 1,52 → 0,41 est une des meilleures histoires
-  du dossier** : il isole exactement les deux causes (fenêtre d'échantillon favorable + hypothèse de
-  coût optimiste).
-
----
-
-## 4. Le registre de leçons — l'artefact le plus distinctif
-
-`_meta/lessons_registry.md` contient une **soixantaine de leçons méthodologiques numérotées
-(L11 → L67)**, chacune formulée comme un verdict + un chiffre opérationnel + un chemin vers la
-dérivation. Elles ne sont pas des généralités : ce sont des pièges **mesurés** sur ce dépôt.
-
-Échantillon représentatif (utile pour un entretien technique — ce sont de vraies découvertes) :
-
-- **L43** — Le FX intraday retail est mort au coût. Critère pré-flight :
-  `gross_par_trade / coût_p95 ≥ 1,5`. Meilleur ratio jamais observé sur ~1 500 configurations :
-  **0,36**. Répliqué **quatre fois indépendamment** (0,336 / 0,36 / 0,38 / 0,36), y compris hors FX
-  → c'est devenu une constante empirique du tier de coût retail.
-- **L52** — Ne jamais faire confiance au nom d'un champ de fournisseur de données. Le champ `Open`
-  du contrat ZN chez yfinance est en réalité l'ouverture Globex 18:00 ET **du jour calendaire
-  précédent** (vérifié : 71,6 % de correspondance exacte au tick). Une conclusion
-  « intraday vs overnight » bâtie dessus est fausse. Corollaire : *tick-matcher* les barres daily
-  contre des barres horaires indépendantes avant toute décomposition.
-- **L56** — Un drift de session est ancré à l'horloge de l'**échange avec son DST**, pas à UTC. Test
-  de falsification gratuit : corréler le profil horaire hiver-vs-été dans les deux horloges. Ici
-  0,70/0,86 en heure de New York contre **0,04/0,20 en UTC** — la fenêtre héritée était juste en
-  hiver et une heure en retard tout l'été. Corollaire : une barre H1 agrège silencieusement le gap
-  de halt non tradable (jusqu'à **59 % du mouvement** sur l'argent).
-- **L59** — Le décalage d'un pas de temps (*delay+1*) ne certifie que **l'entrée**. Les sorties au
-  stop exact sont irréalistes : 25 % des barres de stop ouvrent au-delà. Re-pricer les sorties fait
-  passer un Sharpe de 0,99 à **0,49**. Cela invalide partiellement toute une famille classique
-  (Crabel, ORB, NR7).
-- **L61** — L'entrée échelonnée (*sizing* dépendant du chemin) **fabrique un t-stat positif sur du
-  bruit pur** : 18 cellules sur 18 au-dessus de 2,5, un t net de +4,81 sur des données aléatoires.
-  Le HAC ne le voit pas, parce que le biais est dans le sizing, pas dans le résidu.
-- **L64** — Une rupture temporelle doit être **estimée** (Bai-Perron / CUSUM), jamais imposée, et
-  corrigée du nombre de dates balayées. Une rupture « évidente » en 2022 s'est révélée au 73ᵉ
-  percentile du bruit (p = 0,266).
+- **L43** — Le FX intraday retail est mort au coût. Critère pré-flight : `gross/coût_p95 ≥ 1,5`.
+  Meilleur ratio jamais observé sur ~1 500 configurations : **0,36**, **répliqué quatre fois de
+  façon indépendante**, y compris hors FX — c'est devenu une constante empirique du tier retail.
+- **L52** — Ne jamais faire confiance au nom d'un champ de fournisseur. Le champ `Open` du contrat
+  ZN chez yfinance est l'ouverture Globex 18:00 ET **de la veille** (71,6 % de correspondance exacte
+  au tick). Toute décomposition intraday/overnight bâtie dessus est fausse.
+- **L56** — Un drift de session est ancré à l'horloge de l'échange **avec son DST**, pas à UTC. Test
+  de falsification gratuit : corréler le profil horaire hiver/été dans les deux horloges — ici 0,70
+  en heure de New York contre **0,04 en UTC**. La fenêtre héritée était juste en hiver et une heure
+  en retard tout l'été.
+- **L59** — Le décalage d'un pas de temps ne certifie que **l'entrée**. Les sorties au stop exact
+  sont irréalistes : 25 % des barres de stop ouvrent au-delà. Re-pricer les sorties fait passer un
+  Sharpe de 0,99 à **0,49** — ce qui invalide partiellement toute une famille classique.
+- **L61** — Un sizing dépendant du chemin (entrée échelonnée) **fabrique un t-stat positif sur du
+  bruit pur** : 18 cellules sur 18 au-dessus de 2,5 sur des données aléatoires. Le HAC ne le voit
+  pas, parce que le biais est dans le sizing, pas dans le résidu.
+- **L64** — Une rupture temporelle doit être **estimée** (Bai-Perron, CUSUM), jamais imposée, et
+  corrigée du nombre de dates balayées.
 - **L66** — Ré-échantillonner des instruments cotés indépendamment sur un horodatage commun
-  **fabrique de la prédictibilité cross-instrument** (effet Epps / Lo-MacKinlay). Les placebos
-  temporels ne l'attrapent pas ; il faut trois diagnostics spécifiques.
-- **L67** — Dans la loi fondamentale de Grinold `IR = TC × IC × √BR`, **BR compte les paris
-  indépendants, pas les observations**. Mesurer TC au lieu de le supposer.
-- **L49 / L58** — Tout claim calendaire doit passer un **placebo apparié**, et la baseline du
-  placebo doit elle-même être validée contre l'espérance inconditionnelle (sinon le placebo fabrique
-  un faux PASS).
+  **fabrique de la prédictibilité cross-instrument** (effet Epps, Lo-MacKinlay).
+- **L67** — Dans `IR = TC × IC × √BR`, BR compte les **paris indépendants**, pas les observations.
 
-Il y a aussi une **politique écrite de ré-ouverture** des familles archivées, qui classe les
-rejets par nature : un rejet *mécanique* (le signal n'existe pas) reste fermé définitivement ; un
-rejet *véhicule*, *coût*, *puissance* ou *géométrie* est ré-ouvrable, mais uniquement avec un angle
-nouveau écrit **avant** de toucher aux données.
+Il existe aussi une **politique écrite de ré-ouverture** des familles archivées, qui classe les
+rejets par nature : un rejet *mécanique* (le signal n'existe pas) reste fermé ; un rejet *véhicule*,
+*coût*, *puissance* ou *géométrie* est ré-ouvrable, mais uniquement avec un angle nouveau **écrit
+avant** de retoucher aux données.
 
----
+## 5.3 Méthodologie effectivement implémentée
 
-## 5. Boîte à outils méthodologique effectivement utilisée
+t-stat HAC Newey-West (lag 6) ; correction de multiple testing systématique et **Deflated Sharpe
+Ratio** (Bailey–López de Prado) dès deux modifications, adossés à un **ledger de comptage de tests**
+tenu à l'échelle du dépôt ; **bootstrap par blocs** (Politis-Romano), l'iid étant interdit quand les
+trades cluster ; **walk-forward à fenêtre expansive, 5 folds minimum** (le split unique est interdit
+par la constitution du dépôt) ; **CPCV** ; **gate IC → Sharpe net** d'Israel-Jiang-Ross qui tue la
+majorité des candidats avant tout backtest ; **placebos appariés** (calendaires, à autocorrélation
+appariée, à duty cycle identique) ; **MDE calculé avec puissance** ; rendements en excès du taux sans
+risque, vol-targeting quotidien, coûts mesurés et jamais supposés.
 
-Ce ne sont pas des lignes de CV, c'est du code qui tourne :
+## 5.4 Ingénierie et opérations
 
-- **Significativité** : t-stat HAC Newey-West (lag 6), seuil t > 2,5 pour la faisabilité.
-- **Multiple testing** : pénalité approchée quand n_tests > 1 ; **Deflated Sharpe Ratio**
-  (Bailey–López de Prado) dès 2 modifications. Un **ledger de comptage de tests** maintenu à
-  l'échelle du dépôt (321 tests figés + compteurs par programme) pour que la déflation soit honnête.
-- **Bootstrap par blocs** (Politis-Romano) — le bootstrap iid est interdit quand les trades
-  cluster.
-- **Walk-forward à fenêtre expansive, minimum 5 folds** — le split unique est interdit par la
-  constitution du dépôt.
-- **CPCV** (Combinatorial Purged Cross-Validation).
-- **Gate IC → Sharpe net** (Israel-Jiang-Ross 2017) : `gross ≈ 0,40 × IC × √breadth × σ_cible`,
-  exiger `gross > 3 × coût`. Ce gate a tué la majorité des candidats **avant** tout backtest.
-- **Placebos appariés** (calendaires, à autocorrélation appariée, à duty cycle identique).
-- **MDE avec puissance** — `(z_{1-α/2}+z_{1-β})·σ/√n`, pas la version naïve.
-- **Rendements en excès** du taux sans risque (FRED DTB3), vol targeting quotidien, coût mesuré et
-  jamais supposé.
-- **Simulateur de barrière propfirm** trade-based, calibré par firme, pour estimer p(pass) et durée
-  avant achat d'un challenge.
+- **CI/CD** GitHub Actions, 201 lignes, auto-merge après checks verts, avec trois gardes qui
+  bloquent durement toute PR touchant du code live, du portefeuille ou la CI elle-même.
+- **Gouvernance de données formelle** : sources brutes immuables avec manifeste, caches régénérables
+  exclus du versionnement, règle « une série = un fichier canonique ». Un audit a fait passer le
+  `.git` de **2,1 Go à 65 Mo**.
+- **Détection d'un bug de fuseau horaire** dans l'historique : des panneaux étiquetés `timestamp_utc`
+  étaient en EET/EEST (vérifié au tick, −2 h), ce qui signifiait que **38,7 % de la séance
+  américaine n'avait jamais été testée**. Migration complète vers un historique en vrai UTC.
+- **Réparation de trous de données** 2018-2021 sur un historique M1, vérifiée aux jointures.
+- **Décodeur binaire Dukascopy `.bi5`** écrit à la main (ordre des octets non documenté, trouvé par
+  rétro-ingénierie) pour construire 19 ans d'historique FX.
+- **Pipelines de veille automatisés** : scraping quotidien de sources d'idées, scan arXiv q-fin,
+  synthèse hebdomadaire cross-papers, et un orchestrateur de faisabilité à trois portes
+  (IC → walk-forward/bootstrap/DSR → sanity checks).
+- **Isolation des sessions par git worktree**, après un incident réel de commit atterri sur la
+  mauvaise branche.
+- **Post-mortems écrits** sur les incidents live : une violation de compte sur un flash move USDJPY
+  (cause racine identifiée : le sizing, pas le breaker), un latch d'état non purgé au rollover, un
+  problème de réalignement de série sur GER40.
 
-Stack : **Python** (pandas, numpy, statsmodels, scipy), **MQL5**, bash, SQL **[À CONFIRMER]**,
-git, GitHub Actions, Linux/VPS, MetaTrader 5, APIs REST/WebSocket (Hyperliquid, Tradovate,
-Databento), yfinance / FRED / Dukascopy (décodeur de format binaire `.bi5` écrit maison).
+## 5.5 Un dossier annexe qui fait une bonne anecdote (mais reste annexe)
 
----
+Audit du code d'un EA commercialisé par un tiers, affichant +60,33 % sur 6,5 ans et un Sharpe de
+1,56. En reverse-engineering des 806 lignes de MQL5 : **biais d'anticipation structurel** (le filtre
+lit le swap *actuel* du courtier, constant sur toute la passe — MT5 n'a aucun historique de swaps,
+donc le backtest applique rétroactivement le portage du jour de l'exécution), **vérifié
+empiriquement** en relançant sur un courtier aux paramètres différents (**zéro trade pris**) ; un
+veto direction-aveugle qui **rejette toutes les ventes** (0 acceptée sur 30, mesuré au binaire) ; et
+un Sharpe calculé avec les défauts de `quantstats` sur une série indexée par trade (correction :
+**0,68 brut, 0,48 en excès**). Reproduction non biaisée en Python : **+16 à 21 %** au lieu de +60 %.
 
-## 6. Ingénierie et opérations (souvent sous-vendu, très regardé en entretien)
-
-- **CI/CD** : workflow GitHub Actions de 201 lignes qui auto-merge les PR après checks verts, avec
-  **trois gardes** qui bloquent durement toute PR touchant du code live, du code de portefeuille, ou
-  la CI elle-même — plus une notification Telegram sur échec.
-- **Gouvernance de données formelle** : `data/raw/` immuable avec manifeste, caches régénérables
-  gitignorés, règle « une série = un fichier canonique », interdiction de copier une série dans un
-  dossier de recherche. Suite à un audit, le `.git` est passé de **2,1 Go à 65 Mo**.
-- **Réparation de données** : trous 2018-2021 dans un historique FX/indices M1 tick-par-tick
-  réparés et vérifiés aux jointures.
-- **Détection d'un bug de fuseau horaire** dans les données historiques : des panneaux étiquetés
-  `timestamp_utc` étaient en réalité en EET/EEST (vérifié au tick, décalage −2 h), ce qui signifiait
-  que **38,7 % de la session de trading américaine n'avait jamais été testée**. Migration complète
-  vers un historique en vrai UTC.
-- **Isolation de sessions par git worktree**, après un incident réel où deux sessions parallèles
-  partageant un `.git/HEAD` ont fait atterrir un commit sur la mauvaise branche.
-- **Post-mortems écrits** sur les incidents live (une violation de compte sur un flash move USDJPY,
-  un latch d'état non purgé au rollover, un problème de réalignement de seam sur GER40).
+C'est une bonne histoire de validation de modèle, mais c'est deux semaines de travail — à raconter
+en entretien, pas à mettre au centre du CV.
 
 ---
 
-## 7. L'histoire à raconter en entretien : l'audit « Dédale »
+# 6. Garde-fous — ce qu'il ne faut PAS écrire
 
-C'est la meilleure démonstration de compétence du dossier, et elle est récente (août-septembre 2026).
+Le dépôt a rétracté plusieurs de ses propres chiffres. Le CV doit rester défendable ligne par ligne :
 
-**Contexte** : un ami de Guillaume vend une formation de trading algorithmique et publie un Expert
-Advisor MQL5 (« Dédale ») avec un backtest affichant **+60,33 % sur 6,5 ans** et un **Sharpe de
-1,56**. Guillaume a voulu savoir si ça tenait.
+| ❌ Ne pas écrire | ✅ Le chiffre honnête |
+|---|---|
+| « Sharpe 1,33 » (TSMOM crypto) | **0,57 en excès** sur la config déployée, IC95 contenant zéro |
+| « Sharpe 4,10 » (carry delta-neutre) | **Aucun Sharpe citable** — walk-forward insuffisant, config live négative |
+| « Sharpe 1,52 » (ORB Nasdaq) | **0,41** après données propres et coût mesuré |
+| « Sharpe 2,31 » (portefeuille) | Démontré fabriqué au niveau composant, retiré |
 
-**Ce qui a été trouvé, en reverse-engineering complet du code source (806 lignes de MQL5) :**
+Le compte funded est actuellement en drawdown. **Le dire si on est interrogé**, avec le critère de
+désarmement pré-enregistré — c'est plus impressionnant que de l'esquiver.
 
-1. **Un biais d'anticipation structurel.** L'EA filtre ses entrées sur le sens du portage en lisant
-   `SymbolInfoDouble(SYMBOL_SWAP_LONG)`. Or MT5 **n'a aucun historique de swaps** — cette fonction
-   renvoie le swap *actuel du courtier*, constant sur toute la passe de backtest. Le filtre applique
-   donc rétroactivement le portage du jour du backtest à tout l'historique. Backtest lancé en 2024
-   ⇒ il sélectionne la direction qui venait justement de payer sur les croisées yen en 2022-2024.
-   **Vérifié empiriquement** : sur un serveur démo aux swaps différents, le même EA prend **zéro
-   trade** sur USDJPY 2018-2024. Le backtest n'est reproductible ni dans le temps, ni entre courtiers.
-2. **Un veto direction-aveugle.** Une ligne de contrôle de distance minimale de stop
-   (`if(bid < sl + sl_distance_min || ...)`) est écrite sans distinguer achat et vente : pour une
-   vente, le stop est au-dessus du prix, donc le test est toujours vrai. **Toute vente est rejetée.**
-   Mesuré au binaire avec un EA de diagnostic écrit pour l'occasion : **0 vente acceptée sur 30**.
-   L'auteur constate le symptôme dans sa vidéo (« c'est que du long, quasiment ») sans en identifier
-   la cause.
-3. **Un bug de sélection** : un appel à `MathMin` sur un buffer réutilisé entre appels rend la
-   sélection stop/target dépendante de l'appel précédent ; 4 appels sur 60 ne sélectionnent rien.
-4. **Un Sharpe caduc.** Le 1,56 vient de `quantstats` appelé avec ses défauts
-   (`periods_per_year=252`, `rf=0`) sur une série **indexée par trade** (~99 trades/an). Correction :
-   **0,68 brut / 0,48 en excès**.
-5. **Une erreur de loi fondamentale.** Son modèle macro annexe affiche un IR de 0,87 via
-   `IR = TC × IC × √BR` en comptant **1 755 observations quotidiennes comme 1 755 paris
-   indépendants**, alors que son score est un noyau à décroissance exponentielle (deux jours
-   consécutifs sont le même pari). Avec une breadth réaliste, le même IC donne 0,22–0,55.
-   Détail savoureux : son TC codé en dur à 0,20 (au lieu de 0,50 mesuré) compense partiellement la
-   breadth gonflée — les deux erreurs se neutralisent pour produire un chiffre d'apparence plausible.
+**Formulations sûres et vraies :**
 
-**Puis la partie constructive** : reproduction du moteur en Python (moteur intra-barre M1, arrondi
-identique à MT5, différentiel de taux **historique** trade par trade) → la version **sans biais**
-donne **+16 à 21 %** sur la même période au lieu de +60 %, avec un taux de réussite identique
-(63,6 %). L'écart mesure exactement le prix du biais.
+> « Conception et mise en production d'un portefeuille multi-sleeves sous contrainte de barrière
+> (perte journalière 5 %, plancher −10 %) : recherche, spécification versionnée scellée par hash,
+> moteur de signal Python et exécution MQL5 sur VPS Linux supervisé, avec réconciliation
+> quotidienne sim-vs-live. Challenge $10 000 passé en 23 jours ; compte financé en production depuis
+> août 2026. »
 
-**Pourquoi c'est une bonne histoire d'entretien** : elle contient de la lecture de code dans un
-langage non standard, une hypothèse falsifiable, une **vérification empirique décisive** (relancer
-sur un courtier aux swaps différents), une reproduction indépendante, et un chiffrage de l'écart.
-C'est littéralement le travail d'un quant de validation de modèle.
+> « Stratégie d'arbitrage de financement delta-neutre spot/perpétuel (Binance / Hyperliquid) :
+> sélection d'univers par seuil de carry couvrant les coûts de transaction, exécution séquencée avec
+> défaisage automatique en cas d'échec d'une jambe, kill switch. »
+
+> « ~350 hypothèses testées sur 6 classes d'actifs, la quasi-totalité rejetées, chaque rejet
+> documenté par sa cause mécanique dans un registre de ~60 leçons méthodologiques numérotées. »
+
+> « Re-validation d'une stratégie interne : Sharpe 1,52 → 0,41 après achat de données propres et
+> mesure réelle du slippage ; les deux causes de l'écart isolées et chiffrées séparément. »
 
 ---
 
-## 8. Autres briques mobilisables
+# 7. À compléter par Guillaume — **[HORS DÉPÔT]**
 
-- **Décodeur binaire Dukascopy `.bi5`** écrit à la main (ordre des octets O,C,L,H non documenté,
-  découvert par rétro-ingénierie) pour construire un historique FX M5 sur 19 ans.
-- **Pipeline de veille automatisée** : scraping quotidien de sources d'idées + scan arXiv q-fin +
-  synthèse hebdomadaire cross-papers, avec déduplication et filtres de plausibilité à 3 niveaux.
-- **Simulateur de barrière propfirm** générique par firme (modèle de drawdown statique vs trailing,
-  consistency cap, minimum de jours tradés, mécanisme de lock), utilisé pour décider **avant achat**
-  si un programme est mathématiquement passable.
-- **Module d'admission de sleeve** : au lieu du critère naïf « Sharpe > seuil », le critère implémenté
-  est **ΔSharpe du book > 0 au poids ERC**, testé au block-bootstrap, avec effet minimum détectable
-  rapporté — et pour un challenge à barrière, la décision se prend sur **Δp(pass) et Δdurée**, pas sur
-  ΔSharpe. C'est un raisonnement de gestion de risque sous barrière, pas de la finance de manuel.
-- **Étude de véhicule systématique** : la comparaison chiffrée entre compte propfirm et compte
-  personnel IBKR pour une même stratégie (le propfirm vend du levier sur du capital qu'on n'a pas ;
-  si la marge du lot minimum tient dans le capital personnel, il n'apporte rien — mesuré :
-  +17,6 %/an à 100 % du P&L en personnel contre 80 % d'un contrat sous barrière en propfirm).
+Ces éléments existent mais ne sont pas dans le dépôt, je ne peux donc pas les documenter :
 
----
-
-## 9. Projets hors dépôt — **[À COMPLÉTER PAR GUILLAUME]**
-
-Tu as mentionné dans ta réponse précédente des éléments que **je ne peux pas documenter** parce
-qu'ils ne sont pas dans ce dépôt. Guillaume doit te les décrire lui-même :
-
-- **Hawkline** — statut, rôle exact, stack, ce qui tourne réellement, taille de l'équipe, dates.
-  (Ton conseil de positionnement — « construction d'infrastructure de données et de recherche »
-  plutôt que « co-fondateur de startup » — me semble juste.)
-- **Pipeline crypto ML** — quels modèles, quelles features, quel horizon, résultat honnête.
-- **Framework EV** — de quoi il s'agit exactement.
+- **Hawkline** — rôle, stack, ce qui tourne réellement, taille d'équipe, dates.
+- **Pipeline crypto ML** — modèles, features, horizon, résultat honnête.
+- **Framework EV** — de quoi il s'agit.
 - **Activité de développement quant facturée** — clients, missions, volume, période. C'est le seul
-  élément du dossier qui prouve que quelqu'un a **payé** pour ce travail : à ne pas enterrer.
-- Cursus Augsburg, dates, notes/classement si favorable.
-- Compétences non couvertes ici : C++, SQL, Rust, machine learning en production, etc.
+  élément qui prouve que quelqu'un a **payé** pour ce travail : à ne pas enterrer.
+- Cursus Augsburg (dates, intitulé), et compétences non couvertes ici (C++, SQL, Rust, ML en
+  production…).
 
 ---
 
-## 10. Ce qu'il ne faut **pas** surclamer (garde-fous)
+# 8. Lecture stratégique
 
-Guillaume tient à l'honnêteté intellectuelle et le dépôt en porte la trace. Le CV doit rester
-défendable ligne par ligne face à un quant qui creuse :
-
-- **Ne pas écrire « Sharpe 1,33 » pour la stratégie crypto.** Ce chiffre est un brut avant taux sans
-  risque sur un univers de 14 coins ; la configuration réellement déployée donne **0,57 en excès**,
-  avec un intervalle de confiance à 95 % qui **contient zéro**. Le dépôt a lui-même rétracté le
-  chiffre.
-- **Ne pas écrire « Sharpe 4,10 » pour le carry delta-neutre.** Rétracté. Aucun Sharpe n'est citable
-  tant qu'un walk-forward à 5 folds sur la config live n'existe pas.
-- **Ne pas écrire « Sharpe 1,52 » pour la stratégie NQ.** Re-baselinée à 0,41.
-- **Ne pas écrire « Sharpe 2,31 » pour le portefeuille.** Ce chiffre a été démontré fabriqué au
-  niveau composant et retiré.
-- Le compte funded est **en drawdown** actuellement. Le dire si on est interrogé dessus, avec le
-  critère de désarmement pré-enregistré — c'est plus impressionnant que de l'esquiver.
-
-**Formulations sûres et vraies** :
-> « Compte propfirm funded de $10 000 obtenu en 23 jours (deux phases, +10,1 % et +5,4 %), exécuté
-> par un EA MQL5 développé en propre sur VPS Linux supervisé, en production depuis août 2026. »
-
-> « ~350 hypothèses de stratégie testées sur 6 classes d'actifs ; la quasi-totalité rejetées, chaque
-> rejet documenté par sa cause mécanique dans un registre de ~60 leçons méthodologiques numérotées. »
-
-> « Détection et chiffrage d'un biais d'anticipation dans un EA tiers commercialisé : le backtest
-> affiché à +60 % tombe à +16-21 % une fois le biais retiré ; vérification empirique par re-exécution
-> sur un courtier aux paramètres différents (0 trade pris). »
-
----
-
-## 11. Ma lecture stratégique (à confronter à la tienne)
-
-Je suis d'accord avec ton diagnostic sur le mauvais ordre du plan, et avec ta hiérarchie de cibles.
-J'ajouterais quatre choses :
-
-1. **Le repo public à montrer ne doit pas être `Algo_claude` tel quel.** Il contient des clés
-   redigées, des états de compte live, des post-mortems d'incidents, et une constitution interne. Il
-   faut en **extraire un dépôt vitrine** : une étude, complète, avec données reproductibles,
-   out-of-sample propre, coûts mesurés, et une section « ce qui n'a pas marché ». Mon candidat
-   naturel est **l'audit Dédale** (§7) — c'est autonome, c'est une histoire, ça montre du code, de la
-   statistique et du jugement, et ça ne divulgue aucune position. Second candidat : le
-   **re-baselining NQ 1,52 → 0,41**, qui est la démonstration la plus pure de « backtest honnête ».
-2. **Le registre de leçons est un actif de communication sous-exploité.** Publié seul, proprement
-   rédigé, c'est le genre de document qui circule et qui fait qu'un desk se souvient d'un nom. Il n'y
-   a pas de risque concurrentiel : ce sont des méthodes, pas des signaux.
-3. **La cible « crypto prop / market making » que tu proposes est particulièrement bien alignée** —
-   le travail Hyperliquid (API, carry de funding, exécution, réconciliation d'état) est directement
-   pertinent, et c'est le seul segment où l'expérience live de Guillaume vaut plus qu'un pedigree.
-4. **Francfort mérite d'être testé en priorité**, pas en option. Le double diplôme Augsburg +
-   l'allemand transforment un dossier français ordinaire en dossier local différenciant, et le format
-   du stage long y est mieux compris qu'aux États-Unis. Ça contourne aussi entièrement le problème
-   de visa et de durée que tu as identifié sur les prop shops américains.
-
-Dernier point, sur la contrainte que tu as bien vue : le vrai goulot n'est ni le CV ni le niveau,
-c'est **la durée du stage et le visa**. Tant que la scolarité de Rennes n'a pas répondu sur la durée
-minimale validante et l'acceptabilité d'une dérogation, une partie des candidatures est du travail
-potentiellement perdu. C'est le premier appel à passer.
+1. **Le repo public ne peut pas être `Algo_claude` tel quel** — clés redigées, états de compte live,
+   post-mortems d'incidents, constitution interne. Il faut en extraire un dépôt vitrine. Le meilleur
+   candidat n'est pas l'audit du code tiers, c'est **le dossier de décision ORB** ou **le
+   re-baselining 1,52 → 0,41** : ce sont les démonstrations les plus pures de « backtest honnête »,
+   et elles sont sur du travail propre.
+2. **Le registre de leçons, publié seul et proprement rédigé**, est le document qui fait qu'un desk
+   se souvient d'un nom. Aucun risque concurrentiel : ce sont des méthodes, pas des signaux.
+3. **La cible crypto prop / market making est bien alignée** — le travail Hyperliquid (API,
+   arbitrage de funding, exécution séquencée, réconciliation d'état) est directement pertinent, et
+   c'est le segment où l'expérience live pèse plus que le pedigree.
+4. **Francfort en priorité, pas en option.** Augsburg + l'allemand transforment un dossier français
+   ordinaire en dossier local différenciant, et le format stage long y est compris — ce qui contourne
+   entièrement les deux obstacles identifiés côté américain (visa J-1, format 8-12 semaines).
+5. **Le goulot réel n'est ni le CV ni le niveau, c'est la durée validante et le visa.** Tant que la
+   scolarité de Rennes n'a pas répondu, une partie des candidatures est du travail potentiellement
+   perdu. C'est le premier appel à passer.
