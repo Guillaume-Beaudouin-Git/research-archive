@@ -1,9 +1,23 @@
 {
+  "29f999551571dae89d6684e10ff060bf": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "Dalio Holy Grail walked 2008-2025 [Quanter Lab]",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "355456fc83acbfe70e4ea2e8e77d43cc": {
     "first_seen": "2026-09-03 06:00",
     "source": "quantocracy",
     "title": "2x Your Portfolio Every Year: How I Turbocharged the Overnight Effect [Paper to ",
     "decision": "accepted",
+    "promising_file": null
+  },
+  "3a693e82d2b2981cfe7bf5e3e8bcd4af": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 09/03/2026",
+    "decision": "rejected_L0",
     "promising_file": null
   },
   "4de7e7be64362cb81ed1650e6690b7e7": {
@@ -13,11 +27,25 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "5d170f4e8586cc5c80d98dde7642c015": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "EigenScore is Live: The First Rated Contest Platform for Quants [Vertox Quant]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "605fa4253f4b864c652797e0ac68ca00": {
     "first_seen": "2026-09-01 07:00",
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 08/31/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "66f9a4cf638db9280a017582605a9c56": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "I built paper-spec crypto strategy on 5.8 years of data. It’s lost money every y",
+    "decision": "accepted",
     "promising_file": null
   },
   "6f0fef102b69c4350ae5e922c248ba52": {
@@ -73,6 +101,13 @@
     "first_seen": "2026-09-01 07:00",
     "source": "quantocracy",
     "title": "Podcast: From market problems to quantitative trading systems [Trading the Break",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "dfc8b48a39e2582240037e85d770df4f": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "CAPM after Markowitz: Portfolio Choice Meets the Market [Spatium Novum]",
     "decision": "accepted",
     "promising_file": null
   },
