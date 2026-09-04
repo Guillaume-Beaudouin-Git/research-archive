@@ -1,12 +1,12 @@
 {
-  "run_time": "2026-09-03 20:30 UTC",
-  "accepted_count": 0,
+  "run_time": "2026-09-04 01:30 UTC",
+  "accepted_count": 1,
   "by_source": {
     "hn_quant": {
       "total": 64,
-      "new": 1,
+      "new": 0,
       "accepted": 0,
-      "rej_l0": 1,
+      "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
     },
@@ -51,9 +51,9 @@
       "rej_l2": 0
     },
     "arxiv_econ_em": {
-      "total": 77,
-      "new": 0,
-      "accepted": 0,
+      "total": 78,
+      "new": 1,
+      "accepted": 1,
       "rej_l0": 0,
       "rej_l1": 0,
       "rej_l2": 0
