@@ -1,0 +1,14 @@
+{
+  "hash": "c75e56fc57b5cc1382a08f76d433db25",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/do-llm-crowds-produce-investment-signals-an-empirical-test/",
+  "title": "Do LLM “Crowds” Produce Investment Signals? An Empirical Test",
+  "url": "https://quantpedia.com/do-llm-crowds-produce-investment-signals-an-empirical-test/",
+  "description": "The integration of artificial intelligence into algorithmic trading has ignited a race to transform generative text into systematic alpha. A new paper written by Steven Edwards empirically investigates whether constructing a synthetic consensus using large language models can simulate information aggregation dynamics or if it merely acts as a sophisticated echo chamber. By utilizing an expansive framework to evaluate portfolio construction across distinct synthetic mandates, the study challenges whether generative agents can truly democratize the wisdom of crowds within highly efficient capital markets.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-09-04 14:00 UTC"
+}
