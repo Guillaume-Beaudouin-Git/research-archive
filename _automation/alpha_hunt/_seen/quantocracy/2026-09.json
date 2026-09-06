@@ -1,4 +1,25 @@
 {
+  "29f999551571dae89d6684e10ff060bf": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "Dalio Holy Grail walked 2008-2025 [Quanter Lab]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "355456fc83acbfe70e4ea2e8e77d43cc": {
+    "first_seen": "2026-09-03 06:00",
+    "source": "quantocracy",
+    "title": "2x Your Portfolio Every Year: How I Turbocharged the Overnight Effect [Paper to ",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "3a693e82d2b2981cfe7bf5e3e8bcd4af": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 09/03/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "4de7e7be64362cb81ed1650e6690b7e7": {
     "first_seen": "2026-09-01 07:00",
     "source": "quantocracy",
@@ -6,11 +27,25 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "5d170f4e8586cc5c80d98dde7642c015": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "EigenScore is Live: The First Rated Contest Platform for Quants [Vertox Quant]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "605fa4253f4b864c652797e0ac68ca00": {
     "first_seen": "2026-09-01 07:00",
     "source": "quantocracy",
     "title": "Recent Quant Links from Quantocracy as of 08/31/2026",
     "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "66f9a4cf638db9280a017582605a9c56": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "I built paper-spec crypto strategy on 5.8 years of data. It’s lost money every y",
+    "decision": "accepted",
     "promising_file": null
   },
   "6f0fef102b69c4350ae5e922c248ba52": {
@@ -34,10 +69,59 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "adc07fb7a3e6aa4baec6f0820748b5ff": {
+    "first_seen": "2026-09-03 06:00",
+    "source": "quantocracy",
+    "title": "Stock-Bond Correlation: The Sign Flips and So Do Its Drivers [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "baf61a315012fd8e9c90c34a0e42c36e": {
+    "first_seen": "2026-09-03 06:00",
+    "source": "quantocracy",
+    "title": "Backtest Said “SURVIVES.” Per-Year Numbers Said No. I Learned to Trust the Secon",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "bb94b7f47b49ef07f74fb9a3d15c6575": {
+    "first_seen": "2026-09-03 06:00",
+    "source": "quantocracy",
+    "title": "Volatility Clustering in Bitcoin: Regime Persistence as a Forecast [Aligrithm]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "c79c70e45bb5e1c350266ecf6ee910de": {
+    "first_seen": "2026-09-03 06:00",
+    "source": "quantocracy",
+    "title": "All Weather built and tested against inverse vol, ERC and a 60/40 [Quanter Lab]",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
   "d2eb47cafc44179d5e875171c85c6dcb": {
     "first_seen": "2026-09-01 07:00",
     "source": "quantocracy",
     "title": "Podcast: From market problems to quantitative trading systems [Trading the Break",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "dfc8b48a39e2582240037e85d770df4f": {
+    "first_seen": "2026-09-04 06:00",
+    "source": "quantocracy",
+    "title": "CAPM after Markowitz: Portfolio Choice Meets the Market [Spatium Novum]",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "e85a9f266de849af5fc7ba957501c4bb": {
+    "first_seen": "2026-09-03 06:00",
+    "source": "quantocracy",
+    "title": "Recent Quant Links from Quantocracy as of 09/02/2026",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "fef3b054348cb0f54c3e20f6dcefdea6": {
+    "first_seen": "2026-09-03 06:00",
+    "source": "quantocracy",
+    "title": "A Sharpe of 2.1 From Nothing: The Second Number Your Agent Doesn’t Log [Jonathan",
     "decision": "accepted",
     "promising_file": null
   }

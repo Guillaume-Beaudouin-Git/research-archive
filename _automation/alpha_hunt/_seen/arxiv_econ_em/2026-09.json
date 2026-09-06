@@ -1,4 +1,11 @@
 {
+  "06c1264dad3152c843136df08407c6a4": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Foundation models for electricity price forecasting and battery arbitrage: Can t",
+    "decision": "accepted",
+    "promising_file": null
+  },
   "0b2001dd7ca5d313dc111cb902c722a8": {
     "first_seen": "2026-09-01 02:00",
     "source": "arxiv_econ_em",
@@ -6,10 +13,52 @@
     "decision": "accepted",
     "promising_file": null
   },
+  "236eba107fcb14541c6392cc92756668": {
+    "first_seen": "2026-09-04 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Natural Disasters and the Nonprofit Sector",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "27af81bbcd8d1ac447491292ccccb412": {
+    "first_seen": "2026-09-03 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Robust Variance Estimation in Linear Regression: A Projection-Geometry Perspecti",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3a19706c7c1b0a0069c496268aaa360d": {
+    "first_seen": "2026-09-03 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Headline Estimation with Multiple Research Designs",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "56c6761daebca30c889ba78c99769a35": {
     "first_seen": "2026-09-01 04:30",
     "source": "arxiv_econ_em",
     "title": "Redefining Stablecoins from Nominal to Real Value: A Maximum Likelihood Approach",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "633c41fc79e62d648f9d1ad3b5a48b3f": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Optimal Uniform Pricing for Multi-Interval Dispatch without Make-Whole Uplifts",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "72045c1baba9895db1fd21310c492a8d": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Illiquidity at Risk",
+    "decision": "accepted",
+    "promising_file": null
+  },
+  "801c4c068aa4f0cf20aaab8b3b8b9f80": {
+    "first_seen": "2026-09-04 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Randomization Inference for Matched Pairs with Binary Outcomes",
     "decision": "accepted",
     "promising_file": null
   },
@@ -20,10 +69,38 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "ae7e572bf9068eece10d41b947c2f540": {
+    "first_seen": "2026-09-03 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Estimation risk in conditional expectiles",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "b34fefcac48786a6636781667518fb3f": {
+    "first_seen": "2026-09-02 03:30",
+    "source": "arxiv_econ_em",
+    "title": "Which Policy Works, and Where? Estimation and Inference for State-Level Treatmen",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "c8cf93558e3a<ACCOUNT_ID>bee1f8004e7": {
     "first_seen": "2026-09-01 04:30",
     "source": "arxiv_econ_em",
     "title": "When Can We Work in Embedding Space? What Text Embeddings Preserve",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "d6f0f0ca771109fd6f2d4036f3ba043a": {
+    "first_seen": "2026-09-02 01:30",
+    "source": "arxiv_econ_em",
+    "title": "Manipulation Testing in Boundary Discontinuity Designs",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "eaf74c6b8c9d93a122ad219bf9479cb3": {
+    "first_seen": "2026-09-03 02:00",
+    "source": "arxiv_econ_em",
+    "title": "Off-policy causal estimation in networks",
     "decision": "rejected_L0",
     "promising_file": null
   }

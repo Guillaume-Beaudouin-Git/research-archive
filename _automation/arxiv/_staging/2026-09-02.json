@@ -1,0 +1,128 @@
+[
+ {
+  "id": "2609.01323",
+  "title": "Adaptive singular-point method for pricing and hedging surrenderable equity-linked contracts",
+  "summary": "We propose a deterministic numerical method for pricing and hedging surrenderable equity-linked life-insurance contracts with periodic premiums and fund contributions, maturity and death guarantees, and Bermudan surrender under correlated stochastic volatility and stochastic interest rates. The main computational challenge is the non-recombining accumulated fund, which couples with multiple stochastic factors and early exercise. Our key idea is to avoid a full multidimensional fund lattice: variance and interest-rate factors are discretized on recombining lattices, while at each factor node the contract value is represented as an adaptive one-dimensional function of the fund. Periodic contributions then act as translations of the fund argument, whereas surrender is handled directly through a backward obstacle condition. Piecewise-cubic representations propagate payoff and exercise singularities and are compressed by continuous pruning criteria that control the representation error. We establish weak convergence of the financial chains, convergence of the adaptive valuation under vanishing representation error, and Delta consistency on regular fund regions. For the strict binomial scheme, additional regularity yields first-order weak accuracy and a Talay-Tubaro expansion supporting Richardson extrapolation. Numerical experiments show compact representations, favorable cost--accuracy, and close agreement with independent Monte Carlo and cross-fitted least-squares Monte Carlo be",
+  "authors": [
+   "Andrea Molent",
+   "Marcellino Gaudenzi"
+  ],
+  "categories": [
+   "q-fin.CP",
+   "q-fin.PR"
+  ],
+  "published": "2026-09-01T14:41:45Z",
+  "updated": "2026-09-01T14:41:45Z"
+ },
+ {
+  "id": "2609.01183",
+  "title": "Harvesting the Variance Risk Premium in Nuclear and Energy Equities: A Short-Put Portfolio Derisking Strategy",
+  "summary": "We study whether nuclear and energy-adjacent equity options exhibit a harvestable variance risk premium. Using CRSP and OptionMetrics data for 2000-2024, we construct a systematic cash-secured short-put strategy on a curated universe of nuclear-related firms. The strategy compares at-the-money put implied volatility with GARCH-based realized volatility forecasts, then evaluates unconditional and IV/RV-filtered put-writing portfolios. The results show positive average option premia, high win rates, and substantially lower volatility than an equal-weight stock benchmark, though performance is measured before transaction costs and with a fixed universe.",
+  "authors": [
+   "Jilang Miao",
+   "Nonna Sorokina"
+  ],
+  "categories": [
+   "q-fin.PM"
+  ],
+  "published": "2026-09-01T12:57:27Z",
+  "updated": "2026-09-01T12:57:27Z"
+ },
+ {
+  "id": "2609.01133",
+  "title": "Scalable Inversion of Contests with Correlated Performances, Including Softmax and Multinomial Probit",
+  "summary": "Multinomial probit choice probabilities over n alternatives are Gaussian orthant integrals, computed by simulation for thirty years, one expensive integral per alternative. Inversion, which is to say determining item attractiveness consistent with a prescribed choice probability vector, is even more difficult and has been considered impractical for correlated contests when n is large. Yet here, for families lying within a grammar including factor, block and hierarchical covariance structures, we exhibit a calibration tested at n = 1,000,000 reproducing probabilities to very high accuracy, even in the extreme tail. We must return to much smaller problems for any performance comparison to be possible due to limitations of the prior art. The Geweke-Hajivassiliou-Keane simulator is the standard (and still appropriate for high rank) but is two hundred times slower already at n = 200, and its measured cost grows roughly as n^2.8 while ours is linear. Furthermore our approach applies to any continuous performance distributions within reason: the Thurstone-Mosteller model families thereby become a practical alternative to logit at modern scale.",
+  "authors": [
+   "Peter Cotton"
+  ],
+  "categories": [
+   "stat.ME",
+   "q-fin.MF",
+   "stat.CO",
+   "stat.OT"
+  ],
+  "published": "2026-09-01T12:09:42Z",
+  "updated": "2026-09-01T12:09:42Z"
+ },
+ {
+  "id": "2609.00943",
+  "title": "Illiquidity at Risk",
+  "summary": "Market efficiency relies fundamentally on stable liquidity. Consequently, forecasting liquidity dynamics is a priority for both investors and regulators. We introduce a new tail-risk metric, Illiquidity-at-Risk (IlliQaR), designed to quantify the magnitude of extreme liquidity dry-ups. Relying upon the realized Amihud (a precise illiquidity measurement derived from high-frequency data as the ratio of realized volatility to trading volume) we assess the predictive power of various linear and non-linear econometric models, with a specific focus on the impact of discontinuous jump components. Accounting for these jumps is essential for achieving accurate probability coverage and better IlliQaR predictions during periods of systemic stress, where standard continuous models systematically underestimate the severity of liquidity evaporation. Our empirical analysis, encompassing the S&P 500 index and a cross-section of 25 large U.S. equities, demonstrates that incorporating jumps significantly improves forecasts of illiquidity. Our results suggest that individual stock IlliQaR violations often cluster during periods of S&P 500 liquidity stress. This indicates that Illiquidity at Risk is not just a localized concern but a systemic one, where the main index acts as a leading indicator for extreme dry-ups in individual stock liquidity.",
+  "authors": [
+   "Demetrio Lacava",
+   "Paolo Santucci de Magistris"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "econ.EM"
+  ],
+  "published": "2026-09-01T09:04:42Z",
+  "updated": "2026-09-01T09:04:42Z"
+ },
+ {
+  "id": "2609.00911",
+  "title": "Pricing the DeFi Tail: Do Protocols or Depositors Price Operational Risk?",
+  "summary": "Similar to banks, DeFi protocols expose depositors to operational risk (USD 9.45 billion across 1,075 events since 2020). Unlike banks, they are not required to hold capital against it. A protocol may maintain a buffer voluntarily. Absent one, the risk falls on the depositor, who should then demand a risk premium in the supply yield. I quantify the underlying tail on one benchmark, a per-sector Basel loss-distribution approach fitted to a new operational risk event dataset, and test both margins against it. Tails in the four core sectors are no heavier than the Moscadelli banking band $[0.85, 1.39]$. Bridge, Derivatives, and the residual Other sector exhibit cyber-loss-level tails ($\\hatξ\\approx 1.6$), with point estimates past the infinite-mean boundary. The Lending tail implies a $\\mathrm{VaR}_{99.9}$ capital buffer of 18% of TVL and of the ten largest Lending venues, the four holding a buffer cover on average 5% of it. Under market discipline, depositors should demand a higher yield in compensation where a venue does not maintain a buffer. I find that venues without a buffer pay a higher premium than those with (a 125-bps gap in medians): evidence the market discriminates in the right direction. However, the premium falls far short of an adequately priced tail. This unpriced tail falls disproportionately on the retail depositor, who sees only the posted rate but lacks the information and skills to price it. Because these products are not bank-regulated, I recommend disclos",
+  "authors": [
+   "Nils Bundi"
+  ],
+  "categories": [
+   "q-fin.RM",
+   "cs.CR"
+  ],
+  "published": "2026-09-01T08:39:42Z",
+  "updated": "2026-09-01T08:39:42Z"
+ },
+ {
+  "id": "2609.00731",
+  "title": "Agentic Empirical Asset Pricing: Methodological Foundations",
+  "summary": "Recent advances in LLM agents enable a new paradigm for asset pricing, which we call Agentic Empirical Asset Pricing (AEAP): systems that autonomously conduct the scientific discovery process itself. We define AEAP and identify its core building blocks. Existing evaluation practices backtest only the outputs (factors or trades), not the autonomous discovery system that produced them. We focus on factor discovery, contributing a reference architecture, a rigorous evaluation standard for discovered factors, and a method for out-of-sample backtesting the discovery system. As a concrete instance of that architecture, we evaluate SEADS against five re-implemented baselines on two US equity panels using this standard: no single metric ranks the systems consistently, motivating evaluation on multiple axes at once. A separate rolling re-execution then asks the complementary question of whether the discovery process itself, not one static output, is reliable. We also report negative findings and limitations that surface further evaluation pitfalls for future AEAP systems.",
+  "authors": [
+   "Yingjian Pan",
+   "Xiaowei Ding",
+   "Kay Giesecke"
+  ],
+  "categories": [
+   "cs.AI",
+   "cs.LG",
+   "q-fin.ST"
+  ],
+  "published": "2026-09-01T05:09:10Z",
+  "updated": "2026-09-01T05:09:10Z"
+ },
+ {
+  "id": "2609.00438",
+  "title": "Single- and Multilevel Quadrature with Error Control for Fourier Pricing under the Rough Heston Model",
+  "summary": "Unlike the classical Heston model, Fourier pricing under the rough Heston model requires solving a fractional Riccati equation at every quadrature point. Since the required resolution varies with model parameters and quadrature point, a single uniform time discretization can be inefficient. We develop single- and multilevel Gauss-Laguerre quadrature methods that balance the time discretization and Fourier quadrature errors. Both methods scale the laguerre weight to the estimated Fourier integrand decay. The single-level method allocates a prescribed tolerance between the two errors. The multilevel method splits the integrand into a level-zero term and level differences, selecting quadrature points separately at each level. Suppose that the Fourier integrand discretization error is $O(Δt^p)$, that evaluating the characteristic function once costs $O(Δt^{-β})$, and that the algebraic Gauss-Laguerre quadrature error is $O(N^{-s_{SL}/2})$, where $s_{SL}$ is the smoothness index. Under this estimate and assumptions on the regularity and decay of level differences, we prove that the proposed single-level method requires $O(ε^{-(β/p+2/s_{SL})})$ computational work to achieve accuracy $ε$, whereas the proposed multilevel method requires $O(ε^{-β/p})$ computational work. We also study root-exponential Gauss-Laguerre error models for practical multilevel quadrature allocation. Numerical experiments support the observed fractional Riccati and Fourier integrand convergence rates and root",
+  "authors": [
+   "Chiheb Ben Hammouda",
+   "Abderrahmene Ben Romdhane",
+   "Michael Samet",
+   "Raul F. Tempone"
+  ],
+  "categories": [
+   "q-fin.CP",
+   "math.NA"
+  ],
+  "published": "2026-08-31T22:23:39Z",
+  "updated": "2026-08-31T22:23:39Z"
+ },
+ {
+  "id": "2609.00332",
+  "title": "Latent-Space No-Arbitrage Geometry of Generative Models for Implied Volatility Surfaces",
+  "summary": "Generative models for implied volatility surfaces must produce outputs that satisfy static no-arbitrage constraints. We study these constraints in latent space. For a fixed generator, we assign each latent code a scalar margin determined by the no-arbitrage conditions of the generated surface. The codes with nonnegative margin form the admissible latent set. We establish conditions under which strictly admissible codes remain admissible under small perturbations and the boundary of the admissible set is characterized by zero margin. For regular boundary components, we formulate a level-set equation whose local dynamics are directed toward the zero-margin set. The analysis treats the generator as a map from latent variables to surfaces and is therefore not restricted to a particular architecture. It applies to variational autoencoders, generative adversarial networks, and other generative models with a deterministic realization map. Numerical tests recover known boundaries in analytic examples. Experiments with a variational autoencoder trained on Heston surfaces show that similar reconstruction errors can correspond to different admissible regions and that the latent prior may be concentrated inside such a region. The computed boundary can also be used to modify latent codes that generate violating surfaces.",
+  "authors": [
+   "Jing Wang",
+   "Shuaiqiang Liu",
+   "Cornelis Vuik"
+  ],
+  "categories": [
+   "q-fin.CP",
+   "cs.AI",
+   "cs.LG",
+   "math.NA"
+  ],
+  "published": "2026-08-31T20:27:40Z",
+  "updated": "2026-08-31T20:27:40Z"
+ }
+]

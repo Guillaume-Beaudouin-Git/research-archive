@@ -1,0 +1,14 @@
+{
+  "hash": "801c4c068aa4f0cf20aaab8b3b8b9f80",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2609.03227v1",
+  "title": "Randomization Inference for Matched Pairs with Binary Outcomes",
+  "url": "http://arxiv.org/abs/2609.03227v1",
+  "description": "We give an exact randomization-based confidence set for the average treatment effect (ATE) in matched-pair studies with a binary outcome, requiring neither monotonicity nor any distributional assumption beyond the within-pair coin flip. At its core is an analytic solution to the worst-case allocation of attributable effects: two binomial-symmetry lemmas identify the pattern hardest to reject as a single boundary corner, so testing null hypotheses needs no integer program and no numerical search. Inverting the test via binary search yields a prediction set for the attributable effect in O(log S) Binomial tail calculations; the Bonferroni proposition of Rigdon and Hudgens (2015) produces the ATE confidence set at the same computational cost. The same corner extends without further machinery to a sensitivity analysis for matched observational studies under Rosenbaum's $Γ$-model. A simple formula for the design sensitivity illuminates when an observational study can hope to provide evidence for an effect.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-09-04 01:30 UTC"
+}

@@ -1,0 +1,14 @@
+{
+  "hash": "f8c4a30c0c0443062e921f1e04c5c5aa",
+  "source": "quantpedia",
+  "canonical_id": "https://quantpedia.com/why-average-strategy-performance-can-mislead-portfolio-research/",
+  "title": "Why Average Strategy Performance Can Mislead Portfolio Research",
+  "url": "https://quantpedia.com/why-average-strategy-performance-can-mislead-portfolio-research/",
+  "description": "Average strategy performance is one of the most common shortcuts in portfolio research. It gives the researcher a clean benchmark, a single reference line, and a simple way to compare one strategy against a broader group of similar strategies. In many cases, this is useful. But it can also be misleading. The problem is that an average hides dispersion. Two peer groups can have the same average return, but the internal structure of those groups can be completely different. In one year, nearly all strategies may behave similarly and cluster around the median. In another year, the same average may hide a wide spread between winners and losers. For portfolio construction, this distinction matters. This case study shows how Quantpedia API can be used to go beyond the average peer group return and measure yearly performance dispersion across a group of trend-following strategies. The goal is not only to ask how the average strategy performed, but also how different the individual strategies were from each other.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "academic_curated"
+  ],
+  "captured": "2026-09-02 14:00 UTC"
+}
