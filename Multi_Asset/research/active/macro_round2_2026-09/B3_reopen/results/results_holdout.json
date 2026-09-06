@@ -1,0 +1,113 @@
+{
+  "holdout_1990_2003": {
+    "n_events": 134,
+    "threshold_bps": 2.384540136,
+    "H5": {
+      "n_traded": 50,
+      "drift_bps": -3.539999999999999,
+      "t_hac": -1.5540692540598673,
+      "mde80_bps": 5.802157402349949,
+      "ratio_effet_mde": -0.6101178845245138,
+      "pnl_proxy_bps": -27.549999999999994,
+      "controle_non_trades_bps": -0.630952380952384,
+      "controle_t": -1.054212813603034,
+      "n_non_trades": 84
+    },
+    "H10": {
+      "n_traded": 50,
+      "drift_bps": -3.080000000000002,
+      "t_hac": -0.7617827802625153,
+      "mde80_bps": 8.632965449271719,
+      "ratio_effet_mde": -0.3567719595425732,
+      "pnl_proxy_bps": -24.100000000000016,
+      "controle_non_trades_bps": -0.8214285714285705,
+      "controle_t": -0.9850309293368846,
+      "n_non_trades": 84
+    },
+    "H20": {
+      "n_traded": 50,
+      "drift_bps": -3.2200000000000015,
+      "t_hac": -0.7711777237576062,
+      "mde80_bps": 12.073656227634663,
+      "ratio_effet_mde": -0.2666963461018492,
+      "pnl_proxy_bps": -25.150000000000013,
+      "controle_non_trades_bps": -1.773809523809523,
+      "controle_t": -1.4469506493490023,
+      "n_non_trades": 84
+    }
+  },
+  "vu_2004_2024": {
+    "n_events": 169,
+    "threshold_bps": 2.056204408,
+    "H5": {
+      "n_traded": 63,
+      "drift_bps": 3.5714285714285703,
+      "t_hac": 2.179743419198806,
+      "mde80_bps": 4.612463734079235,
+      "ratio_effet_mde": 0.7742995451738806,
+      "pnl_proxy_bps": 25.785714285714278,
+      "controle_non_trades_bps": 2.1037735849056562,
+      "controle_t": 3.006275414255613,
+      "n_non_trades": 106
+    },
+    "H10": {
+      "n_traded": 63,
+      "drift_bps": 4.571428571428571,
+      "t_hac": 2.0185105699285786,
+      "mde80_bps": 6.521248220016129,
+      "ratio_effet_mde": 0.7010051476643937,
+      "pnl_proxy_bps": 33.285714285714285,
+      "controle_non_trades_bps": 2.113207547169808,
+      "controle_t": 2.1395311222543305,
+      "n_non_trades": 106
+    },
+    "H20": {
+      "n_traded": 63,
+      "drift_bps": 7.174603174603176,
+      "t_hac": 2.6730820792371888,
+      "mde80_bps": 9.794330112182456,
+      "ratio_effet_mde": 0.7325261750856455,
+      "pnl_proxy_bps": 52.80952380952382,
+      "controle_non_trades_bps": 2.4433962264150932,
+      "controle_t": 2.5094887767525145,
+      "n_non_trades": 106
+    }
+  },
+  "poole_1990_2024": {
+    "n_events": 303,
+    "threshold_bps": 2.1535535679999995,
+    "H5": {
+      "n_traded": 113,
+      "drift_bps": 0.07964601769911347,
+      "t_hac": 0.049999338913691176,
+      "mde80_bps": 3.680649844979415,
+      "ratio_effet_mde": 0.02163911837681449,
+      "pnl_proxy_bps": -0.4026548672566489,
+      "controle_non_trades_bps": 1.0999999999999976,
+      "controle_t": 1.992998506820173,
+      "n_non_trades": 190
+    },
+    "H10": {
+      "n_traded": 113,
+      "drift_bps": 0.6548672566371673,
+      "t_hac": 0.2885504486116395,
+      "mde80_bps": 5.2651061360787255,
+      "ratio_effet_mde": 0.12437873799917173,
+      "pnl_proxy_bps": 3.9115044247787543,
+      "controle_non_trades_bps": 1.1315789473684204,
+      "controle_t": 1.5259939225500485,
+      "n_non_trades": 190
+    },
+    "H20": {
+      "n_traded": 113,
+      "drift_bps": 2.221238938053098,
+      "t_hac": 0.8453374574991096,
+      "mde80_bps": 7.66459102676411,
+      "ratio_effet_mde": 0.2898052786243542,
+      "pnl_proxy_bps": 15.659292035398234,
+      "controle_non_trades_bps": 0.7894736842105265,
+      "controle_t": 0.8429817723870563,
+      "n_non_trades": 190
+    }
+  }
+}
