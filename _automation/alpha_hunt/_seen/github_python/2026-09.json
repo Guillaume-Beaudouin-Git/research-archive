@@ -27,6 +27,20 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "2520d6a578485c2f394260848b14d6c6": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "ahujasid/blender-mcp",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2848ca5e931955dddc520b987f66a823": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "experientiallabs/experiential",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "3332fb08e87a87816e030ed5d24a4f10": {
     "first_seen": "2026-09-04 11:00",
     "source": "github_python",
@@ -108,6 +122,20 @@
     "first_seen": "2026-09-03 11:00",
     "source": "github_python",
     "title": "netalertx/NetAlertX",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "efbc434315e9e2513920c0d79679eb18": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "The-Swarm-Corporation/AutoHedge",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "f7381cc224e9d2dc5168fa7aa366b5d0": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "sooryathejas/METATRON",
     "decision": "rejected_L0",
     "promising_file": null
   }
