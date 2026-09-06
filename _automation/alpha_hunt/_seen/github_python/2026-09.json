@@ -1,4 +1,88 @@
 {
+  "03d2b252395d7fd6c3837888ce977d86": {
+    "first_seen": "2026-09-04 11:00",
+    "source": "github_python",
+    "title": "bikini/exploitarium",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "05673ebc5888032da0f148006c3c78fc": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "shaxiu/XianyuAutoAgent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "163d4e6192d610fd4b7b760269f0ca5f": {
+    "first_seen": "2026-09-04 11:00",
+    "source": "github_python",
+    "title": "jihe520/MathModelAgent",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "21a8cae241e6b7758186d03b21892f56": {
+    "first_seen": "2026-09-04 11:00",
+    "source": "github_python",
+    "title": "radixark/miles",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2520d6a578485c2f394260848b14d6c6": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "ahujasid/blender-mcp",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "2848ca5e931955dddc520b987f66a823": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "experientiallabs/experiential",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "3332fb08e87a87816e030ed5d24a4f10": {
+    "first_seen": "2026-09-04 11:00",
+    "source": "github_python",
+    "title": "eriklindernoren/ML-From-Scratch",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "34e48e412261c50c464f891585fbb887": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "hacksider/Deep-Live-Cam",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "34ea47e7acaab581d09ef22f9b17efba": {
+    "first_seen": "2026-09-04 11:00",
+    "source": "github_python",
+    "title": "earthtojake/text-to-cad",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "35df9fe09e8f646cdbf6edb169254e0f": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "lipku/LiveTalking",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "48e276f935ce1d4870ef4aed3ff374e5": {
+    "first_seen": "2026-09-03 11:00",
+    "source": "github_python",
+    "title": "datacurve-ai/deep-swe",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "698f967acca2dfc8ae814121a689eac7": {
+    "first_seen": "2026-09-05 11:00",
+    "source": "github_python",
+    "title": "huggingface/datasets",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "7711442baaa9819938516d172c18a180": {
     "first_seen": "2026-09-01 11:00",
     "source": "github_python",
@@ -6,10 +90,52 @@
     "decision": "rejected_L0",
     "promising_file": null
   },
+  "93864d900b6475dc655057402b7ae216": {
+    "first_seen": "2026-09-05 11:00",
+    "source": "github_python",
+    "title": "k2-fsa/OmniVoice",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "a2a824cdddc2f81dd655bdd02449550e": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "sngyai/Sequoia-X",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
   "e038fcbac8f6251235a0b4818172c9ea": {
     "first_seen": "2026-09-01 11:00",
     "source": "github_python",
     "title": "noonghunna/club-3090",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e05a23be76bc15de38fa9280da575cd1": {
+    "first_seen": "2026-09-02 12:00",
+    "source": "github_python",
+    "title": "PDFMathTranslate/PDFMathTranslate",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "e3d43db1c0163fa41fd22f258386125e": {
+    "first_seen": "2026-09-03 11:00",
+    "source": "github_python",
+    "title": "netalertx/NetAlertX",
+    "decision": "rejected_L0",
+    "promising_file": null
+  },
+  "efbc434315e9e2513920c0d79679eb18": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "The-Swarm-Corporation/AutoHedge",
+    "decision": "rejected_L1_no_signal",
+    "promising_file": null
+  },
+  "f7381cc224e9d2dc5168fa7aa366b5d0": {
+    "first_seen": "2026-09-06 14:00",
+    "source": "github_python",
+    "title": "sooryathejas/METATRON",
     "decision": "rejected_L0",
     "promising_file": null
   }

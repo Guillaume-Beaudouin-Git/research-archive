@@ -1,0 +1,14 @@
+{
+  "hash": "72045c1baba9895db1fd21310c492a8d",
+  "source": "arxiv_econ_em",
+  "canonical_id": "http://arxiv.org/abs/2609.00943v1",
+  "title": "Illiquidity at Risk",
+  "url": "http://arxiv.org/abs/2609.00943v1",
+  "description": "Market efficiency relies fundamentally on stable liquidity. Consequently, forecasting liquidity dynamics is a priority for both investors and regulators. We introduce a new tail-risk metric, Illiquidity-at-Risk (IlliQaR), designed to quantify the magnitude of extreme liquidity dry-ups. Relying upon the realized Amihud (a precise illiquidity measurement derived from high-frequency data as the ratio of realized volatility to trading volume) we assess the predictive power of various linear and non-linear econometric models, with a specific focus on the impact of discontinuous jump components. Accounting for these jumps is essential for achieving accurate probability coverage and better IlliQaR predictions during periods of systemic stress, where standard continuous models systematically underestimate the severity of liquidity evaporation. Our empirical analysis, encompassing the S&P 500 index and a cross-section of 25 large U.S. equities, demonstrates that incorporating jumps significantly improves forecasts of illiquidity. Our results suggest that individual stock IlliQaR violations often cluster during periods of S&P 500 liquidity stress. This indicates that Illiquidity at Risk is not just a localized concern but a systemic one, where the main index acts as a leading indicator for extreme dry-ups in individual stock liquidity.",
+  "points": null,
+  "created_at": null,
+  "l1_matches": [
+    "topic_relevance"
+  ],
+  "captured": "2026-09-02 01:30 UTC"
+}
