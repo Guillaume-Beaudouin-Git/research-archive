@@ -1,0 +1,537 @@
+{
+  "diagnostics": {
+    "n_events_ledger": 182,
+    "n_events_mapped": 182,
+    "n_matched_jk": 164,
+    "n_unmatched": 18,
+    "jk_first": "1990-02-08",
+    "jk_last": "2024-01-31",
+    "common_window": "2004-01-28 -> 2024-01-31"
+  },
+  "components": {
+    "politique_monetaire": {
+      "H5": {
+        "n_traded": 28,
+        "mean_gross_bps": 33.081730203100186,
+        "t_gross": 1.4924866624946393,
+        "mean_net_bps": 32.081730203100186,
+        "t_net": 1.4473715293582603,
+        "mde80_net_bps": 55.786471078467166,
+        "legs": {
+          "hawkish_short": {
+            "n": 13,
+            "mean_net_bps": 59.70776660298183,
+            "t_hac": 2.007095469540682
+          },
+          "dovish_long": {
+            "n": 15,
+            "mean_net_bps": 8.139165323202784,
+            "t_hac": 0.4179021768814722
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 15,
+            "mean_net_bps": 21.172972001317415,
+            "t_hac": 0.6006588958024931,
+            "mde80_bps": 83.12925938176689,
+            "binding": true
+          },
+          "2015_2021": {
+            "n": 5,
+            "mean_net_bps": -12.252751203628321,
+            "t_hac": -4.48676430937434,
+            "mde80_bps": 15.539212054592689,
+            "binding": false
+          },
+          "post2022": {
+            "n": 8,
+            "mean_net_bps": 80.24470271064818,
+            "t_hac": 4.623406614008782,
+            "mde80_bps": 108.55709979318038,
+            "binding": false
+          }
+        }
+      },
+      "H10": {
+        "n_traded": 28,
+        "mean_gross_bps": 36.015392780311416,
+        "t_gross": 1.2298522077795973,
+        "mean_net_bps": 35.01539278031141,
+        "t_net": 1.1957042473427497,
+        "mde80_net_bps": 79.0176512568497,
+        "legs": {
+          "hawkish_short": {
+            "n": 13,
+            "mean_net_bps": 57.24497177044801,
+            "t_hac": 1.415232807423788
+          },
+          "dovish_long": {
+            "n": 15,
+            "mean_net_bps": 15.74975765552639,
+            "t_hac": 0.5220782899860531
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 15,
+            "mean_net_bps": 0.33384764052524285,
+            "t_hac": 0.009900201056841161,
+            "mde80_bps": 98.21943751426595,
+            "binding": true
+          },
+          "2015_2021": {
+            "n": 5,
+            "mean_net_bps": 39.32185674070827,
+            "t_hac": 1.6294692415700651,
+            "mde80_bps": 101.0121188174764,
+            "binding": false
+          },
+          "post2022": {
+            "n": 8,
+            "mean_net_bps": 97.35174994216241,
+            "t_hac": 2.465662556565152,
+            "mde80_bps": 193.8344439058691,
+            "binding": false
+          }
+        }
+      },
+      "H20": {
+        "n_traded": 28,
+        "mean_gross_bps": 53.475489345442455,
+        "t_gross": 1.101088700303737,
+        "mean_net_bps": 52.475489345442455,
+        "t_net": 1.080498169692771,
+        "mde80_net_bps": 121.12321354286486,
+        "legs": {
+          "hawkish_short": {
+            "n": 13,
+            "mean_net_bps": 97.52744654838149,
+            "t_hac": 1.1893982704621628
+          },
+          "dovish_long": {
+            "n": 15,
+            "mean_net_bps": 13.430459769561965,
+            "t_hac": 0.3353513752450026
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 15,
+            "mean_net_bps": -23.474232475636796,
+            "t_hac": -0.5265753090741009,
+            "mde80_bps": 145.13938525459608,
+            "binding": true
+          },
+          "2015_2021": {
+            "n": 5,
+            "mean_net_bps": 50.73033434535173,
+            "t_hac": 1.8174095984985383,
+            "mde80_bps": 115.94914948814213,
+            "binding": false
+          },
+          "post2022": {
+            "n": 8,
+            "mean_net_bps": 195.9719396350227,
+            "t_hac": 4.384709906284187,
+            "mde80_bps": 281.14342756316057,
+            "binding": false
+          }
+        }
+      }
+    },
+    "information": {
+      "H5": {
+        "n_traded": 2,
+        "mean_gross_bps": 67.17272616697448,
+        "t_gross": NaN,
+        "mean_net_bps": 66.17272616697448,
+        "t_net": NaN,
+        "mde80_net_bps": 193.33747365794554,
+        "legs": {
+          "hawkish_short": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN
+          },
+          "dovish_long": {
+            "n": 2,
+            "mean_net_bps": 66.17272616697448,
+            "t_hac": NaN
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 2,
+            "mean_net_bps": 66.17272616697448,
+            "t_hac": NaN,
+            "mde80_bps": 193.33747365794554,
+            "binding": false
+          },
+          "2015_2021": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          },
+          "post2022": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          }
+        }
+      },
+      "H10": {
+        "n_traded": 2,
+        "mean_gross_bps": 26.18042756405152,
+        "t_gross": NaN,
+        "mean_net_bps": 25.180427564051527,
+        "t_net": NaN,
+        "mde80_net_bps": 306.7689814696516,
+        "legs": {
+          "hawkish_short": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN
+          },
+          "dovish_long": {
+            "n": 2,
+            "mean_net_bps": 25.180427564051527,
+            "t_hac": NaN
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 2,
+            "mean_net_bps": 25.180427564051527,
+            "t_hac": NaN,
+            "mde80_bps": 306.7689814696516,
+            "binding": false
+          },
+          "2015_2021": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          },
+          "post2022": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          }
+        }
+      },
+      "H20": {
+        "n_traded": 2,
+        "mean_gross_bps": 131.8581513919211,
+        "t_gross": NaN,
+        "mean_net_bps": 130.85815139192107,
+        "t_net": NaN,
+        "mde80_net_bps": 1660.8191836273656,
+        "legs": {
+          "hawkish_short": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN
+          },
+          "dovish_long": {
+            "n": 2,
+            "mean_net_bps": 130.85815139192107,
+            "t_hac": NaN
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 2,
+            "mean_net_bps": 130.85815139192107,
+            "t_hac": NaN,
+            "mde80_bps": 1660.8191836273656,
+            "binding": false
+          },
+          "2015_2021": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          },
+          "post2022": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          }
+        }
+      }
+    },
+    "politique_monetaire_ROBUSTESSE": {
+      "H5": {
+        "n_traded": 32,
+        "mean_gross_bps": 28.787894946131548,
+        "t_gross": 1.3605209022860574,
+        "mean_net_bps": 27.787894946131544,
+        "t_net": 1.3132607290489418,
+        "mde80_net_bps": 50.091657465820624,
+        "legs": {
+          "hawkish_short": {
+            "n": 17,
+            "mean_net_bps": 42.712796489007474,
+            "t_hac": 1.523862606263487
+          },
+          "dovish_long": {
+            "n": 15,
+            "mean_net_bps": 10.873006530872154,
+            "t_hac": 0.5876663462511631
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 20,
+            "mean_net_bps": 13.749156113276838,
+            "t_hac": 0.5344421387907373,
+            "mde80_bps": 65.59707497440996,
+            "binding": true
+          },
+          "2015_2021": {
+            "n": 6,
+            "mean_net_bps": -9.626460726459628,
+            "t_hac": -1.2518217670672716,
+            "mde80_bps": 42.4159468596756,
+            "binding": false
+          },
+          "post2022": {
+            "n": 6,
+            "mean_net_bps": 111.99804672823842,
+            "t_hac": 5.115292697937277,
+            "mde80_bps": 110.93250386293916,
+            "binding": false
+          }
+        }
+      },
+      "H10": {
+        "n_traded": 32,
+        "mean_gross_bps": 37.00427708522312,
+        "t_gross": 1.3661216771860432,
+        "mean_net_bps": 36.00427708522312,
+        "t_net": 1.3292037372938579,
+        "mde80_net_bps": 68.34706784844477,
+        "legs": {
+          "hawkish_short": {
+            "n": 17,
+            "mean_net_bps": 43.93070533907189,
+            "t_hac": 1.1897440585499175
+          },
+          "dovish_long": {
+            "n": 15,
+            "mean_net_bps": 27.020991730861162,
+            "t_hac": 0.8682939947573924
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 20,
+            "mean_net_bps": 5.1090171324729585,
+            "t_hac": 0.20626408724350154,
+            "mde80_bps": 87.21612762016169,
+            "binding": true
+          },
+          "2015_2021": {
+            "n": 6,
+            "mean_net_bps": 19.29740886136692,
+            "t_hac": 0.6952719958551102,
+            "mde80_bps": 100.13680320635616,
+            "binding": false
+          },
+          "post2022": {
+            "n": 6,
+            "mean_net_bps": 155.6953451515799,
+            "t_hac": 6.345221691844502,
+            "mde80_bps": 142.0050631973093,
+            "binding": false
+          }
+        }
+      },
+      "H20": {
+        "n_traded": 32,
+        "mean_gross_bps": 53.59072020563969,
+        "t_gross": 1.2184157102912685,
+        "mean_net_bps": 52.59072020563969,
+        "t_net": 1.1956801376843704,
+        "mde80_net_bps": 108.48475203884715,
+        "legs": {
+          "hawkish_short": {
+            "n": 17,
+            "mean_net_bps": 48.277399613167155,
+            "t_hac": 0.659519457450385
+          },
+          "dovish_long": {
+            "n": 15,
+            "mean_net_bps": 57.47915021044188,
+            "t_hac": 1.7398988536984243
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 20,
+            "mean_net_bps": 8.95532416630984,
+            "t_hac": 0.19543700101758332,
+            "mde80_bps": 131.19441547679725,
+            "binding": true
+          },
+          "2015_2021": {
+            "n": 6,
+            "mean_net_bps": 11.816595648449953,
+            "t_hac": 0.36761704817604457,
+            "mde80_bps": 115.04297112782709,
+            "binding": false
+          },
+          "post2022": {
+            "n": 6,
+            "mean_net_bps": 238.816164893929,
+            "t_hac": 2.5571822733057807,
+            "mde80_bps": 301.4860541025477,
+            "binding": false
+          }
+        }
+      }
+    },
+    "information_ROBUSTESSE": {
+      "H5": {
+        "n_traded": 8,
+        "mean_gross_bps": 41.934900411250766,
+        "t_gross": 1.9449642308422666,
+        "mean_net_bps": 40.93490041125077,
+        "t_net": 1.8985836692630518,
+        "mde80_net_bps": 69.23718509062425,
+        "legs": {
+          "hawkish_short": {
+            "n": 4,
+            "mean_net_bps": 10.683291178276558,
+            "t_hac": 0.9781527141556445
+          },
+          "dovish_long": {
+            "n": 4,
+            "mean_net_bps": 71.18650964422501,
+            "t_hac": 6.744078589126128
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 6,
+            "mean_net_bps": 46.04998692210423,
+            "t_hac": 1.817329086211093,
+            "mde80_bps": 93.39933881974558,
+            "binding": false
+          },
+          "2015_2021": {
+            "n": 2,
+            "mean_net_bps": 25.589640878690474,
+            "t_hac": NaN,
+            "mde80_bps": 30.16958014194786,
+            "binding": false
+          },
+          "post2022": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          }
+        }
+      },
+      "H10": {
+        "n_traded": 8,
+        "mean_gross_bps": 11.459861222750742,
+        "t_gross": 0.39014677593754016,
+        "mean_net_bps": 10.459861222750742,
+        "t_net": 0.35610214238098364,
+        "mde80_net_bps": 113.46283186473042,
+        "legs": {
+          "hawkish_short": {
+            "n": 4,
+            "mean_net_bps": -15.803929156359922,
+            "t_hac": -0.9820735415783183
+          },
+          "dovish_long": {
+            "n": 4,
+            "mean_net_bps": 36.72365160186142,
+            "t_hac": 1.3620092570649889
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 6,
+            "mean_net_bps": 14.554165307243702,
+            "t_hac": 0.40041334060303524,
+            "mde80_bps": 147.10919734100756,
+            "binding": false
+          },
+          "2015_2021": {
+            "n": 2,
+            "mean_net_bps": -1.8230510307281007,
+            "t_hac": NaN,
+            "mde80_bps": 185.12476584185515,
+            "binding": false
+          },
+          "post2022": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          }
+        }
+      },
+      "H20": {
+        "n_traded": 8,
+        "mean_gross_bps": 197.3086366915894,
+        "t_gross": 2.6242386826757267,
+        "mean_net_bps": 196.3086366915894,
+        "t_net": 2.6109385112961156,
+        "mde80_net_bps": 269.8583551176614,
+        "legs": {
+          "hawkish_short": {
+            "n": 4,
+            "mean_net_bps": 49.43888296645923,
+            "t_hac": 1.338511885425498
+          },
+          "dovish_long": {
+            "n": 4,
+            "mean_net_bps": 343.17839041671965,
+            "t_hac": 9.247343211587648
+          }
+        },
+        "regimes": {
+          "pre2015": {
+            "n": 6,
+            "mean_net_bps": 235.40655441166206,
+            "t_hac": 3.2052940831533148,
+            "mde80_bps": 325.1960713202049,
+            "binding": false
+          },
+          "2015_2021": {
+            "n": 2,
+            "mean_net_bps": 79.01488353137198,
+            "t_hac": NaN,
+            "mde80_bps": 555.692006053669,
+            "binding": false
+          },
+          "post2022": {
+            "n": 0,
+            "mean_net_bps": NaN,
+            "t_hac": NaN,
+            "mde80_bps": NaN,
+            "binding": false
+          }
+        }
+      }
+    }
+  }
+}
