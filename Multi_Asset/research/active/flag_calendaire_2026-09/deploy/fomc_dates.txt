@@ -1,0 +1,18 @@
+# fomc_dates.txt — dates de reunion FOMC (annonce 14:00 ET), une par ligne YYYY.MM.DD
+# Source : data/personal_book/post_fomc_drift/data_cache/fomc_events_forward.csv
+#          (releve officiel federalreserve.gov, cf. fed_calendar_2026 / fed_calendar_2027)
+# Consomme par IsFomcToday() dans book_executor.mq5 — filtre l'ENTREE du funded ORB
+# uniquement (cf. PLAN_DEPLOIEMENT.md). Fichier decouple du cycle quotidien du brain :
+# a rafraichir 1x/an au changement de calendrier Fed, jamais perime au sens quotidien.
+# Lignes vides et commentaires ('#') ignores. Deposer dans MQL5/Files/ sur le VPS.
+2026.09.16
+2026.10.28
+2026.12.09
+2027.01.27
+2027.03.17
+2027.04.28
+2027.06.09
+2027.07.28
+2027.09.15
+2027.10.27
+2027.12.08
