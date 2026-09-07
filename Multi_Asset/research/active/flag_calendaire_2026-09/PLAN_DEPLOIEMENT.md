@@ -122,24 +122,37 @@ Ici aucun fichier Python ne change, ce qui simplifie beaucoup.
 |---|---|---|
 | 1 | Geler la branche, relire le diff EA ligne à ligne | local |
 | 2 | Compiler le `.ex5`, noter le hash | MetaEditor |
-| 3 | **Backtest de non-régression** : rejouer 2026-08-17 → 2026-09-11 avec et sans le fichier de dates, vérifier que les fills sont **identiques** (aucun FOMC sur la période ⇒ diff attendu = zéro) | tester MT5 |
-| 4 | Test positif : mettre une date de test dans le fichier, vérifier que l'ORB ne tire pas ce jour-là | tester MT5 |
-| 5 | Arrêter MT5 sur le VPS | VPS |
-| 6 | Déposer `fomc_dates.txt` dans `MQL5/Files/` | VPS |
-| 7 | Déposer le nouveau `.ex5` | VPS |
-| 8 | Relancer MT5, **vérifier qu'AlgoTrading est actif** (le changement de binaire le désactive parfois — incident connu) | VNC |
-| 9 | Vérifier `state.json` : `fomc_today` présent, `targets_status`, `mode_mismatch=0` | VPS |
-| 10 | Merger la branche sur `main` (documentation + calendrier source) | GitHub |
-| 11 | Lundi 14, contrôle : l'ORB tire normalement (pas un jour FOMC) | VPS |
-| 12 | **Mercredi 16, contrôle décisif : aucun `funded_orb_entry` dans `fills.csv`** | VPS |
+| 3 | ⚠ **Déposer `fomc_dates.txt` dans le `MQL5/Files` DU TESTEUR** — il est **isolé** de celui du live. Sans ça l'EA tombe en fail-open en backtest et les étapes 4-5 rendraient un **faux verdict** (« le filtre ne bloque rien » alors qu'il n'a jamais lu le fichier). | MetaEditor |
+| 4 | **Non-régression** : rejouer 2026-08-17 → 2026-09-11 avec et sans le fichier ⇒ fills **identiques** (aucun FOMC sur la période, diff attendu = zéro) | tester MT5 |
+| 5 | **Test positif** : mettre une date de la période dans le fichier ⇒ l'ORB ne tire pas ce jour-là, **et aucune alerte de fichier absent** (preuve qu'il a bien été lu) | tester MT5 |
+| 6 | Arrêter MT5 sur le VPS | VPS |
+| 7 | Archiver l'`.ex5` courant sous `archive_pre_fomc_20260912/` | VPS |
+| 8 | Déposer `fomc_dates.txt` puis le nouveau `.ex5` dans `MQL5/Files/` et le dossier Experts | VPS |
+| 9 | Relancer MT5, **vérifier qu'AlgoTrading est actif** (un changement de binaire le désactive parfois — incident connu) | VNC |
+| 10 | Vérifier `state.json` : `fomc_today` présent, `targets_status`, `mode_mismatch=0` | VPS |
+| 11 | Merger la branche sur `main` (documentation + calendrier source) | GitHub |
+| 12 | Lundi 14, contrôle : l'ORB tire normalement (jour sans FOMC) | VPS |
+| 13 | **Mercredi 16, contrôle décisif : aucun `funded_orb_entry` dans `fills.csv`** | VPS |
 
-## 5. Retour arrière
+## 5. Retour arrière — CORRIGÉ après audit
 
-**Immédiat, sans recompilation** : supprimer `fomc_dates.txt` du VPS ⇒ `IsFomcToday()` renvoie
-`false` ⇒ comportement actuel restauré au tick suivant, avec une alerte au journal.
+⚠ **La version initiale de ce plan affirmait un retour arrière « immédiat » par suppression du
+fichier. C'est FAUX** et l'audit l'a relevé : le drapeau est mis en cache **une fois par jour** au
+rollover, donc retirer le fichier un jour FOMC déjà armé ne débloque qu'à partir du **lendemain**.
 
-**Complet** : redéposer le `.ex5` précédent, conservé sous
-`archive_pre_fomc_20260912/`.
+| situation | levier réel | délai |
+|---|---|---|
+| Le filtre se comporte mal, jour **non** FOMC | supprimer `fomc_dates.txt` | prochain rollover |
+| Problème persistant | redéposer l'`.ex5` précédent (`archive_pre_fomc_20260912/`) | redémarrage MT5 |
+| **Urgence le jour FOMC même** | **kill-file `FLAT`** | tick suivant |
+
+⚠ Le kill-file `FLAT` **met tout à plat et désarme le compte entier**, pas seulement l'ORB. C'est
+un levier de sécurité, pas un correctif de filtre.
+
+**Et c'est le bon arbitrage** : si un jour FOMC le filtre bloquait à tort, le manque à gagner est
+**un trade ORB**, soit ~25 $ de risque. Déclencher `FLAT` pour le récupérer coûterait la journée
+entière de toutes les sleeves. **Accepter la perte du trade est la bonne réponse** ; `FLAT` reste
+réservé à un vrai incident de risque.
 
 ## 6. Critères d'arrêt
 
@@ -155,3 +168,9 @@ Ce déploiement **ne préjuge pas** de la décision ORB d'octobre. Il l'informe 
 2,11 bps s'ajoutait un défaut daté de 0,65 pt/an, désormais retiré. Le t_HAC de l'ORB passe de 2,76
 à 3,26, ce qui **déplace la sleeve dans la matrice** — à re-trancher en octobre avec la mesure de
 dérapage à N=30.
+
+---
+
+## Journal des corrections
+
+**2026-09-08, après audit indépendant** (`deploy/AUDIT_INDEPENDANT.md`) : §4 — ajout de l'étape de dépôt du fichier dans le dossier du Testeur, isolé de celui du live (sans quoi les backtests de validation rendaient un faux verdict) ; §5 — correction de la promesse de retour arrière « immédiat », qui était fausse. Aucun bloquant trouvé par l'audit.
