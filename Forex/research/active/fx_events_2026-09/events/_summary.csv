@@ -1,0 +1,25 @@
+family,currency,event_name,n_events
+rate_decision,USD,Fed Interest Rate Decision,68
+rate_decision,EUR,ECB Interest Rate Decision,67
+rate_decision,GBP,BoE Interest Rate Decision,69
+rate_decision,JPY,BoJ Interest Rate Decision,68
+rate_decision,AUD,RBA Interest Rate Decision,85
+rate_decision,CAD,BoC Interest Rate Decision,68
+rate_decision,CHF,SNB Interest Rate Decision,33
+rate_decision,NZD,RBNZ Interest Rate Decision,32
+cpi,USD,Inflation Rate YoY,100
+cpi,EUR,Inflation Rate YoY Flash,102
+cpi,GBP,Inflation Rate YoY,101
+cpi,JPY,Inflation Rate YoY,101
+cpi,AUD,Inflation Rate YoY,39
+cpi,CAD,Inflation Rate YoY,101
+cpi,CHF,Inflation Rate YoY,101
+cpi,NZD,Inflation Rate YoY,34
+nfp,USD,Non Farm Payrolls,100
+gdp,USD,GDP Growth Rate QoQ Adv,33
+gdp,EUR,GDP Growth Rate QoQ Flash,68
+gdp,GBP,GDP Growth Rate QoQ Prel,34
+gdp,JPY,GDP Growth Rate QoQ Prel,34
+pmi,USD,ISM Manufacturing PMI,102
+pmi,EUR,HCOB Manufacturing PMI Flash,70
+pmi,GBP,S&P Global Manufacturing PMI Flash,29
