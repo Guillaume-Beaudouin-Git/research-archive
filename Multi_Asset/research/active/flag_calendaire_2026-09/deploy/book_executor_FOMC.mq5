@@ -1060,21 +1060,29 @@ void DoBuildOR()
 // ---------------------------------------------------------------------
 bool IsFomcToday()
   {
+   // ⚠ EFFET DE BORD ASSUME : cette fonction affecte g_fomc_today AVANT tout SetError().
+   // Raison : SetError() appelle WriteState() de maniere SYNCHRONE ; sans cette affectation
+   // prealable, state.json serait ecrit avec la valeur de la VEILLE sur les chemins fail-open
+   // (constat #1 de l'audit independant 2026-09-07). Les appelants re-affectent la valeur de
+   // retour : l'operation est idempotente.
    int h=FileOpen("fomc_dates.txt", FILE_READ|FILE_TXT|FILE_ANSI|FILE_SHARE_READ);
    if(h==INVALID_HANDLE)
      {
+      g_fomc_today=false;
       SetError("fomc_dates.txt ABSENT/illisible — ORB funded NON filtre (fail-open)");
       return false;
      }
    if(FileSize(h)==0)
      {
       FileClose(h);
+      g_fomc_today=false;
       SetError("fomc_dates.txt VIDE — ORB funded NON filtre (fail-open)");
       return false;
      }
    MqlDateTime p; ParisStruct(p);           // date PARIS au moment de l'appel (rollover/init)
    bool hit=false;
-   int n_lines=0, n_parsed=0;
+   int n_lines=0, n_parsed=0, n_bad=0;
+   string first_bad="";
    while(!FileIsEnding(h))
      {
       string l=FileReadString(h);
@@ -1083,18 +1091,33 @@ bool IsFomcToday()
       n_lines++;
       string parts[];
       int np=StringSplit(l, '.', parts);
-      if(np!=3) continue;
-      int y=(int)StringToInteger(parts[0]);
-      int m=(int)StringToInteger(parts[1]);
-      int d=(int)StringToInteger(parts[2]);
-      if(y<=1900 || m<1 || m>12 || d<1 || d>31) continue;
+      bool ok=(np==3);
+      int y=0, m=0, d=0;
+      if(ok)
+        {
+         y=(int)StringToInteger(parts[0]);
+         m=(int)StringToInteger(parts[1]);
+         d=(int)StringToInteger(parts[2]);
+         ok=(y>1900 && m>=1 && m<=12 && d>=1 && d<=31);
+        }
+      if(!ok)
+        {
+         n_bad++;
+         if(first_bad=="") first_bad=l;
+         continue;
+        }
       n_parsed++;
       if(y==p.year && m==p.mon && d==p.day) hit=true;
      }
    FileClose(h);
+   g_fomc_today=hit;
    if(n_lines>0 && n_parsed==0)
       SetError("fomc_dates.txt: aucune ligne parseable (attendu YYYY.MM.DD) — "
                "ORB funded NON filtre (fail-open)");
+   else if(n_bad>0)
+      SetError(StringFormat("fomc_dates.txt: %d ligne(s) ILLISIBLE(S) ignoree(s), 1re=\"%s\" — "
+                            "%d date(s) valides retenues, calendrier possiblement INCOMPLET",
+                            n_bad, first_bad, n_parsed));
    return hit;
   }
 

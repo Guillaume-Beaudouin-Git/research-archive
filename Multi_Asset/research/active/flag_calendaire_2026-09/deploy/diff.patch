@@ -1,5 +1,5 @@
---- a/ftmo_live/mt5/book_executor.mq5
-+++ b/ftmo_live/mt5/book_executor.mq5 (PROPOSE — non applique, copie deploy/book_executor_FOMC.mq5)
+--- ftmo_live/mt5/book_executor.mq5	2026-08-19 16:23:48
++++ Multi_Asset/research/active/flag_calendaire_2026-09/deploy/book_executor_FOMC.mq5	2026-09-07 10:04:43
 @@ -36,12 +36,18 @@
  //|  - switch funded (bloc yaml, même événement que vm14→1.0) :        |
  //|    vm 1.0, on_w 0.35, ORB ON 0.25% taper, micro OFF, pace/glide/   |
@@ -28,12 +28,10 @@
  int     g_open_days=0, g_zombie_days=0, g_wd_tdays=0;
  int     g_micro_state=0;            // 0 IDLE 1 ARMED 2 OPEN 3 DONE 4 SKIPPED
  double  g_or_hi=0, g_or_lo=0, g_or_end_close=0;
-@@ -1033,6 +1040,62 @@
-    for(int i=0;i<n;i++) { g_or_hi=MathMax(g_or_hi, r[i].high); g_or_lo=MathMin(g_or_lo, r[i].low); }
-    g_or_end_close=r[n-1].close;
+@@ -1035,6 +1042,85 @@
     SaveState();
-+  }
-+
+   }
+ 
 +// ---------------------------------------------------------------------
 +// Filtre FOMC (2026-09) — cf. PLAN_DEPLOIEMENT.md.
 +// Lit MQL5/Files/fomc_dates.txt (une date YYYY.MM.DD par ligne, "#" = commentaire,
@@ -52,21 +50,29 @@
 +// ---------------------------------------------------------------------
 +bool IsFomcToday()
 +  {
++   // ⚠ EFFET DE BORD ASSUME : cette fonction affecte g_fomc_today AVANT tout SetError().
++   // Raison : SetError() appelle WriteState() de maniere SYNCHRONE ; sans cette affectation
++   // prealable, state.json serait ecrit avec la valeur de la VEILLE sur les chemins fail-open
++   // (constat #1 de l'audit independant 2026-09-07). Les appelants re-affectent la valeur de
++   // retour : l'operation est idempotente.
 +   int h=FileOpen("fomc_dates.txt", FILE_READ|FILE_TXT|FILE_ANSI|FILE_SHARE_READ);
 +   if(h==INVALID_HANDLE)
 +     {
++      g_fomc_today=false;
 +      SetError("fomc_dates.txt ABSENT/illisible — ORB funded NON filtre (fail-open)");
 +      return false;
 +     }
 +   if(FileSize(h)==0)
 +     {
 +      FileClose(h);
++      g_fomc_today=false;
 +      SetError("fomc_dates.txt VIDE — ORB funded NON filtre (fail-open)");
 +      return false;
 +     }
 +   MqlDateTime p; ParisStruct(p);           // date PARIS au moment de l'appel (rollover/init)
 +   bool hit=false;
-+   int n_lines=0, n_parsed=0;
++   int n_lines=0, n_parsed=0, n_bad=0;
++   string first_bad="";
 +   while(!FileIsEnding(h))
 +     {
 +      string l=FileReadString(h);
@@ -75,23 +81,40 @@
 +      n_lines++;
 +      string parts[];
 +      int np=StringSplit(l, '.', parts);
-+      if(np!=3) continue;
-+      int y=(int)StringToInteger(parts[0]);
-+      int m=(int)StringToInteger(parts[1]);
-+      int d=(int)StringToInteger(parts[2]);
-+      if(y<=1900 || m<1 || m>12 || d<1 || d>31) continue;
++      bool ok=(np==3);
++      int y=0, m=0, d=0;
++      if(ok)
++        {
++         y=(int)StringToInteger(parts[0]);
++         m=(int)StringToInteger(parts[1]);
++         d=(int)StringToInteger(parts[2]);
++         ok=(y>1900 && m>=1 && m<=12 && d>=1 && d<=31);
++        }
++      if(!ok)
++        {
++         n_bad++;
++         if(first_bad=="") first_bad=l;
++         continue;
++        }
 +      n_parsed++;
 +      if(y==p.year && m==p.mon && d==p.day) hit=true;
 +     }
 +   FileClose(h);
++   g_fomc_today=hit;
 +   if(n_lines>0 && n_parsed==0)
 +      SetError("fomc_dates.txt: aucune ligne parseable (attendu YYYY.MM.DD) — "
 +               "ORB funded NON filtre (fail-open)");
++   else if(n_bad>0)
++      SetError(StringFormat("fomc_dates.txt: %d ligne(s) ILLISIBLE(S) ignoree(s), 1re=\"%s\" — "
++                            "%d date(s) valides retenues, calendrier possiblement INCOMPLET",
++                            n_bad, first_bad, n_parsed));
 +   return hit;
-   }
- 
++  }
++
  void Do1600Arm()
-@@ -1055,7 +1118,7 @@
+   {
+    bool width_ok=(g_or_end_close>0 && g_or_hi>g_or_lo &&
+@@ -1055,7 +1141,7 @@
           g_micro_state=1;
        else g_micro_state=4;
       }
@@ -100,7 +123,7 @@
       {
        double risk=FU_ORB_RISK*ACCOUNT_SIZE_USD*OrbTaper0();
        double upp=UsdPerUnit(g_micro_sym);
-@@ -1212,6 +1275,7 @@
+@@ -1212,6 +1298,7 @@
     g_anchor_balance=AccountInfoDouble(ACCOUNT_BALANCE);
     g_anchor_date=ParisDate();
     g_opened_today=false; g_flat_today=false; g_breaker_today=false;
@@ -108,7 +131,7 @@
     g_micro_state=0; g_or_hi=0; g_or_lo=0; g_or_end_close=0;
     g_micro_entry=0; g_micro_be=false; g_backstop_close_due=false;
     g_done_0900=g_done_1530=g_done_or=g_done_1600=g_done_1735=false;
-@@ -1527,7 +1591,8 @@
+@@ -1527,7 +1614,8 @@
         eq-LimEff(), InpPhase==3 ? 0.0 : TargetEq());
     js+=StringFormat("\"terminal_regime\": %d,\n", TerminalRegime()?1:0);  // v2.4 (C)
     js+=StringFormat("\"breaker_fired_today\": %d,\n\"opened_today\": %d,\n"
@@ -118,7 +141,7 @@
     js+=StringFormat("\"open_days\": %d,\n\"min_days\": %d,\n", g_open_days, MIN_TRADING_DAYS);
     js+=StringFormat("\"margin_used_pct_equity\": %.1f,\n", eq>0 ? margin/eq*100.0 : 0.0);
     js+=StringFormat("\"micro_state\": %d,\n\"micro_enabled\": %d,\n",
-@@ -1682,6 +1747,9 @@
+@@ -1682,6 +1770,9 @@
     ReadLiveSpecs();                  // v2.2.1: specs live + bornes dès l'init
     DiagUsdPerUnit();                 // tick_value=0 serveur Swing -> trace fallback
     LoadState();
@@ -128,7 +151,7 @@
     if(g_anchor_date=="")
       {
        g_anchor_balance=AccountInfoDouble(ACCOUNT_BALANCE);
-@@ -1690,8 +1758,8 @@
+@@ -1690,8 +1781,8 @@
       }
     EventSetTimer(1);
     Print(StringFormat("book_executor v2.2 INIT — phase %d, serveur−Paris %d min, "
