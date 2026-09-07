@@ -95,3 +95,67 @@ vérifier que le gain ne vient pas du simple fait de moins s'exposer.
 complète (config → yaml → sha → mqh → recompilation → dépôt), en fenêtre samedi. Ce n'est pas un
 changement d'une ligne. À arbitrer contre la décision ORB déjà prévue en octobre — dont ce résultat
 devient un intrant : **au coût mesuré de 2,11 bps s'ajoute un défaut daté de 0,62 pt/an.**
+
+---
+
+# ADDENDUM — contrôles de confusion et placebo apparié (2026-09-08)
+
+## Le confondant évident : est-ce le FOMC, ou est-ce le MERCREDI ?
+
+63 des 67 jours FOMC tombent un mercredi. Si l'ORB perd simplement le mercredi, l'effet n'a rien à
+voir avec la macro.
+
+| groupe | n | moyenne ORB | t_HAC |
+|---|---|---|---|
+| **jours FOMC** | 67 | **−8,47 bps** | −2,18 |
+| **mercredis SANS FOMC** | 370 | **+1,28** | +0,79 |
+| mercredis AVEC FOMC | 63 | −8,54 | −2,05 |
+| tous les autres jours | 1 686 | +2,04 | +3,12 |
+
+**Ce n'est pas le mercredi.** Les mercredis sans FOMC sont **positifs** (+1,28 bps) et se comportent
+comme n'importe quel autre jour. L'effet est spécifiquement attaché à l'annonce.
+
+## Placebo apparié au jour de semaine
+
+10 000 tirages de 67 jours **sans FOMC**, appariés à la distribution jour-de-semaine réelle
+(63 mercredis, 3 jeudis, 1 mardi).
+
+| | |
+|---|---|
+| effet réel FOMC | **−8,47 bps** |
+| moyenne du pool placebo | +1,35 bps (écart-type 3,42) |
+| percentile du réel | **0,11ᵉ** |
+| **p unilatéral** | **0,0011** |
+
+**Passe le placebo.**
+
+## Contrôle L58 — le placebo est-il lui-même valide ?
+
+L58 exige que la moyenne du pool placebo égale l'espérance **inconditionnelle** de la forme de
+trade ; sinon c'est le placebo qui est biaisé, pas le signal.
+
+- espérance inconditionnelle de l'ORB : **+1,58 bps**
+- moyenne du pool placebo : **+1,35 bps**
+- écart relatif : **14,7 %**, sous le seuil de 20 % ⇒ **placebo non biaisé**
+
+## Bilan probatoire
+
+| test | statut |
+|---|---|
+| gate L54 (le flag ne coupe pas les jours qui paient) | ✅ effet négatif, pas positif |
+| multiple testing (Šidák, 4 flags) | ✅ t 3,12 > 2,49 |
+| stabilité de signe sur 3 sous-périodes | ✅ jamais d'inversion |
+| confondant jour-de-semaine | ✅ mercredis sans FOMC positifs |
+| placebo apparié | ✅ p = 0,0011 |
+| validation de la baseline du placebo (L58) | ✅ écart 14,7 % |
+| mécanisme identifié et vérifiable | ✅ l'ORB tient à travers 14:00 ET |
+| **puissance (effet/MDE80)** | ⚠ **0,81 — sous 1** |
+
+**Sur la tension apparente entre le placebo à p = 0,0011 et le ratio effet/MDE à 0,81** : ces deux
+mesures ne répondent pas à la même question et ne se contredisent pas. Le placebo mesure
+l'**évidence dans cet échantillon** face à un null apparié ; le MDE mesure la **puissance d'une
+réplication future**. Lecture honnête : le résultat est solidement établi ici, et l'estimation
+ponctuelle restera bruitée — agir dessus est défendable, en s'attendant à ce que l'amplitude bouge.
+
+L'ORB gagne +2,04 bps les jours ordinaires. Les jours FOMC lui coûtent −8,47, soit **quatre fois son
+edge quotidien, dans le mauvais sens**, sur 67 jours en huit ans.
