@@ -11,11 +11,13 @@ with its commit date.
 
 The history was rewritten with `git filter-repo` for security only:
 
-- the server address, account identifiers and local file-system paths are replaced by
-  `<VPS_IP>`, `<ACCOUNT_ID>`, `<HOME>` and `<SCRATCH>` in every commit;
+- the server address, every account login (prop-firm and broker), one remote-desktop password
+  found in an old deployment note, and local file-system paths are replaced by `<VPS_IP>`,
+  `<ACCOUNT_ID>`, `<VNC_PASS>`, `<HOME>` and `<SCRATCH>` in every commit, file name and commit
+  message; a third party's surname is replaced by "the third-party author";
 - `Algorithm_Brieuc/` (a third party's code), `Claude Vault/` (an editor's configuration),
-  scraped raw feeds (`_automation/*/_raw/`), log files and compiled binaries are removed from
-  the history;
+  scraped raw feeds (`_automation/*/_raw/`), log files, compiled binaries and three AQR Data
+  Library files (redistribution not permitted) are removed from the history;
 - secrets were never committed (`.env` files and `logs/` are ignored by git; a full-history
   scan with gitleaks finds none). The keys that were once exposed in the server's crontab, in
   May 2026, were revoked at the time.
@@ -39,7 +41,8 @@ commit hashes differ from the private repository's; `proof-of-edge/PROVENANCE.md
   sources, the challenge specification, the funded-account studies.
 - `_audit/` — the audits, including the security review of 2026-05-30.
 
-Market data is not included (`data/raw/` and the caches are ignored); result tables and figures
+Raw vendor market data is not included (`data/raw/` and the caches are ignored); result tables,
+figures and a few derived series (daily index panels, funding histories, a BTC/ETH hourly cache)
 are.
 
 Code drafted with a coding assistant (Claude Code) and reviewed by the author; every question,
