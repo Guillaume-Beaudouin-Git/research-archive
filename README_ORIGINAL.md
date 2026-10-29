@@ -1,3 +1,5 @@
+> **Note (2026-10-29).** This is the original README of the working repository, kept as it was in August 2026. The Sharpe and account figures it shows were later reviewed; the current statement is in [proof-of-edge](https://github.com/Guillaume-Beaudouin-Git/proof-of-edge).
+
 # Algo_claude
 
 Systematic trading research, run solo, with one rule: **a strategy is guilty until proven

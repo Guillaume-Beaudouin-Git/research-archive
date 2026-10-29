@@ -22,7 +22,7 @@ The history was rewritten with `git filter-repo` for security only:
   scan with gitleaks finds none). The keys that were once exposed in the server's crontab, in
   May 2026, were revoked at the time.
 
-Nothing else was edited: commit messages, dates, the French and English mixed through the
+Nothing else was edited, and nothing was renamed: folder and file names are inconsistent across the months, commit messages, dates, the French and English mixed through the
 notes, the mistakes and their corrections are the originals. Because the history was rewritten,
 commit hashes differ from the private repository's; `proof-of-edge/PROVENANCE.md` gives both.
 
