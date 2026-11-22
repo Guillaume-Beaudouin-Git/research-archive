@@ -42,12 +42,11 @@ commit hashes differ from the private repository's; `proof-of-edge/PROVENANCE.md
 - `strategies/`, `ftmo_live/`, `Portfolio/` — the deployed code, the live system and the
   portfolio tools.
 - `PropFirms/`, `data/ftmo_portfolio/` — the prop-firm programme: rules verified against primary
-  sources, the challenge specification, the funded-account studies.
+  sources, the challenge specification, the studies of the FTMO account.
 - `_audit/` — the audits, including the security review of 2026-05-30.
 
 Raw vendor market data is not included (`data/raw/` and the caches are ignored); result tables,
 figures and a few derived series (daily index panels, funding histories, a BTC/ETH hourly cache)
 are.
 
-Code drafted with a coding assistant (Claude Code) and reviewed by the author; every question,
-protocol, kill rule and verdict is the author's.
+Code drafted by a coding assistant (Claude Code).
