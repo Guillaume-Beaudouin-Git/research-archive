@@ -1,7 +1,7 @@
 # research-archive
 
 The complete working repository of a solo systematic-trading research programme, April to
-October 2026, published as is: every study, every pre-registration, every verdict, the lesson
+September 2026, published as is: every study, every pre-registration, every verdict, the lesson
 registry, the live-system code, the session notes, in the order they were written. **Start with
 [proof-of-edge](https://github.com/Guillaume-Beaudouin-Git/proof-of-edge)**, the curated
 entry point; this repository exists so that anything cited there can be checked at its source,
@@ -9,7 +9,7 @@ with its commit date.
 
 ## What was changed before publication
 
-The history was rewritten with `git filter-repo` for security only:
+The history was rewritten with `git filter-repo`, for security and to remove one personal file:
 
 - the server address, every account login (prop-firm and broker), one remote-desktop password
   found in an old deployment note, and local file-system paths are replaced by `<VPS_IP>`,
@@ -18,6 +18,10 @@ The history was rewritten with `git filter-repo` for security only:
 - `Algorithm_Brieuc/` (a third party's code), `Claude Vault/` (an editor's configuration),
   scraped raw feeds (`_automation/*/_raw/`), log files, compiled binaries and three AQR Data
   Library files (redistribution not permitted) are removed from the history;
+- in November 2026, two account logins missed in October are replaced in the same way, and a
+  personal brief written for the author's internship search, not research material, is removed
+  from the history with the three commits that only added, edited and deleted it (two cleanup
+  notes still name it); 145 commits, from 22 August to 29 October 2026, have new hashes;
 - secrets were never committed (`.env` files and `logs/` are ignored by git; a full-history
   scan with gitleaks finds none). The keys that were once exposed in the server's crontab, in
   May 2026, were revoked at the time.
