@@ -22,11 +22,15 @@ The history was rewritten with `git filter-repo`, for security and to remove one
   personal brief written for the author's internship search, not research material, is removed
   from the history with the three commits that only added, edited and deleted it (two cleanup
   notes still name it); 145 commits, from 22 August to 29 October 2026, have new hashes;
+- on 28 November 2026, the `Co-authored-by` trailers are removed from the 369 commit messages that
+  carried one, in a single filter-repo pass that also updates the commit hashes quoted in 55
+  messages; file contents, dates and authors are unchanged, and 1,212 of the 1,325 commits have new
+  hashes;
 - secrets were never committed (`.env` files and `logs/` are ignored by git; a full-history
   scan with gitleaks finds none). The keys that were once exposed in the server's crontab, in
   May 2026, were revoked at the time.
 
-Nothing else was edited, and nothing was renamed: folder and file names are inconsistent across the months, commit messages, dates, the French and English mixed through the
+Nothing else was edited, and nothing was renamed: folder and file names are inconsistent across the months, commit messages (apart from the trailers and quoted hashes named above), dates, the French and English mixed through the
 notes, the mistakes and their corrections are the originals. Because the history was rewritten,
 commit hashes differ from the private repository's; `proof-of-edge/PROVENANCE.md` gives both.
 
